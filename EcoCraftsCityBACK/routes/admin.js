@@ -4,9 +4,13 @@ const adminController = require("../controllers/admin")
 
 const router = express.Router();
 
-router.get("/posts", adminController.getPosts);
 
-router.post("/post", adminController.createPost)
+
+// router.post("/product", adminController.getProducts);
+
+router.post("/product", adminController.createProduct);
+
+router.post("/user", adminController.createUser);
 
 
 

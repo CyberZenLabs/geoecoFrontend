@@ -12,18 +12,20 @@ import NavBar from "./components/NavBar"
 import Cart from './pages/Cart';
 import AdminLogin from './pages/AdminLogin';
 import ProductDetail from './pages/ProductDetail';
+import AdminDashboard from './pages/AdminDashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <BrowserRouter>
     <NavBar/>
-    <BrowserRouter>
+  
     <Routes>
     
       <Route index element={<Home/>}/>
       <Route path="cart" element={<Cart/>}/>
-      <Route path="cart" element={<Cart/>}/>
-      <Route path="adminlogin" element={<AdminLogin/>}/>
+      <Route path="admin-dashboard" element={<AdminDashboard/>}/>
+      <Route path="admin-portal" element={<AdminLogin/>}/>
       <Route path="product:id" element={<ProductDetail/>}/>
     </Routes>
       

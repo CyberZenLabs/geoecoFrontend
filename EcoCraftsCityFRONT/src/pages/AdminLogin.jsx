@@ -13,11 +13,10 @@ const AdminLogin = () => {
   const [formValue, setFormValue] = useState({
     name: "",
     lastName: "",
-    email: "",
+    email: ""
   });
 
 const handleChange = (event) => {
-  console.log(formValue)
   const { name, value } = event.target;
   setFormValue((prevState) => {
     return {
@@ -53,14 +52,13 @@ const handleSubmit = () => {
 }
 
 
-
-
 return (
   <div id="form-container">
     <TextField id="outlined-basic" onChange={handleChange}
     name="lastName" type="text"
     value={lastName} label="Фамилия"
     variant="outlined" />
+
 
 
     <TextField id="outlined-basic" onChange={handleChange}

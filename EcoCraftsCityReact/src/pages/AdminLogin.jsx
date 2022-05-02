@@ -26,7 +26,7 @@ const AdminLogin = () => {
     axiosFetch({
       axiosInstance: axios,
       method: "POST",
-      url: "/posts",
+      url: "/product",
       requestConfig: {
         data: {
           name: 10,
@@ -49,7 +49,7 @@ const AdminLogin = () => {
         label="Электронная Почта"
         variant="outlined"
       />
-      <Button>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </div>
   );
 };

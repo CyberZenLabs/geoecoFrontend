@@ -58,24 +58,26 @@ const Registration = (props) => {
         axiosFetch({
             axiosInstance: axios,
             method: "POST",
-            url: `${hostName.getHost()}/api/v1/users/signup`,
+            url: `/api/v1/users/signup`,
             requestConfig: {
-                data: {
-                    firstName: "Kirdфыцйцвсфмz",
-                    lastName: "Kadcфйцывсфымdad",
-                    email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
-                    password: "asdfasdf",
-                    passwordConfirm: "asdfasdf"
+                data: JSON.stringify(
+                    {
+                        firstName: "Kirdфыцйцвсфмz",
+                        lastName: "Kadcфйцывсфымdad",
+                        email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
+                        password: "asdfasdf",
+                        passwordConfirm: "asdfasdf"
 
-                }
+                    }
+                )
             }
-        }).then((res) => {
-            console.log('>>>>>>>>>>>', res)
-        }).catch((err) => {
-            console.log('>>>>>>>>>>>errr', err)
         })
-    }
 
+
+
+
+    }
+    console.log('>>>>>>>>>', posts)
     return (
         <Container maxWidth="sm">
             <H4Title>Регистрация</H4Title>

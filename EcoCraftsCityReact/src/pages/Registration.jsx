@@ -1,56 +1,40 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import styled from "styled-components";
-import { Style } from "@mui/icons-material";
+import {Style} from "@mui/icons-material";
 import useAxiosFunction from "../hooks/useAxiosFunction";
-// import axios from "../apis/admin-rest";
+import axios from "../apis/admin-rest";
 import hostName from "../tools/HostName";
-const axios = require("axios");
+// const axios = require("axios");
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // paddingTop: '20px',
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
+    root: {
+        // paddingTop: '20px',
+        "& .MuiTextField-root": {
+            margin: theme.spacing(1),
+            width: "25ch",
+        },
     },
-  },
 }));
 
 const Registration = (props) => {
-  const [response, error, loading, axiosFetch] = useAxiosFunction();
+    const [response, error, loading, axiosFetch] = useAxiosFunction();
 
-  const classes = useStyles();
-  const [firstName, getFirstName] = useState("");
-  const [lastName, getLastName] = useState("");
-  const [confirmPass, getConfirmPass] = useState("");
-  const [email, getEmail] = useState("");
-  const [password, getPassword] = useState("");
+    const classes = useStyles();
+    const [firstName, getFirstName] = useState("");
+    const [lastName, getLastName] = useState("");
+    const [confirmPass, getConfirmPass] = useState("");
+    const [email, getEmail] = useState("");
+    const [password, getPassword] = useState("");
 
-  const onChange = (status) => (e) => {
-    console.log(">>>>>>>>>", e);
-    switch (status) {
-      case "name":
-        getFirstName(e.target.value);
-        break;
-      case "confirmPass":
-        getConfirmPass(e.target.value);
-        break;
-      case "email":
-        getEmail(e.target.value);
-        break;
-      case "pass":
-        getPassword(e.target.value);
-        break;
-      default:
-        break;
-    }
-  };
+    const onChange = (callback) => (e) => {
+        callback(e.target.value)
+    };
 
     const handleSubmit = () => {
         axiosFetch({
@@ -72,10 +56,8 @@ const Registration = (props) => {
         })
 
 
-
-
     }
-    console.log('>>>>>>>>>', posts)
+    console.log('>>>>>>>>>', response)
     return (
         <Container maxWidth="sm">
             <H4Title>Регистрация</H4Title>
@@ -83,29 +65,54 @@ const Registration = (props) => {
                 <DivBoxColumnsSC>
                     <DivBoxSC>
                         <LabelSC htmlFor="name">Имя</LabelSC>
-                        <InputSC type="text" id={'name'}/>
+                        <InputSC
+                            value={firstName}
+                            onChange={onChange(getFirstName)}
+                            type="text"
+                            id={'name'}
+                        />
                     </DivBoxSC>
                     <DivBoxSC>
                         <LabelSC htmlFor="lastName">Фамилия</LabelSC>
-                        <InputSC type="text" id={'lastName'}/>
+                        <InputSC
+                            value={lastName}
+                            onChange={onChange(getLastName)}
+                            type="text"
+                            id={'lastName'}
+                        />
                     </DivBoxSC>
                 </DivBoxColumnsSC>
                 <DivBoxRowSC>
                     <LabelSC htmlFor="email">Электронная почта</LabelSC>
-                    <InputFullWidthSC type="text" id={'email'}/>
+                    <InputFullWidthSC
+                        value={email}
+                        type="text"
+                        onChange={onChange(getEmail)}
+                        id={'email'}
+                    />
                 </DivBoxRowSC>
                 <DivBoxColumnsSC>
                     <DivBoxSC>
                         <LabelSC htmlFor="pass">Пароль</LabelSC>
-                        <InputSC  type="password" id={'pass'}/>
+                        <InputSC
+                            value={password}
+                            type="password"
+                            onChange={onChange(getPassword)}
+                            id={'pass'}
+                        />
                     </DivBoxSC>
                     <DivBoxSC>
                         <LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>
-                        <InputSC type="password" id={'confirmedPass'}/>
+                        <InputSC
+                            value={confirmPass}
+                            onChange={onChange(getConfirmPass)}
+                            type="password"
+                            id={'confirmedPass'}
+                        />
                     </DivBoxSC>
                 </DivBoxColumnsSC>
                 <DivBoxRowSC>
-                    <ButtonSC onClick={handleSubmit} >
+                    <ButtonSC onClick={handleSubmit}>
                         дальше
                     </ButtonSC>
                 </DivBoxRowSC>

@@ -48,35 +48,35 @@ const AdminForm = () => {
         <Container maxWidth="sm">
             
             <form className={classes.root} noValidate autoComplete="off">
-            <Grid 
-                container
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-            >
-                <Grid item xs={5}>
-                    <Typography variant="h4" gutterBottom>
-                        Анкета
-                    </Typography>
+                <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <Grid item xs={5}>
+                        <Typography variant="h4" gutterBottom>
+                            Анкета
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={5}>
+                        <TextField onChange={onChange("name")} required id="standard-required" label="Имя" value={name} />
+                    </Grid>
+                    <Grid item xs={5}>
+                        <TextField onChange={onChange("lastName")} required id="standard-required" label="Фамилия" value={lastName} />
+                    </Grid>
+                    <Grid item xs={5}>
+                        <TextField onChange={onChange("email")} required id="standard-required" label="Электроная почта" value={email} />
+                    </Grid>
+                    <Grid item xs={5}>
+                        <TextField onChange={onChange("pass")} required id="standard-required" label="Пароль" value={password} />
+                    </Grid>
+                    <Grid  item xs={5}>
+                    <Button variant="contained" color="primary">
+                        Подтверить
+                    </Button>
+                    </Grid>
                 </Grid>
-                <Grid item xs={5}>
-                    <TextField onChange={onChange("name")} required id="standard-required" label="Имя" value={name} />
-                </Grid>
-                <Grid item xs={5}>
-                    <TextField onChange={onChange("lastName")} required id="standard-required" label="Фамилия" value={lastName} />
-                </Grid>
-                <Grid item xs={5}>
-                    <TextField onChange={onChange("email")} required id="standard-required" label="Электроная почта" value={email} />
-                </Grid>
-                <Grid item xs={5}>
-                    <TextField onChange={onChange("pass")} required id="standard-required" label="Пароль" value={password} />
-                </Grid>
-                <Grid  item xs={5}>
-                <Button variant="contained" color="primary">
-                    Подтверить
-                </Button>
-                </Grid>
-            </Grid>
                 {/* <TextField required id="standard-required" label="Required" defaultValue="Hello World" />
                 <TextField required id="standard-required2" label="Required" defaultValue="Hello World" />
                 <TextField required id="standard-required3" label="Required" defaultValue="Hello World" />

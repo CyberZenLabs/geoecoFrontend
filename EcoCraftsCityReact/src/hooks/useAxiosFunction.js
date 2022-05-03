@@ -19,9 +19,9 @@ const useAxiosFunction = (configObj) => {
       });
       console.log("res", res);
       setResponse(res.data);
-    } catch (err) {
-      console.log(err);
-      setError(err.message);
+    } catch (error) {
+      console.log(error);
+      setError(error.response.data.message);
     } finally {
       setLoading(false);
     }

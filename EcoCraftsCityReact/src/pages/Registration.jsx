@@ -1,127 +1,136 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import {makeStyles} from "@material-ui/core/styles";
-import styled from 'styled-components'
-import {Style} from "@mui/icons-material";
+import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
+import { Style } from "@mui/icons-material";
 import useAxiosFunction from "../hooks/useAxiosFunction";
-import axios from "../apis/admin-rest";
+// import axios from "../apis/admin-rest";
 import hostName from "../tools/HostName";
+const axios = require("axios");
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        // paddingTop: '20px',
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '25ch'
-        },
+  root: {
+    // paddingTop: '20px',
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
     },
+  },
 }));
 
-
-
 const Registration = (props) => {
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
 
-    const [posts, error, loading, axiosFetch] = useAxiosFunction();
+  const classes = useStyles();
+  const [firstName, getFirstName] = useState("");
+  const [lastName, getLastName] = useState("");
+  const [confirmPass, getConfirmPass] = useState("");
+  const [email, getEmail] = useState("");
+  const [password, getPassword] = useState("");
 
-    const classes = useStyles();
-    const [firstName, getFirstName] = useState('');
-    const [lastName, getLastName] = useState('');
-    const [confirmPass, getConfirmPass] = useState('');
-    const [email, getEmail] = useState('');
-    const [password, getPassword] = useState('');
-
-    const onChange = (status) => (e) => {
-        console.log('>>>>>>>>>', e);
-        switch (status) {
-            case 'name':
-                getFirstName(e.target.value)
-                break;
-            case 'confirmPass':
-                getConfirmPass(e.target.value);
-                break;
-            case 'email':
-                getEmail(e.target.value);
-                break;
-            case 'pass':
-                getPassword(e.target.value);
-                break;
-            default:
-                break;
-        }
+  const onChange = (status) => (e) => {
+    console.log(">>>>>>>>>", e);
+    switch (status) {
+      case "name":
+        getFirstName(e.target.value);
+        break;
+      case "confirmPass":
+        getConfirmPass(e.target.value);
+        break;
+      case "email":
+        getEmail(e.target.value);
+        break;
+      case "pass":
+        getPassword(e.target.value);
+        break;
+      default:
+        break;
     }
+  };
 
-    const handleSubmit = () => {
-        axiosFetch({
-            axiosInstance: axios,
-            method: "POST",
-            url: `${hostName.getHost()}/api/v1/users/signup`,
-            requestConfig: {
-                data: {
-                    firstName: "Kirdфыцйцвсфмz",
-                    lastName: "Kadcфйцывсфымdad",
-                    email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
-                    password: "asdfasdf",
-                    passwordConfirm: "asdfasdf"
+  const handleSubmit = () => {
+    // axiosFetch({
+    //   axiosInstance: axios,
+    //   method: "POST",
+    //   url: `/api/v1/users/signup`,
+    //   requestConfig: {
+    //     data: {
+    //       firstName: "Kirdфыцйцвсфмz",
+    //       lastName: "Kadcфйцывсфымdad",
+    //       email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
+    //       password: "asdfasdf",
+    //       passwordConfirm: "asdfasdf",
+    //     },
+    //   },
+    // });
+    // axios
+    //   .get("http://radiant-river-29802.herokuapp.com/api/v1/tours")
+    //   .then((res) => console.log(res));
 
-                }
-            }
-        }).then((res) => {
-            console.log('>>>>>>>>>>>', res)
-        }).catch((err) => {
-            console.log('>>>>>>>>>>>errr', err)
-        })
-    }
+    axios
+      .post("http://radiant-river-29802.herokuapp.com/api/v1/users/signup", {
+        firstName: "Kirdфыцйцвсфмz",
+        lastName: "Kadcфйцывсфымdad",
+        email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
+        password: "asdfasdf",
+        passwordConfirm: "asdfasdf",
+      })
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
 
-    return (
-        <Container maxWidth="sm">
-            <H4Title>Регистрация</H4Title>
-            <DivBoxRowsSC>
-                <DivBoxColumnsSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="name">Имя</LabelSC>
-                        <InputSC type="text" id={'name'}/>
-                    </DivBoxSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="lastName">Фамилия</LabelSC>
-                        <InputSC type="text" id={'lastName'}/>
-                    </DivBoxSC>
-                </DivBoxColumnsSC>
-                <DivBoxRowSC>
-                    <LabelSC htmlFor="email">Электронная почта</LabelSC>
-                    <InputFullWidthSC type="text" id={'email'}/>
-                </DivBoxRowSC>
-                <DivBoxColumnsSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="pass">Пароль</LabelSC>
-                        <InputSC  type="password" id={'pass'}/>
-                    </DivBoxSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>
-                        <InputSC type="password" id={'confirmedPass'}/>
-                    </DivBoxSC>
-                </DivBoxColumnsSC>
-                <DivBoxRowSC>
-                    <ButtonSC onClick={handleSubmit} >
-                        дальше
-                    </ButtonSC>
-                </DivBoxRowSC>
-                <DivBoxRowSC>
-                    <DivBoxTextSC>
-                        <SpanQuSC>Уже имеете аккаунт? </SpanQuSC><a href="">Войти</a>
-                    </DivBoxTextSC>
+    //   fetch("http://radiant-river-29802.herokuapp.com/api/v1/tours")
+    //     .then((req) => req.text())
+    //     .then(console.log);
+  };
 
-                </DivBoxRowSC>
-            </DivBoxRowsSC>
+  return (
+    <Container maxWidth="sm">
+      <H4Title>Регистрация</H4Title>
+      <DivBoxRowsSC>
+        <DivBoxColumnsSC>
+          <DivBoxSC>
+            <LabelSC htmlFor="name">Имя</LabelSC>
+            <InputSC type="text" id={"name"} />
+          </DivBoxSC>
+          <DivBoxSC>
+            <LabelSC htmlFor="lastName">Фамилия</LabelSC>
+            <InputSC type="text" id={"lastName"} />
+          </DivBoxSC>
+        </DivBoxColumnsSC>
+        <DivBoxRowSC>
+          <LabelSC htmlFor="email">Электронная почта</LabelSC>
+          <InputFullWidthSC type="text" id={"email"} />
+        </DivBoxRowSC>
+        <DivBoxColumnsSC>
+          <DivBoxSC>
+            <LabelSC htmlFor="pass">Пароль</LabelSC>
+            <InputSC type="password" id={"pass"} />
+          </DivBoxSC>
+          <DivBoxSC>
+            <LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>
+            <InputSC type="password" id={"confirmedPass"} />
+          </DivBoxSC>
+        </DivBoxColumnsSC>
+        <DivBoxRowSC>
+          <ButtonSC onClick={handleSubmit}>дальше</ButtonSC>
+        </DivBoxRowSC>
+        {error && <h1>{error}</h1>}
+        <DivBoxRowSC>
+          <DivBoxTextSC>
+            <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
+            <a href="">Войти</a>
+          </DivBoxTextSC>
+        </DivBoxRowSC>
+      </DivBoxRowsSC>
 
-
-            {/* <div>Kirdro</div> */}
-        </Container>
-    );
-}
+      {/* <div>Kirdro</div> */}
+    </Container>
+  );
+};
 
 const H4Title = styled.h4`
   //position: absolute;
@@ -130,7 +139,7 @@ const H4Title = styled.h4`
   //left: 703px;
   //top: 212px;
 
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -147,9 +156,9 @@ const LabelSC = styled.label`
   width: 100%;
   height: 24px;
   left: 0px;
-  top: calc(50% - 24px/2 - 192px);
+  top: calc(50% - 24px / 2 - 192px);
 
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -157,7 +166,7 @@ const LabelSC = styled.label`
 
   color: rgba(37, 37, 37, 0.8);
   margin-bottom: 10px;
-`
+`;
 
 const DivBoxSC = styled.div`
   //position: absolute;
@@ -165,16 +174,16 @@ const DivBoxSC = styled.div`
   height: 92px;
   left: 0px;
   top: 119px;
-`
+`;
 
 const DivBoxRowsSC = styled.div`
-    display: grid;
-    grid-template-rows: 112px 112px 112px 112px 112px;
-`
+  display: grid;
+  grid-template-rows: 112px 112px 112px 112px 112px;
+`;
 const DivBoxColumnsSC = styled.div`
-    display: grid;
-    grid-template-columns: 50% 50%;
-`
+  display: grid;
+  grid-template-columns: 50% 50%;
+`;
 
 const InputSC = styled.input`
   display: flex;
@@ -186,16 +195,16 @@ const InputSC = styled.input`
   width: 235px;
   height: 56px;
   left: 0px;
-  top: calc(50% - 56px/2 - 140px);
+  top: calc(50% - 56px / 2 - 140px);
 
   border: 2px solid rgba(37, 128, 57, 0.7);
   box-sizing: border-box;
   border-radius: 20px;
-`
+`;
 
 const DivBoxRowSC = styled.div`
-    width: 100%;
-`
+  width: 100%;
+`;
 
 const InputFullWidthSC = styled.input`
   display: flex;
@@ -207,12 +216,12 @@ const InputFullWidthSC = styled.input`
   width: 93%;
   height: 56px;
   left: 0px;
-  top: calc(50% - 56px/2 - 140px);
+  top: calc(50% - 56px / 2 - 140px);
 
   border: 2px solid rgba(37, 128, 57, 0.7);
   box-sizing: border-box;
   border-radius: 20px;
-`
+`;
 
 const ButtonSC = styled.button`
   display: flex;
@@ -224,8 +233,8 @@ const ButtonSC = styled.button`
   //position: absolute;
   width: 514px;
   height: 56px;
-  left: calc(50% - 514px/2);
-  top: calc(50% - 56px/2 + 213px);
+  left: calc(50% - 514px / 2);
+  top: calc(50% - 56px / 2 + 213px);
 
   background: #258039;
   border-radius: 20px;
@@ -233,32 +242,30 @@ const ButtonSC = styled.button`
   color: #fff;
   margin-top: 35px;
   text-transform: capitalize;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   /* identical to box height */
   text-align: center;
-
-`
+`;
 
 const DivBoxTextSC = styled.div`
   margin-top: 35px;
-`
+`;
 
 const SpanQuSC = styled.span`
   color: rgba(37, 37, 37, 0.7);
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  
-`
+`;
 
 const LinkSC = styled.a`
-    color: #258039;
-`
+  color: #258039;
+`;
 
 export default Registration;

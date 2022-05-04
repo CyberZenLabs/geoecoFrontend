@@ -270,7 +270,7 @@ const InputSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
 
-  border: 2px solid rgba(37, 128, 57, 0.7);
+  border: 2px solid var(--main-color);
   box-sizing: border-box;
   border-radius: 20px;
 `;
@@ -291,7 +291,7 @@ const InputFullWidthSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
 
-  border: 2px solid rgba(37, 128, 57, 0.7);
+  border: 2px solid var(--main-color);
   box-sizing: border-box;
   border-radius: 20px;
 `;
@@ -309,10 +309,10 @@ const ButtonSC = styled.button`
   left: calc(50% - 514px / 2);
   top: calc(50% - 56px / 2 + 213px);
 
-  background: #258039;
+  background: var(--green-color);
   border-radius: 20px;
   border: none;
-  color: #fff;
+  color: var(--white-color);
   margin-top: 20px;
   text-transform: capitalize;
   font-family: "Montserrat";
@@ -339,7 +339,7 @@ const SpanQuSC = styled.span`
 `;
 
 const LinkSC = styled.a`
-  color: #258039;
+  color: var(--green-color);
 `;
 
 const DivBoxFormSC = styled.div`
@@ -351,7 +351,7 @@ const DivBoxFormSC = styled.div`
 const DivBoxBoxFormSC = styled.div`
   width: 1620px;
   padding: 50px;
-  background: #fff;
+  background: var(--white-color);
   border-radius: 30px;
   height: fit-content;
   display: grid;

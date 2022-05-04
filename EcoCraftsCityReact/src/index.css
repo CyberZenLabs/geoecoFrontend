@@ -31,6 +31,7 @@ html {
 }
 
 :root {
-  --main-color: hotpink;
-  --pane-padding: 5px 42px;
+  --main-color: rgba(37, 128, 57, 0.7);
+  --green-color: #258039;
+  --white-color: #fff;
 }

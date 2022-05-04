@@ -31,8 +31,8 @@ html {
 }
 
 :root {
-  --main-color: rgba(37, 128, 57, 0.7);
-  --green-color: #258039;
+  --main-color: rgba(133, 203, 51, 0.7);
+  --green-color:#85CB33;
   --white-color: #fff;
   --root-font-family: "Montserrat";
 }

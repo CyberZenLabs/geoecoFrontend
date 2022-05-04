@@ -368,11 +368,11 @@ const DivBoxBoxFormSC = styled.div`
   display: grid;
   grid-template-columns: 522px auto;
   position: relative;
-  width: 1170px;
+  width: 1470px;
   background: url(${image2}) no-repeat;
   background-color: var(--white-color);
-  background-position: right;
-  background-size: contain;
+  background-position: right 205px bottom;
+  background-size: 620px;
   //height: 680px;
 `;
 

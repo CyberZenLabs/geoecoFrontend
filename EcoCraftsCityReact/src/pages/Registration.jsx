@@ -33,8 +33,9 @@ const Registration = (props) => {
     const [password, getPassword] = useState("");
 
     const onChange = (callback) => (e) => {
-        callback(e.target.value)
+        callback(e.target.value);
     };
+
 
     const handleSubmit = () => {
         axiosFetch({
@@ -42,16 +43,14 @@ const Registration = (props) => {
             method: "POST",
             url: `/api/v1/users/signup`,
             requestConfig: {
-                data: JSON.stringify(
-                    {
-                        firstName: "Kirdфыцйцвсфмz",
-                        lastName: "Kadcфйцывсфымdad",
-                        email: "kirdroasdфыыйфывмфсcv7z@gmail.com",
-                        password: "asdfasdf",
-                        passwordConfirm: "asdfasdf"
+                data: {
+                    firstName: "Kirdфыцйsdцвсфмz",
+                    lastName: "Kadcфйцыewвсфымdad",
+                    email: "kirdroasdфыewыйфывмфсcv7z@gmail.com",
+                    password: "asdfasdfe",
+                    passwordConfirm: "asdfasdfe"
 
-                    }
-                )
+                }
             }
         })
 
@@ -131,6 +130,7 @@ const Registration = (props) => {
             </DivBoxRowsSC>
         </Container>
     );
+
 };
 
 const H4Title = styled.h4`

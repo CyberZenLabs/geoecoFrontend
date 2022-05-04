@@ -15,7 +15,7 @@ import {useCookies} from "react-cookie";
 import image from "../img/backgroundwood.svg";
 import image2 from "../img/wood.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCoffee} from "@fortawesome/free-solid-svg-icons";
+import {faCoffee, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -165,16 +165,14 @@ const Registration = (props) => {
                                         confirmPass !== password
                                     }
                                 >
-                                    продолжить
-                                    <FontAwesomeIcon icon="fa-solid fa-arrow-right"/>
-                                    <FontAwesomeIcon icon="coffee"/>
+                                    продолжить&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                                 </ButtonSC>
                             </DivBoxRowSC>
                             <DivBoxRowSC>
                                 <DivBoxTextSC>
                                     <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
                                     <LinkSC href="">
-                                        Войти <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
+                                        Войти
                                     </LinkSC>
                                 </DivBoxTextSC>
                             </DivBoxRowSC>

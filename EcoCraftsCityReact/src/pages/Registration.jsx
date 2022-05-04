@@ -5,13 +5,15 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import {Style} from "@mui/icons-material";
 import useAxiosFunction from "../hooks/useAxiosFunction";
 import axios from "../apis/admin-rest";
 import hostName from "../tools/HostName";
 // const axios = require("axios");
-import { useCookies } from 'react-cookie';
+import {useCookies} from 'react-cookie';
+import image from '../img/backgroundForm.svg'
+import image2 from '../img/woodAndPeaples.svg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,11 +45,10 @@ const Registration = (props) => {
     useEffect(() => {
 
         if (response.length === 0) {
-            if (error !== ''){
+            if (error !== '') {
                 setOpenError(true)
             }
-        }
-        else {
+        } else {
             console.log('>>>>>>>>>', response.token)
             setCookie('token', response.token)
             setOpen(true)
@@ -87,101 +88,118 @@ const Registration = (props) => {
     };
 
     return (
-        <Container maxWidth="sm">
-            <H4Title>Регистрация</H4Title>
-            <DivBoxRowsSC>
-                <DivBoxColumnsSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="name">Имя</LabelSC>
-                        <InputSC
-                            value={firstName}
-                            onChange={onChange(getFirstName)}
-                            type="text"
-                            id={'name'}
-                        />
-                    </DivBoxSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="lastName">Фамилия</LabelSC>
-                        <InputSC
-                            value={lastName}
-                            onChange={onChange(getLastName)}
-                            type="text"
-                            id={'lastName'}
-                        />
-                    </DivBoxSC>
-                </DivBoxColumnsSC>
-                <DivBoxRowSC>
-                    <LabelSC htmlFor="email">Электронная почта</LabelSC>
-                    <InputFullWidthSC
-                        value={email}
-                        type="text"
-                        onChange={onChange(getEmail)}
-                        id={'email'}
-                    />
-                </DivBoxRowSC>
-                <DivBoxColumnsSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="pass">Пароль</LabelSC>
-                        <InputSC
-                            value={password}
-                            type="password"
-                            onChange={onChange(getPassword)}
-                            id={'pass'}
-                        />
-                    </DivBoxSC>
-                    <DivBoxSC>
-                        <LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>
-                        <InputSC
-                            value={confirmPass}
-                            onChange={onChange(getConfirmPass)}
-                            type="password"
-                            id={'confirmedPass'}
-                        />
-                    </DivBoxSC>
-                </DivBoxColumnsSC>
-                <DivBoxRowSC>
-                    <ButtonSC
-                        onClick={handleSubmit}
-                        disabled={firstName === '' || lastName === '' || confirmPass === ''
-                            || email === '' || password === ''}
-                        statusOpasity={firstName === '' || lastName === '' || confirmPass === ''
-                            || email === '' || password === '' || confirmPass !== password}
-                    >
-                        дальше
-                    </ButtonSC>
-                </DivBoxRowSC>
-                <DivBoxRowSC>
-                    <DivBoxTextSC>
-                        <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                        <a href="">Войти</a>
-                    </DivBoxTextSC>
-                </DivBoxRowSC>
-            </DivBoxRowsSC>
-            <Snackbar
-                open={open}
-                autoHideDuration={6000}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                }}
-            >
-                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                    Данные сохранились успешно
-                </Alert>
-            </Snackbar>
-            <Snackbar
-                open={openError}
-                autoHideDuration={6000}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                }}
-            >
-                <Alert onClose={handleClose} severity="error">{error}</Alert>
-            </Snackbar>
-        </Container>
+        <DivRegSC>
+            <DivBackgroundFormSC>
+                <DivBoxBoxFormSC>
+                    <DivBoxFormSC>
+                        <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
+                        <SpanSC>Введите свои данные для регистрации</SpanSC>
+                        <DivBoxRowsSC>
+                            <DivBoxColumnsSC>
+                                <DivBoxSC>
+                                    {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
+                                    <InputSC
+                                        value={firstName}
+                                        onChange={onChange(getFirstName)}
+                                        type="text"
+                                        id={'name'}
+                                        placeholder={'Имя'}
+                                    />
+                                </DivBoxSC>
+                                <DivBoxSC>
+                                    {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
+                                    <InputSC
+                                        value={lastName}
+                                        onChange={onChange(getLastName)}
+                                        type="text"
+                                        id={'lastName'}
+                                        placeholder={'Фамилия'}
+                                    />
+                                </DivBoxSC>
+                            </DivBoxColumnsSC>
+                            <DivBoxRowSC>
+                                {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
+                                <InputFullWidthSC
+                                    value={email}
+                                    type="text"
+                                    onChange={onChange(getEmail)}
+                                    id={'email'}
+                                    placeholder={'Электронная почта'}
+                                />
+                            </DivBoxRowSC>
+                            <DivBoxColumnsSC>
+                                <DivBoxSC>
+                                    {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                                    <InputSC
+                                        value={password}
+                                        type="password"
+                                        onChange={onChange(getPassword)}
+                                        id={'pass'}
+                                        placeholder={'Пароль'}
+                                    />
+                                </DivBoxSC>
+                                <DivBoxSC>
+                                    {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
+                                    <InputSC
+                                        value={confirmPass}
+                                        onChange={onChange(getConfirmPass)}
+                                        type="password"
+                                        id={'confirmedPass'}
+                                        placeholder={'Подтвердить пароль'}
+                                    />
+                                </DivBoxSC>
+                            </DivBoxColumnsSC>
+                            <DivBoxRowSC>
+                                <ButtonSC
+                                    onClick={handleSubmit}
+                                    disabled={firstName === '' || lastName === '' || confirmPass === ''
+                                        || email === '' || password === ''}
+                                    statusOpasity={firstName === '' || lastName === '' || confirmPass === ''
+                                        || email === '' || password === '' || confirmPass !== password}
+                                >
+                                    дальше
+                                </ButtonSC>
+                            </DivBoxRowSC>
+                            <DivBoxRowSC>
+                                <DivBoxTextSC>
+                                    <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
+                                    <a href="">Войти</a>
+                                </DivBoxTextSC>
+                            </DivBoxRowSC>
+                        </DivBoxRowsSC>
+                        <Snackbar
+                            open={open}
+                            autoHideDuration={6000}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right',
+                            }}
+                        >
+                            <Alert onClose={handleClose} severity="success" sx={{width: '100%'}}>
+                                Данные сохранились успешно
+                            </Alert>
+                        </Snackbar>
+                        <Snackbar
+                            open={openError}
+                            autoHideDuration={6000}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right',
+                            }}
+                        >
+                            <Alert onClose={handleClose} severity="error">{error}</Alert>
+                        </Snackbar>
+                    </DivBoxFormSC>
+                    <DivBackgroundPeopleSC>
+
+                    </DivBackgroundPeopleSC>
+                </DivBoxBoxFormSC>
+            </DivBackgroundFormSC>
+
+
+        </DivRegSC>
     );
 
 };
@@ -196,10 +214,11 @@ const H4Title = styled.h4`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 42px;
   line-height: 59px;
+  margin: 35px 0;
   /* identical to box height */
-
+  margin-top: 16px;
   color: #252525;
   //text-align: center;
 `;
@@ -232,7 +251,7 @@ const DivBoxSC = styled.div`
 
 const DivBoxRowsSC = styled.div`
   display: grid;
-  grid-template-rows: 112px 112px 112px 112px 112px;
+  grid-template-rows: 85px 85px 85px 85px 85px;
 `;
 const DivBoxColumnsSC = styled.div`
   display: grid;
@@ -294,7 +313,7 @@ const ButtonSC = styled.button`
   border-radius: 20px;
   border: none;
   color: #fff;
-  margin-top: 35px;
+  margin-top: 20px;
   text-transform: capitalize;
   font-family: "Montserrat";
   font-style: normal;
@@ -322,5 +341,51 @@ const SpanQuSC = styled.span`
 const LinkSC = styled.a`
   color: #258039;
 `;
+
+const DivBoxFormSC = styled.div`
+  width: 552px;
+  //height: 680px;
+  
+`
+
+const DivBoxBoxFormSC = styled.div`
+  width: 1620px;
+  padding: 50px;
+  background: #fff;
+  border-radius: 30px;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  //height: 680px;
+`
+
+const DivBackgroundFormSC = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  justify-items: center;
+  overflow: auto;
+  
+  //padding: 50px 0;
+`
+
+const SpanSC = styled.span`
+  margin-bottom: 20px;
+  display: inline-block;
+`
+const DivRegSC = styled.div`
+  height: calc(100% - 64px);
+  overflow: auto;
+  background: url(${image});
+  display: grid;
+  align-items: center;
+`
+
+const DivBackgroundPeopleSC = styled.div`
+  position: absolute;
+  background: url(${image2});
+  
+`
 
 export default Registration;

@@ -11,3 +11,26 @@
 .input {
   margin-bottom:20px;
 }
+
+span {
+  font-family: "Montserrat";
+}
+
+body {
+  display: block;
+  margin: 0px;
+  height: 100%;
+}
+
+html {
+  height: 100%
+}
+
+#root {
+  height: 100%
+}
+
+:root {
+  --main-color: hotpink;
+  --pane-padding: 5px 42px;
+}

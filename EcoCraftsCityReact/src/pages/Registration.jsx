@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import React, {useState, useEffect} from "react";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
 import styled from "styled-components";
@@ -11,6 +11,7 @@ import useAxiosFunction from "../hooks/useAxiosFunction";
 import axios from "../apis/admin-rest";
 import hostName from "../tools/HostName";
 // const axios = require("axios");
+import { useCookies } from 'react-cookie';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const Registration = (props) => {
     const [response, error, loading, axiosFetch] = useAxiosFunction();
 
@@ -31,6 +36,24 @@ const Registration = (props) => {
     const [confirmPass, getConfirmPass] = useState("");
     const [email, getEmail] = useState("");
     const [password, getPassword] = useState("");
+    const [open, setOpen] = useState(false)
+    const [openError, setOpenError] = useState(false)
+    const [cookies, setCookie, removeCookie] = useCookies(['token']);
+
+    useEffect(() => {
+
+        if (response.length === 0) {
+            if (error !== ''){
+                setOpenError(true)
+            }
+        }
+        else {
+            console.log('>>>>>>>>>', response.token)
+            setCookie('token', response.token)
+            setOpen(true)
+
+        }
+    }, [response, error])
 
     const onChange = (callback) => (e) => {
         callback(e.target.value);
@@ -43,20 +66,26 @@ const Registration = (props) => {
             method: "POST",
             url: `/api/v1/users/signup`,
             requestConfig: {
-                data: {
-                    firstName: "Kirdфыцйsdцвсфмz",
-                    lastName: "Kadcфйцыewвсфымdad",
-                    email: "kirdroasdфыewыйфывмфсcv7z@gmail.com",
-                    password: "asdfasdfe",
-                    passwordConfirm: "asdfasdfe"
-
-                }
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                passwordConfirm: confirmPass
             }
         })
 
 
     }
-    console.log('>>>>>>>>>', response)
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+        setOpenError(false)
+    };
+
     return (
         <Container maxWidth="sm">
             <H4Title>Регистрация</H4Title>
@@ -116,7 +145,7 @@ const Registration = (props) => {
                         disabled={firstName === '' || lastName === '' || confirmPass === ''
                             || email === '' || password === ''}
                         statusOpasity={firstName === '' || lastName === '' || confirmPass === ''
-                            || email === '' || password === ''}
+                            || email === '' || password === '' || confirmPass !== password}
                     >
                         дальше
                     </ButtonSC>
@@ -128,6 +157,30 @@ const Registration = (props) => {
                     </DivBoxTextSC>
                 </DivBoxRowSC>
             </DivBoxRowsSC>
+            <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                }}
+            >
+                <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    Данные сохранились успешно
+                </Alert>
+            </Snackbar>
+            <Snackbar
+                open={openError}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                }}
+            >
+                <Alert onClose={handleClose} severity="error">{error}</Alert>
+            </Snackbar>
         </Container>
     );
 

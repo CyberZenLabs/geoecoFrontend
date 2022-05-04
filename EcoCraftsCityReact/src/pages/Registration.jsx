@@ -112,7 +112,13 @@ const Registration = (props) => {
                     </DivBoxSC>
                 </DivBoxColumnsSC>
                 <DivBoxRowSC>
-                    <ButtonSC onClick={handleSubmit}>
+                    <ButtonSC
+                        onClick={handleSubmit}
+                        disabled={firstName === '' || lastName === '' || confirmPass === ''
+                            || email === '' || password === ''}
+                        statusOpasity={firstName === '' || lastName === '' || confirmPass === ''
+                            || email === '' || password === ''}
+                    >
                         дальше
                     </ButtonSC>
                 </DivBoxRowSC>
@@ -244,6 +250,7 @@ const ButtonSC = styled.button`
   line-height: 20px;
   /* identical to box height */
   text-align: center;
+  opacity: ${p => p.statusOpasity ? 0.5 : 1};
 `;
 
 const DivBoxTextSC = styled.div`

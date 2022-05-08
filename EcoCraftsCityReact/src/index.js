@@ -15,6 +15,7 @@ import ProductDetail from './pages/ProductDetail';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminForm from "./pages/AdminForm";
 import Registration from "./pages/Registration";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,6 +34,7 @@ root.render(
                 <Route path="product:id" element={<ProductDetail/>}/>
             </Routes>
 
+            <Footer/>
         </BrowserRouter>
 
     </React.StrictMode>

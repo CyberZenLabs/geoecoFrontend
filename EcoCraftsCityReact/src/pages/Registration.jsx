@@ -382,7 +382,7 @@ const DivBackgroundFormSC = styled.div`
   height: fit-content;
   display: grid;
   justify-items: center;
-  overflow: auto;
+  //overflow: auto;
 `;
 
 const SpanSC = styled.span`
@@ -390,12 +390,15 @@ const SpanSC = styled.span`
   display: inline-block;
 `;
 const DivRegSC = styled.div`
-  height: calc(100% - 64px);
-  overflow: auto;
+  //height: calc(100% - 64px);
+  //overflow: auto;
   background: url(${image});
   display: grid;
   align-items: center;
   //padding: 0 150px 0px 200px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  min-height: 900px;
 `;
 
 const DivBackgroundPeopleSC = styled.div`

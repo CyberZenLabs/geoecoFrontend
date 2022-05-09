@@ -13,7 +13,7 @@
 }
 
 span {
-  font-family: "Montserrat";
+  font-family: var(--root-font-family);
 }
 
 body {
@@ -35,4 +35,5 @@ html {
   --green-color:#85CB33;
   --white-color: #fff;
   --root-font-family: "Montserrat";
+  --color-black: #000000;
 }

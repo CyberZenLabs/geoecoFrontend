@@ -6,6 +6,8 @@ import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 
+var string = 'ECOCRAFTCIRY'
+
 const Footer = () => {
     return (
         <DivBoxFooterSC>
@@ -137,6 +139,8 @@ const SpanTitleSC = styled.span`
 const SpanFooterSC = styled.span`
     font-size: 14px;
 `
+
+
 
 
 

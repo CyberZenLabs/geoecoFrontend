@@ -1,22 +1,7 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import image from '../img/logo.svg'
 import styled from "styled-components/macro";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
 import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul';
 import UilSearch from '@iconscout/react-unicons/icons/uil-search';
 import UilUser from '@iconscout/react-unicons/icons/uil-user';
@@ -47,8 +32,6 @@ const ResponsiveAppBar = () => {
         <DivBoxHeaderSC>
             <DivHeaderSC>
                 <DivBoxLogoSC>
-
-
                 </DivBoxLogoSC>
 
                 <DivCatalogAndSearchBoxSC>
@@ -84,14 +67,12 @@ const ResponsiveAppBar = () => {
                                     size="40"
                                     // color="#61DAFB"
                                 />
-                                {/*&nbsp;&nbsp;*/}
                                 <span>
                                     Каталог
                                 </span>
 
                             </BoxContentButton>
 
-                            {/*<FontAwesomeIcon icon={faBars}></FontAwesomeIcon>&nbsp;&nbsp;Каталог*/}
                         </ButtonSC>
                         <DivInputBoxCS>
                             <InputSC

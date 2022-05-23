@@ -1,23 +1,11 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import image from '../img/logo.svg'
 import styled from "styled-components/macro";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul'
+import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul';
+import UilSearch from '@iconscout/react-unicons/icons/uil-search';
+import UilUser from '@iconscout/react-unicons/icons/uil-user';
+import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -44,8 +32,6 @@ const ResponsiveAppBar = () => {
         <DivBoxHeaderSC>
             <DivHeaderSC>
                 <DivBoxLogoSC>
-
-
                 </DivBoxLogoSC>
 
                 <DivCatalogAndSearchBoxSC>
@@ -81,23 +67,27 @@ const ResponsiveAppBar = () => {
                                     size="40"
                                     // color="#61DAFB"
                                 />
-                                {/*&nbsp;&nbsp;*/}
                                 <span>
                                     Каталог
                                 </span>
 
                             </BoxContentButton>
 
-                            {/*<FontAwesomeIcon icon={faBars}></FontAwesomeIcon>&nbsp;&nbsp;Каталог*/}
                         </ButtonSC>
                         <DivInputBoxCS>
                             <InputSC
                                 // value={lastName}
                                 // onChange={onChange(getLastName)}
                                 type="text"
-                                id={"lastName"}
+                                id={"search"}
                                 placeholder={"Я ищу..."}
                             />
+                            <DivIconBoxInput>
+                                <UilSearch
+                                    size="25"
+                                    color="rgba(37, 37, 37, 0.7)"
+                                />
+                            </DivIconBoxInput>
                         </DivInputBoxCS>
 
                     </DivBoxButtonAndInputSC>
@@ -105,6 +95,32 @@ const ResponsiveAppBar = () => {
                 </DivCatalogAndSearchBoxSC>
                 <DivBoxIconHeaderSC>
 
+                    <DivBoxIconSC>
+                        <LinkIconSC to="/">
+                            <DivBoxIconEndSC>
+                                <UilUser
+                                    size="35"
+                                    color="rgba(37, 37, 37, 0.8)"
+                                />
+                            </DivBoxIconEndSC>
+
+                            <SpanEndHeaderSC>
+                                Войти
+                            </SpanEndHeaderSC>
+                        </LinkIconSC>
+                        <LinkIconSC to="/">
+                            <DivBoxIconEndSC>
+                                <UilShoppingCart
+                                    size="35"
+                                    color="rgba(37, 37, 37, 0.8)"
+                                />
+                            </DivBoxIconEndSC>
+
+                            <SpanEndHeaderSC>
+                                Корзина
+                            </SpanEndHeaderSC>
+                        </LinkIconSC>
+                    </DivBoxIconSC>
                 </DivBoxIconHeaderSC>
             </DivHeaderSC>
         </DivBoxHeaderSC>
@@ -127,6 +143,7 @@ const DivBoxHeaderSC = styled.div`
   height: 119px;
   display: grid;
   justify-items: center;
+  margin-top: 10px;
 `;
 
 const DivHeaderSC = styled.div`
@@ -182,8 +199,15 @@ const DivBoxButtonAndInputSC = styled.div`
 `;
 
 const DivBoxIconHeaderSC = styled.div`
-    
+    display: grid;
+  justify-items: center;
 `;
+
+const DivBoxIconSC = styled.div`
+    display: grid;
+  grid-template-columns: 50% 50%;
+  width: 200px;
+`
 
 const ButtonSC = styled.button`
   //display: flex;
@@ -236,12 +260,50 @@ const InputSC = styled.input`
   border: 2px solid var(--main-color);
   box-sizing: border-box;
   border-radius: 20px;
+  ::placeholder {
+    font-size: var(--font-size-icon-text);
+  }
 `;
 
 const DivInputBoxCS = styled.div`
   display: grid;
     width: auto;
   position: relative;
+`;
+
+const DivIconBoxInput = styled.div`
+    position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+`;
+
+const LinkIconSC = styled(Link)`
+    //display: inline-block;
+  font-size: 12px;
+  font-family: var(--root-font-family);
+  border-radius: 50px;
+  //background: rgba(133, 203, 51, 0.25);
+  width: fit-content;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: var(--color-black);
+  display: grid;
+  grid-template-rows: 50% 50%;
+  
+`;
+
+const DivBoxIconEndSC = styled.div`
+    display: grid;
+  align-items: end;
+  justify-items: center;
+`;
+
+const SpanEndHeaderSC = styled.span`
+    display: grid;
+  align-items: start;
+  color: rgba(37, 37, 37, 0.8);
+  font-size: var(--font-size-icon-text);
 `
 
 export default ResponsiveAppBar;

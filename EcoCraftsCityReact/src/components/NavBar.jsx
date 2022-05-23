@@ -12,130 +12,73 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
+import image from '../img/logo.svg'
+import styled from "styled-components/macro";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebook, faInstagram, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            LOGO
-          </Typography>
+    return (
+        <DivBoxHeaderSC>
+            <DivHeaderSC>
+                <DivBoxLogoSC>
+                    {/*<DivBoxSocSC>*/}
+                    {/*    <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>*/}
+                    {/*    <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>*/}
+                    {/*    <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>*/}
+                    {/*</DivBoxSocSC>*/}
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-             
-             
-              
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to="/admin-portal">Admin Portal</Link></Typography>
-                </MenuItem>
-                
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to="/">Home</Link></Typography>
-                </MenuItem>
-                
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to="/cart">Cart</Link></Typography>
-                </MenuItem>
-            
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+                </DivBoxLogoSC>
+            </DivHeaderSC>
+        </DivBoxHeaderSC>
+    );
 };
+
+const DivBoxLogoSC = styled.div`
+  background-image: url(${image});
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 116px;
+  width: 80px;
+  background-size: 80px;
+  display: grid;
+  align-items: end;
+`;
+
+const DivBoxHeaderSC = styled.div`
+    width: 100%;
+  height: 119px;
+  display: grid;
+  justify-items: center;
+`;
+
+const DivHeaderSC = styled.div`
+    max-width: 1420px;
+  width: inherit;
+  height: 100%;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+`
+
 export default ResponsiveAppBar;

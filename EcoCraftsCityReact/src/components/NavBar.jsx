@@ -25,7 +25,7 @@ import {
     LinkIconSC,
     DivBoxIconEndSC,
     SpanEndHeaderSC
-} from '../styles/navBarStyles'
+} from '../styled-components-css/styles.navbar.jsx'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

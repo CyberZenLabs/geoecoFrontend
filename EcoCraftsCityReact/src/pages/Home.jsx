@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
+import Carousel from "../components/Carousel";
+import ProductCard from "../components/ProductCard";
+import StarRating from "../components/StarRating";
+import { SliderData } from "../utils/sliderData";
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <Carousel slides={SliderData} />
+      <ProductCard />
+    </>
+  );
+};
 
-export default Home
+export default Home;

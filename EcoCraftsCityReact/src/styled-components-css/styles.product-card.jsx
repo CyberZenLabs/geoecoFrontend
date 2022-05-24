@@ -1,0 +1,90 @@
+import styled from "styled-components/macro";
+
+export const ProductCardContainer = styled.div`
+  width: 337px;
+  height: 597px;
+  display: grid;
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
+  padding-bottom: 20px;
+`;
+
+export const ProductCardImage = styled.img`
+  width: 283px;
+  height: 283px;
+  padding-top: 26px;
+  justify-self: center;
+`;
+
+export const ProductCardPrice = styled.h3`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+
+  /* identical to box height */
+  padding: 0 27px;
+  text-align: center;
+  justify-self: start;
+  /* Вторичный */
+
+  color: #252525;
+`;
+
+export const ProductCardName = styled.h4`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+
+  /* identical to box height */
+  padding: 0 27px;
+  text-align: center;
+  justify-self: start;
+  /* Вторичный 80% */
+
+  color: rgba(37, 37, 37, 0.8);
+`;
+
+export const ProductCardStoreName = styled.h5`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  padding: 0 27px;
+  color: #cbcbcb;
+  justify-self: start;
+`;
+export const ProductCardButton = styled.button`
+  /* Кнопка (первичная) */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+  /* Акцент */
+
+  background: #85cb33;
+  border-radius: 20px;
+  width: 283px;
+  justify-self: center;
+  border-radius: 15px;
+  border: none;
+`;

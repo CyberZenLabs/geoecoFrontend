@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from "react";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import Container from "@material-ui/core/Container";
-import {makeStyles} from "@material-ui/core/styles";
+
+
 import styled from "styled-components/macro";
-import {Style} from "@mui/icons-material";
+
 import useAxiosFunction from "../hooks/useAxiosFunction";
 import axios from "../apis/admin-rest";
 import hostName from "../tools/HostName";
@@ -17,15 +16,15 @@ import image2 from "../img/wood.svg";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCoffee, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        // paddingTop: '20px',
-        "& .MuiTextField-root": {
-            margin: theme.spacing(1),
-            width: "25ch",
-        },
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         // paddingTop: '20px',
+//         "& .MuiTextField-root": {
+//             margin: theme.spacing(1),
+//             width: "25ch",
+//         },
+//     },
+// }));
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -34,7 +33,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const Registration = (props) => {
     const [response, error, loading, axiosFetch] = useAxiosFunction();
 
-    const classes = useStyles();
+
     const [firstName, getFirstName] = useState("");
     const [lastName, getLastName] = useState("");
     const [confirmPass, getConfirmPass] = useState("");

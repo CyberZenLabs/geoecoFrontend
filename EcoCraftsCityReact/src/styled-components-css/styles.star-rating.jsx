@@ -9,5 +9,5 @@ export const StarRadio = styled.input`
   display: none;
 `;
 export const StarWrap = styled.div`
-  padding: ${(props) => (props.product ? "0 22px" : null)};
+  padding: ${(props) => (props.product ? "0 27px" : null)};
 `;

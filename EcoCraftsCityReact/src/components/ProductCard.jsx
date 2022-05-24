@@ -13,11 +13,11 @@ const ProductCard = () => {
   return (
     <ProductCardContainer>
       <ProductCardImage src="/default-images/plant.jpg" />
-      <ProductCardPrice>123</ProductCardPrice>
-      <ProductCardName>Ascnana a</ProductCardName>
+      <ProductCardPrice>777$</ProductCardPrice>
+      <ProductCardName>Росток на посадку</ProductCardName>
       <StarRating product={true} />
-      <ProductCardStoreName>askn ansk an</ProductCardStoreName>
-      <ProductCardButton>asmxa amck</ProductCardButton>
+      <ProductCardStoreName>Мой Огород</ProductCardStoreName>
+      <ProductCardButton>Посмортеть</ProductCardButton>
     </ProductCardContainer>
   );
 };

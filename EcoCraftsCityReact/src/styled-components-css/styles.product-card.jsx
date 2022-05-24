@@ -1,12 +1,21 @@
 import styled from "styled-components/macro";
 
+export const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 337px);
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+`;
+
 export const ProductCardContainer = styled.div`
   width: 337px;
   height: 597px;
   display: grid;
+  grid-template-rows: 329px 37px 35px 38px 69px 63px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
-  padding-bottom: 20px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 `;
 
 export const ProductCardImage = styled.img`

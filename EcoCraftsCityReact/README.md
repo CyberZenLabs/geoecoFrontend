@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### ButtonCustomSC Компонент
+
+```js
+<ButtonCustomSC></ButtonCustomSC>
+```
+
+Кастомная кнопка сделаная на ```styled-components```
+
+Находжится в ```/styled-components-css/styles.custom-button.js```
+
+```props```
+
+| props name    | props type | example value |
+|---------------|------------|---------------|
+| statusOpasity | Bool       | true, false   |
+| padding       | string     | '8px 32px'    |
+| width         | string     | '176px'       |

@@ -25,7 +25,8 @@ import {
     LinkIconSC,
     DivBoxIconEndSC,
     SpanEndHeaderSC
-} from '../styled-components-css/styles.navbar.jsx'
+} from '../styled-components-css/styles.navbar'
+import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -64,25 +65,13 @@ const ResponsiveAppBar = () => {
                         </SpanSecondSC>
                     </DivTextBoxSC>
                     <DivBoxButtonAndInputSC>
-                        <ButtonSC
-                            // onClick={handleSubmit}
-                            // disabled={
-                            //     firstName === "" ||
-                            //     lastName === "" ||
-                            //     confirmPass === "" ||
-                            //     email === "" ||
-                            //     password === ""
-                            // }
-                            // statusOpasity={
-                            //     firstName === "" ||
-                            //     lastName === "" ||
-                            //     confirmPass === "" ||
-                            //     email === "" ||
-                            //     password === "" ||
-                            //     confirmPass !== password
-                            // }
+                        <ButtonCustomSC
+                            width={'176px'}
+                            padding={'8px 32px'}
                         >
-                            <BoxContentButton>
+                            <BoxContentButton
+
+                            >
                                 <UilListUl
                                     size="40"
                                     // color="#61DAFB"
@@ -92,8 +81,8 @@ const ResponsiveAppBar = () => {
                                 </span>
 
                             </BoxContentButton>
+                        </ButtonCustomSC>
 
-                        </ButtonSC>
                         <DivInputBoxCS>
                             <InputSC
                                 // value={lastName}

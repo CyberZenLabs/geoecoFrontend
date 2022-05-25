@@ -94,8 +94,8 @@ export const ButtonSC = styled.button`
   //position: absolute;
   width: 176px;
   height: 56px;
-  left: calc(50% - 514px / 2);
-  top: calc(50% - 56px / 2 + 213px);
+  //left: calc(50% - 514px / 2);
+  //top: calc(50% - 56px / 2 + 213px);
 
   background: var(--green-color);
   border-radius: 20px;

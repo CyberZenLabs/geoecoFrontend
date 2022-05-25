@@ -75,7 +75,7 @@ export const DivBoxButtonAndInputSC = styled.div`
 
 export const DivBoxIconHeaderSC = styled.div`
     display: grid;
-  justify-items: center;
+  justify-items: end;
 `;
 
 export const DivBoxIconSC = styled.div`

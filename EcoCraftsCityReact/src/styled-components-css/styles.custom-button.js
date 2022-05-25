@@ -6,8 +6,21 @@ export const ButtonCustomSC = styled.button`
   ${(p) => (p.width !== undefined ? 
   `width:${p.width};` : null)}
   height: 56px;
-
-
+  ${(p) => (p.statusOpasity === undefined ?
+      `:hover{
+          background: var(--green-color-hover);
+        }
+        :active{
+          background: var(--green-color-active);
+        }` :
+      p.statusOpasity ? null :
+          `:hover{
+          background: var(--green-color-hover);
+        }
+        :active{
+          background: var(--green-color-active);
+        }` 
+  ) }
   background: var(--green-color);
   border-radius: 20px;
   border: none;

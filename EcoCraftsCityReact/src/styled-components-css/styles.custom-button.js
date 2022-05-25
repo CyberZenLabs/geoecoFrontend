@@ -22,6 +22,7 @@ export const ButtonCustomSC = styled.button`
         }` 
   ) }
   background: var(--green-color);
+  //background: #85CB33FF;
   border-radius: 20px;
   border: none;
   color: var(--white-color);

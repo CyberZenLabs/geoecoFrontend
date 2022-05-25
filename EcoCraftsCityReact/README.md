@@ -87,3 +87,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 | statusOpasity | Bool       | true, false   |
 | padding       | string     | '8px 32px'    |
 | width         | string     | '176px'       |
+
+
+### Запуск storybook
+npm run storybook

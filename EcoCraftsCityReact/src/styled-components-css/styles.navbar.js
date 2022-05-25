@@ -75,7 +75,7 @@ export const DivBoxButtonAndInputSC = styled.div`
 
 export const DivBoxIconHeaderSC = styled.div`
     display: grid;
-  justify-items: center;
+  justify-items: end;
 `;
 
 export const DivBoxIconSC = styled.div`
@@ -164,7 +164,7 @@ export const LinkIconSC = styled(Link)`
   text-decoration: none;
   color: var(--color-black);
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 56% 44%;
   
 `;
 

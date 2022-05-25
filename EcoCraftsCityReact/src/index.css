@@ -7,6 +7,8 @@
 :root {
   --main-color: rgba(133, 203, 51, 0.7);
   --green-color:#85CB33;
+  --green-color-hover:#7CBD2F;
+	--green-color-active:#76B42E;
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;

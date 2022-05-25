@@ -1,5 +1,20 @@
 import styled from "styled-components/macro";
 
+export const HomeContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 308px);
+  grid-template-rows: fit-content auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  grid-gap: 30px;
+  justify-content: space-evenly;
+  width: 85vw;
+  max-width: 1322px;
+  margin: auto;
+  position: relative;
+`;
+
 export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 307px);

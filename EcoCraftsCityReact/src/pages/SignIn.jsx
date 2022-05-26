@@ -96,28 +96,6 @@ const SignIn = (props) => {
             <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
             <SpanSC>Введите свои данные для регистрации</SpanSC>
             <DivBoxRowsSC>
-              <DivBoxColumnsSC>
-                <DivBoxSC>
-                  {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
-                  <InputSC
-                    value={firstName}
-                    onChange={onChange(getFirstName)}
-                    type="text"
-                    id={"name"}
-                    placeholder={"Имя"}
-                  />
-                </DivBoxSC>
-                <DivBoxSC>
-                  {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
-                  <InputSC
-                    value={lastName}
-                    onChange={onChange(getLastName)}
-                    type="text"
-                    id={"lastName"}
-                    placeholder={"Фамилия"}
-                  />
-                </DivBoxSC>
-              </DivBoxColumnsSC>
               <DivBoxRowSC>
                 {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
                 <InputFullWidthSC
@@ -128,25 +106,15 @@ const SignIn = (props) => {
                   placeholder={"Электронная почта"}
                 />
               </DivBoxRowSC>
-              <DivBoxColumnsSC>
+              <DivBoxColumnsSC full={true}>
                 <DivBoxSC>
                   {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
-                  <InputSC
+                  <InputFullWidthSC
                     value={password}
                     type="password"
                     onChange={onChange(getPassword)}
                     id={"pass"}
                     placeholder={"Пароль"}
-                  />
-                </DivBoxSC>
-                <DivBoxSC>
-                  {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
-                  <InputSC
-                    value={confirmPass}
-                    onChange={onChange(getConfirmPass)}
-                    type="password"
-                    id={"confirmedPass"}
-                    placeholder={"Подтвердить пароль"}
                   />
                 </DivBoxSC>
               </DivBoxColumnsSC>
@@ -197,8 +165,8 @@ const SignIn = (props) => {
               </DivBoxRowSC>
               <DivBoxRowSC>
                 <DivBoxTextSC>
-                  <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                  <LinkSC to="/signup">Войти</LinkSC>
+                  <SpanQuSC>Нет Аккаунта? </SpanQuSC>
+                  <LinkSC to="/signup">Регистрироватся</LinkSC>
                 </DivBoxTextSC>
               </DivBoxRowSC>
             </DivBoxRowsSC>

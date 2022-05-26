@@ -57,7 +57,7 @@ export const DivBoxRowsSC = styled.div`
 `;
 export const DivBoxColumnsSC = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: ${({ full }) => (full ? "100%" : "50% 50%")};
   @media (max-width: 643px) {
     display: block !important;
     width: 100%;

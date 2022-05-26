@@ -52,7 +52,7 @@ const ResponsiveAppBar = () => {
     return (
         <DivBoxHeaderSC>
             <DivHeaderSC>
-                <DivBoxLogoSC>
+                <DivBoxLogoSC to={'/'}>
                 </DivBoxLogoSC>
 
                 <DivCatalogAndSearchBoxSC>
@@ -68,6 +68,7 @@ const ResponsiveAppBar = () => {
                         <ButtonCustomSC
                             width={'176px'}
                             padding={'8px 32px'}
+                            primary
                         >
                             <BoxContentButton
 

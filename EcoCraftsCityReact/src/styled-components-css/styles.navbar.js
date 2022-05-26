@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import image from "../img/logo.svg";
 import {Link} from "react-router-dom";
 
-export const DivBoxLogoSC = styled.div`
+export const DivBoxLogoSC = styled(Link)`
   background-image: url(${image});
   background-repeat: no-repeat;
   background-position: center;
@@ -22,7 +22,7 @@ export const DivBoxHeaderSC = styled.div`
 `;
 
 export const DivHeaderSC = styled.div`
-    max-width: 1420px;
+    max-width: 1382px;
   width: inherit;
   height: 100%;
 

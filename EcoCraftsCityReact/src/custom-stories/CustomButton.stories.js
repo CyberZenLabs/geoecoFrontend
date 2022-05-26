@@ -14,7 +14,8 @@ export default {
     argTypes: {
         statusOpasity: false,
         width: '514px',
-        padding: '18px 32px'
+        padding: '18px 32px',
+        primary: true
     }
 };
 
@@ -26,7 +27,8 @@ export const Button = Template.bind({});
 Button.args = {
     statusOpasity: false,
     width: '514px',
-    padding: '18px 32px'
+    padding: '18px 32px',
+    primary: true
 };
 
 

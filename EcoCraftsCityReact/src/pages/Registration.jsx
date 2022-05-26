@@ -172,6 +172,7 @@ const Registration = (props) => {
                                     }
                                     width={'514px'}
                                     padding={'18px 32px'}
+                                    primary
                                 >
                                     продолжить&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                                 </ButtonCustomSC>

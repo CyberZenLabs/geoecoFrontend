@@ -21,7 +21,7 @@ const Catalog = () => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: "#252525" }}>
         <OverlayDivSc show={showCatalog} />
         <CatalogNavSc show={showCatalog}>
           <CatalogWrapSc>

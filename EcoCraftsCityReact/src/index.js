@@ -15,6 +15,7 @@ import Registration from "./pages/Registration";
 import Footer from "./components/Footer";
 import Catalog from "./components/Catalog";
 import { AppProvider } from "./context/AppContext";
+import SignIn from "./pages/SignIn";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -29,6 +30,7 @@ root.render(
           <Route path="admin-dashboard" element={<AdminDashboard />} />
           <Route path="admin-dashboard/admin-form" element={<AdminForm />} />
           <Route path="registration" element={<Registration />} />
+          <Route path="signin" element={<SignIn />} />
           <Route path="admin-portal" element={<AdminLogin />} />
           <Route path="product/:id" element={<ProductDetail />} />
         </Routes>

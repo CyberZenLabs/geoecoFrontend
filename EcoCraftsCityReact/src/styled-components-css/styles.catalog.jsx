@@ -14,7 +14,8 @@ export const OverlayDivSc = styled.div`
 `;
 
 export const CatalogNavSc = styled.div`
-  background: #252525;
+  background: white;
+
   width: 250px;
   height: 100vh;
   display: flex;
@@ -40,11 +41,12 @@ export const CatalogIconSc = styled(Link)`
   z-index: 10000;
   cursor: pointer;
   display: block;
+  color: black;
 `;
 
 export const SidebarLink = styled(Link)`
   display: flex;
-  color: #e1e9fc;
+
   justify-content: space-between;
   align-items: center;
   padding: 10px 13px;
@@ -53,26 +55,32 @@ export const SidebarLink = styled(Link)`
   text-decoration: none;
   font-size: 18px;
   &:hover {
-    background: #252831;
-    border-left: 4px solid #cecece;
+    border-left: 4px solid #85cb33;
     cursor: pointer;
   }
 `;
 export const SidebarLabel = styled.span`
   margin-left: 16px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #252525cc;
 `;
 
 export const DropdownLink = styled(Link)`
-  background: #85cb33;
   height: 68px;
   padding-left: 2rem;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #f5f5f5;
+
   font-size: 18px;
   &:hover {
-    background: #6e6d6d;
     cursor: pointer;
+
+    border-left: 4px solid #85cb33;
   }
 `;

@@ -43,10 +43,9 @@ label:focus {
   text-decoration: none;
   color: #000;
 }
-.menu ul li a:hover,
+/* .menu ul li a:hover,
 .menu ul li label:hover {
-  color: #666;
-}
+} */
 
 /* hide inputs */
 .menu-checkbox {
@@ -106,7 +105,7 @@ label:focus {
 }
 .open-catalog {
   display: block !important;
-  color: #85cb33;
+
   /* color: white; */
   position: absolute;
   right: 0;

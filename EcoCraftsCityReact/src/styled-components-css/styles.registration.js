@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import image2 from "../img/wood.svg";
 import image from "../img/backgroundwood.svg";
-
+import { Link } from "react-router-dom";
 export const H4Title = styled.h4`
   //position: absolute;
   //width: 338px;
@@ -50,20 +50,28 @@ export const DivBoxSC = styled.div`
 export const DivBoxRowsSC = styled.div`
   display: grid;
   grid-template-rows: 85px 85px 85px 85px 85px;
+  @media (max-width: 643px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const DivBoxColumnsSC = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
+  @media (max-width: 643px) {
+    display: block !important;
+    width: 100%;
+  }
 `;
 
 export const InputSC = styled.input`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 18px 0px 18px 18px;
+  padding: 20px;
 
   //position: absolute;
-  width: 235px;
+  width: 100%;
   height: 56px;
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
@@ -71,10 +79,14 @@ export const InputSC = styled.input`
   border: 2px solid var(--main-color);
   box-sizing: border-box;
   border-radius: 20px;
+  @media (max-width: 643px) {
+    width: 100%;
+  }
 `;
 
 export const DivBoxRowSC = styled.div`
   width: 100%;
+  justify-content: space-evenly;
 `;
 
 export const InputFullWidthSC = styled.input`
@@ -84,14 +96,20 @@ export const InputFullWidthSC = styled.input`
   padding: 18px 0px 18px 18px;
 
   //position: absolute;
-  width: 93%;
+
   height: 56px;
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
-
+  width: 100%;
   border: 2px solid var(--main-color);
   box-sizing: border-box;
   border-radius: 20px;
+  @media (max-width: 643px) {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 35px;
+    max-width: none;
+  }
 `;
 
 export const ButtonSC = styled.button`
@@ -102,7 +120,8 @@ export const ButtonSC = styled.button`
   padding: 18px 32px;
 
   //position: absolute;
-  width: 514px;
+  width: 100%;
+  max-width: 93%;
   height: 56px;
   left: calc(50% - 514px / 2);
   top: calc(50% - 56px / 2 + 213px);
@@ -136,7 +155,7 @@ export const SpanQuSC = styled.span`
   line-height: 20px;
 `;
 
-export const LinkSC = styled.a`
+export const LinkSC = styled(Link)`
   color: var(--green-color);
   font-family: var(--root-font-family);
   text-decoration: none;
@@ -144,13 +163,14 @@ export const LinkSC = styled.a`
 `;
 
 export const DivBoxFormSC = styled.div`
-  width: 552px;
+  width: 100%;
+  max-width: 552px;
   //height: 680px;
 `;
 
 export const DivBoxBoxFormSC = styled.div`
   padding: 50px;
-
+  justify-self: center;
   border-radius: 30px;
   height: fit-content;
   display: grid;
@@ -158,11 +178,16 @@ export const DivBoxBoxFormSC = styled.div`
   position: relative;
   max-width: 1470px;
   width: 80%;
-  background: url(${image2}) no-repeat;
+  margin: auto;
   background-color: var(--white-color);
   background-position: right 50px bottom;
   background-size: 620px;
-  //height: 680px;
+
+  @media (max-width: 943px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const DivBackgroundFormSC = styled.div`
@@ -186,10 +211,13 @@ export const DivRegSC = styled.div`
   //padding: 0 150px 0px 200px;
   padding-bottom: 20px;
   padding-top: 20px;
-  min-height: 900px;
+  min-height: 750px;
+  @media (max-width: 642px) {
+    min-height: 0 !important;
+  }
 `;
 
 export const DivBackgroundPeopleSC = styled.div`
   //position: absolute;
-    //background: url(${image2});
+  //background: url(${image2});
 `;

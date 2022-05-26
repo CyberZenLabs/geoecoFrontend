@@ -93,7 +93,7 @@ const ResponsiveAppBar = () => {
         </DivCatalogAndSearchBoxSC>
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
-            <LinkIconSC to="/">
+            <LinkIconSC to="/signin">
               <DivBoxIconEndSC>
                 <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

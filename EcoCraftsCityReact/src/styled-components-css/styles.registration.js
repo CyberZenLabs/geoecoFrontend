@@ -165,6 +165,7 @@ export const LinkSC = styled(Link)`
 export const DivBoxFormSC = styled.div`
   width: 100%;
   max-width: 552px;
+  justify-self: center !important;
   //height: 680px;
 `;
 

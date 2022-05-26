@@ -198,7 +198,7 @@ const Registration = (props) => {
               <DivBoxRowSC>
                 <DivBoxTextSC>
                   <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                  <LinkSC to="/signup">Войти</LinkSC>
+                  <LinkSC to="/signin">Войти</LinkSC>
                 </DivBoxTextSC>
               </DivBoxRowSC>
             </DivBoxRowsSC>

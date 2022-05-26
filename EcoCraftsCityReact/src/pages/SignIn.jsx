@@ -166,7 +166,7 @@ const SignIn = (props) => {
               <DivBoxRowSC>
                 <DivBoxTextSC>
                   <SpanQuSC>Нет Аккаунта? </SpanQuSC>
-                  <LinkSC to="/signup">Регистрироватся</LinkSC>
+                  <LinkSC to="/registration">Регистрироватся</LinkSC>
                 </DivBoxTextSC>
               </DivBoxRowSC>
             </DivBoxRowsSC>

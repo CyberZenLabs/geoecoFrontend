@@ -76,7 +76,7 @@ export const InputSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
 
-  border: 2px solid var(--main-color);
+  border: ${({error}) => error ?" 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
   @media (max-width: 643px) {
@@ -101,7 +101,7 @@ export const InputFullWidthSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
   width: 100%;
-  border: 2px solid var(--main-color);
+  border: ${({error}) => error ?" 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
   @media (max-width: 643px) {
@@ -222,3 +222,16 @@ export const DivBackgroundPeopleSC = styled.div`
   //position: absolute;
   //background: url(${image2});
 `;
+
+export const FormInputErrorSpanSc = styled.span`
+color: #FF3D3D;
+margin: 4px 0;
+display: block;
+  
+@media (max-width: 644px) {
+  margin-top: -29px;
+
+margin-bottom: 11px;
+}
+
+`

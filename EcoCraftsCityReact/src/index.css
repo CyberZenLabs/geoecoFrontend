@@ -7,6 +7,7 @@
   --green-color: #85cb33;
   --green-color-hover: #7cbd2f;
   --green-color-active: #76b42e;
+  --error: #FF3D3D;
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;
@@ -146,4 +147,29 @@ table {
   .image4registration {
     display: none;
   }
+  .image4signin {
+    display: none;
+  }
 }
+.validation {
+  color: #c407a8;
+  display: block;
+  height:20px;
+}
+
+.formValidIcon {
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  font-size: 1.7rem;
+  color: #FF3D3D;
+}
+
+.image4signin {
+  width: 90%;
+justify-self: center;
+align-self: center;
+max-width: 547px;
+margin: auto;
+}
+

@@ -122,24 +122,24 @@ const SignIn = (props) => {
                         label="email"
                         type="email"
                         name="email"
-                        size="full"
+                        fullSize={true}
                         placeholder={"Электронная почта"}
                       />
                     </DivBoxRowSC>
-                    <DivBoxColumnsSC full={true}>
-                      <DivBoxSC>
+                
+                      <DivBoxRowSC>
                         {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
                         <TextField
                           label="password"
                           name="password"
                           type="password"
-                          size="full"
+                          fullSize={true}
                           placeholder={"Пароль"}
                         />
 
                        
-                      </DivBoxSC>
-                    </DivBoxColumnsSC>
+                      </DivBoxRowSC>
+                  
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         onClick={handleSubmit}

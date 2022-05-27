@@ -12,7 +12,7 @@ export const H4Title = styled.h4`
   font-family: var(--root-font-family);
   font-style: normal;
   font-weight: 700;
-  font-size: 42px;
+  font-size: clamp(26px, 4.5vw, 42px);
   line-height: 59px;
   margin: 35px 0;
   /* identical to box height */
@@ -50,6 +50,7 @@ export const DivBoxSC = styled.div`
 export const DivBoxRowsSC = styled.div`
   display: grid;
   grid-template-rows: 85px 85px 85px 85px 85px;
+ 
   @media (max-width: 643px) {
     display: flex;
     flex-direction: column;
@@ -57,7 +58,7 @@ export const DivBoxRowsSC = styled.div`
 `;
 export const DivBoxColumnsSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ full }) => (full ? "100%" : "50% 50%")};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "50% 50%")};
   @media (max-width: 643px) {
     display: block !important;
     width: 100%;
@@ -76,7 +77,8 @@ export const InputSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
 
-  border: ${({error}) => error ?" 2px solid var(--error)" : "2px solid var(--main-color)"};
+  border: ${({ error }) =>
+    error ? " 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
   @media (max-width: 643px) {
@@ -87,6 +89,7 @@ export const InputSC = styled.input`
 export const DivBoxRowSC = styled.div`
   width: 100%;
   justify-content: space-evenly;
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? "32px" : "inherit")};
 `;
 
 export const InputFullWidthSC = styled.input`
@@ -101,7 +104,8 @@ export const InputFullWidthSC = styled.input`
   left: 0px;
   top: calc(50% - 56px / 2 - 140px);
   width: 100%;
-  border: ${({error}) => error ?" 2px solid var(--error)" : "2px solid var(--main-color)"};
+  border: ${({ error }) =>
+    error ? " 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
   @media (max-width: 643px) {
@@ -224,14 +228,13 @@ export const DivBackgroundPeopleSC = styled.div`
 `;
 
 export const FormInputErrorSpanSc = styled.span`
-color: #FF3D3D;
-margin: 4px 0;
-display: block;
-  
-@media (max-width: 644px) {
-  margin-top: -29px;
+  color: #ff3d3d;
+  margin: 4px 0;
+  display: block;
 
-margin-bottom: 11px;
-}
+  @media (max-width: 644px) {
+    margin-top: -29px;
 
-`
+    margin-bottom: 11px;
+  }
+`;

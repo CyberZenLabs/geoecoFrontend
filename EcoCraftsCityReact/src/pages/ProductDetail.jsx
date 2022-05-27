@@ -8,7 +8,7 @@ import {
     DivContentProductSC,
     DivBoxImagesSC,
     DivBoxButtonSC,
-    H5CustomSC, DivTreeBoxSC, DivBoxPriceSC
+    H5CustomSC, DivTreeBoxSC, DivBoxPriceSC, DivContentPriceSC, DivNumberTitlePrice
 } from "../styled-components-css/styles.product-detail";
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import {
@@ -81,11 +81,20 @@ const ProductDetail = () => {
                     <DivBoxButtonSC>
                         <div></div>
                         <DivBoxPriceSC>
-                            <H5CustomSC>26 001 </H5CustomSC>
-                            <FaRubleSign
-                                color={"#000"}
-                                size={26}
-                            />
+                            <DivContentPriceSC>
+                                <div>
+                                    <H5CustomSC>26 001 </H5CustomSC>
+                                </div>
+
+                                <DivNumberTitlePrice>
+                                    <FaRubleSign
+                                        color={"#000"}
+                                        size={27}
+                                    />
+                                </DivNumberTitlePrice>
+
+                            </DivContentPriceSC>
+
                         </DivBoxPriceSC>
 
                         <div>

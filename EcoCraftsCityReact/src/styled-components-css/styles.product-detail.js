@@ -54,7 +54,7 @@ export const DivBoxImagesSC = styled.div`
   grid-gap: 20px;
 `;
 
-export const H5CustomSC = styled.h5`
+export const H5CustomSC = styled.span`
   font-weight: 700;
   font-size: 32px;
   display: inline-block;
@@ -82,5 +82,19 @@ export const DivBoxButtonSC = styled.div`
 export const DivBoxPriceSC = styled.div`
     display: grid;
   //align-items: center;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: max-content;
+`;
+
+export const DivContentPriceSC = styled.div`
+    display: grid;
+    grid-template-columns: max-content max-content;
+  height: 32px;
+  align-items: center;
+  position: relative;
+`;
+
+export const DivNumberTitlePrice = styled.div`
+  position: absolute;
+  top: 2px;
+  right: -26px;
 `

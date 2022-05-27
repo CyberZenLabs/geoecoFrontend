@@ -1,0 +1,28 @@
+.right-arrow {
+  position: absolute;
+  right: 6px;
+  font-size: 3vw;
+  color: #848f85;
+  z-index: 100;
+  opacity: 0.4;
+  cursor: pointer;
+  user-select: none;
+}
+.left-arrow {
+  position: absolute;
+  left: 6px;
+  opacity: 0.4;
+  font-size: 3vw;
+  color: #848f85;
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
+}
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+}

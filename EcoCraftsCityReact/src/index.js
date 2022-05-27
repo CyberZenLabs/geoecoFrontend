@@ -31,7 +31,7 @@ root.render(
                 <Route path="admin-dashboard/admin-form" element={<AdminForm/>}/>
                 <Route path="registration" element={<Registration/>}/>
                 <Route path="admin-portal" element={<AdminLogin/>}/>
-                <Route path="product:id" element={<ProductDetail/>}/>
+                <Route path="product/:id" element={<ProductDetail/>}/>
             </Routes>
 
             <Footer/>

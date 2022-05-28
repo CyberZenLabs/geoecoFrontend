@@ -5,7 +5,7 @@
 // import TextField from '@material-ui/core/TextField';
 // import Grid from '@material-ui/core/Grid';
 // import Button from '@material-ui/core/Button';
-//
+
 // const useStyles = makeStyles((theme) => ({
 //     root: {
 //       '& .MuiTextField-root': {
@@ -14,15 +14,15 @@
 //       },
 //     },
 //   }));
-//
+
 // const AdminForm = () => {
 //     const classes = useStyles();
-//
+
 //     const [name, getName] = useState('');
 //     const [lastName, getLastName] = useState('');
 //     const [email, getEmail] = useState('');
 //     const [password, getPassword] = useState('');
-//
+
 //     const onChange = (status) => (e) => {
 //         console.log('>>>>>>>>>', e);
 //         switch (status) {
@@ -42,11 +42,11 @@
 //                 break;
 //         }
 //     }
-//
-//
+
+
 //     return (
 //         <Container maxWidth="sm">
-//
+            
 //             <form className={classes.root} noValidate autoComplete="off">
 //                 <Grid
 //                     container
@@ -86,5 +86,5 @@
 //         </Container>
 //     )
 // }
-//
+
 // export default AdminForm

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Button, Input, InputLabel, TextField } from "@mui/material";
+
 
 import axios from "../apis/admin-rest";
 
@@ -42,14 +42,14 @@ const AdminLogin = () => {
 
   return (
     <div id="form-container">
-      <TextField id="outlined-basic" label="Фамилия" variant="outlined" />
+      {/* <TextField id="outlined-basic" label="Фамилия" variant="outlined" />
       <TextField id="outlined-basic" label="Имя" variant="outlined" />
       <TextField
         id="outlined-basic"
         label="Электронная Почта"
         variant="outlined"
       />
-      <Button onClick={handleSubmit}>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button> */}
     </div>
   );
 };

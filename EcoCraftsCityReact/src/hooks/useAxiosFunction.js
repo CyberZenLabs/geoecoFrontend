@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const useAxiosFunction = (configObj) => {
   const [response, setResponse] = useState([]);
@@ -7,21 +8,22 @@ const useAxiosFunction = (configObj) => {
   const [controller, setController] = useState();
 
   const axiosFetch = async (configObj) => {
-    const { axiosInstance, method, url, requestConfig = {} } = configObj;
+    const { axiosInstance, method, url, auth, requestConfig = {} } = configObj;
 
     try {
       setLoading(true);
+      setResponse([]);
+      setError("");
       const ctrl = new AbortController();
       setController(ctrl);
       const res = await axiosInstance[method.toLowerCase()](url, {
         ...requestConfig,
         signal: ctrl.signal,
       });
-      console.log("res", res);
+
       setResponse(res.data);
     } catch (error) {
-      console.log(error);
-      setError(error.response.data.message);
+      setError(error);
     } finally {
       setLoading(false);
     }

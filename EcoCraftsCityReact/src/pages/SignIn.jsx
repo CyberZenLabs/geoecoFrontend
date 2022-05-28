@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import useAxiosFunction from "../hooks/useAxiosFunction";
+import React, { useState, useEffect, useContext, useRef } from "react";
+
 import axios from "../apis/admin-rest";
+
 import { useCookies } from "react-cookie";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -25,26 +27,34 @@ import {
   DivBackgroundPeopleSC,
 } from "../styled-components-css/styles.registration";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { registerSchema } from "../validations/validation.signup";
+import { signInSchema } from "../validations/validation.signin";
 import { Formik, Form } from "formik";
 import TextField from "../components/TextField";
-import { toast } from "react-toastify";
 import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+
 // const Alert = React.forwardRef(function Alert(props, ref) {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
 
-const Registration = (props) => {
+const SignIn = (props) => {
+  const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-
   const [open, setOpen] = useState(false);
-
+  const [openError, setOpenError] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const toastId = useRef(null);
+  let navigate = useNavigate();
 
   useEffect(() => {
     if (response.length === 0) {
-      if (error) {
-        if (error.message.includes("401")) {
+      console.log("REPEAT ERROR", error);
+
+      if (error !== "") {
+        if (error && error.message.includes("401")) {
           showToast("error", "Не Верный Данные");
         } else {
           showToast("error", error);
@@ -52,11 +62,16 @@ const Registration = (props) => {
       }
     } else {
       console.log(">>>>>>>>>", response.token);
-      showToast("success", "Вы успешноj зарегистрировались");
+      login();
+      showToast("success", "Вы успешно зашли");
       setCookie("token", response.token);
+      login();
       setOpen(true);
     }
   }, [response, error]);
+  {
+    console.log("LOGGED IN", loggedIn);
+  }
 
   const showToast = (type, text) => {
     if (type === "error") {
@@ -70,91 +85,55 @@ const Registration = (props) => {
     }
   };
 
-  const startingValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
-  };
+  const startingValues = { email: "", password: "" };
+
   return (
     <DivRegSC>
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
-            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
-            <SpanSC>Введите свои данные для регистрации</SpanSC>
+            <H4Title>Войти в аккаунт!</H4Title>
+
+            <SpanSC>Введите свои данные для входа</SpanSC>
             <Formik
               initialValues={startingValues}
-              validationSchema={registerSchema}
+              validationSchema={signInSchema}
               initialErrors={startingValues}
               onSubmit={(values) => {
                 axiosFetch({
                   axiosInstance: axios,
-                  auth: "login",
                   method: "POST",
-                  url: `/api/v1/users/signup`,
+                  url: `/api/v1/users/login`,
                   requestConfig: { ...values },
                 });
+                console.log("HITTING");
               }}
             >
               {(formik) => (
                 <Form>
                   <DivBoxRowsSC>
-                    <DivBoxColumnsSC>
-                      <DivBoxSC>
-                        {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
-                        <TextField
-                          label="firstName"
-                          type="text"
-                          name="firstName"
-                          fullSize={false}
-                          placeholder={"Имя"}
-                        />
-                      </DivBoxSC>
-                      <DivBoxSC>
-                        {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
-                        <TextField
-                          label="lastName"
-                          type="text"
-                          name="lastName"
-                          fullsize={false}
-                          placeholder={"Фамилия"}
-                        />
-                      </DivBoxSC>
-                    </DivBoxColumnsSC>
-                    <DivBoxRowSC marginBottom={true}>
+                    <DivBoxRowSC>
                       {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
                       <TextField
                         label="email"
                         type="email"
                         name="email"
-                        fullsize={true}
+                        fullSize={true}
                         placeholder={"Электронная почта"}
                       />
                     </DivBoxRowSC>
-                    <DivBoxColumnsSC>
-                      <DivBoxSC>
-                        {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
-                        <TextField
-                          label="password"
-                          type="password"
-                          name="password"
-                          fullsize={false}
-                          placeholder={"Пароль"}
-                        />
-                      </DivBoxSC>
-                      <DivBoxSC>
-                        {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
-                        <TextField
-                          label="passwordConfirm"
-                          type="password"
-                          name="passwordConfirm"
-                          fullsize={false}
-                          placeholder={"Подтвердить пароль"}
-                        />
-                      </DivBoxSC>
-                    </DivBoxColumnsSC>
+
+                    <DivBoxRowSC>
+                      {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                      <TextField
+                        label="password"
+                        name="password"
+                        type="password"
+                        fullSize={true}
+                        placeholder={"Пароль"}
+                      />
+                    </DivBoxRowSC>
+
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
@@ -177,8 +156,8 @@ const Registration = (props) => {
                     </DivBoxRowSC>
                     <DivBoxRowSC>
                       <DivBoxTextSC>
-                        <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                        <LinkSC to="/signin">Войти</LinkSC>
+                        <SpanQuSC>Нет Аккаунта? </SpanQuSC>
+                        <LinkSC to="/registration">Регистрироватся</LinkSC>
                       </DivBoxTextSC>
                     </DivBoxRowSC>
                   </DivBoxRowsSC>
@@ -217,14 +196,11 @@ const Registration = (props) => {
               </Alert>
             </Snackbar> */}
           </DivBoxFormSC>
-          <img
-            src="/default-images/Иллюстрация.svg"
-            className="image4registration"
-          />
+          <img src="/default-images/signin.svg" className="image4signin" />
         </DivBoxBoxFormSC>
       </DivBackgroundFormSC>
     </DivRegSC>
   );
 };
 
-export default Registration;
+export default SignIn;

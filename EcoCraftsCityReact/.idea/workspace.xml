@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled-components-css/styles.product-detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-components-css/styles.product-detail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

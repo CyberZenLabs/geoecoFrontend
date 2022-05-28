@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const useAxiosFunction = (configObj) => {
   const [response, setResponse] = useState([]);
@@ -17,11 +18,11 @@ const useAxiosFunction = (configObj) => {
         ...requestConfig,
         signal: ctrl.signal,
       });
-      console.log("res", res);
+
       setResponse(res.data);
     } catch (error) {
-      console.log(error);
-      setError(error.response.data.message);
+      console.log("firing error");
+      setError(error.toString());
     } finally {
       setLoading(false);
     }

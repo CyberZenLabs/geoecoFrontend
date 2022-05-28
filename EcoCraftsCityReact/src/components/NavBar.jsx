@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
-import image from "../img/logo.svg";
-import styled from "styled-components/macro";
 import UilListUl from "@iconscout/react-unicons/icons/uil-list-ul";
 import UilSearch from "@iconscout/react-unicons/icons/uil-search";
 import UilUser from "@iconscout/react-unicons/icons/uil-user";
@@ -17,7 +14,7 @@ import {
   DivBoxButtonAndInputSC,
   DivBoxIconHeaderSC,
   DivBoxIconSC,
-  ButtonSC,
+ 
   BoxContentButton,
   InputSC,
   DivInputBoxCS,
@@ -27,7 +24,7 @@ import {
   SpanEndHeaderSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { OverlayDivSc } from "../styled-components-css/styles.catalog";
+
 import AppContext from "../context/AppContext";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

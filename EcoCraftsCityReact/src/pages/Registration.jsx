@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
-import styled from "styled-components/macro";
 import useAxiosFunction from "../hooks/useAxiosFunction";
 import axios from "../apis/admin-rest";
-import hostName from "../tools/HostName";
 import { useCookies } from "react-cookie";
-import image from "../img/backgroundwood.svg";
-import image2 from "../img/wood.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -34,9 +28,10 @@ import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { registerSchema } from "../validations/validation.signup";
 import { Formik, Form } from "formik";
 import TextField from "../components/TextField";
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { toast } from "react-toastify";
+// const Alert = React.forwardRef(function Alert(props, ref) {
+//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+// });
 
 const Registration = (props) => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
@@ -99,6 +94,8 @@ const Registration = (props) => {
   };
   return (
     <DivRegSC>
+      {console.log(error)}
+      {error ? toast.error("FAIL") : null}
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
@@ -108,6 +105,17 @@ const Registration = (props) => {
               initialValues={startingValues}
               validationSchema={registerSchema}
               initialErrors={startingValues}
+              onSubmit={(values, { setSubmitting }) => {
+                setSubmitting(true);
+                console.log("firing1");
+                axiosFetch({
+                  axiosInstance: axios,
+                  method: "POST",
+                  url: `/api/v1/users/signin`,
+                  requestConfig: { ...values },
+                });
+                console.log("firing2");
+              }}
             >
               {(formik) => (
                 <Form>
@@ -168,16 +176,15 @@ const Registration = (props) => {
                     </DivBoxColumnsSC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
-                       onClick={handleSubmit}
-                       disabled={!formik.dirty || !formik.isValid}
-                       statusOpasity={!formik.dirty || !formik.isValid}
-                       width={"100%"}
-                       padding={"18px 32px"}
+                        onClick={handleSubmit}
+                        disabled={!formik.dirty || !formik.isValid}
+                        statusOpasity={!formik.dirty || !formik.isValid}
+                        width={"100%"}
+                        padding={"18px 32px"}
                       >
                         продолжить&nbsp;&nbsp;
                         <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                       </ButtonCustomSC>
-                
                     </DivBoxRowSC>
                     <DivBoxRowSC>
                       <DivBoxTextSC>
@@ -190,7 +197,7 @@ const Registration = (props) => {
               )}
             </Formik>
 
-            <Snackbar
+            {/* <Snackbar
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}
@@ -219,7 +226,7 @@ const Registration = (props) => {
               <Alert onClose={handleClose} severity="error">
                 {error}
               </Alert>
-            </Snackbar>
+            </Snackbar> */}
           </DivBoxFormSC>
           <img
             src="/default-images/Иллюстрация.svg"

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled-components-css/styles.product-detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-components-css/styles.product-detail.js" afterDir="false" />
-    </list>
+    <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,10 +21,6 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
-                  <RecentBranch>
-                    <option name="branchName" value="kirdro_product_page" />
-                    <option name="lastUsedInstant" value="1653658286" />
-                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
                     <option name="lastUsedInstant" value="1652090893" />

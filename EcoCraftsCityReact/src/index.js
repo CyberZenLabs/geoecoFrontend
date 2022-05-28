@@ -7,7 +7,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import Cart from "./pages/Cart";
-import AdminLogin from "./pages/AdminLogin";
+// import AdminLogin from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
 // import AdminForm from "./pages/AdminForm";
@@ -42,7 +42,7 @@ root.render(
                             {/*/>*/}
                             <Route path="registration" element={<Registration/>}/>
                             <Route path="signin" element={<SignIn/>}/>
-                            <Route path="admin-portal" element={<AdminLogin/>}/>
+                            {/*<Route path="admin-portal" element={<AdminLogin/>}/>*/}
                             <Route path="product/:id" element={<ProductDetail/>}/>
                         </Routes>
 

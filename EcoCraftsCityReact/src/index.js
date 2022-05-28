@@ -13,7 +13,7 @@ import Cart from './pages/Cart';
 import AdminLogin from './pages/AdminLogin';
 import ProductDetail from './pages/ProductDetail';
 import AdminDashboard from './pages/AdminDashboard';
-import AdminForm from "./pages/AdminForm";
+// import AdminForm from "./pages/AdminForm";
 import Registration from "./pages/Registration";
 import Footer from "./components/Footer";
 
@@ -28,7 +28,7 @@ root.render(
                 <Route index element={<Home/>}/>
                 <Route path="cart" element={<Cart/>}/>
                 <Route path="admin-dashboard" element={<AdminDashboard/>}/>
-                <Route path="admin-dashboard/admin-form" element={<AdminForm/>}/>
+                {/*<Route path="admin-dashboard/admin-form" element={<AdminForm/>}/>*/}
                 <Route path="registration" element={<Registration/>}/>
                 <Route path="admin-portal" element={<AdminLogin/>}/>
                 <Route path="product/:id" element={<ProductDetail/>}/>

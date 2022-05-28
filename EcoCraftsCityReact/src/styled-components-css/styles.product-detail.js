@@ -95,6 +95,6 @@ export const DivContentPriceSC = styled.div`
 
 export const DivNumberTitlePrice = styled.div`
   position: absolute;
-  top: 2px;
+  top: 3px;
   right: -26px;
 `

@@ -28,7 +28,7 @@ root.render(
                     <Route index element={<Home />} />
                     <Route path="cart" element={<Cart />} />
                     <Route path="admin-dashboard" element={<AdminDashboard />} />
-                    <Route path="admin-dashboard/admin-form" element={<AdminForm />} />
+                    {/*<Route path="admin-dashboard/admin-form" element={<AdminForm />} />*/}
                     <Route path="registration" element={<Registration />} />
                     <Route path="signin" element={<SignIn />} />
                     <Route path="admin-portal" element={<AdminLogin />} />

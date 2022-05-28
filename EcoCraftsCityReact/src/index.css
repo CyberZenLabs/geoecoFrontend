@@ -7,7 +7,7 @@
   --green-color: #85cb33;
   --green-color-hover: #7cbd2f;
   --green-color-active: #76b42e;
-  --error: #FF3D3D;
+  --error: #ff3d3d;
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;
@@ -154,7 +154,7 @@ table {
 .validation {
   color: #c407a8;
   display: block;
-  height:20px;
+  height: 20px;
 }
 
 .formValidIcon {
@@ -162,18 +162,18 @@ table {
   right: 30px;
   top: 15px;
   font-size: 1.7rem;
-  color: #FF3D3D;
+  color: #ff3d3d;
 }
 
 .image4signin {
   width: 90%;
-justify-self: center;
-align-self: center;
-max-width: 547px;
-margin: auto;
+  justify-self: center;
+  align-self: center;
+  max-width: 547px;
+  margin: auto;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
 :root {
   --gray: #555;
@@ -186,7 +186,7 @@ margin: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -195,12 +195,11 @@ margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, var(--purple), var(--green-blue));
 }
 
 .navigation {
   position: fixed;
-  top: 20px;
+  top: 33px;
   right: 20px;
   width: 120px;
   height: 60px;
@@ -212,6 +211,7 @@ margin: auto;
   overflow: hidden;
   transition: height 0.5s, width 0.5s;
   transition-delay: 0s, 0.75s;
+  z-index: 1000;
 }
 
 .navigation .user-box {
@@ -239,7 +239,6 @@ margin: auto;
   border-radius: 50%;
   overflow: hidden;
   border: 10px solid var(--white);
-
 }
 
 .navigation .user-box .image-box img {
@@ -251,7 +250,7 @@ margin: auto;
   object-fit: cover;
 }
 
-.navigation .menu-toggle {
+.navigation .profileMenu-toggle {
   position: relative;
   width: 60px;
   height: 60px;
@@ -261,7 +260,7 @@ margin: auto;
   cursor: pointer;
 }
 
-.navigation .menu-toggle::before {
+.navigation .profileMenu-toggle::before {
   content: "";
   position: absolute;
   width: 32px;
@@ -272,7 +271,7 @@ margin: auto;
   transition: 0.5s;
 }
 
-.navigation .menu-toggle::after {
+.navigation .profileMenu-toggle::after {
   content: "";
   position: absolute;
   width: 32px;
@@ -282,7 +281,7 @@ margin: auto;
   transition: 0.5s;
 }
 
-.menu {
+.profileMenu {
   position: absolute;
   width: 100%;
   height: calc(100% - 60px);
@@ -291,11 +290,11 @@ margin: auto;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.menu li {
+.profileMenu li {
   list-style: none;
 }
 
-.menu li a {
+.profileMenu li a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -305,20 +304,20 @@ margin: auto;
   color: var(--gray);
 }
 
-.menu li a ion-icon {
+.profileMenu li a ion-icon {
   font-size: 1.5rem;
 }
 
-.menu li a:hover {
+.profileMenu li a:hover {
   color: var(--purple);
 }
 
-.navigation.active .menu-toggle::before {
+.navigation.active .profileMenu-toggle::before {
   transform: translateY(0px) rotate(45deg);
   box-shadow: none;
 }
 
-.navigation.active .menu-toggle::after {
+.navigation.active .profileMenu-toggle::after {
   transform: translateY(0px) rotate(-45deg);
 }
 

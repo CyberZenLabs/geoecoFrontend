@@ -1,60 +1,177 @@
-
-
 #root {
   height: 100%;
 	font-family: "Montserrat";
+
 }
 
 :root {
   --main-color: rgba(133, 203, 51, 0.7);
-  --green-color:#85CB33;
-  --green-color-hover:#7CBD2F;
-	--green-color-active:#76B42E;
+  --green-color: #85cb33;
+  --green-color-hover: #7cbd2f;
+  --green-color-active: #76b42e;
+  --error: #FF3D3D;
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;
   --font-size-icon-text: 16px;
 }
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+.image4registration {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+  max-width: 547px;
+}
+@media (max-width: 943px) {
+  .image4registration {
+    display: none;
+  }
+  .image4signin {
+    display: none;
+  }
+}
+.validation {
+  color: #c407a8;
+  display: block;
+  height:20px;
+}
+
+.formValidIcon {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 1.7rem;
+  color: #FF3D3D;
+}
+
+.image4signin {
+  width: 90%;
+justify-self: center;
+align-self: center;
+max-width: 547px;
+margin: auto;
+}
+

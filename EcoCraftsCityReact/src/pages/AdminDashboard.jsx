@@ -1,12 +1,7 @@
 import React from 'react'
 
-const AdminDashboard = () => {
+export default function AdminDashboard() {
   return (
-      <>
-          <div>AdminDashboard</div>
-      </>
-
+    <div>AdminDashboard</div>
   )
 }
-
-export default AdminDashboard

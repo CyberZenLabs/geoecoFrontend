@@ -5,7 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/etc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styled-components-css/styles.loader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useAxios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useAxiosFetch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useAxiosFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAxiosFunction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminLogin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled-components-css/styles.registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-components-css/styles.registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validations/validation.signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validations/validation.signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validations/validation.signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validations/validation.signup.js" afterDir="false" />
+>>>>>>> dev
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +52,7 @@
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1652090893" />
+                    <option name="lastUsedInstant" value="1653714203" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="kirdro_dev" />
@@ -77,7 +100,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b66988f9-4cd7-4ee4-adf0-d0488554c7ed" name="Changes" comment="" />
+      <changelist id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="" />
       <created>1652019768771</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -86,6 +109,8 @@
       <workItem from="1652020433652" duration="3281000" />
       <workItem from="1652085900922" duration="5443000" />
       <workItem from="1653290273010" duration="734000" />
+      <workItem from="1653657339735" duration="8000" />
+      <workItem from="1653657386185" duration="349000" />
     </task>
     <servers />
   </component>

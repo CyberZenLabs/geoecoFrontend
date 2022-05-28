@@ -1,11 +1,8 @@
-import * as React from 'react';
-import { Link } from "react-router-dom";
-import image from '../img/logo.svg'
-import styled from "styled-components/macro";
-import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul';
-import UilSearch from '@iconscout/react-unicons/icons/uil-search';
-import UilUser from '@iconscout/react-unicons/icons/uil-user';
-import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
+import * as React from "react";
+import UilListUl from "@iconscout/react-unicons/icons/uil-list-ul";
+import UilSearch from "@iconscout/react-unicons/icons/uil-search";
+import UilUser from "@iconscout/react-unicons/icons/uil-user";
+import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import {
     DivBoxLogoSC,
     DivBoxHeaderSC,
@@ -17,18 +14,20 @@ import {
     DivBoxButtonAndInputSC,
     DivBoxIconHeaderSC,
     DivBoxIconSC,
-    ButtonSC,
+
     BoxContentButton,
     InputSC,
     DivInputBoxCS,
     DivIconBoxInput,
     LinkIconSC,
     DivBoxIconEndSC,
-    SpanEndHeaderSC
-} from '../styled-components-css/styles.navbar'
+    SpanEndHeaderSC,
+} from "../styled-components-css/styles.navbar";
 import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import AppContext from "../context/AppContext";
+
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -49,38 +48,29 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
 
+    const {setShowCatalog, showCatalog} = React.useContext(AppContext);
     return (
         <DivBoxHeaderSC>
             <DivHeaderSC>
-                <DivBoxLogoSC to={'/'}>
-                </DivBoxLogoSC>
+                <DivBoxLogoSC></DivBoxLogoSC>
 
                 <DivCatalogAndSearchBoxSC>
                     <DivTextBoxSC>
-                        <SpanFirstSC to="/">
-                            Продавайте на EcoCraftCity
-                        </SpanFirstSC>
-                        <SpanSecondSC to="/">
-                            Работа в EcoCraftCity
-                        </SpanSecondSC>
+                        <SpanFirstSC to="/">Продавайте на EcoCraftCity</SpanFirstSC>
+                        <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>
                     </DivTextBoxSC>
                     <DivBoxButtonAndInputSC>
                         <ButtonCustomSC
-                            width={'176px'}
-                            padding={'8px 32px'}
-                            primary
+                            onClick={() => setShowCatalog(!showCatalog)}
+                            width={"176px"}
+                            padding={"8px 32px"}
                         >
-                            <BoxContentButton
-
-                            >
+                            <BoxContentButton>
                                 <UilListUl
                                     size="40"
                                     // color="#61DAFB"
                                 />
-                                <span>
-                                    Каталог
-                                </span>
-
+                                <span>Каталог</span>
                             </BoxContentButton>
                         </ButtonCustomSC>
 
@@ -93,42 +83,26 @@ const ResponsiveAppBar = () => {
                                 placeholder={"Я ищу..."}
                             />
                             <DivIconBoxInput>
-                                <UilSearch
-                                    size="25"
-                                    color="rgba(37, 37, 37, 0.7)"
-                                />
+                                <UilSearch size="25" color="rgba(37, 37, 37, 0.7)"/>
                             </DivIconBoxInput>
                         </DivInputBoxCS>
-
                     </DivBoxButtonAndInputSC>
-
                 </DivCatalogAndSearchBoxSC>
                 <DivBoxIconHeaderSC>
-
                     <DivBoxIconSC>
-                        <LinkIconSC to="/">
+                        <LinkIconSC to="/signin">
                             <DivBoxIconEndSC>
-                                <UilUser
-                                    size="35"
-                                    color="rgba(37, 37, 37, 0.8)"
-                                />
+                                <UilUser size="35" color="rgba(37, 37, 37, 0.8)"/>
                             </DivBoxIconEndSC>
 
-                            <SpanEndHeaderSC>
-                                Войти
-                            </SpanEndHeaderSC>
+                            <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
                         </LinkIconSC>
                         <LinkIconSC to="/">
                             <DivBoxIconEndSC>
-                                <UilShoppingCart
-                                    size="35"
-                                    color="rgba(37, 37, 37, 0.8)"
-                                />
+                                <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)"/>
                             </DivBoxIconEndSC>
 
-                            <SpanEndHeaderSC>
-                                Корзина
-                            </SpanEndHeaderSC>
+                            <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
                         </LinkIconSC>
                     </DivBoxIconSC>
                 </DivBoxIconHeaderSC>

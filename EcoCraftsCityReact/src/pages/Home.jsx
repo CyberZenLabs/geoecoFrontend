@@ -8,6 +8,7 @@ import {
   HomeContainer,
 } from "../styled-components-css/styles.product-card";
 import { SliderData } from "../utils/sliderData";
+
 const Home = () => {
   return (
     <>

@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
-import styled from "styled-components/macro";
-import useAxiosFunction from "../hooks/useAxiosFunction";
+import React, { useState, useEffect, useContext, useRef } from "react";
+
 import axios from "../apis/admin-rest";
-import hostName from "../tools/HostName";
+
 import { useCookies } from "react-cookie";
-import image from "../img/backgroundwood.svg";
-import image2 from "../img/wood.svg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -34,21 +30,29 @@ import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { signInSchema } from "../validations/validation.signin";
 import { Formik, Form } from "formik";
 import TextField from "../components/TextField";
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+
+// const Alert = React.forwardRef(function Alert(props, ref) {
+//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+// });
 
 const SignIn = (props) => {
+  const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const [email, getEmail] = useState("");
-  const [isValid, setIsValid] = useState(false);
-  const [password, getPassword] = useState("");
   const [open, setOpen] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
+  let navigate = useNavigate();
+
   useEffect(() => {
     if (response.length === 0) {
+      console.log("ERROR EFFECT", error);
+      console.log(error ? "TRUE" : "FALSE");
       if (error !== "") {
         setOpenError(true);
       }
@@ -63,32 +67,6 @@ const SignIn = (props) => {
     callback(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-    let formData = {
-      email,
-      password,
-    };
-
-    console.log(formData);
-
-    const signInResult = await signInSchema
-      .validate(formData, { abortEarly: false })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    if (isValid) {
-      axiosFetch({
-        axiosInstance: axios,
-        method: "POST",
-        url: `/api/v1/users/signup`,
-        requestConfig: { ...formData },
-      });
-    }
-  };
-
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -98,23 +76,36 @@ const SignIn = (props) => {
     setOpenError(false);
   };
 
-  const startingValues = { email: "", password: "" }
+  const startingValues = { email: "", password: "" };
 
   return (
     <DivRegSC>
+      {console.log(openError)}
+      {openError ? toast.success("Hello") : null}
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
             <H4Title>Войти в аккаунт!</H4Title>
+
             <SpanSC>Введите свои данные для входа</SpanSC>
             <Formik
               initialValues={startingValues}
               validationSchema={signInSchema}
               initialErrors={startingValues}
+              onSubmit={(values, { setSubmitting }) => {
+                setSubmitting(true);
+                console.log("firing1");
+                axiosFetch({
+                  axiosInstance: axios,
+                  method: "POST",
+                  url: `/api/v1/users/signin`,
+                  requestConfig: { ...values },
+                });
+                console.log("firing2");
+              }}
             >
               {(formik) => (
                 <Form>
-                  {console.log(formik)}
                   <DivBoxRowsSC>
                     <DivBoxRowSC>
                       {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
@@ -126,30 +117,36 @@ const SignIn = (props) => {
                         placeholder={"Электронная почта"}
                       />
                     </DivBoxRowSC>
-                
-                      <DivBoxRowSC>
-                        {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
-                        <TextField
-                          label="password"
-                          name="password"
-                          type="password"
-                          fullSize={true}
-                          placeholder={"Пароль"}
-                        />
 
-                       
-                      </DivBoxRowSC>
-                  
+                    <DivBoxRowSC>
+                      {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                      <TextField
+                        label="password"
+                        name="password"
+                        type="password"
+                        fullSize={true}
+                        placeholder={"Пароль"}
+                      />
+                    </DivBoxRowSC>
+
                     <DivBoxRowSC>
                       <ButtonCustomSC
-                        onClick={handleSubmit}
                         disabled={!formik.dirty || !formik.isValid}
                         statusOpasity={!formik.dirty || !formik.isValid}
                         width={"100%"}
                         padding={"18px 32px"}
+                        type="submit"
                       >
-                        продолжить&nbsp;&nbsp;
-                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                        {!formik.isSubmitting ? (
+                          <span>
+                            продолжить&nbsp;&nbsp;
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                            ></FontAwesomeIcon>
+                          </span>
+                        ) : (
+                          <FlowerLoaderSc />
+                        )}
                       </ButtonCustomSC>
                     </DivBoxRowSC>
                     <DivBoxRowSC>
@@ -163,7 +160,7 @@ const SignIn = (props) => {
               )}
             </Formik>
 
-            <Snackbar
+            {/* <Snackbar
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}
@@ -192,12 +189,9 @@ const SignIn = (props) => {
               <Alert onClose={handleClose} severity="error">
                 {error}
               </Alert>
-            </Snackbar>
+            </Snackbar> */}
           </DivBoxFormSC>
-          <img
-            src="/default-images/signin.svg"
-            className="image4signin"
-          />
+          <img src="/default-images/signin.svg" className="image4signin" />
         </DivBoxBoxFormSC>
       </DivBackgroundFormSC>
     </DivRegSC>

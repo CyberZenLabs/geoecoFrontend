@@ -13,10 +13,10 @@ const AuthProvider = (props) => {
     //Pull saved login state
   }, []);
   const login = () => {
-    setTimeout(2000).then(() => setLoggedIn(true));
+    setLoggedIn(true);
   };
   const logout = () => {
-    setTimeout(2000).then(() => setLoggedIn(false));
+    setLoggedIn(false);
   };
   const authContextValue = {
     login,

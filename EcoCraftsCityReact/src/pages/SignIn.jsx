@@ -46,42 +46,48 @@ const SignIn = (props) => {
   const [open, setOpen] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-
+  const toastId = useRef(null);
   let navigate = useNavigate();
 
   useEffect(() => {
     if (response.length === 0) {
-      console.log("ERROR EFFECT", error);
-      console.log(error ? "TRUE" : "FALSE");
+      console.log("REPEAT ERROR", error);
+
       if (error !== "") {
-        setOpenError(true);
+        if (error && error.message.includes("401")) {
+          showToast("error", "Не Верный Данные");
+        } else {
+          showToast("error", error);
+        }
       }
     } else {
       console.log(">>>>>>>>>", response.token);
+      login();
+      showToast("success", "Вы успешно зашли");
       setCookie("token", response.token);
       setOpen(true);
     }
   }, [response, error]);
+  {
+    console.log("LOGGED IN", loggedIn);
+  }
 
-  const onChange = (callback) => (e) => {
-    callback(e.target.value);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+  const showToast = (type, text) => {
+    if (type === "error") {
+      toast.error(text ? text : error, {
+        toastId: "error",
+      });
+    } else if (type === "success") {
+      toast.success(text ? text : response, {
+        toastId: "success",
+      });
     }
-
-    setOpen(false);
-    setOpenError(false);
   };
 
   const startingValues = { email: "", password: "" };
 
   return (
     <DivRegSC>
-      {console.log(openError)}
-      {openError ? toast.success("Hello") : null}
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
@@ -92,16 +98,14 @@ const SignIn = (props) => {
               initialValues={startingValues}
               validationSchema={signInSchema}
               initialErrors={startingValues}
-              onSubmit={(values, { setSubmitting }) => {
-                setSubmitting(true);
-                console.log("firing1");
+              onSubmit={(values) => {
                 axiosFetch({
                   axiosInstance: axios,
                   method: "POST",
                   url: `/api/v1/users/signin`,
                   requestConfig: { ...values },
                 });
-                console.log("firing2");
+                console.log("HITTING");
               }}
             >
               {(formik) => (
@@ -137,7 +141,7 @@ const SignIn = (props) => {
                         padding={"18px 32px"}
                         type="submit"
                       >
-                        {!formik.isSubmitting ? (
+                        {!loading ? (
                           <span>
                             продолжить&nbsp;&nbsp;
                             <FontAwesomeIcon

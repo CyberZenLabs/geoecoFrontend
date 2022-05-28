@@ -29,6 +29,7 @@ import { registerSchema } from "../validations/validation.signup";
 import { Formik, Form } from "formik";
 import TextField from "../components/TextField";
 import { toast } from "react-toastify";
+import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
 // const Alert = React.forwardRef(function Alert(props, ref) {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
@@ -36,53 +37,37 @@ import { toast } from "react-toastify";
 const Registration = (props) => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
 
-  const [firstName, getFirstName] = useState("");
-  const [lastName, getLastName] = useState("");
-  const [confirmPass, getConfirmPass] = useState("");
-  const [email, getEmail] = useState("");
-  const [password, getPassword] = useState("");
   const [open, setOpen] = useState(false);
-  const [openError, setOpenError] = useState(false);
+
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
   useEffect(() => {
     if (response.length === 0) {
-      if (error !== "") {
-        setOpenError(true);
+      if (error) {
+        if (error.message.includes("401")) {
+          showToast("error", "Не Верный Данные");
+        } else {
+          showToast("error", error);
+        }
       }
     } else {
       console.log(">>>>>>>>>", response.token);
+      showToast("success", "Вы успешноj зарегистрировались");
       setCookie("token", response.token);
       setOpen(true);
     }
   }, [response, error]);
 
-  const onChange = (callback) => (e) => {
-    callback(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    axiosFetch({
-      axiosInstance: axios,
-      method: "POST",
-      url: `/api/v1/users/signup`,
-      requestConfig: {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        passwordConfirm: confirmPass,
-      },
-    });
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+  const showToast = (type, text) => {
+    if (type === "error") {
+      toast.error(text ? text : error, {
+        toastId: "error",
+      });
+    } else if (type === "success") {
+      toast.success(text ? text : response, {
+        toastId: "success",
+      });
     }
-
-    setOpen(false);
-    setOpenError(false);
   };
 
   const startingValues = {
@@ -94,8 +79,6 @@ const Registration = (props) => {
   };
   return (
     <DivRegSC>
-      {console.log(error)}
-      {error ? toast.error("FAIL") : null}
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
@@ -105,16 +88,14 @@ const Registration = (props) => {
               initialValues={startingValues}
               validationSchema={registerSchema}
               initialErrors={startingValues}
-              onSubmit={(values, { setSubmitting }) => {
-                setSubmitting(true);
-                console.log("firing1");
+              onSubmit={(values) => {
                 axiosFetch({
                   axiosInstance: axios,
+                  auth: "login",
                   method: "POST",
-                  url: `/api/v1/users/signin`,
+                  url: `/api/v1/users/signup`,
                   requestConfig: { ...values },
                 });
-                console.log("firing2");
               }}
             >
               {(formik) => (
@@ -176,14 +157,22 @@ const Registration = (props) => {
                     </DivBoxColumnsSC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
-                        onClick={handleSubmit}
                         disabled={!formik.dirty || !formik.isValid}
                         statusOpasity={!formik.dirty || !formik.isValid}
                         width={"100%"}
                         padding={"18px 32px"}
+                        type="submit"
                       >
-                        продолжить&nbsp;&nbsp;
-                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                        {!loading ? (
+                          <span>
+                            продолжить&nbsp;&nbsp;
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                            ></FontAwesomeIcon>
+                          </span>
+                        ) : (
+                          <FlowerLoaderSc />
+                        )}
                       </ButtonCustomSC>
                     </DivBoxRowSC>
                     <DivBoxRowSC>

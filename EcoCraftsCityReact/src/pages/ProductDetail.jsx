@@ -10,7 +10,7 @@ import {
     DivBoxButtonSC,
     H5CustomSC, DivTreeBoxSC, DivBoxPriceSC, DivContentPriceSC, DivNumberTitlePrice
 } from "../styled-components-css/styles.product-detail";
-import useBreadcrumbs from 'use-react-router-breadcrumbs';
+// import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import {
     NavLink
 } from "react-router-dom"
@@ -32,7 +32,7 @@ const routes = [
 ];
 
 const ProductDetail = () => {
-    const breadcrumbs = useBreadcrumbs(routes);
+    // const breadcrumbs = useBreadcrumbs(routes);
 
 
     return (
@@ -50,14 +50,14 @@ const ProductDetail = () => {
                         >Назад</NavLinkSC>
                     </DivBackBoxSC>
                     <div>
-                        {breadcrumbs.map(({
-                                              match,
-                                              breadcrumb
-                                          }) => (
-                            <span key={match.pathname}>
-                            <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-                        </span>
-                        ))}
+                        {/*{breadcrumbs.map(({*/}
+                        {/*                      match,*/}
+                        {/*                      breadcrumb*/}
+                        {/*                  }) => (*/}
+                        {/*    <span key={match.pathname}>*/}
+                        {/*    <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>*/}
+                        {/*</span>*/}
+                        {/*))}*/}
                     </div>
 
                 </DivHistorySC>

@@ -8,10 +8,12 @@ const useAxiosFunction = (configObj) => {
   const [controller, setController] = useState();
 
   const axiosFetch = async (configObj) => {
-    const { axiosInstance, method, url, requestConfig = {} } = configObj;
+    const { axiosInstance, method, url, auth, requestConfig = {} } = configObj;
 
     try {
       setLoading(true);
+      setResponse([]);
+      setError("");
       const ctrl = new AbortController();
       setController(ctrl);
       const res = await axiosInstance[method.toLowerCase()](url, {
@@ -21,8 +23,7 @@ const useAxiosFunction = (configObj) => {
 
       setResponse(res.data);
     } catch (error) {
-      console.log("firing error");
-      setError(error.toString());
+      setError(error);
     } finally {
       setLoading(false);
     }

@@ -1,7 +1,17 @@
 import styled from "styled-components/macro";
 import {
     NavLink
-} from "react-router-dom"
+} from "react-router-dom";
+import {
+    CarouselProvider,
+    Slider,
+    Slide,
+    ButtonBack,
+    ButtonNext,
+    Image,
+    DotGroup,
+    ImageWithZoom
+} from 'pure-react-carousel';
 
 
 export const DivBoxProductDetailSC = styled.div`
@@ -74,7 +84,7 @@ export const DivBoxButtonSC = styled.div`
   //grid-row: 1 / span 1;
   min-width: 250px;
   display: grid;
-  grid-template-rows: 105px 70px max-content max-content;
+  grid-template-rows: 79px 70px max-content max-content;
   //align-items: center;
   grid-gap: 20px;
 `;
@@ -95,6 +105,30 @@ export const DivContentPriceSC = styled.div`
 
 export const DivNumberTitlePrice = styled.div`
   position: absolute;
-  top: 3px;
+  top: 2px;
   right: -26px;
+`;
+
+export const DivBoxCarouselSC = styled.div`
+  display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 20px;
+    //height: 300px;
+`;
+
+export const ImageCarouselCustom = styled(Image)`
+    width: auto;
+  height: 100%;
+  
+`
+export const DivBoxImageCarouselSC = styled.div`
+  display: grid;
+    box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-items: center;
 `

@@ -65,6 +65,7 @@ const SignIn = (props) => {
       login();
       showToast("success", "Вы успешно зашли");
       setCookie("token", response.token);
+      login();
       setOpen(true);
     }
   }, [response, error]);
@@ -102,7 +103,7 @@ const SignIn = (props) => {
                 axiosFetch({
                   axiosInstance: axios,
                   method: "POST",
-                  url: `/api/v1/users/signin`,
+                  url: `/api/v1/users/login`,
                   requestConfig: { ...values },
                 });
                 console.log("HITTING");

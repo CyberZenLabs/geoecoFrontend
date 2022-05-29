@@ -58,135 +58,135 @@ const Registration = (props) => {
         }
     }, [response, error]);
 
-    const showToast = (type, text) => {
-        if (type === "error") {
-            toast.error(text ? text : error, {
-                toastId: "error",
-            });
-        } else if (type === "success") {
-            toast.success(text ? text : response, {
-                toastId: "success",
-            });
-        }
-    };
+  const showToast = (type, text) => {
+    if (type === "error") {
+      toast.error(text ? text : error, {
+        toastId: "error",
+      });
+    } else if (type === "success") {
+      toast.success(text ? text : response, {
+        toastId: "success",
+      });
+    }
+  };
 
-    const startingValues = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        passwordConfirm: "",
-    };
-    return (
-        <DivRegSC>
-            <DivBackgroundFormSC>
-                <DivBoxBoxFormSC>
-                    <DivBoxFormSC>
-                        <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
-                        <SpanSC>Введите свои данные для регистрации</SpanSC>
-                        <Formik
-                            initialValues={startingValues}
-                            validationSchema={registerSchema}
-                            initialErrors={startingValues}
-                            onSubmit={(values) => {
-                                axiosFetch({
-                                    axiosInstance: axios,
-                                    auth: "login",
-                                    method: "POST",
-                                    url: `/api/v1/users/signup`,
-                                    requestConfig: { ...values },
-                                });
-                            }}
-                        >
-                            {(formik) => (
-                                <Form>
-                                    <DivBoxRowsSC>
-                                        <DivBoxColumnsSC>
-                                            <DivBoxSC>
-                                                {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
-                                                <TextField
-                                                    label="firstName"
-                                                    type="text"
-                                                    name="firstName"
-                                                    fullSize={false}
-                                                    placeholder={"Имя"}
-                                                />
-                                            </DivBoxSC>
-                                            <DivBoxSC>
-                                                {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
-                                                <TextField
-                                                    label="lastName"
-                                                    type="text"
-                                                    name="lastName"
-                                                    fullsize={false}
-                                                    placeholder={"Фамилия"}
-                                                />
-                                            </DivBoxSC>
-                                        </DivBoxColumnsSC>
-                                        <DivBoxRowSC marginBottom={true}>
-                                            {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
-                                            <TextField
-                                                label="email"
-                                                type="email"
-                                                name="email"
-                                                fullsize={true}
-                                                placeholder={"Электронная почта"}
-                                            />
-                                        </DivBoxRowSC>
-                                        <DivBoxColumnsSC>
-                                            <DivBoxSC>
-                                                {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
-                                                <TextField
-                                                    label="password"
-                                                    type="password"
-                                                    name="password"
-                                                    fullsize={false}
-                                                    placeholder={"Пароль"}
-                                                />
-                                            </DivBoxSC>
-                                            <DivBoxSC>
-                                                {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
-                                                <TextField
-                                                    label="passwordConfirm"
-                                                    type="password"
-                                                    name="passwordConfirm"
-                                                    fullsize={false}
-                                                    placeholder={"Подтвердить пароль"}
-                                                />
-                                            </DivBoxSC>
-                                        </DivBoxColumnsSC>
-                                        <DivBoxRowSC>
-                                            <ButtonCustomSC
-                                                disabled={!formik.dirty || !formik.isValid}
-                                                statusOpasity={!formik.dirty || !formik.isValid}
-                                                width={"100%"}
-                                                padding={"18px 32px"}
-                                                type="submit"
-                                            >
-                                                {!loading ? (
-                                                    <span>
+  const startingValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  };
+  return (
+    <DivRegSC>
+      <DivBackgroundFormSC>
+        <DivBoxBoxFormSC>
+          <DivBoxFormSC>
+            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
+            <SpanSC>Введите свои данные для регистрации</SpanSC>
+            <Formik
+              initialValues={startingValues}
+              validationSchema={registerSchema}
+              initialErrors={startingValues}
+              onSubmit={(values) => {
+                axiosFetch({
+                  axiosInstance: axios,
+                  auth: "login",
+                  method: "POST",
+                  url: `/api/v1/users/signup`,
+                  requestConfig: { ...values },
+                });
+              }}
+            >
+              {(formik) => (
+                <Form>
+                  <DivBoxRowsSC>
+                    <DivBoxColumnsSC>
+                      <DivBoxSC>
+                        {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
+                        <TextField
+                          label="firstName"
+                          type="text"
+                          name="firstName"
+                          fullSize={false}
+                          placeholder={"Имя"}
+                        />
+                      </DivBoxSC>
+                      <DivBoxSC>
+                        {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
+                        <TextField
+                          label="lastName"
+                          type="text"
+                          name="lastName"
+                          fullsize={false}
+                          placeholder={"Фамилия"}
+                        />
+                      </DivBoxSC>
+                    </DivBoxColumnsSC>
+                    <DivBoxRowSC marginBottom={true}>
+                      {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
+                      <TextField
+                        label="email"
+                        type="email"
+                        name="email"
+                        fullsize={true}
+                        placeholder={"Электронная почта"}
+                      />
+                    </DivBoxRowSC>
+                    <DivBoxColumnsSC>
+                      <DivBoxSC>
+                        {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                        <TextField
+                          label="password"
+                          type="password"
+                          name="password"
+                          fullsize={false}
+                          placeholder={"Пароль"}
+                        />
+                      </DivBoxSC>
+                      <DivBoxSC>
+                        {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
+                        <TextField
+                          label="passwordConfirm"
+                          type="password"
+                          name="passwordConfirm"
+                          fullsize={false}
+                          placeholder={"Подтвердить пароль"}
+                        />
+                      </DivBoxSC>
+                    </DivBoxColumnsSC>
+                    <DivBoxRowSC>
+                      <ButtonCustomSC
+                        disabled={!formik.dirty || !formik.isValid}
+                        statusOpasity={!formik.dirty || !formik.isValid}
+                        width={"100%"}
+                        padding={"18px 32px"}
+                        type="submit"
+                      >
+                        {!loading ? (
+                          <span>
                             продолжить&nbsp;&nbsp;
-                                                        <FontAwesomeIcon
-                                                            icon={faArrowRight}
-                                                        ></FontAwesomeIcon>
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                            ></FontAwesomeIcon>
                           </span>
-                                                ) : (
-                                                    <FlowerLoaderSc />
-                                                )}
-                                            </ButtonCustomSC>
-                                        </DivBoxRowSC>
-                                        <DivBoxRowSC>
-                                            <DivBoxTextSC>
-                                                <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                                                <LinkSC to="/signin">Войти</LinkSC>
-                                            </DivBoxTextSC>
-                                        </DivBoxRowSC>
-                                    </DivBoxRowsSC>
-                                </Form>
-                            )}
-                        </Formik>
+                        ) : (
+                          <FlowerLoaderSc />
+                        )}
+                      </ButtonCustomSC>
+                    </DivBoxRowSC>
+                    <DivBoxRowSC>
+                      <DivBoxTextSC>
+                        <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
+                        <LinkSC to="/signin">Войти</LinkSC>
+                      </DivBoxTextSC>
+                    </DivBoxRowSC>
+                  </DivBoxRowsSC>
+                </Form>
+              )}
+            </Formik>
 
-                        {/* <Snackbar
+            {/* <Snackbar
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}
@@ -216,15 +216,15 @@ const Registration = (props) => {
                 {error}
               </Alert>
             </Snackbar> */}
-                    </DivBoxFormSC>
-                    <img
-                        src="/default-images/Иллюстрация.svg"
-                        className="image4registration"
-                    />
-                </DivBoxBoxFormSC>
-            </DivBackgroundFormSC>
-        </DivRegSC>
-    );
+          </DivBoxFormSC>
+          <img
+            src="/default-images/Иллюстрация.svg"
+            className="image4registration"
+          />
+        </DivBoxBoxFormSC>
+      </DivBackgroundFormSC>
+    </DivRegSC>
+  );
 };
 
 export default Registration;

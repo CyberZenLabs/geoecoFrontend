@@ -1,7 +1,6 @@
 #root {
   height: 100%;
-	font-family: "Montserrat";
-
+  font-family: "Montserrat";
 }
 
 :root {
@@ -9,7 +8,7 @@
   --green-color: #85cb33;
   --green-color-hover: #7cbd2f;
   --green-color-active: #76b42e;
-  --error: #FF3D3D;
+  --error: #ff3d3d;
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;
@@ -156,7 +155,7 @@ table {
 .validation {
   color: #c407a8;
   display: block;
-  height:20px;
+  height: 20px;
 }
 
 .formValidIcon {
@@ -164,14 +163,173 @@ table {
   right: 30px;
   top: 15px;
   font-size: 1.7rem;
-  color: #FF3D3D;
+  color: #ff3d3d;
 }
 
 .image4signin {
   width: 90%;
-justify-self: center;
-align-self: center;
-max-width: 547px;
-margin: auto;
+  justify-self: center;
+  align-self: center;
+  max-width: 547px;
+  margin: auto;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --gray: #555;
+  --purple: #4e65ff;
+  --green-blue: #92effd;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  position: fixed;
+  top: 33px;
+  right: 20px;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  background: var(--white);
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.75s;
+  z-index: 1000;
+}
+
+.navigation .user-box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.navigation .user-box .username {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  color: var(--gray);
+}
+
+.navigation .user-box .image-box {
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  background: var(--white);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid var(--white);
+}
+
+.navigation .user-box .image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navigation .profileMenu-toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation .profileMenu-toggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: var(--gray);
+  transform: translateY(-10px);
+  box-shadow: 0 10px var(--gray);
+  transition: 0.5s;
+}
+
+.navigation .profileMenu-toggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: var(--gray);
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+.profileMenu {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profileMenu li {
+  list-style: none;
+}
+
+.profileMenu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.profileMenu li a ion-icon {
+  font-size: 1.5rem;
+}
+
+.profileMenu li a:hover {
+  color: var(--purple);
+}
+
+.navigation.active .profileMenu-toggle::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: none;
+}
+
+.navigation.active .profileMenu-toggle::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+.navigation.active {
+  width: 300px;
+  height: 350px;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.75s;
+}
+
+.navigation.active .user-box {
+  width: calc(100% - 60px);
+  transition-delay: 0s;
+}

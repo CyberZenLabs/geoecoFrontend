@@ -29,6 +29,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.1",
     "styled-components": "^5.3.5",
+    "use-react-router-breadcrumbs": "^3.2.1",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

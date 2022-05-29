@@ -22,7 +22,7 @@ const StarRating = ({ fixed, product }) => {
             />
             <FaStar
               color={ratingValue <= rating ? "#85CB33" : "lightgrey"}
-              size={17}
+              size={20}
             />
           </label>
         );

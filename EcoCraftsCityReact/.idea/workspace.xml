@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/etc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styled-components-css/styles.loader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAxios.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAxiosFetch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAxiosFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAxiosFunction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminLogin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Registration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styled-components-css/styles.registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-components-css/styles.registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validations/validation.signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validations/validation.signin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validations/validation.signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validations/validation.signup.js" afterDir="false" />
->>>>>>> dev
-    </list>
+    <list default="true" id="2e12fe12-8358-45c3-8ecd-9accdd591216" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,10 +21,6 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
-                  <RecentBranch>
-                    <option name="branchName" value="kirdro_product_page" />
-                    <option name="lastUsedInstant" value="1653658286" />
-                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
                     <option name="lastUsedInstant" value="1653714203" />

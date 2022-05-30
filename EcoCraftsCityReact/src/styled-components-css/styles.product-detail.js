@@ -131,4 +131,31 @@ export const DivBoxImageCarouselSC = styled.div`
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   justify-items: center;
-`
+`;
+
+export const BackButtonCustomSC = styled(ButtonBack)`
+    height: 90px;
+  width: 100%;
+  border: 0px;
+  background: none;
+  :disabled{
+    opacity: 0.5;
+  }
+`;
+
+export const NextButtonCustomSC = styled(ButtonNext)`
+  height: 90px;
+  width: 100%;
+  border: 0px;
+  background: none;
+  :disabled{
+    opacity: 0.5;
+  }
+`;
+
+export const DivBoxLeftCarouselSC = styled.div`
+    height: 100%;
+  width: 100%;
+  display: grid;
+  //justify-items: center;
+`;

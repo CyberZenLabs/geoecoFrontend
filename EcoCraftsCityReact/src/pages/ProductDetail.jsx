@@ -13,7 +13,12 @@ import {
     DivBoxPriceSC,
     DivContentPriceSC,
     DivNumberTitlePrice,
-    DivBoxCarouselSC, ImageCarouselCustom, DivBoxImageCarouselSC
+    DivBoxCarouselSC,
+    ImageCarouselCustom,
+    DivBoxImageCarouselSC,
+    BackButtonCustomSC,
+    NextButtonCustomSC,
+    DivBoxLeftCarouselSC
 } from "../styled-components-css/styles.product-detail";
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import {
@@ -23,6 +28,10 @@ import {
     FaArrowLeft,
     FaRubleSign
 } from "react-icons/fa";
+import {
+    AiOutlineArrowDown,
+    AiOutlineArrowUp
+} from 'react-icons/ai'
 import StarRating from "../components/StarRating";
 import {BoxContentButton} from "../styled-components-css/styles.navbar";
 import UilListUl from "@iconscout/react-unicons/icons/uil-list-ul";
@@ -104,124 +113,137 @@ const ProductDetail = () => {
                             </span>
                         </DivTreeBoxSC>
                         <DivBoxCarouselSC>
-                            <CarouselProvider
-                                naturalSlideWidth={30}
-                                naturalSlideHeight={20}
-                                totalSlides={5}
-                                hasMasterSpinner={true}
-                                touchEnabled={true}
-                                visibleSlides={3}
-                                // infinite
-                                orientation={'vertical'}
-                                lockOnWindowScroll
-                                // visibleSlides={3}
-                                // isIntrinsicHeight={true}
-                            >
-                                <Slider
-
-                                    trayProps={{
-                                        // clipboard events? Sure why not.
-                                        // onCopy: eventLogger,
-                                        // onCut: eventLogger,
-                                        // onPaste: eventLogger,
-
-                                        // composition events
-                                        // onCompositionEnd: eventLogger,
-                                        // onCompositionStart: eventLogger,
-                                        // onCompositionUpdate: eventLogger,
-
-                                        // keyboard events
-                                        // onKeyDown: eventLogger,
-                                        // onKeyPress: eventLogger,
-                                        // onKeyUp: eventLogger,
-
-                                        // focus events,
-                                        // onFocus: eventLogger,
-                                        // onBlur: eventLogger,
-
-                                        // form events,
-                                        // onChange: eventLogger,
-                                        // onInput: eventLogger,
-                                        // onInvalid: eventLogger,
-                                        // onSubmit: eventLogger,
-
-                                        // mouse events
-                                        onClick: eventLogger,
-                                        // onContextMenu: eventLogger,
-                                        // onDoubleClick: eventLogger,
-                                        // onDrag: eventLogger,
-                                        // onDragEnd: eventLogger,
-                                        // onDragEnter: eventLogger,
-                                        // onDragExit: eventLogger,
-                                        // onDragLeave: eventLogger,
-                                        // onDragOver: eventLogger,
-                                        // onDragStart: eventLogger,
-                                        // onDrop: eventLogger,
-                                        // onMouseDown: eventLogger,
-                                        // onMouseEnter: eventLogger,
-                                        // onMouseLeave: eventLogger,
-                                        // onMouseMove: eventLogger,
-                                        // onMouseOut: eventLogger,
-                                        // onMouseOver: eventLogger,
-                                        // onMouseUp: eventLogger,
-
-                                        // touch events
-                                        // onTouchCancel: eventLogger,
-                                        // onTouchEnd: eventLogger,
-                                        // onTouchMove: eventLogger,
-                                        onTouchStart: eventLogger,
-
-                                        // pointer events
-                                        // onPointerDown: eventLogger,
-                                        // onPointerMove: eventLogger,
-                                        // onPointerUp: eventLogger,
-                                        // onPointerCancel: eventLogger,
-                                        // onGotPointerCapture: eventLogger,
-                                        // onLostPointerCapture: eventLogger,
-                                        // onPointerEnter: eventLogger,
-                                        // onPointerLeave: eventLogger,
-                                        // onPointerOver: eventLogger,
-                                        // onPointerOut: eventLogger,
-
-                                        draggable: true,
-                                    }}
+                            <DivBoxLeftCarouselSC>
+                                <CarouselProvider
+                                    naturalSlideWidth={30}
+                                    naturalSlideHeight={20}
+                                    totalSlides={5}
+                                    hasMasterSpinner={true}
+                                    touchEnabled={true}
+                                    visibleSlides={3}
+                                    // infinite
+                                    orientation={'vertical'}
+                                    lockOnWindowScroll
+                                    // visibleSlides={3}
+                                    // isIntrinsicHeight={true}
                                 >
-                                    <Slide index={0}>
-                                        <DivBoxImageCarouselSC>
-                                            <ImageCarouselCustom
-                                                src={'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'}/>
-                                        </DivBoxImageCarouselSC>
+                                    <BackButtonCustomSC>
+                                        <AiOutlineArrowUp
+                                            color={"#3D3D3D"}
+                                            size={25}
+                                        />
+                                    </BackButtonCustomSC>
+                                    <Slider
 
-                                    </Slide>
-                                    <Slide index={1}>
-                                        <DivBoxImageCarouselSC>
-                                            <ImageCarouselCustom src={'https://static.insales-cdn.com/files/1/6751/19995231/original/ss22_new.jpg'}/>
-                                        </DivBoxImageCarouselSC>
+                                        trayProps={{
+                                            // clipboard events? Sure why not.
+                                            // onCopy: eventLogger,
+                                            // onCut: eventLogger,
+                                            // onPaste: eventLogger,
 
-                                    </Slide>
-                                    <Slide index={2}>
-                                        <DivBoxImageCarouselSC>
-                                            <ImageCarouselCustom src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}/>
-                                        </DivBoxImageCarouselSC>
+                                            // composition events
+                                            // onCompositionEnd: eventLogger,
+                                            // onCompositionStart: eventLogger,
+                                            // onCompositionUpdate: eventLogger,
 
-                                    </Slide>
-                                    <Slide index={3}>
-                                        <DivBoxImageCarouselSC>
-                                            <ImageCarouselCustom src={'https://static.insales-cdn.com/files/1/6751/19995231/original/ss22_new.jpg'}/>
-                                        </DivBoxImageCarouselSC>
+                                            // keyboard events
+                                            // onKeyDown: eventLogger,
+                                            // onKeyPress: eventLogger,
+                                            // onKeyUp: eventLogger,
 
-                                    </Slide>
-                                    <Slide index={4}>
-                                        <DivBoxImageCarouselSC>
-                                            <ImageCarouselCustom
-                                                src={'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'}/>
-                                        </DivBoxImageCarouselSC>
+                                            // focus events,
+                                            // onFocus: eventLogger,
+                                            // onBlur: eventLogger,
 
-                                    </Slide>
-                                </Slider>
-                                <ButtonBack>Back</ButtonBack>
-                                <ButtonNext>Next</ButtonNext>
-                            </CarouselProvider>
+                                            // form events,
+                                            // onChange: eventLogger,
+                                            // onInput: eventLogger,
+                                            // onInvalid: eventLogger,
+                                            // onSubmit: eventLogger,
+
+                                            // mouse events
+                                            onClick: eventLogger,
+                                            // onContextMenu: eventLogger,
+                                            // onDoubleClick: eventLogger,
+                                            // onDrag: eventLogger,
+                                            // onDragEnd: eventLogger,
+                                            // onDragEnter: eventLogger,
+                                            // onDragExit: eventLogger,
+                                            // onDragLeave: eventLogger,
+                                            // onDragOver: eventLogger,
+                                            // onDragStart: eventLogger,
+                                            // onDrop: eventLogger,
+                                            // onMouseDown: eventLogger,
+                                            // onMouseEnter: eventLogger,
+                                            // onMouseLeave: eventLogger,
+                                            // onMouseMove: eventLogger,
+                                            // onMouseOut: eventLogger,
+                                            // onMouseOver: eventLogger,
+                                            // onMouseUp: eventLogger,
+
+                                            // touch events
+                                            // onTouchCancel: eventLogger,
+                                            // onTouchEnd: eventLogger,
+                                            // onTouchMove: eventLogger,
+                                            onTouchStart: eventLogger,
+
+                                            // pointer events
+                                            // onPointerDown: eventLogger,
+                                            // onPointerMove: eventLogger,
+                                            // onPointerUp: eventLogger,
+                                            // onPointerCancel: eventLogger,
+                                            // onGotPointerCapture: eventLogger,
+                                            // onLostPointerCapture: eventLogger,
+                                            // onPointerEnter: eventLogger,
+                                            // onPointerLeave: eventLogger,
+                                            // onPointerOver: eventLogger,
+                                            // onPointerOut: eventLogger,
+
+                                            draggable: true,
+                                        }}
+                                    >
+                                        <Slide index={0}>
+                                            <DivBoxImageCarouselSC>
+                                                <ImageCarouselCustom
+                                                    src={'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'}/>
+                                            </DivBoxImageCarouselSC>
+
+                                        </Slide>
+                                        <Slide index={1}>
+                                            <DivBoxImageCarouselSC>
+                                                <ImageCarouselCustom src={'https://static.insales-cdn.com/files/1/6751/19995231/original/ss22_new.jpg'}/>
+                                            </DivBoxImageCarouselSC>
+
+                                        </Slide>
+                                        <Slide index={2}>
+                                            <DivBoxImageCarouselSC>
+                                                <ImageCarouselCustom src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}/>
+                                            </DivBoxImageCarouselSC>
+
+                                        </Slide>
+                                        <Slide index={3}>
+                                            <DivBoxImageCarouselSC>
+                                                <ImageCarouselCustom src={'https://static.insales-cdn.com/files/1/6751/19995231/original/ss22_new.jpg'}/>
+                                            </DivBoxImageCarouselSC>
+
+                                        </Slide>
+                                        <Slide index={4}>
+                                            <DivBoxImageCarouselSC>
+                                                <ImageCarouselCustom
+                                                    src={'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'}/>
+                                            </DivBoxImageCarouselSC>
+
+                                        </Slide>
+                                    </Slider>
+                                    <NextButtonCustomSC>
+                                        <AiOutlineArrowDown
+                                            color={"#3D3D3D"}
+                                            size={25}
+                                        />
+                                    </NextButtonCustomSC>
+                                </CarouselProvider>
+                            </DivBoxLeftCarouselSC>
+
                             <CarouselProvider
                                 naturalSlideWidth={70}
                                 naturalSlideHeight={70}

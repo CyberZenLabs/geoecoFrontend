@@ -21,7 +21,7 @@ import { ToastContainer } from "react-toastify";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <ToastContainer position="top-right" autoClose={2000} />
+    <ToastContainer position="top-left" autoClose={2000} />
     <React.StrictMode>
       <AppProvider>
         <AuthProvider>

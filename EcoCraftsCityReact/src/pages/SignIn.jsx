@@ -43,8 +43,7 @@ import useAxiosFunction from "../hooks/useAxiosFunction";
 const SignIn = (props) => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const [open, setOpen] = useState(false);
-  const [openError, setOpenError] = useState(false);
+
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const toastId = useRef(null);
   let navigate = useNavigate();
@@ -66,7 +65,8 @@ const SignIn = (props) => {
       showToast("success", "Вы успешно зашли");
       setCookie("token", response.token);
       login();
-      setOpen(true);
+      navigate("/");
+   
     }
   }, [response, error]);
   {

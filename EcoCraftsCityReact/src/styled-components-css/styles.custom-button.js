@@ -38,7 +38,7 @@ export const ButtonCustomSC = styled.button`
   border-radius: 20px;
   border: none;
   //color: var(--white-color);
-  text-transform: capitalize;
+  //text-transform: capitalize;
   font-family: var(--root-font-family);
   font-style: normal;
   font-weight: 600;

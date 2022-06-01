@@ -18,7 +18,14 @@ import {
     DivBoxImageCarouselSC,
     BackButtonCustomSC,
     NextButtonCustomSC,
-    DivBoxLeftCarouselSC
+    DivBoxLeftCarouselSC,
+    DivBoxOtherProductSC,
+    DivBoxOtherProductTextSC,
+    DivBoxOtherProductImgSC,
+    DivImgSC,
+    DivProductDiscSC,
+    DivProductDiscTitleSC,
+    DivProductDiscContentSC, SpanQuestionSC, DivBoxSelectionSC, DivBoxSelectedButtonSC, ButtonSelectedSC
 } from "../styled-components-css/styles.product-detail";
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import {
@@ -56,10 +63,24 @@ const routes = [
     { path: '/custom-props', breadcrumb: CustomPropsBreadcrumb, props: { someProp: 'Hi' }},
 ];
 
+const listContent = [
+    {
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore eveniet expedita, fugiat inventore laborum minus modi, placeat ratione reiciendis sapiente tempora ullam.\n' +
+            '                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet atque deserunt dignissimos error, in iste maiores nemo odio odit officia omnis placeat possimus quae quaerat quidem, recusandae tempora ut?'
+    },
+    {
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+    },
+    {
+        text: 'lorem'
+    }
+]
+
 
 const ProductDetail = () => {
     const breadcrumbs = useBreadcrumbs(routes);
     const [urlSrc, getUrlSrc] = useState('https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg')
+    const [indexSelectedButton, getIndexButton] = useState(0)
 
     const eventLogger = (ev) => {
         // eslint-disable-next-line no-console
@@ -68,6 +89,10 @@ const ProductDetail = () => {
         }
 
         // console.log('>>>>>>>>>>',ev.nativeEvent.srcElement);
+    }
+
+    const onClickTab = (index) => (e) => {
+        getIndexButton(index)
     }
 
     return (
@@ -136,68 +161,11 @@ const ProductDetail = () => {
                                     <Slider
 
                                         trayProps={{
-                                            // clipboard events? Sure why not.
-                                            // onCopy: eventLogger,
-                                            // onCut: eventLogger,
-                                            // onPaste: eventLogger,
-
-                                            // composition events
-                                            // onCompositionEnd: eventLogger,
-                                            // onCompositionStart: eventLogger,
-                                            // onCompositionUpdate: eventLogger,
-
-                                            // keyboard events
-                                            // onKeyDown: eventLogger,
-                                            // onKeyPress: eventLogger,
-                                            // onKeyUp: eventLogger,
-
-                                            // focus events,
-                                            // onFocus: eventLogger,
-                                            // onBlur: eventLogger,
-
-                                            // form events,
-                                            // onChange: eventLogger,
-                                            // onInput: eventLogger,
-                                            // onInvalid: eventLogger,
-                                            // onSubmit: eventLogger,
-
-                                            // mouse events
                                             onClick: eventLogger,
-                                            // onContextMenu: eventLogger,
-                                            // onDoubleClick: eventLogger,
-                                            // onDrag: eventLogger,
-                                            // onDragEnd: eventLogger,
-                                            // onDragEnter: eventLogger,
-                                            // onDragExit: eventLogger,
-                                            // onDragLeave: eventLogger,
-                                            // onDragOver: eventLogger,
-                                            // onDragStart: eventLogger,
-                                            // onDrop: eventLogger,
-                                            // onMouseDown: eventLogger,
-                                            // onMouseEnter: eventLogger,
-                                            // onMouseLeave: eventLogger,
-                                            // onMouseMove: eventLogger,
-                                            // onMouseOut: eventLogger,
-                                            // onMouseOver: eventLogger,
-                                            // onMouseUp: eventLogger,
 
-                                            // touch events
-                                            // onTouchCancel: eventLogger,
-                                            // onTouchEnd: eventLogger,
-                                            // onTouchMove: eventLogger,
                                             onTouchStart: eventLogger,
 
-                                            // pointer events
-                                            // onPointerDown: eventLogger,
-                                            // onPointerMove: eventLogger,
-                                            // onPointerUp: eventLogger,
-                                            // onPointerCancel: eventLogger,
-                                            // onGotPointerCapture: eventLogger,
-                                            // onLostPointerCapture: eventLogger,
-                                            // onPointerEnter: eventLogger,
-                                            // onPointerLeave: eventLogger,
-                                            // onPointerOver: eventLogger,
-                                            // onPointerOut: eventLogger,
+
 
                                             draggable: true,
                                         }}
@@ -275,15 +243,15 @@ const ProductDetail = () => {
                         <DivBoxPriceSC>
                             <DivContentPriceSC>
                                 <div>
-                                    <H5CustomSC>26 001 </H5CustomSC>
+                                    <H5CustomSC>26 001 &#8381;</H5CustomSC>
                                 </div>
 
-                                <DivNumberTitlePrice>
-                                    <FaRubleSign
-                                        color={"#000"}
-                                        size={27}
-                                    />
-                                </DivNumberTitlePrice>
+                                {/*<DivNumberTitlePrice>*/}
+                                {/*    <FaRubleSign*/}
+                                {/*        color={"#000"}*/}
+                                {/*        size={27}*/}
+                                {/*    />*/}
+                                {/*</DivNumberTitlePrice>*/}
 
                             </DivContentPriceSC>
 
@@ -309,7 +277,145 @@ const ProductDetail = () => {
 
                     </DivBoxButtonSC>
                 </DivContentProductSC>
-                ProductDetail
+                <DivBoxOtherProductSC>
+                    <DivBoxOtherProductTextSC>
+                        <span>
+                            Другие товары магазина
+                        </span>
+                        <a href="/">
+                            Смотреть все
+                        </a>
+                    </DivBoxOtherProductTextSC>
+                    <DivBoxOtherProductImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                        <DivImgSC
+                            src={'https://stjames.ru/upload/iblock/749/StJ-0322-0.jpg'}
+                        >
+
+                        </DivImgSC>
+                    </DivBoxOtherProductImgSC>
+
+                </DivBoxOtherProductSC>
+                <DivProductDiscSC>
+                    <DivProductDiscTitleSC>
+                        <span>
+                            Описание растения
+                        </span>
+                    </DivProductDiscTitleSC>
+                    <DivProductDiscContentSC>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore eveniet expedita, fugiat inventore laborum minus modi, placeat ratione reiciendis sapiente tempora ullam.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet atque deserunt dignissimos error, in iste maiores nemo odio odit officia omnis placeat possimus quae quaerat quidem, recusandae tempora ut?
+                        </p>
+                        <a>
+                            Развернуть описание
+                        </a>
+                    </DivProductDiscContentSC>
+
+                </DivProductDiscSC>
+                <DivProductDiscSC>
+                    <DivProductDiscTitleSC>
+                        <span>
+                            Общие характеристики
+                        </span>
+                    </DivProductDiscTitleSC>
+                    <DivProductDiscContentSC>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore eveniet expedita, fugiat inventore laborum minus modi, placeat ratione reiciendis sapiente tempora ullam.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet atque deserunt dignissimos error, in iste maiores nemo odio odit officia omnis placeat possimus quae quaerat quidem, recusandae tempora ut?
+                        </p>
+                    </DivProductDiscContentSC>
+                </DivProductDiscSC>
+                <DivProductDiscSC>
+                    <DivProductDiscTitleSC>
+                        <span>
+                            Дополнительная информация
+                        </span>
+                    </DivProductDiscTitleSC>
+                    <DivProductDiscContentSC>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore eveniet expedita, fugiat inventore laborum minus modi, placeat ratione reiciendis sapiente tempora ullam.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet atque deserunt dignissimos error, in iste maiores nemo odio odit officia omnis placeat possimus quae quaerat quidem, recusandae tempora ut?
+                        </p>
+                        <a >
+                            Развернуть  характеристики
+                        </a>
+                    </DivProductDiscContentSC>
+                </DivProductDiscSC>
+                <DivProductDiscSC>
+                    <DivProductDiscTitleSC>
+                        <SpanQuestionSC>
+                            Отзывы и вопросы
+                        </SpanQuestionSC>
+                    </DivProductDiscTitleSC>
+                    <DivProductDiscContentSC>
+                        <DivBoxSelectionSC>
+                            <DivBoxSelectedButtonSC>
+                                <ButtonSelectedSC
+                                    isActive={indexSelectedButton === 0}
+                                    onClick={onClickTab(0)}
+                                >
+                                    Отзывы 415
+                                </ButtonSelectedSC>
+                                <ButtonSelectedSC
+                                    isActive={indexSelectedButton === 1}
+                                    onClick={onClickTab(1)}
+                                >
+                                    Вопросы 5
+                                </ButtonSelectedSC>
+                                <ButtonSelectedSC
+                                    isActive={indexSelectedButton === 2}
+                                    onClick={onClickTab(2)}
+                                >
+                                    Статьи 1
+                                </ButtonSelectedSC>
+
+                            </DivBoxSelectedButtonSC>
+                            <div>
+                                {
+                                    listContent[indexSelectedButton].text
+                                }
+                            </div>
+                        </DivBoxSelectionSC>
+                        <ButtonCustomSC
+                            width={'338px'}
+                            padding={'8px 32px'}
+                            primary
+                        >
+                            Написать отзыв
+                        </ButtonCustomSC>
+                    </DivProductDiscContentSC>
+                </DivProductDiscSC>
+
             </DivContentProductDetailSC>
 
         </DivBoxProductDetailSC>

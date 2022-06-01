@@ -17,7 +17,7 @@ const ProductCard = () => {
       <ProductCardName>Росток на посадку</ProductCardName>
       <StarRating product={true} />
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
-      <ProductCardButton>Посмортеть</ProductCardButton>
+      <ProductCardButton to="/product/1">Посмортеть</ProductCardButton>
     </ProductCardContainer>
   );
 };

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EcoCraftsCityReact.iml" filepath="$PROJECT_DIR$/.idea/EcoCraftsCityReact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/EcoCraftsCity.iml" filepath="$PROJECT_DIR$/.idea/EcoCraftsCity.iml" />
     </modules>
   </component>
 </project>

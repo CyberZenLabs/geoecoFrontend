@@ -32,31 +32,39 @@ import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
 import AppContext from "../context/AppContext";
 import { useAuth } from "../context/AuthContext";
+import { toast } from "react-toastify";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+import { useCookies } from "react-cookie";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+ 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
+  const showToast = (type, text) => {
+    if (type === "error") {
+      toast.error(text ? text : error, {
+        toastId: "error",
+      });
+    } else if (type === "success") {
+      toast.success(text ? text : response, {
+        toastId: "success",
+      });
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    showToast("success", "Вы вышли из системы");
+    setCookie("token", response.token);
+  }
 
   const { setShowCatalog, showCatalog } = React.useContext(AppContext);
   return (
@@ -135,7 +143,7 @@ const ResponsiveAppBar = () => {
                   <a href="#">Отзывы и вопросы</a>
                 </li>
                 <li>
-                  <a href="#">Выйти</a>
+                  <a onClick={handleLogout}>Выйти</a>
                 </li>
               </ul>
             </div>

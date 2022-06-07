@@ -27,6 +27,7 @@ import {
   LinkIconSC,
   DivBoxIconEndSC,
   SpanEndHeaderSC,
+  LinkIconHideSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -150,13 +151,13 @@ const ResponsiveAppBar = () => {
 
               <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
             </LinkIconSC>
-            <LinkIconSC to="/">
+            <LinkIconHideSC to="/">
               <DivBoxIconEndSC>
-                <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
+                <UilShoppingCart  size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
               <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-            </LinkIconSC>
+            </LinkIconHideSC>
           </DivBoxIconSC>
         </DivBoxIconHeaderSC>
       </DivHeaderSC>

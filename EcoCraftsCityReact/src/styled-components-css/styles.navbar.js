@@ -176,8 +176,8 @@ export const LinkIconSC = styled(Link)`
   grid-template-rows: 56% 44%;
   @media (max-width: 730px) {
     position: absolute;
-    right: 30px;
-    top: 10px;
+    right: 10vw;
+    top: 40px;
   }
 
 `;

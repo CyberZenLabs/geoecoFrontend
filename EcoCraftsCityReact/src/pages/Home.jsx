@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <HomeContainer>
         <Carousel slides={SliderData} />
-       
+        
           {[...Array(15)].map((product) => {
             return <ProductCard />;
           })}

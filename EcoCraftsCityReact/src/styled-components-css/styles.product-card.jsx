@@ -13,6 +13,10 @@ export const HomeContainer = styled.div`
   max-width: 1322px;
   margin: auto;
   position: relative;
+  padding-top: 380px;
+  @media (max-width: 1560px) {
+    padding-top: 24.5%;
+  };
 `;
 
 export const ProductGrid = styled.div`
@@ -30,10 +34,7 @@ export const ProductCardContainer = styled.div`
   grid-template-rows: 329px 37px 35px 38px 69px 63px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
-  margin-top: 380px;
-  @media (max-width: 1560px) {
-    margin-top: 24.5vw;
-  }
+  
 `;
 
 export const ProductCardImage = styled.img`

@@ -18,6 +18,7 @@ import { AppProvider } from "./context/AppContext";
 import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
+
 import StoreFront from "./pages/StoreFront";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

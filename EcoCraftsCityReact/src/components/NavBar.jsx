@@ -9,24 +9,26 @@ import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import { GoPackage, GoCreditCard } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import {
-    DivBoxLogoSC,
-    DivBoxHeaderSC,
-    DivHeaderSC,
-    DivCatalogAndSearchBoxSC,
-    SpanFirstSC,
-    SpanSecondSC,
-    DivTextBoxSC,
-    DivBoxButtonAndInputSC,
-    DivBoxIconHeaderSC,
-    DivBoxIconSC,
-    ButtonSC,
-    BoxContentButton,
-    InputSC,
-    DivInputBoxCS,
-    DivIconBoxInput,
-    LinkIconSC,
-    DivBoxIconEndSC,
-    SpanEndHeaderSC,
+
+  DivBoxLogoSC,
+  DivBoxHeaderSC,
+  DivHeaderSC,
+  DivCatalogAndSearchBoxSC,
+  SpanFirstSC,
+  SpanSecondSC,
+  DivTextBoxSC,
+  DivBoxButtonAndInputSC,
+  DivBoxIconHeaderSC,
+  DivBoxIconSC,
+  ButtonSC,
+  BoxContentButton,
+  InputSC,
+  DivInputBoxCS,
+  DivIconBoxInput,
+  LinkIconSC,
+  DivBoxIconEndSC,
+  SpanEndHeaderSC,
+  LinkIconHideSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -91,6 +93,7 @@ const ResponsiveAppBar = () => {
                                 <span>Каталог</span>
                             </BoxContentButton>
                         </ButtonCustomSC>
+
 
                         <DivInputBoxCS>
                             <InputSC
@@ -158,13 +161,13 @@ const ResponsiveAppBar = () => {
 
                             <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
                         </LinkIconSC>
-                        <LinkIconSC to="/">
+                        <LinkIconHideSC to="/">
                             <DivBoxIconEndSC>
                                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
                             </DivBoxIconEndSC>
 
                             <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-                        </LinkIconSC>
+                        </LinkIconHideSC>
                     </DivBoxIconSC>
                 </DivBoxIconHeaderSC>
             </DivHeaderSC>

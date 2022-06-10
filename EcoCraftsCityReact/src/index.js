@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
-import Cart from "./pages/Cart";
-import AdminLogin from "./pages/AdminLogin";
+import {Cart} from "./pages/Cart";
+import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
 // import AdminForm from "./pages/AdminForm";
@@ -19,10 +19,11 @@ import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 
+import StoreFront from "./pages/StoreFront";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <ToastContainer position="top-right" autoClose={2000} />
+    <ToastContainer position="top-left" autoClose={2000} />
     <React.StrictMode>
       <AppProvider>
         <AuthProvider>
@@ -36,13 +37,14 @@ root.render(
               <Route index element={<Home />} />
               <Route path="cart" element={<Cart />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
+              <Route path="store/:id" element={<StoreFront />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}
               {/*/>*/}
               <Route path="registration" element={<Registration />} />
               <Route path="signin" element={<SignIn />} />
-              <Route path="admin-portal" element={<AdminLogin />} />
+              <Route path="admin-portal" element={<Mooo />} />
               <Route path="product/:id" element={<ProductDetail />} />
             </Routes>
 

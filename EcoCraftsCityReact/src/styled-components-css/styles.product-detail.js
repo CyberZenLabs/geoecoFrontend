@@ -21,9 +21,10 @@ export const DivBoxProductDetailSC = styled.div`
 
 export const DivContentProductDetailSC = styled.div`
     display: grid;
-  grid-template-rows: 120px 659px 286px 286px 286px 286px 286px ;
+  grid-template-rows: 120px max-content 286px 286px 286px max-content ;
   max-width: 1322px;
   width: 85vw;
+  grid-gap: 10px;
 `;
 
 export const NavLinkSC = styled(NavLink)`
@@ -49,7 +50,7 @@ export const DivBackBoxSC = styled.div`
 `;
 
 export const DivContentProductSC = styled.div`
-    outline: 1px solid var(--green-color);
+    //outline: 1px solid var(--green-color);
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: fit-content();
@@ -159,3 +160,115 @@ export const DivBoxLeftCarouselSC = styled.div`
   display: grid;
   //justify-items: center;
 `;
+
+export const DivBoxOtherProductSC = styled.div`
+    //outline: 1px solid green;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 216px;
+  span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: var(--green-color);
+  }
+`;
+
+export const DivBoxOtherProductTextSC = styled.div`
+    display: grid;
+    grid-template-columns: 325px auto;
+  align-items: center;
+`;
+
+export const DivBoxOtherProductImgSC = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 216px);
+  grid-template-rows: 216px;
+  grid-gap: 25px;
+  
+`;
+
+export const DivImgSC = styled.div`
+  background: url(${
+   ( p) => (p.src)
+  });
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
+
+export const DivProductDiscSC = styled.div`
+    display: grid;
+  grid-template-rows: 30px max-content;
+  span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: var(--green-color);
+  }
+  grid-gap: 10px;
+`;
+
+export const DivProductDiscTitleSC = styled.div`
+    display: grid;
+  align-items: center;
+`;
+
+export const DivProductDiscContentSC = styled.div`
+    display: grid;
+    grid-template-rows: max-content auto;
+  grid-gap: 20px;
+  padding-bottom: 20px;
+`;
+
+export const SpanQuestionSC = styled.span`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px!important;
+  line-height: 20px;
+`;
+
+export const DivBoxSelectionSC = styled.div`
+    display: grid;
+    grid-template-rows: 30px max-content;
+  grid-gap: 10px;
+    //height: 60px;
+    
+`;
+
+export const DivBoxSelectedButtonSC = styled.div`
+    display: grid;
+  grid-template-columns: max-content max-content max-content auto;
+  grid-gap: 50px;
+`;
+
+export const ButtonSelectedSC = styled.button`
+    border: none;
+    background: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  border-bottom: 2px solid ${(p) => (p.isActive ? 'var(--green-color)' : 'var(--white-color)')};
+  cursor: pointer;
+`;
+

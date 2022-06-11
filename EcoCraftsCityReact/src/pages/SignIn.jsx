@@ -66,7 +66,6 @@ const SignIn = (props) => {
       setCookie("token", response.token);
       login();
       navigate("/");
-   
     }
   }, [response, error]);
   {
@@ -106,7 +105,6 @@ const SignIn = (props) => {
                   url: `/api/v1/users/login`,
                   requestConfig: { ...values },
                 });
-                console.log("HITTING");
               }}
             >
               {(formik) => (

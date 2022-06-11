@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./page-css/sidenav.css";
@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
-import {Cart} from "./pages/Cart";
+import { Cart } from "./pages/Cart";
 import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -14,22 +14,27 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Registration from "./pages/Registration";
 import Footer from "./components/Footer";
 import Catalog from "./components/Catalog";
-import { AppProvider } from "./context/AppContext";
+import AppContext, { AppProvider } from "./context/AppContext";
 import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 
 import StoreFront from "./pages/StoreFront";
+import ReviewForm from "./components/ReviewForm";
+import Modal from "./components/Modal";
+import EcoModal from "./components/Modal";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <>
     <ToastContainer position="top-left" autoClose={2000} />
+
     <React.StrictMode>
       <AppProvider>
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
-
+            <EcoModal></EcoModal>
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />
@@ -46,6 +51,7 @@ root.render(
               <Route path="signin" element={<SignIn />} />
               <Route path="admin-portal" element={<Mooo />} />
               <Route path="product/:id" element={<ProductDetail />} />
+              <Route path="reviewform" element={<ReviewForm />} />
             </Routes>
 
             <Footer />

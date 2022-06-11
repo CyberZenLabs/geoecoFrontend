@@ -1,7 +1,10 @@
 import React from "react";
 
 import { useField, ErrorMessage } from "formik";
-import { FormInputErrorSpanSc, InputFullWidthSC } from "../styled-components-css/styles.registration";
+import {
+  FormInputErrorSpanSc,
+  InputFullWidthSC,
+} from "../styled-components-css/styles.registration";
 import { IoMdAlert } from "react-icons/io";
 const TextField = ({ label, size, ...props }) => {
   const [field, meta] = useField(props);

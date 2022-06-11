@@ -18,6 +18,7 @@ import AppContext, { AppProvider } from "./context/AppContext";
 import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
+
 import StoreFront from "./pages/StoreFront";
 import ReviewForm from "./components/ReviewForm";
 import Modal from "./components/Modal";

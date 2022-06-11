@@ -22,7 +22,7 @@ const Catalog = () => {
   return (
     <>
       <IconContext.Provider value={{ color: "#252525" }}>
-        <OverlayDivSc show={showCatalog} />
+        <OverlayDivSc onClick={() => setShowCatalog(false)} show={showCatalog} />
         <CatalogNavSc show={showCatalog}>
           <CatalogWrapSc>
             <CatalogIconSc to="#" onClick={() => setShowCatalog(!showCatalog)}>

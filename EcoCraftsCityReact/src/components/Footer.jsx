@@ -1,4 +1,6 @@
 import React from 'react';
+
+import BottomMenu from './BottomMenu';
 import styled from 'styled-components/macro';
 import image from '../img/logo.svg'
 // import {faFacebook} from "@fortawesome/free-solid-svg-icons";
@@ -62,6 +64,7 @@ const Footer = () => {
             <DivBottomSC>
                 <span>Сделано digital-студией CyberZen</span>
             </DivBottomSC>
+            <BottomMenu/>
         </DivBoxFooterSC>
     );
 };

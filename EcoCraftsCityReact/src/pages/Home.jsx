@@ -38,9 +38,11 @@ const Home = () => {
       <HomeContainer>
         <Carousel slides={SliderData} />
 
+
         {products.map((product) => {
           return <ProductCard product={product} />;
         })}
+
       </HomeContainer>
     </>
   );

@@ -9,6 +9,7 @@ import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import { GoPackage, GoCreditCard } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import {
+
   DivBoxLogoSC,
   DivBoxHeaderSC,
   DivHeaderSC,
@@ -27,6 +28,8 @@ import {
   LinkIconSC,
   DivBoxIconEndSC,
   SpanEndHeaderSC,
+  LinkIconHideSC,
+
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -189,6 +192,9 @@ const ResponsiveAppBar = () => {
       </DivHeaderSC>
     </DivBoxHeaderSC>
   );
+
+
+                     
 };
 
 export default ResponsiveAppBar;

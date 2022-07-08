@@ -25,6 +25,9 @@ import {
   SpanSC,
   DivRegSC,
   DivBackgroundPeopleSC,
+  DivTextBoxSC,
+  SpanFirstSC,
+  SpanSecondSC,
 } from "../styled-components-css/styles.registration";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { signInSchema } from "../validations/validation.signin";
@@ -43,8 +46,7 @@ import useAxiosFunction from "../hooks/useAxiosFunction";
 const SignIn = (props) => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const [open, setOpen] = useState(false);
-  const [openError, setOpenError] = useState(false);
+
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const toastId = useRef(null);
   let navigate = useNavigate();
@@ -66,7 +68,8 @@ const SignIn = (props) => {
       showToast("success", "Вы успешно зашли");
       setCookie("token", response.token);
       login();
-      setOpen(true);
+      navigate("/");
+   
     }
   }, [response, error]);
   {
@@ -92,9 +95,9 @@ const SignIn = (props) => {
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
-            <H4Title>Войти в аккаунт!</H4Title>
+            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
 
-            <SpanSC>Введите свои данные для входа</SpanSC>
+            <SpanSC>Введите свои данные для входа в аккаунт</SpanSC>
             <Formik
               initialValues={startingValues}
               validationSchema={signInSchema}
@@ -133,7 +136,10 @@ const SignIn = (props) => {
                         placeholder={"Пароль"}
                       />
                     </DivBoxRowSC>
-
+                    <DivTextBoxSC>
+                        <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
+                        <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
+                    </DivTextBoxSC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
@@ -144,7 +150,7 @@ const SignIn = (props) => {
                       >
                         {!loading ? (
                           <span>
-                            продолжить&nbsp;&nbsp;
+                            Войти в аккаунт&nbsp;&nbsp;
                             <FontAwesomeIcon
                               icon={faArrowRight}
                             ></FontAwesomeIcon>
@@ -156,8 +162,8 @@ const SignIn = (props) => {
                     </DivBoxRowSC>
                     <DivBoxRowSC>
                       <DivBoxTextSC>
-                        <SpanQuSC>Нет Аккаунта? </SpanQuSC>
-                        <LinkSC to="/registration">Регистрироватся</LinkSC>
+                        <SpanQuSC>У вас нет аккаунта? </SpanQuSC>
+                        <LinkSC to="/registration">Зарегистрироваться</LinkSC>
                       </DivBoxTextSC>
                     </DivBoxRowSC>
                   </DivBoxRowsSC>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 export const HomeContainer = styled.div`
@@ -80,7 +81,7 @@ export const ProductCardStoreName = styled.h5`
   color: #cbcbcb;
   justify-self: start;
 `;
-export const ProductCardButton = styled.button`
+export const ProductCardButton = styled(Link)`
   /* Кнопка (первичная) */
 
   /* Auto layout */

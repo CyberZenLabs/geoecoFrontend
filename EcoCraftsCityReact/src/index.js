@@ -23,6 +23,7 @@ import StoreFront from "./pages/StoreFront";
 import ReviewForm from "./components/ReviewForm";
 import Modal from "./components/Modal";
 import EcoModal from "./components/Modal";
+import Review from "./pages/Review";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -43,6 +44,7 @@ root.render(
               <Route path="cart" element={<Cart />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
+              <Route path="review" element={<Review />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

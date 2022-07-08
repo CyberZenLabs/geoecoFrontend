@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./page-css/sidenav.css";
@@ -15,12 +15,13 @@ import Registration from "./pages/Registration";
 import Footer from "./components/Footer";
 import MapBiding from "./pages/MapBinding";
 import Catalog from "./components/Catalog";
-import { AppProvider } from "./context/AppContext";
+import AppContext, { AppProvider } from "./context/AppContext";
 import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import StoreFront from "./pages/StoreFront";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <>
     <ToastContainer position="top-left" autoClose={2000} />
@@ -29,7 +30,7 @@ root.render(
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
-
+            <EcoModal></EcoModal>
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />
@@ -47,6 +48,7 @@ root.render(
               <Route path="signin" element={<SignIn />} />
               <Route path="admin-portal" element={<Mooo />} />
               <Route path="product/:id" element={<ProductDetail />} />
+              <Route path="reviewform" element={<ReviewForm />} />
             </Routes>
 
             <Footer />

@@ -9,6 +9,7 @@ import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import { GoPackage, GoCreditCard } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import {
+<<<<<<< HEAD
     DivBoxLogoSC,
     DivBoxHeaderSC,
     DivHeaderSC,
@@ -27,6 +28,29 @@ import {
     LinkIconSC,
     DivBoxIconEndSC,
     SpanEndHeaderSC,
+=======
+
+  DivBoxLogoSC,
+  DivBoxHeaderSC,
+  DivHeaderSC,
+  DivCatalogAndSearchBoxSC,
+  SpanFirstSC,
+  SpanSecondSC,
+  DivTextBoxSC,
+  DivBoxButtonAndInputSC,
+  DivBoxIconHeaderSC,
+  DivBoxIconSC,
+  ButtonSC,
+  BoxContentButton,
+  InputSC,
+  DivInputBoxCS,
+  DivIconBoxInput,
+  LinkIconSC,
+  DivBoxIconEndSC,
+  SpanEndHeaderSC,
+  LinkIconHideSC,
+
+>>>>>>> 7bc2b301bbc68628a394dfecc8e4475a1691e76f
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -35,10 +59,16 @@ import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 import useAxiosFunction from "../hooks/useAxiosFunction";
 import { useCookies } from "react-cookie";
+<<<<<<< HEAD
+=======
+import Modal from "./Modal";
+import EcoModal from "./Modal";
+>>>>>>> 7bc2b301bbc68628a394dfecc8e4475a1691e76f
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
+<<<<<<< HEAD
     const [cookies, setCookie, removeCookie] = useCookies(["token"]);
     const { login, logout, loggedIn, setFormValues, authError } = useAuth();
     const [response, error, loading, axiosFetch] = useAxiosFunction();
@@ -59,6 +89,49 @@ const ResponsiveAppBar = () => {
             });
         }
     };
+=======
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const { login, logout, loggedIn, setFormValues, authError } = useAuth();
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
+  const [profileActive, setProfileActive] = React.useState(null);
+
+  const toggleProfile = () => {
+    setProfileActive(!profileActive);
+  };
+  const showToast = (type, text) => {
+    if (type === "error") {
+      toast.error(text ? text : error, {
+        toastId: "error",
+      });
+    } else if (type === "success") {
+      toast.success(text ? text : response, {
+        toastId: "success",
+      });
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    showToast("success", "Вы вышли из системы");
+    setCookie("token", response.token);
+  };
+
+  const openCart = () => {
+    setOpen(true);
+    setModalData({
+      title: "123",
+      description: "123",
+      inputs: [{ inputName: "123" }, { inputName: "123" }],
+      button: true,
+      modalStyles: {
+        background: "red",
+        color: "green",
+      },
+    });
+  };
+
+  const { setOpen, setModalData } = React.useContext(AppContext);
+>>>>>>> 7bc2b301bbc68628a394dfecc8e4475a1691e76f
 
     const handleLogout = () => {
         logout();
@@ -66,6 +139,7 @@ const ResponsiveAppBar = () => {
         setCookie("token", response.token);
     }
 
+<<<<<<< HEAD
     const { setShowCatalog, showCatalog } = React.useContext(AppContext);
     return (
         <DivBoxHeaderSC>
@@ -91,6 +165,93 @@ const ResponsiveAppBar = () => {
                                 <span>Каталог</span>
                             </BoxContentButton>
                         </ButtonCustomSC>
+=======
+        <DivCatalogAndSearchBoxSC>
+          <DivTextBoxSC>
+            <SpanFirstSC to="/" onClick={openCart}>
+              Продавайте на EcoCraftCity
+            </SpanFirstSC>
+            <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>
+          </DivTextBoxSC>
+          <DivBoxButtonAndInputSC>
+            <ButtonCustomSC
+              onClick={() => setShowCatalog(!showCatalog)}
+              width={"176px"}
+              padding={"8px 32px"}
+            >
+              <BoxContentButton>
+                <UilListUl
+                  size="40"
+                  // color="#61DAFB"
+                />
+                <span>Каталог</span>
+              </BoxContentButton>
+            </ButtonCustomSC>
+
+            <DivInputBoxCS>
+              <InputSC
+                // value={lastName}
+                // onChange={onChange(getLastName)}
+                type="text"
+                id={"search"}
+                placeholder={"Я ищу..."}
+              />
+              <DivIconBoxInput>
+                <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
+              </DivIconBoxInput>
+            </DivInputBoxCS>
+          </DivBoxButtonAndInputSC>
+        </DivCatalogAndSearchBoxSC>
+        {loggedIn ? (
+          <div class="container">
+            <div class={profileActive ? "navigation active" : "navigation"}>
+              <div class="user-box">
+                <div class="image-box">
+                  <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
+                </div>
+                <p class="username">Jenifer Lopez</p>
+              </div>
+              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+              <ul class="profileMenu">
+                <li>
+                  <a href="#">
+                    <CgProfile />
+                    Мой Профиль
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <GoPackage />
+                    Заказы
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <GoCreditCard />
+                    Мой Карты
+                  </a>
+                </li>
+                <hr></hr>
+                <li>
+                  <a href="#">Баланс и история операций</a>
+                </li>
+                <li>
+                  <a href="#">Отзывы и вопросы</a>
+                </li>
+                <li>
+                  <a onClick={handleLogout}>Выйти</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : null}
+        <DivBoxIconHeaderSC>
+          <DivBoxIconSC>
+            <LinkIconSC to="/signin">
+              <DivBoxIconEndSC>
+                <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+              </DivBoxIconEndSC>
+>>>>>>> 7bc2b301bbc68628a394dfecc8e4475a1691e76f
 
                         <DivInputBoxCS>
                             <InputSC
@@ -156,6 +317,7 @@ const ResponsiveAppBar = () => {
                                 <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
                             </DivBoxIconEndSC>
 
+<<<<<<< HEAD
                             <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
                         </LinkIconSC>
                         <LinkIconSC to="/">
@@ -170,6 +332,18 @@ const ResponsiveAppBar = () => {
             </DivHeaderSC>
         </DivBoxHeaderSC>
     );
+=======
+              <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
+            </LinkIconSC>
+          </DivBoxIconSC>
+        </DivBoxIconHeaderSC>
+      </DivHeaderSC>
+    </DivBoxHeaderSC>
+  );
+
+
+                     
+>>>>>>> 7bc2b301bbc68628a394dfecc8e4475a1691e76f
 };
 
 export default ResponsiveAppBar;

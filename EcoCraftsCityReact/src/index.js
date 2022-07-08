@@ -30,7 +30,7 @@ root.render(
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
-            <EcoModal></EcoModal>
+            {/* <EcoModal></EcoModal> */}
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />
@@ -48,7 +48,7 @@ root.render(
               <Route path="signin" element={<SignIn />} />
               <Route path="admin-portal" element={<Mooo />} />
               <Route path="product/:id" element={<ProductDetail />} />
-              <Route path="reviewform" element={<ReviewForm />} />
+              {/* <Route path="reviewform" element={<ReviewForm />} /> */}
             </Routes>
 
             <Footer />

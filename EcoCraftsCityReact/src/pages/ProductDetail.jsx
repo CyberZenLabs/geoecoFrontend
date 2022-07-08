@@ -131,9 +131,7 @@ const ProductDetail = () => {
                                 product={false}
                                 fixed={true}
                             />
-                            <span>
-                                415 отзывов
-                            </span>
+                             415 отзывов
                             <span>
                                 Купили более 1000 раз
                             </span>

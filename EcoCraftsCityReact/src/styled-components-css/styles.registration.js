@@ -21,6 +21,26 @@ export const H4Title = styled.h4`
   //text-align: center;
 `;
 
+export const DivTextBoxSC = styled.div`
+display: grid;
+grid-template-columns: 123px 121px;
+grid-column-gap: 268px;
+`
+
+export const SpanFirstSC = styled(Link)`
+display: inline-block;
+font-size: 14px;
+text-decoration: none;
+color: black;
+`
+
+export const SpanSecondSC = styled(Link)`
+display: inline-block;
+font-size: 14px;
+text-decoration: none;
+color: black;
+`
+
 export const LabelSC = styled.label`
   //position: absolute;
   display: inline-block;
@@ -58,7 +78,8 @@ export const DivBoxRowsSC = styled.div`
 `;
 export const DivBoxColumnsSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "50% 50%")};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "234px 234px")};
+  grid-column-gap: 44px;
   @media (max-width: 643px) {
     display: block !important;
     width: 100%;
@@ -87,7 +108,7 @@ export const InputSC = styled.input`
 `;
 
 export const DivBoxRowSC = styled.div`
-  width: 100%;
+  width: 512px;
   justify-content: space-evenly;
   margin-bottom: ${({ marginBottom }) => (marginBottom ? "32px" : "inherit")};
 `;

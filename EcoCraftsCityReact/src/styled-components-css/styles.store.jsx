@@ -40,7 +40,6 @@ export const StoreInfoHeaderSC = styled.h3`
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
-
   color: #000000;
 `;
 
@@ -56,10 +55,12 @@ export const DivStoreOptionsLinkSC = styled(Link)`
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
+
+  
   line-height: 18px;
 `;
 export const DivStoreLeftPanelSC = styled.div`
     
 
-    
+
 `

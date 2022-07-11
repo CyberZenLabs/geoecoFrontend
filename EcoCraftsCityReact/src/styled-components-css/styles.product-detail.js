@@ -50,7 +50,6 @@ export const DivBackBoxSC = styled.div`
 `;
 
 export const DivContentProductSC = styled.div`
-    //outline: 1px solid var(--green-color);
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: fit-content();
@@ -271,4 +270,3 @@ export const ButtonSelectedSC = styled.button`
   border-bottom: 2px solid ${(p) => (p.isActive ? 'var(--green-color)' : 'var(--white-color)')};
   cursor: pointer;
 `;
-

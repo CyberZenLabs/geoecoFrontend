@@ -166,6 +166,10 @@ table {
   font-size: 1.7rem;
   color: #ff3d3d;
 }
+.image_cadr{
+  margin-top: 6px;
+  margin-left: 10px;
+}
 
 .image4signin {
   width: 90%;
@@ -174,6 +178,7 @@ table {
   max-width: 547px;
   margin: auto;
 }
+
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
@@ -272,6 +277,7 @@ table {
   box-shadow: 0 10px var(--gray);
   transition: 0.5s;
 }
+
 
 .navigation .profileMenu-toggle::after {
   content: "";

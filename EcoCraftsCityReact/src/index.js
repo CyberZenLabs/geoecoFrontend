@@ -4,25 +4,32 @@ import "./index.css";
 import "./page-css/sidenav.css";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// import pages
 import Home from "./pages/Home";
-import NavBar from "./components/NavBar";
-import { Cart } from "./pages/Cart";
+import PersonalData from "./pages/PersonalData";
 import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
-// import AdminForm from "./pages/AdminForm";
 import Registration from "./pages/Registration";
+import SignIn from "./pages/SignIn";
+import StoreFront from "./pages/StoreFront";
+
+//components
+import NavBar from "./components/NavBar";
+// import AdminForm from "./pages/AdminForm";
 import Footer from "./components/Footer";
 import Catalog from "./components/Catalog";
-import AppContext, { AppProvider } from "./context/AppContext";
-import SignIn from "./pages/SignIn";
-import { AuthProvider } from "./context/AuthContext";
-import { ToastContainer } from "react-toastify";
-
-import StoreFront from "./pages/StoreFront";
 import ReviewForm from "./components/ReviewForm";
 import Modal from "./components/Modal";
 import EcoModal from "./components/Modal";
+
+
+import AppContext, { AppProvider } from "./context/AppContext";
+import { AuthProvider } from "./context/AuthContext";
+//notifications 
+import { ToastContainer } from "react-toastify";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -40,7 +47,7 @@ root.render(
             <Catalog />
             <Routes>
               <Route index element={<Home />} />
-              <Route path="cart" element={<Cart />} />
+              <Route path="personaldata" element={<PersonalData />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               {/*<Route*/}

@@ -62,6 +62,28 @@ import {
   DivIconBoxInput,
   InputCheckbox,
   Labelfor,
+  UlDropdownCS,
+  LiDropdownCS,
+  LiDropdownLinkCS,
+  UlDropdown1CS,
+  InputCheckboxItem,
+  DivSalePinSC,
+  DivStoreOptionsLinkStoreSC,
+  SaveButtonSC,
+  StoreViewLinkDotsSC,
+  StoreItemsNumBotSC,
+  UilSearchHeadSC,
+  SaveButtonPanelSC,
+  DivButtonBottomSaveSC,
+  BottomPanel2PageSC,
+  BottomPanelSelectSC,
+  DivBottomAddItemNumSC,
+  PlusMinusButtonsCS,
+  BottomPanelChoice2SC,
+  DivItemsInfo2PageSC,
+  DivBottomAddItemNumItemSC,
+  PlusMinusButtonsItemCS,
+  BottomPanelSelectItemSC,
 } from "../styled-components-css/styles.store";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaRubleSign } from "react-icons/fa";
@@ -74,122 +96,251 @@ const routes = [
     props: { someProp: "Hi" },
   },
 ];
-const listContent = [
-  {
-    options: (
-      <DivOptionsPanel2SC>
-        <DropDownOptionsSC>
-          Тип товара
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Статус
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Скидки
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Сортировка
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Все рубрики
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-      </DivOptionsPanel2SC>
-    ),
-    item: (
-      <DivItemsInfoSC>
-        <ItemTitleSC>Растения: Крестовник роули</ItemTitleSC>
-        <ItemTimeSC>Вчера 20:50</ItemTimeSC>
-        <ItemInStockSC>Готовый товар:1шт</ItemInStockSC>
-        <ItemPriceSC>26 001 ₽</ItemPriceSC>
-
-        <ToEditSC to="/">Редактировать</ToEditSC>
-        <ItemOptionsDropDownSC>...</ItemOptionsDropDownSC>
-      </DivItemsInfoSC>
-    ),
-    bottom: (
-      <BottomPanelSC>
-        <BottomPanelChoiceSC>
-        <InputCheckbox type="checkbox" id="todo" name="todo" value="todo"/>
-         <Labelfor for="todo">Выбрать все</Labelfor>
-         </BottomPanelChoiceSC>
-
-
-        <BottomPanelTextSC to="/">
-          <FaMarginCS>
-            <FaRubleSign />
-          </FaMarginCS>
-          Изменить цену
-        </BottomPanelTextSC>
-        <BottomPanelTextDraftSC to="/">В черновики</BottomPanelTextDraftSC>
-        <BottomPanelMoreSC to="/">Еще</BottomPanelMoreSC>
-      </BottomPanelSC>
-    ),
-  },
-  {
-    options: (
-      <DivOptionsPanel2SC>
-        <DropDownOptionsSC>
-          Все товары
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Сортировка
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-      </DivOptionsPanel2SC>),
-      item: (
-        <DivItemsInfoSC>
-          <ItemTitleSC>Растения: Крестовник роули</ItemTitleSC>
-        </DivItemsInfoSC>
-      
-    ),
-  },
-  {
-    options: (
-      <DivOptionsPanel2SC>
-        <DropDownOptionsSC>
-          Все товары
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-        <DropDownOptionsSC>
-          Сортировка
-          <IoMarginCS>
-            <IoIosArrowDown />
-          </IoMarginCS>
-        </DropDownOptionsSC>
-      </DivOptionsPanel2SC>
-    ),
-  },
-];
-
 const StoreFront = ({ product }) => {
+  const [checked, setChecked] = useState(false);
+  const check = () => {
+    setChecked(!checked);
+  };
+  const [state, setState] = useState(false);
+  const showDropdown = () => {
+    setState(true);
+  };
+  const hideDropdown = () => {
+    setState(false);
+  };
+  const [state1, setState1] = useState(false);
+  const hideDropdown1 = () => {
+    setState1(false);
+  };
+  const showDropdown1 = () => {
+    setState1(true);
+  };
+  const listContent = [
+    {
+      options: (
+        <DivOptionsPanel2SC>
+          <DropDownOptionsSC>
+            Тип товара
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+          <DropDownOptionsSC>
+            Статус
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+          <DropDownOptionsSC>
+            Скидки
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+          <DropDownOptionsSC>
+            Сортировка
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+          <DropDownOptionsSC>
+            Все рубрики
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+        </DivOptionsPanel2SC>
+      ),
+      item: (
+        <DivItemsSC>
+          <div>
+            <InputCheckboxItem
+              type="checkbox"
+              name="todo"
+              value="todo"
+              checked={checked}
+              onChange={check}
+              onClick={!checked}
+            />
+
+            <DivItemsImageSC src={"/default-images/plant.jpg"} />
+            <DivSalePinSC>37%</DivSalePinSC>
+          </div>
+          <DivItemsInfoSC>
+            <ItemTitleSC>Растения: Крестовник роули</ItemTitleSC>
+            <ItemTimeSC>Вчера 20:50</ItemTimeSC>
+            <ItemInStockSC>Готовый товар:1шт</ItemInStockSC>
+            <ItemPriceSC>26 001 ₽</ItemPriceSC>
+
+            <ToEditSC to="/">Редактировать</ToEditSC>
+            <ItemOptionsDropDownSC
+              onMouseLeave={hideDropdown1}
+              onMouseEnter={showDropdown1}
+            >
+              ...
+              {state1 ? (
+                <UlDropdown1CS onMouseEnter={showDropdown1}>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Удалить</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">В черновики</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Скопировать</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Посмотреть</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                </UlDropdown1CS>
+              ) : null}
+            </ItemOptionsDropDownSC>
+          </DivItemsInfoSC>
+        </DivItemsSC>
+      ),
+      bottom: (
+        <>
+          <BottomPanelSC>
+            <BottomPanelChoiceSC>
+              <InputCheckbox
+                type="checkbox"
+                id="todo"
+                name="todo"
+                value="todo"
+                checked={checked}
+              />
+
+              <Labelfor for="todo" onClick={check}>
+                Выбрать все
+              </Labelfor>
+            </BottomPanelChoiceSC>
+
+            <BottomPanelTextSC to="/">
+              <FaMarginCS>
+                <FaRubleSign />
+              </FaMarginCS>
+              Изменить цену
+            </BottomPanelTextSC>
+            <BottomPanelTextDraftSC to="/">В черновики</BottomPanelTextDraftSC>
+            <BottomPanelMoreSC
+              onMouseLeave={hideDropdown}
+              onMouseEnter={showDropdown}
+            >
+              Еще
+              {state ? (
+                <UlDropdownCS onMouseEnter={showDropdown}>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Сделать скидку</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Изменить статус</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Разместить</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                  <LiDropdownCS>
+                    <LiDropdownLinkCS to="/">Удалить</LiDropdownLinkCS>
+                  </LiDropdownCS>
+                </UlDropdownCS>
+              ) : null}
+            </BottomPanelMoreSC>
+          </BottomPanelSC>
+        </>
+      ),
+    },
+    {
+      options: (
+        <DivOptionsPanel2SC>
+          <DropDownOptionsSC>
+            Все товары
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+          <DropDownOptionsSC>
+            Сортировка
+            <IoMarginCS>
+              <IoIosArrowDown />
+            </IoMarginCS>
+          </DropDownOptionsSC>
+        </DivOptionsPanel2SC>
+      ),
+      item: (
+        <DivItemsSC>
+          <div>
+            <InputCheckboxItem
+              type="checkbox"
+              name="todo"
+              value="todo"
+              checked={checked}
+              onChange={check}
+              onClick={!checked}
+            />
+            <DivItemsImageSC src={"/default-images/plant.jpg"} />
+          </div>
+          <DivItemsInfo2PageSC>
+            <ItemTitleSC>Растения: Крестовник роули</ItemTitleSC>
+            <ItemTimeSC>
+             
+              <DivBottomAddItemNumItemSC>
+                <PlusMinusButtonsItemCS>-</PlusMinusButtonsItemCS>1
+                <PlusMinusButtonsItemCS>+</PlusMinusButtonsItemCS>
+              </DivBottomAddItemNumItemSC>
+            </ItemTimeSC>
+            <ItemPriceSC>
+              <BottomPanelSelectItemSC>
+                Не более 5 дней{" "}
+                <IoMarginCS>
+                  <IoIosArrowDown />
+                </IoMarginCS>
+              </BottomPanelSelectItemSC>
+            </ItemPriceSC>
+          </DivItemsInfo2PageSC>
+        </DivItemsSC>
+      ),
+      bottom: (
+        <>
+          <BottomPanel2PageSC>
+            <BottomPanelChoice2SC>
+              <InputCheckbox
+                type="checkbox"
+                id="todo"
+                name="todo"
+                value="todo"
+                checked={checked}
+              />
+
+              <Labelfor for="todo" onClick={check}>
+                Выбрать все
+              </Labelfor>
+            </BottomPanelChoice2SC>
+
+            <DivBottomAddItemNumSC>
+              <PlusMinusButtonsCS>-</PlusMinusButtonsCS>1
+              <PlusMinusButtonsCS>+</PlusMinusButtonsCS>
+            </DivBottomAddItemNumSC>
+            <BottomPanelSelectSC>
+              Не более 5 дней{" "}
+              <IoMarginCS>
+                <IoIosArrowDown />
+              </IoMarginCS>
+            </BottomPanelSelectSC>
+            <SaveButtonSC>Сохранить</SaveButtonSC>
+          </BottomPanel2PageSC>
+          <DivButtonBottomSaveSC>
+            <SaveButtonPanelSC>Сохранить</SaveButtonPanelSC>
+          </DivButtonBottomSaveSC>
+        </>
+      ),
+    },
+  ];
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
 
   const [indexSelectedButton, getIndexButton] = useState(0);
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
+
   return (
     <>
       <DivWrapLinkSC>
@@ -226,7 +377,9 @@ const StoreFront = ({ product }) => {
             <DivStoreOptionsLinkSC to="/">Настройки</DivStoreOptionsLinkSC>
             <br />
             <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/">Магазин 50</DivStoreOptionsLinkSC>
+            <DivStoreOptionsLinkStoreSC to="/">
+              Магазин 50
+            </DivStoreOptionsLinkStoreSC>
             <br />
             <DivStoreOptionsLinkSC to="/">
               Оплата и доставка
@@ -252,12 +405,16 @@ const StoreFront = ({ product }) => {
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
             <H1BoldTextSC>Магазин</H1BoldTextSC>
+            <UilSearchHeadSC size="20" color="#85cb33" />
             <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
             <StoreViewLinkSC to="/">
               Как посетители видят мой магазин
             </StoreViewLinkSC>
+            <StoreViewLinkDotsSC to="/">...</StoreViewLinkDotsSC>
+
             <ProductCardButtonSC to="/">Добавить товар</ProductCardButtonSC>
           </DivStoreInfoStuffSC>
+          <StoreItemsNumBotSC>Товары: 1/3</StoreItemsNumBotSC>
           <DivStoreInfoStuffButtonSC to="/">
             <ProductCardButtonAfterSC to="/">
               Добавить товар
@@ -291,12 +448,7 @@ const StoreFront = ({ product }) => {
               >
                 Учет товаров
               </StoreSalesAndAccountLinkSC>
-              <StoreSalesAndAccountLinkSC
-                isActive={indexSelectedButton === 2}
-                onClick={onClickTab(2)}
-              >
-                Акции
-              </StoreSalesAndAccountLinkSC>
+
               <StoreSalesAndAccountLinkSearchSC>
                 <InputSC type="text" id={"search"} />
                 <DivIconBoxInput>
@@ -308,12 +460,7 @@ const StoreFront = ({ product }) => {
             <HrLineSC />
             {listContent[indexSelectedButton].options}
           </DivItemsOptionsSC>
-          <DivItemsSC>
-            <DivItemsImageSC
-              src={"/default-images/plant.jpg"}
-            ></DivItemsImageSC>
-            {listContent[indexSelectedButton].item}
-          </DivItemsSC>
+          {listContent[indexSelectedButton].item}
           {listContent[indexSelectedButton].bottom}
         </DivStoreRightPanelSC>
       </DivStoreWrapSC>

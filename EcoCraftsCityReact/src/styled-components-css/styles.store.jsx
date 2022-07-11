@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import UilSearch from "@iconscout/react-unicons/icons/uil-search";
 
+
 export const DivWrapLinkSC = styled.div`
   max-width: 1420px;
   margin: auto;
@@ -11,6 +12,9 @@ export const DivWrapLinkSC = styled.div`
   padding-right: 20px;
   width: 90vw;
   min-width: 600px;
+  @media (max-width: 990px) {
+    display: none;
+  }
 `;
 export const DivStoreWrapSC = styled.div`
   display: grid;
@@ -21,7 +25,7 @@ export const DivStoreWrapSC = styled.div`
   color: black;
   padding-top: 30px;
   grid-gap: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 200px;
   // border: 2px solid black;
   padding-left: 20px;
   padding-right: 20px;
@@ -127,6 +131,17 @@ export const DivStoreOptionsLinkSC = styled(Link)`
   text-decoration: none;
   //border: 2px solid gold;
 `;
+export const DivStoreOptionsLinkStoreSC = styled(Link)`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 25px;
+  margin: 20px;
+  color: black;
+  text-decoration: none;
+  //border: 2px solid gold;
+`;
 export const HrLinkSC = styled.hr`
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.171);
@@ -137,7 +152,7 @@ export const HrLineSC = styled.hr`
   margin-top: 100px;
 `;
 export const DivStoreInfoStuffSC = styled.div`
-  // border: 2px solid blue;
+   //border: 2px solid blue;
   display: grid;
   grid-template-columns: 160px auto auto auto;
   width: auto;
@@ -148,10 +163,13 @@ export const DivStoreInfoStuffSC = styled.div`
     grid-template-columns: 150px 130px auto;
     padding-bottom: 0px;
   }
+  @media (max-width: 990px) {
+    grid-template-columns: 150px 20px auto;
+  }
 `;
 export const DivStoreInfoStuffButtonSC = styled.div`
   @media (max-width: 1470px) {
-    //border: 2px solid blue;
+ //   border: 2px solid blue;
     display: grid;
     grid-template-columns: 100%;
     max-width: 1010px;
@@ -178,6 +196,52 @@ export const StoreItemsNumSC = styled.h1`
   padding-top: 28px;
   justify-self: start;
   margin-left: 5px;
+  @media (max-width: 990px) {
+    display: none;
+  }
+`;
+export const StoreItemsNumBotSC = styled.h1`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 19px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Вторичный 80% */
+
+color: rgba(37, 37, 37, 0.8);
+  //border: 2px solid gold;
+margin-bottom: 10px;
+  justify-self: start;
+  
+  @media (min-width: 991px) {
+    display: none;
+  }
+`;
+export const StoreViewLinkDotsSC = styled(Link)`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 12px;
+  padding-top: 18px;
+  color: #85cb33;
+  text-decoration: none;
+  // border: 2px solid gold;
+  justify-items: end;
+  width: 450px;
+  display: grid;
+  justify-self: end;
+  @media (max-width: 1470px) {
+    
+    margin-right: 20px;
+    width: auto;
+  }
+  @media (min-width:1101px) {
+    display: none;
+  }
 `;
 export const StoreViewLinkSC = styled(Link)`
   font-family: "Montserrat";
@@ -197,6 +261,9 @@ export const StoreViewLinkSC = styled(Link)`
     font-size: 14px;
     padding-left: 0px;
     width: auto;
+  }
+  @media (max-width:1100px) {
+    display: none;
   }
 `;
 export const ProductCardButtonSC = styled(Link)`
@@ -228,6 +295,9 @@ export const ProductCardButtonSC = styled(Link)`
   @media (max-width: 1470px) {
     display: none;
   }
+  :hover{
+    background-color:#76b42e;
+  }
 `;
 export const ProductCardButtonAfterSC = styled(Link)`
   /* Кнопка (первичная) */
@@ -256,6 +326,9 @@ export const ProductCardButtonAfterSC = styled(Link)`
   @media (min-width: 1471px) {
     display: none;
   }
+  :hover{
+    background-color:#76b42e;
+  }
 `;
 export const DivItemsOptionsSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
@@ -273,12 +346,10 @@ export const DivItemsOptionsSC = styled.div`
 export const DivOptionsPanelSC = styled.div`
   display: grid;
   // gap: 1vw;
-  grid-template-columns: 175px 205px auto auto;
+  grid-template-columns: 175px 205px  auto;
   // border: 2px solid red;
   height: 100px;
-  @media (max-width: 750px) {
-    grid-template-columns: 150px 180px auto auto;
-  }
+ 
 `;
 export const ProductsNumSC = styled.button`
   font-family: "Montserrat";
@@ -331,12 +402,10 @@ export const InputSC = styled.input`
   color: #85cb33;
   background: initial;
   max-width: 30vw;
-  @media (max-width: 1270px) {
-    max-width: 15vw;
+  @media (max-width: 1215px) {
+    max-width: 20vw;
   }
-  @media (max-width: 1070px) {
-    max-width: 10vw;
-  }
+ 
   :hover {
     width: 350px;
     border-radius: 10px;
@@ -357,9 +426,7 @@ export const StoreSalesAndAccountLinkSearchSC = styled.div`
   justify-self: right;
   transform: translate(0%, 0%);
   height: 60px;
-  @media (max-width: 750px) {
-    margin-right: 15px;
-  }
+
 `;
 export const DivOptionsPanel2SC = styled.div`
   display: grid;
@@ -388,6 +455,7 @@ export const DropDownOptionsSC = styled.h1`
   //border: 2px solid blue;
   height: 30px;
   display: grid;
+  cursor: pointer;
   grid-template-columns: auto auto;
   @media (max-width: 1470px) {
     font-size: 15px;
@@ -400,13 +468,17 @@ export const DivItemsSC = styled.div`
   margin-bottom: 2px;
   height: 200px;
   //border: 2px solid black;
+  grid-template-columns: 200px auto;
   grid-template-rows: 0px;
   width: auto;
   max-width: 1140px;
 `;
 export const DivItemsImageSC = styled.img`
+z-index: 1;
+display: grid;
   width: 200px;
   height: 196px;
+  margin-top: -43px;
   border-radius: 20px;
   //border: 2px solid blue;
 `;
@@ -422,21 +494,39 @@ export const DivItemsInfoSC = styled.div`
   height: 200px;
   max-width: 780px;
   // border: 2px solid black;
-  margin-left: 220px;
+  margin-left: 20px;
+`;
+export const DivItemsInfo2PageSC = styled.div`
+  display: grid;
+  grid-template-rows: auto auto auto ;
+
+  grid-template-areas:
+    "title title title"
+    "time time time"
+    "price price price ";
+    
+  height: 200px;
+  max-width: 780px;
+  // border: 2px solid black;
+  margin-left: 20px;
 `;
 export const ItemTitleSC = styled.h1`
   grid-area: title;
   // border: 2px solid pink;
   font-family: "Montserrat";
   font-style: normal;
+  
   font-weight: 600;
-  font-size: 25px;
-  line-height: 30px;
 
+  line-height: 30px;
+font-size: 25px;
   /* Вторичный */
   margin-top: 10px;
   color: #252525;
   max-width: auto;
+  @media (max-width: 1100px) {
+      font-size: 18px;
+  }
 `;
 export const ItemTimeSC = styled.p`
   grid-area: time;
@@ -444,14 +534,11 @@ export const ItemTimeSC = styled.p`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  
   line-height: 20px;
   width: 100%;
-
   /* identical to box height */
-
   /* Вторичный 80% */
-
   color: rgba(37, 37, 37, 0.8);
 `;
 export const ItemInStockSC = styled.p`
@@ -505,24 +592,31 @@ export const ToEditSC = styled(Link)`
     display: none;
   }
 `;
-export const ItemOptionsDropDownSC = styled.p`
+export const ItemOptionsDropDownSC = styled.button`
+z-index: 1;
   grid-area: option;
   text-decoration: none;
-
+background: none;
+border: none;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 2px;
   color: #85cb33;
   width: 100%;
+  cursor: pointer;
   // border: 2px solid green;
   text-align: center;
-  padding-top: 30px;
+ height: 10px;
+margin-top: 30px;
+ padding-bottom: 20px;
+ transition: 1s;
   @media (max-width: 990px) {
     padding-bottom: 15px;
   }
 `;
 export const BottomPanelSC = styled.div`
+z-index: 1;
   background: rgba(243, 243, 243, 0.5);
   display: grid;
   border-radius: 20px;
@@ -531,9 +625,28 @@ export const BottomPanelSC = styled.div`
    //border: 2px solid black;
   grid-template-columns: auto auto 17vw auto;
   padding-left: 15px;
-  padding-right: 25px;
+  padding-right: 15px;
   @media (max-width: 990px) {
     grid-template-columns: 50% 50%;
+  }
+`;
+export const BottomPanel2PageSC = styled.div`
+z-index: 1;
+  background: rgba(243, 243, 243, 0.5);
+  display: grid;
+  border-radius: 20px;
+  max-width: 1040px;
+  height: 80px;
+   //border: 2px solid black;
+  grid-template-columns: 163px 113px auto auto;
+  padding-left: 15px;
+  padding-right: 15px;
+margin-top: 20px;
+@media (max-width: 1100px) {
+  grid-template-columns: 163px 113px auto ;
+  }
+  @media (max-width: 990px) {
+    display: none;
   }
 `;
 export const BottomPanelChoiceSC = styled.h1`
@@ -544,6 +657,29 @@ export const BottomPanelChoiceSC = styled.h1`
   line-height: 17px;
   /* identical to box height */
   text-decoration: none;
+  padding-top: 7px;
+  /* Акцент */
+  color: #85cb33;
+  //border: 2px solid red;
+  height: 45px;
+  width: auto;
+  justify-self: start;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  @media (max-width: 1470px) {
+    font-size: 18px;
+  }
+`;
+export const BottomPanelChoice2SC = styled.h1`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  /* identical to box height */
+  text-decoration: none;
+  padding-top: 7px;
   /* Акцент */
   color: #85cb33;
   //border: 2px solid red;
@@ -567,13 +703,13 @@ export const BottomPanelTextSC = styled(Link)`
   text-decoration: none;
   /* Акцент */
   color: #85cb33;
-  //border: 2px solid green;
+ // border: 2px solid green;
   height: 50px;
   align-self: center;
   justify-self: start;
   min-width: 160px;
   display: grid;
-  padding-top: 10px;
+  padding-top: 15px;
   grid-template-columns: 30px auto;
   @media (max-width: 1470px) {
     font-size: 18px;
@@ -582,6 +718,144 @@ export const BottomPanelTextSC = styled(Link)`
   @media (max-width: 990px) {
     display: none;
   }
+`;
+export const DivBottomAddItemNumSC = styled.div`
+margin-top: 20px;
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 200;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+height: 40px;
+width: 113px;
+color: #000000;
+//border: 2px solid green;
+  @media (max-width: 1470px) {
+    font-size: 25px;
+    grid-template-columns: 25px auto;
+  }
+  @media (max-width: 990px) {
+    display: none;
+  }
+`;
+export const DivBottomAddItemNumItemSC = styled.div`
+margin-top: -20px;
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 200;
+font-size: 35px;
+line-height: 20px;
+text-align: center;
+height: 20px;
+width: 160px;
+color: #000000;
+//border: 2px solid green;
+  @media (max-width: 1470px) {
+    font-size: 35px;
+    grid-template-columns: 25px auto;
+  }
+
+`;
+export const PlusMinusButtonsItemCS = styled.button`
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 200;
+font-size: 48px;
+margin-left: 10px;
+margin-right: 10px;
+line-height: 10px;
+text-align: center;
+margin-top: 5px;
+color: #000000;
+//border: 2px solid green;
+width: 50px;
+height: 50px;
+border-radius: 30px;
+box-sizing: border-box;
+background: rgba(217, 217, 217, 0.28);
+border: 1px solid rgba(0, 0, 0, 0.33);
+
+  transition: 0.3s;
+  :hover{
+    background: rgba(117, 116, 116, 0.26);
+  }
+`;
+export const PlusMinusButtonsCS = styled.button`
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 200;
+font-size: 38px;
+margin-left: 10px;
+margin-right: 10px;
+line-height: 10px;
+text-align: center;
+margin-top: 5px;
+color: #000000;
+//border: 2px solid green;
+width: 30px;
+height: 30px;
+border-radius: 20px;
+box-sizing: border-box;
+background: rgba(217, 217, 217, 0.28);
+border: 1px solid rgba(0, 0, 0, 0.33);
+  @media (max-width: 990px) {
+    display: none;
+  }
+  transition: 0.3s;
+  :hover{
+    background: rgba(117, 116, 116, 0.26);
+  }
+`;
+export const BottomPanelSelectSC = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  background: #FFFFFF;
+border-radius: 10px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+color: rgba(37, 37, 37, 0.8);
+
+  @media (max-width: 990px) {
+    display: none;
+  }
+`;
+export const BottomPanelSelectItemSC = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 290px;
+  height: 40px;
+  border: none;
+  background: #FFFFFF;
+border-radius: 10px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+color: rgba(37, 37, 37, 0.8);
+
+ 
 `;
 export const BottomPanelTextDraftSC = styled(Link)`
   font-family: "Montserrat";
@@ -593,6 +867,7 @@ export const BottomPanelTextDraftSC = styled(Link)`
   text-decoration: none;
   /* Акцент */
   color: #85cb33;
+  padding-top: 5px;
   //border: 2px solid green;
   height: 30px;
   align-self: center;
@@ -606,20 +881,27 @@ export const BottomPanelTextDraftSC = styled(Link)`
     display: none;
   }
 `;
-export const BottomPanelMoreSC = styled(Link)`
+export const BottomPanelMoreSC = styled.button`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 17px;
   text-decoration: none;
+  border: none;
+  background: none;
+ cursor: pointer;
   /* identical to box height */
   /* Акцент */
   color: #85cb33;
- // border: 2px solid black;
-  height: 30px;
+  //border: 2px solid black;
+  padding-bottom: 20px;
+  width: 60px;
+  height: 10px;
   justify-self: end;
   align-self: center;
+  text-align: end;
+
   @media (max-width: 1470px) {
     font-size: 18px;
   }
@@ -628,13 +910,63 @@ export const IoMarginCS = styled.div`
   margin-top: 4px;
   //border: 2px solid green;
 `;
+
 export const FaMarginCS = styled.div`
   margin-top: -5px;
   @media (max-width: 1470px) {
     padding-top: 4px;
   }
-  //border: 2px solid green;
+ //border: 2px solid green;
 `;
+export const UlDropdown1CS= styled.ul`
+ //border: 2px solid black;
+ transition: 1s;
+ width: 100px;
+ display: grid;
+ height: 100px;
+ margin-top: 25px;
+ margin-left: -17px;
+background: #D9D9D9;
+border-radius: 10px;
+padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: default;
+`;
+export const UlDropdownCS= styled.ul`
+ //border: 2px solid black;
+ cursor: default;
+ width: 100px;
+ display: grid;
+ height: 100px;
+ margin-left: -25px;
+margin-top: 34px;
+background: #D9D9D9;
+border-radius: 10px;
+padding-top: 5px;
+  padding-bottom: 5px;
+`;
+export const LiDropdownCS= styled.li`
+ //border: 2px solid black;
+justify-self: flex-start;
+margin-left: 10px;
+
+`;
+export const LiDropdownLinkCS= styled(Link)`
+//border: 2px solid black;
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 8px;
+line-height: 10px;
+/* identical to box height */
+text-decoration: none;
+cursor: pointer;
+color: #76B42E;
+:hover{
+  color: rgba(0, 0, 0, 0.33);
+}
+`;
+
 export const DivTwoButtonsSC = styled.div`
   @media (max-width: 990px) {
     display: grid;
@@ -672,7 +1004,7 @@ export const LeftButtonCS = styled.h1`
     width: auto;
     height: 50px;
     border-radius: 20px;
-
+cursor: pointer;
     border-radius: 20px;
     height: auto;
     // border: 2px solid black;
@@ -685,6 +1017,7 @@ export const LeftButtonCS = styled.h1`
 export const RightButtonCS = styled.h1`
   @media (max-width: 990px) {
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -717,6 +1050,16 @@ export const UilSearchSC = styled(UilSearch)`
   display: block;
   pointer-events: none;
 `;
+export const UilSearchHeadSC = styled(UilSearch)`
+  /* user-select: none; */
+ 
+
+  margin-top: 22px;
+  @media (min-width: 991px) {
+    display: none;
+    
+  }
+`;
 export const DivIconBoxInput = styled.div`
   position: absolute;
   right: 16px;
@@ -730,7 +1073,7 @@ export const InputCheckbox=styled.input`
   width: 30px;
   height:30px;
   color: black;
-  border: 1px solid #85cb33;
+  border: 2px solid #85cb33;
   border-radius: 9px;
   appearance: none;
   outline: 0;
@@ -741,7 +1084,48 @@ export const InputCheckbox=styled.input`
     content: '';
     display: block;
     top: 3px;
-    left: 10px;
+    left: 9px;
+    width: 7px;
+    height: 14px;
+    border-style: solid;
+     border-color: white;
+     border-radius:2px;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  &:checked {
+    color:white;
+    border-color:#85cb33;
+    background:#85cb33;
+   
+    &::before {
+      opacity: 1;
+     
+    }
+  }
+`;
+export const InputCheckboxItem=styled.input`
+display: grid;
+z-index: 2;
+margin-left: 15px;
+margin-top: 15px;
+ position: relative;
+  width: 30px;
+  height:30px;
+  color: black;
+  border: 2px solid #85cb33;
+  border-radius: 9px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 3px;
+    left: 9px;
     width: 7px;
     height: 14px;
     border-style: solid;
@@ -768,4 +1152,102 @@ export const Labelfor=styled.label`
  padding: 0 0.25em 0 ;
 margin-top: 7px;
   //border: 2px solid blue;
+`;
+export const DivSalePinSC = styled.div`
+display: grid;
+z-index: 10;
+width: 50px;
+height: 25px;
+margin-top: -35px;
+position: relative;
+background: #FF3D3D;
+margin-left: 15px;
+border-radius: 73px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+padding-top: 3px;
+pointer-events: none;
+/* identical to box height */
+text-align: center;
+color: #FFFFFF;
+`;
+export const SaveButtonSC = styled.button`
+  /* Кнопка (первичная) */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  justify-self: end;
+  margin-right: -15px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  /* Акцент */
+  text-decoration: none;
+  background: #85cb33;
+  border-radius: 20px;
+  width: 15vw;
+  max-width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  @media (max-width:1100px) {
+    display: none;
+  }
+ 
+  :hover{
+    background-color:#76b42e;
+  }
+`;
+export const SaveButtonPanelSC = styled.button`
+/* Кнопка (первичная) */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  /* Акцент */
+  text-decoration: none;
+  background: #85cb33;
+  border-radius: 20px;
+  width: auto;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  @media (min-width:1101px) {
+    display: none;
+  }
+  :hover{
+    background-color:#76b42e;
+  }
+`;
+export const DivButtonBottomSaveSC = styled.div`
+  @media (max-width: 1100px) {
+   // border: 2px solid blue;
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: 1010px;
+  }
 `;

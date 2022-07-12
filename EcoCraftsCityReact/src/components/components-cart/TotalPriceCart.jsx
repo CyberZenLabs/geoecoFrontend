@@ -15,7 +15,9 @@ import {
 	DivTotalDateSC,
 	DivTotalPaymentTitleSC,
 	DivTotalPaymentSC,
-	DivTotalConditionsSC, DivBoxButtonContentSC,
+	DivTotalConditionsSC,
+	DivBoxButtonContentSC,
+	DivTotalConditiosContainerSC,
 } from '../../styled-components-css/styles.price-cart';
 
 const TotalPriceCart = props => {
@@ -57,8 +59,10 @@ const TotalPriceCart = props => {
 					<p>Карта</p>
 				</DivTotalPaymentSC>
 				<DivTotalConditionsSC>
-					<MdInfoOutline />
-					<p>Условия возврата и доставки</p>
+					<DivTotalConditiosContainerSC>
+						<MdInfoOutline size={'20px'} />
+						<p>Условия возврата и доставки</p>
+					</DivTotalConditiosContainerSC>
 				</DivTotalConditionsSC>
 
 				<ButtonCustomSC
@@ -69,11 +73,8 @@ const TotalPriceCart = props => {
 				>
 					<DivBoxButtonContentSC>
 						<span>Оплатить заказ</span>
-						<FiArrowRight
-							size={'20px'}
-						/>
+						<FiArrowRight size={'20px'} />
 					</DivBoxButtonContentSC>
-
 				</ButtonCustomSC>
 			</DivMainTotalboxSC>
 		</DivBoxTotalPriceSC>

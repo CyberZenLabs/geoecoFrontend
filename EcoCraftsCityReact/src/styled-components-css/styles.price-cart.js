@@ -11,7 +11,8 @@ export const DivMainTotalboxSC = styled.div`
 `;
 
 export const DivTotalTitleSC = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: max-content max-content;
 	justify-content: space-between;
 	font-weight: 700;
 	font-size: 30px;
@@ -19,7 +20,8 @@ export const DivTotalTitleSC = styled.div`
 `;
 
 export const DivTotalGoodsSC = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: max-content max-content;
 	justify-content: space-between;
 	font-weight: 600;
 	font-size: 20px;
@@ -27,7 +29,8 @@ export const DivTotalGoodsSC = styled.div`
 `;
 
 export const DivTotalSaleSC = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: max-content max-content;
 	justify-content: space-between;
 	font-weight: 600;
 	font-size: 20px;
@@ -35,14 +38,14 @@ export const DivTotalSaleSC = styled.div`
 `;
 
 export const DivTotalDeliveryDescSC = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: max-content max-content;
 	justify-content: space-between;
 	font-weight: 600;
 	font-size: 20px;
 	color: #252525cc;
 `;
 export const DivTotalDeliveryTitleSC = styled.div`
-	display: flex;
 	font-weight: 700;
 	font-size: 25px;
 	color: #252525;
@@ -79,13 +82,20 @@ export const DivTotalPaymentSC = styled.div`
 
 export const DivTotalConditionsSC = styled.div`
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 17px;
 	color: #252525cc;
 `;
 
+export const DivTotalConditiosContainerSC = styled.div`
+	display: grid;
+	grid-template-columns: max-content max-content;
+	align-items: center;
+	grid-gap: 5px;
+`;
+
 export const DivBoxButtonContentSC = styled.div`
-    display: grid;
-  grid-template-columns: max-content max-content;
-  align-items: center;
-  grid-gap: 5px;
-`
+	display: grid;
+	grid-template-columns: max-content max-content;
+	align-items: center;
+	grid-gap: 5px;
+`;

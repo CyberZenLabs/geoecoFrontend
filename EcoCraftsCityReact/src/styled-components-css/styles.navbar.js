@@ -198,6 +198,9 @@ export const LinkIconHideSC = styled(Link)`
     display: none;
   }
 `;
+export const LinkLogoSC = styled(Link)`
+
+`;
 
 export const DivBoxIconEndSC = styled.div`
     display: grid;

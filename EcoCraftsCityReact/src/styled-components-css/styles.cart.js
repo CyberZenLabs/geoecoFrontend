@@ -49,7 +49,7 @@ export const H2TitleProductList = styled.h2`
 export const DivBoxCheckSC = styled.div`
     padding-left: 2px;
   display: grid;
-  grid-template-columns: 10px 150px auto;
+  grid-template-columns: 30px 150px auto;
   justify-items: center;
   align-items: center;
 `
@@ -114,7 +114,9 @@ export const DivPriceSC = styled.div`
 export const DividerSC = styled.div`
     width: 714px;
   border-bottom: 1px solid rgba(0,0,0,.24);
-`
+`;
+
+
 
 
 

@@ -82,3 +82,10 @@ export const DivTotalConditionsSC = styled.div`
 	font-size: 20px;
 	color: #252525cc;
 `;
+
+export const DivBoxButtonContentSC = styled.div`
+    display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  grid-gap: 5px;
+`

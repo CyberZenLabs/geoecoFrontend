@@ -74,6 +74,7 @@ const ResponsiveAppBar = () => {
                             onClick={() => setShowCatalog(!showCatalog)}
                             width={"176px"}
                             padding={"8px 32px"}
+                            primary={true}
                         >
                             <BoxContentButton>
                                 <UilListUl

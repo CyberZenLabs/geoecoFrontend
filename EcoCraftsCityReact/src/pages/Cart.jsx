@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {
-    DivBoxFirstRowSC, DivBoxRowProductSC, DivBoxTotalPriceSC,
+    DivBoxFirstRowSC,
+    DivBoxRowProductSC,
+    DivBoxTotalPriceSC,
     DivCartBoxSC,
     DivContentCartSC
 } from "../styled-components-css/styles.cart";
 import BoxProductList from "../components/components-cart/BoxProductList";
+import TotalPriceCart from "../components/components-cart/TotalPriceCart";
 
 const arrayProduct = [
     'Крестовник роули',
@@ -31,9 +34,9 @@ const Cart = () => {
                 >
 
                 </BoxProductList>
-                <DivBoxTotalPriceSC>
+                <TotalPriceCart>
 
-                </DivBoxTotalPriceSC>
+                </TotalPriceCart>
             </DivBoxFirstRowSC>
             <div></div>
         </DivContentCartSC>

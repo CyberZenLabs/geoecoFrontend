@@ -28,6 +28,7 @@ import {
   DivBoxIconEndSC,
   SpanEndHeaderSC,
   LinkIconHideSC,
+  LinkLogoSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -88,9 +89,9 @@ const ResponsiveAppBar = () => {
   return (
     <DivBoxHeaderSC>
       <DivHeaderSC>
-        <LinkIconSC to="/">
+        <LinkLogoSC to="/">
           <DivBoxLogoSC></DivBoxLogoSC>
-        </LinkIconSC>
+        </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>

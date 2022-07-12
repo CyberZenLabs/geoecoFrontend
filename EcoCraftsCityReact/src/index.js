@@ -20,6 +20,7 @@ import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import StoreFront from "./pages/StoreFront";
+import Reviews from "./pages/Reviews";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -39,6 +40,7 @@ root.render(
               <Route path="cart" element={<Cart />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
+              <Route path="reviews" element={<Reviews/>} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

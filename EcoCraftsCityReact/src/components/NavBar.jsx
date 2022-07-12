@@ -9,7 +9,6 @@ import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import { GoPackage, GoCreditCard } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import {
-
   DivBoxLogoSC,
   DivBoxHeaderSC,
   DivHeaderSC,
@@ -29,7 +28,6 @@ import {
   DivBoxIconEndSC,
   SpanEndHeaderSC,
   LinkIconHideSC,
-
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -90,7 +88,9 @@ const ResponsiveAppBar = () => {
   return (
     <DivBoxHeaderSC>
       <DivHeaderSC>
-        <DivBoxLogoSC></DivBoxLogoSC>
+        <LinkIconSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkIconSC>
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
@@ -180,21 +180,18 @@ const ResponsiveAppBar = () => {
 
               <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
             </LinkIconSC>
-            <LinkIconSC to="/">
+            <LinkIconHideSC to="/">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
               <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-            </LinkIconSC>
+            </LinkIconHideSC>
           </DivBoxIconSC>
         </DivBoxIconHeaderSC>
       </DivHeaderSC>
     </DivBoxHeaderSC>
   );
-
-
-                     
 };
 
 export default ResponsiveAppBar;

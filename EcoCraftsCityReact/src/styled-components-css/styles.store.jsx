@@ -929,7 +929,7 @@ export const UlDropdown1CS= styled.ul`
 background: #D9D9D9;
 border-radius: 10px;
 padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   cursor: default;
 `;
 export const UlDropdownCS= styled.ul`
@@ -937,19 +937,27 @@ export const UlDropdownCS= styled.ul`
  cursor: default;
  width: 100px;
  display: grid;
- height: 100px;
+ height: max-content;
  margin-left: -25px;
-margin-top: 34px;
+margin-top: 14px;
 background: #D9D9D9;
 border-radius: 10px;
 padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 `;
 export const LiDropdownCS= styled.li`
  //border: 2px solid black;
 justify-self: flex-start;
 margin-left: 10px;
 
+`;
+export const LiDropdownHideCS= styled.li`
+ //border: 2px solid black;
+justify-self: flex-start;
+margin-left: 10px;
+@media (min-width: 990px) {
+  display: none;
+}
 `;
 export const LiDropdownLinkCS= styled(Link)`
 //border: 2px solid black;

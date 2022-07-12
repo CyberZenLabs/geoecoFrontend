@@ -8,9 +8,7 @@ export function AppProvider({ children }) {
   const [open, setOpen] = useState(false);
 
   const [modalData, setModalData] = useState({
-    title: "123",
-    description: "123",
-    inputs: [{ inputName: "123" }, { inputName: "123" }],
+    inputs: [{ email: "Электронная почта" }],
     button: true,
   });
   return (

@@ -72,14 +72,8 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpen(true);
     setModalData({
-      title: "123",
-      description: "123",
-      inputs: [{ inputName: "123" }, { inputName: "123" }],
+      inputs: [{ email: "Электронная почта" }],
       button: true,
-      modalStyles: {
-        background: "red",
-        color: "green",
-      },
     });
   };
 
@@ -95,7 +89,7 @@ const ResponsiveAppBar = () => {
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
-            <SpanFirstSC to="/" onClick={openCart}>
+            <SpanFirstSC to="#" onClick={openCart}>
               Продавайте на EcoCraftCity
             </SpanFirstSC>
             <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>

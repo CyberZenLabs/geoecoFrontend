@@ -96,7 +96,9 @@ export const LinkShopInfo = styled(Link)`
 `; 
 
 export const DivLinkReviewRaitingSC = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 10px;
   align-items: center;
   align-content: center;
 `;
@@ -112,6 +114,34 @@ export const ReviewBoxNameSC = styled.h1`
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
+`;
+
+export const ProductCardButton = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+  /* Акцент */
+
+  background: #85cb33;
+  border-radius: 20px;
+  width: 283px;
+  justify-self: center;
+  border-radius: 15px;
+  border: none;
 `;
 
 

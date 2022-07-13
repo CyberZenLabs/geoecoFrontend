@@ -14,12 +14,12 @@ import {
   ReviewContainerSC,
   TitleShopInfoSC,
   WrapShopContainerSC,
-} from "../styled-components-css/styles.review";
+} from "../styled-components-css/styles.reviews";
 import axios from "axios";
 
 
 
-const Review = ({shop, index}) => {
+const Reviews = ({shop, index}) => {
 
   const [shopRaiting, setShopRaiting] = useState();
 
@@ -68,4 +68,4 @@ const Review = ({shop, index}) => {
   );
 };
 
-export default Review;
+export default Reviews;

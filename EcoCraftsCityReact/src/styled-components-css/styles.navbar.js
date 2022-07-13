@@ -48,7 +48,7 @@ export const SpanFirstSC = styled(Link)`
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 `;
 
 export const SpanSecondSC = styled(Link)`
@@ -60,7 +60,7 @@ export const SpanSecondSC = styled(Link)`
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 `;
 
 export const DivTextBoxSC = styled.div`
@@ -197,6 +197,9 @@ export const LinkIconHideSC = styled(Link)`
   @media (max-width: 730px) {
     display: none;
   }
+`;
+export const LinkLogoSC = styled(Link)`
+
 `;
 
 export const DivBoxIconEndSC = styled.div`

@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
-import {Cart} from "./pages/Cart";
+import { Cart } from "./pages/Cart";
 import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -20,6 +20,9 @@ import SignIn from "./pages/SignIn";
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import StoreFront from "./pages/StoreFront";
+import Reviews from "./pages/Reviews";
+import EcoModal from "./components/Modal";
+import Page_404 from "./pages/404";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -30,7 +33,7 @@ root.render(
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
-            {/* <EcoModal></EcoModal> */}
+            <EcoModal></EcoModal>
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />
@@ -39,6 +42,7 @@ root.render(
               <Route path="cart" element={<Cart />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
+              <Route path="reviews" element={<Reviews />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}
@@ -48,6 +52,7 @@ root.render(
               <Route path="signin" element={<SignIn />} />
               <Route path="admin-portal" element={<Mooo />} />
               <Route path="product/:id" element={<ProductDetail />} />
+              <Route path="*" element={<Page_404 />} />
               {/* <Route path="reviewform" element={<ReviewForm />} /> */}
             </Routes>
 

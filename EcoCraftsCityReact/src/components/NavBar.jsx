@@ -90,9 +90,9 @@ const ResponsiveAppBar = () => {
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
             <SpanFirstSC to="#" onClick={openCart}>
-              Продавайте на EcoCraftCity
+              Продавайте на geoeco
             </SpanFirstSC>
-            <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>
+            <SpanSecondSC to="/">Работа в geoeco</SpanSecondSC>
           </DivTextBoxSC>
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC

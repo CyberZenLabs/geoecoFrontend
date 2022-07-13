@@ -18,26 +18,61 @@ export default [
         icon: <AiIcons.AiFillHome />,
       },
       {
-        title: "Другое",
+        title: "Предметы интерьера",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Посуда",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Рукоделие",
         path: "/overview/users",
         icon: <AiIcons.AiFillHome />,
       },
     ],
   },
   {
-    title: "Здоровое Питание",
+    title: "Товары для здоровья",
     path: "/overview",
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: "Масло",
+        title: "Экопродукты (Organic)",
         path: "/overview/users",
         icon: <AiIcons.AiFillHome />,
       },
       {
-        title: "Еда",
+        title: "Натуральные масла",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Кедровая продукция",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Пихтовая продукция",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Продукты пчеловодства",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Средства гигиены",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "БАДы, Травы, (Чаи)",
         path: "/overview/users",
         icon: <AiIcons.AiFillHome />,
       },
@@ -51,15 +86,39 @@ export default [
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: "Рисунки",
+        title: "Картины",
         path: "/overview/users",
         icon: <AiIcons.AiFillHome />,
       },
       {
-        title: "Книги",
+        title: "Прикладное творчество",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Музыкальные инструменты",
+        path: "/overview/users",
+        icon: <AiIcons.AiFillHome />,
+      },
+      {
+        title: "Украшения",
         path: "/overview/users",
         icon: <AiIcons.AiFillHome />,
       },
     ],
+  },
+  {
+    title: "Хозяйственные товары",
+    path: "/overview",
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: "Другое",
+    path: "/overview",
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
   },
 ];

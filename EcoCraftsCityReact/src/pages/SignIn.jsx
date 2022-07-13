@@ -28,6 +28,9 @@ import {
   DivTextBoxSC,
   SpanFirstSC,
   SpanSecondSC,
+  DivBoxFormSignInSC,
+  DivBoxRowSISC,
+  DivTextBoxSISC,
 } from "../styled-components-css/styles.registration";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { signInSchema } from "../validations/validation.signin";
@@ -94,8 +97,8 @@ const SignIn = (props) => {
     <DivRegSC>
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
-          <DivBoxFormSC>
-            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
+          <DivBoxFormSignInSC>
+            <H4Title>Добро пожаловать в geoeco!</H4Title>
 
             <SpanSC>Введите свои данные для входа в аккаунт</SpanSC>
             <Formik
@@ -125,7 +128,7 @@ const SignIn = (props) => {
                       />
                     </DivBoxRowSC>
 
-                    <DivBoxRowSC>
+                    <DivBoxRowSISC>
                       {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
                       <TextField
                         label="password"
@@ -134,11 +137,11 @@ const SignIn = (props) => {
                         fullSize={true}
                         placeholder={"Пароль"}
                       />
-                    </DivBoxRowSC>
-                    <DivTextBoxSC>
+                    </DivBoxRowSISC>
+                    <DivTextBoxSISC>
                         <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
                         <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
-                    </DivTextBoxSC>
+                    </DivTextBoxSISC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
@@ -200,7 +203,7 @@ const SignIn = (props) => {
                 {error}
               </Alert>
             </Snackbar> */}
-          </DivBoxFormSC>
+          </DivBoxFormSignInSC>
           <img src="/default-images/signin.svg" className="image4signin" />
         </DivBoxBoxFormSC>
       </DivBackgroundFormSC>

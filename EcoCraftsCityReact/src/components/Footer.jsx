@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
                 <DivBoxEcoCraftlSC>
                     <DivBoxEcoCraftSC>
-                        <SpanTitleSC>EcoCraftCity</SpanTitleSC>
+                        <SpanTitleSC>geoeco</SpanTitleSC>
                         <CustomLinkSC to="/">О нас</CustomLinkSC>
                         <CustomLinkSC to="/">Отзывы</CustomLinkSC>
                         <CustomLinkSC to="/">Вакансии</CustomLinkSC>

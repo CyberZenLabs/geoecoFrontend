@@ -21,6 +21,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import StoreFront from "./pages/StoreFront";
 import Reviews from "./pages/Reviews";
+import EcoModal from "./components/Modal";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -31,7 +32,7 @@ root.render(
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
-            {/* <EcoModal></EcoModal> */}
+            <EcoModal></EcoModal>
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />

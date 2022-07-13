@@ -84,6 +84,7 @@ import {
   DivBottomAddItemNumItemSC,
   PlusMinusButtonsItemCS,
   BottomPanelSelectItemSC,
+  LiDropdownHideCS,
 } from "../styled-components-css/styles.store";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaRubleSign } from "react-icons/fa";
@@ -180,6 +181,9 @@ const StoreFront = ({ product }) => {
               ...
               {state1 ? (
                 <UlDropdown1CS onMouseEnter={showDropdown1}>
+                   <LiDropdownHideCS>
+                    <LiDropdownLinkCS to="/">Редактировать</LiDropdownLinkCS>
+                  </LiDropdownHideCS>
                   <LiDropdownCS>
                     <LiDropdownLinkCS to="/">Удалить</LiDropdownLinkCS>
                   </LiDropdownCS>
@@ -229,6 +233,12 @@ const StoreFront = ({ product }) => {
               Еще
               {state ? (
                 <UlDropdownCS onMouseEnter={showDropdown}>
+                   <LiDropdownHideCS>
+                    <LiDropdownLinkCS to="/">В черновики</LiDropdownLinkCS>
+                  </LiDropdownHideCS>
+                   <LiDropdownHideCS>
+                    <LiDropdownLinkCS to="/">Изменить цену</LiDropdownLinkCS>
+                  </LiDropdownHideCS>
                   <LiDropdownCS>
                     <LiDropdownLinkCS to="/">Сделать скидку</LiDropdownLinkCS>
                   </LiDropdownCS>
@@ -289,7 +299,7 @@ const StoreFront = ({ product }) => {
             </ItemTimeSC>
             <ItemPriceSC>
               <BottomPanelSelectItemSC>
-                Не более 5 дней{" "}
+                Не более 5 дней
                 <IoMarginCS>
                   <IoIosArrowDown />
                 </IoMarginCS>
@@ -418,7 +428,7 @@ const StoreFront = ({ product }) => {
           <DivStoreInfoStuffButtonSC to="/">
             <ProductCardButtonAfterSC to="/">
               Добавить товар
-            </ProductCardButtonAfterSC>{" "}
+            </ProductCardButtonAfterSC>
           </DivStoreInfoStuffButtonSC>
           <DivTwoButtonsSC>
             <LeftButtonCS>

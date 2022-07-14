@@ -82,7 +82,7 @@ export const DivTotalPaymentSC = styled.div`
 
 export const DivTotalConditionsSC = styled.div`
 	font-weight: 600;
-	font-size: 17px;
+	font-size: 20px;
 	color: #252525cc;
 `;
 

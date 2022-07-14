@@ -18,6 +18,7 @@ import {
 	DivTotalConditionsSC,
 	DivBoxButtonContentSC,
 	DivTotalConditiosContainerSC,
+	DivButtonconteainerSC,
 } from '../../styled-components-css/styles.price-cart';
 
 const TotalPriceCart = props => {
@@ -65,17 +66,19 @@ const TotalPriceCart = props => {
 					</DivTotalConditiosContainerSC>
 				</DivTotalConditionsSC>
 
-				<ButtonCustomSC
-					// onClick={() => setShowCatalog(!showCatalog)}
-					width={'100%'}
-					// padding={'8px 32px'}
-					primary={true}
-				>
-					<DivBoxButtonContentSC>
-						<span>Оплатить заказ</span>
-						<FiArrowRight size={'20px'} />
-					</DivBoxButtonContentSC>
-				</ButtonCustomSC>
+				<DivButtonconteainerSC>
+					<ButtonCustomSC
+						// onClick={() => setShowCatalog(!showCatalog)}
+						width={'100%'}
+						// padding={'8px 32px'}
+						primary={true}
+					>
+						<DivBoxButtonContentSC>
+							<span>Оплатить заказ</span>
+							<FiArrowRight size={'20px'} />
+						</DivBoxButtonContentSC>
+					</ButtonCustomSC>
+				</DivButtonconteainerSC>
 			</DivMainTotalboxSC>
 		</DivBoxTotalPriceSC>
 	);

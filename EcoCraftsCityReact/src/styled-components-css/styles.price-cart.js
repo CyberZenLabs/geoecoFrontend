@@ -99,3 +99,8 @@ export const DivBoxButtonContentSC = styled.div`
 	align-items: center;
 	grid-gap: 5px;
 `;
+
+export const DivButtonconteainerSC = styled.div`
+	display: grid;
+	align-items: end;
+`;

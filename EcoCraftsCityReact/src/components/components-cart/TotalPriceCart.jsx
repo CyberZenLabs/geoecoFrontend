@@ -61,7 +61,7 @@ const TotalPriceCart = props => {
 				</DivTotalPaymentSC>
 				<DivTotalConditionsSC>
 					<DivTotalConditiosContainerSC>
-						<MdInfoOutline size={'20px'} />
+						<MdInfoOutline size={'20px'} color={'00622A'} />
 						<p>Условия возврата и доставки</p>
 					</DivTotalConditiosContainerSC>
 				</DivTotalConditionsSC>

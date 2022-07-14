@@ -58,10 +58,9 @@ export const DivBoxTotalPriceSC = styled.div`
 	//width: 100%;
 	max-width: 457px;
 	width: 457px;
-	border: 1px solid rgba(0, 230, 0, 0.5);
 	//padding-left: 24px;
 	border-radius: 20px;
-	background: #f3f3f380; ;
+	background: #f3f3f380;
 `;
 
 export const DivBoxListSC = styled.div`

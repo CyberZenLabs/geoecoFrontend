@@ -4,7 +4,17 @@ import {
     DivBoxRowProductSC,
     DivBoxTotalPriceSC,
     DivCartBoxSC,
-    DivContentCartSC
+    DivContentCartSC,
+    DivFirstRowDeliverySC,
+    DivTextBoldSizeSC,
+    DivInfoOfDeliverySC,
+    DivRowDeliverySC,
+    DivFirstRowInfoSC,
+    DivSecondRowInfoSC,
+    DivTextMinSizeSC,
+    DivTextBoldSizeInfoDeliverySC,
+    DivTextMinSizeInfoDeliverySC,
+   
 } from "../styled-components-css/styles.cart";
 import BoxProductList from "../components/components-cart/BoxProductList";
 import TotalPriceCart from "../components/components-cart/TotalPriceCart";
@@ -38,7 +48,19 @@ const Cart = () => {
 
                 </TotalPriceCart>
             </DivBoxFirstRowSC>
-            <div></div>
+            <div>
+            <DivFirstRowDeliverySC>
+            
+
+               <DivTextBoldSizeSC>Способ доставки <DivTextMinSizeSC>изменить</DivTextMinSizeSC> </DivTextBoldSizeSC> 
+              
+            </DivFirstRowDeliverySC>
+            <DivInfoOfDeliverySC>
+               <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
+               <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
+            </DivInfoOfDeliverySC>
+            </div>
+           
         </DivContentCartSC>
     </DivCartBoxSC>
   )

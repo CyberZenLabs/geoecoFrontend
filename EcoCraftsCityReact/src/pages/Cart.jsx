@@ -40,9 +40,7 @@ const Cart = () => {
 
                 </TotalPriceCart>
             </DivBoxFirstRowSC>
-           <BoxInfoDelivery>
-            
-           </BoxInfoDelivery>
+           
         </DivContentCartSC>
     </DivCartBoxSC>
   )

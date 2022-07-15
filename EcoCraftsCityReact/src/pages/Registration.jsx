@@ -30,6 +30,7 @@ import { Formik, Form } from "formik";
 import TextField from "../components/TextField";
 import { toast } from "react-toastify";
 import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
+import { useNavigate } from "react-router";
 // const Alert = React.forwardRef(function Alert(props, ref) {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
@@ -41,6 +42,7 @@ const Registration = (props) => {
 
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
+   let navigate = useNavigate();
   useEffect(() => {
     if (response.length === 0) {
       if (error) {
@@ -55,6 +57,8 @@ const Registration = (props) => {
       showToast("success", "Вы успешноj зарегистрировались");
       setCookie("token", response.token);
       setOpen(true);
+      navigate("/")
+      
     }
   }, [response, error]);
 
@@ -82,7 +86,7 @@ const Registration = (props) => {
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
-            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
+            <H4Title>Добро пожаловать в geoeco!</H4Title>
             <SpanSC>Введите свои данные для регистрации</SpanSC>
             <Formik
               initialValues={startingValues}

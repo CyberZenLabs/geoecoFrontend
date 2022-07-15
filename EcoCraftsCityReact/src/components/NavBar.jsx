@@ -9,7 +9,6 @@ import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import { GoPackage, GoCreditCard } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import {
-
   DivBoxLogoSC,
   DivBoxHeaderSC,
   DivHeaderSC,
@@ -29,7 +28,7 @@ import {
   DivBoxIconEndSC,
   SpanEndHeaderSC,
   LinkIconHideSC,
-
+  LinkLogoSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -73,14 +72,8 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpen(true);
     setModalData({
-      title: "123",
-      description: "123",
-      inputs: [{ inputName: "123" }, { inputName: "123" }],
+      inputs: [{ email: "Электронная почта" }],
       button: true,
-      modalStyles: {
-        background: "red",
-        color: "green",
-      },
     });
   };
 
@@ -90,14 +83,16 @@ const ResponsiveAppBar = () => {
   return (
     <DivBoxHeaderSC>
       <DivHeaderSC>
-        <DivBoxLogoSC></DivBoxLogoSC>
+        <LinkLogoSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
-            <SpanFirstSC to="/" onClick={openCart}>
-              Продавайте на EcoCraftCity
+            <SpanFirstSC to="#" onClick={openCart}>
+              Продавайте на geoeco
             </SpanFirstSC>
-            <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>
+            <SpanSecondSC to="/">Работа в geoeco</SpanSecondSC>
           </DivTextBoxSC>
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -180,21 +175,18 @@ const ResponsiveAppBar = () => {
 
               <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
             </LinkIconSC>
-            <LinkIconSC to="/">
+            <LinkIconHideSC to="/">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
               <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-            </LinkIconSC>
+            </LinkIconHideSC>
           </DivBoxIconSC>
         </DivBoxIconHeaderSC>
       </DivHeaderSC>
     </DivBoxHeaderSC>
   );
-
-
-                     
 };
 
 export default ResponsiveAppBar;

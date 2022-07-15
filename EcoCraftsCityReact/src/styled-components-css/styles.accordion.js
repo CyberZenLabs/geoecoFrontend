@@ -7,6 +7,7 @@ export const AccordionImage = styled.img`
 `;
 
 export const Slider = styled.div`
+z-index: 0;
   display: flex;
   /* margin: 100px 0; */
   margin: auto;

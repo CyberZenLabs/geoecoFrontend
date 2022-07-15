@@ -20,11 +20,11 @@ import BoxProductList from "../components/components-cart/BoxProductList";
 import TotalPriceCart from "../components/components-cart/TotalPriceCart";
 
 const arrayProduct = [
-    'Крестовник роули',
-    'Деревянная ложка',
-    'Деревянная бочка',
-    'Соломенная корзина',
-    'Стекляная солонка'
+    {name :'Крестовник роули', isSelected: false },
+    {name:'nameДеревянная ложка', isSelected: false},
+    {name :'Деревянная бочка', isSelected: false },
+    {name:'Соломенная корзина', isSelected: false },
+    {name :'Стекляная солонка', isSelected: false },
 ]
 
 const Cart = () => {
@@ -34,12 +34,24 @@ const Cart = () => {
         setArrayProd(arrayProduct)
     }, []);
 
+    function onClickAll(status) {
+        const tempArray = arrayProd.map((item, i) => {
+            
+            return {
+                ...item, 
+                isSelected: !status
+            }
+        })
+
+        setArrayProd(tempArray)
+	}
 
   return (
     <DivCartBoxSC>
         <DivContentCartSC>
             <DivBoxFirstRowSC>
                 <BoxProductList
+                    onClickAll={onClickAll}
                     arrayProd={arrayProd}
                 >
 

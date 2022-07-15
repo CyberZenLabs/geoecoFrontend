@@ -32,9 +32,7 @@ import { ToastContainer } from "react-toastify";
 import AppContext, { AppProvider } from "./context/AppContext";
 import { AuthProvider } from "./context/AuthContext";
 
-import StoreFront from "./pages/StoreFront";
 import Reviews from "./pages/Reviews";
-import EcoModal from "./components/Modal";
 import Page_404 from "./pages/404";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

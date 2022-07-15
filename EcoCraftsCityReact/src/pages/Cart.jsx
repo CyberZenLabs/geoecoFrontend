@@ -5,20 +5,12 @@ import {
     DivBoxTotalPriceSC,
     DivCartBoxSC,
     DivContentCartSC,
-    DivFirstRowDeliverySC,
-    DivTextBoldSizeSC,
-    DivInfoOfDeliverySC,
-    DivRowDeliverySC,
-    DivFirstRowInfoSC,
-    DivSecondRowInfoSC,
-    DivTextMinSizeSC,
-    DivTextBoldSizeInfoDeliverySC,
-    DivTextMinSizeInfoDeliverySC,
+   
    
 } from "../styled-components-css/styles.cart";
 import BoxProductList from "../components/components-cart/BoxProductList";
 import TotalPriceCart from "../components/components-cart/TotalPriceCart";
-
+import BoxInfoDelivery from '../components/components-cart/BoxInfoOfDelivery';
 const arrayProduct = [
     {name :'Крестовник роули', isSelected: false },
     {name:'nameДеревянная ложка', isSelected: false},
@@ -60,19 +52,9 @@ const Cart = () => {
 
                 </TotalPriceCart>
             </DivBoxFirstRowSC>
-            <div>
-            <DivFirstRowDeliverySC>
+           <BoxInfoDelivery>
             
-
-               <DivTextBoldSizeSC>Способ доставки <DivTextMinSizeSC>изменить</DivTextMinSizeSC> </DivTextBoldSizeSC> 
-              
-            </DivFirstRowDeliverySC>
-            <DivInfoOfDeliverySC>
-               <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
-               <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
-            </DivInfoOfDeliverySC>
-            </div>
-           
+           </BoxInfoDelivery>
         </DivContentCartSC>
     </DivCartBoxSC>
   )

@@ -11,7 +11,7 @@ import {
     DivTextBoldSizeInfoDeliverySC,
     DivTextMinSizeInfoDeliverySC,
    
-}from '../../styled-components-css/styles.BoxInfoOfDelivery';
+}from '../../styled-components-css/styles.BoxInfoDelivery';
 
 const BoxInfoDelivery = props => {
 	return (

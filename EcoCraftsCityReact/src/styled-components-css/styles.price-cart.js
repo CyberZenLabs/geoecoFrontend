@@ -82,7 +82,7 @@ export const DivTotalPaymentSC = styled.div`
 
 export const DivTotalConditionsSC = styled.div`
 	font-weight: 600;
-	font-size: 17px;
+	font-size: 20px;
 	color: #252525cc;
 `;
 
@@ -98,4 +98,9 @@ export const DivBoxButtonContentSC = styled.div`
 	grid-template-columns: max-content max-content;
 	align-items: center;
 	grid-gap: 5px;
+`;
+
+export const DivButtonconteainerSC = styled.div`
+	display: grid;
+	align-items: end;
 `;

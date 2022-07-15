@@ -179,7 +179,9 @@ table {
   margin: auto;
 }
 
-
+.razdel{
+  width: 85%; margin: 10px 7% 0 7%;
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
 :root {

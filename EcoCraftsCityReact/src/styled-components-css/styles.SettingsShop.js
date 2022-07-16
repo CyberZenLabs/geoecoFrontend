@@ -22,15 +22,15 @@ font-size:10px;
 `;
 export const DivInfoStoreST=styled.div`
 display: grid;
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: 45% 55%;
   font-size:15px;
 
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   padding: 20px;
   @media (max-width: 1100px) {
-    width: 270px;
+    grid-template-columns: 40% 60%;
+
   }
   @media (max-width: 480px) {
     display:none;
@@ -54,9 +54,8 @@ line-height: 12px;
 color: #000000;
 `;
 export const DivInfoST=styled.div`
-display:flex;
-flex-direction: column;
-
+display:grid;
+justify-items:left;
 
 
 `;
@@ -71,10 +70,7 @@ margin-bottom:30px;
 display:flex;
 flex-direction: column;
 
-@media (max-width: 1100px) {
-  width: 270px;
 
-}
 @media (max-width: 480px) {
   display:none;
   border:none;

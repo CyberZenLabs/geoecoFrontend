@@ -105,13 +105,13 @@ align-items: center;
 `;
 export const DivAddCardSClitl = styled.div`
 margin-top:18px;
-width: 236px;
+width: 100;
 height: 36px;
 border: 2px solid #DBF0C2;
 border-radius: 16px;
 justify-content: center;
 align-items: center;
-@media (max-width: 1920px) {
+@media (min-width: 480px) {
   display:none;
 }
 @media (max-width: 480px) {
@@ -147,5 +147,9 @@ justify-content: center;
 `;
 export const SpanTextAddCardSC = styled.span`
 margin-left:40px;
+font-weight: 500;
+`;
+export const SpanTextAddCardLittleSC = styled.span`
+margin-left:8px;
 font-weight: 500;
 `;

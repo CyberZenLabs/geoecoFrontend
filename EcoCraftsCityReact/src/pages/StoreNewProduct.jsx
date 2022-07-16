@@ -1,30 +1,19 @@
 import { Margin } from '@mui/icons-material';
-import React from 'react'
+import React from 'react';
+import SettingsShop from "../components/SettingsShop";
 import{
     DivBoxNewProductsST,
     MenuProductST,
   GreenST,
   DivBoxNewProductsBigST,
-  DivLogoST,
-  DivInfoStoreST,
-  MarginST,
-  DivInfoST,
-  SecondMenuST,
-  DivStoreSetingST,
-  TextBold,
-  Margin5pxST,
   SpanTextTitleSC,
   DivAddProduct,
   SpanTextAddProdctSC,
   ButtonAddProductSC,
   DivAddProductBox,
-  SpanLogoText,
-  SpanTextTitleShopSC,
-  DivBorderBox,
   DivBoxItemsSC
     
-  
-  } from "../styled-components-css/styles.new-product";
+  } from "../styled-components-css/styles.StoreNewProduct";
 const StoreNewProduct = () =>{
     return (
         <DivBoxNewProductsBigST>
@@ -33,51 +22,8 @@ const StoreNewProduct = () =>{
             </DivBoxItemsSC>
             <DivBoxNewProductsST>
                
-            <DivBorderBox>
-                <DivInfoStoreST>
-            <DivLogoST>
-                <SpanLogoText>Логотип Магазина</SpanLogoText>
-            </DivLogoST>
-            <DivInfoST>
-            <SpanTextTitleShopSC>Название магазина и о чем он</SpanTextTitleShopSC>
-            <MarginST>Где находится</MarginST>
-            </DivInfoST>
-           
-            </DivInfoStoreST>
-           <SecondMenuST>
-            <DivStoreSetingST>
-            Профиль
-            </DivStoreSetingST>
-            <DivStoreSetingST>
-            Настойки
-            </DivStoreSetingST>
-            <hr class="razdel" />
-            <DivStoreSetingST>
-                <TextBold>
-                Магазин 50  
-                </TextBold>
-          
-            </DivStoreSetingST>
-            <DivStoreSetingST>
-            Оплата и доставка
-            </DivStoreSetingST>
-            <hr class="razdel" />
-            <DivStoreSetingST>
-            Покупки
-            </DivStoreSetingST>
-            <DivStoreSetingST>
-            Продажи
-            </DivStoreSetingST>
-            <DivStoreSetingST>
-                
-                Отзывы 30  <img src="/default-images/raiting.svg"  />
-                
+            <SettingsShop/>
             
-            </DivStoreSetingST>
-          
-           </SecondMenuST>
-            </DivBorderBox>
-                  
                
                 <DivAddProductBox>
                 <SpanTextTitleSC>Магазин</SpanTextTitleSC>

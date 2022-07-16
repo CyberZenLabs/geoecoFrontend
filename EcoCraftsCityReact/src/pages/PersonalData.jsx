@@ -16,9 +16,10 @@ import{
   DivAddEllipseSC,
   SpanTextAddCardSC,
   DivBoxUserDataSC,
-  DivAddCardSClitl
+  DivAddCardSClitl,
+  SpanTextAddCardLittleSC
 
-} from "../styled-components-css/styles.personal-data1";
+} from "../styled-components-css/styles.personal-data";
 
 const PersonalData = () => {
     return (
@@ -74,7 +75,7 @@ const PersonalData = () => {
         <img src="/default-images/card.svg" className="image_cadr"  />
       
         <SpanConfirmAccountSC>
-<SpanTextAddCardSC>Добавить карту</SpanTextAddCardSC></SpanConfirmAccountSC>
+<SpanTextAddCardLittleSC>Добавить новую карту</SpanTextAddCardLittleSC></SpanConfirmAccountSC>
         </DivAddCardSClitl>
         <DivAddCardSC>
         <DivAddEllipseSC>

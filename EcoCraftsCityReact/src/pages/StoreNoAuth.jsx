@@ -1,5 +1,9 @@
 import { Margin } from '@mui/icons-material';
-import React from 'react';
+
+import React, { useEffect, useState } from "react";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+import axios from "axios";
+
 import {
     DivLogoST,
   DivInfoStoreST,
@@ -12,6 +16,7 @@ import {
   SpanTextTitleShopSC,
   DivBorderBox,
 } from "../styled-components-css/styles.SettingsShop";
+
 import{
     DivBoxNewProductsST,
     MenuProductST,
@@ -31,70 +36,73 @@ import{
     DivBoxContentSC,
     DivBoxCatalogShopSC,
     DivBoxCatalog,
-    SpanTitleCatalog
+    SpanTitleCatalog,
+    DivGridItems
   } from "../styled-components-css/styles.StoreNoAuth";
+
+  import ProductCard from "../components/ProductCard";
+  import SettingsShopCatalog from "../components/SettingsShopCatalog";
+
 const StoreNoAuth = () =>{
+
+  const [products, setProducts] = useState([]);
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
+  useEffect(() => {
+    // axiosFetch({
+    //   axiosInstance: axios,
+    //   auth: "",
+    //   method: "GET",
+    //   url: `https://radiant-river-29802.herokuapp.com/api/v1/products`,
+    //   requestConfig: {},
+    // });
+    // setProducts([response]);
+
+    axios
+      .get("https://radiant-river-29802.herokuapp.com/api/v1/products")
+      .then((res) => {
+        setProducts(res.data.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
     return (
+
+
+      
         <DivBoxNewProductsBigST>
             <DivBoxItemsSC>
             <MenuProductST> <GreenST>Назад</GreenST> <img src="/default-images/arrowGreen.svg"  /> Название магазина</MenuProductST>
             </DivBoxItemsSC>
+            
             <DivBoxContentSC>
             <ImgBannerShopSC src="/banner-images/ShopBanner.jpg"></ImgBannerShopSC>
             
             <DivBoxCatalogShopSC>
 
-            <DivBorderBox>
-<DivInfoStoreST>
-<DivLogoST>
-<SpanLogoText>Логотип Магазина</SpanLogoText>
-</DivLogoST>
-<DivInfoST>
-<SpanTextTitleShopSC>Название магазина и о чем он</SpanTextTitleShopSC>
-<MarginST>Где находится</MarginST>
-</DivInfoST>
+            <SettingsShopCatalog/>
 
-</DivInfoStoreST>
-<SecondMenuST>
-<DivStoreSetingST>
-Профиль
-</DivStoreSetingST>
-<DivStoreSetingST>
-Настойки
-</DivStoreSetingST>
-<hr class="razdel" />
-<DivStoreSetingST>
-<TextBold>
-Магазин 50  
-</TextBold>
-
-</DivStoreSetingST>
-<DivStoreSetingST>
-Оплата и доставка
-</DivStoreSetingST>
-<hr class="razdel" />
-<DivStoreSetingST>
-Покупки
-</DivStoreSetingST>
-<DivStoreSetingST>
-Продажи
-</DivStoreSetingST>
-<DivStoreSetingST>
-
-Отзывы 30  <img src="/default-images/raiting.svg"  />
-
-
-</DivStoreSetingST>
-
-</SecondMenuST>
-</DivBorderBox>
-            </DivBoxCatalogShopSC>
-            
             <DivBoxCatalog>
                 <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>
+                <DivGridItems>
+                {products.map((product) => {
+          return <ProductCard product={product} />;
+        })}
+        {products.map((product) => {
+          return <ProductCard product={product} />;
+        })}
+        {products.map((product) => {
+          return <ProductCard product={product} />;
+        })}
+        {products.map((product) => {
+          return <ProductCard product={product} />;
+        })}
+                </DivGridItems>
             </DivBoxCatalog>
-            </DivBoxContentSC>
 
+            </DivBoxCatalogShopSC>
+            </DivBoxContentSC>
         </DivBoxNewProductsBigST>
         
 

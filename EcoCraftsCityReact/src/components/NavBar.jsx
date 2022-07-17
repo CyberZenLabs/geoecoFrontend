@@ -29,6 +29,7 @@ import {
   SpanEndHeaderSC,
   LinkIconHideSC,
   LinkLogoSC,
+  DivBoxButtonCreateStoreSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -89,10 +90,7 @@ const ResponsiveAppBar = () => {
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
-            <SpanFirstSC to="#" onClick={openCart}>
-              Продавайте на geoeco
-            </SpanFirstSC>
-            <SpanSecondSC to="/">Работа в geoeco</SpanSecondSC>
+            
           </DivTextBoxSC>
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -168,6 +166,8 @@ const ResponsiveAppBar = () => {
         ) : null}
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
+            
+            <DivBoxButtonCreateStoreSC>Создать магазин</DivBoxButtonCreateStoreSC>
             <LinkIconSC to="/signin">
               <DivBoxIconEndSC>
                 <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />

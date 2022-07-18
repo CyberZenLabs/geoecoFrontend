@@ -47,6 +47,7 @@ root.render(
             <EcoModal></EcoModal>
             <div id="overlay-nav"></div>
             <NavBar />
+            
             <Catalog />
             <Routes>
               <Route index element={<Home />} />

@@ -37,7 +37,9 @@ import{
     DivBoxCatalogShopSC,
     DivBoxCatalog,
     SpanTitleCatalog,
-    DivGridItems
+    DivGridItems,
+    DivNextItems,
+    DivNextGrid
   } from "../styled-components-css/styles.StoreNoAuth";
 
   import ProductCard from "../components/ProductCard";
@@ -99,6 +101,11 @@ const StoreNoAuth = () =>{
           return <ProductCard product={product} />;
         })}
                 </DivGridItems>
+                  <DivNextItems>
+                    <DivNextGrid>
+
+                    </DivNextGrid>
+                  </DivNextItems>
             </DivBoxCatalog>
 
             </DivBoxCatalogShopSC>

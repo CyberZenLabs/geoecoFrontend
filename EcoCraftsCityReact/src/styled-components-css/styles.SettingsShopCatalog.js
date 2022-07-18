@@ -116,7 +116,7 @@ color: #000000;
 export const DivBorderBox = styled.div`
 height:100%;
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   display:none;
   border:none;
   
@@ -128,6 +128,9 @@ export const DivShopSettings = styled.div`
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
 width:100%;
-padding: 20px;
+padding: 18px;
+@media (max-width: 1000px) {
+  padding: 10px;
 
+    }
 `;

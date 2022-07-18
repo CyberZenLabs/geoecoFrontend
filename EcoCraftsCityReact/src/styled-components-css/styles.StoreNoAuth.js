@@ -21,6 +21,12 @@ margin-top:45px;
   max-width: 1420px;
   grid-template-columns: 1fr 3fr;
 
+  @media (max-width: 768px) {
+    
+    grid-template-columns: 1fr;
+
+  
+      }
 `;
 
 export const DivBoxCatalog = styled.div`
@@ -31,6 +37,11 @@ export const DivGridItems = styled.div`
 display: grid;
 grid-template-columns: repeat(3,1fr);
 grid-column-gap:25px;
+
+@media (max-width: 1000px) {
+  grid-template-columns: repeat(2,1fr);
+
+  }
 `;
 export const SpanTitleCatalog = styled.span`
 font-family: 'Montserrat';
@@ -40,4 +51,18 @@ font-size: 38px;
 line-height: 46px;
 
 color: #252525;
+`;
+
+export const DivNextItems = styled.div`
+margin-top:20px;
+display:grid;
+grid-template-columns: repeat(2,1fr);
+
+width:100%;
+background: rgba(243, 243, 243, 0.5);
+`;
+
+export const DivNextGrid = styled.div`
+padding:20px;
+
 `;

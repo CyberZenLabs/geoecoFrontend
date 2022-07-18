@@ -38,6 +38,7 @@ grid-row-gap:10px;
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
 padding:10%;
+margin-top:20px;
 
 `;
 

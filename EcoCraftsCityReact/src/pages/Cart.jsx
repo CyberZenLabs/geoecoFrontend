@@ -5,26 +5,18 @@ import {
     DivBoxTotalPriceSC,
     DivCartBoxSC,
     DivContentCartSC,
-    DivFirstRowDeliverySC,
-    DivTextBoldSizeSC,
-    DivInfoOfDeliverySC,
-    DivRowDeliverySC,
-    DivFirstRowInfoSC,
-    DivSecondRowInfoSC,
-    DivTextMinSizeSC,
-    DivTextBoldSizeInfoDeliverySC,
-    DivTextMinSizeInfoDeliverySC,
+   
    
 } from "../styled-components-css/styles.cart";
 import BoxProductList from "../components/components-cart/BoxProductList";
 import TotalPriceCart from "../components/components-cart/TotalPriceCart";
-
+import BoxInfoDelivery from '../components/components-cart/BoxInfoOfDelivery';
 const arrayProduct = [
-    'Крестовник роули',
-    'Деревянная ложка',
-    'Деревянная бочка',
-    'Соломенная корзина',
-    'Стекляная солонка'
+    {name :'Крестовник роули', isSelected: false },
+    {name:'nameДеревянная ложка', isSelected: false},
+    {name :'Деревянная бочка', isSelected: false },
+    {name:'Соломенная корзина', isSelected: false },
+    {name :'Стекляная солонка', isSelected: false },
 ]
 
 const Cart = () => {
@@ -34,12 +26,24 @@ const Cart = () => {
         setArrayProd(arrayProduct)
     }, []);
 
+    function onClickAll(status) {
+        const tempArray = arrayProd.map((item, i) => {
+            
+            return {
+                ...item, 
+                isSelected: !status
+            }
+        })
+
+        setArrayProd(tempArray)
+	}
 
   return (
     <DivCartBoxSC>
         <DivContentCartSC>
             <DivBoxFirstRowSC>
                 <BoxProductList
+                    onClickAll={onClickAll}
                     arrayProd={arrayProd}
                 >
 
@@ -48,19 +52,9 @@ const Cart = () => {
 
                 </TotalPriceCart>
             </DivBoxFirstRowSC>
-            <div>
-            <DivFirstRowDeliverySC>
+           <BoxInfoDelivery>
             
-
-               <DivTextBoldSizeSC>Способ доставки <DivTextMinSizeSC>изменить</DivTextMinSizeSC> </DivTextBoldSizeSC> 
-              
-            </DivFirstRowDeliverySC>
-            <DivInfoOfDeliverySC>
-               <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
-               <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Способ доставки <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
-            </DivInfoOfDeliverySC>
-            </div>
-           
+           </BoxInfoDelivery>
         </DivContentCartSC>
     </DivCartBoxSC>
   )

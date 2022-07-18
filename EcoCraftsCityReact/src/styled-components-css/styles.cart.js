@@ -18,6 +18,10 @@ export const DivBoxFirstRowSC = styled.div`
 	grid-template-columns: repeat(auto-fit, 400px);
 	grid-template-rows: fit-content();
 	gap: 24px;
+
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(auto-fit, 280px);
+	}
 `;
 
 export const DivBoxRowProductSC = styled.div`

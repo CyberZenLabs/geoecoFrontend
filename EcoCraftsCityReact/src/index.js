@@ -11,7 +11,7 @@ import PersonalData from "./pages/PersonalData";
 import StoreNewProduct from "./pages/StoreNewProduct";
 import StoreNoAuth from "./pages/StoreNoAuth";
 import NavBar from "./components/NavBar";
-import { Cart } from "./pages/Cart";
+import  Cart  from "./pages/Cart";
 import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -31,6 +31,7 @@ import EcoModal from "./components/Modal";
 import { ToastContainer } from "react-toastify";
 import AppContext, { AppProvider } from "./context/AppContext";
 import { AuthProvider } from "./context/AuthContext";
+
 
 import Reviews from "./pages/Reviews";
 import Page_404 from "./pages/404";
@@ -54,7 +55,7 @@ root.render(
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
               <Route path="storenoauth" element={<StoreNoAuth />} />
-
+              <Route path="cart" element={<Cart />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />

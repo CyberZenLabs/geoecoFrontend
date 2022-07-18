@@ -124,20 +124,27 @@ const ResponsiveAppBar = () => {
         {loggedIn ? (
           <div class="container">
             <div class={profileActive ? "navigation active" : "navigation"}>
-              <div class="user-box">
-                <div class="image-box">
+              <div class={profileActive ? "user-box active" : "user-box"} >
+                <div class={profileActive ? "image-box active" : "image-box"} >
                   <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
                 </div>
-                <p class="username">Jenifer Lopez</p>
-              </div>
-              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-              <ul class="profileMenu">
-                <li>
-                  <a href="#">
-                    <CgProfile />
+                
+                <p class="username">Jenifer Lopez
+             
+                <a href="#">
+               
                     Мой Профиль
+                   
                   </a>
-                </li>
+                </p>
+               
+              
+              </div>
+              
+              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+              
+              <ul class="profileMenu">
+               
                 <li>
                   <a href="#">
                     <GoPackage />
@@ -150,14 +157,14 @@ const ResponsiveAppBar = () => {
                     Мой Карты
                   </a>
                 </li>
-                <hr></hr>
+              
                 <li>
                   <a href="#">Баланс и история операций</a>
                 </li>
                 <li>
                   <a href="#">Отзывы и вопросы</a>
                 </li>
-                <li>
+                <li class="logout">
                   <a onClick={handleLogout}>Выйти</a>
                 </li>
               </ul>

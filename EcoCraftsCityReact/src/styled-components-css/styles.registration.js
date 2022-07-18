@@ -19,6 +19,45 @@ export const H4Title = styled.h4`
   margin-top: 16px;
   color: #252525;
   //text-align: center;
+  @media (max-width: 660px) {
+    line-height: 39px;
+  }
+`;
+
+export const DivTextBoxSC = styled.div`
+display: grid;
+grid-template-columns: 123px 121px;
+grid-column-gap: 268px;
+//border: 1px solid red;
+width:100%;
+`;
+export const DivTextBoxSISC = styled.div`
+display: grid;
+grid-template-columns: auto auto;
+//border: 1px solid red;
+width:100%;
+max-width: 512px;
+@media (max-width: 660px) {
+  margin-top: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+`;
+
+export const SpanFirstSC = styled(Link)`
+display: inline-block;
+font-size: 14px;
+text-decoration: none;
+color: black;
+justify-self: start;
+`;
+
+export const SpanSecondSC = styled(Link)`
+display: inline-block;
+font-size: 14px;
+text-decoration: none;
+color: black;
+justify-self:end;
 `;
 
 export const LabelSC = styled.label`
@@ -50,16 +89,18 @@ export const DivBoxSC = styled.div`
 export const DivBoxRowsSC = styled.div`
   display: grid;
   grid-template-rows: 85px 85px 85px 85px 85px;
- 
-  @media (max-width: 643px) {
+  //border: 1px solid red;
+  @media (max-width: 660px) {
     display: flex;
     flex-direction: column;
   }
 `;
 export const DivBoxColumnsSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "50% 50%")};
-  @media (max-width: 643px) {
+  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "234px 234px")};
+  grid-column-gap: 44px;
+ // border: 1px solid red;
+  @media (max-width: 660px) {
     display: block !important;
     width: 100%;
   }
@@ -81,15 +122,29 @@ export const InputSC = styled.input`
     error ? " 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
-  @media (max-width: 643px) {
+  @media (max-width: 660px) {
     width: 100%;
   }
 `;
 
 export const DivBoxRowSC = styled.div`
+//border: 1px solid red;
+max-width: 512px;
   width: 100%;
   justify-content: space-evenly;
   margin-bottom: ${({ marginBottom }) => (marginBottom ? "32px" : "inherit")};
+
+`;
+export const DivBoxRowSISC = styled.div`
+//border: 1px solid red;
+max-width: 512px;
+
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? "32px" : "inherit")};
+@media (max-width: 660px){
+  margin-top: 25px;
+}
 `;
 
 export const InputFullWidthSC = styled.input`
@@ -108,11 +163,12 @@ export const InputFullWidthSC = styled.input`
     error ? " 2px solid var(--error)" : "2px solid var(--main-color)"};
   box-sizing: border-box;
   border-radius: 20px;
-  @media (max-width: 643px) {
+  @media (max-width: 660px) {
     width: 100%;
     height: 56px;
-    margin-bottom: 35px;
+   margin-bottom: 35px;
     max-width: none;
+   
   }
 `;
 
@@ -171,6 +227,24 @@ export const DivBoxFormSC = styled.div`
   max-width: 552px;
   justify-self: center !important;
   //height: 680px;
+ // border: 1px solid red;
+
+  @media (max-width: 660px) {
+    width: 90%;
+     
+  }
+`;
+export const DivBoxFormSignInSC = styled.div`
+  width: 100%;
+  max-width: 552px;
+  justify-self: center !important;
+  //height: 680px;
+  //border: 1px solid red;
+ 
+  @media (max-width: 660px) {
+    width: 90%;
+     
+  }
 `;
 
 export const DivBoxBoxFormSC = styled.div`
@@ -187,11 +261,17 @@ export const DivBoxBoxFormSC = styled.div`
   background-color: var(--white-color);
   background-position: right 50px bottom;
   background-size: 620px;
-
+  //min-width: 450px;
+ 
   @media (max-width: 943px) {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 660px) {
+    padding: 0;
+    padding-bottom:50px;
+    padding-top:50px;
   }
 `;
 
@@ -201,6 +281,7 @@ export const DivBackgroundFormSC = styled.div`
   display: grid;
   justify-items: center;
   //overflow: auto;
+
 `;
 
 export const SpanSC = styled.span`
@@ -217,7 +298,7 @@ export const DivRegSC = styled.div`
   padding-bottom: 20px;
   padding-top: 20px;
   min-height: 750px;
-  @media (max-width: 642px) {
+  @media (max-width: 660px) {
     min-height: 0 !important;
   }
 `;
@@ -231,10 +312,10 @@ export const FormInputErrorSpanSc = styled.span`
   color: #ff3d3d;
   margin: 4px 0;
   display: block;
-
-  @media (max-width: 644px) {
+  //border: 1px solid red;
+  @media (max-width: 660px) {
     margin-top: -29px;
 
-    margin-bottom: 11px;
+    margin-bottom: -16px;
   }
 `;

@@ -25,6 +25,12 @@ import {
   SpanSC,
   DivRegSC,
   DivBackgroundPeopleSC,
+  DivTextBoxSC,
+  SpanFirstSC,
+  SpanSecondSC,
+  DivBoxFormSignInSC,
+  DivBoxRowSISC,
+  DivTextBoxSISC,
 } from "../styled-components-css/styles.registration";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { signInSchema } from "../validations/validation.signin";
@@ -91,10 +97,10 @@ const SignIn = (props) => {
     <DivRegSC>
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
-          <DivBoxFormSC>
-            <H4Title>Войти в аккаунт!</H4Title>
+          <DivBoxFormSignInSC>
+            <H4Title>Добро пожаловать в geoeco!</H4Title>
 
-            <SpanSC>Введите свои данные для входа</SpanSC>
+            <SpanSC>Введите свои данные для входа в аккаунт</SpanSC>
             <Formik
               initialValues={startingValues}
               validationSchema={signInSchema}
@@ -106,7 +112,6 @@ const SignIn = (props) => {
                   url: `/api/v1/users/login`,
                   requestConfig: { ...values },
                 });
-                console.log("HITTING");
               }}
             >
               {(formik) => (
@@ -123,7 +128,7 @@ const SignIn = (props) => {
                       />
                     </DivBoxRowSC>
 
-                    <DivBoxRowSC>
+                    <DivBoxRowSISC>
                       {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
                       <TextField
                         label="password"
@@ -132,8 +137,11 @@ const SignIn = (props) => {
                         fullSize={true}
                         placeholder={"Пароль"}
                       />
-                    </DivBoxRowSC>
-
+                    </DivBoxRowSISC>
+                    <DivTextBoxSISC>
+                        <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
+                        <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
+                    </DivTextBoxSISC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
@@ -144,7 +152,7 @@ const SignIn = (props) => {
                       >
                         {!loading ? (
                           <span>
-                            продолжить&nbsp;&nbsp;
+                            Войти в аккаунт&nbsp;&nbsp;
                             <FontAwesomeIcon
                               icon={faArrowRight}
                             ></FontAwesomeIcon>
@@ -156,8 +164,8 @@ const SignIn = (props) => {
                     </DivBoxRowSC>
                     <DivBoxRowSC>
                       <DivBoxTextSC>
-                        <SpanQuSC>Нет Аккаунта? </SpanQuSC>
-                        <LinkSC to="/registration">Регистрироватся</LinkSC>
+                        <SpanQuSC>У вас нет аккаунта? </SpanQuSC>
+                        <LinkSC to="/registration">Зарегистрироваться</LinkSC>
                       </DivBoxTextSC>
                     </DivBoxRowSC>
                   </DivBoxRowsSC>
@@ -195,7 +203,7 @@ const SignIn = (props) => {
                 {error}
               </Alert>
             </Snackbar> */}
-          </DivBoxFormSC>
+          </DivBoxFormSignInSC>
           <img src="/default-images/signin.svg" className="image4signin" />
         </DivBoxBoxFormSC>
       </DivBackgroundFormSC>

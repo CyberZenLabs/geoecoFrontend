@@ -14,6 +14,14 @@ export const HomeContainer = styled.div`
   max-width: 1322px;
   margin: auto;
   position: relative;
+  padding-top: 380px;
+  @media (max-width: 1560px) {
+    padding-top: 24.5%;
+  } ;
+`;
+export const StarAlign = styled.div`
+  width: 50%;
+  margin-left: 24px;
 `;
 
 export const ProductGrid = styled.div`

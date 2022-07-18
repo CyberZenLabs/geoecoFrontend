@@ -1,10 +1,10 @@
 import * as yup from "yup";
 
 export const signInSchema = yup.object().shape({
-  email: yup.string().email("Не является почтой").required("Почта Обязательна"),
+  email: yup.string().email("Не является почтой").required("Почта обязательна"),
   password: yup
     .string()
-    .min(8, "Минимальная 8 букв")
-    .max(40, "Макссимальная 40 букв")
-    .required("Пароль Обязателен"),
+    .min(8, "Минимум 8 символов")
+    .max(40,  "Максимум 40 символов")
+    .required("Пароль обязателен"),
 });

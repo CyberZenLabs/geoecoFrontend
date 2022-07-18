@@ -53,7 +53,9 @@ export const InputCustomSC = styled.button`
   height: 30px;
   width: 30px;
   border-radius: 10px;
+  border: 1px solid black;
   :checked{
     background: #85CB33;
   }
-`
+`;
+

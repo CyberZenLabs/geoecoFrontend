@@ -47,7 +47,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -87,9 +87,9 @@ const ResponsiveAppBar = () => {
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
             <SpanFirstSC to="#" onClick={openCart}>
-              Продавайте на EcoCraftCity
+              Продавайте на geoeco
             </SpanFirstSC>
-            <SpanSecondSC to="/">Работа в EcoCraftCity</SpanSecondSC>
+            <SpanSecondSC to="/">Работа в geoeco</SpanSecondSC>
           </DivTextBoxSC>
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC

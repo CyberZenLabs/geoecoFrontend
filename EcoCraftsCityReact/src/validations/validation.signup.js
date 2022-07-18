@@ -1,15 +1,16 @@
 import * as yup from "yup";
 
 export const registerSchema = yup.object().shape({
-  firstName: yup.string().required("Имя обязательна"),
+  firstName: yup.string().required("Имя обязательно"),
   lastName: yup.string().required("Фамилия обязательна"),
-  email: yup.string().email("Не является почтой").required("Почта Обязательна"),
+  email: yup.string().email("Не является почтой").required("Почта обязательна"),
   password: yup
     .string()
-    .min(8, "Минимальная 8 букв")
-    .max(40, "Макссимальная 40 букв")
-    .required("Пароль Обязателен"),
+    .min(8, "Минимум 8 символов")
+    .max(40, "Максимум 40 символов")
+    .required("Пароль обязателен"),
   passwordConfirm: yup
     .string()
+    .required("Пароль обязателен")
     .oneOf([yup.ref("password"), null], "Пароли должны быть одинаковами"),
 });

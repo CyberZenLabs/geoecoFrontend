@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import image from "../img/logo.svg";
+import image from "../img/geoecologo.png";
 import {Link} from "react-router-dom";
 
 export const DivBoxFooterSC = styled.div`
@@ -64,7 +64,7 @@ export const DivBoxLogoSC = styled.div`
   background-position: center 10px;
   height: 116px;
   width: 80px;
-  background-size: 80px;
+  background-size: 100px;
   display: grid;
   align-items: end;
 `;

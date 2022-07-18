@@ -8,7 +8,10 @@ export const ButtonCustomSC = styled.button`
       `padding:${p.padding};` : null)}
   ${(p) => (p.width !== undefined ?
       `width:${p.width};` : null)}
-  height: 56px;
+  ${(p) => (p.height !== undefined ?
+      `height:${p.height};` : 'height: 56px;')}
+  ${(p) => (p.borderRadius !== undefined ?
+      `border-radius:${p.borderRadius};` : 'border-radius: 20px;')}
   ${(p) => (p.statusOpasity === undefined ?
           `:hover{
           background: var(--green-color-hover);
@@ -38,7 +41,7 @@ export const ButtonCustomSC = styled.button`
   background: var(--green-color);
   background: #85CB33FF;
   box-sizing: border-box;
-  border-radius: 20px;
+  //border-radius: 20px;
   border: none;
   color: var(--white-color);
   text-transform: capitalize;

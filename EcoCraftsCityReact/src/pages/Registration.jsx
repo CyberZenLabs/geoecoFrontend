@@ -86,7 +86,7 @@ const Registration = (props) => {
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSC>
-            <H4Title>Добро пожаловать в EcoCraftCity!</H4Title>
+            <H4Title>Добро пожаловать в geoeco!</H4Title>
             <SpanSC>Введите свои данные для регистрации</SpanSC>
             <Formik
               initialValues={startingValues}

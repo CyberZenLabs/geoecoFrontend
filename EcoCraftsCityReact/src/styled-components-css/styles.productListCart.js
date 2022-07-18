@@ -44,8 +44,6 @@ export const DivBoxInputCartSC = styled.div`
 	display: grid;
 	justify-items: baseline;
 `;
-<<<<<<< HEAD
-
 export const InputCustomSC = styled.button`
   height: 30px;
   width: 30px;
@@ -55,6 +53,3 @@ export const InputCustomSC = styled.button`
     background: #85CB33;
   }
 `;
-
-=======
->>>>>>> 72f90d653bec94c3cfd776348a12aceaef94552b

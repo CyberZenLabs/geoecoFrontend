@@ -9,15 +9,15 @@ import {
   ProductCardStoreName,
 } from "../styled-components-css/styles.product-card";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
     <ProductCardContainer>
       <ProductCardImage src="/default-images/plant.jpg" />
-      <ProductCardPrice>777$</ProductCardPrice>
-      <ProductCardName>Росток на посадку</ProductCardName>
+      <ProductCardPrice>{product.price}$</ProductCardPrice>
+      <ProductCardName>{product.name}</ProductCardName>
       <StarRating product={true} />
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
-      <ProductCardButton>Посмортеть</ProductCardButton>
+      <ProductCardButton to="/product/1">Посмортеть</ProductCardButton>
     </ProductCardContainer>
   );
 };

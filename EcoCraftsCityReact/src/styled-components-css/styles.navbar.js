@@ -35,6 +35,7 @@ export const DivHeaderSC = styled.div`
 export const DivCatalogAndSearchBoxSC = styled.div`
     display: grid;
   grid-template-rows: 31px 88px;
+
 `;
 
 export const SpanFirstSC = styled(Link)`
@@ -47,7 +48,7 @@ export const SpanFirstSC = styled(Link)`
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 `;
 
 export const SpanSecondSC = styled(Link)`
@@ -59,29 +60,37 @@ export const SpanSecondSC = styled(Link)`
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 `;
 
 export const DivTextBoxSC = styled.div`
     display: grid;
   grid-template-columns: 210px 200px auto;
   align-items: start;
+  @media (max-width: 731px) {
+    display: none;
+  }
 `;
 
 export const DivBoxButtonAndInputSC = styled.div`
     display: grid;
   grid-template-columns: 200px auto;
+  @media (max-width: 730px) {
+    display: none;
+  }
 `;
 
 export const DivBoxIconHeaderSC = styled.div`
     display: grid;
   justify-items: end;
+  
 `;
 
 export const DivBoxIconSC = styled.div`
     display: grid;
   grid-template-columns: 50% 50%;
   width: 200px;
+  
 `
 
 export const ButtonSC = styled.button`
@@ -165,7 +174,32 @@ export const LinkIconSC = styled(Link)`
   color: var(--color-black);
   display: grid;
   grid-template-rows: 56% 44%;
-  
+  @media (max-width: 730px) {
+    position: absolute;
+    right: 10vw;
+    top: 40px;
+  }
+
+`;
+
+export const LinkIconHideSC = styled(Link)`
+    //display: inline-block;
+  font-size: 12px;
+  font-family: var(--root-font-family);
+  border-radius: 50px;
+  //background: rgba(133, 203, 51, 0.25);
+  width: fit-content;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: var(--color-black);
+  display: grid;
+  grid-template-rows: 56% 44%;
+  @media (max-width: 730px) {
+    display: none;
+  }
+`;
+export const LinkLogoSC = styled(Link)`
+
 `;
 
 export const DivBoxIconEndSC = styled.div`
@@ -179,4 +213,6 @@ export const SpanEndHeaderSC = styled.span`
   align-items: start;
   color: rgba(37, 37, 37, 0.8);
   font-size: var(--font-size-icon-text);
-`
+  
+`;
+

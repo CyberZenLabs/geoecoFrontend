@@ -1,9 +1,6 @@
 import styled from "styled-components/macro";
 
-export const ButtonCustomSC = styled.button`
-  display: grid;
-  justify-content: center;
-  align-items: center;
+export const ButtonCustomWhiteSC = styled.button`
   ${(p) => (p.padding !== undefined ?
       `padding:${p.padding};` : null)}
   ${(p) => (p.width !== undefined ?
@@ -11,7 +8,7 @@ export const ButtonCustomSC = styled.button`
   height: 56px;
   ${(p) => (p.statusOpasity === undefined ?
           `:hover{
-          background: var(--green-color-hover);
+          background: rgba(0,0,0,0.1);
         }
         :active{
           background: var(--green-color-active);
@@ -30,17 +27,12 @@ export const ButtonCustomSC = styled.button`
           `background: var(--white-color);
          color: var(--green-color);
          border: 2px solid var(--green-color) !important;
-         :hover {
-          color: var(--green-color-active);
-         }
          `
   ) }
-  background: var(--green-color);
-  background: #85CB33FF;
   box-sizing: border-box;
   border-radius: 20px;
   border: none;
-  color: var(--white-color);
+  color: #85CB33FF;
   text-transform: capitalize;
   font-family: var(--root-font-family);
   font-style: normal;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 export const HomeContainer = styled.div`
@@ -13,6 +14,10 @@ export const HomeContainer = styled.div`
   max-width: 1322px;
   margin: auto;
   position: relative;
+  padding-top: 380px;
+  @media (max-width: 1560px) {
+    padding-top: 24.5%;
+  };
 `;
 
 export const ProductGrid = styled.div`
@@ -30,6 +35,7 @@ export const ProductCardContainer = styled.div`
   grid-template-rows: 329px 37px 35px 38px 69px 63px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
+  
 `;
 
 export const ProductCardImage = styled.img`
@@ -80,7 +86,7 @@ export const ProductCardStoreName = styled.h5`
   color: #cbcbcb;
   justify-self: start;
 `;
-export const ProductCardButton = styled.button`
+export const ProductCardButton = styled(Link)`
   /* Кнопка (первичная) */
 
   /* Auto layout */

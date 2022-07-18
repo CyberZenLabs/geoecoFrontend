@@ -89,9 +89,21 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
+         
           <DivTextBoxSC>
+            <SpanSecondSC to="#" >
             
+            </SpanSecondSC>
+            <SpanFirstSC to="#" onClick={openCart}>
+             Создать магазин
+            </SpanFirstSC>
+            <SpanSecondSC to="#" >
+           
+           </SpanSecondSC>
           </DivTextBoxSC>
+          
+         
+         
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
               onClick={() => setShowCatalog(!showCatalog)}
@@ -172,9 +184,13 @@ const ResponsiveAppBar = () => {
           </div>
         ) : null}
         <DivBoxIconHeaderSC>
+          
+
+        
+       
           <DivBoxIconSC>
             
-            <DivBoxButtonCreateStoreSC>Создать магазин</DivBoxButtonCreateStoreSC>
+            <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>Создать магазин</DivBoxButtonCreateStoreSC>
             <LinkIconSC to="/signin">
               <DivBoxIconEndSC>
                 <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />

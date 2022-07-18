@@ -47,7 +47,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };

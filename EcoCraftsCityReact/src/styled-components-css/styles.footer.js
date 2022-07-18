@@ -8,6 +8,7 @@ export const DivBoxFooterSC = styled.div`
   background: rgba(133, 203, 51, 0.3);
   display: grid;
   grid-template-rows: auto 50px;
+
 `;
 
 export const DivTopSC = styled.div`

@@ -47,7 +47,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-
+  const { setShowCatalog, showCatalog } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -77,9 +77,6 @@ const ResponsiveAppBar = () => {
     });
   };
 
-  const { setOpen, setModalData } = React.useContext(AppContext);
-
-  const { setShowCatalog, showCatalog } = React.useContext(AppContext);
   return (
     <DivBoxHeaderSC>
       <DivHeaderSC>
@@ -99,6 +96,7 @@ const ResponsiveAppBar = () => {
               onClick={() => setShowCatalog(!showCatalog)}
               width={"176px"}
               padding={"8px 32px"}
+              primary={true}
             >
               <BoxContentButton>
                 <UilListUl

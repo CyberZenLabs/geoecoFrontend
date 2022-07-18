@@ -1,6 +1,9 @@
 import styled from "styled-components/macro";
 
 export const ButtonCustomSC = styled.button`
+  display: grid;
+  justify-content: center;
+  align-items: center;
   ${(p) => (p.padding !== undefined ?
       `padding:${p.padding};` : null)}
   ${(p) => (p.width !== undefined ?
@@ -31,8 +34,7 @@ export const ButtonCustomSC = styled.button`
          color: var(--green-color);
          border: 2px solid var(--green-color) !important;
          :hover {
-          color: var(--white-color);
-          
+          color: var(--green-color-active);
          }
          `
   ) }

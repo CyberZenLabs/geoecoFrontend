@@ -15,7 +15,7 @@ export const DivContentCartSC = styled.div`
 	width: 85vw;
 	grid-gap: 56px;
   @media (max-width: ${middleWidth}px) {
-    width: 100vw;
+    width: 90vw;
   }
 `;
 
@@ -124,6 +124,10 @@ export const DivPriceSC = styled.div`
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 39px;
+
+	@media (max-width: ${middleWidth}px) {
+		font-size: 20px
+	}
 `;
 
 export const DividerSC = styled.div`

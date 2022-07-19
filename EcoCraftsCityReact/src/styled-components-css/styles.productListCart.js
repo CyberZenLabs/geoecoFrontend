@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+const middleWidth = 920
+
 export const DivBoxCountProductSC = styled.div`
 	//outline: 1px solid #4e65ff;
 	display: grid;
@@ -12,6 +14,11 @@ export const DivBoxCountProductTempSC = styled.div`
 	height: 50px;
 	grid-template-columns: 1fr 1fr 1fr;
 	justify-items: center;
+
+
+	@media (max-width: ${middleWidth}px) {
+			height: 31px;
+		}
 
 	button {
 		display: grid;
@@ -30,6 +37,12 @@ export const DivBoxCountProductTempSC = styled.div`
 		justify-items: center;
 		border: 1px solid rgba(0, 0, 0, 0.33);
 		cursor: pointer;
+
+		@media (max-width: ${middleWidth}px) {
+			width: 31px;
+			height: 31px;
+		}
+
 	}
 	span {
 		font-size: 40px;
@@ -37,6 +50,7 @@ export const DivBoxCountProductTempSC = styled.div`
 		align-items: center;
 		font-weight: 200;
 		justify-items: center;
+
 	}
 `;
 

@@ -31,7 +31,7 @@ border-radius: 20px;
 margin-bottom:30px;
 padding: 35px;
 padding-top:10px;
-padding-left:0px;
+padding-right:0px;
 `;
 export const DivBoxContentSC = styled.div`
 

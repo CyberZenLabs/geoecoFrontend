@@ -29,10 +29,12 @@ const PersonalData = () => {
         <DivBoxBlockSC>
 
         <DivBoxContentSC>
+        
         <DivEllipseSC/>
+       
         <ul>
           <li>
-          <SpanInitialsSC>Фамилия Имя Отчество         <img src="/default-images/pencil.svg" className="image_plus" /> </SpanInitialsSC>
+          <SpanInitialsSC>Фамилия Имя Отчество    <img src="/default-images/pencil.svg" className="image_plus" />     </SpanInitialsSC>
           </li>
           <li>
           <SpanConfirmAccountSC>Подтвердить аккаунт</SpanConfirmAccountSC>

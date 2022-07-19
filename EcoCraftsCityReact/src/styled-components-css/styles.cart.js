@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-
+const middleWidth = 920
 
 export const DivCartBoxSC = styled.div`
 	display: grid;
@@ -14,7 +14,7 @@ export const DivContentCartSC = styled.div`
 	max-width: 1322px;
 	width: 85vw;
 	grid-gap: 56px;
-  @media (max-width: 920px) {
+  @media (max-width: ${middleWidth}px) {
     width: 100vw;
   }
 `;
@@ -24,7 +24,7 @@ export const DivBoxFirstRowSC = styled.div`
 	grid-template-columns: repeat(auto-fit, 400px);
 	grid-template-rows: fit-content();
 	gap: 24px;
-    @media (max-width: 920px) {
+    @media (max-width: ${middleWidth}px) {
       grid-template-columns: repeat(auto-fit, 300px);
     }
 `;
@@ -34,7 +34,7 @@ export const DivBoxRowProductSC = styled.div`
 	grid-row: 1 / span 10;
 	height: fit-content;
 	/* width: 100%; */
-  @media (max-width: 920px) {
+  @media (max-width: ${middleWidth}px) {
     //width: 100vw;
     padding: 85px 0 226px 22px;
   }
@@ -87,7 +87,7 @@ export const DivItemListSC = styled.div`
 	display: grid;
 	grid-template-columns: 30px 130px 200px 194px auto;
 	gap: 20px;
-  @media (max-width: 920px) {
+  @media (max-width: ${middleWidth}px) {
     //grid-template-columns: 30px 110px 200px 149px auto;
     grid-template-columns: 1fr 4fr 6fr 5fr auto;
   }

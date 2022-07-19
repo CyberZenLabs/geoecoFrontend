@@ -39,11 +39,15 @@ import{
     SpanTitleCatalog,
     DivGridItems,
     DivNextItems,
-    DivNextGrid
+    DivNextGrid,
+    DivCountPage,
+    DivNextPage,
+    DivButtonNext
   } from "../styled-components-css/styles.StoreNoAuth";
 
   import ProductCard from "../components/ProductCard";
   import SettingsShopCatalog from "../components/SettingsShopCatalog";
+  import SettingsShopAdaptive from "../components/SettingsShopAdaptive";
 
 const StoreNoAuth = () =>{
 
@@ -81,6 +85,7 @@ const StoreNoAuth = () =>{
             <DivBoxContentSC>
             <ImgBannerShopSC src="/banner-images/ShopBanner.jpg"></ImgBannerShopSC>
             
+            <SettingsShopAdaptive></SettingsShopAdaptive>
             <DivBoxCatalogShopSC>
 
             <SettingsShopCatalog/>
@@ -103,7 +108,17 @@ const StoreNoAuth = () =>{
                 </DivGridItems>
                   <DivNextItems>
                     <DivNextGrid>
+                        <DivCountPage>
+                          <DivNextPage>
+                            1
+                          </DivNextPage>
 
+                          <DivNextPage>
+                            2
+                          </DivNextPage>
+                        </DivCountPage>
+                        
+                    <DivButtonNext>Дальше</DivButtonNext>
                     </DivNextGrid>
                   </DivNextItems>
             </DivBoxCatalog>

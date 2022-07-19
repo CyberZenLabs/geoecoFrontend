@@ -36,14 +36,14 @@ export const DivBoxRowProductSC = styled.div`
 	/* width: 100%; */
   @media (max-width: 920px) {
     //width: 100vw;
-    padding: 85px 0 226px 22px;
+    padding: 85px 20px 226px 22px;
   }
 	background: rgba(243, 243, 243, 0.5);
 	border-radius: 20px;
 
 	display: grid;
 	grid-template-rows: 32px 32px 1px max-content;
-	padding: 85px 0 226px 50px;
+	padding: 85px 20px 226px 50px;
 	gap: 38px;
 `;
 

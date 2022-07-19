@@ -34,16 +34,15 @@ export const ButtonCustomSC = styled.button`
          color: var(--green-color);
          border: 2px solid var(--green-color) !important;
          :hover {
-          color: var(--green-color-active);
+          color: var(--green-color);
          }
          `
   ) }
-  background: var(--green-color);
-  background: #85CB33FF;
+ 
   box-sizing: border-box;
   //border-radius: 20px;
   border: none;
-  color: var(--white-color);
+  //color: var(--white-color);
   text-transform: capitalize;
   font-family: var(--root-font-family);
   font-style: normal;

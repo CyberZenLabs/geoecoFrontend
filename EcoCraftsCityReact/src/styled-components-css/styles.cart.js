@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const DivCartBoxSC = styled.div`
 	display: grid;
 	justify-items: center;
+    width: 100vw;
 `;
 
 export const DivContentCartSC = styled.div`
@@ -11,6 +12,9 @@ export const DivContentCartSC = styled.div`
 	max-width: 1322px;
 	width: 85vw;
 	grid-gap: 56px;
+  @media (max-width: 800px) {
+    width: 100vw;
+  }
 `;
 
 export const DivBoxFirstRowSC = styled.div`
@@ -18,6 +22,9 @@ export const DivBoxFirstRowSC = styled.div`
 	grid-template-columns: repeat(auto-fit, 400px);
 	grid-template-rows: fit-content();
 	gap: 24px;
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fit, 300px);
+    }
 `;
 
 export const DivBoxRowProductSC = styled.div`
@@ -25,6 +32,10 @@ export const DivBoxRowProductSC = styled.div`
 	grid-row: 1 / span 10;
 	height: fit-content;
 	width: 100%;
+  @media (max-width: 800px) {
+    //width: 100vw;
+    padding: 85px 0 226px 22px;
+  }
 	background: rgba(243, 243, 243, 0.5);
 	border-radius: 20px;
 
@@ -74,6 +85,10 @@ export const DivItemListSC = styled.div`
 	display: grid;
 	grid-template-columns: 30px 130px 200px 194px auto;
 	gap: 20px;
+  @media (max-width: 800px) {
+    //grid-template-columns: 30px 110px 200px 149px auto;
+    grid-template-columns: 1fr 4fr 6fr 5fr auto;
+  }
 `;
 
 export const DivImageSC = styled.div`
@@ -110,7 +125,7 @@ export const DivPriceSC = styled.div`
 `;
 
 export const DividerSC = styled.div`
-	width: 714px;
+	width: 100%;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.24);
 `;
 

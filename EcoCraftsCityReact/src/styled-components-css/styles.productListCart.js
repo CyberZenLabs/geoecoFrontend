@@ -18,6 +18,7 @@ export const DivBoxCountProductTempSC = styled.div`
 
 	@media (max-width: ${middleWidth}px) {
 			height: 31px;
+      align-items: center;
 		}
 
 	button {
@@ -41,6 +42,7 @@ export const DivBoxCountProductTempSC = styled.div`
 		@media (max-width: ${middleWidth}px) {
 			width: 31px;
 			height: 31px;
+          grid-template-rows: 31px;
 		}
 
 	}

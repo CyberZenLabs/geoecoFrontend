@@ -48,7 +48,7 @@ const PersonalData = () => {
                 <SpanTitleDataSC>E-mail</SpanTitleDataSC>
                 </li>
                 <li>
-                <SpanTitleDataSC><SpanTextDataSC>name@mail.ru         <img src="/default-images/pencil.svg" className="image_plus" />
+                <SpanTitleDataSC><SpanTextDataSC>name@mail.ru        
 </SpanTextDataSC></SpanTitleDataSC>
                 </li>
               </ul>
@@ -58,7 +58,7 @@ const PersonalData = () => {
                 <SpanTitleDataSC>Телефон</SpanTitleDataSC>
                 </li>
                 <li>
-                <SpanTitleDataSC><SpanTextDataSC>+7 (800) 555-35-335 <img src="/default-images/pencil.svg" className="image_plus" /></SpanTextDataSC></SpanTitleDataSC>
+                <SpanTitleDataSC><SpanTextDataSC>+7 (800) 555-35-335 </SpanTextDataSC></SpanTitleDataSC>
                 </li>
               </ul>
          

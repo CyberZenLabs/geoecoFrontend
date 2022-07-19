@@ -30,6 +30,8 @@ background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
 margin-bottom:30px;
 padding: 35px;
+padding-top:10px;
+padding-left:0px;
 `;
 export const DivBoxContentSC = styled.div`
 
@@ -72,6 +74,8 @@ font-weight: 700;
 font-size: 24px;
 line-height: 29px;
 color: #252525;
+display:flex;
+justify-content: space-between;
 @media (max-width: 480px) {
   font-size: 20px;
 }

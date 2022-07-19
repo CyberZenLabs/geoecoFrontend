@@ -225,9 +225,11 @@ table {
   overflow: hidden;
   transition: height 0.5s,width 0.5s ;
   transition-delay: 0s, 0.75s;
-  z-index: 1000;
+  z-index: 100;
 }
-
+.ReactModal__Overlay.ReactModal__Overlay--after-open{
+  z-index: 1000
+}
 
 .navigation .user-box {
   position: relative;
@@ -247,6 +249,7 @@ table {
   display: flex;
       flex-direction: column;
 }
+.image_plus{margin-left: auto;}
 
 .image-box {
   position: relative;

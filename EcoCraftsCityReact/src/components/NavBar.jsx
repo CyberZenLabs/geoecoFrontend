@@ -89,8 +89,8 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-         
-          <DivTextBoxSC>
+     
+        <DivTextBoxSC>
             <SpanSecondSC to="#" >
             
             </SpanSecondSC>
@@ -101,8 +101,6 @@ const ResponsiveAppBar = () => {
            
            </SpanSecondSC>
           </DivTextBoxSC>
-          
-         
          
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -185,10 +183,13 @@ const ResponsiveAppBar = () => {
         ) : null}
         <DivBoxIconHeaderSC>
           
-
+       
         
        
           <DivBoxIconSC>
+                
+          
+          
             
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>Создать магазин</DivBoxButtonCreateStoreSC>
             <LinkIconSC to="/signin">

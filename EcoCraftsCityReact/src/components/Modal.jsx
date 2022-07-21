@@ -24,7 +24,9 @@ const EcoModal = () => {
             <IoIosArrowBackSC />
           </ButtonPrevModal>
           <CenterItemsSC>
-            <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
+           
+           
+           <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
             {modalData.inputs.map(({ email }) => (
               <DivBoxRowModalSC>
                 <EmailFieldSC

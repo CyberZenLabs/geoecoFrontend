@@ -38,7 +38,7 @@ export const DivBoxContentSC = styled.div`
 display: grid; 
 grid-template-columns: 85px 1fr; 
 margin-bottom:35px;
-margin-right:35px;
+margin-right:15px;
 @media (max-width: 405px) {
   margin-bottom:3px;
   }

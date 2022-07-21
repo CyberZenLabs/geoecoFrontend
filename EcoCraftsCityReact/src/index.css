@@ -249,7 +249,9 @@ table {
   display: flex;
       flex-direction: column;
 }
-.image_plus{margin-left: auto;}
+.image_plus{margin-left: auto;
+  cursor: pointer;
+}
 
 .image-box {
   position: relative;

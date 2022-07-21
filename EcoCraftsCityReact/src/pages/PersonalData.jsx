@@ -21,7 +21,20 @@ import{
 
 } from "../styled-components-css/styles.personal-data";
 
+import Modals from "../components/ModalRedact";
+import ModalrRedact from "../components/ModalRedact";
+import AppContext from "../context/AppContext";
+
+
 const PersonalData = () => {
+  const openCarts = () => {
+    setOpenRedact(true);
+   
+  };
+  
+  const { openRedact, setOpenRedact  } = React.useContext(AppContext);
+  
+  
     return (
       <DivBoxPersonalDataSC>
         <DivPersonalDataSC>
@@ -34,7 +47,7 @@ const PersonalData = () => {
        
         <ul>
           <li>
-          <SpanInitialsSC>Фамилия Имя Отчество    <img src="/default-images/pencil.svg" className="image_plus" />     </SpanInitialsSC>
+          <SpanInitialsSC>Фамилия Имя Отчество    <img src="/default-images/pencil.svg" className="image_plus"  to="#"  onClick={openCarts} />     </SpanInitialsSC>
           </li>
           <li>
           <SpanConfirmAccountSC>Подтвердить аккаунт</SpanConfirmAccountSC>
@@ -88,6 +101,7 @@ const PersonalData = () => {
         </DivAddCardSC>
         </DivBoxBlockSC>
         </DivPersonalDataSC>
+      <ModalrRedact/>
       </DivBoxPersonalDataSC>
       
     )

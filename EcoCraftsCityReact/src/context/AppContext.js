@@ -6,6 +6,10 @@ export function AppProvider({ children }) {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const [open, setOpen] = useState(false);
+  
+  const [openRedact, setOpenRedact] = useState(false);
+  
+  
 
   const [modalData, setModalData] = useState({
     inputs: [{ email: "Электронная почта" }],
@@ -20,6 +24,9 @@ export function AppProvider({ children }) {
         setOpen,
         modalData,
         setModalData,
+        openRedact,
+         setOpenRedact,
+       
       }}
     >
       {children}

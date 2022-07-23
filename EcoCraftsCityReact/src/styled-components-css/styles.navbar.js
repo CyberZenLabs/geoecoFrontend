@@ -41,12 +41,16 @@ export const SpanFirstSC = styled(Link)`
   //margin-right: 30px;
   font-size: 12px;
   font-family: var(--root-font-family);
-  border-radius: 50px;
-  background: rgba(93, 162, 113, 0.25);
+  border: 2px solid rgba(133, 203, 51, 0.7);
+border-radius: 20px;
+color:#85CB33;
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
   color: var(--color-black);
+  @media (min-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const SpanSecondSC = styled(Link)`
@@ -54,17 +58,18 @@ export const SpanSecondSC = styled(Link)`
   font-size: 12px;
   font-family: var(--root-font-family);
   border-radius: 50px;
-  background: rgba(133, 203, 51, 0.25);
+
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  color: var(--color-black);
+  
 `;
 
 export const DivTextBoxSC = styled.div`
   display: grid;
-  grid-template-columns: 210px 200px auto;
+  grid-template-columns: repeat(3,1fr);;
   align-items: start;
+  align-items: center;
   @media (max-width: 731px) {
     display: none;
   }
@@ -81,12 +86,19 @@ export const DivBoxButtonAndInputSC = styled.div`
 export const DivBoxIconHeaderSC = styled.div`
   display: grid;
   justify-items: end;
+  align-items: center;
+}
 `;
 
 export const DivBoxIconSC = styled.div`
   display: grid;
-  grid-template-columns: 50% 50%;
-  width: 200px;
+  grid-template-columns: repeat(3,1fr);
+  width: 278px;
+  @media (max-width: 1000px) {
+    justify-items: center;
+    
+  
+    }
 `;
 
 export const ButtonSC = styled.button`
@@ -165,7 +177,7 @@ export const LinkIconSC = styled(Link)`
   border-radius: 50px;
   //background: rgba(133, 203, 51, 0.25);
   width: fit-content;
-  padding: 3px 5px;
+  padding: 3px 10px;
   text-decoration: none;
   color: var(--color-black);
   display: grid;
@@ -206,4 +218,24 @@ export const SpanEndHeaderSC = styled.span`
   align-items: start;
   color: rgba(37, 37, 37, 0.8);
   font-size: var(--font-size-icon-text);
+  margin-top:3px;
+`;
+export const DivBoxButtonCreateStoreSC = styled.span`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 30px;
+color:#85CB33;
+font-size:16px;
+height: 56px;
+@media (max-width: 1000px) {
+  display:none;
+
+  }
+
+/* Акцент 70% */
+
+border: 2px solid rgba(133, 203, 51, 0.7);
+border-radius: 20px;
 `;

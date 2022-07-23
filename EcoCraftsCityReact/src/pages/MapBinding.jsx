@@ -2,21 +2,16 @@ import React from 'react'
 import {
     DivMapBindingBoxSC,
     DivTextSC,
-    DivBoxWhiteCardSC,
-    ImgWhiteCardSC,
-    ImgGrayCardSC,
-    ImgCardsLogoSC,
-    ImgGrayRectangleSC,
-    DivImgBoxSC,
     DivButtonsSC,
     DivContentMapBindingSC,
-    DivBoxSC,
-    DivBoxRowSC,
+    DivBoxNumCardSC,
+    DivRowBoxSC,
     DivBoxMMSC,
-    DivBoxColumnsSC,
+    DivColumnsBoxSC,
     DivBoxGGSC,
     DivBoxCVVCVCSC,
-    DivSlashSC
+    DivSlashSC,
+    DivImgBoxSC
 } from "../styled-components-css/styles.map-binding";
 import TextField from "../components/TextField";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
@@ -32,27 +27,24 @@ const MapBinding = () => {
                 <Formik initialValues={startingValues}>
                     {(formik) => (
                         <Form>
- 
-                            <DivBoxRowSC>
-
-                                <DivBoxSC>
-
+                            <DivRowBoxSC>
+                                <DivBoxNumCardSC>
                                     <TextField
-                                        label="text"
+                                        label="cardNumber"
                                         type="text"
-                                        name="text"
+                                        name="cardNumber"
                                         fullSize={false}
                                         placeholder={"Номер карты"}
                                     />
-                                </DivBoxSC>
+                                </DivBoxNumCardSC>
 
-                                <DivBoxColumnsSC>
+                                <DivColumnsBoxSC>
 
                                 <DivBoxMMSC>
                                     <TextField
-                                        label="text"
+                                        label="month"
                                         type="text"
-                                        name="text"
+                                        name="month"
                                         fullSize={false}
                                         placeholder={"ММ"}
                                     />
@@ -62,9 +54,9 @@ const MapBinding = () => {
 
                                 <DivBoxGGSC>
                                     <TextField
-                                        label="text"
+                                        label="year"
                                         type="text"
-                                        name="text"
+                                        name="year"
                                         fullSize={false}
                                         placeholder={"ГГ"}
                                     />
@@ -78,30 +70,18 @@ const MapBinding = () => {
                                         placeholder={"CVV/CVC"}
                                     />
                                 </DivBoxCVVCVCSC>
-                                </DivBoxColumnsSC>
-                                </DivBoxRowSC>
-
- <DivImgBoxSC>
-
-    <ImgGrayCardSC>
-    <ImgGrayRectangleSC>
-    <DivBoxWhiteCardSC>
-    <ImgWhiteCardSC>  
-    <ImgCardsLogoSC>
-    </ImgCardsLogoSC>                                    
-    </ImgWhiteCardSC>
-</DivBoxWhiteCardSC>
-    </ImgGrayRectangleSC>
-    </ImgGrayCardSC>
-
-</DivImgBoxSC>
-
+                                </DivColumnsBoxSC>
+                                </DivRowBoxSC>
+                                <DivImgBoxSC></DivImgBoxSC>
                             <DivButtonsSC>
                                 <ButtonCustomWhiteSC
+                                    width={"100%"}
                                     padding={"18px 32px"}
                                     type="submit">Отмена</ButtonCustomWhiteSC>
 
                                 <ButtonCustomSC
+                                disabled={!formik.dirty || !formik.isValid}
+                                statusOpasity={!formik.dirty || !formik.isValid}
                                     width={"100%"}
                                     padding={"18px 32px"}
                                     type="submit">Привязать</ButtonCustomSC>
@@ -110,7 +90,6 @@ const MapBinding = () => {
                     )}
                 </Formik>
             </DivContentMapBindingSC>
-
         </DivMapBindingBoxSC >
     )
 }

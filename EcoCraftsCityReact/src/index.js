@@ -9,7 +9,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PersonalData from "./pages/PersonalData";
 import StoreNewProduct from "./pages/StoreNewProduct";
+
+import VendorProfile from "./pages/VendorProfile";
+
+
 import StoreNoAuth from "./pages/StoreNoAuth";
+
 import NavBar from "./components/NavBar";
 import Cart from "./pages/Cart";
 import Mooo from "./pages/AdminLogin";
@@ -52,8 +57,12 @@ root.render(
               <Route index element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
+
+              <Route path="VendorProfile" element={<VendorProfile />} />
+
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="cart" element={<Cart />} />
+
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />

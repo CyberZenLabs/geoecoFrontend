@@ -21,10 +21,22 @@ import {
     SpanTitleSC,
     SpanFooterSC
 } from '../styled-components-css/styles.footer'
-
+import Modal from "./Modal";
+import EcoModal from "./Modal";
+import AppContext from "../context/AppContext";
 var string = 'ECOCRAFTCIRY'
 
 const Footer = () => {
+    
+  const openCart = () => {
+    setOpen(true);
+    setModalData({
+      inputs: [{ email: "Электронная почта" }],
+      button: true,
+    });
+  };
+
+  const { setOpen, setModalData } = React.useContext(AppContext);
     return (
         <DivBoxFooterSC>
             <DivTopSC>
@@ -46,7 +58,7 @@ const Footer = () => {
                         <SpanTitleSC>geoeco</SpanTitleSC>
                         <CustomLinkSC to="/">О нас</CustomLinkSC>
                         <CustomLinkSC to="/">Отзывы</CustomLinkSC>
-                        <CustomLinkSC to="/">Вакансии</CustomLinkSC>
+                        <CustomLinkSC to="/"  onClick={openCart}>Создать магазин</CustomLinkSC>
                         <CustomLinkSC to="/">Новости</CustomLinkSC>
                     </DivBoxEcoCraftSC>
 

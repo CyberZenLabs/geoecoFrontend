@@ -16,6 +16,7 @@ export const BoxBottomMenuSC = styled.div`
     max-height: 176px;
     position: fixed;
     bottom: 0;
+    z-index:1000;
     ${'' /* padding-top: 26px;
     padding-bottom: 27px;
     padding-left: 63px;

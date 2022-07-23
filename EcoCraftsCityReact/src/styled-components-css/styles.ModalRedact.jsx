@@ -19,10 +19,11 @@ min-width: 360px;
     justify-content: unset;
   }
 `;
+
 export const DivWrapModal = styled.div`
   display: grid;
   width: 770px;
-  height: 850px;
+  height: 630px;
   background: #ffffff;
   border-radius: 30px;
   z-index:1000;
@@ -62,6 +63,7 @@ justify-self: center;
   display: grid;
   justify-content: center;
   max-width: 500px;
+  margin-bottom: 25px;
 
 `;
 export const DivBoxRowModalContSC = styled.div`

@@ -1,71 +1,116 @@
-/* import image from "../img/white-card1.svg"
-import image2 from "../img/white-card2.svg"
-import image3 from "../img/cards-logo.svg"
-import image4 from "../img/gray-rectangle.svg" */
 import imageMB from '../img/Cards.svg';
+import image720MB from '../img/Cards720.svg';
+import image480MB from '../img/Cards480.svg';
 import styled from 'styled-components';
 
 export const DivMapBindingBoxSC = styled.div`
   display: grid;
   justify-items: center;
+  width: 100%;
 `;
 
 export const DivContentMapBindingSC = styled.div`
   display: grid;
   //grid-template-rows: 223px 304px 416px;
   max-width: 600px;
-  width: 85vw;
+  width: 100%;
 `;
 
 export const DivContainerRowsMB = styled.div`
   display: grid;
-  grid-template-rows: 139px 141px;
+  grid-template-rows: 139px 67px;
+  grid-row-gap: 16px;
   @media (max-width: 686px) {
     width: 100%;
   }
+
+  @media (max-width: 500px) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 500px) {
+    grid-row-gap: 9px;
+  }
 `;
 export const DivRowBoxSC = styled.div`
-  max-width: 355px;
   width: 100%;
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  grid-template-columns: 16fr 9fr;
 `;
 
 export const DivBoxNumCardSC = styled.div`
-  margin-top: 70px;
-  margin-left: 38px;
-  width: 355px;
+  max-width: 355px;
+  width: 100%;
   height: 56px;
 `;
 
 export const DivColumnsBoxSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '67px 6px 67px 109px')};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '14.4% 7.1% 14.4% 64.1%')};
   @media (max-width: 686px) {
     width: 100%;
   }
 `;
 
+export const DivColumnMMBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: start;
+  justify-items: end;
+`;
+
 export const DivBoxMMSC = styled.div`
+  align-items: center;
+  max-width: 67px;
   width: 100%;
   height: 56px;
-  margin-left: 38px;
+`;
+
+export const DivColumnGGBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  align-items: start;
 `;
 
 export const DivBoxGGSC = styled.div`
+  max-width: 67px;
   width: 100%;
   height: 56px;
-  margin-left: 76px;
 `;
+
+export const DivColumnCVVCVCBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  grid-template-columns: auto 16px;
+  @media (max-width: 400px) {
+    grid-template-columns: auto;
+  }
+`;
+
 export const DivBoxCVVCVCSC = styled.div`
+  max-width: 109px;
   width: 100%;
   height: 56px;
-  margin-left: 335px;
-  margin-top: 11px;
+  display: grid;
 `;
+
+export const DivColumnSlashBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 10fr 2fr;
+`;
+
 export const DivSlashSC = styled.div`
+  max-width: 6px;
   width: 100%;
   height: 20px;
-  margin-left: 58px;
-  margin-top: 17px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -92,17 +137,35 @@ export const DivImgBoxSC = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   height: 280px;
+  background-position-x: 0px;
+  display: grid;
+  padding-left: 24px;
   @media (max-width: 730px) {
     width: 100%;
+  }
+  @media (max-width: 520px) {
+    background-image: url(${image720MB});
+    background-position: right 30px;
+  }
+
+  @media (max-width: 400px) {
+    background-image: url(${image480MB});
+    background-position: right 35px;
   }
 `;
 
 export const DivButtonsSC = styled.div`
   display: grid;
-  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '259px 259px')}; */
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')};
   grid-column-gap: 29px;
-  max-width: 676px;
-  width: 100%;
+  @media (max-width: 686px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    grid-column-gap: 20px;
+    padding-top: 20px;
+    grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
+  }
   padding-left: 24px;
   padding-bottom: 316px;
   padding-top: 65px;

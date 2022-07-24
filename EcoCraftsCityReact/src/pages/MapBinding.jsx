@@ -13,6 +13,10 @@ import {
   DivContainerRowsMB,
   DivRowBoxSC,
   DivColumnsBoxSC,
+  DivColumnMMBoxSC,
+  DivColumnSlashBoxSC,
+  DivColumnGGBoxSC,
+  DivColumnCVVCVCBoxSC,
 } from '../styled-components-css/styles.map-binding';
 import TextField from '../components/TextField';
 import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
@@ -42,18 +46,24 @@ const MapBinding = () => {
                     </DivBoxNumCardSC>
                   </DivRowBoxSC>
                   <DivColumnsBoxSC>
-                    <DivBoxMMSC>
-                      <TextField label="month" type="text" name="month" fullSize={false} placeholder={'ММ'} />
-                    </DivBoxMMSC>
-
-                    <DivSlashSC>/</DivSlashSC>
-
-                    <DivBoxGGSC>
-                      <TextField label="year" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
-                    </DivBoxGGSC>
-                    <DivBoxCVVCVCSC>
-                      <TextField label="text" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
-                    </DivBoxCVVCVCSC>
+                    <DivColumnMMBoxSC>
+                      <DivBoxMMSC>
+                        <TextField label="month" type="text" name="month" fullSize={false} placeholder={'ММ'} />
+                      </DivBoxMMSC>
+                    </DivColumnMMBoxSC>
+                    <DivColumnSlashBoxSC>
+                      <DivSlashSC>/</DivSlashSC>
+                    </DivColumnSlashBoxSC>
+                    <DivColumnGGBoxSC>
+                      <DivBoxGGSC>
+                        <TextField label="year" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
+                      </DivBoxGGSC>
+                    </DivColumnGGBoxSC>
+                    <DivColumnCVVCVCBoxSC>
+                      <DivBoxCVVCVCSC>
+                        <TextField label="text" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                      </DivBoxCVVCVCSC>
+                    </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>
                 </DivContainerRowsMB>
               </DivImgBoxSC>

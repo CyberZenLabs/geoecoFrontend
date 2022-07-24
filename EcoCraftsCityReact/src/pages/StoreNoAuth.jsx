@@ -42,7 +42,8 @@ import{
     DivNextGrid,
     DivCountPage,
     DivNextPage,
-    DivButtonNext
+    DivButtonNext,
+    SpanTitleCatalogAdaptive
   } from "../styled-components-css/styles.StoreNoAuth";
 
   import ProductCard from "../components/ProductCard";
@@ -85,7 +86,8 @@ const StoreNoAuth = () =>{
             <DivBoxContentSC>
             <ImgBannerShopSC src="/banner-images/ShopBanner.jpg"></ImgBannerShopSC>
             
-            <SettingsShopAdaptive></SettingsShopAdaptive>
+            <SpanTitleCatalogAdaptive>Название магазина, что производят</SpanTitleCatalogAdaptive>
+            <SettingsShopAdaptive/>
             <DivBoxCatalogShopSC>
 
             <SettingsShopCatalog/>

@@ -1,6 +1,7 @@
 import { Margin } from '@mui/icons-material';
 import React from 'react';
 import SettingsShop from "../components/SettingsShop";
+import VendorInfoMenu from '../components/VendorInfoMenu';
 import{
     DivBoxNewProductsST,
     MenuProductST,
@@ -14,7 +15,10 @@ import{
   DivBoxItemsSC,
   DivInfoVendorBoxSC,
   DivButtonChangrInformSC,
-  UlifnoSC
+  OlifnoSC,
+  LiInfoSC,
+  DivDisplayFlexSC
+ 
     
   } from "../styled-components-css/styles.VendorProfile";
 const VendorProfile = () =>{
@@ -30,21 +34,7 @@ const VendorProfile = () =>{
                
                 <DivAddProductBox>
                 
-                 <DivInfoVendorBoxSC><SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
-                 <UlifnoSC>
-                    <li>fffff</li>
-                    <li>ffffff</li>
-                    <li>fffffff</li>
-                    <li>fffff</li>
-                 </UlifnoSC>
-                
-
-                    
-                
-                    
-               
-                        
-                        </DivInfoVendorBoxSC>
+               <VendorInfoMenu/>
                  <DivInfoVendorBoxSC>FFFFFF</DivInfoVendorBoxSC>
                 </DivAddProductBox>
                 

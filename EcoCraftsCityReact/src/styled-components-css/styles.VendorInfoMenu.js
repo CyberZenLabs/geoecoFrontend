@@ -255,6 +255,7 @@ font-size:16px;
 export const DivInfoVendorBoxSC = styled.div`
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
+margin-bottom:10px;
 
 `;
 export const DivBorderBox = styled.div`

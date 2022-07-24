@@ -221,6 +221,11 @@ export const SpanEndHeaderSC = styled.span`
   margin-top:3px;
 `;
 export const DivBoxButtonCreateStoreSC = styled.span`
+:hover{
+  background-color:#85CB33;
+  color:white;
+  cursor: pointer;
+}
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -229,6 +234,7 @@ padding: 10px 30px;
 color:#85CB33;
 font-size:16px;
 height: 56px;
+font-weight: semibold ;
 @media (max-width: 1000px) {
   display:none;
 

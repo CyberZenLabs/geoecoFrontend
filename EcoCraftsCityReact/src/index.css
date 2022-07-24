@@ -262,6 +262,7 @@ table {
   overflow: hidden;
   border: 10px solid var(--white);
 }
+.marginRight{margin-right: 10px;}
 
  .image-box img {
   position: absolute;

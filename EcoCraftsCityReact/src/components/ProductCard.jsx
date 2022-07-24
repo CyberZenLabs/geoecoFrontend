@@ -8,8 +8,11 @@ import {
   ProductCardPrice,
   ProductCardStoreName,
   StarAlign,
+<<<<<<< HEAD
   DivGridPriceCartIcon,
   DivCart
+=======
+>>>>>>> main
 } from "../styled-components-css/styles.product-card";
 
 const ProductCard = ({ product }) => {
@@ -23,7 +26,9 @@ const ProductCard = ({ product }) => {
       </DivGridPriceCartIcon>
       
       <ProductCardName>{product.name}</ProductCardName>
-      <StarAlign><StarRating product={true} /></StarAlign>
+      <StarAlign>
+        <StarRating product={true} />
+      </StarAlign>
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
       <ProductCardButton to="/product/1">В корзину</ProductCardButton>
     </ProductCardContainer>

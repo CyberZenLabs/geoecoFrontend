@@ -1,14 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import StarRating from "../components/StarRating";
 import {
-  DivLeftBoxShopSC,
+  ButtonDropDownSC,
+  ButtonPageBoxSC,
+  ButtonReviewPageSC,
+  DivButtonBoxSC,
+  DivCardReviewsBoxSC,
   DivLinkReviewRaitingSC,
+  DivLinksAdaptiveSC,
   DivLinksInfoSC,
-  DivRigthBoxReviewSC,
+  DivModesBoxSC,
+  DivModeSC,
+  DivPagenationBoxSC,
+  DivReviewsBoxSC,
+  DivShopContainerSC,
   DivShopInfoSC,
+  DivStarHideSC,
+  DivTextButtonBoxSC,
   DivTitleShopInfoSC,
   ImgShopInfoSC,
-  LinkShopInfo,
+  LinkShopInfoSC,
   LocationShopInfoSC,
   ReviewBoxNameSC,
   ReviewContainerSC,
@@ -16,11 +27,11 @@ import {
   WrapShopContainerSC,
 } from "../styled-components-css/styles.reviews";
 import axios from "axios";
+import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
+import RatioCard from "../components/RatioCard";
+import ReviewBox from "../components/ReviewBox";
 
-
-
-const Reviews = ({shop, index}) => {
-
+const Reviews = ({ shop, index }) => {
   const [shopRaiting, setShopRaiting] = useState();
 
   useEffect(() => {
@@ -32,37 +43,81 @@ const Reviews = ({shop, index}) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [])
-  
+  }, []);
+
   return (
     <>
-      <WrapShopContainerSC>
-      </WrapShopContainerSC>
+      <WrapShopContainerSC></WrapShopContainerSC>
       <ReviewContainerSC>
-        <DivLeftBoxShopSC>
+        <DivShopContainerSC>
+
           <DivShopInfoSC>
-            <ImgShopInfoSC
-              src={"/default-images/plant.jpg"}
-            ></ImgShopInfoSC>
+            <ImgShopInfoSC src={"/default-images/plant.jpg"}></ImgShopInfoSC>
             <DivTitleShopInfoSC>
               <TitleShopInfoSC>Название магазина и о чем он</TitleShopInfoSC>
               <LocationShopInfoSC>Где находится</LocationShopInfoSC>
+              <DivStarHideSC>
+                <StarRating fixed={true} value={shopRaiting} />
+              </DivStarHideSC>
             </DivTitleShopInfoSC>
           </DivShopInfoSC>
+
           <DivLinksInfoSC>
-            <LinkShopInfo to='/'>Профиль</LinkShopInfo>
-            <LinkShopInfo to='/'>Магазины 50</LinkShopInfo>
+            <LinkShopInfoSC to="/">Профиль</LinkShopInfoSC>
+            <LinkShopInfoSC to="/">Магазины 50</LinkShopInfoSC>
             <DivLinkReviewRaitingSC>
-              <LinkShopInfo to='/'>Отзывы </LinkShopInfo>
-              <StarRating value={shopRaiting}/>
+              <LinkShopInfoSC to="/">Отзывы </LinkShopInfoSC>
+              <StarRating fixed={true} value={shopRaiting} />
             </DivLinkReviewRaitingSC>
-            
-            <LinkShopInfo to='/'>Оплата и Доставка</LinkShopInfo>
+            <LinkShopInfoSC to="/">Оплата и Доставка</LinkShopInfoSC>
           </DivLinksInfoSC>
-        </DivLeftBoxShopSC>
-        <DivRigthBoxReviewSC>
+
+          <DivLinksAdaptiveSC>
+            <LinkShopInfoSC to="/">Профиль</LinkShopInfoSC>
+            <LinkShopInfoSC to="/">Магазин 50</LinkShopInfoSC>
+            <ButtonDropDownSC>
+              ...
+            </ButtonDropDownSC>
+          </DivLinksAdaptiveSC>
+
+        </DivShopContainerSC>
+        <DivModesBoxSC>
+          <DivModeSC>Рубрики</DivModeSC>
+          <DivModeSC>Фильтры</DivModeSC>
+        </DivModesBoxSC>
+        <DivTextButtonBoxSC>
           <ReviewBoxNameSC>Отзывы</ReviewBoxNameSC>
-        </DivRigthBoxReviewSC>
+          <DivButtonBoxSC>
+            {/* <ButtonReviewPageSC to='/reviews'>О магазине</ButtonReviewPageSC>
+              <ButtonReviewPageSC to='/reviews'>О товарах</ButtonReviewPageSC> */}
+            <ButtonCustomSC
+              width={"149px"}
+              height={"40px"}
+              borderRadius={"14px"}
+            >
+              О магазине
+            </ButtonCustomSC>
+            <ButtonCustomSC
+              width={"149px"}
+              height={"40px"}
+              borderRadius={"14px"}
+            >
+              О товарах
+            </ButtonCustomSC>
+          </DivButtonBoxSC>
+        </DivTextButtonBoxSC>
+        <DivCardReviewsBoxSC>
+          <RatioCard />
+          <DivReviewsBoxSC>
+            <ReviewBox/>
+          </DivReviewsBoxSC>
+          <DivPagenationBoxSC>
+            <ButtonPageBoxSC>1</ButtonPageBoxSC>
+            <ButtonPageBoxSC>2</ButtonPageBoxSC>
+            <ButtonPageBoxSC>3</ButtonPageBoxSC>
+            <ButtonPageBoxSC>Дальше</ButtonPageBoxSC>
+          </DivPagenationBoxSC>
+        </DivCardReviewsBoxSC>
       </ReviewContainerSC>
     </>
   );

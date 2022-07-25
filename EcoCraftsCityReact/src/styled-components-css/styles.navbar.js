@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import image from "../img/geoecologo.png";
-import { Link } from "react-router-dom";
+import styled from 'styled-components/macro';
+import image from '../img/geoecologo.png';
+import { Link } from 'react-router-dom';
 
 export const DivBoxLogoSC = styled.div`
   background-image: url(${image});

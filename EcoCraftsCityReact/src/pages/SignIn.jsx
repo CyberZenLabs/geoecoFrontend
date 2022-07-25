@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext, useRef } from 'react';
 
-import axios from "../apis/admin-rest";
+import axios from '../apis/admin-rest';
 
-import { useCookies } from "react-cookie";
+import { useCookies } from 'react-cookie';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import {
   H4Title,
   LabelSC,
@@ -31,16 +31,17 @@ import {
   DivBoxFormSignInSC,
   DivBoxRowSISC,
   DivTextBoxSISC,
-} from "../styled-components-css/styles.registration";
-import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { signInSchema } from "../validations/validation.signin";
-import { Formik, Form } from "formik";
-import TextField from "../components/TextField";
-import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
-import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
-import { useAuth } from "../context/AuthContext";
-import useAxiosFunction from "../hooks/useAxiosFunction";
+  CheckboxItemInput,
+} from '../styled-components-css/styles.registration';
+import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import { signInSchema } from '../validations/validation.signin';
+import { Formik, Form } from 'formik';
+import TextField from '../components/TextField';
+import { FlowerLoaderSc } from '../styled-components-css/styles.loader';
+import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
+import { useAuth } from '../context/AuthContext';
+import useAxiosFunction from '../hooks/useAxiosFunction';
 
 // const Alert = React.forwardRef(function Alert(props, ref) {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -50,48 +51,51 @@ const SignIn = (props) => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
 
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const toastId = useRef(null);
   let navigate = useNavigate();
+  const [checked, setChecked] = useState(false);
+  const check = () => {
+    setChecked(!checked);
+  };
 
   useEffect(() => {
     if (response.length === 0) {
-      console.log("REPEAT ERROR", error);
+      console.log('REPEAT ERROR', error);
 
-      if (error !== "") {
-        if (error && error.message.includes("401")) {
-          showToast("error", "Не Верный Данные");
+      if (error !== '') {
+        if (error && error.message.includes('401')) {
+          showToast('error', 'Не Верный Данные');
         } else {
-          showToast("error", error);
+          showToast('error', error);
         }
       }
     } else {
-      console.log(">>>>>>>>>", response.token);
+      console.log('>>>>>>>>>', response.token);
       login();
-      showToast("success", "Вы успешно зашли");
-      setCookie("token", response.token);
+      showToast('success', 'Вы успешно зашли');
+      setCookie('token', response.token);
       login();
-      navigate("/");
-   
+      navigate('/');
     }
   }, [response, error]);
   {
-    console.log("LOGGED IN", loggedIn);
+    console.log('LOGGED IN', loggedIn);
   }
 
   const showToast = (type, text) => {
-    if (type === "error") {
+    if (type === 'error') {
       toast.error(text ? text : error, {
-        toastId: "error",
+        toastId: 'error',
       });
-    } else if (type === "success") {
+    } else if (type === 'success') {
       toast.success(text ? text : response, {
-        toastId: "success",
+        toastId: 'success',
       });
     }
   };
 
-  const startingValues = { email: "", password: "" };
+  const startingValues = { email: '', password: '' };
 
   return (
     <DivRegSC>
@@ -108,7 +112,7 @@ const SignIn = (props) => {
               onSubmit={(values) => {
                 axiosFetch({
                   axiosInstance: axios,
-                  method: "POST",
+                  method: 'POST',
                   url: `/api/v1/users/login`,
                   requestConfig: { ...values },
                 });
@@ -124,7 +128,7 @@ const SignIn = (props) => {
                         type="email"
                         name="email"
                         fullSize={true}
-                        placeholder={"Электронная почта"}
+                        placeholder={'Электронная почта'}
                       />
                     </DivBoxRowSC>
 
@@ -135,27 +139,33 @@ const SignIn = (props) => {
                         name="password"
                         type="password"
                         fullSize={true}
-                        placeholder={"Пароль"}
+                        placeholder={'Пароль'}
                       />
                     </DivBoxRowSISC>
                     <DivTextBoxSISC>
-                        <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
-                        <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
+                      <CheckboxItemInput
+                        type="checkbox"
+                        name="todo"
+                        value="todo"
+                        checked={checked}
+                        onChange={check}
+                        onClick={!checked}
+                      />
+                      <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
+                      <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
                     </DivTextBoxSISC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
                         statusOpasity={!formik.dirty || !formik.isValid}
-                        width={"100%"}
-                        padding={"18px 32px"}
+                        width={'100%'}
+                        padding={'18px 32px'}
                         type="submit"
                       >
                         {!loading ? (
                           <span>
                             Войти в аккаунт&nbsp;&nbsp;
-                            <FontAwesomeIcon
-                              icon={faArrowRight}
-                            ></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                           </span>
                         ) : (
                           <FlowerLoaderSc />

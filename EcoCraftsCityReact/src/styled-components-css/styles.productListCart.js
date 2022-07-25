@@ -53,6 +53,10 @@ export const DivBoxCountProductTempSC = styled.div`
 		font-weight: 200;
 		justify-items: center;
 
+		@media (max-width: ${middleWidth}px) {
+			font-size: 24px;
+		}
+
 	}
 `;
 

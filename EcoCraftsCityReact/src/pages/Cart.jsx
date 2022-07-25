@@ -13,7 +13,7 @@ import TotalPriceCart from "../components/components-cart/TotalPriceCart";
 import BoxInfoDelivery from '../components/components-cart/BoxInfoOfDelivery';
 const arrayProduct = [
     {name :'Крестовник роули', isSelected: false },
-    {name:'nameДеревянная ложка', isSelected: false},
+    {name:'Деревянная ложка', isSelected: false},
     {name :'Деревянная бочка', isSelected: false },
     {name:'Соломенная корзина', isSelected: false },
     {name :'Стекляная солонка', isSelected: false },

@@ -6,12 +6,12 @@ export const DivReviewShowWrapSC = styled.div`
   display: grid;
   grid-template-rows: max-content 120px 48px;
   grid-gap: 10px;
-  background-color: rgba(243,243,243,0.2);
+  background-color: rgba(243, 243, 243, 0.2);
   width: 420px;
   //height: 272px;
   border-radius: 12px;
   padding: 24px 24px 22px;
-  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   @media (max-width: 1000px) {
     width: 288px;
     padding: 16px 16px 12px;
@@ -65,20 +65,14 @@ export const DivDateReviewCreateSC = styled.div`
 `;
 
 export const TextBoxReviewSC = styled.p`
+  ${(p) => (p.color !== undefined ? `color:${p.color};` : "color: black;")}
   ${(p) =>
-    p.color !== undefined
-      ? `color:${p.color};`
-      : "color: black;"}
-  ${(p) =>
-    p.weight !== undefined
-      ? `font-weight:${p.weight};`
-      : "font-weight: 400;"}
+    p.weight !== undefined ? `font-weight:${p.weight};` : "font-weight: 400;"}
   font-size: 16px;
   line-height: 22px;
   @media (max-width: 1000px) {
     font-size: 14px;
   }
-      
 `;
 
 export const DivStarRaitingSC = styled.div`
@@ -87,11 +81,7 @@ export const DivStarRaitingSC = styled.div`
   column-gap: 12px;
 `;
 
-export const DivUserReviewSC = styled.div`
-  
-`;
-
-
+export const DivUserReviewSC = styled.div``;
 
 //------------------- конец (Аватрака дата время рейтинг) -------------------
 

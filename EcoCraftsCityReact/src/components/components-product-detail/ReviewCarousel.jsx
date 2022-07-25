@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Children } from "react";
 import { cloneElement } from "react";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import {
+  DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
@@ -8,7 +10,7 @@ import {
 
 const ReviewCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
-
+  const [carouselNumber, setCarouselNumber] = useState(0);
   useEffect(() => {
     setItems(
       Children.map(children, (child) => {
@@ -27,7 +29,21 @@ const ReviewCarousel = ({ children }) => {
     <>
       <DivCarouselMainSC>
         <DivCarouselWindowSC>
-          <DivCarouselAllItemsSC>{items}</DivCarouselAllItemsSC>
+          <DivCarouselAllItemsSC carouselNumber={carouselNumber}>
+            {items}
+          </DivCarouselAllItemsSC>
+          <DivButtonWrapSC>
+            {carouselNumber != 0 ? (
+              <BsArrowLeftCircle
+                onClick={() => setCarouselNumber(carouselNumber - 1)}
+              />
+            ) : (
+              <div></div>
+            )}
+            <BsArrowRightCircle
+              onClick={() => setCarouselNumber(carouselNumber + 1)}
+            />
+          </DivButtonWrapSC>
         </DivCarouselWindowSC>
       </DivCarouselMainSC>
     </>

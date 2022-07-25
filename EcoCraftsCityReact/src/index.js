@@ -1,26 +1,33 @@
-import React, { useContext } from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./page-css/sidenav.css";
-import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useContext } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import './page-css/sidenav.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
-import Home from "./pages/Home";
-import PersonalData from "./pages/PersonalData";
-import StoreNewProduct from "./pages/StoreNewProduct";
-import StoreNoAuth from "./pages/StoreNoAuth";
-import NavBar from "./components/NavBar";
-import Cart from "./pages/Cart";
-import Mooo from "./pages/AdminLogin";
-import ProductDetail from "./pages/ProductDetail";
-import AdminDashboard from "./pages/AdminDashboard";
-import Registration from "./pages/Registration";
-import SignIn from "./pages/SignIn";
-import StoreFront from "./pages/StoreFront";
+import Home from './pages/Home';
+import PersonalData from './pages/PersonalData';
+import StoreNewProduct from './pages/StoreNewProduct';
+
+import VendorProfile from './pages/VendorProfile';
+
+import StoreNoAuth from './pages/StoreNoAuth';
+
+import NavBar from './components/NavBar';
+import Cart from './pages/Cart';
+import Mooo from './pages/AdminLogin';
+import ProductDetail from './pages/ProductDetail';
+import AdminDashboard from './pages/AdminDashboard';
+import Registration from './pages/Registration';
+import SignIn from './pages/SignIn';
+import StoreFront from './pages/StoreFront';
+import MapBiding from './pages/MapBinding';
+import AddNewProduct from './pages/AddNewProduct';
 
 //components
 // import AdminForm from "./pages/AdminForm";
+
 import Footer from "./components/Footer";
 import MapBiding from "./pages/MapBinding";
 import Catalog from "./components/Catalog";
@@ -34,9 +41,15 @@ import { ToastContainer } from "react-toastify";
 import AppContext, { AppProvider } from "./context/AppContext";
 import { AuthProvider } from "./context/AuthContext";
 
-import Reviews from "./pages/Reviews";
-import Page_404 from "./pages/404";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+
+import { ToastContainer } from 'react-toastify';
+import AppContext, { AppProvider } from './context/AppContext';
+import { AuthProvider } from './context/AuthContext';
+import Terms from './privacy/Terms';
+import Privacy from './privacy/Privacy';
+import Reviews from './pages/Reviews';
+import Page_404 from './pages/404';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <>
@@ -56,8 +69,14 @@ root.render(
               <Route index element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
+              <Route path="addnewproduct" element={<AddNewProduct />} />
+
+              <Route path="VendorProfile" element={<VendorProfile />} />
+
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="cart" element={<Cart />} />
+              <Route path="terms" element={<Terms />} />
+              <Route path="privacy" element={<Privacy />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />
@@ -80,5 +99,5 @@ root.render(
         </AuthProvider>
       </AppProvider>
     </React.StrictMode>
-  </>
+  </>,
 );

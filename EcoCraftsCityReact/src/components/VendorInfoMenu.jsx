@@ -11,6 +11,7 @@ import{
   DivButtonChangrInformSC,
   OlifnoSC,
   LiInfoSC,
+  DivButtonChangrInformBottomSC,
  
  
     
@@ -27,6 +28,7 @@ const VendorInfoMenu = () =>{
                 <LiInfoSC> <img src="/default-images/elips.svg" class="marginRight"/> Товары:<GreenST>Готовые(1),На заказ(0),Все(1)</GreenST></LiInfoSC>
                
                  </OlifnoSC>
+                 <DivButtonChangrInformBottomSC>Изменить информацию</DivButtonChangrInformBottomSC>
 
                         </DivInfoVendorBoxSC>
                  

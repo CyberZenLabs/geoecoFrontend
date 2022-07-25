@@ -152,6 +152,10 @@ color: #252525;
 display:flex;
 justify-content: space-between;
 margin:10px;
+@media (max-width: 1000px) {
+  font-size: 26px;
+}
+
 `;
 export const OlifnoSC=styled.ol`
 
@@ -161,6 +165,9 @@ list-style: inside;
 padding: 0; 
 margin-left: 10px;
 font-weight: bold;
+@media (max-width: 1000px) {
+  font-size: 18px;
+}
 
 
 `;
@@ -241,6 +248,10 @@ flex-direction: column;
 justify-content: space-around;
 `;
 export const DivButtonChangrInformSC = styled.div`
+@media (max-width: 1000px) {
+  display:none;
+  
+    }
 display:flex;
 background: #85CB33;
 border-radius: 20px;
@@ -251,6 +262,28 @@ align-items: center;
 padding: 2px 10px;
 color: #FFFFFF;
 font-size:16px;
+`;
+export const DivButtonChangrInformBottomSC = styled.div`
+@media (min-width: 1000px) {
+  display:none;
+  
+    }
+    
+        height: 34px;
+display:flex;
+background: #85CB33;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 10px;
+color: #FFFFFF;
+font-size:16px;
+margin-left:18px;
+margin-right:19px;
+margin-bottom:7px;
+margin-top 20px;
 `;
 export const DivInfoVendorBoxSC = styled.div`
 background: rgba(243, 243, 243, 0.5);
@@ -282,12 +315,13 @@ color: #3D3D3D;
 margin-bottom:14px;
 font-size: 20px;
 display:flex;
-
-`;
-export const LiInfoGreenSC = styled.li`
-color: #3D3D3D;
-margin-bottom:14px;
-font-size: 20px;
-color: #85CB33;
-margin-right:1px;
+@media (max-width: 1000px) {
+  font-size: 16px;
+}
+@media (max-width: 766px) {
+  font-size: 13px;
+}
+@media (max-width: 480px) {
+  font-size: 12px;
+}
 `;

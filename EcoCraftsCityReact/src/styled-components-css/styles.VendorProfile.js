@@ -251,6 +251,7 @@ align-items: center;
 padding: 2px 10px;
 color: #FFFFFF;
 font-size:16px;
+
 `;
 export const DivInfoVendorBoxSC = styled.div`
 background: rgba(243, 243, 243, 0.5);

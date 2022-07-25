@@ -3,6 +3,10 @@
   font-family: "Montserrat";
 }
 
+html {
+  min-width: 350px
+}
+
 :root {
   --main-color: rgba(133, 203, 51, 0.7);
   --green-color: #85cb33;

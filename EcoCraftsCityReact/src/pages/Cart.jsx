@@ -50,7 +50,7 @@ const Cart = () => {
         setWidthWindow( e.currentTarget.innerWidth)
     }
 
-
+    console.log('>>>>>>', widthWindow)
 
   return (
     <DivCartBoxSC>
@@ -62,6 +62,7 @@ const Cart = () => {
                             <BoxProductList
                                 onClickAll={onClickAll}
                                 arrayProd={arrayProd}
+                                widthWindow={widthWindow}
                             >
 
                             </BoxProductList>
@@ -75,11 +76,14 @@ const Cart = () => {
                     </>
                     :
                     <DivBoxMinWidthSC>
-                        <CartTitleMinWidth></CartTitleMinWidth>
+                        <CartTitleMinWidth>
+
+                        </CartTitleMinWidth>
                         <DivBoxProductMinWidthSC>
                             <BoxProductList
                                 onClickAll={onClickAll}
                                 arrayProd={arrayProd}
+                                widthWindow={widthWindow}
                             >
 
                             </BoxProductList>

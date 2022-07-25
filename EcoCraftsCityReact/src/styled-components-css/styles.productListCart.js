@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 const middleWidth = 920
+const minWidth = 660
 
 export const DivBoxCountProductSC = styled.div`
 	//outline: 1px solid #4e65ff;
@@ -20,6 +21,10 @@ export const DivBoxCountProductTempSC = styled.div`
 			height: 31px;
       align-items: center;
 		}
+
+  @media (max-width: ${minWidth}px) {
+    width: 100px;
+  }
 
 	button {
 		display: grid;

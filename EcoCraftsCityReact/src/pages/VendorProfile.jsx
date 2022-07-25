@@ -1,6 +1,9 @@
 import { Margin } from '@mui/icons-material';
 import React from 'react';
+
 import SettingsShop from "../components/SettingsShop";
+import ReviewShow from '../components/ShowItemCarousel';
+import ReviewCarousel from '../components/VenderCarousel';
 import VendorInfoMenu from '../components/VendorInfoMenu';
 import{
     DivBoxNewProductsST,
@@ -35,7 +38,14 @@ const VendorProfile = () =>{
                 <DivAddProductBox>
                 
                <VendorInfoMenu/>
-                 <DivInfoVendorBoxSC>FFFFFF</DivInfoVendorBoxSC>
+                 <DivInfoVendorBoxSC>
+               <ReviewCarousel>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+               </ReviewCarousel>
+                 </DivInfoVendorBoxSC>
                 </DivAddProductBox>
                 
 

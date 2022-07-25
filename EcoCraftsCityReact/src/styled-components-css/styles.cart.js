@@ -221,3 +221,46 @@ export const DivBoxProductMinWidthSC = styled.div`\
   display: grid;
   //grid-template-rows: repeat(auto-fit, 206px);
 `
+export const DivCartTitleMinSC = styled.div`
+  background: #F3F3F380;
+  border-radius: 20px; 
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  row-gap: 4px;
+  
+  `
+export const H2CartTitleSC = styled.h2`
+  align-self: self-end;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 20px;
+`
+export const DivSumForPayTitleSC = styled.div`
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-auto-columns: max-content max-content;
+  gap: 5px;
+    p{
+      grid-row: 1;
+      font-family: 'Montserrat';
+      font-weight: 600;
+      font-size: 14px;
+      color: #252525B2;  
+  }
+    span{
+      grid-row: 1;
+      font-family: 'Montserrat';
+      font-weight: 600;
+      font-size: 14px;
+      color: #252525CC;
+    }`
+
+export const DivCartTitleMinCheckBoxSC = styled.div`
+  
+  padding-right: 20px;
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: right;
+`

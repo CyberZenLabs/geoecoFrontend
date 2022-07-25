@@ -12,7 +12,6 @@ import StoreNewProduct from "./pages/StoreNewProduct";
 
 import VendorProfile from "./pages/VendorProfile";
 
-
 import StoreNoAuth from "./pages/StoreNoAuth";
 
 import NavBar from "./components/NavBar";
@@ -39,6 +38,8 @@ import { AuthProvider } from "./context/AuthContext";
 
 import Reviews from "./pages/Reviews";
 import Page_404 from "./pages/404";
+import Terms from "./privacy/Terms";
+import Privacy from "./privacy/Privacy";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -62,7 +63,8 @@ root.render(
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="cart" element={<Cart />} />
-
+              <Route path="terms" element={<Terms />} />
+              <Route path="privacy" element={<Privacy/>} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />

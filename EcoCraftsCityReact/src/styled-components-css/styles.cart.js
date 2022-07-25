@@ -137,7 +137,7 @@ export const SpanPriceSC = styled.span`
     line-height: 49px;
 		@media (max-width: ${middleWidth}px) {
 			height: 20px;
-          line-height: 29px;
+          line-height: 31px;
 		}`
 
 export const DividerSC = styled.div`

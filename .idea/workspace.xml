@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b2d39e6-6fa7-4b2a-9838-a118f775b7bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/ItemProdictCartMinWidth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/BoxProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/BoxProductList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/CartTitleMinWidth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/CartTitleMinWidth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/ItemProductCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/components/components-cart/ItemProductCart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/pages/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.BoxInfoDelivery.js" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.BoxInfoDelivery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.productListCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/EcoCraftsCityReact/src/styled-components-css/styles.productListCart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +56,7 @@
       <updated>1658721338708</updated>
       <workItem from="1658721340181" duration="216000" />
       <workItem from="1658721563699" duration="4323000" />
-      <workItem from="1658727400312" duration="4102000" />
+      <workItem from="1658727400312" duration="4920000" />
     </task>
     <servers />
   </component>

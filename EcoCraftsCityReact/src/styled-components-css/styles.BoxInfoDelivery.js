@@ -29,6 +29,7 @@ margin-top:16px;
   grid-template-columns: auto auto;
   grid-template-rows: 100%;
   grid-gap: 19px;
+  max-width: 824px;
 
   @media (max-width: ${middleWidth}px) {
     grid-template-columns: auto auto;

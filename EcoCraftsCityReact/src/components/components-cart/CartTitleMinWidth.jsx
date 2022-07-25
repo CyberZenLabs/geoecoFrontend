@@ -3,19 +3,22 @@ import {
     DivCartTitleMinSC,
     H2CartTitleSC,
     DivSumForPayTitleSC,
-    DivCartTitleMinCheckBoxSC
+    DivCartTitleMinCheckBoxSC, DivContainerTitleSC
 } from "../../styled-components-css/styles.cart";
 import CustomInputCheckBox from "../CustomInputCheckBox/CustomInputCheckBox";
 
 const CartTitleMinWidth = (props) => {
     return (
-        <DivCartTitleMinSC>
-            <H2CartTitleSC>Корзина (4)</H2CartTitleSC>
-            <DivSumForPayTitleSC><p>К оплате:</p><span>80000 р.</span></DivSumForPayTitleSC>
-            <DivCartTitleMinCheckBoxSC>
-                <CustomInputCheckBox/>
-            </DivCartTitleMinCheckBoxSC>
-        </DivCartTitleMinSC>
+        <DivContainerTitleSC>
+            <DivCartTitleMinSC>
+                <H2CartTitleSC>Корзина (4)</H2CartTitleSC>
+                <DivSumForPayTitleSC><p>К оплате:</p><span>80000 р.</span></DivSumForPayTitleSC>
+                <DivCartTitleMinCheckBoxSC>
+                    <CustomInputCheckBox/>
+                </DivCartTitleMinCheckBoxSC>
+            </DivCartTitleMinSC>
+        </DivContainerTitleSC>
+
     );
 }
 

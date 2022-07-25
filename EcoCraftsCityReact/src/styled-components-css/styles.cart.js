@@ -43,6 +43,7 @@ export const DivBoxRowProductSC = styled.div`
     //width: 100vw;
     padding: 85px 20px 226px 22px;
   }
+  
 	background: rgba(243, 243, 243, 0.5);
 	border-radius: 20px;
 
@@ -50,6 +51,10 @@ export const DivBoxRowProductSC = styled.div`
 	grid-template-rows: 32px 32px 1px max-content;
 	padding: 85px 20px 226px 50px;
 	gap: 38px;
+  @media (max-width: ${minWidth}px) {
+    background: #ffffff;
+    grid-template-rows:max-content;
+  }
 `;
 
 export const H2TitleProductList = styled.h2`
@@ -86,6 +91,11 @@ export const DivBoxListSC = styled.div`
 	//grid-template-rows: repeat(auto-fit, 130px);
 	grid-auto-rows: 130px;
 	gap: 80px;
+  @media (max-width: ${minWidth}px) {
+    grid-auto-rows: 206px;
+    gap: 16px;
+    
+  }
 `;
 
 export const DivItemListSC = styled.div`
@@ -95,6 +105,16 @@ export const DivItemListSC = styled.div`
   @media (max-width: ${middleWidth}px) {
     //grid-template-columns: 30px 110px 200px 149px auto;
     grid-template-columns: 1fr 4fr 6fr 5fr auto;
+  }
+  @media (max-width: ${minWidth}px) {
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    background: rgba(243, 243, 243, 0.5);
+    border-radius: 20px;
+    height: 206px;
+    padding: 15px;
+    box-sizing: border-box;
+    gap: 20px;
   }
 `;
 
@@ -143,7 +163,16 @@ export const SpanPriceSC = styled.span`
 		@media (max-width: ${middleWidth}px) {
 			height: 20px;
           line-height: 31px;
-		}`
+		}
+  @media (max-width: ${minWidth}px) {
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+`
+
 
 export const DividerSC = styled.div`
 	width: 100%;
@@ -212,15 +241,16 @@ export const DivTextMinSizeInfoDeliverySC = styled.div`
 	color: rgba(133, 203, 51, 0.7);
 `;
 
-export const DivBoxMinWidthSC = styled.div`\
+export const DivBoxMinWidthSC = styled.div`
   display: grid;
   grid-template-rows: 101px max-content 70px;
 `
 
-export const DivBoxProductMinWidthSC = styled.div`\
+export const DivBoxProductMinWidthSC = styled.div`
   display: grid;
   //grid-template-rows: repeat(auto-fit, 206px);
 `
+
 export const DivCartTitleMinSC = styled.div`
   background: #F3F3F380;
   border-radius: 20px; 
@@ -263,4 +293,58 @@ export const DivCartTitleMinCheckBoxSC = styled.div`
   grid-row: 1/3;
   align-self: center;
   justify-self: right;
+`
+
+export const DivBoxMinWidthTitleProduct = styled.div`
+    display: grid;
+  grid-template-rows: 30px max-content;
+  //gap: 10px;
+  line-height: 37px;
+  
+`
+
+export const SpanTitleCartSC = styled.span`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  //text-align: center;
+
+  color: #CBCBCB;
+`
+
+export const DivBoxButtonProducttMinWidthSC = styled.div`
+  display: grid;
+  //grid-template-rows: repeat(auto-fit, 206px);
+  grid-template-columns: 25px 96px;
+  justify-content: end;
+  align-items: center;
+  gap: 16px;
+`
+
+export const DivBoxButtonProducttMinWidthIconSC = styled.div`
+  height: 21px;
+`
+
+export const DivBoxStarMinWidthIconTempSC = styled.div`
+  display: grid;
+  grid-template-columns: 95px max-content;
+  gap: 12px;
+  span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 31px;
+    text-align: center;
+
+    color: #CBCBCB;
+  }
+`
+export const DivBoxStarMinWidthIconSC = styled.div`
+  width: 95px;
+
+`
+export const DivContainerTitleSC = styled.div`
+  box-sizing: border-box;
+  padding: 15px;
 `

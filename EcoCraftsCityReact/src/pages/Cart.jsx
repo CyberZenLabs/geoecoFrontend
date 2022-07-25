@@ -52,6 +52,10 @@ const Cart = () => {
         setWidthWindow( e.currentTarget.innerWidth)
     }
 
+    const onClickButton = (status) => (e) => {
+        setStatusOrder(status)
+    }
+
     console.log('>>>>>>', widthWindow)
 
   return (
@@ -78,26 +82,36 @@ const Cart = () => {
                     </>
                     :
                     <DivBoxMinWidthSC>
-                        <CartTitleMinWidth>
+                        {
+                            statusOrder === 0 ?
+                                <>
+                                    <CartTitleMinWidth>
 
-                        </CartTitleMinWidth>
-                        <DivBoxProductMinWidthSC>
-                            <BoxProductList
-                                onClickAll={onClickAll}
-                                arrayProd={arrayProd}
-                                widthWindow={widthWindow}
-                            >
+                                    </CartTitleMinWidth>
+                                    <DivBoxProductMinWidthSC>
+                                        <BoxProductList
+                                            onClickAll={onClickAll}
+                                            arrayProd={arrayProd}
+                                            widthWindow={widthWindow}
+                                        >
 
-                            </BoxProductList>
-                        </DivBoxProductMinWidthSC>
+                                        </BoxProductList>
+                                    </DivBoxProductMinWidthSC>
+                                </>
+                                :
+                                <div>
+
+                                </div>
+                        }
+
                         <DivButtonTempSC>
                             <ButtonCustomSC
-                                onClick={setStatusOrder}
+                                onClick={statusOrder === 0 ? onClickButton(1) : null}
                                 width={'100%'}
                                 // padding={'8px 32px'}
                                 primary={true}
                             >
-                                <span>Оформить</span>
+                                <span>{statusOrder === 0 ? 'Оформить': 'Оплатить'}</span>
                             </ButtonCustomSC>
                         </DivButtonTempSC>
 

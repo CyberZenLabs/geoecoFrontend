@@ -199,6 +199,7 @@ const StoreFront = ({ product }) => {
                 </UlDropdown1CS>
               ) : null}
             </ItemOptionsDropDownSC>
+            
           </DivItemsInfoSC>
         </DivItemsSC>
       ),
@@ -225,6 +226,7 @@ const StoreFront = ({ product }) => {
               </FaMarginCS>
               Изменить цену
             </BottomPanelTextSC>
+            
             <BottomPanelTextDraftSC to="/">В черновики</BottomPanelTextDraftSC>
             <BottomPanelMoreSC
               onMouseLeave={hideDropdown}
@@ -384,7 +386,7 @@ const StoreFront = ({ product }) => {
           <DivStoreOptionsSC>
             <DivStoreOptionsLinkSC to="/">Профиль</DivStoreOptionsLinkSC>
             <br />
-            <DivStoreOptionsLinkSC to="/">Настройки</DivStoreOptionsLinkSC>
+            <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
             <br />
             <HrLinkSC />
             <DivStoreOptionsLinkStoreSC to="/">

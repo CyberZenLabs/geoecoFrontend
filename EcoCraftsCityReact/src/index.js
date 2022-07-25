@@ -27,12 +27,20 @@ import AddNewProduct from './pages/AddNewProduct';
 
 //components
 // import AdminForm from "./pages/AdminForm";
-import Footer from './components/Footer';
 
-import Catalog from './components/Catalog';
-import ReviewForm from './components/ReviewForm';
-import Modal from './components/Modal';
-import EcoModal from './components/Modal';
+import Footer from "./components/Footer";
+import MapBiding from "./pages/MapBinding";
+import Catalog from "./components/Catalog";
+import ReviewForm from "./components/ReviewForm";
+import Modal from "./components/Modal";
+import EcoModal from "./components/Modal";
+import PassModal from "./components/ModalPassChange";
+import MailModal from "./components/ModalAddressChange";
+import SellerSettings from "./pages/SellerSettings";
+import { ToastContainer } from "react-toastify";
+import AppContext, { AppProvider } from "./context/AppContext";
+import { AuthProvider } from "./context/AuthContext";
+
 
 import { ToastContainer } from 'react-toastify';
 import AppContext, { AppProvider } from './context/AppContext';
@@ -52,6 +60,8 @@ root.render(
           <BrowserRouter>
             {/* Same as */}
             <EcoModal></EcoModal>
+            <PassModal></PassModal>
+            <MailModal></MailModal>
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />
@@ -70,6 +80,7 @@ root.render(
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />
+              <Route path="sellersettings" element={<SellerSettings/>}/>
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

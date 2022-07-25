@@ -270,3 +270,51 @@ export const ButtonSelectedSC = styled.button`
   border-bottom: 2px solid ${(p) => (p.isActive ? 'var(--green-color)' : 'var(--white-color)')};
   cursor: pointer;
 `;
+
+//-------------------- Блок с отзывами и рейтингом ----------------------
+
+export const DivProductReviewsSC = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-gap: 30px;
+  padding: 30px 0px 50px 0px;
+`;
+
+export const DivProductRatingSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 10px;
+  align-items: self-end;
+`;
+
+export const H1ProductBoxSC = styled.h1`
+  font-size: 24px;
+  font-weight: 600;
+`;
+
+export const DivCarouselReviewSC = styled.div`
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  @media (max-width: 1000px) {
+    grid-gap: 8px;
+  } */
+`;
+
+export const DivProductReviewBoxSC = styled.div`
+  background-color: rgba(243,243,243,0.2);
+  width: 420px;
+  border-radius: 12px;
+  padding: 24px 24px 22px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  @media (max-width: 1000px) {
+    width: 288px;
+    padding: 16px 16px 12px;
+  }
+`;
+
+export const DivButtonBoxSC = styled.div`
+    display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 50px;
+`;

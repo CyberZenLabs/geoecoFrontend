@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {
     DivBoxFirstRowSC, DivBoxMinWidthSC, DivBoxProductMinWidthSC,
     DivBoxRowProductSC,
-    DivBoxTotalPriceSC,
+    DivBoxTotalPriceSC, DivButtonTempSC,
     DivCartBoxSC,
     DivContentCartSC,
 
@@ -88,7 +88,7 @@ const Cart = () => {
 
                             </BoxProductList>
                         </DivBoxProductMinWidthSC>
-                        <div>
+                        <DivButtonTempSC>
                             <ButtonCustomSC
                                 // onClick={() => setShowCatalog(!showCatalog)}
                                 width={'100%'}
@@ -97,7 +97,7 @@ const Cart = () => {
                             >
                                 <span>Оформить</span>
                             </ButtonCustomSC>
-                        </div>
+                        </DivButtonTempSC>
 
                     </DivBoxMinWidthSC>
             }

@@ -26,10 +26,12 @@ const arrayProduct = [
 const Cart = () => {
     const [arrayProd, setArrayProd] = useState([])
     const [widthWindow, setWidthWindow] = useState(0);
+    const [statusOrder, setStatusOrder] = useState(0);
 
     useEffect(() => {
         setArrayProd(arrayProduct)
         window.onresize = onResizableWindow
+        setWidthWindow(window.innerWidth)
     }, []);
 
     function onClickAll(status) {
@@ -90,7 +92,7 @@ const Cart = () => {
                         </DivBoxProductMinWidthSC>
                         <DivButtonTempSC>
                             <ButtonCustomSC
-                                // onClick={() => setShowCatalog(!showCatalog)}
+                                onClick={setStatusOrder}
                                 width={'100%'}
                                 // padding={'8px 32px'}
                                 primary={true}

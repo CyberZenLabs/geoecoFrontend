@@ -1,45 +1,46 @@
-import React, { useContext } from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./page-css/sidenav.css";
-import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useContext } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import './page-css/sidenav.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
-import Home from "./pages/Home";
-import PersonalData from "./pages/PersonalData";
-import StoreNewProduct from "./pages/StoreNewProduct";
+import Home from './pages/Home';
+import PersonalData from './pages/PersonalData';
+import StoreNewProduct from './pages/StoreNewProduct';
 
-import VendorProfile from "./pages/VendorProfile";
+import VendorProfile from './pages/VendorProfile';
 
+import StoreNoAuth from './pages/StoreNoAuth';
 
-import StoreNoAuth from "./pages/StoreNoAuth";
-
-import NavBar from "./components/NavBar";
-import Cart from "./pages/Cart";
-import Mooo from "./pages/AdminLogin";
-import ProductDetail from "./pages/ProductDetail";
-import AdminDashboard from "./pages/AdminDashboard";
-import Registration from "./pages/Registration";
-import SignIn from "./pages/SignIn";
-import StoreFront from "./pages/StoreFront";
+import NavBar from './components/NavBar';
+import Cart from './pages/Cart';
+import Mooo from './pages/AdminLogin';
+import ProductDetail from './pages/ProductDetail';
+import AdminDashboard from './pages/AdminDashboard';
+import Registration from './pages/Registration';
+import SignIn from './pages/SignIn';
+import StoreFront from './pages/StoreFront';
+import MapBiding from './pages/MapBinding';
+import AddNewProduct from './pages/AddNewProduct';
 
 //components
 // import AdminForm from "./pages/AdminForm";
-import Footer from "./components/Footer";
-import MapBiding from "./pages/MapBinding";
-import Catalog from "./components/Catalog";
-import ReviewForm from "./components/ReviewForm";
-import Modal from "./components/Modal";
-import EcoModal from "./components/Modal";
+import Footer from './components/Footer';
 
-import { ToastContainer } from "react-toastify";
-import AppContext, { AppProvider } from "./context/AppContext";
-import { AuthProvider } from "./context/AuthContext";
+import Catalog from './components/Catalog';
+import ReviewForm from './components/ReviewForm';
+import Modal from './components/Modal';
+import EcoModal from './components/Modal';
 
-import Reviews from "./pages/Reviews";
-import Page_404 from "./pages/404";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import { ToastContainer } from 'react-toastify';
+import AppContext, { AppProvider } from './context/AppContext';
+import { AuthProvider } from './context/AuthContext';
+
+import Reviews from './pages/Reviews';
+import Page_404 from './pages/404';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <>
@@ -57,6 +58,7 @@ root.render(
               <Route index element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
+              <Route path="addnewproduct" element={<AddNewProduct />} />
 
               <Route path="VendorProfile" element={<VendorProfile />} />
 
@@ -84,5 +86,5 @@ root.render(
         </AuthProvider>
       </AppProvider>
     </React.StrictMode>
-  </>
+  </>,
 );

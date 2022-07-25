@@ -21,9 +21,11 @@ const arrayProduct = [
 
 const Cart = () => {
     const [arrayProd, setArrayProd] = useState([])
+    const [widthWindow, setWidthWindow] = useState(0);
 
     useEffect(() => {
         setArrayProd(arrayProduct)
+        window.onresize = onResizableWindow
     }, []);
 
     function onClickAll(status) {
@@ -38,23 +40,41 @@ const Cart = () => {
         setArrayProd(tempArray)
 	}
 
+
+    const onResizableWindow = (e) => {
+        console.log('>>>>>>', e.currentTarget.innerWidth)
+        setWidthWindow( e.currentTarget.innerWidth)
+    }
+
+
+
   return (
     <DivCartBoxSC>
         <DivContentCartSC>
-            <DivBoxFirstRowSC>
-                <BoxProductList
-                    onClickAll={onClickAll}
-                    arrayProd={arrayProd}
-                >
+            {
+                widthWindow > 660 ?
+                    <>
+                        <DivBoxFirstRowSC>
+                            <BoxProductList
+                                onClickAll={onClickAll}
+                                arrayProd={arrayProd}
+                            >
 
-                </BoxProductList>
-                <TotalPriceCart>
+                            </BoxProductList>
+                            <TotalPriceCart>
 
-                </TotalPriceCart>
-            </DivBoxFirstRowSC>
-           <BoxInfoDelivery>
-            
-           </BoxInfoDelivery>
+                            </TotalPriceCart>
+                        </DivBoxFirstRowSC>
+                        <BoxInfoDelivery>
+
+                        </BoxInfoDelivery>
+                    </>
+                    :
+                    <div>
+
+                    </div>
+            }
+
         </DivContentCartSC>
     </DivCartBoxSC>
   )

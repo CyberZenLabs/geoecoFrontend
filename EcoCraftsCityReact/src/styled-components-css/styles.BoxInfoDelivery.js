@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
+
+const middleWidth = 920
+
 export const DivFirstRowDeliverySC = styled.div`
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
-width: 824px;
+width: 100%;
+  max-width: 824px;
 height: 347px;
 
 `;
@@ -18,8 +22,18 @@ flex-direction: row;
 
 `;
 export const DivInfoOfDeliverySC = styled.div`
-display:flex;
+display:grid;
 margin-top:16px;
+  height: max-content;
+  
+  grid-template-columns: auto auto;
+  grid-template-rows: 100%;
+  grid-gap: 19px;
+
+  @media (max-width: ${middleWidth}px) {
+    grid-template-columns: auto auto;
+    grid-template-rows: 100%;
+  }
 
 `;
 export const DivRowDeliverySC = styled.div`
@@ -30,7 +44,7 @@ export const DivFirstRowInfoSC = styled.div`
 
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
-width: 400px;
+width: 100%;
 height: 139px;
 
 `;
@@ -38,9 +52,9 @@ export const DivSecondRowInfoSC = styled.div`
 
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
-width: 400px;
+width: 100%;
 height: 139px;
-margin-left:24px;
+//margin-left:24px;
 `;
 export const DivTextMinSizeSC = styled.div`
 font-family: 'Montserrat';

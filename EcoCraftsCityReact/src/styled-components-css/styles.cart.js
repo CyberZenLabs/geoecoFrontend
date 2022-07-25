@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 const middleWidth = 920
+const minWidth = 660
 
 export const DivCartBoxSC = styled.div`
 	display: grid;
@@ -10,10 +11,11 @@ export const DivCartBoxSC = styled.div`
 
 export const DivContentCartSC = styled.div`
 	display: grid;
-	grid-template-rows: max-content 510px;
+	grid-template-rows: max-content max-content;
 	max-width: 1322px;
 	width: 85vw;
 	grid-gap: 56px;
+  padding-bottom: 19px;
   @media (max-width: ${middleWidth}px) {
     width: 90vw;
   }

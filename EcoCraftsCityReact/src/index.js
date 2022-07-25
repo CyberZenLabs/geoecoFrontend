@@ -64,7 +64,8 @@ root.render(
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="cart" element={<Cart />} />
-
+              <Route path="terms" element={<Terms />} />
+              <Route path="privacy" element={<Privacy />} />
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />

@@ -6,7 +6,8 @@ export function AppProvider({ children }) {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const [open, setOpen] = useState(false);
-
+  const [pass, setPass] = useState(false);
+  const [mail, setMail] = useState(false);
   const [modalData, setModalData] = useState({
     inputs: [{ email: "Электронная почта" }],
     button: true,
@@ -18,6 +19,10 @@ export function AppProvider({ children }) {
         setShowCatalog,
         open,
         setOpen,
+        pass,
+        setPass,
+        mail,
+        setMail,
         modalData,
         setModalData,
       }}

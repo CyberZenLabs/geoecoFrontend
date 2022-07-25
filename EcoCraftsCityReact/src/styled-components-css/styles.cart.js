@@ -130,6 +130,12 @@ export const DivPriceSC = styled.div`
 	}
 `;
 
+export const SpanPriceSC = styled.span`
+	display: block;
+		@media (max-width: ${middleWidth}px) {
+			height: 20px;
+		}`
+
 export const DividerSC = styled.div`
 	width: 100%;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.24);

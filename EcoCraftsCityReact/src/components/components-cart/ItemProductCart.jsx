@@ -5,6 +5,7 @@ import {
 	DivItemListSC,
 	DivPriceSC,
 	SpanTitleSC,
+	SpanPriceSC,
 } from '../../styled-components-css/styles.cart';
 import ButtonGroup from './ButtonGroup';
 import { DivBoxInputCartSC } from '../../styled-components-css/styles.productListCart';
@@ -29,7 +30,9 @@ const ItemProductCart = props => {
 				<span>{discr}</span>
 			</DivBoxTitleSC>
 			<ButtonGroup></ButtonGroup>
-			<DivPriceSC>{price} &#8381;</DivPriceSC>
+			<DivPriceSC>
+				<SpanPriceSC>{price} &#8381;</SpanPriceSC>
+			</DivPriceSC>
 		</DivItemListSC>
 	);
 };

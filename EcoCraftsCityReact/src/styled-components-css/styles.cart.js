@@ -54,6 +54,7 @@ export const DivBoxRowProductSC = styled.div`
   @media (max-width: ${minWidth}px) {
     background: #ffffff;
     grid-template-rows:max-content;
+    padding: 0px 15px 226px 15px;
   }
 `;
 
@@ -243,7 +244,7 @@ export const DivTextMinSizeInfoDeliverySC = styled.div`
 
 export const DivBoxMinWidthSC = styled.div`
   display: grid;
-  grid-template-rows: 101px max-content 70px;
+  grid-template-rows: max-content max-content 70px;
 `
 
 export const DivBoxProductMinWidthSC = styled.div`
@@ -258,6 +259,10 @@ export const DivCartTitleMinSC = styled.div`
   grid-template-rows: auto auto;
   grid-template-columns: auto auto;
   row-gap: 4px;
+  @media (max-width: ${minWidth}px) {
+    height: 101px;
+    padding: 15px;
+  }
   
   `
 export const H2CartTitleSC = styled.h2`
@@ -345,6 +350,11 @@ export const DivBoxStarMinWidthIconSC = styled.div`
 
 `
 export const DivContainerTitleSC = styled.div`
+  box-sizing: border-box;
+  padding: 15px;
+`
+
+export const DivButtonTempSC = styled.div`
   box-sizing: border-box;
   padding: 15px;
 `

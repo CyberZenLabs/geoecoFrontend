@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import {
-    DivBoxFirstRowSC,
+    DivBoxFirstRowSC, DivBoxMinWidthSC, DivBoxProductMinWidthSC,
     DivBoxRowProductSC,
     DivBoxTotalPriceSC,
     DivCartBoxSC,
     DivContentCartSC,
-   
-   
+
+
 } from "../styled-components-css/styles.cart";
 import BoxProductList from "../components/components-cart/BoxProductList";
 import TotalPriceCart from "../components/components-cart/TotalPriceCart";
 import BoxInfoDelivery from '../components/components-cart/BoxInfoOfDelivery';
+import {DivBoxButtonContentSC} from "../styled-components-css/styles.price-cart";
+import {FiArrowRight} from "react-icons/fi";
+import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
+import CartTitleMinWidth from "../components/components-cart/CartTitleMinWidth";
 const arrayProduct = [
     {name :'Крестовник роули', isSelected: false },
     {name:'Деревянная ложка', isSelected: false},
@@ -70,9 +74,28 @@ const Cart = () => {
                         </BoxInfoDelivery>
                     </>
                     :
-                    <div>
+                    <DivBoxMinWidthSC>
+                        <CartTitleMinWidth></CartTitleMinWidth>
+                        <DivBoxProductMinWidthSC>
+                            <BoxProductList
+                                onClickAll={onClickAll}
+                                arrayProd={arrayProd}
+                            >
 
-                    </div>
+                            </BoxProductList>
+                        </DivBoxProductMinWidthSC>
+                        <div>
+                            <ButtonCustomSC
+                                // onClick={() => setShowCatalog(!showCatalog)}
+                                width={'100%'}
+                                // padding={'8px 32px'}
+                                primary={true}
+                            >
+                                <span>Оформить</span>
+                            </ButtonCustomSC>
+                        </div>
+
+                    </DivBoxMinWidthSC>
             }
 
         </DivContentCartSC>

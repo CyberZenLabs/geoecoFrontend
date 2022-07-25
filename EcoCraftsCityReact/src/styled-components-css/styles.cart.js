@@ -19,6 +19,9 @@ export const DivContentCartSC = styled.div`
   @media (max-width: ${middleWidth}px) {
     width: 90vw;
   }
+  @media (max-width: ${minWidth}px) {
+    width: 100vw;
+  }
 `;
 
 export const DivBoxFirstRowSC = styled.div`
@@ -208,3 +211,13 @@ export const DivTextMinSizeInfoDeliverySC = styled.div`
 	text-align: center;
 	color: rgba(133, 203, 51, 0.7);
 `;
+
+export const DivBoxMinWidthSC = styled.div`\
+  display: grid;
+  grid-template-rows: 101px max-content 70px;
+`
+
+export const DivBoxProductMinWidthSC = styled.div`\
+  display: grid;
+  //grid-template-rows: repeat(auto-fit, 206px);
+`

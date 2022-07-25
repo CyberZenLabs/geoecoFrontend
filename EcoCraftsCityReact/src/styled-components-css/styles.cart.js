@@ -124,6 +124,8 @@ export const DivPriceSC = styled.div`
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 39px;
+  display: grid;
+  align-items: baseline;
 
 	@media (max-width: ${middleWidth}px) {
 		font-size: 20px
@@ -132,8 +134,10 @@ export const DivPriceSC = styled.div`
 
 export const SpanPriceSC = styled.span`
 	display: block;
+    line-height: 49px;
 		@media (max-width: ${middleWidth}px) {
 			height: 20px;
+          line-height: 29px;
 		}`
 
 export const DividerSC = styled.div`

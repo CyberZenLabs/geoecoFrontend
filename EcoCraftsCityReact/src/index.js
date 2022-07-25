@@ -37,7 +37,8 @@ import EcoModal from './components/Modal';
 import { ToastContainer } from 'react-toastify';
 import AppContext, { AppProvider } from './context/AppContext';
 import { AuthProvider } from './context/AuthContext';
-
+import Terms from './privacy/Terms';
+import Privacy from './privacy/Privacy';
 import Reviews from './pages/Reviews';
 import Page_404 from './pages/404';
 const root = ReactDOM.createRoot(document.getElementById('root'));

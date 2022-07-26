@@ -1,9 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import {
-    DivBoxFirstRowSC, DivBoxMinWidthSC, DivBoxProductMinWidthSC,
+    DivBoxFirstRowSC,
+    DivBoxMinWidthSC,
+    DivBoxProductMinWidthSC,
     DivBoxRowProductSC,
-    DivBoxTotalPriceSC, DivButtonTempSC, DivCartAddrDataSC, DivCartAddrDelivery, DivCartAddrDelTitleSC,
-    DivCartBoxSC, DivCartMinSecondForm, DivCartWayToPay,
+    DivBoxTotalPriceSC,
+    DivButtonTempSC,
+    DivCartAddrDataSC,
+    DivCartAddrDelivery,
+    DivCartAddrDelTitleSC,
+    DivCartBoxSC,
+    DivCartMinSecondForm,
+    DivCartWayToPay,
+    DivCartWayToPayDataSC,
+    DivCartWayToPayDivider1,
+    DivCartWayToPayTitleSC, DivCartWayToPayTotalSC,
     DivContentCartSC,
 
 
@@ -110,7 +121,26 @@ const Cart = () => {
                                             <p>Перечень товаров и дата доставки</p>
                                         </DivCartAddrDataSC>
                                     </DivCartAddrDelivery>
-                                    <DivCartWayToPay>222</DivCartWayToPay>
+                                    <DivCartWayToPay>
+                                        <DivCartWayToPayTitleSC>
+                                            <h2>Способ оплаты</h2>
+                                            <h3>Привязать карту</h3>
+                                        </DivCartWayToPayTitleSC>
+                                        <DivCartWayToPayDivider1>
+                                        </DivCartWayToPayDivider1>
+                                        <DivCartWayToPayDataSC>
+                                            <h1>4 товара на сумму</h1>
+                                            <h2>26001 руб.</h2>
+                                            <h3>Скидка</h3>
+                                            <p>5%</p>
+                                            <h3>Доставка</h3>
+                                            <p>310 руб.</p>
+                                        </DivCartWayToPayDataSC>
+                                        <DivCartWayToPayTotalSC>
+                                            <h1>Итого</h1>
+                                            <h2>26001 руб.</h2>
+                                        </DivCartWayToPayTotalSC>
+                                    </DivCartWayToPay>
 
                                 </DivCartMinSecondForm>
                         }

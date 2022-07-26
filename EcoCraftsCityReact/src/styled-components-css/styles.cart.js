@@ -371,7 +371,7 @@ export const DivCartMinSecondForm = styled.div`
 export const DivCartAddrDelivery = styled.div`
 box-sizing: border-box;
   //border: 1px solid black;
-  background: aqua;
+  background: #F3F3F380;
   border-radius: 20px;
   height: 454px; 
 `
@@ -402,8 +402,73 @@ export const DivCartAddrDataSC = styled.div`
 
 export const DivCartWayToPay = styled.div`
   box-sizing: border-box;
-  border: 1px solid black;
+  //border: 1px solid black;
   height: 454px;
+  background: #F3F3F380;
   padding: 20px 19px 25px;
+`
 
+export const DivCartWayToPayTitleSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  padding: 19px 0 32px 0px;
+  align-items: baseline;
+  justify-content: space-between;
+
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 15px;
+    color: #85CB33B2;
+  }
+`
+export const DivCartWayToPayDivider1 = styled.div`
+  height: 260px;
+  border-bottom: 1px solid #252525B2;
+`
+
+export const DivCartWayToPayDataSC = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  margin-top: 10px;
+  row-gap: 7px;
+  border-bottom: 1px solid #252525B2;
+  padding-bottom: 10px;
+  h1{
+    font-weight: 600;
+    font-size: 16px;
+    color: #252525CC;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 16px;
+    color: #252525;
+  }
+  h3{
+    font-weight: 600;
+    font-size: 14px;
+    color: #CBCBCB;
+  }
+`
+export const DivCartWayToPayTotalSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
+  justify-content: space-between;
+  padding: 12px 0 46px;
+  h1{
+    font-weight: 700;
+    font-size: 20px;
+    color: #252525;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 16px;
+    color: #252525;
+  }
 `

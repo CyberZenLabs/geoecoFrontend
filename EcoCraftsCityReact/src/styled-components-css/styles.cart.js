@@ -358,3 +358,52 @@ export const DivButtonTempSC = styled.div`
   box-sizing: border-box;
   padding: 15px;
 `
+
+export const DivCartMinSecondForm = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content;
+  padding: 0 15px;
+  row-gap: 15px;
+  
+  
+`
+
+export const DivCartAddrDelivery = styled.div`
+box-sizing: border-box;
+  //border: 1px solid black;
+  background: aqua;
+  border-radius: 20px;
+  height: 454px; 
+`
+
+export const DivCartAddrDelTitleSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  padding: 19px 19px 32px 19px;
+  align-items: baseline;
+  justify-content: space-between;
+    h2{
+      font-weight: 700;
+      font-size: 20px;
+    }
+ `
+
+export const DivCartAddrDataSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  padding: 0 19px 19px;
+  p {
+    font-weight: 600;
+    font-size: 18px;
+    color: #252525CC;
+  }   
+`
+
+export const DivCartWayToPay = styled.div`
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: 454px;
+  padding: 20px 19px 25px;
+
+`

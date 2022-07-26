@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {
     DivBoxFirstRowSC, DivBoxMinWidthSC, DivBoxProductMinWidthSC,
     DivBoxRowProductSC,
-    DivBoxTotalPriceSC, DivButtonTempSC,
-    DivCartBoxSC,
+    DivBoxTotalPriceSC, DivButtonTempSC, DivCartAddrDataSC, DivCartAddrDelivery, DivCartAddrDelTitleSC,
+    DivCartBoxSC, DivCartMinSecondForm, DivCartWayToPay,
     DivContentCartSC,
 
 
@@ -15,6 +15,7 @@ import {DivBoxButtonContentSC} from "../styled-components-css/styles.price-cart"
 import {FiArrowRight} from "react-icons/fi";
 import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
 import CartTitleMinWidth from "../components/components-cart/CartTitleMinWidth";
+import CustomInputCheckBox from "../components/CustomInputCheckBox/CustomInputCheckBox";
 const arrayProduct = [
     {name :'Крестовник роули', isSelected: false },
     {name:'Деревянная ложка', isSelected: false},
@@ -99,9 +100,19 @@ const Cart = () => {
                                     </DivBoxProductMinWidthSC>
                                 </>
                                 :
-                                <div>
+                                <DivCartMinSecondForm>
+                                    <DivCartAddrDelivery>
+                                        <DivCartAddrDelTitleSC>
+                                            <h2>Адрес доставки</h2>
+                                            <CustomInputCheckBox></CustomInputCheckBox>
+                                        </DivCartAddrDelTitleSC>
+                                        <DivCartAddrDataSC>
+                                            <p>Перечень товаров и дата доставки</p>
+                                        </DivCartAddrDataSC>
+                                    </DivCartAddrDelivery>
+                                    <DivCartWayToPay>222</DivCartWayToPay>
 
-                                </div>
+                                </DivCartMinSecondForm>
                         }
 
                         <DivButtonTempSC>

@@ -56,7 +56,7 @@ const ProductDetail = () => {
         <BoxOther />
         <DivProductDiscSC>
       
-          <DivProductDiscContentSC>
+         
           <DivProductDiscContentSC>
             <ReviewsBox
               indexSelectedButton={indexSelectedButton}
@@ -66,7 +66,7 @@ const ProductDetail = () => {
             
           </DivProductDiscContentSC>
            
-          </DivProductDiscContentSC>
+          
          
         </DivProductDiscSC>
         <DivProductDiscSC>

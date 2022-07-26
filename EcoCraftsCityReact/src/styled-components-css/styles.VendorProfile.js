@@ -1,3 +1,4 @@
+import { MdOutlinePhotoCamera } from "react-icons/md";
 import styled from "styled-components/macro";
 export const MenuProductST = styled.div`
 display:flex;
@@ -244,7 +245,7 @@ export const DivItemsOptionsSC = styled.div`
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 760px;
+  height: 620px;
   // border: 2px solid black;
   max-width: 1140px;
 `;
@@ -253,15 +254,20 @@ export const DivInnerContentSC = styled.div`
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
-  height: 720px;
- // border: 2px solid black;
-  grid-template-rows: 140px 210px 50px 50px 50px 50px;
+  height: 580px;
+  //border: 2px solid black;
+  grid-template-rows: 140px 210px 50px  50px 50px;
   max-width: 1140px;
   gap: 20px;
 `;
 export const DivTwoSidesSC = styled.div`
 display: grid;
 grid-template-columns: 240px auto;
+//border: 2px solid blue;
+`;
+export const DivInnerPhotoInputSC = styled.div`
+display: grid;
+grid-template-rows: auto auto;
 //border: 2px solid blue;
 `;
 export const H1DefinSC = styled.h1`
@@ -322,6 +328,7 @@ display: flex;
   //min-width: 320px;
 flex-direction: row;
 align-items: center;
+justify-items: center;
 justify-self: start;
 padding: 18px 0px 18px 18px;
 gap: 294px;
@@ -336,6 +343,7 @@ font-size: 16px;
 line-height: 20px;
 /* identical to box height */
 color: rgba(37, 37, 37, 0.7);
+
 }
 :hover{
     border: 1px solid  #76b42e;
@@ -364,6 +372,23 @@ max-width: 670px;
 `;
 export const ButtonImgSC = styled.button`
 border-radius: 12px;
+cursor: pointer;
+border: 1px solid rgba(0, 0, 0, 0.33);
+height: 193px;
+background: none;
+max-width:193px;
+display: grid;
+justify-content: center;
+align-content: center;
+`;
+export const IconImgImgSC = styled(MdOutlinePhotoCamera)`
+display: grid;
+font-size: 50px;
+justify-self: center;
+color: rgba(0, 0, 0, 0.33);
+`;
+
+export const H1SC = styled.h1`
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
@@ -371,9 +396,197 @@ font-size: 20px;
 line-height: 24px;
 text-align: center;
 color: rgba(0, 0, 0, 0.33);
-cursor: pointer;
-border: 1px solid rgba(0, 0, 0, 0.33);
-height: 193px;
-background: none;
-max-width:193px;
+//border: 2px solid blue;
+`;
+//import BGimage from '../img/RectangleGray.svg';
+
+export const DivAboutYourselfSC = styled.div`
+ 
+  //justify-items: end;
+  width: 100%;
+  //grid-template-columns: auto 250px;
+ // border: 2px solid blue;
+  background: rgba(243, 243, 243, 0.5);
+  display: grid;
+  border-radius: 20px;
+  margin-top: 20px;
+  max-width: 1140px;
+  
+`;
+
+export const DivBGImageSC = styled.div`
+ // border: 2px solid blue;
+  max-width: 1059px;
+ 
+ // height: 500px;
+ 
+  //margin-left: 20px;
+  margin-right: 20px;
+ margin-bottom: 25px;
+`;
+
+export const DivBoxColumnAboutYourselfSC = styled.div`
+  display: grid;
+  grid-template-columns: 130px auto;
+  height: 202px;
+  //border: 2px solid blue;
+`;
+
+export const InputAboutYourself = styled.input`
+  max-width: 885px;
+  width: 100%;
+  height: 125px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 12px;
+  background: none;
+  margin-right: 20px;
+`;
+
+export const DivTextSC = styled.div`
+
+  max-width: 73px;
+  width: 100%;
+  height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #3d3d3d;
+`;
+
+export const DivBoxInputAboutYourself = styled.div`
+  width: 100%;
+  height: 152px;
+  display: grid;
+  justify-items: end;
+  align-items: end;
+  margin-left: 20px;
+  margin-right: 20px;
+ // border: 2px solid blue;
+`;
+
+export const DivBoxText = styled.div`
+  width: 100%;
+  height: 50px;
+  display: grid;
+  padding-left: 26px;
+  //border: 2px solid blue;
+  min-width: 110px;
+  margin-top: 28px;
+
+`;
+
+export const DivBoxRowsAboutCreativity = styled.div`
+  display: grid;
+  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '62.2% 37.8%')};
+  grid-row-gap: 6px;
+`;
+export const DivText2SC = styled.div`
+  max-width: 144px;
+  width: 100%;
+  height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #3d3d3d;
+`;
+
+export const DivBoxText2 = styled.div`
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  align-items: start;
+  padding-left: 26px;
+`;
+
+export const DivText3 = styled.div`
+  max-width: 607px;
+  width: 100%;
+  height: 17px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: start;
+
+  color: #3d3d3d;
+`;
+
+export const DivBoxText3 = styled.div`
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  align-items: start;
+  padding-left: 26px;
+`;
+
+export const DivBoxColumnsFotosSC = styled.div`
+  max-width: 868px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')};
+  margin-top: 28px;
+ // border: 2px solid blue;
+  margin-left: 25px;
+`;
+
+export const DivBoxFoto1SC = styled.div`
+  width: 100%;
+  display: grid;
+ // justify-items: end;
+ // align-items: end;
+ // padding-left: 26px;
+`;
+
+export const DivFoto1SC = styled.img`
+  max-width: 193px;
+  width: 100%;
+  height: 193px;
+`;
+
+export const DivFoto2SC = styled.div`
+  max-width: 193px;
+  width: 100%;
+  height: 193px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 12px;
+`;
+
+export const DivFoto3SC = styled.div`
+  max-width: 193px;
+  width: 100%;
+  height: 193px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 12px;
+`;
+
+export const DivFoto4SC = styled.div`
+  max-width: 193px;
+  width: 193px;
+  height: 193px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 12px;
+`;
+
+export const DivBoxFoto2SC = styled.div`
+  width: 193px;
+  display: grid;
+
+`;
+
+export const DivBoxFoto3SC = styled.div`
+  width: 193px;
+  display: grid;
+  
+`;
+
+export const DivBoxFoto4SC = styled.div`
+   width: 193px;
+  display: grid;
+  
 `;

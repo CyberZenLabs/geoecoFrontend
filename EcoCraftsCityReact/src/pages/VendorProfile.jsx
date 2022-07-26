@@ -1,7 +1,7 @@
 import { Margin } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-
+import { MdOutlinePhotoCamera } from "react-icons/md";
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import StarRating from '../components/StarRating';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
@@ -44,7 +44,32 @@ import {
   BirthFieldSC,
   ButtonBannerSC,
   ButtonImgSC,
+  DivBGImageSC,
+  DivAboutYourselfSC,
+  InputAboutYourself,
+  DivBoxColumnAboutYourselfSC,
+  DivTextSC,
+  DivBoxInputAboutYourself,
+  DivBoxText,
+  DivBoxRowsAboutCreativity,
+  DivText2SC,
+  DivBoxText2,
+  DivText3,
+  DivBoxText3,
+  DivBoxColumnsFotosSC,
+  DivBoxFoto1SC,
+  DivBoxFoto2SC,
+  DivBoxFoto3SC,
+  DivBoxFoto4SC,
+  DivFoto1SC,
+  DivFoto2SC,
+  DivFoto3SC,
+  DivFoto4SC,
+  DivInnerPhotoInputSC,
+  H1SC,
+  IconImgImgSC,
 } from '../styled-components-css/styles.VendorProfile';
+
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -93,14 +118,11 @@ const VendorProfile = () => {
                 <H1DefinSC>Баннер магазина</H1DefinSC><ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
               </DivTwoSidesSC>
               <DivTwoSidesSC>
-                <H1DefinSC>Фото</H1DefinSC><ButtonImgSC>Загрузить фото</ButtonImgSC>
+                <H1DefinSC>Фото</H1DefinSC><ButtonImgSC><DivInnerPhotoInputSC><IconImgImgSC/><H1SC>Загрузить фото</H1SC></DivInnerPhotoInputSC></ButtonImgSC>
               </DivTwoSidesSC>
               <DivTwoSidesSC>
                 <H1DefinSC>Имя / название</H1DefinSC>
                 <NameNCityFieldSC label="email" type="email" placeholder="Фамилия  имя" />
-              </DivTwoSidesSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Обращение</H1DefinSC><label><input type="radio" checked name="dva"/> описание1</label> <label><input type="radio" name="dva"/> описание2</label>
               </DivTwoSidesSC>
               <DivTwoSidesSC>
                 <H1DefinSC>Дата рождения</H1DefinSC>  <BirthFieldSC label="email" type="email" placeholder="дд.мм.гг" />
@@ -111,6 +133,42 @@ const VendorProfile = () => {
               </DivTwoSidesSC>
             </DivInnerContentSC>
           </DivItemsOptionsSC>
+
+          <DivAboutYourselfSC>
+      <DivBGImageSC>
+        <DivBoxColumnAboutYourselfSC>
+          <DivBoxText>
+            <DivTextSC>О себе</DivTextSC>
+          </DivBoxText>
+          <DivBoxInputAboutYourself>
+            <InputAboutYourself type="text" />
+          </DivBoxInputAboutYourself>
+        </DivBoxColumnAboutYourselfSC>
+        <DivBoxRowsAboutCreativity>
+          <DivBoxText2>
+            <DivText2SC>О творчестве</DivText2SC>
+          </DivBoxText2>
+          <DivBoxText3>
+            <DivText3> Покажите вдохновляющие рабочие моменты, загрузите дипломы и сертификаты </DivText3>
+          </DivBoxText3>
+        </DivBoxRowsAboutCreativity>
+        <DivBoxColumnsFotosSC>
+          <DivBoxFoto1SC>
+          <ButtonImgSC><DivInnerPhotoInputSC><IconImgImgSC/><H1SC>Загрузить фото</H1SC></DivInnerPhotoInputSC></ButtonImgSC>
+          </DivBoxFoto1SC>
+          <DivBoxFoto2SC>
+            <DivFoto2SC></DivFoto2SC>
+          </DivBoxFoto2SC>
+          <DivBoxFoto3SC>
+            <DivFoto3SC></DivFoto3SC>
+          </DivBoxFoto3SC>
+          <DivBoxFoto4SC>
+            <DivFoto4SC></DivFoto4SC>
+          </DivBoxFoto4SC>
+        </DivBoxColumnsFotosSC>
+      </DivBGImageSC>
+    </DivAboutYourselfSC>
+    
         </DivStoreRightPanelSC>
       ),
     },
@@ -145,7 +203,7 @@ const VendorProfile = () => {
             </DivStoreInfoDataSC>
           </DivStoreInfoSC>
           <DivStoreOptionsSC>
-            <DivStoreOptionsLinkStoreSC to="/VendorProfile">Профиль</DivStoreOptionsLinkStoreSC>
+            <DivStoreOptionsLinkStoreSC to="/vendorprofile">Профиль</DivStoreOptionsLinkStoreSC>
             <br />
             <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
             <br />

@@ -285,13 +285,8 @@ export const H1ProductBoxSC = styled.h1`
 `;
 
 export const DivCarouselReviewSC = styled.div`
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  position: relative;
-  @media (max-width: 1000px) {
-    grid-gap: 8px;
-  } */
+  display: grid;
+  align-items: center;
 `;
 
 export const DivProductReviewBoxSC = styled.div`

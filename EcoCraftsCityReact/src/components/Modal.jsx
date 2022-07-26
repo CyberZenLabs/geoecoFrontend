@@ -15,7 +15,7 @@ import {
 const EcoModal = () => {
   const { open, setOpen, modalData } = useContext(AppContext);
 
-  console.log(modalData);
+
   return (
     <>
       <BlockModal isOpen={open} contentLabel="Modal" >

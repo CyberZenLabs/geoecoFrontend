@@ -11,7 +11,7 @@ export const DivReviewShowWrapSC = styled.div`
   //height: 272px;
   border-radius: 12px;
   padding: 24px 24px 22px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   @media (max-width: 1000px) {
     width: 288px;
     padding: 16px 16px 12px;
@@ -85,62 +85,3 @@ export const DivUserReviewSC = styled.div``;
 
 //------------------- конец (Аватрака дата время рейтинг) -------------------
 
-// export const DivContentWrapSC = styled.div`
-//   margin-top: 10px;
-//   //border: 1px solid blue;
-//   display: grid;
-//   grid-template-rows: auto auto auto auto auto;
-//   gap: 5px;
-// `;
-// export const DivDateWrapSC = styled.div`
-//   //border: 1px solid green;
-// `;
-// export const DateTextSC = styled.h1`
-//   margin-top: 10px;
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 15px;
-//   line-height: 18px;
-//   //border: 1px solid blue;
-//   color: #000000;
-//   height: 20px;
-// `;
-// export const H1СustomerNameSC = styled.h1`
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 15px;
-//   line-height: 18px;
-//   //border: 1px solid blue;
-//   color: #000000;
-//   height: 20px;
-// `;
-// export const ButtonFilterSC = styled.button`
-//   background: none;
-//   border: none;
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 17px;
-//   /* identical to box height */
-//   color: #000000;
-//   //border: 1px solid blue;
-//   justify-self: flex-start;
-//   height: 20px;
-//   cursor: pointer;
-// `;
-// export const PReviewTextSC = styled.p`
-//   font-family: "Montserrat";
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 17px;
-//   /* identical to box height */
-//   color: #000000;
-//   //border: 1px solid blue;
-//   justify-self: flex-start;
-//   height: max-content;
-//   margin-bottom: 10px;
-// `;

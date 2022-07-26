@@ -4,11 +4,13 @@ export const DivCarouselMainSC = styled.div`
   width: 1000px;
   height: 330px;
   margin-top:20px;
+
 `;
 
 export const DivCarouselWindowSC = styled.div`
   width: 100%;
   height: 150px;
+
   display: flex;
   justify-content: left;
   align-items: center;
@@ -32,4 +34,5 @@ export const DivButtonWrapSC = styled.div`
   font-size: 44px;
   max-width: 1035px;
   margin-left: -18px;
+
 `;

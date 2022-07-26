@@ -20,19 +20,19 @@ const ReviewsBox = (props) => {
                     isActive={indexSelectedButton === 0}
                     onClick={onClickTab(0)}
                 >
-                    Отзывы 415
+                   Общая информация
                 </ButtonSelectedSC>
                 <ButtonSelectedSC
                     isActive={indexSelectedButton === 1}
                     onClick={onClickTab(1)}
                 >
-                    Вопросы 5
+                    Рекомендации по уходу
                 </ButtonSelectedSC>
                 <ButtonSelectedSC
                     isActive={indexSelectedButton === 2}
                     onClick={onClickTab(2)}
                 >
-                    Статьи 1
+                    Дополнительно
                 </ButtonSelectedSC>
 
             </DivBoxSelectedButtonSC>

@@ -290,6 +290,7 @@ margin-bottom:14px;
 font-size: 20px;
 color: #85CB33;
 margin-right:1px;
+<<<<<<< HEAD
 `;
 export const SpanTitleSC = styled.span`
 font-family: 'Montserrat';
@@ -297,4 +298,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 28px;
 color: #252525;
+=======
+>>>>>>> 9abdf8f2a1bcda777d8c240354080c224d4cfa0e
 `;

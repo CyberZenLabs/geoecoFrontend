@@ -19,9 +19,24 @@ export const DivBoxProductDetailSC = styled.div`
   justify-items: center;
     `;
 
+
+    export const DivProductInformSC = styled.div`
+    display: flex;
+  
+    `;
+    export const DivfirsrowInformSC = styled.div`
+    
+  
+    `;
+    export const DivsecondrowInformSC = styled.div`
+    
+  
+    `;
+    
+   
 export const DivContentProductDetailSC = styled.div`
     display: grid;
-  grid-template-rows: 120px max-content 286px 286px 286px max-content ;
+  grid-template-rows: 120px max-content 286px 100px 230px max-content ;
   max-width: 1322px;
   width: 85vw;
   grid-gap: 10px;

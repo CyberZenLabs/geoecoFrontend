@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import image from "../img/geoecologo.png";
-import { Link } from "react-router-dom";
+import styled from 'styled-components/macro';
+import image from '../img/geoecologo.png';
+import { Link } from 'react-router-dom';
 
 export const DivBoxLogoSC = styled.div`
   background-image: url(${image});
@@ -221,6 +221,11 @@ export const SpanEndHeaderSC = styled.span`
   margin-top:3px;
 `;
 export const DivBoxButtonCreateStoreSC = styled.span`
+:hover{
+  background-color:#85CB33;
+  color:white;
+  cursor: pointer;
+}
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -229,6 +234,7 @@ padding: 10px 30px;
 color:#85CB33;
 font-size:16px;
 height: 56px;
+font-weight: semibold ;
 @media (max-width: 1000px) {
   display:none;
 

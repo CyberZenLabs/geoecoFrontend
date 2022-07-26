@@ -6,7 +6,7 @@ import {
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-} from "../styled-components-css/styles.review-carousel";
+} from "../../styled-components-css/styles.review-carousel";
 
 const ReviewCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
@@ -17,8 +17,8 @@ const ReviewCarousel = ({ children }) => {
         return cloneElement(child, {
           style: {
             height: "100%",
-            minWidth: "900px",
-            maxWidth: "900px",
+            minWidth: "1322px",
+            maxWidth: "1322px",
           },
         });
       })
@@ -40,13 +40,9 @@ const ReviewCarousel = ({ children }) => {
             ) : (
               <div></div>
             )}
-             {carouselNumber != items.length-3 ? (
-               <BsArrowRightCircle
-               onClick={() => setCarouselNumber(carouselNumber + 1)}
-             />
-            ) : (
-              <div></div>
-            )}
+            <BsArrowRightCircle
+              onClick={() => setCarouselNumber(carouselNumber + 1)}
+            />
           </DivButtonWrapSC>
         </DivCarouselWindowSC>
       </DivCarouselMainSC>

@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
 
 export const DivCarouselMainSC = styled.div`
-  width: 1322px;
-  height: 500px;
+  width: 1332px;
+  height: 330px;
 `;
 
 export const DivCarouselWindowSC = styled.div`

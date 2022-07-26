@@ -253,6 +253,8 @@ table {
   cursor: pointer;
 }
 
+.marginRight{margin-right: 10px;}
+
 .image-box {
   position: relative;
   min-width: 60px;

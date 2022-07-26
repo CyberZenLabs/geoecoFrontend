@@ -1,6 +1,10 @@
 import { Margin } from '@mui/icons-material';
 import React from 'react';
+
 import SettingsShop from "../components/SettingsShop";
+import ReviewShow from '../components/ShowItemCarousel';
+import ReviewCarousel from '../components/VenderCarousel';
+import VendorInfoMenu from '../components/VendorInfoMenu';
 import{
     DivBoxNewProductsST,
     MenuProductST,
@@ -14,7 +18,11 @@ import{
   DivBoxItemsSC,
   DivInfoVendorBoxSC,
   DivButtonChangrInformSC,
-  UlifnoSC
+  OlifnoSC,
+  LiInfoSC,
+  DivDisplayFlexSC,
+  SpanTitleSC
+ 
     
   } from "../styled-components-css/styles.VendorProfile";
 const VendorProfile = () =>{
@@ -30,22 +38,23 @@ const VendorProfile = () =>{
                
                 <DivAddProductBox>
                 
-                 <DivInfoVendorBoxSC><SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
-                 <UlifnoSC>
-                    <li>fffff</li>
-                    <li>ffffff</li>
-                    <li>fffffff</li>
-                    <li>fffff</li>
-                 </UlifnoSC>
-                
+               <VendorInfoMenu/>
 
-                    
-                
-                    
                
-                        
-                        </DivInfoVendorBoxSC>
-                 <DivInfoVendorBoxSC>FFFFFF</DivInfoVendorBoxSC>
+                 <DivInfoVendorBoxSC>
+                  <SpanTitleSC>
+                  Отзывы
+                  </SpanTitleSC>
+               <ReviewCarousel>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+                <ReviewShow></ReviewShow>
+
+               </ReviewCarousel>
+                 </DivInfoVendorBoxSC>
                 </DivAddProductBox>
                 
 

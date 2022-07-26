@@ -7,9 +7,13 @@ import {
   DivProductDiscTitleSC,
   DivProductDiscContentSC,
   SpanQuestionSC,
-  DivfirsrowInformSC,
-  DivsecondrowInformSC,
-  DivProductInformSC,
+  DivProductReviewsSC,
+  DivProductRatingSC,
+  H1ProductBoxSC,
+  DivButtonBoxSC,
+  DivAllReviewsSC,
+  DivProductReviewBoxSC,
+  DivCarouselReviewSC,
 } from "../styled-components-css/styles.product-detail";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -18,6 +22,9 @@ import ImageProduct from "../components/components-product-detail/ImageProduct";
 import BoxPrice from "../components/components-product-detail/BoxPrice";
 import BoxOther from "../components/components-product-detail/BoxOther";
 import ReviewsBox from "../components/components-product-detail/ReviewsBox";
+import StarRating from "../components/StarRating";
+import ReviewShow from "../components/components-product-detail/ReviewShow";
+import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
 
 const listContent = [
   {
@@ -55,26 +62,94 @@ const ProductDetail = () => {
         </DivContentProductSC>
         <BoxOther />
         <DivProductDiscSC>
-      
-         
+          <DivProductDiscTitleSC>
+            <span>Описание растения</span>
+          </DivProductDiscTitleSC>
           <DivProductDiscContentSC>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
+              eveniet expedita, fugiat inventore laborum minus modi, placeat
+              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
+              amet, consectetur adipisicing elit. Alias amet atque deserunt
+              dignissimos error, in iste maiores nemo odio odit officia omnis
+              placeat possimus quae quaerat quidem, recusandae tempora ut?
+            </p>
+            <a>Развернуть описание</a>
+          </DivProductDiscContentSC>
+        </DivProductDiscSC>
+        <DivProductDiscSC>
+          <DivProductDiscTitleSC>
+            <span>Общие характеристики</span>
+          </DivProductDiscTitleSC>
+          <DivProductDiscContentSC>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
+              eveniet expedita, fugiat inventore laborum minus modi, placeat
+              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
+              amet, consectetur adipisicing elit. Alias amet atque deserunt
+              dignissimos error, in iste maiores nemo odio odit officia omnis
+              placeat possimus quae quaerat quidem, recusandae tempora ut?
+            </p>
+          </DivProductDiscContentSC>
+        </DivProductDiscSC>
+        <DivProductDiscSC>
+          <DivProductDiscTitleSC>
+            <span>Дополнительная информация</span>
+          </DivProductDiscTitleSC>
+          <DivProductDiscContentSC>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
+              eveniet expedita, fugiat inventore laborum minus modi, placeat
+              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
+              amet, consectetur adipisicing elit. Alias amet atque deserunt
+              dignissimos error, in iste maiores nemo odio odit officia omnis
+              placeat possimus quae quaerat quidem, recusandae tempora ut?
+            </p>
+            <a>Развернуть характеристики</a>
+          </DivProductDiscContentSC>
+        </DivProductDiscSC>
+        <DivProductDiscSC>
+          <DivProductDiscTitleSC>
+            <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
+          </DivProductDiscTitleSC>
+          <DivProductReviewsSC>
+            <DivProductRatingSC>
+              <H1ProductBoxSC>4.9</H1ProductBoxSC>
+              <StarRating value={4.9} fixed={true} />
+            </DivProductRatingSC>
+
+            <DivCarouselReviewSC>
+              <ReviewCarousel>
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+              </ReviewCarousel>
+            </DivCarouselReviewSC>
+
+            <DivButtonBoxSC>
+              <ButtonCustomSC width={"338px"} padding={"8px 32px"} primary>
+                Написать отзыв
+              </ButtonCustomSC>
+            </DivButtonBoxSC>
+          </DivProductReviewsSC>
+          {/* <DivProductDiscContentSC>
+
             <ReviewsBox
               indexSelectedButton={indexSelectedButton}
               onClickTab={onClickTab}
               listContent={listContent}
             />
-            
-          </DivProductDiscContentSC>
-           
-          
-         
-        </DivProductDiscSC>
-        <DivProductDiscSC>
-          
-          <DivProductDiscTitleSC>
-            <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
-          </DivProductDiscTitleSC>
-        
+
+            <ButtonCustomSC width={"338px"} padding={"8px 32px"} primary>
+              Написать отзыв
+            </ButtonCustomSC>
+          </DivProductDiscContentSC> */}
         </DivProductDiscSC>
       </DivContentProductDetailSC>
     </DivBoxProductDetailSC>

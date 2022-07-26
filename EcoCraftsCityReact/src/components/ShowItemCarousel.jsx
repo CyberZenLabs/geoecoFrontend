@@ -9,10 +9,10 @@ import {
   ImgUserAvatarSC,
   LinkOnUserSC,
   TextBoxReviewSC,
-} from "../styled-components-css/styles.review-show";
+} from "../styled-components-css/styles.ShowItemCarousel";
 import StarRating from "./StarRating";
 
-const ReviewShow = () => {
+const ShowItemCarousel = () => {
   const [widthWindow, setWidthWindow] = useState(
     document.documentElement.clientWidth
   );
@@ -54,4 +54,4 @@ const ReviewShow = () => {
   );
 };
 
-export default ReviewShow;
+export default ShowItemCarousel;

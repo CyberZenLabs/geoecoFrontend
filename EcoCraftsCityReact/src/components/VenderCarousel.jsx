@@ -6,9 +6,9 @@ import {
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-} from "../styled-components-css/styles.review-carousel";
+} from "../styled-components-css/styles.vendor-carousel";
 
-const ReviewCarousel = ({ children }) => {
+const VenderCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
   const [carouselNumber, setCarouselNumber] = useState(0);
   useEffect(() => {
@@ -54,4 +54,4 @@ const ReviewCarousel = ({ children }) => {
   );
 };
 
-export default ReviewCarousel;
+export default VenderCarousel;

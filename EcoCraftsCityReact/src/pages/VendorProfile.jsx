@@ -5,9 +5,9 @@ import { MdOutlinePhotoCamera } from "react-icons/md";
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import StarRating from '../components/StarRating';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-import SettingsShop from "../components/SettingsShop";
-import ReviewShow from '../components/ShowItemCarousel';
-import ReviewCarousel from '../components/VenderCarousel';
+
+import ShowItemCarousel from '../components/ShowItemCarousel';
+
 import VendorInfoMenu from '../components/VendorInfoMenu';
 
 import {
@@ -79,6 +79,7 @@ import {
   GreenST,
   DivBoxNewProductsST,
 } from '../styled-components-css/styles.VendorProfile';
+import VenderCarousel from '../components/VenderCarousel';
 
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
@@ -107,12 +108,12 @@ const VendorProfile = () => {
             <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
            <VendorInfoMenu></VendorInfoMenu>
              <DivInfoVendorBoxSC>
-           <ReviewCarousel>
-            <ReviewShow></ReviewShow>
-            <ReviewShow></ReviewShow>
-            <ReviewShow></ReviewShow>
-            <ReviewShow></ReviewShow>
-           </ReviewCarousel>
+           <VenderCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           </VenderCarousel>
              </DivInfoVendorBoxSC>
             </DivAddProductBox>
             

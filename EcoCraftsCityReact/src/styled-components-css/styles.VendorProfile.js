@@ -147,6 +147,9 @@ export const Margin5pxST=styled.div`
 margin-top:10px;
 `;
 export const SpanTextTitleSC = styled.span`
+
+background: rgba(243, 243, 243, 0.5);
+border-radius: 20px 20px 0px 0px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 700;
@@ -155,9 +158,9 @@ line-height: 37px;
 color: #252525;
 display:flex;
 justify-content: space-between;
-margin-left:10px;
+padding: 5px 5px 0px 5px;
 margin-top:10px;
-margin-right:10px;
+
 `;
 export const UlifnoSC=styled.ul`
 display:flex;

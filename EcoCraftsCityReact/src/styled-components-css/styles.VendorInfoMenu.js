@@ -287,7 +287,7 @@ margin-top 20px;
 `;
 export const DivInfoVendorBoxSC = styled.div`
 background: rgba(243, 243, 243, 0.5);
-border-radius: 20px;
+border-radius: 0px 0px 20px 20px;
 margin-bottom:10px;
 
 `;

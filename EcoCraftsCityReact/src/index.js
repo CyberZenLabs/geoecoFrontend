@@ -29,7 +29,6 @@ import AddNewProduct from './pages/AddNewProduct';
 // import AdminForm from "./pages/AdminForm";
 
 import Footer from "./components/Footer";
-import MapBiding from "./pages/MapBinding";
 import Catalog from "./components/Catalog";
 import ReviewForm from "./components/ReviewForm";
 import Modal from "./components/Modal";
@@ -38,13 +37,8 @@ import PassModal from "./components/ModalPassChange";
 import MailModal from "./components/ModalAddressChange";
 import SellerSettings from "./pages/SellerSettings";
 import { ToastContainer } from "react-toastify";
-import AppContext, { AppProvider } from "./context/AppContext";
-import { AuthProvider } from "./context/AuthContext";
-
-
-import { ToastContainer } from 'react-toastify';
 import AppContext, { AppProvider } from './context/AppContext';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from "./context/AuthContext";
 import Terms from './privacy/Terms';
 import Privacy from './privacy/Privacy';
 import Reviews from './pages/Reviews';

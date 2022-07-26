@@ -1,118 +1,94 @@
-import React from 'react'
+import React from 'react';
 import {
-    DivMapBindingBoxSC,
-    DivTextSC,
-    DivBoxWhiteCardSC,
-    ImgWhiteCardSC,
-    ImgGrayCardSC,
-    ImgCardsLogoSC,
-    ImgGrayRectangleSC,
-    DivImgBoxSC,
-    DivButtonsSC,
-    DivContentMapBindingSC,
-    DivBoxSC,
-    DivBoxRowSC,
-    DivBoxMMSC,
-    DivBoxColumnsSC,
-    DivBoxGGSC,
-    DivBoxCVVCVCSC,
-    DivSlashSC
-} from "../styled-components-css/styles.map-binding";
-import TextField from "../components/TextField";
-import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { ButtonCustomWhiteSC } from "../styled-components-css/styles.custom-button-white";
+  DivMapBindingBoxSC,
+  DivTextSC,
+  DivButtonsSC,
+  DivContentMapBindingSC,
+  DivBoxNumCardSC,
+  DivBoxMMSC,
+  DivBoxGGSC,
+  DivBoxCVVCVCSC,
+  DivSlashSC,
+  DivImgBoxSC,
+  DivContainerRowsMB,
+  DivRowBoxSC,
+  DivColumnsBoxSC,
+  DivColumnMMBoxSC,
+  DivColumnSlashBoxSC,
+  DivColumnGGBoxSC,
+  DivColumnCVVCVCBoxSC,
+} from '../styled-components-css/styles.map-binding';
+import TextField from '../components/TextField';
+import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
 
 const MapBinding = () => {
-    const startingValues = { text: "" };
-    return (
-        <DivMapBindingBoxSC>
-            <DivContentMapBindingSC>
-                <DivTextSC>Привязка карты</DivTextSC>
-                <Formik initialValues={startingValues}>
-                    {(formik) => (
-                        <Form>
- 
-                            <DivBoxRowSC>
+  const startingValues = { text: '' };
+  return (
+    <DivMapBindingBoxSC>
+      <DivContentMapBindingSC>
+        <DivTextSC>Привязка карты</DivTextSC>
+        <Formik initialValues={startingValues}>
+          {(formik) => (
+            <Form>
+              <DivImgBoxSC>
+                <DivContainerRowsMB>
+                  <DivRowBoxSC>
+                    <DivBoxNumCardSC>
+                      <TextField
+                        label="cardNumber"
+                        type="text"
+                        name="cardNumber"
+                        fullSize={false}
+                        placeholder={'Номер карты'}
+                      />
+                    </DivBoxNumCardSC>
+                  </DivRowBoxSC>
+                  <DivColumnsBoxSC>
+                    <DivColumnMMBoxSC>
+                      <DivBoxMMSC>
+                        <TextField label="month" type="text" name="month" fullSize={false} placeholder={'ММ'} />
+                      </DivBoxMMSC>
+                    </DivColumnMMBoxSC>
+                    <DivColumnSlashBoxSC>
+                      <DivSlashSC>/</DivSlashSC>
+                    </DivColumnSlashBoxSC>
+                    <DivColumnGGBoxSC>
+                      <DivBoxGGSC>
+                        <TextField label="year" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
+                      </DivBoxGGSC>
+                    </DivColumnGGBoxSC>
+                    <DivColumnCVVCVCBoxSC>
+                      <DivBoxCVVCVCSC>
+                        <TextField label="text" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                      </DivBoxCVVCVCSC>
+                    </DivColumnCVVCVCBoxSC>
+                  </DivColumnsBoxSC>
+                </DivContainerRowsMB>
+              </DivImgBoxSC>
 
-                                <DivBoxSC>
+              <DivButtonsSC>
+                <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+                  Отмена
+                </ButtonCustomWhiteSC>
 
-                                    <TextField
-                                        label="text"
-                                        type="text"
-                                        name="text"
-                                        fullSize={false}
-                                        placeholder={"Номер карты"}
-                                    />
-                                </DivBoxSC>
-
-                                <DivBoxColumnsSC>
-
-                                <DivBoxMMSC>
-                                    <TextField
-                                        label="text"
-                                        type="text"
-                                        name="text"
-                                        fullSize={false}
-                                        placeholder={"ММ"}
-                                    />
-                                </DivBoxMMSC>
-
-                                <DivSlashSC>/</DivSlashSC>
-
-                                <DivBoxGGSC>
-                                    <TextField
-                                        label="text"
-                                        type="text"
-                                        name="text"
-                                        fullSize={false}
-                                        placeholder={"ГГ"}
-                                    />
-                                </DivBoxGGSC>
-                                <DivBoxCVVCVCSC>
-                                    <TextField
-                                        label="text"
-                                        type="text"
-                                        name="text"
-                                        fullSize={false}
-                                        placeholder={"CVV/CVC"}
-                                    />
-                                </DivBoxCVVCVCSC>
-                                </DivBoxColumnsSC>
-                                </DivBoxRowSC>
-
- <DivImgBoxSC>
-
-    <ImgGrayCardSC>
-    <ImgGrayRectangleSC>
-    <DivBoxWhiteCardSC>
-    <ImgWhiteCardSC>  
-    <ImgCardsLogoSC>
-    </ImgCardsLogoSC>                                    
-    </ImgWhiteCardSC>
-</DivBoxWhiteCardSC>
-    </ImgGrayRectangleSC>
-    </ImgGrayCardSC>
-
-</DivImgBoxSC>
-
-                            <DivButtonsSC>
-                                <ButtonCustomWhiteSC
-                                    padding={"18px 32px"}
-                                    type="submit">Отмена</ButtonCustomWhiteSC>
-
-                                <ButtonCustomSC
-                                    width={"100%"}
-                                    padding={"18px 32px"}
-                                    type="submit">Привязать</ButtonCustomSC>
-                            </DivButtonsSC>
-                        </Form>
-                    )}
-                </Formik>
-            </DivContentMapBindingSC>
-
-        </DivMapBindingBoxSC >
-    )
-}
+                <ButtonCustomSC
+                  disabled={!formik.dirty || !formik.isValid}
+                  statusOpasity={!formik.dirty || !formik.isValid}
+                  width={'100%'}
+                  padding={'18px 32px'}
+                  type="submit"
+                >
+                  Привязать
+                </ButtonCustomSC>
+              </DivButtonsSC>
+            </Form>
+          )}
+        </Formik>
+      </DivContentMapBindingSC>
+    </DivMapBindingBoxSC>
+  );
+};
 
 export default MapBinding;

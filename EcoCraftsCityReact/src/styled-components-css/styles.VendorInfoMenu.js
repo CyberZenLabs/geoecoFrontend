@@ -149,7 +149,35 @@ font-weight: 700;
 font-size: 30px;
 line-height: 37px;
 color: #252525;
+display:flex;
+justify-content: space-between;
+margin:10px;
+@media (max-width: 1000px) {
+  font-size: 26px;
+}
+
 `;
+export const OlifnoSC=styled.ol`
+
+margin-left:10px;
+
+list-style: inside;
+padding: 0; 
+margin-left: 10px;
+font-weight: bold;
+@media (max-width: 1000px) {
+  font-size: 18px;
+}
+
+
+`;
+export const DivDisplayFlexSC=styled.div`
+
+display:flex;
+
+`;
+
+
 export const SpanTextTitleShopSC = styled.span`
 font-family: 'Montserrat';
 font-style: normal;
@@ -197,6 +225,7 @@ position: relative;
 
 `;
 
+
 export const ButtonAddProductSC = styled.button`
 font-family: 'Montserrat';
 font-style: normal;
@@ -214,7 +243,52 @@ margin-top:45px;
 `;
 
 export const DivAddProductBox = styled.div`
-
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+`;
+export const DivButtonChangrInformSC = styled.div`
+@media (max-width: 1000px) {
+  display:none;
+  
+    }
+display:flex;
+background: #85CB33;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 10px;
+color: #FFFFFF;
+font-size:16px;
+`;
+export const DivButtonChangrInformBottomSC = styled.div`
+@media (min-width: 1000px) {
+  display:none;
+  
+    }
+    
+        height: 34px;
+display:flex;
+background: #85CB33;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 10px;
+color: #FFFFFF;
+font-size:16px;
+margin-left:18px;
+margin-right:19px;
+margin-bottom:7px;
+margin-top 20px;
+`;
+export const DivInfoVendorBoxSC = styled.div`
+background: rgba(243, 243, 243, 0.5);
+border-radius: 20px;
+margin-bottom:10px;
 
 `;
 export const DivBorderBox = styled.div`
@@ -235,8 +309,19 @@ width:100%;
   max-width: 1420px;
 padding 0 30px;
 
-@media (max-width: 768px) {
-  display:none;
-
-  }
+`;
+export const LiInfoSC = styled.li`
+color: #3D3D3D;
+margin-bottom:14px;
+font-size: 20px;
+display:flex;
+@media (max-width: 1000px) {
+  font-size: 16px;
+}
+@media (max-width: 766px) {
+  font-size: 13px;
+}
+@media (max-width: 480px) {
+  font-size: 12px;
+}
 `;

@@ -149,7 +149,28 @@ font-weight: 700;
 font-size: 30px;
 line-height: 37px;
 color: #252525;
+display:flex;
+justify-content: space-between;
+margin:10px;
 `;
+export const OlifnoSC=styled.ol`
+
+margin-left:10px;
+
+list-style: inside;
+padding: 0; 
+margin-left: 10px;
+font-weight: bold;
+
+
+`;
+export const DivDisplayFlexSC=styled.div`
+
+display:flex;
+
+`;
+
+
 export const SpanTextTitleShopSC = styled.span`
 font-family: 'Montserrat';
 font-style: normal;
@@ -197,6 +218,7 @@ position: relative;
 
 `;
 
+
 export const ButtonAddProductSC = styled.button`
 font-family: 'Montserrat';
 font-style: normal;
@@ -214,8 +236,27 @@ margin-top:45px;
 `;
 
 export const DivAddProductBox = styled.div`
+display:flex;
+flex-direction: column;
+`;
+export const DivButtonChangrInformSC = styled.div`
+display:flex;
+background: #85CB33;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 10px;
+color: #FFFFFF;
+font-size:16px;
 
-
+`;
+export const DivInfoVendorBoxSC = styled.div`
+background: rgba(243, 243, 243, 0.5);
+border-radius: 20px;
+padding:18px;
+height:270px;
 `;
 export const DivBorderBox = styled.div`
 
@@ -235,8 +276,26 @@ width:100%;
   max-width: 1420px;
 padding 0 30px;
 
-@media (max-width: 768px) {
-  display:none;
+`;
+export const LiInfoSC = styled.li`
+color: #3D3D3D;
+margin-bottom:14px;
+font-size: 20px;
+display:flex;
 
-  }
+`;
+export const LiInfoGreenSC = styled.li`
+color: #3D3D3D;
+margin-bottom:14px;
+font-size: 20px;
+color: #85CB33;
+margin-right:1px;
+`;
+export const SpanTitleSC = styled.span`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 28px;
+color: #252525;
+
 `;

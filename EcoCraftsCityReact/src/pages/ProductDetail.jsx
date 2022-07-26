@@ -139,11 +139,13 @@ const ProductDetail = () => {
             </DivButtonBoxSC>
           </DivProductReviewsSC>
           {/* <DivProductDiscContentSC>
+
             <ReviewsBox
               indexSelectedButton={indexSelectedButton}
               onClickTab={onClickTab}
               listContent={listContent}
             />
+
             <ButtonCustomSC width={"338px"} padding={"8px 32px"} primary>
               Написать отзыв
             </ButtonCustomSC>

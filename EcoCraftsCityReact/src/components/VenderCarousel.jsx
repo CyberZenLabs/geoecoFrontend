@@ -1,13 +1,12 @@
 import React, { useState, useEffect, Children } from "react";
 import { cloneElement } from "react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import {
-  DivArrowBackgroundSC,
   DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-} from "../../styled-components-css/styles.review-carousel";
+} from "../styled-components-css/styles.review-carousel";
 
 const ReviewCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
@@ -26,14 +25,6 @@ const ReviewCarousel = ({ children }) => {
     );
   }, []);
 
-  const handleLefttArrow = () => {
-    setCarouselNumber(carouselNumber - 1);
-  };
-
-  const handleRighttArrow = () => {
-    setCarouselNumber(carouselNumber + 1);
-  };
-
   return (
     <>
       <DivCarouselMainSC>
@@ -43,20 +34,19 @@ const ReviewCarousel = ({ children }) => {
           </DivCarouselAllItemsSC>
           <DivButtonWrapSC>
             {carouselNumber != 0 ? (
-              <DivArrowBackgroundSC>
-                <FiArrowLeft onClick={handleLefttArrow} />
-              </DivArrowBackgroundSC>
+              <BsArrowLeftCircle
+                onClick={() => setCarouselNumber(carouselNumber - 1)}
+              />
             ) : (
               <div></div>
             )}
-            {carouselNumber != items.length - 3 ? (
-              <DivArrowBackgroundSC>
-                <FiArrowRight onClick={handleRighttArrow} />
-              </DivArrowBackgroundSC>
+             {carouselNumber != items.length-3 ? (
+               <BsArrowRightCircle
+               onClick={() => setCarouselNumber(carouselNumber + 1)}
+             />
             ) : (
               <div></div>
             )}
-
           </DivButtonWrapSC>
         </DivCarouselWindowSC>
       </DivCarouselMainSC>

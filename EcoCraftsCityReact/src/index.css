@@ -253,6 +253,8 @@ table {
   cursor: pointer;
 }
 
+.marginRight{margin-right: 10px;}
+
 .image-box {
   position: relative;
   min-width: 60px;
@@ -262,6 +264,7 @@ table {
   overflow: hidden;
   border: 10px solid var(--white);
 }
+.marginRight{margin-right: 10px;}
 
  .image-box img {
   position: absolute;

@@ -248,7 +248,7 @@ const SellerSettings = ({ product }) => {
             </DivStoreInfoDataSC>
           </DivStoreInfoSC>
           <DivStoreOptionsSC>
-            <DivStoreOptionsLinkSC to="/">Профиль</DivStoreOptionsLinkSC>
+            <DivStoreOptionsLinkSC to="/vendorprofile">Профиль</DivStoreOptionsLinkSC>
             <br />
             <DivStoreOptionsLinkStoreSC to="/sellersettings">
               Настройки

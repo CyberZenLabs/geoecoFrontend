@@ -16,12 +16,12 @@ const ReviewForm = () => {
         initialValues={startingValues}
         validationSchema={demoSchema}
         onSubmit={(values) => {
-          console.log("values", values, "dest-values", { ...values });
+          // console.log("values", values, "dest-values", { ...values });
         }}
       >
         {(formik) => (
           <Form>
-            {console.log(formik.values)}
+            {/* {console.log(formik.values)} */}
             <TextField
               label="email"
               type="email"

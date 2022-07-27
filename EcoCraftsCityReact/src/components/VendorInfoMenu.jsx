@@ -20,7 +20,7 @@ const VendorInfoMenu = () =>{
     return (
         
                 
-                 <DivInfoVendorBoxSC><SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+                 <DivInfoVendorBoxSC>
                  <OlifnoSC>
                 <LiInfoSC> <img src="/default-images/elips.svg" class="marginRight" />  Адрес</LiInfoSC>
                 <LiInfoSC> <img src="/default-images/elips.svg"class="marginRight" /> Время существования магазина</LiInfoSC>

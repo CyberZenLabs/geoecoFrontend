@@ -34,7 +34,7 @@ export const DivBoxProductDetailSC = styled.div`
 export const DivContentProductDetailSC = styled.div`
 
     display: grid;
-  grid-template-rows: 120px max-content 286px  minmax(auto, auto) 230px max-content ;
+  grid-template-rows: 120px max-content 286px  minmax(auto, auto)  minmax(auto, auto) ;
   max-width: 1322px;
   width: 85vw;
   grid-gap: 10px;
@@ -237,14 +237,13 @@ export const DivProductDiscSC = styled.div`
 export const DivProductDiscTitleSC = styled.div`
 
   display: grid;
-  align-items: center;
+  align-items: start;
 `;
 
 export const DivProductDiscContentSC = styled.div`
   display: grid;
   grid-template-rows: max-content auto;
-  grid-gap: 20px;
-  padding-bottom: 20px;
+ 
 
 `;
 

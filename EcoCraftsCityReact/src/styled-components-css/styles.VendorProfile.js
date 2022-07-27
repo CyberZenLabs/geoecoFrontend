@@ -58,7 +58,7 @@ margin-right:1px;
 export const DivBoxNewProductsST = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
-  margin-top: 80px;
+  margin-top: 40px;
   justify-self: center;
   max-width: 1420px;
   padding: 0 30px;

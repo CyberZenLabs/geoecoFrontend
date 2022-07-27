@@ -65,7 +65,7 @@ root.render(
               <Route path="storenewproduct" element={<StoreNewProduct />} />
               <Route path="addnewproduct" element={<AddNewProduct />} />
 
-              <Route path="VenderProfile" element={<VenderProfile />} />
+              <Route path="VendorProfile" element={<VendorProfile />} />
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="cart" element={<Cart />} />

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   DivAvatarDateRatingInfoSC,
@@ -9,6 +10,8 @@ import {
   ImgUserAvatarSC,
   LinkOnUserSC,
   TextBoxReviewSC,
+  ElipsIconSC,
+  SpanDataTextSC
 } from "../styled-components-css/styles.ShowItemCarousel";
 import StarRating from "./StarRating";
 
@@ -20,7 +23,7 @@ const ShowItemCarousel = () => {
   return (
     <>
       <DivReviewShowWrapSC>
-        <DivAvatarDateRatingInfoSC>
+        
           <LinkOnUserSC to="/">
             <ImgUserAvatarSC src={"/default-images/plant.jpg"} />
           </LinkOnUserSC>
@@ -28,27 +31,31 @@ const ShowItemCarousel = () => {
           <DivDateRatingInfoSC>
             <DivDateReviewCreateSC>
               <LinkOnUserSC to="/">
-                <TextBoxReviewSC color={"black"} weight={"600"}>
-                  Иван
+                <TextBoxReviewSC>
+                  Название магазина
                 </TextBoxReviewSC>
               </LinkOnUserSC>
-              <TextBoxReviewSC color={"#8b8b8b"}>
-                22 июля 2022, 20:24
-              </TextBoxReviewSC>
+              <ElipsIconSC>
+
+              </ElipsIconSC>
+              <SpanDataTextSC>
+                дд.мм.гг
+              </SpanDataTextSC>
             </DivDateReviewCreateSC>
             <DivStarRaitingSC>
               <StarRating value={5} fixed={true} size={20} />
             </DivStarRaitingSC>
-          </DivDateRatingInfoSC>
-        </DivAvatarDateRatingInfoSC>
 
-        <DivUserReviewSC>
+            <DivUserReviewSC>
           <TextBoxReviewSC>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt
-            perferendis quos voluptatibus? Beatae cum cumque dolore eveniet
-            expedita, fugiat inventore laborum minus modi
+            Текст отыва
           </TextBoxReviewSC>
         </DivUserReviewSC>
+          </DivDateRatingInfoSC>
+
+          
+
+        
       </DivReviewShowWrapSC>
     </>
   );

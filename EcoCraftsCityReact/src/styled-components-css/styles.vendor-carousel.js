@@ -1,13 +1,16 @@
 import styled from "styled-components/macro";
 
 export const DivCarouselMainSC = styled.div`
-  width: 1332px;
+  width: 1000px;
   height: 330px;
+  margin-top:20px;
+
 `;
 
 export const DivCarouselWindowSC = styled.div`
   width: 100%;
-  height: 100%;
+  height: 150px;
+
   display: flex;
   justify-content: left;
   align-items: center;
@@ -29,6 +32,7 @@ export const DivButtonWrapSC = styled.div`
   justify-content: space-between;
   width: calc(100% + 35px);
   font-size: 44px;
-  max-width: 1355px;
-  margin-left: -25px;
+  max-width: 1035px;
+  margin-left: -18px;
+
 `;

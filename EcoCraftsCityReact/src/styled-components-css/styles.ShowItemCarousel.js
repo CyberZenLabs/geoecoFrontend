@@ -5,13 +5,13 @@ export const DivReviewShowWrapSC = styled.div`
   //width: 100%;
   display: grid;
   grid-template-rows: max-content 120px 48px;
-  
+  grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
   background-color: rgba(243, 243, 243, 0.2);
-  width: 420px;
-  //height: 272px;
+  width: 460px;
+  height: 150px;
   border-radius: 12px;
-  padding: 24px 24px 22px;
+  padding: 15px 27px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   @media (max-width: 1000px) {
     width: 288px;
@@ -20,6 +20,9 @@ export const DivReviewShowWrapSC = styled.div`
   /* @media (max-width: 1000px) {
     height: 232px;
   } */
+  align-content:start;
+
+  align-items:center;
 `;
 
 //------------------- Аватрака дата время рейтинг -------------------
@@ -34,9 +37,9 @@ export const DivAvatarDateRatingInfoSC = styled.div`
 `;
 
 export const ImgUserAvatarSC = styled.img`
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
+  border-radius: 12px;
+  width: 93px;
+  height: 93px;
   @media (max-width: 1000px) {
     width: 40px;
     height: 40px;
@@ -54,6 +57,7 @@ export const DivDateRatingInfoSC = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   row-gap: 6px;
+  align-self:start;
   @media (max-width: 1000px) {
     grid-gap: 4px;
   }
@@ -61,19 +65,34 @@ export const DivDateRatingInfoSC = styled.div`
 
 export const DivDateReviewCreateSC = styled.div`
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content max-content max-content;
   column-gap: 12px;
-`;
+  align-items:center;
 
+`;
+export const ElipsIconSC = styled.div`
+width: 8px;
+height: 8px;
+background: rgba(0, 0, 0, 0.33);
+border-radius:8px
+`;
+export const SpanDataTextSC = styled.span`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+color: rgba(0, 0, 0, 0.33);
+`;
 export const TextBoxReviewSC = styled.p`
-  ${(p) => (p.color !== undefined ? `color:${p.color};` : "color: black;")}
-  ${(p) =>
-    p.weight !== undefined ? `font-weight:${p.weight};` : "font-weight: 400;"}
-  font-size: 16px;
-  line-height: 22px;
-  @media (max-width: 1000px) {
-    font-size: 14px;
-  }
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+
+color: #252525;
 `;
 
 export const DivStarRaitingSC = styled.div`

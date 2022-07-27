@@ -6,7 +6,7 @@ import {
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-} from "../styled-components-css/styles.review-carousel";
+} from "../styled-components-css/styles.vendor-carousel";
 
 const VenderCarousel = ({ children }) => {
   const [items, setItems] = useState([]);

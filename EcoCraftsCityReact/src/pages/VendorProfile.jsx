@@ -8,6 +8,9 @@ import StarRating from '../components/StarRating';
 import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
+import ShowItemCarousel from '../components/ShowItemCarousel';
+
+import VendorInfoMenu from '../components/VendorInfoMenu';
 import {
   DivOptionsPanelSC,
   DivStarsPanelSC,
@@ -74,9 +77,15 @@ import {
   IconImgImgSC,
   DivButtonBottomSaveVendSC,
   SaveButtonPanelVendSC,
+  DivBoxNewProductsBigST,
+  DivBoxItemsSC,
+  MenuProductST,
+  GreenST,
+  DivBoxNewProductsST,
 } from '../styled-components-css/styles.VendorProfile';
 import axiosCustom from '../apis/form-data';
 import axios from 'axios';
+import VenderCarousel from '../components/VenderCarousel';
 
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
@@ -161,7 +170,6 @@ const VendorProfile = () => {
               for (let [key, value] of formData) {
                 console.log(`"ascascac" ${key}: ${value}`);
               }
-    
 
               axios
                 .patch('https://radiant-river-29802.herokuapp.com', formData, {
@@ -258,9 +266,9 @@ const VendorProfile = () => {
                     </DivBoxColumnsFotosSC>
                   </DivBGImageSC>
                 </DivAboutYourselfSC>
-                <DivButtonBottomSaveVendSC>
-                  <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
-                </DivButtonBottomSaveVendSC>
+                {/* <DivButtonBottomSaveVendSC> */}
+                {/* <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC> */}
+                {/* </DivButtonBottomSaveVendSC> */}
               </Form>
             )}
           </Formik>

@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import {
   DivBoxProductDetailSC,
@@ -7,13 +9,14 @@ import {
   DivProductDiscTitleSC,
   DivProductDiscContentSC,
   SpanQuestionSC,
+  DivfirsrowInformSC,
+  DivsecondrowInformSC,
+  DivProductInformSC,
   DivProductReviewsSC,
   DivProductRatingSC,
   H1ProductBoxSC,
-  DivButtonBoxSC,
-  DivAllReviewsSC,
-  DivProductReviewBoxSC,
   DivCarouselReviewSC,
+  DivButtonBoxSC,
 } from "../styled-components-css/styles.product-detail";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -62,56 +65,23 @@ const ProductDetail = () => {
         </DivContentProductSC>
         <BoxOther />
         <DivProductDiscSC>
-          <DivProductDiscTitleSC>
-            <span>Описание растения</span>
-          </DivProductDiscTitleSC>
+      
+         
           <DivProductDiscContentSC>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
-              eveniet expedita, fugiat inventore laborum minus modi, placeat
-              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit. Alias amet atque deserunt
-              dignissimos error, in iste maiores nemo odio odit officia omnis
-              placeat possimus quae quaerat quidem, recusandae tempora ut?
-            </p>
-            <a>Развернуть описание</a>
+            <ReviewsBox
+              indexSelectedButton={indexSelectedButton}
+              onClickTab={onClickTab}
+              listContent={listContent}
+            />
+            
           </DivProductDiscContentSC>
+           
+          
+         
         </DivProductDiscSC>
         <DivProductDiscSC>
-          <DivProductDiscTitleSC>
-            <span>Общие характеристики</span>
-          </DivProductDiscTitleSC>
-          <DivProductDiscContentSC>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
-              eveniet expedita, fugiat inventore laborum minus modi, placeat
-              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit. Alias amet atque deserunt
-              dignissimos error, in iste maiores nemo odio odit officia omnis
-              placeat possimus quae quaerat quidem, recusandae tempora ut?
-            </p>
-          </DivProductDiscContentSC>
-        </DivProductDiscSC>
-        <DivProductDiscSC>
-          <DivProductDiscTitleSC>
-            <span>Дополнительная информация</span>
-          </DivProductDiscTitleSC>
-          <DivProductDiscContentSC>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              nesciunt perferendis quos voluptatibus? Beatae cum cumque dolore
-              eveniet expedita, fugiat inventore laborum minus modi, placeat
-              ratione reiciendis sapiente tempora ullam. Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit. Alias amet atque deserunt
-              dignissimos error, in iste maiores nemo odio odit officia omnis
-              placeat possimus quae quaerat quidem, recusandae tempora ut?
-            </p>
-            <a>Развернуть характеристики</a>
-          </DivProductDiscContentSC>
-        </DivProductDiscSC>
-        <DivProductDiscSC>
+          
+        
           <DivProductDiscTitleSC>
             <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
           </DivProductDiscTitleSC>
@@ -138,18 +108,6 @@ const ProductDetail = () => {
               </ButtonCustomSC>
             </DivButtonBoxSC>
           </DivProductReviewsSC>
-          {/* <DivProductDiscContentSC>
-
-            <ReviewsBox
-              indexSelectedButton={indexSelectedButton}
-              onClickTab={onClickTab}
-              listContent={listContent}
-            />
-
-            <ButtonCustomSC width={"338px"} padding={"8px 32px"} primary>
-              Написать отзыв
-            </ButtonCustomSC>
-          </DivProductDiscContentSC> */}
         </DivProductDiscSC>
       </DivContentProductDetailSC>
     </DivBoxProductDetailSC>
@@ -157,3 +115,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+

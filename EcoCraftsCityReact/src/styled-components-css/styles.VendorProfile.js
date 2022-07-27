@@ -1,5 +1,33 @@
-import { MdOutlinePhotoCamera } from 'react-icons/md';
 import styled from 'styled-components/macro';
+
+import { MdOutlinePhotoCamera } from 'react-icons/md';
+
+export const OlifnoSC = styled.ol`
+  margin-left: 10px;
+
+  list-style: inside;
+  padding: 0;
+  margin-left: 10px;
+  font-weight: bold;
+`;
+export const DivDisplayFlexSC = styled.div`
+  display: flex;
+`;
+
+export const LiInfoSC = styled.li`
+  color: #3d3d3d;
+  margin-bottom: 14px;
+  font-size: 20px;
+  display: flex;
+`;
+export const LiInfoGreenSC = styled.li`
+  color: #3d3d3d;
+  margin-bottom: 14px;
+  font-size: 20px;
+  color: #85cb33;
+  margin-right: 1px;
+`;
+
 export const MenuProductST = styled.div`
   display: flex;
   font-family: 'Montserrat';
@@ -21,7 +49,7 @@ export const GreenST = styled.div`
 export const DivBoxNewProductsST = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
-  margin-top: 80px;
+  margin-top: 40px;
   justify-self: center;
   max-width: 1420px;
   padding: 0 30px;
@@ -64,6 +92,7 @@ export const DivInfoStoreST = styled.div`
     margin: 0px;
   }
 `;
+
 export const MarginST = styled.div`
   margin-top: 10px;
   font-size: 10px;
@@ -110,6 +139,8 @@ export const Margin5pxST = styled.div`
   margin-top: 10px;
 `;
 export const SpanTextTitleSC = styled.span`
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px 20px 0px 0px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
@@ -118,9 +149,8 @@ export const SpanTextTitleSC = styled.span`
   color: #252525;
   display: flex;
   justify-content: space-between;
-  margin-left: 10px;
+  padding: 5px 5px 0px 5px;
   margin-top: 10px;
-  margin-right: 10px;
 `;
 export const UlifnoSC = styled.ul`
   display: flex;
@@ -216,13 +246,7 @@ export const DivBorderBox = styled.div`
     margin: 0px;
   }
 `;
-export const DivBoxItemsSC = styled.div`
-  display: grid;
-  width: 100%;
-  justify-self: center;
-  max-width: 1420px;
-  padding: 0 30px;
-`;
+
 export const DivStoreInfoStuffProfileSC = styled.div`
   // border: 2px solid blue;
   display: grid;
@@ -424,7 +448,7 @@ export const DivBoxColumnAboutYourselfSC = styled.div`
   //border: 2px solid blue;
 `;
 
-export const InputAboutYourself = styled.textarea`
+export const InputAboutYourself = styled.input`
   max-width: 885px;
   width: 100%;
   height: 125px;
@@ -576,40 +600,4 @@ export const DivBoxFoto3SC = styled.div`
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;
-`;
-export const SaveButtonPanelVendSC = styled.button`
-  /* Кнопка (первичная) */
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  /* identical to box height */
-  text-align: center;
-  color: #ffffff;
-  /* Акцент */
-  text-decoration: none;
-  background: #85cb33;
-  border-radius: 20px;
-  width: auto;
-  height: 50px;
-  border-radius: 20px;
-  border: none;
-  :hover {
-    background-color: #76b42e;
-  }
-`;
-export const DivButtonBottomSaveVendSC = styled.div`
-  // border: 2px solid blue;
-  display: grid;
-  grid-template-columns: 100%;
-  max-width: 1010px;
 `;

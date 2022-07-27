@@ -403,9 +403,10 @@ export const DivCartAddrDataSC = styled.div`
 export const DivCartWayToPay = styled.div`
   box-sizing: border-box;
   //border: 1px solid black;
-  height: 454px;
+  //height: 454px;
   background: #F3F3F380;
   padding: 20px 19px 25px;
+  border-radius: 20px;
 `
 
 export const DivCartWayToPayTitleSC = styled.div`
@@ -460,7 +461,7 @@ export const DivCartWayToPayTotalSC = styled.div`
   grid-template-columns: max-content max-content;
   grid-template-rows: max-content;
   justify-content: space-between;
-  padding: 12px 0 46px;
+  padding: 12px 0 0px;
   h1{
     font-weight: 700;
     font-size: 20px;

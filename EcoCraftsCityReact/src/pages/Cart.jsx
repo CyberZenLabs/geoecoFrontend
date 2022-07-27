@@ -60,7 +60,6 @@ const Cart = () => {
 
 
     const onResizableWindow = (e) => {
-        console.log('>>>>>>', e.currentTarget.innerWidth)
         setWidthWindow( e.currentTarget.innerWidth)
     }
 
@@ -68,7 +67,6 @@ const Cart = () => {
         setStatusOrder(status)
     }
 
-    console.log('>>>>>>', widthWindow)
 
   return (
     <DivCartBoxSC>

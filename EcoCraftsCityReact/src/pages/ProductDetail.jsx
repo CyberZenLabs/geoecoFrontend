@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import {
   DivBoxProductDetailSC,
@@ -10,6 +12,11 @@ import {
   DivfirsrowInformSC,
   DivsecondrowInformSC,
   DivProductInformSC,
+  DivProductReviewsSC,
+  DivProductRatingSC,
+  H1ProductBoxSC,
+  DivCarouselReviewSC,
+  DivButtonBoxSC,
 } from "../styled-components-css/styles.product-detail";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -18,6 +25,9 @@ import ImageProduct from "../components/components-product-detail/ImageProduct";
 import BoxPrice from "../components/components-product-detail/BoxPrice";
 import BoxOther from "../components/components-product-detail/BoxOther";
 import ReviewsBox from "../components/components-product-detail/ReviewsBox";
+import StarRating from "../components/StarRating";
+import ReviewShow from "../components/components-product-detail/ReviewShow";
+import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
 
 const listContent = [
   {
@@ -71,10 +81,33 @@ const ProductDetail = () => {
         </DivProductDiscSC>
         <DivProductDiscSC>
           
+        
           <DivProductDiscTitleSC>
             <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
           </DivProductDiscTitleSC>
-        
+          <DivProductReviewsSC>
+            <DivProductRatingSC>
+              <H1ProductBoxSC>4.9</H1ProductBoxSC>
+              <StarRating value={4.9} fixed={true} />
+            </DivProductRatingSC>
+
+            <DivCarouselReviewSC>
+              <ReviewCarousel>
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+                <ReviewShow />
+              </ReviewCarousel>
+            </DivCarouselReviewSC>
+
+            <DivButtonBoxSC>
+              <ButtonCustomSC width={"338px"} padding={"8px 32px"} primary>
+                Написать отзыв
+              </ButtonCustomSC>
+            </DivButtonBoxSC>
+          </DivProductReviewsSC>
         </DivProductDiscSC>
       </DivContentProductDetailSC>
     </DivBoxProductDetailSC>
@@ -82,3 +115,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+

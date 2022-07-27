@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components/macro";
+import styled from "styled-components/macro"; 
+
+export const ReviewContainerSC = styled.div`
+  display: grid;
+  //grid-template-rows: 120px auto auto;
+  row-gap: 50px;
+`;
 
 export const WrapShopContainerSC = styled.div`
   display: grid;
@@ -7,9 +13,9 @@ export const WrapShopContainerSC = styled.div`
   //border: 2px solid grey;
   height: 356px;
   width: 90vw;
-  max-width: 1322px;
+  max-width: 1400px;
   margin: auto;
-  margin-top: 50px;
+  //margin-top: 50px;
   background: #dbf0c2;
   border-radius: 20px;
   @media (max-width: 440px) {
@@ -20,7 +26,7 @@ export const WrapShopContainerSC = styled.div`
   }
 `;
 
-export const ReviewContainerSC = styled.div`
+export const DivRowContentSC = styled.div`
   display: grid;
   grid-template-columns: 337px auto;
   grid-template-rows: repeat(5, max-content);
@@ -31,9 +37,9 @@ export const ReviewContainerSC = styled.div`
   //align-content: center;
   height: 100vh;
   width: 90vw;
-  max-width: 1322px;
+  max-width: 1400px;
   margin: auto;
-  margin-top: 50px;
+  //margin-top: 50px;
   margin-bottom: 30px;
   @media (max-width: 800px) {
     grid-template-columns: auto;

@@ -78,7 +78,7 @@ import {
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
-} from '../styled-components-css/styles.VendorProfile';
+} from '../styled-components-css/styles.VenderProfile';
 import VenderCarousel from '../components/VenderCarousel';
 
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Children } from "react";
 import { cloneElement } from "react";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import {
+  DivArrowBackgroundSC,
   DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
@@ -25,6 +26,14 @@ const ReviewCarousel = ({ children }) => {
     );
   }, []);
 
+  const handleLefttArrow = () => {
+    setCarouselNumber(carouselNumber - 1);
+  };
+
+  const handleRighttArrow = () => {
+    setCarouselNumber(carouselNumber + 1);
+  };
+
   return (
     <>
       <DivCarouselMainSC>
@@ -34,15 +43,20 @@ const ReviewCarousel = ({ children }) => {
           </DivCarouselAllItemsSC>
           <DivButtonWrapSC>
             {carouselNumber != 0 ? (
-              <BsArrowLeftCircle
-                onClick={() => setCarouselNumber(carouselNumber - 1)}
-              />
+              <DivArrowBackgroundSC>
+                <FiArrowLeft onClick={handleLefttArrow} />
+              </DivArrowBackgroundSC>
             ) : (
               <div></div>
             )}
-            <BsArrowRightCircle
-              onClick={() => setCarouselNumber(carouselNumber + 1)}
-            />
+            {carouselNumber != items.length - 3 ? (
+              <DivArrowBackgroundSC>
+                <FiArrowRight onClick={handleRighttArrow} />
+              </DivArrowBackgroundSC>
+            ) : (
+              <div></div>
+            )}
+
           </DivButtonWrapSC>
         </DivCarouselWindowSC>
       </DivCarouselMainSC>

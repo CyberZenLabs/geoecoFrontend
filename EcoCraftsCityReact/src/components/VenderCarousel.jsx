@@ -17,8 +17,8 @@ const VenderCarousel = ({ children }) => {
         return cloneElement(child, {
           style: {
             height: "100%",
-            minWidth: "900px",
-            maxWidth: "900px",
+            minWidth: "1322px",
+            maxWidth: "1322px",
           },
         });
       })

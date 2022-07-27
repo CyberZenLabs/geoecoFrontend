@@ -1,4 +1,3 @@
-
 import styled from "styled-components/macro";
 
 import { MdOutlinePhotoCamera } from "react-icons/md";
@@ -50,10 +49,11 @@ margin-top: 40px;
   @media (max-width: 480px) {
     display:none;
     }
+
 `;
 export const GreenST = styled.div`
-color: #85CB33;
-margin-right:1px;
+  color: #85cb33;
+  margin-right: 1px;
 `;
 export const DivBoxNewProductsST = styled.div`
   display: grid;
@@ -66,7 +66,7 @@ export const DivBoxNewProductsST = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     width: 100%;
-    }
+  }
 `;
 export const DivBoxNewProductsBigST = styled.div`
 width: 100%;
@@ -84,8 +84,8 @@ align-items: center;
 text-align:center;
 font-size:10px;
 `;
-export const DivInfoStoreST=styled.div`
-display: grid;
+export const DivInfoStoreST = styled.div`
+  display: grid;
   grid-template-columns: 1fr 1fr;
   font-size:15px;
   background: rgba(243, 243, 243, 0.5);
@@ -95,12 +95,13 @@ display: grid;
     width: 270px;
   }
   @media (max-width: 480px) {
-    display:none;
-    border:none;
+    display: none;
+    border: none;
     padding: 0px;
     margin: 0px;
   }
 `;
+
 export const MarginST=styled.div`
 margin-top:10px;
 font-size:10px;
@@ -210,21 +211,22 @@ font-family: 'Montserrat';
 font-style: normal;
 font-size: 20px;
 margin-bottom:14px;
+
 `;
 export const ButtonAddProductSC = styled.button`
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-text-align: center;
-color: #FFFFFF;
-background: #85CB33;
-padding: 18px 74px;
-border-radius: 20px;
-border:none;
-cursor: pointer;
-margin-top:45px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  background: #85cb33;
+  padding: 18px 74px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 45px;
 `;
 export const DivAddProductBox = styled.div`
 display:flex;
@@ -255,7 +257,6 @@ export const DivBorderBox = styled.div`
   margin: 0px;
     }
 `;
-export const DivBoxItemsSC = styled.div`
 display: grid;
 width:100%;
 justify-self: center;

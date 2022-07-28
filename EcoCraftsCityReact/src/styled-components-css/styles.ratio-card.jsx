@@ -52,7 +52,7 @@ export const DivRatioCardSC = styled.div`
   background-image: url(${ratingCard});
   background-repeat: no-repeat;
   background-position: center;
-  height: 120px;
+  height: 121px;
   width: 185px;
   background-size: 185px;
   align-items: center;

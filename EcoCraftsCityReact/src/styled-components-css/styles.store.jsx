@@ -106,7 +106,7 @@ export const DivStoreOptionsSC = styled.div`
 `;
 export const DivStarsPanelSC = styled.div`
   display: grid;
-  grid-template-columns: 80px auto;
+  grid-template-columns: 100px auto;
   width: 250px;
   //border: 2px solid red;
 `;
@@ -126,7 +126,7 @@ export const DivStoreOptionsLinkSC = styled(Link)`
   font-weight: 500;
   font-size: 15px;
   line-height: 25px;
-  margin: 20px;
+  margin: 12px;
   color: black;
   text-decoration: none;
   //border: 2px solid gold;
@@ -137,7 +137,7 @@ export const DivStoreOptionsLinkStoreSC = styled(Link)`
   font-weight: 700;
   font-size: 15px;
   line-height: 25px;
-  margin: 20px;
+  margin: 12px;
   color: black;
   text-decoration: none;
   //border: 2px solid gold;

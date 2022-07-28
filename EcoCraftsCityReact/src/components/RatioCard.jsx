@@ -31,7 +31,7 @@ const RatioCard = () => {
             <DivRatioCardSC>
               <DivAlignBoxSC>
                 <ValueRatingSC>5.0</ValueRatingSC>
-                <StarRating fixed={true} />
+                <StarRating fixed={true} value={5}/>
               </DivAlignBoxSC>
             </DivRatioCardSC>
 

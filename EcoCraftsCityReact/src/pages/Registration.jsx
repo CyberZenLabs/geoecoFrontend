@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import useAxiosFunction from "../hooks/useAxiosFunction";
-import axios from "../apis/admin-rest";
-import { useCookies } from "react-cookie";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from 'react';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import axios from '../apis/admin-rest';
+import { useCookies } from 'react-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import {
   H4Title,
   LabelSC,
@@ -23,14 +23,14 @@ import {
   SpanSC,
   DivRegSC,
   DivBackgroundPeopleSC,
-} from "../styled-components-css/styles.registration";
-import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { registerSchema } from "../validations/validation.signup";
-import { Formik, Form } from "formik";
-import TextField from "../components/TextField";
-import { toast } from "react-toastify";
-import { FlowerLoaderSc } from "../styled-components-css/styles.loader";
-import { useNavigate } from "react-router";
+} from '../styled-components-css/styles.registration';
+import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import { registerSchema } from '../validations/validation.signup';
+import { Formik, Form } from 'formik';
+import TextField from '../components/TextField';
+import { toast } from 'react-toastify';
+import { FlowerLoaderSc } from '../styled-components-css/styles.loader';
+import { useNavigate } from 'react-router';
 // const Alert = React.forwardRef(function Alert(props, ref) {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
@@ -40,46 +40,45 @@ const Registration = (props) => {
 
   const [open, setOpen] = useState(false);
 
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
-   let navigate = useNavigate();
+  let navigate = useNavigate();
   useEffect(() => {
     if (response.length === 0) {
       if (error) {
-        if (error.message.includes("401")) {
-          showToast("error", "Не Верный Данные");
+        if (error.message.includes('401')) {
+          showToast('error', 'Не Верный Данные');
         } else {
-          showToast("error", error);
+          showToast('error', error);
         }
       }
     } else {
-      console.log(">>>>>>>>>", response.token);
-      showToast("success", "Вы успешноj зарегистрировались");
-      setCookie("token", response.token);
+      console.log('>>>>>>>>>', response.token);
+      showToast('success', 'Вы успешноj зарегистрировались');
+      setCookie('token', response.token);
       setOpen(true);
-      navigate("/")
-      
+      navigate('/');
     }
   }, [response, error]);
 
   const showToast = (type, text) => {
-    if (type === "error") {
+    if (type === 'error') {
       toast.error(text ? text : error, {
-        toastId: "error",
+        toastId: 'error',
       });
-    } else if (type === "success") {
+    } else if (type === 'success') {
       toast.success(text ? text : response, {
-        toastId: "success",
+        toastId: 'success',
       });
     }
   };
 
   const startingValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
   };
   return (
     <DivRegSC>
@@ -95,8 +94,8 @@ const Registration = (props) => {
               onSubmit={(values) => {
                 axiosFetch({
                   axiosInstance: axios,
-                  auth: "login",
-                  method: "POST",
+                  auth: 'login',
+                  method: 'POST',
                   url: `/api/v1/users/signup`,
                   requestConfig: { ...values },
                 });
@@ -113,7 +112,7 @@ const Registration = (props) => {
                           type="text"
                           name="firstName"
                           fullSize={false}
-                          placeholder={"Имя"}
+                          placeholder={'Имя'}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -123,7 +122,7 @@ const Registration = (props) => {
                           type="text"
                           name="lastName"
                           fullsize={false}
-                          placeholder={"Фамилия"}
+                          placeholder={'Фамилия'}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>
@@ -134,7 +133,7 @@ const Registration = (props) => {
                         type="email"
                         name="email"
                         fullsize={true}
-                        placeholder={"Электронная почта"}
+                        placeholder={'Электронная почта'}
                       />
                     </DivBoxRowSC>
                     <DivBoxColumnsSC>
@@ -145,7 +144,7 @@ const Registration = (props) => {
                           type="password"
                           name="password"
                           fullsize={false}
-                          placeholder={"Пароль"}
+                          placeholder={'Пароль'}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -155,7 +154,7 @@ const Registration = (props) => {
                           type="password"
                           name="passwordConfirm"
                           fullsize={false}
-                          placeholder={"Подтвердить пароль"}
+                          placeholder={'Подтвердить пароль'}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>
@@ -163,16 +162,14 @@ const Registration = (props) => {
                       <ButtonCustomSC
                         disabled={!formik.dirty || !formik.isValid}
                         statusOpasity={!formik.dirty || !formik.isValid}
-                        width={"100%"}
-                        padding={"18px 32px"}
+                        width={'100%'}
+                        padding={'18px 32px'}
                         type="submit"
                       >
                         {!loading ? (
                           <span>
-                            продолжить&nbsp;&nbsp;
-                            <FontAwesomeIcon
-                              icon={faArrowRight}
-                            ></FontAwesomeIcon>
+                            Продолжить&nbsp;&nbsp;
+                            <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                           </span>
                         ) : (
                           <FlowerLoaderSc />
@@ -221,10 +218,7 @@ const Registration = (props) => {
               </Alert>
             </Snackbar> */}
           </DivBoxFormSC>
-          <img
-            src="/default-images/Иллюстрация.svg"
-            className="image4registration"
-          />
+          <img src="/default-images/Иллюстрация.svg" className="image4registration" />
         </DivBoxBoxFormSC>
       </DivBackgroundFormSC>
     </DivRegSC>

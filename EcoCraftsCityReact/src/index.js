@@ -11,7 +11,7 @@ import PersonalData from "./pages/PersonalData";
 import StoreNewProduct from "./pages/StoreNewProduct";
 import StoreNoAuth from "./pages/StoreNoAuth";
 import NavBar from "./components/NavBar";
-import { Cart } from "./pages/Cart";
+import Cart from "./pages/Cart";
 import Mooo from "./pages/AdminLogin";
 import ProductDetail from "./pages/ProductDetail";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -57,6 +57,7 @@ root.render(
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />
+              <Route path="cart" element={<Cart />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

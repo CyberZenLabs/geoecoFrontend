@@ -74,7 +74,8 @@ root.render(
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />
-              <Route path="sellersettings" element={<SellerSettings />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="sellersettings" element={<SellerSettings />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

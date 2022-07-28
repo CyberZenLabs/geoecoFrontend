@@ -3,7 +3,7 @@ import {
 	DivBoxTitleSC,
 	DivImageSC,
 	DivItemListSC,
-	DivPriceSC,
+	DivPriceSC, SpanPriceSC,
 	SpanTitleSC,
 } from '../../styled-components-css/styles.cart';
 import ButtonGroup from './ButtonGroup';
@@ -22,14 +22,15 @@ const ItemProductCart = props => {
 			<DivBoxInputCartSC>
 				<CustomInputCheckBox isSelected={isSelected} onClick={testOnClick} />
 			</DivBoxInputCartSC>
-
 			<DivImageSC src={src}></DivImageSC>
 			<DivBoxTitleSC>
 				<SpanTitleSC>{title}</SpanTitleSC>
 				<span>{discr}</span>
 			</DivBoxTitleSC>
 			<ButtonGroup></ButtonGroup>
-			<DivPriceSC>{price} &#8381;</DivPriceSC>
+			<DivPriceSC>
+				<SpanPriceSC>{price} &#8381;</SpanPriceSC>
+			</DivPriceSC>
 		</DivItemListSC>
 	);
 };

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/AppContext";
+
 import {
   BlockModal,
   ButtonContinueModal,
@@ -15,7 +16,7 @@ import {
 const EcoModal = () => {
   const { open, setOpen, modalData } = useContext(AppContext);
 
-  console.log(modalData);
+
   return (
     <>
       <BlockModal isOpen={open} contentLabel="Modal" >

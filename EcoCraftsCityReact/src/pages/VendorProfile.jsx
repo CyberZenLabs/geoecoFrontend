@@ -82,8 +82,10 @@ import {
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
+  OverlayImgSC,
+  OverlayTextSC,
 } from '../styled-components-css/styles.VendorProfile';
-import axiosCustom from '../apis/form-data';
+import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 
@@ -97,19 +99,77 @@ const routes = [
 ];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
+  const [apiStoreData, setApiStoreData] = useState({});
+  const [preview, setPreview] = useState([]);
+  const [photoUrls, setPhotoUrls] = useState({
+    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+  });
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
+  let testId = '62e38df24c1f460016904636';
+  useEffect(() => {
+    axiosFetch({
+      axiosInstance: axiosCustom,
+      method: 'GET',
+      url: `/api/v1/store/${testId}`,
+    });
+  }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setApiStoreData(response);
+    console.log(response);
+
+    // if (response != []) {
+    //   console.log('RESPONSE', response);
+
+    // } else {
+    //   photoUrl = `https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg`;
+    // }
+  }, [response]);
+
+  useEffect(() => {
+    console.log('ME', apiStoreData);
+    let photoUrl;
+
+    const checkStringLogic = () => {
+      if (apiStoreData.data != undefined) {
+        return apiStoreData.data.data.storePhoto;
+      } else {
+        return 'defaultStore.svg';
+      }
+
+      return;
+    };
+    photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
+    setPhotoUrls({ ...photoUrls, photoUrl });
+  }, [apiStoreData]);
+
+  useEffect(() => {
+    // create the preview
+
+    if (storePhotoRef !== null) {
+      // console.log('console photo', storePhotoRef.current.files[0]);
+    }
+
+    // free memory when ever this component is unmounted
+    // return () => URL.revokeObjectURL(objectUrl);
+  }, [storePhotoRef]);
 
   const handleUploadFile = (type) => {
     if (type === 'storePhoto') {
       storePhotoRef.current.click();
     }
+  };
+
+  const fileChangeHandler = () => {
+    console.log('store', storePhotoRef);
+    const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+
+    setPhotoUrls({ ...photoUrls, storePhotoUrl: objectUrl });
   };
 
   const startingValues = {
@@ -123,6 +183,7 @@ const VendorProfile = () => {
     {
       page: (
         <DivStoreRightPanelSC>
+          {console.log('123', photoUrls)}
           <DivAddProductBox>
             <DivInfoVendorBoxSC>
               <SpanTextTitleSC>
@@ -144,7 +205,6 @@ const VendorProfile = () => {
     {
       page: (
         <DivStoreRightPanelSC>
-          {console.log(response)}
           <DivStoreInfoStuffProfileSC>
             <H1BoldTextSC>Мой профиль</H1BoldTextSC>
           </DivStoreInfoStuffProfileSC>
@@ -152,8 +212,6 @@ const VendorProfile = () => {
             initialValues={startingValues}
             initialErrors={startingValues}
             onSubmit={(values) => {
-              let testId = '62dfc4498a50cefd8fe0cd2c';
-
               var formData = new FormData();
 
               Object.keys(values).forEach((key) => {
@@ -171,21 +229,24 @@ const VendorProfile = () => {
                 console.log(`"ascascac" ${key}: ${value}`);
               }
 
+              console.log('Hello!!!!!');
               axios
-                .patch('https://radiant-river-29802.herokuapp.com', formData, {
+                .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
                   // You need to use `getHeaders()` in Node.js because Axios doesn't
                   // automatically set the multipart form boundary in Node.
-                  headers: formData.getHeaders(),
+                  headers: {
+                    'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+                  },
                 })
                 .then((res) => {
-                  console.log(res);
+                  console.log(res.data.data.data);
                 })
                 .catch((err) => {
                   console.log(err);
                 });
 
               // axiosFetch({
-              //   axiosInstance: axiosCustom,
+              //   axiosInstance: axiosCustom(formData),
               //   method: 'PATCH',
               //   url: `/api/v1/store/${testId}`,
               //   requestFormDataConfig: formData,
@@ -195,7 +256,7 @@ const VendorProfile = () => {
           >
             {(formik) => (
               <Form>
-                <input ref={storePhotoRef} type="file" name="storePhoto" />
+                <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
                 <DivItemsOptionsSC>
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
@@ -204,11 +265,17 @@ const VendorProfile = () => {
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Фото</H1DefinSC>
-                      <ButtonImgSC onClick={() => handleUploadFile('storePhoto')}>
-                        <DivInnerPhotoInputSC>
-                          <IconImgImgSC />
-                          <H1SC>Загрузить фото</H1SC>
-                        </DivInnerPhotoInputSC>
+                      {console.log('photoUrls', photoUrls.storePhotoUrl)}
+                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhoto')}>
+                        <OverlayImgSC>
+                          <OverlayTextSC>Изменить фото</OverlayTextSC>
+                        </OverlayImgSC>
+                        {apiStoreData && !apiStoreData.data.data.storePhoto ? (
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        ) : null}
                       </ButtonImgSC>
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
@@ -266,9 +333,9 @@ const VendorProfile = () => {
                     </DivBoxColumnsFotosSC>
                   </DivBGImageSC>
                 </DivAboutYourselfSC>
-                {/* <DivButtonBottomSaveVendSC> */}
-                {/* <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC> */}
-                {/* </DivButtonBottomSaveVendSC> */}
+                <DivButtonBottomSaveVendSC>
+                  <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
+                </DivButtonBottomSaveVendSC>
               </Form>
             )}
           </Formik>

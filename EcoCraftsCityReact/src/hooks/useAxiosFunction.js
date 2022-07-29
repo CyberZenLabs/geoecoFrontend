@@ -38,6 +38,7 @@ const useAxiosFunction = (configObj) => {
           ...requestConfig,
           signal: ctrl.signal,
         });
+   
         setResponse(res.data);
       }
     } catch (error) {

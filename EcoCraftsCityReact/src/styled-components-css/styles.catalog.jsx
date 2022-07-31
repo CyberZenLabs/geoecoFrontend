@@ -16,7 +16,7 @@ export const OverlayDivSc = styled.div`
 export const CatalogNavSc = styled.div`
   background: white;
 
-  width: 320px;
+  width: 315px;
   height: 100vh;
   display: flex;
   justify-content: center;

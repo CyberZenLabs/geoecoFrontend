@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
-import useAxiosFunction from "../hooks/useAxiosFunction";
-import Carousel from "../components/Carousel";
-import ProductCard from "../components/ProductCard";
-import StarRating from "../components/StarRating";
-import {
-  ProductGrid,
-  HomeContainer,
-} from "../styled-components-css/styles.product-card";
-import { SliderData } from "../utils/sliderData";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import Carousel from '../components/Carousel';
+import ProductCard from '../components/ProductCard';
+import StarRating from '../components/StarRating';
+import { ProductGrid, HomeContainer } from '../styled-components-css/styles.product-card';
+import { SliderData } from '../utils/sliderData';
+import axios from 'axios';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +21,7 @@ const Home = () => {
     // setProducts([response]);
 
     axios
-      .get("https://radiant-river-29802.herokuapp.com/api/v1/products")
+      .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {
         setProducts(res.data.data.data);
       })
@@ -38,11 +35,11 @@ const Home = () => {
       <HomeContainer>
         <Carousel slides={SliderData} />
 
-
         {products.map((product) => {
-          return <ProductCard product={product} />;
+          return [...Array(16)].map((asd) => {
+            return <ProductCard product={product} />;
+          });
         })}
-
       </HomeContainer>
     </>
   );

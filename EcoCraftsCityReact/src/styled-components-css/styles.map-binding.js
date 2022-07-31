@@ -1,163 +1,169 @@
-import styled from "styled-components/macro"
-import image from "../img/white-card1.svg"
-import image2 from "../img/white-card2.svg"
-import image3 from "../img/cards-logo.svg"
-import image4 from "../img/gray-rectangle.svg"
-
+import imageMB from '../img/Cards.svg';
+import image720MB from '../img/Cards720.svg';
+import image480MB from '../img/Cards480.svg';
+import styled from 'styled-components';
 
 export const DivMapBindingBoxSC = styled.div`
-display: grid;
-justify-items: center;
-`
+  display: grid;
+  justify-items: center;
+  width: 100%;
+`;
 
 export const DivContentMapBindingSC = styled.div`
-display: grid;
-grid-template-rows: 223px 304px 416px;
-max-width: 571px;
-width: 85vw;
-`
+  display: grid;
+  //grid-template-rows: 223px 304px 416px;
+  max-width: 600px;
+  width: 100%;
+`;
 
- export const DivBoxSC = styled.div`
- position: absolute;
- width: 330px;
- height: 56px;
- left: 16px;
- right: 201px;
- bottom: 130px;
- top: 118px;
- padding-top: 10px;
- padding-left: 8px;
- 
- `
- export const DivBoxMMSC = styled.div`
- position: absolute;
- width: 67px;
- height: 56px;
- left: 16px;
- right: 367px;
- bottom: 58pxpx;
- top: 190px;
- padding-left: 8px;
- padding-top: 16px;
- `
- 
- export const DivBoxGGSC = styled.div`
- position: absolute;
- width: 67px;
- height: 56px;
- left: 113px;
- right: 367px;
- bottom: 58px;
- top: 190px;
- padding-left: 8px;
- padding-top: 16px;
- `
- export const DivBoxCVVCVCSC = styled.div`
- position: absolute;
- width: 109px;
- height: 56px;
- top: 201px;
- left: 422;
- bottom: 47px;
- right: 16px;
- `
+export const DivContainerRowsMB = styled.div`
+  display: grid;
+  grid-template-rows: 139px 67px;
+  grid-row-gap: 16px;
+  @media (max-width: 686px) {
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 500px) {
+    grid-row-gap: 9px;
+  }
+`;
+export const DivRowBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  grid-template-columns: 16fr 9fr;
+`;
+
+export const DivBoxNumCardSC = styled.div`
+  max-width: 355px;
+  width: 100%;
+  height: 56px;
+`;
+
+export const DivColumnsBoxSC = styled.div`
+  display: grid;
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '14.4% 7.1% 14.4% 64.1%')};
+  @media (max-width: 686px) {
+    width: 100%;
+  }
+`;
+
+export const DivColumnMMBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: start;
+  justify-items: end;
+`;
+
+export const DivBoxMMSC = styled.div`
+  align-items: center;
+  max-width: 67px;
+  width: 100%;
+  height: 56px;
+`;
+
+export const DivColumnGGBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  align-items: start;
+`;
+
+export const DivBoxGGSC = styled.div`
+  max-width: 67px;
+  width: 100%;
+  height: 56px;
+`;
+
+export const DivColumnCVVCVCBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  grid-template-columns: auto 16px;
+  @media (max-width: 400px) {
+    grid-template-columns: auto;
+  }
+`;
+
+export const DivBoxCVVCVCSC = styled.div`
+  max-width: 109px;
+  width: 100%;
+  height: 56px;
+  display: grid;
+`;
+
+export const DivColumnSlashBoxSC = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 10fr 2fr;
+`;
+
 export const DivSlashSC = styled.div`
-position: absolute;
-top: 208px;
-right: 446px;
-bottom: 76px;
-left: 94px;
-width: 6px;
-height: 20px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-text-align: center;
-padding-left: 4px;
-padding-top: 16px;
-color: rgba(37, 37, 37, 0.7);
-`
+  max-width: 6px;
+  width: 100%;
+  height: 20px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(37, 37, 37, 0.7);
+`;
 
-export const DivTextSC = styled.div
- `font-weight: 700;
+export const DivTextSC = styled.div`
+  font-weight: 700;
   font-size: 32px;
   display: inline-block;
   width: fit-content;
   padding-top: 179px;
   padding-left: 24px;
-`
+  @media (max-width: 360px) {
+    font-size: 28px;
+  }
+`;
 
 export const DivImgBoxSC = styled.div`
-  //position: relative;
-  display: grid;
-  grid-template-columns: 386px 185px;
-
-  `
-  export const DivBoxWhiteCardSC = styled.div`
-   /* position: relative;  */
-  `
-  export const DivBoxGrayCardSC = styled.div`
-  
-  `
-  
-  export const ImgCardsLogoSC = styled.div`
-  background-image: url(${image3});
+  background-image: url(${imageMB});
   background-repeat: no-repeat;
-  background-position: center;
-  width: 172px;
-  height: 17px;
+  background-size: 100%;
+  height: 280px;
+  background-position-x: 0px;
   display: grid;
-  align-items: end;
-  padding-top: 84px;
-  margin-left: 32px;
-  `
-
-  export const ImgWhiteCardSC = styled.div`
-  background-image: url(${image});
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 271px;
-  width: 386px;
-  background-size: 400px;
-  `
-
-  export const ImgGrayCardSC = styled.div`
-  background-image: url(${image2});
-  height: 229px;
-  width: 362px;
-  display: grid;
-  z-index: -1;
-  `
-  export const ImgGrayRectangleSC = styled.div`
-  background-image: url(${image4});
-  height: 56px;
-  width: 185px;
-  display: grid;
-
-  `
-
-  export const DivButtonsSC = styled.div`
-  display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? "100%" : "259px 259px")};
-  grid-column-gap: 29px;
-  @media (max-width: 643px) {
-    display: block !important;
-    width: 100%;
-  } 
   padding-left: 24px;
-  padding-top: 44px;
-  padding-bottom: 316px;
-  `
+  @media (max-width: 730px) {
+    width: 100%;
+  }
+  @media (max-width: 520px) {
+    background-image: url(${image720MB});
+    background-position: right 30px;
+  }
 
-  export const DivBoxRowSC = styled.div`
-  display: grid;
-  grid-template-rows: 36px 21px;
-  position: relative;
- 
-  `
- export const DivBoxColumnsSC = styled.div`
- display: grid;
- grid-template-columns: 67px 6px 67px 109px;
- `
+  @media (max-width: 400px) {
+    background-image: url(${image480MB});
+    background-position: right 35px;
+  }
+`;
+
+export const DivButtonsSC = styled.div`
+  @media (max-width: 686px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    grid-column-gap: 20px;
+    padding-top: 20px;
+    grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
+  }
+  padding-left: 24px;
+  padding-bottom: 316px;
+  padding-top: 65px;
+`;

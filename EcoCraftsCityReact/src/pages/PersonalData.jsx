@@ -21,7 +21,20 @@ import{
 
 } from "../styled-components-css/styles.personal-data";
 
+import Modals from "../components/ModalRedact";
+import ModalrRedact from "../components/ModalRedact";
+import AppContext from "../context/AppContext";
+
+
 const PersonalData = () => {
+  const openCarts = () => {
+    setOpenRedact(true);
+   
+  };
+  
+  const { openRedact, setOpenRedact  } = React.useContext(AppContext);
+  
+  
     return (
       <DivBoxPersonalDataSC>
         <DivPersonalDataSC>
@@ -29,10 +42,12 @@ const PersonalData = () => {
         <DivBoxBlockSC>
 
         <DivBoxContentSC>
+        
         <DivEllipseSC/>
+       
         <ul>
           <li>
-          <SpanInitialsSC>Фамилия Имя Отчество         <img src="/default-images/pencil.svg" className="image_plus" /> </SpanInitialsSC>
+          <SpanInitialsSC>Фамилия Имя Отчество    <img src="/default-images/pencil.svg" className="image_plus"  to="#"  onClick={openCarts} />     </SpanInitialsSC>
           </li>
           <li>
           <SpanConfirmAccountSC>Подтвердить аккаунт</SpanConfirmAccountSC>
@@ -48,7 +63,7 @@ const PersonalData = () => {
                 <SpanTitleDataSC>E-mail</SpanTitleDataSC>
                 </li>
                 <li>
-                <SpanTitleDataSC><SpanTextDataSC>name@mail.ru         <img src="/default-images/pencil.svg" className="image_plus" />
+                <SpanTitleDataSC><SpanTextDataSC>name@mail.ru        
 </SpanTextDataSC></SpanTitleDataSC>
                 </li>
               </ul>
@@ -58,7 +73,7 @@ const PersonalData = () => {
                 <SpanTitleDataSC>Телефон</SpanTitleDataSC>
                 </li>
                 <li>
-                <SpanTitleDataSC><SpanTextDataSC>+7 (800) 555-35-335 <img src="/default-images/pencil.svg" className="image_plus" /></SpanTextDataSC></SpanTitleDataSC>
+                <SpanTitleDataSC><SpanTextDataSC>+7 (800) 555-35-335 </SpanTextDataSC></SpanTitleDataSC>
                 </li>
               </ul>
          
@@ -86,6 +101,7 @@ const PersonalData = () => {
         </DivAddCardSC>
         </DivBoxBlockSC>
         </DivPersonalDataSC>
+      <ModalrRedact/>
       </DivBoxPersonalDataSC>
       
     )

@@ -219,6 +219,7 @@ export const ButtonAddProductSC = styled.button`
 export const DivAddProductBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 `;
 export const DivButtonChangrInformSC = styled.div`
   display: flex;
@@ -245,12 +246,6 @@ export const DivBorderBox = styled.div`
     margin: 0px;
   }
 `;
-/* display: grid;
-width:100%;
-justify-self: center;
-max-width: 1420px;
-padding: 0 30px;
-`; */
 export const DivStoreInfoStuffProfileSC = styled.div`
   // border: 2px solid blue;
   display: grid;
@@ -289,7 +284,7 @@ export const DivInnerContentSC = styled.div`
 `;
 export const DivTwoSidesSC = styled.div`
   display: grid;
-  grid-template-columns: 240px auto;
+  grid-template-columns: 240px auto;     
   //border: 2px solid blue;
 `;
 export const DivInnerPhotoInputSC = styled.div`
@@ -392,12 +387,19 @@ export const ButtonBannerSC = styled.button`
   background: none;
   max-width: 670px;
 `;
-export const ButtonImgSC = styled.button`
+
+export const ButtonImgSC = styled.div`
+  position: relative;
   border-radius: 12px;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.33);
   height: 193px;
   background: none;
+  background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position: center;
   max-width: 193px;
   display: grid;
   justify-content: center;
@@ -452,7 +454,7 @@ export const DivBoxColumnAboutYourselfSC = styled.div`
   //border: 2px solid blue;
 `;
 
-export const InputAboutYourself = styled.input`
+export const InputAboutYourself = styled.textarea`
   max-width: 885px;
   width: 100%;
   height: 125px;
@@ -604,4 +606,72 @@ export const DivBoxFoto3SC = styled.div`
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;
+`;
+export const SaveButtonPanelVendSC = styled.button`
+  /* Кнопка (первичная) */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  /* Акцент */
+  text-decoration: none;
+  background: #85cb33;
+  border-radius: 20px;
+  width: auto;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  :hover {
+    background-color: #76b42e;
+  }
+`;
+export const DivButtonBottomSaveVendSC = styled.div`
+  // border: 2px solid blue;
+  display: grid;
+  grid-template-columns: 100%;
+  max-width: 1010px;
+`;
+
+export const OverlayTextSC = styled.p`
+  color: white;
+  visibility: hidden;
+`;
+
+export const OverlayImgSC = styled.div`
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  visiblity: hidden;
+  transition: 0.2s;
+  transition-timing-function: linear;
+  &:hover {
+    background: rgba(131, 131, 131, 0.697);
+
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    text-indent: 0%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  &:hover ${OverlayTextSC} {
+    visibility: visible !important;
+  }
 `;

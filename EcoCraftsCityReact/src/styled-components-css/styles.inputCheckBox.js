@@ -8,7 +8,7 @@ export const InputCustomSC = styled.button`
 	display: grid;
 	justify-items: center;
 	align-items: center;
-
+	border: 1px solid black;
 	${(p) =>
 		(p.isChecked
 			? `background: var(--green-color);

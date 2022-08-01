@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
-import {
-  StarRadio,
-  StarWrap,
-  StarSVG
-} from "../styled-components-css/styles.star-rating";
-const StarRating = ({ fixed, product, value, size}) => {
+import React, { useEffect, useState } from 'react';
+import { FaStar } from 'react-icons/fa';
+import { StarRadio, StarWrap, StarSVG } from '../styled-components-css/styles.star-rating';
+const StarRating = ({ fixed, product, value, size }) => {
   const [rating, setRating] = useState(fixed ? fixed : null);
   const [starSize, setStarSize] = useState(20);
-  
+
   useEffect(() => {
     if (size) {
-      setStarSize(size)
+      setStarSize(size);
     }
-  }, [size])
-
+  }, [size]);
 
   useEffect(() => {
     if (value) {
-      setRating(Math.round(value))
+      setRating(Math.round(value));
     }
-  }, [value])
+  }, [value]);
 
   return (
     <StarWrap product={product}>
@@ -35,11 +30,8 @@ const StarRating = ({ fixed, product, value, size}) => {
               value={ratingValue}
               onClick={fixed ? null : () => setRating(ratingValue)}
             />
-            
-            <FaStar
-              color={ratingValue <= rating ? "#85CB33" : "lightgrey"}
-              size={starSize}
-            />
+
+            <FaStar color={ratingValue <= rating ? '#85CB33' : 'lightgrey'} size={starSize} />
           </label>
         );
       })}

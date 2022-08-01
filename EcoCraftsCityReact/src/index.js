@@ -19,40 +19,18 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Registration from "./pages/Registration";
 import SignIn from "./pages/SignIn";
 import StoreFront from "./pages/StoreFront";
-=======
-import Home from './pages/Home';
-import PersonalData from './pages/PersonalData';
-import StoreNewProduct from './pages/StoreNewProduct';
-
 import VendorProfile from './pages/VendorProfile';
-
-import StoreNoAuth from './pages/StoreNoAuth';
-
-import NavBar from './components/NavBar';
-import Cart from './pages/Cart';
-import Mooo from './pages/AdminLogin';
-import ProductDetail from './pages/ProductDetail';
-import AdminDashboard from './pages/AdminDashboard';
-import Registration from './pages/Registration';
-import SignIn from './pages/SignIn';
-import StoreFront from './pages/StoreFront';
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
 
 
 //components
 // import AdminForm from "./pages/AdminForm";
-
-
 import { ToastContainer } from "react-toastify";
 import AppContext, { AppProvider } from "./context/AppContext";
 import { AuthProvider } from "./context/AuthContext";
-
-
 import Reviews from "./pages/Reviews";
 import Page_404 from "./pages/404";
-const root = ReactDOM.createRoot(document.getElementById("root"));
-=======
 import Footer from './components/Footer';
 import Catalog from './components/Catalog';
 import ReviewForm from './components/ReviewForm';
@@ -61,13 +39,9 @@ import EcoModal from './components/Modal';
 import PassModal from './components/ModalPassChange';
 import MailModal from './components/ModalAddressChange';
 import SellerSettings from './pages/SellerSettings';
-import { ToastContainer } from 'react-toastify';
-import AppContext, { AppProvider } from './context/AppContext';
-import { AuthProvider } from './context/AuthContext';
 import Terms from './privacy/Terms';
 import Privacy from './privacy/Privacy';
-import Reviews from './pages/Reviews';
-import Page_404 from './pages/404';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 

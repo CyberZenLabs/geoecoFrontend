@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import {IoIosArrowBack } from 'react-icons/io';
 
 export const BlockModal = styled(Modal)`
-z-index: 1;
+z-index: 1000;
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
@@ -12,7 +12,9 @@ z-index: 1;
   align-content: center;
 min-width: 360px;
 
+
   @media (max-width:1000px) {
+    z-index: 1000;
     align-content: unset;
     justify-content: unset;
   }
@@ -23,12 +25,13 @@ export const DivWrapModal = styled.div`
   height: 850px;
   background: #ffffff;
   border-radius: 30px;
-
+  z-index:1000;
   @media (max-width:1000px) {
     width: 100%;
     height: 100%;
     border-radius: 0px;
     align-content: flex-start;
+    z-index:1000;
   }
   //border: 1px solid red;
 `;

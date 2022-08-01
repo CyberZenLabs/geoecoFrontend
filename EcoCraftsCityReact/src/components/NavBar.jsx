@@ -29,6 +29,7 @@ import {
   SpanEndHeaderSC,
   LinkIconHideSC,
   LinkLogoSC,
+  DivBoxButtonCreateStoreSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -85,12 +86,19 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          <DivTextBoxSC>
+     
+        <DivTextBoxSC>
+            <SpanSecondSC to="#" >
+            
+            </SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
-              Продавайте на geoeco
+             Создать магазин
             </SpanFirstSC>
-            <SpanSecondSC to="/">Работа в geoeco</SpanSecondSC>
+            <SpanSecondSC to="#" >
+           
+           </SpanSecondSC>
           </DivTextBoxSC>
+         
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
               onClick={() => setShowCatalog(!showCatalog)}
@@ -124,20 +132,27 @@ const ResponsiveAppBar = () => {
         {loggedIn ? (
           <div class="container">
             <div class={profileActive ? "navigation active" : "navigation"}>
-              <div class="user-box">
-                <div class="image-box">
+              <div class={profileActive ? "user-box active" : "user-box"} >
+                <div class={profileActive ? "image-box active" : "image-box"} >
                   <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
                 </div>
-                <p class="username">Jenifer Lopez</p>
-              </div>
-              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-              <ul class="profileMenu">
-                <li>
-                  <a href="#">
-                    <CgProfile />
+                
+                <p class="username">Jenifer Lopez
+             
+                <a href="#">
+               
                     Мой Профиль
+                   
                   </a>
-                </li>
+                </p>
+               
+              
+              </div>
+              
+              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+              
+              <ul class="profileMenu">
+               
                 <li>
                   <a href="#">
                     <GoPackage />
@@ -150,14 +165,14 @@ const ResponsiveAppBar = () => {
                     Мой Карты
                   </a>
                 </li>
-                <hr></hr>
+              
                 <li>
                   <a href="#">Баланс и история операций</a>
                 </li>
                 <li>
                   <a href="#">Отзывы и вопросы</a>
                 </li>
-                <li>
+                <li class="logout">
                   <a onClick={handleLogout}>Выйти</a>
                 </li>
               </ul>
@@ -165,7 +180,16 @@ const ResponsiveAppBar = () => {
           </div>
         ) : null}
         <DivBoxIconHeaderSC>
+          
+       
+        
+       
           <DivBoxIconSC>
+                
+          
+          
+            
+            <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>Создать магазин</DivBoxButtonCreateStoreSC>
             <LinkIconSC to="/signin">
               <DivBoxIconEndSC>
                 <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />

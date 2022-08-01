@@ -5,12 +5,20 @@ import {
   StarWrap,
   StarSVG
 } from "../styled-components-css/styles.star-rating";
-const StarRating = ({ fixed, product, value}) => {
+const StarRating = ({ fixed, product, value, size}) => {
   const [rating, setRating] = useState(fixed ? fixed : null);
+  const [starSize, setStarSize] = useState(20);
   
   useEffect(() => {
+    if (size) {
+      setStarSize(size)
+    }
+  }, [size])
+
+
+  useEffect(() => {
     if (value) {
-      setRating(value)
+      setRating(Math.round(value))
     }
   }, [value])
 
@@ -30,7 +38,7 @@ const StarRating = ({ fixed, product, value}) => {
             
             <FaStar
               color={ratingValue <= rating ? "#85CB33" : "lightgrey"}
-              size={"20%"}
+              size={starSize}
             />
           </label>
         );

@@ -235,4 +235,8 @@ width:100%;
   max-width: 1420px;
 padding 0 30px;
 
+@media (max-width: 768px) {
+  display:none;
+
+  }
 `;

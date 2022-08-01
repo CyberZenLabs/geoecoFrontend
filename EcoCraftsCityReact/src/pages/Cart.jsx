@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import {
     DivBoxFirstRowSC,
     DivBoxMinWidthSC,
@@ -46,17 +46,16 @@ const Cart = () => {
         setWidthWindow(window.innerWidth)
     }, []);
 
-    function onClickAll(status) {
-        const tempArray = arrayProd.map((item, i) => {
-            
-            return {
-                ...item, 
-                isSelected: !status
-            }
-        })
+  function onClickAll(status) {
+    const tempArray = arrayProd.map((item, i) => {
+      return {
+        ...item,
+        isSelected: !status,
+      };
+    });
 
-        setArrayProd(tempArray)
-	}
+    setArrayProd(tempArray);
+  }
 
 
     const onResizableWindow = (e) => {
@@ -158,10 +157,9 @@ const Cart = () => {
             }
 
         </DivContentCartSC>
+
     </DivCartBoxSC>
-  )
-}
+  );
+};
 
-export default Cart
-
-
+export default Cart;

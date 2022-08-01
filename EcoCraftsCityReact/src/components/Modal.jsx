@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/AppContext";
+
 import {
   BlockModal,
   ButtonContinueModal,
@@ -15,7 +16,7 @@ import {
 const EcoModal = () => {
   const { open, setOpen, modalData } = useContext(AppContext);
 
-  console.log(modalData);
+
   return (
     <>
       <BlockModal isOpen={open} contentLabel="Modal" >
@@ -24,7 +25,9 @@ const EcoModal = () => {
             <IoIosArrowBackSC />
           </ButtonPrevModal>
           <CenterItemsSC>
-            <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
+           
+           
+           <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
             {modalData.inputs.map(({ email }) => (
               <DivBoxRowModalSC>
                 <EmailFieldSC

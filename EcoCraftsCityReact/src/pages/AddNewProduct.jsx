@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import {
   DivBoxItemsSC,
   MenuProductST,
@@ -36,13 +37,88 @@ import {
   DivContainerButtonSC,
   DivImgFotoSC,
   DivTextDovnloadFotoSC,
-  DivBoxRowsRectamgleSC,
   DivBoxRowsPriceSC,
   DivBoxTextPriceAndNumberSC,
   DivTextPriceAndNumberSC,
+  DivBoxColumnsPriceSC,
+  DivTextPriceSC,
+  DivBoxTextPriceSC,
+  DivBoxInputPrice,
+  InputPrice,
+  DivImgRubSC,
+  DivBoxColumnsNumberSC,
+  DivBoxTextNumberSC,
+  DivTextNumberSC,
+  DivBoxColumnsDiscountSC,
+  DivTextDiscountSC,
+  DivBoxTextDiscountSC,
+  DivBoxInputDiscount,
+  InputDiscount,
+  DivImgRub2SC,
+  DivBoxImgGrayRectangleDescriptionSC,
+  DivImgGrayRectangleDescriptionSC,
+  DivBoxRowsDesctriptionSC,
+  DivContainerDescriptionSC,
+  DivBoxTextDescriptionSC,
+  DivTextDescriptionSC,
+  DivBoxInputDescriptonSC,
+  InputDescription,
+  DivContainerCharacteristicsSC,
+  DivBoxTextCharacteristicsSC,
+  DivTextCharacteristicsSC,
+  DivBoxInputCharacteristicsSC,
+  InputCharacteristics,
+  DivContainerKeywordsSC,
+  DivBoxTextKeywordsSC,
+  DivTextKeywordsSC,
+  DivBoxInputKeywordsSC,
+  InputKeywords,
+  DivBoxImgGrayRectangleDeliverySC,
+  DivImgGrayRectangleDeliverySC,
+  DivContainerDeliverySC,
+  DivBoxTextDeliverySC,
+  DivTextDeliverySC,
+  DivBoxItemDeliverySC,
+  DivItemDeliverySC,
+  DivBoxImgDotSC,
+  DivImgDotSC,
+  DivBoxTextRussianPostSC,
+  DivTextRussianPostSC,
+  DivContainerColumnsPostSC,
+  DivTextFromThePriceSC,
+  DivTextSDEKSC,
+  DivBoxTextSDEKSC,
+  DivContainerColumnsSDEKSC,
+  DivBoxImgDot1SC,
+  DivImgDot1SC,
+  DivTextFromThePrice1SC,
+  DivBoxTextFromThePrice1SC,
+  DivBoxColumnButtonsPMSC,
+  DivBoxButtonMinusSC,
+  ButtonMinusSC,
+  DivBoxNum1SC,
+  DivBoxButtonPlusSC,
+  ButtonPlusSC,
+  DivButtonsSC,
+  DivBoxButtonsSC,
+  DivBoxTextFromThePriceSC,
+  DivBoxTextRulesSC,
+  DivTextRulesSC,
 } from '../styled-components-css/styles.AddNewProduct';
+import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 
 const AddNewProduct = () => {
+  const [counter, setCounter] = useState(0);
+
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+
+  const decrement = () => {
+    setCounter(counter - 1);
+  };
+
   return (
     <DivBoxAddNewProductSC>
       <DivBoxItemsSC>
@@ -55,7 +131,6 @@ const AddNewProduct = () => {
       <DivBoxTextNewProductSC>
         <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
       </DivBoxTextNewProductSC>
-      {/* <DivBoxRowsRectamgleSC> */}
       <DivBoxColumnsRectangleSC>
         <DivBoxBigGrayRectangleSC>
           <DivBoxRowsNameProductSC>
@@ -101,7 +176,11 @@ const AddNewProduct = () => {
             </DivBoxColumnProductNameSC>
           </DivBoxRowsNameProductSC>
         </DivBoxBigGrayRectangleSC>
-        <DivBoxGrayRectangleRulesSC></DivBoxGrayRectangleRulesSC>
+        <DivBoxGrayRectangleRulesSC>
+          <DivBoxTextRulesSC>
+            <DivTextRulesSC>Правила</DivTextRulesSC>
+          </DivBoxTextRulesSC>
+        </DivBoxGrayRectangleRulesSC>
       </DivBoxColumnsRectangleSC>
       <DivBoxImgGrayRectanglePriceSC>
         <DivImgGrayRectanglePriceSC>
@@ -109,10 +188,123 @@ const AddNewProduct = () => {
             <DivBoxTextPriceAndNumberSC>
               <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
             </DivBoxTextPriceAndNumberSC>
+            <DivBoxColumnsPriceSC>
+              <DivBoxTextPriceSC>
+                <DivTextPriceSC>Цена</DivTextPriceSC>
+              </DivBoxTextPriceSC>
+              <DivBoxInputPrice>
+                <InputPrice type="text" />
+              </DivBoxInputPrice>
+              <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
+            </DivBoxColumnsPriceSC>
+            <DivBoxColumnsNumberSC>
+              <DivBoxTextNumberSC>
+                <DivTextNumberSC>Колличество</DivTextNumberSC>
+              </DivBoxTextNumberSC>
+              <DivBoxColumnButtonsPMSC>
+                <DivBoxButtonMinusSC>
+                  <ButtonMinusSC onClick={decrement}>-</ButtonMinusSC>
+                </DivBoxButtonMinusSC>
+                <DivBoxNum1SC>{counter}</DivBoxNum1SC>
+                <DivBoxButtonPlusSC>
+                  <ButtonPlusSC onClick={increment}>+</ButtonPlusSC>
+                </DivBoxButtonPlusSC>
+              </DivBoxColumnButtonsPMSC>
+            </DivBoxColumnsNumberSC>
+            <DivBoxColumnsDiscountSC>
+              <DivBoxTextDiscountSC>
+                <DivTextDiscountSC>Скидка</DivTextDiscountSC>
+              </DivBoxTextDiscountSC>
+              <DivBoxInputDiscount>
+                <InputDiscount type="text" />
+              </DivBoxInputDiscount>
+              <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
+            </DivBoxColumnsDiscountSC>
           </DivBoxRowsPriceSC>
         </DivImgGrayRectanglePriceSC>
       </DivBoxImgGrayRectanglePriceSC>
-      {/* </DivBoxRowsRectamgleSC> */}
+      <DivBoxImgGrayRectangleDescriptionSC>
+        <DivImgGrayRectangleDescriptionSC>
+          <DivBoxRowsDesctriptionSC>
+            <DivContainerDescriptionSC>
+              <DivBoxTextDescriptionSC>
+                <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+              </DivBoxTextDescriptionSC>
+              <DivBoxInputDescriptonSC>
+                <InputDescription
+                  type="text"
+                  placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
+                />
+              </DivBoxInputDescriptonSC>
+            </DivContainerDescriptionSC>
+
+            <DivContainerCharacteristicsSC>
+              <DivBoxTextCharacteristicsSC>
+                <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
+              </DivBoxTextCharacteristicsSC>
+              <DivBoxInputCharacteristicsSC>
+                <InputCharacteristics type="text" />
+              </DivBoxInputCharacteristicsSC>
+            </DivContainerCharacteristicsSC>
+
+            <DivContainerKeywordsSC>
+              <DivBoxTextKeywordsSC>
+                <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
+              </DivBoxTextKeywordsSC>
+              <DivBoxInputKeywordsSC>
+                <InputKeywords type="text" placeholder="Укажите от 2 до 20 ключевых слов" />
+              </DivBoxInputKeywordsSC>
+            </DivContainerKeywordsSC>
+          </DivBoxRowsDesctriptionSC>
+        </DivImgGrayRectangleDescriptionSC>
+      </DivBoxImgGrayRectangleDescriptionSC>
+      <DivBoxImgGrayRectangleDeliverySC>
+        <DivImgGrayRectangleDeliverySC>
+          <DivContainerDeliverySC>
+            <DivBoxTextDeliverySC>
+              <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
+            </DivBoxTextDeliverySC>
+            <DivBoxItemDeliverySC>
+              <DivItemDeliverySC>
+                <DivContainerColumnsPostSC>
+                  <DivBoxImgDotSC>
+                    <DivImgDotSC></DivImgDotSC>
+                  </DivBoxImgDotSC>
+                  <DivBoxTextRussianPostSC>
+                    <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
+                  </DivBoxTextRussianPostSC>
+                  <DivBoxTextFromThePriceSC>
+                    <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
+                  </DivBoxTextFromThePriceSC>
+                </DivContainerColumnsPostSC>
+
+                <DivContainerColumnsSDEKSC>
+                  <DivBoxImgDot1SC>
+                    <DivImgDot1SC></DivImgDot1SC>
+                  </DivBoxImgDot1SC>
+                  <DivBoxTextSDEKSC>
+                    <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
+                  </DivBoxTextSDEKSC>
+                  <DivBoxTextFromThePrice1SC>
+                    <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
+                  </DivBoxTextFromThePrice1SC>
+                </DivContainerColumnsSDEKSC>
+              </DivItemDeliverySC>
+            </DivBoxItemDeliverySC>
+          </DivContainerDeliverySC>
+        </DivImgGrayRectangleDeliverySC>
+      </DivBoxImgGrayRectangleDeliverySC>
+      <DivBoxButtonsSC>
+        <DivButtonsSC>
+          <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+            В черновик
+          </ButtonCustomWhiteSC>
+
+          <ButtonCustomSC width={'100%'} padding={'18px 32px'} type="submit">
+            Разместить
+          </ButtonCustomSC>
+        </DivButtonsSC>
+      </DivBoxButtonsSC>
     </DivBoxAddNewProductSC>
   );
 };

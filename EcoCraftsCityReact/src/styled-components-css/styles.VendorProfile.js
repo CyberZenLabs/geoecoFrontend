@@ -246,7 +246,6 @@ export const DivBorderBox = styled.div`
     margin: 0px;
   }
 `;
-
 export const DivStoreInfoStuffProfileSC = styled.div`
   // border: 2px solid blue;
   display: grid;
@@ -285,8 +284,7 @@ export const DivInnerContentSC = styled.div`
 `;
 export const DivTwoSidesSC = styled.div`
   display: grid;
-  grid-template-columns: 240px auto;
-
+  grid-template-columns: 240px auto;     
   //border: 2px solid blue;
 `;
 export const DivInnerPhotoInputSC = styled.div`
@@ -389,6 +387,7 @@ export const ButtonBannerSC = styled.button`
   background: none;
   max-width: 670px;
 `;
+
 export const ButtonImgSC = styled.div`
   position: relative;
   border-radius: 12px;

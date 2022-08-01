@@ -155,6 +155,7 @@ export const DivImgBoxSC = styled.div`
 `;
 
 export const DivButtonsSC = styled.div`
+  display: block;
   @media (max-width: 686px) {
     width: 100%;
   }

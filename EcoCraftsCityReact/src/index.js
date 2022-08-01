@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './page-css/sidenav.css';
+import './sass-files/home-loader.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -74,8 +75,8 @@ root.render(
               <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="store/:id" element={<StoreFront />} />
               <Route path="reviews" element={<Reviews />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="sellersettings" element={<SellerSettings />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="sellersettings" element={<SellerSettings />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 
 const useAxiosFunction = (configObj) => {
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [controller, setController] = useState();
@@ -32,7 +32,6 @@ const useAxiosFunction = (configObj) => {
           requestFormDataConfig,
           signal: ctrl.signal,
         });
-
         setResponse(res.data);
       } else {
         const res = await axiosInstance[method.toLowerCase()](url, {

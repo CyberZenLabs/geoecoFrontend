@@ -1,7 +1,7 @@
-import React, { createContext, useEffect, useState } from "react";
-import axios from "axios";
-import useAxiosFunction from "../hooks/useAxiosFunction";
-import { toast } from "react-toastify";
+import React, { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import { toast } from 'react-toastify';
 const AuthContext = createContext({});
 
 const AuthProvider = (props) => {
@@ -14,9 +14,11 @@ const AuthProvider = (props) => {
   }, []);
   const login = () => {
     setLoggedIn(true);
+    debugger;
   };
   const logout = () => {
     setLoggedIn(false);
+    debugger;
   };
   const authContextValue = {
     login,

@@ -24,7 +24,7 @@ export const StarAlign = styled.div`
   width: 50%;
 `;
 export const DivGridPriceCartIcon = styled.div`
-  margin-top: 35%;
+  margin-top: 11%;
   display: grid;
   grid-template-columns: 2fr 1fr;
 
@@ -78,8 +78,8 @@ export const ProductCardContainer = styled.div`
 `;
 
 export const ProductCardImage = styled.img`
-  width: 100%;
-  height: 150%;
+  width: 255px;
+  height: 255px;
 `;
 
 export const ProductCardName = styled.h4`

@@ -492,8 +492,8 @@ export const DivItemsInfoSC = styled.div`
     "price price price price"
     "edit edit edit option";
   height: 200px;
-  max-width: 780px;
-  // border: 2px solid black;
+  max-width: 793px;
+   /* border: 2px solid black; */
   margin-left: 20px;
 `;
 export const DivItemsInfo2PageSC = styled.div`
@@ -605,7 +605,7 @@ border: none;
   color: #85cb33;
   width: 100%;
   cursor: pointer;
-  // border: 2px solid green;
+   border: 2px solid green;
   text-align: center;
  height: 10px;
 margin-top: 30px;
@@ -720,6 +720,8 @@ export const BottomPanelTextSC = styled(Link)`
   }
 `;
 export const DivBottomAddItemNumSC = styled.div`
+display: grid;
+grid-template-columns: auto auto auto;
 margin-top: 20px;
  font-family: 'Montserrat';
 font-style: normal;
@@ -733,7 +735,7 @@ color: #000000;
 //border: 2px solid green;
   @media (max-width: 1470px) {
     font-size: 25px;
-    grid-template-columns: 25px auto;
+    
   }
   @media (max-width: 990px) {
     display: none;
@@ -741,19 +743,21 @@ color: #000000;
 `;
 export const DivBottomAddItemNumItemSC = styled.div`
 margin-top: -20px;
+display: grid;
  font-family: 'Montserrat';
 font-style: normal;
 font-weight: 200;
 font-size: 35px;
 line-height: 20px;
 text-align: center;
+grid-template-columns: auto auto auto;
 height: 20px;
 width: 160px;
 color: #000000;
 //border: 2px solid green;
   @media (max-width: 1470px) {
     font-size: 35px;
-    grid-template-columns: 25px auto;
+    
   }
 
 `;
@@ -785,14 +789,14 @@ export const PlusMinusButtonsCS = styled.button`
  font-family: 'Montserrat';
 font-style: normal;
 font-weight: 200;
-font-size: 38px;
+font-size: 35px;
 margin-left: 10px;
 margin-right: 10px;
 line-height: 10px;
 text-align: center;
 margin-top: 5px;
 color: #000000;
-//border: 2px solid green;
+//border: 2px solid red;
 width: 30px;
 height: 30px;
 border-radius: 20px;
@@ -806,6 +810,16 @@ border: 1px solid rgba(0, 0, 0, 0.33);
   :hover{
     background: rgba(117, 116, 116, 0.26);
   }
+`;
+export const DivCountSC =styled.div`
+//border: 2px solid red;
+
+margin-top: 6px;
+`;
+export const DivCount1SC =styled.div`
+//border: 2px solid red;
+
+margin-top: 20px;
 `;
 export const BottomPanelSelectSC = styled.button`
   display: flex;
@@ -952,7 +966,7 @@ margin-left: 10px;
 
 `;
 export const LiDropdownHideCS= styled.li`
- //border: 2px solid black;
+ border: 2px solid black;
 justify-self: flex-start;
 margin-left: 10px;
 @media (min-width: 990px) {

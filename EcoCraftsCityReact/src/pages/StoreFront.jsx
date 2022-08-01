@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
-
-import {
-  DivBackBoxSC,
-  DivHistorySC,
-  NavLinkSC,
-} from "../styled-components-css/styles.product-detail";
+import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
+import '../page-css/dropdown.css';
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import {
   DivItemsSC,
   DivStoreInfoDataSC,
@@ -85,36 +81,35 @@ import {
   PlusMinusButtonsItemCS,
   BottomPanelSelectItemSC,
   LiDropdownHideCS,
-} from "../styled-components-css/styles.store";
-import { IoIosArrowDown } from "react-icons/io";
-import { FaRubleSign } from "react-icons/fa";
-import StarRating from "../components/StarRating";
+  DivCountSC,
+  DivCount1SC,
+} from '../styled-components-css/styles.store';
+import { IoIosArrowDown } from 'react-icons/io';
+import { FaRubleSign } from 'react-icons/fa';
+import StarRating from '../components/StarRating';
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
-    path: "/custom-props",
+    path: '/custom-props',
     breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: "Hi" },
+    props: { someProp: 'Hi' },
   },
 ];
 const StoreFront = ({ product }) => {
   const [checked, setChecked] = useState(false);
   const check = () => {
     setChecked(!checked);
+  }; 
+  const [active2, setActive2] = useState(false);
+  const [active, setActive] = useState(false);
+  const HandleSelectOpen = () => {
+    setActive(!active);
+    setActive2(false);
   };
-  const [state, setState] = useState(false);
-  const showDropdown = () => {
-    setState(true);
-  };
-  const hideDropdown = () => {
-    setState(false);
-  };
-  const [state1, setState1] = useState(false);
-  const hideDropdown1 = () => {
-    setState1(false);
-  };
-  const showDropdown1 = () => {
-    setState1(true);
+ 
+  const HandleSelectOpen2 = () => {
+    setActive2(!active2);
+    setActive(false);
   };
   const listContent = [
     {
@@ -164,7 +159,7 @@ const StoreFront = ({ product }) => {
               onClick={!checked}
             />
 
-            <DivItemsImageSC src={"/default-images/plant.jpg"} />
+            <DivItemsImageSC src={'/default-images/plant.jpg'} />
             <DivSalePinSC>37%</DivSalePinSC>
           </div>
           <DivItemsInfoSC>
@@ -174,32 +169,27 @@ const StoreFront = ({ product }) => {
             <ItemPriceSC>26 001 ₽</ItemPriceSC>
 
             <ToEditSC to="/">Редактировать</ToEditSC>
-            <ItemOptionsDropDownSC
-              onMouseLeave={hideDropdown1}
-              onMouseEnter={showDropdown1}
-            >
+
+            <div className={active ? 'dots active' : 'dots'} onClick={HandleSelectOpen} >
               ...
-              {state1 ? (
-                <UlDropdown1CS onMouseEnter={showDropdown1}>
-                   <LiDropdownHideCS>
-                    <LiDropdownLinkCS to="/">Редактировать</LiDropdownLinkCS>
-                  </LiDropdownHideCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Удалить</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">В черновики</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Скопировать</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Посмотреть</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                </UlDropdown1CS>
-              ) : null}
-            </ItemOptionsDropDownSC>
-            
+              {/* active ?( */}
+             <div className="containerdropdown cut">
+                <div className="drop cut2" />
+                <div className="listdropdown">
+                  <ul>
+                   
+                    <li>Удалить</li>
+                    <li>В черновики</li>
+                    <li>Скопировать</li>
+                    <li>Посмотреть</li>
+                     <li className="hide">Редактировать</li>
+                  </ul>
+                </div>
+              </div>
+         {/* ):null} */}
+
+            </div>
+           
           </DivItemsInfoSC>
         </DivItemsSC>
       ),
@@ -207,13 +197,7 @@ const StoreFront = ({ product }) => {
         <>
           <BottomPanelSC>
             <BottomPanelChoiceSC>
-              <InputCheckbox
-                type="checkbox"
-                id="todo"
-                name="todo"
-                value="todo"
-                checked={checked}
-              />
+              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={checked} />
 
               <Labelfor for="todo" onClick={check}>
                 Выбрать все
@@ -226,36 +210,30 @@ const StoreFront = ({ product }) => {
               </FaMarginCS>
               Изменить цену
             </BottomPanelTextSC>
-            
+
             <BottomPanelTextDraftSC to="/">В черновики</BottomPanelTextDraftSC>
-            <BottomPanelMoreSC
-              onMouseLeave={hideDropdown}
-              onMouseEnter={showDropdown}
-            >
+
+            
+              <div className={active2 ? 'dots2 active' : 'dots2'} onClick={HandleSelectOpen2}>
               Еще
-              {state ? (
-                <UlDropdownCS onMouseEnter={showDropdown}>
-                   <LiDropdownHideCS>
-                    <LiDropdownLinkCS to="/">В черновики</LiDropdownLinkCS>
-                  </LiDropdownHideCS>
-                   <LiDropdownHideCS>
-                    <LiDropdownLinkCS to="/">Изменить цену</LiDropdownLinkCS>
-                  </LiDropdownHideCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Сделать скидку</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Изменить статус</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Разместить</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                  <LiDropdownCS>
-                    <LiDropdownLinkCS to="/">Удалить</LiDropdownLinkCS>
-                  </LiDropdownCS>
-                </UlDropdownCS>
-              ) : null}
-            </BottomPanelMoreSC>
+              {/* {active2 ? ( */}
+              <div className="containerdropdown2 cut">
+                <div className="drop cut2" />
+                <div className="listdropdown">
+                  <ul>
+                   
+                    <li>Сделать скидку</li>
+                    <li>Изменить статус</li>
+                    <li>Разместить</li>
+                    <li>Удалить</li>
+                     <li className="hide">В черновики</li>
+                     <li className="hide">Изменить цену</li>
+                  </ul>
+                </div>
+              </div>
+              {/* ):null} */}
+            </div>
+           
           </BottomPanelSC>
         </>
       ),
@@ -288,15 +266,13 @@ const StoreFront = ({ product }) => {
               onChange={check}
               onClick={!checked}
             />
-            <DivItemsImageSC src={"/default-images/plant.jpg"} />
+            <DivItemsImageSC src={'/default-images/plant.jpg'} />
           </div>
           <DivItemsInfo2PageSC>
             <ItemTitleSC>Растения: Крестовник роули</ItemTitleSC>
             <ItemTimeSC>
-             
               <DivBottomAddItemNumItemSC>
-                <PlusMinusButtonsItemCS>-</PlusMinusButtonsItemCS>1
-                <PlusMinusButtonsItemCS>+</PlusMinusButtonsItemCS>
+                <PlusMinusButtonsItemCS>&#8722;</PlusMinusButtonsItemCS><DivCount1SC>1</DivCount1SC><PlusMinusButtonsItemCS>+</PlusMinusButtonsItemCS>
               </DivBottomAddItemNumItemSC>
             </ItemTimeSC>
             <ItemPriceSC>
@@ -314,25 +290,17 @@ const StoreFront = ({ product }) => {
         <>
           <BottomPanel2PageSC>
             <BottomPanelChoice2SC>
-              <InputCheckbox
-                type="checkbox"
-                id="todo"
-                name="todo"
-                value="todo"
-                checked={checked}
-              />
-
+              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={checked} />
               <Labelfor for="todo" onClick={check}>
                 Выбрать все
               </Labelfor>
             </BottomPanelChoice2SC>
 
             <DivBottomAddItemNumSC>
-              <PlusMinusButtonsCS>-</PlusMinusButtonsCS>1
-              <PlusMinusButtonsCS>+</PlusMinusButtonsCS>
+              <PlusMinusButtonsCS>&#8722;</PlusMinusButtonsCS><DivCountSC>1</DivCountSC><PlusMinusButtonsCS>+</PlusMinusButtonsCS>
             </DivBottomAddItemNumSC>
             <BottomPanelSelectSC>
-              Не более 5 дней{" "}
+              Не более 5 дней
               <IoMarginCS>
                 <IoIosArrowDown />
               </IoMarginCS>
@@ -358,8 +326,8 @@ const StoreFront = ({ product }) => {
       <DivWrapLinkSC>
         <DivHistorySC>
           <DivBackBoxSC>
-            <FaArrowLeft color={"#85CB33"} size={15} />
-            <NavLinkSC iscolor={true} to={"/"}>
+            <FaArrowLeft color={'#85CB33'} size={15} />
+            <NavLinkSC iscolor={true} to={'/'}>
               Назад
             </NavLinkSC>
           </DivBackBoxSC>
@@ -375,9 +343,7 @@ const StoreFront = ({ product }) => {
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
           <DivStoreInfoSC>
-            <DivStoreInfoImageSC
-              src={"/default-images/plant.jpg"}
-            ></DivStoreInfoImageSC>
+            <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
             <DivStoreInfoDataSC>
               <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
               <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
@@ -389,13 +355,9 @@ const StoreFront = ({ product }) => {
             <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
             <br />
             <HrLinkSC />
-            <DivStoreOptionsLinkStoreSC to="/store/1">
-              Магазин 50
-            </DivStoreOptionsLinkStoreSC>
+            <DivStoreOptionsLinkStoreSC to="/store/1">Магазин 50</DivStoreOptionsLinkStoreSC>
             <br />
-            <DivStoreOptionsLinkSC to="/">
-              Оплата и доставка
-            </DivStoreOptionsLinkSC>
+            <DivStoreOptionsLinkSC to="/">Оплата и доставка</DivStoreOptionsLinkSC>
             <br />
             <HrLinkSC />
             <DivStoreOptionsLinkSC to="/">Покупки</DivStoreOptionsLinkSC>
@@ -419,18 +381,14 @@ const StoreFront = ({ product }) => {
             <H1BoldTextSC>Магазин</H1BoldTextSC>
             <UilSearchHeadSC size="20" color="#85cb33" />
             <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
-            <StoreViewLinkSC to="/">
-              Как посетители видят мой магазин
-            </StoreViewLinkSC>
+            <StoreViewLinkSC to="/">Как посетители видят мой магазин</StoreViewLinkSC>
             <StoreViewLinkDotsSC to="/">...</StoreViewLinkDotsSC>
 
             <ProductCardButtonSC to="/">Добавить товар</ProductCardButtonSC>
           </DivStoreInfoStuffSC>
           <StoreItemsNumBotSC>Товары: 1/3</StoreItemsNumBotSC>
           <DivStoreInfoStuffButtonSC to="/">
-            <ProductCardButtonAfterSC to="/">
-              Добавить товар
-            </ProductCardButtonAfterSC>
+            <ProductCardButtonAfterSC to="/">Добавить товар</ProductCardButtonAfterSC>
           </DivStoreInfoStuffButtonSC>
           <DivTwoButtonsSC>
             <LeftButtonCS>
@@ -448,21 +406,15 @@ const StoreFront = ({ product }) => {
           </DivTwoButtonsSC>
           <DivItemsOptionsSC>
             <DivOptionsPanelSC>
-              <ProductsNumSC
-                isActive={indexSelectedButton === 0}
-                onClick={onClickTab(0)}
-              >
+              <ProductsNumSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
                 Товары(1)
               </ProductsNumSC>
-              <StoreSalesAndAccountLinkSC
-                isActive={indexSelectedButton === 1}
-                onClick={onClickTab(1)}
-              >
+              <StoreSalesAndAccountLinkSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
                 Учет товаров
               </StoreSalesAndAccountLinkSC>
 
               <StoreSalesAndAccountLinkSearchSC>
-                <InputSC type="text" id={"search"} />
+                <InputSC type="text" id={'search'} />
                 <DivIconBoxInput>
                   <UilSearchSC size="25" color="#85cb33" />
                 </DivIconBoxInput>

@@ -9,7 +9,7 @@ export const DivCarouselMainSC = styled.div`
 
 export const DivCarouselWindowSC = styled.div`
   width: 100%;
-  height: 150px;
+  height: 170px;
 
   display: flex;
   justify-content: left;

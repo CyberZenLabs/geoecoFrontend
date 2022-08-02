@@ -12,12 +12,12 @@ export function AppProvider({ children }) {
 
   
   const [openRedact, setOpenRedact] = useState(false);
-  
-  
-
-
+  const [openEmail, setOpenEmail] = useState(false);
+  const [Starttimer, setstarttimer] = useState(true);
   const [modalData, setModalData] = useState({
-    inputs: [{ email: "Электронная почта" }],
+    inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }],
+   
+
     button: true,
   });
   return (
@@ -35,6 +35,10 @@ export function AppProvider({ children }) {
         setModalData,
         openRedact,
          setOpenRedact,
+         openEmail,
+         setOpenEmail,
+         Starttimer,
+         setstarttimer,
        
       }}
     >

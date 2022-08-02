@@ -94,6 +94,7 @@ export const DivBoxIconSC = styled.div`
   display: grid;
   grid-template-columns: repeat(3,1fr);
   width: 278px;
+  align-items: center;
   @media (max-width: 1000px) {
     justify-items: center;
     

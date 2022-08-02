@@ -40,6 +40,7 @@ import useAxiosFunction from "../hooks/useAxiosFunction";
 import { useCookies } from "react-cookie";
 import Modal from "./Modal";
 import EcoModal from "./Modal";
+import ModalSendEmail from "./ModalSendEmail";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -73,7 +74,9 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpen(true);
     setModalData({
-      inputs: [{ email: "Электронная почта" }],
+      
+      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
+      
       button: true,
     });
   };

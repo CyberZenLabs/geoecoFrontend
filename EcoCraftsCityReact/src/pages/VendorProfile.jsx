@@ -81,6 +81,8 @@ import {
 } from '../styled-components-css/styles.VendorProfile';
 import VenderCarousel from '../components/VenderCarousel';
 
+
+
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -105,10 +107,20 @@ const VendorProfile = () => {
       
            
             <DivAddProductBox>
+            
             <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
            <VendorInfoMenu></VendorInfoMenu>
              <DivInfoVendorBoxSC>
+             
            <VenderCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
            <ShowItemCarousel></ShowItemCarousel>
            <ShowItemCarousel></ShowItemCarousel>
            <ShowItemCarousel></ShowItemCarousel>

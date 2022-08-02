@@ -17,7 +17,7 @@ const VenderCarousel = ({ children }) => {
         return cloneElement(child, {
           style: {
             height: "100%",
-            minWidth: "1322px",
+            minWidth: "600px",
             maxWidth: "1322px",
           },
         });
@@ -40,7 +40,7 @@ const VenderCarousel = ({ children }) => {
             ) : (
               <div></div>
             )}
-             {carouselNumber != items.length-3 ? (
+             {carouselNumber != items.length-2 ? (
                <BsArrowRightCircle
                onClick={() => setCarouselNumber(carouselNumber + 1)}
              />

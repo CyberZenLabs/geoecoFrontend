@@ -29,6 +29,7 @@ import StarRating from "../components/StarRating";
 import ReviewShow from "../components/components-product-detail/ReviewShow";
 import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
 
+
 const listContent = [
   {
     text:
@@ -65,8 +66,7 @@ const ProductDetail = () => {
         </DivContentProductSC>
         <BoxOther />
         <DivProductDiscSC>
-      
-         
+    
           <DivProductDiscContentSC>
             <ReviewsBox
               indexSelectedButton={indexSelectedButton}

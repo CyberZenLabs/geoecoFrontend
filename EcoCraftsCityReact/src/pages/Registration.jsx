@@ -78,8 +78,11 @@ const Registration = (props) => {
     }
   };
 
-  const onChange = (e) => {
-
+  const onChange = (status, e) => {
+    let _values = values
+    values[status] = e.target.value
+    console.log('><><><><><', e.target.value)
+    setValues({..._values})
   }
 
   const startingValues = {
@@ -124,6 +127,7 @@ const Registration = (props) => {
                           fullSize={false}
                           placeholder={'Имя'}
                           onChange={onChange}
+                          values={values}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -135,6 +139,7 @@ const Registration = (props) => {
                           fullsize={false}
                           placeholder={'Фамилия'}
                           onChange={onChange}
+                          values={values}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>

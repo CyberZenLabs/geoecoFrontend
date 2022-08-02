@@ -25,6 +25,7 @@ const Home = () => {
     axios
       .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {
+        console.log(res);
         setProducts(res.data.data.data);
         setiSLoading(false);
       })
@@ -48,16 +49,14 @@ const Home = () => {
             </div>
           </section>
         )}
-        
         {products &&
           !isLoading &&
-          products.map((product) =>
-            // console.log(product.data['data'], 'help');
+          products.map((product) => {
+            console.log(product);
+            return <ProductCard product={product} />;
+          })}
+      </HomeContainer>  
 
-            [...Array(8)].map((random) => <ProductCard product={product} />),
-          )}
-        
-      </HomeContainer>
     </>
   );
 };

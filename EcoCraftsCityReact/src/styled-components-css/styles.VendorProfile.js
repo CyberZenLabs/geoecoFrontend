@@ -284,7 +284,7 @@ export const DivInnerContentSC = styled.div`
 `;
 export const DivTwoSidesSC = styled.div`
   display: grid;
-  grid-template-columns: 240px auto;     
+  grid-template-columns: 240px auto;
   //border: 2px solid blue;
 `;
 export const DivInnerPhotoInputSC = styled.div`
@@ -404,6 +404,7 @@ export const ButtonImgSC = styled.div`
   display: grid;
   justify-content: center;
   align-content: center;
+  background-size: cover;
 `;
 export const IconImgImgSC = styled(MdOutlinePhotoCamera)`
   display: grid;

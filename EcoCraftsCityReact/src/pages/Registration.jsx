@@ -47,14 +47,14 @@ const Registration = (props) => {
     if (response.length === 0) {
       if (error) {
         if (error.message.includes('401')) {
-          showToast('error', 'Не Верный Данные');
+          showToast('error', 'Не верные данные');
         } else {
           showToast('error', error);
         }
       }
     } else {
       console.log('>>>>>>>>>', response.token);
-      showToast('success', 'Вы успешноj зарегистрировались');
+      showToast('success', 'Вы успешно зарегистрировались');
       setCookie('token', response.token);
       setOpen(true);
       navigate('/');

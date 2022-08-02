@@ -56,6 +56,7 @@ const Home = () => {
             return <ProductCard product={product} />;
           })}
       </HomeContainer>  
+
     </>
   );
 };

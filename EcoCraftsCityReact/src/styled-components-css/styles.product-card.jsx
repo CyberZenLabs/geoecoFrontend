@@ -14,7 +14,7 @@ export const HomeContainer = styled.div`
   position: relative;
   padding-top: 380px;
   margin-bottom: 80px;
-  max-width: 1560px {
+  @media (max-width: 1560px) {
     padding-top: 24.5%;
   } ;
 `;

@@ -100,6 +100,7 @@ export const StoreCreationSubTitleSC = styled.h4`
     font-size: 15px;
   }
 `;
+export const CropperContainer = styled.div``;
 export const ButtonContinueModal = styled.button`
   width: 500px;
   max-width: 500px;

@@ -39,8 +39,7 @@ const Home = () => {
     <>
       <HomeContainer>
         <Carousel slides={SliderData} />
-
-        {isLoading && (
+        {true && (
           <section>
             <div class="loader loader-3">
               <div class="dot dot1"></div>
@@ -49,13 +48,12 @@ const Home = () => {
             </div>
           </section>
         )}
-        {products &&
+        {false &&
           !isLoading &&
-          products.map((product) =>
-            // console.log(product.data['data'], 'help');
-
-            [...Array(16)].map((random) => <ProductCard product={product} />),
-          )}
+          products.map((product) => {
+            console.log(product);
+            return <ProductCard product={product} />;
+          })}
       </HomeContainer>
     </>
   );

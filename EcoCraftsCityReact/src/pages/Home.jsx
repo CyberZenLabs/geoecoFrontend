@@ -25,6 +25,7 @@ const Home = () => {
     axios
       .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {
+        console.log(res);
         setProducts(res.data.data.data);
         setiSLoading(false);
       })

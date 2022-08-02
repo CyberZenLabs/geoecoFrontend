@@ -4,6 +4,7 @@ import './index.css';
 import './page-css/sidenav.css';
 import './sass-files/home-loader.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-image-crop/dist/ReactCrop.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 const AppContext = createContext();
 
@@ -10,14 +10,10 @@ export function AppProvider({ children }) {
   const [pass, setPass] = useState(false);
   const [mail, setMail] = useState(false);
 
-  
   const [openRedact, setOpenRedact] = useState(false);
-  
-  
-
 
   const [modalData, setModalData] = useState({
-    inputs: [{ email: "Электронная почта" }],
+    inputs: [],
     button: true,
   });
   return (
@@ -34,8 +30,7 @@ export function AppProvider({ children }) {
         modalData,
         setModalData,
         openRedact,
-         setOpenRedact,
-       
+        setOpenRedact,
       }}
     >
       {children}

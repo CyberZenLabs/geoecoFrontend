@@ -12,5 +12,5 @@ export const registerSchema = yup.object().shape({
   passwordConfirm: yup
     .string()
     .required("Пароль обязателен")
-    .oneOf([yup.ref("password"), null], "Пароли должны быть одинаковами"),
+    .oneOf([yup.ref("password"), null], "Пароли должны быть одинаковыми"),
 });

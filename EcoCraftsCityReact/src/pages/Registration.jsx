@@ -35,10 +35,15 @@ import { useNavigate } from 'react-router';
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
 
+
 const Registration = (props) => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
 
   const [open, setOpen] = useState(false);
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: ''
+  });
 
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
@@ -54,7 +59,7 @@ const Registration = (props) => {
       }
     } else {
       console.log('>>>>>>>>>', response.token);
-      showToast('success', 'Вы успешноj зарегистрировались');
+      showToast('success', 'Вы успешно зарегистрировались');
       setCookie('token', response.token);
       setOpen(true);
       navigate('/');
@@ -72,6 +77,10 @@ const Registration = (props) => {
       });
     }
   };
+
+  const onChange = (e) => {
+
+  }
 
   const startingValues = {
     firstName: '',
@@ -92,6 +101,7 @@ const Registration = (props) => {
               validationSchema={registerSchema}
               initialErrors={startingValues}
               onSubmit={(values) => {
+                console.log(values)
                 axiosFetch({
                   axiosInstance: axios,
                   auth: 'login',
@@ -113,6 +123,7 @@ const Registration = (props) => {
                           name="firstName"
                           fullSize={false}
                           placeholder={'Имя'}
+                          onChange={onChange}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -123,6 +134,7 @@ const Registration = (props) => {
                           name="lastName"
                           fullsize={false}
                           placeholder={'Фамилия'}
+                          onChange={onChange}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>

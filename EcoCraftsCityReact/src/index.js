@@ -66,14 +66,11 @@ root.render(
               <Route path="storenewproduct" element={<StoreNewProduct />} />
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
-              <Route path="cart" element={<Cart />} />
-
               <Route path="addnewproduct" element={<AddNewProduct />} />
 
               <Route path="vendorprofile" element={<VendorProfile />} />
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
-              <Route path="cart" element={<Cart />} />
               <Route path="terms" element={<Terms />} />
               <Route path="privacy" element={<Privacy />} />
 

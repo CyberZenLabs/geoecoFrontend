@@ -8,6 +8,10 @@ import {
 import { IoMdAlert } from "react-icons/io";
 const TextField = ({ label, size, ...props }) => {
   const [field, meta] = useField(props);
+  const {
+      onChange = null
+  } = props
+
 
   return (
     <div>

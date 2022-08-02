@@ -245,3 +245,8 @@ font-weight: semibold ;
 border: 2px solid rgba(133, 203, 51, 0.7);
 border-radius: 20px;
 `;
+
+export const LinkProfileBoxSC = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+`;

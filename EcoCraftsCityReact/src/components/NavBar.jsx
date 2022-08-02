@@ -31,6 +31,7 @@ import {
   LinkLogoSC,
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
+  SpanTextCatalogSC
 } from '../styled-components-css/styles.navbar';
 import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { OverlayDivSc } from '../styled-components-css/styles.catalog';
@@ -87,13 +88,13 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          <DivTextBoxSC>
+          {/* <DivTextBoxSC>
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC>
+          </DivTextBoxSC> */}
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -107,7 +108,7 @@ const ResponsiveAppBar = () => {
                   size="40"
                   // color="#61DAFB"
                 />
-                <span>Каталог</span>
+                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
 

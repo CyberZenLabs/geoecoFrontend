@@ -14,11 +14,9 @@ const AuthProvider = (props) => {
   }, []);
   const login = () => {
     setLoggedIn(true);
-    debugger;
   };
   const logout = () => {
     setLoggedIn(false);
-    debugger;
   };
   const authContextValue = {
     login,

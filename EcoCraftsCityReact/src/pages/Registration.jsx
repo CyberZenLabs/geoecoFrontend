@@ -79,9 +79,10 @@ const Registration = (props) => {
   };
 
   const onChange = (status, e) => {
+    const regexp = /[A-я]/
     let _values = values
     values[status] = e.target.value
-    console.log('><><><><><', e.target.value)
+    console.log('><><><><><', e.target.value.match(regexp))
     setValues({..._values})
   }
 

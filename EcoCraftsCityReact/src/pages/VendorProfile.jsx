@@ -158,16 +158,9 @@ const VendorProfile = () => {
     setPhotoUrls({ ...photoUrls, photoUrl });
   }, [apiStoreData]);
 
-  useEffect(() => {
-    // create the preview
-
-    if (storePhotoRef !== null) {
-      // console.log('console photo', storePhotoRef.current.files[0]);
-    }
-
-    // free memory when ever this component is unmounted
-    // return () => URL.revokeObjectURL(objectUrl);
-  }, [storePhotoRef]);
+  // const setNewPhotoUrl = () => {
+  //   setPhotoUrls({...photoUrls, storePhotoUrl: "123" });
+  // }
 
   const handleUploadFile = (type) => {
     if (type === 'storePhoto') {
@@ -275,6 +268,8 @@ const VendorProfile = () => {
                   subTitle="Поместите фото профиля в выбранную область"
                   cropImageModal={true}
                   photoUrl={photoUrls.storePhotoUrl}
+                  setPhotoUrls={setPhotoUrls}
+                  photoUrls={photoUrls}
                 ></EcoModal>
                 <DivItemsOptionsSC>
                   <DivInnerContentSC>

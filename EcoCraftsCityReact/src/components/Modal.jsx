@@ -1,7 +1,8 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
 import AppContext from '../context/AppContext';
-import ReactCrop, { makeAspectCrop, centerCrop } from 'react-image-crop';
-import 'react-image-crop/dist/ReactCrop.css';
+import Cropper from 'react-cropper';
+import 'cropperjs/dist/cropper.css';
+
 import {
   BlockModal,
   ButtonContinueModal,
@@ -14,45 +15,29 @@ import {
   IoIosArrowBackSC,
   StoreCreationTitleSC,
   StoreCreationSubTitleSC,
+  CropperContainer,
 } from '../styled-components-css/styles.modal';
-const EcoModal = ({ title, subTitle, cropImageModal, photoUrl }) => {
+const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, photoUrls }) => {
   const { open, setOpen, modalData } = useContext(AppContext);
-  const imgRef = useRef({});
-  const [crop, setCrop] = useState({});
-
-  function centerAspectCrop(mediaWidth, mediaHeight, aspect) {
-    return centerCrop(
-      makeAspectCrop(
-        {
-          unit: '%',
-          width: 90,
-          height: 90,
-          x: 25,
-          y: 25,
-          
-        },
-        aspect,
-        mediaWidth,
-        mediaHeight,
-      ),
-      mediaWidth,
-      mediaHeight,
-    );
-  }
-
-  function onImageLoad(e) {
-
-      const { width, height } = e.currentTarget
-      setCrop(centerAspectCrop(width, height, 1 / 1))
-
-  }
-
-  useEffect(() => {
-    const { width, height } = imgRef.current;
-    setCrop(centerAspectCrop(width, height, 1 / 1));
-  }, [imgRef.current])
-
-
+  const cropperRef = useRef(null);
+  let cropper;
+  let imageElement;
+  const onCrop = () => {
+    console.log('123');
+    imageElement = cropperRef.current;
+    console.log(imageElement);
+    cropper = imageElement.cropper;
+    // console.log(URL.createObjectURL(cropper));
+  };
+  const submitModal = (isCrop) => {
+    if (isCrop) {
+      cropper.getCroppedCanvas().toBlob((blob) => {
+        const urlToSave = URL.createObjectURL(blob);
+        setPhotoUrls({ ...photoUrls, storePhotoUrl: urlToSave });
+      });
+      setOpen(false);
+    }
+  };
 
   return (
     <>
@@ -65,11 +50,15 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl }) => {
           <CenterItemsSC>
             <StoreCreationTitleSC>{title}</StoreCreationTitleSC>
             <StoreCreationSubTitleSC>{subTitle}</StoreCreationSubTitleSC>
-            {cropImageModal && (
-              <ReactCrop crop={crop} onChange={(c) => setCrop(c)}>
-                <img onLoad={onImageLoad} ref={imgRef} src={photoUrl} />
-              </ReactCrop>
-            )}
+            <CropperContainer>
+              {cropImageModal && (
+                <Cropper src={photoUrl} aspectRatio={1 / 1} crop={onCrop} ref={cropperRef} />
+                // <ReactCrop crop={crop} onChange={(c) => setCrop(c)} aspectRation={1}>
+                //   <img onLoad={onImageLoad} ref={imgRef} src={photoUrl} />
+                // </ReactCrop>
+              )}
+            </CropperContainer>
+
             {modalData.inputs.map(({ input }) => (
               <DivBoxRowModalSC>
                 <EmailFieldSC label="email" type="email" name={input} fullSize={true} placeholder={input} />
@@ -77,7 +66,7 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl }) => {
             ))}
             {modalData.button ? (
               <DivBoxRowModalContSC>
-                <ButtonContinueModal>Продолжить</ButtonContinueModal>
+                <ButtonContinueModal onClick={() => submitModal(cropImageModal)}>Продолжить</ButtonContinueModal>
               </DivBoxRowModalContSC>
             ) : null}
           </CenterItemsSC>

@@ -40,7 +40,7 @@ const Home = () => {
     <>
       <HomeContainer>
         <Carousel slides={SliderData} />
-        {true && (
+        {isLoading && (
           <section>
             <div class="loader loader-3">
               <div class="dot dot1"></div>
@@ -49,13 +49,13 @@ const Home = () => {
             </div>
           </section>
         )}
-        {false &&
+        {products &&
           !isLoading &&
           products.map((product) => {
             console.log(product);
             return <ProductCard product={product} />;
           })}
-      </HomeContainer>
+      </HomeContainer>  
     </>
   );
 };

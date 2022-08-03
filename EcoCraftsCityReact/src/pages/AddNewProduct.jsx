@@ -104,6 +104,7 @@ import {
   DivBoxTextFromThePriceSC,
   DivBoxTextRulesSC,
   DivTextRulesSC,
+  DivBox2ButtonsSC,
 } from '../styled-components-css/styles.AddNewProduct';
 import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
@@ -295,15 +296,17 @@ const AddNewProduct = () => {
         </DivImgGrayRectangleDeliverySC>
       </DivBoxImgGrayRectangleDeliverySC>
       <DivBoxButtonsSC>
-        <DivButtonsSC>
-          <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-            В черновик
-          </ButtonCustomWhiteSC>
+        <DivBox2ButtonsSC>
+          <DivButtonsSC>
+            <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+              В черновик
+            </ButtonCustomWhiteSC>
 
-          <ButtonCustomSC width={'100%'} padding={'18px 32px'} type="submit">
-            Разместить
-          </ButtonCustomSC>
-        </DivButtonsSC>
+            <ButtonCustomSC width={'100%'} padding={'18px 32px'} type="submit">
+              Разместить
+            </ButtonCustomSC>
+          </DivButtonsSC>
+        </DivBox2ButtonsSC>
       </DivBoxButtonsSC>
     </DivBoxAddNewProductSC>
   );

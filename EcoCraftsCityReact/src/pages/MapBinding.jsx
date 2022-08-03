@@ -3,6 +3,7 @@ import {
   DivMapBindingBoxSC,
   DivTextSC,
   DivButtonsSC,
+  DivBox2ButtonsSC,
   DivContentMapBindingSC,
   DivBoxNumCardSC,
   DivBoxMMSC,
@@ -67,22 +68,23 @@ const MapBinding = () => {
                   </DivColumnsBoxSC>
                 </DivContainerRowsMB>
               </DivImgBoxSC>
+              <DivBox2ButtonsSC>
+                <DivButtonsSC>
+                  <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+                    Отмена
+                  </ButtonCustomWhiteSC>
 
-              <DivButtonsSC>
-                <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-                  Отмена
-                </ButtonCustomWhiteSC>
-
-                <ButtonCustomSC
-                  disabled={!formik.dirty || !formik.isValid}
-                  statusOpasity={!formik.dirty || !formik.isValid}
-                  width={'100%'}
-                  padding={'18px 32px'}
-                  type="submit"
-                >
-                  Привязать
-                </ButtonCustomSC>
-              </DivButtonsSC>
+                  <ButtonCustomSC
+                    disabled={!formik.dirty || !formik.isValid}
+                    statusOpasity={!formik.dirty || !formik.isValid}
+                    width={'100%'}
+                    padding={'18px 32px'}
+                    type="submit"
+                  >
+                    Привязать
+                  </ButtonCustomSC>
+                </DivButtonsSC>
+              </DivBox2ButtonsSC>
             </Form>
           )}
         </Formik>

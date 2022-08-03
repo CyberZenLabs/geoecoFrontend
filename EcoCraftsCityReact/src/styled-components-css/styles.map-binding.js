@@ -154,17 +154,32 @@ export const DivImgBoxSC = styled.div`
   }
 `;
 
+export const DivBox2ButtonsSC = styled.div`
+  max-width: 1059px;
+  width: 100%;
+  height: 56px;
+  display: grid;
+  justify-items: center;
+  padding-bottom: 467px;
+  padding-top: 44px;
+`;
 export const DivButtonsSC = styled.div`
-  display: block;
+  display: grid;
+  max-width: 504px;
+  width: 100%;
+  grid-column-gap: 30px;
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')};
   @media (max-width: 686px) {
     width: 100%;
-  }
-  @media (max-width: 500px) {
+    display: grid;
     grid-column-gap: 20px;
     padding-top: 20px;
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
   }
-  padding-left: 24px;
-  padding-bottom: 316px;
-  padding-top: 65px;
+  @media (max-width: 500px) {
+    display: grid;
+    grid-column-gap: 20px;
+    padding-top: 20px;
+    grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
+  }
 `;

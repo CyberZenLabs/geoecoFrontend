@@ -888,12 +888,20 @@ export const ButtonPlusSC = styled.button`
   border-radius: 100%;
 `;
 export const DivBoxButtonsSC = styled.div`
-  max-width: 920px;
+  max-width: 1420px;
   width: 100%;
   height: 56px;
   display: grid;
   justify-items: start;
   padding-bottom: 467px;
+`;
+
+export const DivBox2ButtonsSC = styled.div`
+  max-width: 1059px;
+  width: 100%;
+  height: 56px;
+  display: grid;
+  justify-items: center;
 `;
 
 export const DivButtonsSC = styled.div`

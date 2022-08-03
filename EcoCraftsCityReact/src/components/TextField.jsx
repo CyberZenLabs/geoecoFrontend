@@ -33,8 +33,8 @@ const TextField = ({label, size, ...props}) => {
                     }
                     {...field}
                     {...props}
-                    onChange={_onChange}
-                    value={values[name]}
+                    // onChange={_onChange}
+                    // value={values[name]}
                 ></InputFullWidthSC> :
                     <InputFullWidthSC
                         error={

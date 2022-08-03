@@ -35,10 +35,15 @@ import { useNavigate } from 'react-router';
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
 
+
 const Registration = (props) => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
 
   const [open, setOpen] = useState(false);
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: ''
+  });
 
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
@@ -47,14 +52,14 @@ const Registration = (props) => {
     if (response.length === 0) {
       if (error) {
         if (error.message.includes('401')) {
-          showToast('error', 'Не Верный Данные');
+          showToast('error', 'Не верные данные');
         } else {
           showToast('error', error);
         }
       }
     } else {
       console.log('>>>>>>>>>', response.token);
-      showToast('success', 'Вы успешноj зарегистрировались');
+      showToast('success', 'Вы успешно зарегистрировались');
       setCookie('token', response.token);
       setOpen(true);
       navigate('/');
@@ -72,6 +77,16 @@ const Registration = (props) => {
       });
     }
   };
+
+  const onChange = (status, e) => {
+    const regexp = /[A-zА-я]/g
+    const regexp2 = /[\[\]\)\(\{\}\\']+/g
+    let _values = values
+
+    let arrayCherecters = e.target.value.replace(regexp2,'' )?.match(regexp)
+    values[status] = arrayCherecters.join('')
+    setValues({..._values})
+  }
 
   const startingValues = {
     firstName: '',
@@ -92,6 +107,7 @@ const Registration = (props) => {
               validationSchema={registerSchema}
               initialErrors={startingValues}
               onSubmit={(values) => {
+                console.log(values)
                 axiosFetch({
                   axiosInstance: axios,
                   auth: 'login',
@@ -113,6 +129,8 @@ const Registration = (props) => {
                           name="firstName"
                           fullSize={false}
                           placeholder={'Имя'}
+                          // onChange={onChange}
+                          // values={values}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -123,6 +141,8 @@ const Registration = (props) => {
                           name="lastName"
                           fullsize={false}
                           placeholder={'Фамилия'}
+                          // onChange={onChange}
+                          // values={values}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>

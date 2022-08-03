@@ -1,13 +1,13 @@
-import React, { useState, useEffect, Children } from "react";
-import { cloneElement } from "react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import React, { useState, useEffect, Children } from 'react';
+import { cloneElement } from 'react';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import {
   DivArrowBackgroundSC,
   DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-} from "../../styled-components-css/styles.review-carousel";
+} from '../../styled-components-css/styles.review-carousel';
 
 const ReviewCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
@@ -17,12 +17,12 @@ const ReviewCarousel = ({ children }) => {
       Children.map(children, (child) => {
         return cloneElement(child, {
           style: {
-            height: "100%",
-            minWidth: "1322px",
-            maxWidth: "1322px",
+            height: '100%',
+            minWidth: '1322px',
+            maxWidth: '1322px',
           },
         });
-      })
+      }),
     );
   }, []);
 
@@ -38,27 +38,22 @@ const ReviewCarousel = ({ children }) => {
     <>
       <DivCarouselMainSC>
         <DivCarouselWindowSC>
-          <DivCarouselAllItemsSC carouselNumber={carouselNumber}>
-            {items}
-          </DivCarouselAllItemsSC>
-          <DivButtonWrapSC>
-            {carouselNumber != 0 ? (
-              <DivArrowBackgroundSC>
-                <FiArrowLeft onClick={handleLefttArrow} />
-              </DivArrowBackgroundSC>
-            ) : (
-              <div></div>
-            )}
-            {carouselNumber != items.length - 3 ? (
-              <DivArrowBackgroundSC>
-                <FiArrowRight onClick={handleRighttArrow} />
-              </DivArrowBackgroundSC>
-            ) : (
-              <div></div>
-            )}
-
-          </DivButtonWrapSC>
+          <DivCarouselAllItemsSC carouselNumber={carouselNumber}>{items}</DivCarouselAllItemsSC>
         </DivCarouselWindowSC>
+          {carouselNumber !== 0 ? (
+            <DivArrowBackgroundSC arrow={'left'} onClick={handleLefttArrow}>
+              <FiArrowLeft />
+            </DivArrowBackgroundSC>
+          ) : (
+            <div></div>
+          )}
+          {carouselNumber !== items.length - 3 ? (
+            <DivArrowBackgroundSC arrow={'right'} onClick={handleRighttArrow}>
+              <FiArrowRight />
+            </DivArrowBackgroundSC>
+          ) : (
+            <div></div>
+          )}
       </DivCarouselMainSC>
     </>
   );

@@ -1,4 +1,4 @@
-import { Margin, TextFields } from '@mui/icons-material';
+import { Delete, Margin, TextFields } from '@mui/icons-material';
 import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -9,7 +9,7 @@ import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import ShowItemCarousel from '../components/ShowItemCarousel';
-
+import { toast } from 'react-toastify';
 import VendorInfoMenu from '../components/VendorInfoMenu';
 import {
   DivOptionsPanelSC,
@@ -82,12 +82,18 @@ import {
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
-  OverlayImgSC,
-  OverlayTextSC,
+  OverlayProfileImgSC,
+  OverlayProfileImageTextSC,
+  OverlayBannerImageTextSC,
+  OverlayBannerImgSC,
+  DivBoxShowPhotoSC,
+  DeleteIconSC,
 } from '../styled-components-css/styles.VendorProfile';
+import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
+import AppContext from '../context/AppContext';
 
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
@@ -99,28 +105,55 @@ const routes = [
 ];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
-  const [apiStoreData, setApiStoreData] = useState({});
-  const [preview, setPreview] = useState([]);
+  const [apiStoreData, setApiStoreData] = useState(null);
+
+  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
     storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storeBannerUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storeGalleryUrls: [],
   });
+  const [activePhotoUrl, setActivePhotoUrl] = useState('');
+  const [cropType, setCropType] = useState('');
+  const [aspect, setAspect] = useState(1);
+  const [modalOpen, seModalOpen] = useState(true);
+
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
+  const storeBannerRef = useRef(null);
+  const storeGalleryRef = useRef(null);
   let testId = '62e38df24c1f460016904636';
   useEffect(() => {
-    axiosFetch({
-      axiosInstance: axiosCustom,
-      method: 'GET',
-      url: `/api/v1/store/${testId}`,
+    const getProfileData = async () => {
+      await axiosFetch({
+        axiosInstance: axiosCustom,
+        method: 'GET',
+        url: `/api/v1/store/${testId}`,
+      });
+    };
+
+    getProfileData().then((res) => {
+      setApiStoreData(response);
     });
   }, []);
 
+  const showToast = (type, text) => {
+    if (type === 'error') {
+      toast.error(text ? text : error, {
+        toastId: 'error',
+      });
+    } else if (type === 'success') {
+      toast.success(text ? text : response, {
+        toastId: 'success',
+      });
+    }
+  };
+
   useEffect(() => {
-    setApiStoreData(response);
     console.log(response);
 
     // if (response != []) {
@@ -136,41 +169,73 @@ const VendorProfile = () => {
     let photoUrl;
 
     const checkStringLogic = () => {
-      if (apiStoreData.data != undefined) {
+      console.log(apiStoreData, 'storeData');
+      if (apiStoreData != null && apiStoreData.length != 0) {
         return apiStoreData.data.data.storePhoto;
       } else {
         return 'defaultStore.svg';
       }
-
-      return;
     };
     photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
     setPhotoUrls({ ...photoUrls, photoUrl });
   }, [apiStoreData]);
 
-  useEffect(() => {
-    // create the preview
-
-    if (storePhotoRef !== null) {
-      // console.log('console photo', storePhotoRef.current.files[0]);
-    }
-
-    // free memory when ever this component is unmounted
-    // return () => URL.revokeObjectURL(objectUrl);
-  }, [storePhotoRef]);
+  // const setNewPhotoUrl = () => {
+  //   setPhotoUrls({...photoUrls, storePhotoUrl: "123" });
+  // }
 
   const handleUploadFile = (type) => {
-    if (type === 'storePhoto') {
+    if (type === 'storePhotoRef') {
       storePhotoRef.current.click();
+    }
+    if (type === 'storeBannerRef') {
+      storeBannerRef.current.click();
+    }
+    if (type === 'storeGalleryRef') {
+      storeGalleryRef.current.click();
     }
   };
 
-  const fileChangeHandler = () => {
-    console.log('store', storePhotoRef);
-    const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+  const fileChangeHandler = (type) => {
+    if (type == 'storePhotoRef') {
+      setAspect(1);
+      setCropType('storeProfilePhoto');
+      setOpen(true);
 
-    setPhotoUrls({ ...photoUrls, storePhotoUrl: objectUrl });
+      const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storePhotoRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeBannerRef') {
+      setAspect(1350 / 322);
+      setCropType('storeBannerPhoto');
+      setOpen(true);
+      const objectUrl = URL.createObjectURL(storeBannerRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeGalleryRef') {
+      if (photoUrls.storeGalleryUrls.length <= 10) {
+        setAspect(1);
+        setCropType('storeGalleryPhotos');
+        setOpen(true);
+
+        const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
+        setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
+        setActivePhotoUrl(objectUrl);
+      } else if (photoUrls.storeGalleryUrls.length > 10) {
+        showToast('error', 'Нельзя загружать больше 10 фотографий');
+      }
+    }
   };
+
+  const handlePhotoDelete = (i) => {
+    const newPhotos = [
+      ...photoUrls.storeGalleryUrls.filter((element) => ![photoUrls.storeGalleryUrls[i]].includes(element)),
+    ];
+    console.log('errroe', newPhotos);
+    setPhotoUrls({ ...photoUrls.storeGalleryUrls, storeGalleryUrls: newPhotos });
+  };
+
+  const arrayStorePhotosExtra = photoUrls.storeGalleryUrls;
 
   const startingValues = {
     storeName: '',
@@ -256,21 +321,64 @@ const VendorProfile = () => {
           >
             {(formik) => (
               <Form>
-                <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
+                <input
+                  ref={storePhotoRef}
+                  type="file"
+                  name="storePhoto"
+                  onChange={() => fileChangeHandler('storePhotoRef')}
+                />
+                <input
+                  ref={storeBannerRef}
+                  type="file"
+                  name="bannerPhoto"
+                  onChange={() => fileChangeHandler('storeBannerRef')}
+                />
+                <input
+                  ref={storeGalleryRef}
+                  type="file"
+                  name="storeGallery"
+                  onChange={() => fileChangeHandler('storeGalleryRef')}
+                />
+                <EcoModal
+                  open={modalOpen}
+                  title="Загрузка фотографии"
+                  subTitle="Поместите фото профиля в выбранную область"
+                  cropImageModal={true}
+                  cropType={cropType}
+                  aspect={aspect}
+                  photoUrl={activePhotoUrl}
+                  setPhotoUrls={setPhotoUrls}
+                  photoUrls={photoUrls}
+                  storeGalleryUrls={photoUrls.storeGalleryUrls}
+                ></EcoModal>
                 <DivItemsOptionsSC>
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Баннер магазина</H1DefinSC>
-                      <ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
+                      <ButtonBannerSC
+                        photoUrl={photoUrls.storeBannerUrl}
+                        onClick={() => handleUploadFile('storeBannerRef')}
+                      >
+                        <OverlayBannerImgSC>
+                          <OverlayBannerImageTextSC>Изменить фото</OverlayBannerImageTextSC>
+                        </OverlayBannerImgSC>
+                        {console.log(apiStoreData, 'now')}
+                        {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        ) : null}
+                      </ButtonBannerSC>
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Фото</H1DefinSC>
-                      {console.log('photoUrls', photoUrls.storePhotoUrl)}
-                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhoto')}>
-                        <OverlayImgSC>
-                          <OverlayTextSC>Изменить фото</OverlayTextSC>
-                        </OverlayImgSC>
-                        {apiStoreData && !apiStoreData.data.data.storePhoto ? (
+                      {console.log('photoUrls', photoUrls)}
+                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhotoRef')}>
+                        <OverlayProfileImgSC>
+                          <OverlayProfileImageTextSC>Изменить фото</OverlayProfileImageTextSC>
+                        </OverlayProfileImgSC>
+                        {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
                             <H1SC>Загрузить фото</H1SC>
@@ -314,22 +422,32 @@ const VendorProfile = () => {
                     </DivBoxRowsAboutCreativity>
                     <DivBoxColumnsFotosSC>
                       <DivBoxFoto1SC>
-                        <ButtonImgSC>
+                        <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
                             <H1SC>Загрузить фото</H1SC>
                           </DivInnerPhotoInputSC>
                         </ButtonImgSC>
                       </DivBoxFoto1SC>
-                      <DivBoxFoto2SC>
-                        <DivFoto2SC></DivFoto2SC>
-                      </DivBoxFoto2SC>
-                      <DivBoxFoto3SC>
-                        <DivFoto3SC></DivFoto3SC>
-                      </DivBoxFoto3SC>
-                      <DivBoxFoto4SC>
-                        <DivFoto4SC></DivFoto4SC>
-                      </DivBoxFoto4SC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[1] && photoUrls.storeGalleryUrls[1]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(1)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[2] && photoUrls.storeGalleryUrls[2]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(2)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+
+                      {photoUrls.storeGalleryUrls.length >= 3 ? (
+                        <>
+                          {[...photoUrls.storeGalleryUrls].splice(3, 7).map((photo, i) => (
+                            <DivBoxShowPhotoSC photoUrl={photo}>
+                              <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
+                            </DivBoxShowPhotoSC>
+                          ))}
+                        </>
+                      ) : null}
                     </DivBoxColumnsFotosSC>
                   </DivBGImageSC>
                 </DivAboutYourselfSC>
@@ -346,6 +464,14 @@ const VendorProfile = () => {
 
   return (
     <>
+      {/* function CropDemo({ src }) {
+  const [crop, setCrop] = useState<Crop>()
+  return (
+    <ReactCrop crop={crop} onChange={c => setCrop(c)}>
+      <img src={src} />
+    </ReactCrop>
+  )
+} */}
       <DivWrapLinkSC>
         <DivHistorySC>
           <DivBackBoxSC>

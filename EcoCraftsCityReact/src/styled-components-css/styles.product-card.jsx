@@ -5,18 +5,16 @@ export const HomeContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 308px);
   grid-template-rows: fit-content auto;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+ 
   grid-gap: 30px;
-  justify-content: space-evenly;
+  
   width: 85vw;
   max-width: 1322px;
   margin: auto;
   position: relative;
   padding-top: 380px;
   margin-bottom: 80px;
-  max-width: 1560px {
+  @media (max-width: 1560px) {
     padding-top: 24.5%;
   } ;
 `;

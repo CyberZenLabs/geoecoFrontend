@@ -30,6 +30,8 @@ import {
   LinkIconHideSC,
   LinkLogoSC,
   DivBoxButtonCreateStoreSC,
+  LinkProfileBoxSC,
+  SpanTextCatalogSC
 } from '../styled-components-css/styles.navbar';
 import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { OverlayDivSc } from '../styled-components-css/styles.catalog';
@@ -87,12 +89,17 @@ const ResponsiveAppBar = () => {
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
+
+          {/* <DivTextBoxSC>
+
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
           </DivTextBoxSC>
+          </DivTextBoxSC> */}
+
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -106,7 +113,7 @@ const ResponsiveAppBar = () => {
                   size="40"
                   // color="#61DAFB"
                 />
-                <span>Каталог</span>
+                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
 
@@ -165,6 +172,35 @@ const ResponsiveAppBar = () => {
                 </li>
               </ul>
             </div>
+
+            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+            <ul class="profileMenu">
+              <li>
+                <LinkProfileBoxSC to="#">
+                  <GoPackage />
+                  Заказы
+                </LinkProfileBoxSC>
+              </li>
+              <li>
+                <LinkProfileBoxSC to="#">
+                  <GoCreditCard />
+                  Мой Карты
+                </LinkProfileBoxSC>
+              </li>
+
+              <li>
+                <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
+              </li>
+              <li>
+                <LinkProfileBoxSC to="#">Отзывы и вопросы</LinkProfileBoxSC>
+              </li>
+              <li class="logout">
+                <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                  Выйти
+                </LinkProfileBoxSC>
+              </li>
+            </ul>
           </div>
         ) : null}
         <DivBoxIconHeaderSC>
@@ -172,14 +208,16 @@ const ResponsiveAppBar = () => {
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
-            <LinkIconSC to="/signin">
-              <DivBoxIconEndSC>
-                <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
-              </DivBoxIconEndSC>
+            {!loggedIn ? (
+              <LinkIconSC to="/signin">
+                <DivBoxIconEndSC>
+                  <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
-            </LinkIconSC>
-            <LinkIconHideSC to="/">
+                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+              </LinkIconSC>
+            ) : null}
+            <LinkIconHideSC to="/cart">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

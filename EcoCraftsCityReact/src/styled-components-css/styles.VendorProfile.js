@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { MdOutlinePhotoCamera } from 'react-icons/md';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 export const OlifnoSC = styled.ol`
   margin-left: 10px;
@@ -284,7 +285,7 @@ export const DivInnerContentSC = styled.div`
 `;
 export const DivTwoSidesSC = styled.div`
   display: grid;
-  grid-template-columns: 240px auto;     
+  grid-template-columns: 240px auto;
   //border: 2px solid blue;
 `;
 export const DivInnerPhotoInputSC = styled.div`
@@ -385,7 +386,12 @@ export const ButtonBannerSC = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.33);
   height: 126px;
   background: none;
+  background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   max-width: 670px;
+  position: relative;
 `;
 
 export const ButtonImgSC = styled.div`
@@ -397,9 +403,10 @@ export const ButtonImgSC = styled.div`
   background: none;
   background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
   height: 100%;
-  background-position: center;
   max-width: 193px;
   display: grid;
   justify-content: center;
@@ -410,6 +417,14 @@ export const IconImgImgSC = styled(MdOutlinePhotoCamera)`
   font-size: 50px;
   justify-self: center;
   color: rgba(0, 0, 0, 0.33);
+`;
+
+export const DeleteIconSC = styled(TiDeleteOutline)`
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 `;
 
 export const H1SC = styled.h1`
@@ -593,20 +608,31 @@ export const DivFoto4SC = styled.div`
   border-radius: 12px;
 `;
 
-export const DivBoxFoto2SC = styled.div`
+export const DivBoxShowPhotoSC = styled.div`
   width: 193px;
+  height: 193px;
   display: grid;
+  background: none;
+  background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  position: relative;
 `;
 
-export const DivBoxFoto3SC = styled.div`
-  width: 193px;
-  display: grid;
-`;
 
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;
 `;
+
+export const DivDeletePhotoSC = styled.div`
+  width: 193px;
+  display: grid;
+`;
+
 export const SaveButtonPanelVendSC = styled.button`
   /* Кнопка (первичная) */
   /* Auto layout */
@@ -644,12 +670,12 @@ export const DivButtonBottomSaveVendSC = styled.div`
   max-width: 1010px;
 `;
 
-export const OverlayTextSC = styled.p`
+export const OverlayProfileImageTextSC = styled.p`
   color: white;
   visibility: hidden;
 `;
 
-export const OverlayImgSC = styled.div`
+export const OverlayProfileImgSC = styled.div`
   position: absolute;
   z-index: 5;
   width: 100%;
@@ -671,7 +697,44 @@ export const OverlayImgSC = styled.div`
     justify-content: center;
     align-content: center;
   }
-  &:hover ${OverlayTextSC} {
+  &:hover ${OverlayProfileImageTextSC} {
+    visibility: visible !important;
+  }
+`;
+export const OverlayBannerImageTextSC = styled.p`
+  color: white;
+  visibility: hidden;
+`;
+
+export const OverlayBannerImgSC = styled.div`
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  visiblity: hidden;
+  transition: 0.2s;
+  transition-timing-function: linear;
+  top: 0px;
+  left: 0;
+  right: 0;
+  &:hover {
+    background: rgba(131, 131, 131, 0.697);
+
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    text-indent: 0%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    top: 0px;
+    left: 0;
+    right: 0;
+  }
+  &:hover ${OverlayBannerImageTextSC} {
     visibility: visible !important;
   }
 `;

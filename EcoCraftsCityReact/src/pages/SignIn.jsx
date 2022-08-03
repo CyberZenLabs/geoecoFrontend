@@ -65,14 +65,13 @@ const SignIn = (props) => {
 
       if (error !== '') {
         if (error && error.message.includes('401')) {
-          showToast('error', 'Не Верный Данные');
+          showToast('error', 'Не верные данные');
         } else {
           showToast('error', error);
         }
       }
     } else {
       console.log('>>>>>>>>>', response.token);
-      login();
       showToast('success', 'Вы успешно зашли');
       setCookie('token', response.token);
       login();
@@ -164,7 +163,7 @@ const SignIn = (props) => {
                       >
                         {!loading ? (
                           <span>
-                            Войти в аккаунт&nbsp;&nbsp;
+                            Войти&nbsp;&nbsp;
                             <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                           </span>
                         ) : (

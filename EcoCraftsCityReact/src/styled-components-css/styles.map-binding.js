@@ -155,9 +155,7 @@ export const DivImgBoxSC = styled.div`
 `;
 
 export const DivButtonsSC = styled.div`
-  display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')};
-  grid-column-gap: 29px;
+  display: block;
   @media (max-width: 686px) {
     width: 100%;
   }

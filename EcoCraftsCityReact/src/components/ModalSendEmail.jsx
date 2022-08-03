@@ -22,7 +22,7 @@ import {
 const ModalSendEmail = () => {
   const { openEmail, setOpenEmail, modalData,} = useContext(AppContext);
   const [disable, setDisable] = React.useState(false);
-  const [Timeleft, SetTimeleft] =useState(5);
+  const [Timeleft, SetTimeleft] =useState(60);
 
    
   const minute =getPadTime( Math.floor(Timeleft/60));
@@ -43,7 +43,7 @@ const ModalSendEmail = () => {
   const start =()=>{
    
     setDisable(true);
-    if(Timeleft===0)SetTimeleft(50);
+    if(Timeleft===0)SetTimeleft(60);
   
   
    console.log(disable);
@@ -71,7 +71,7 @@ const ModalSendEmail = () => {
                <img src="/default-images/SendEmail.svg"   to="#"  /> 
                
               </DivBoxRowModalSC>
-              <DivTimerSC><span>Осталось времени:{second}</span>
+              <DivTimerSC><span>{minute}:{second}</span>
            <DivBoxRowModalContSC>
             {disable?( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Пожалуйста подождите</ButtonContinueModal>):( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Отправить еще раз</ButtonContinueModal>)}
             

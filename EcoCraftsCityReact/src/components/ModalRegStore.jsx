@@ -25,24 +25,24 @@ import {
 import Modals from "./ModalSendEmail";
 import ModalSendEmail from "./ModalSendEmail";
 import App from "./SelectUl";
-const EcoModal = () => {
-  const { openModal, setOpenModal, modalData } = useContext(AppContext);
+const Modalstore = () => {
+  const { open, setOpen, modalData } = useContext(AppContext);
   const {openEmail, setOpenEmail}=useContext(AppContext);
    const openMod = () => {
     setOpenEmail(true);
-    setOpenModal(false);
+    setOpen(false);
   };
   return (
     <>
-      <BlockModal isOpen={openModal} contentLabel="Modal" >
+      <BlockModal isOpen={open} contentLabel="Modal" >
         <DivWrapModal>
-          <ButtonPrevModal onClick={() => setOpenModal(false)}>
+          <ButtonPrevModal onClick={() => setOpen(false)}>
             <IoIosArrowBackSC />
           </ButtonPrevModal>
           <CenterItemsSC>
            
            
-           <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
+           <StoreCreationTitleSC>Регистрация</StoreCreationTitleSC>
             {modalData.inputs.map(({ email}) => (
               <DivBoxRowModalSC>
                
@@ -117,7 +117,7 @@ const EcoModal = () => {
           ) : null} 
             <DivBoxTextSC>
                         <SpanQuSC>У вас есть аккаунт? </SpanQuSC>
-                        <LinkSC to="/signin" onClick={() => setOpenModal(false)}>Войти</LinkSC>
+                        <LinkSC to="/signin" onClick={() => setOpen(false)}>Войти</LinkSC>
                       </DivBoxTextSC>
           </CenterItemsSC>
         
@@ -129,4 +129,4 @@ const EcoModal = () => {
   );
 };
 
-export default EcoModal;
+export default Modalstore;

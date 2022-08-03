@@ -1,15 +1,16 @@
-import { Margin } from '@mui/icons-material';
-import React, { useState } from 'react';
+import { Margin, TextFields } from '@mui/icons-material';
+import { Form, Formik } from 'formik';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-import { MdOutlinePhotoCamera } from "react-icons/md";
+import { MdOutlinePhotoCamera } from 'react-icons/md';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import StarRating from '../components/StarRating';
+import TextFieldStore from '../components/TextFieldStore';
+import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-
 import ShowItemCarousel from '../components/ShowItemCarousel';
 
 import VendorInfoMenu from '../components/VendorInfoMenu';
-
 import {
   DivOptionsPanelSC,
   DivStarsPanelSC,
@@ -29,6 +30,7 @@ import {
   H1BoldTextSC,
   HrLinkSC,
   ProductsNumSC,
+  SaveButtonPanelSC,
   StoreInfoHeaderSC,
   StoreInfoSubHeaderSC,
   StoreSalesAndAccountLinkSC,
@@ -73,12 +75,18 @@ import {
   DivInnerPhotoInputSC,
   H1SC,
   IconImgImgSC,
+  DivButtonBottomSaveVendSC,
+  SaveButtonPanelVendSC,
   DivBoxNewProductsBigST,
   DivBoxItemsSC,
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
+  OverlayImgSC,
+  OverlayTextSC,
 } from '../styled-components-css/styles.VendorProfile';
+import axiosCustom from '../apis/admin-rest';
+import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 
 
@@ -93,10 +101,86 @@ const routes = [
 ];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
+  const [apiStoreData, setApiStoreData] = useState({});
+  const [preview, setPreview] = useState([]);
+  const [photoUrls, setPhotoUrls] = useState({
+    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+  });
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
+  const storePhotoRef = useRef(null);
+  let testId = '62e38df24c1f460016904636';
+  useEffect(() => {
+    axiosFetch({
+      axiosInstance: axiosCustom,
+      method: 'GET',
+      url: `/api/v1/store/${testId}`,
+    });
+  }, []);
+
+  useEffect(() => {
+    setApiStoreData(response);
+    console.log(response);
+
+    // if (response != []) {
+    //   console.log('RESPONSE', response);
+
+    // } else {
+    //   photoUrl = `https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg`;
+    // }
+  }, [response]);
+
+  useEffect(() => {
+    console.log('ME', apiStoreData);
+    let photoUrl;
+
+    const checkStringLogic = () => {
+      if (apiStoreData.data != undefined) {
+        return apiStoreData.data.data.storePhoto;
+      } else {
+        return 'defaultStore.svg';
+      }
+
+      return;
+    };
+    photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
+    setPhotoUrls({ ...photoUrls, photoUrl });
+  }, [apiStoreData]);
+
+  useEffect(() => {
+    // create the preview
+
+    if (storePhotoRef !== null) {
+      // console.log('console photo', storePhotoRef.current.files[0]);
+    }
+
+    // free memory when ever this component is unmounted
+    // return () => URL.revokeObjectURL(objectUrl);
+  }, [storePhotoRef]);
+
+  const handleUploadFile = (type) => {
+    if (type === 'storePhoto') {
+      storePhotoRef.current.click();
+    }
+  };
+
+  const fileChangeHandler = () => {
+    console.log('store', storePhotoRef);
+    const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+
+    setPhotoUrls({ ...photoUrls, storePhotoUrl: objectUrl });
+  };
+
+  const startingValues = {
+    storeName: '',
+    storeBirthday: Date.now(),
+    storeLocation: '',
+    storeDescription: '',
+  };
+
   const listContent = [
     {
       page: (
@@ -141,63 +225,137 @@ const VendorProfile = () => {
           <DivStoreInfoStuffProfileSC>
             <H1BoldTextSC>Мой профиль</H1BoldTextSC>
           </DivStoreInfoStuffProfileSC>
-          <DivItemsOptionsSC>
-            <DivInnerContentSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Баннер магазина</H1DefinSC><ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
-              </DivTwoSidesSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Фото</H1DefinSC><ButtonImgSC><DivInnerPhotoInputSC><IconImgImgSC/><H1SC>Загрузить фото</H1SC></DivInnerPhotoInputSC></ButtonImgSC>
-              </DivTwoSidesSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Имя / название</H1DefinSC>
-                <NameNCityFieldSC label="email" type="email" placeholder="Фамилия  имя" />
-              </DivTwoSidesSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Дата рождения</H1DefinSC>  <BirthFieldSC label="email" type="email" placeholder="дд.мм.гг" />
-              </DivTwoSidesSC>
-              <DivTwoSidesSC>
-                <H1DefinSC>Место проживания</H1DefinSC>
-                <NameNCityFieldSC label="email" type="email" placeholder="Красноярский край, Россия" />
-              </DivTwoSidesSC>
-            </DivInnerContentSC>
-          </DivItemsOptionsSC>
+          <Formik
+            initialValues={startingValues}
+            initialErrors={startingValues}
+            onSubmit={(values) => {
+              var formData = new FormData();
 
-          <DivAboutYourselfSC>
-      <DivBGImageSC>
-        <DivBoxColumnAboutYourselfSC>
-          <DivBoxText>
-            <DivTextSC>О себе</DivTextSC>
-          </DivBoxText>
-          <DivBoxInputAboutYourself>
-            <InputAboutYourself type="text" />
-          </DivBoxInputAboutYourself>
-        </DivBoxColumnAboutYourselfSC>
-        <DivBoxRowsAboutCreativity>
-          <DivBoxText2>
-            <DivText2SC>О творчестве</DivText2SC>
-          </DivBoxText2>
-          <DivBoxText3>
-            <DivText3> Покажите вдохновляющие рабочие моменты, загрузите дипломы и сертификаты </DivText3>
-          </DivBoxText3>
-        </DivBoxRowsAboutCreativity>
-        <DivBoxColumnsFotosSC>
-          <DivBoxFoto1SC>
-          <ButtonImgSC><DivInnerPhotoInputSC><IconImgImgSC/><H1SC>Загрузить фото</H1SC></DivInnerPhotoInputSC></ButtonImgSC>
-          </DivBoxFoto1SC>
-          <DivBoxFoto2SC>
-            <DivFoto2SC></DivFoto2SC>
-          </DivBoxFoto2SC>
-          <DivBoxFoto3SC>
-            <DivFoto3SC></DivFoto3SC>
-          </DivBoxFoto3SC>
-          <DivBoxFoto4SC>
-            <DivFoto4SC></DivFoto4SC>
-          </DivBoxFoto4SC>
-        </DivBoxColumnsFotosSC>
-      </DivBGImageSC>
-    </DivAboutYourselfSC>
-    
+              Object.keys(values).forEach((key) => {
+                console.log('key', key);
+                console.log('keyvalue', values[key]);
+                formData.append(key, values[key]);
+              });
+
+              if (storePhotoRef.current.files[0]) {
+                console.log('No 0', storePhotoRef.current.files);
+                formData.append('storePhoto', storePhotoRef.current.files[0]);
+              }
+
+              for (let [key, value] of formData) {
+                console.log(`"ascascac" ${key}: ${value}`);
+              }
+
+              console.log('Hello!!!!!');
+              axios
+                .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
+                  // You need to use `getHeaders()` in Node.js because Axios doesn't
+                  // automatically set the multipart form boundary in Node.
+                  headers: {
+                    'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+                  },
+                })
+                .then((res) => {
+                  console.log(res.data.data.data);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+
+              // axiosFetch({
+              //   axiosInstance: axiosCustom(formData),
+              //   method: 'PATCH',
+              //   url: `/api/v1/store/${testId}`,
+              //   requestFormDataConfig: formData,
+              //   formData: true,
+              // });
+            }}
+          >
+            {(formik) => (
+              <Form>
+                <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
+                <DivItemsOptionsSC>
+                  <DivInnerContentSC>
+                    <DivTwoSidesSC>
+                      <H1DefinSC>Баннер магазина</H1DefinSC>
+                      <ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
+                    </DivTwoSidesSC>
+                    <DivTwoSidesSC>
+                      <H1DefinSC>Фото</H1DefinSC>
+                      {console.log('photoUrls', photoUrls.storePhotoUrl)}
+                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhoto')}>
+                        <OverlayImgSC>
+                          <OverlayTextSC>Изменить фото</OverlayTextSC>
+                        </OverlayImgSC>
+                        {apiStoreData && !apiStoreData.data.data.storePhoto ? (
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        ) : null}
+                      </ButtonImgSC>
+                    </DivTwoSidesSC>
+                    <DivTwoSidesSC>
+                      <H1DefinSC>Имя / название</H1DefinSC>
+                      <TextFieldStore label="123" type="text" name="storeName" />
+                    </DivTwoSidesSC>
+                    <DivTwoSidesSC>
+                      {/* <H1DefinSC>Дата рождения</H1DefinSC> <TextFieldStore label="123" type="text" name="dateOfBirth" /> */}
+                      {/* <BirthFieldSC label="email" type="date" placeholder="дд.мм.гг" /> */}
+                    </DivTwoSidesSC>
+                    <DivTwoSidesSC>
+                      <H1DefinSC>Место проживания</H1DefinSC>
+                      <TextFieldStore label="123" type="text" name="storeLocation" />
+                      {/* <NameNCityFieldSC label="email" type="email" placeholder="Красноярский край, Россия" /> */}
+                    </DivTwoSidesSC>
+                  </DivInnerContentSC>
+                </DivItemsOptionsSC>
+
+                <DivAboutYourselfSC>
+                  <DivBGImageSC>
+                    <DivBoxColumnAboutYourselfSC>
+                      <DivBoxText>
+                        <DivTextSC>О себе</DivTextSC>
+                      </DivBoxText>
+                      <DivBoxInputAboutYourself>
+                        <TextFieldStore type="text" name="storeDescription" isTextArea={true} />
+                      </DivBoxInputAboutYourself>
+                    </DivBoxColumnAboutYourselfSC>
+                    <DivBoxRowsAboutCreativity>
+                      <DivBoxText2>
+                        <DivText2SC>О творчестве</DivText2SC>
+                      </DivBoxText2>
+                      <DivBoxText3>
+                        <DivText3> Покажите вдохновляющие рабочие моменты, загрузите дипломы и сертификаты </DivText3>
+                      </DivBoxText3>
+                    </DivBoxRowsAboutCreativity>
+                    <DivBoxColumnsFotosSC>
+                      <DivBoxFoto1SC>
+                        <ButtonImgSC>
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        </ButtonImgSC>
+                      </DivBoxFoto1SC>
+                      <DivBoxFoto2SC>
+                        <DivFoto2SC></DivFoto2SC>
+                      </DivBoxFoto2SC>
+                      <DivBoxFoto3SC>
+                        <DivFoto3SC></DivFoto3SC>
+                      </DivBoxFoto3SC>
+                      <DivBoxFoto4SC>
+                        <DivFoto4SC></DivFoto4SC>
+                      </DivBoxFoto4SC>
+                    </DivBoxColumnsFotosSC>
+                  </DivBGImageSC>
+                </DivAboutYourselfSC>
+                <DivButtonBottomSaveVendSC>
+                  <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
+                </DivButtonBottomSaveVendSC>
+              </Form>
+            )}
+          </Formik>
         </DivStoreRightPanelSC>
       ),
     },
@@ -263,10 +421,3 @@ const VendorProfile = () => {
   );
 };
 export default VendorProfile;
-
-
-
-
-
-
-

@@ -85,3 +85,18 @@ export const DivUserReviewSC = styled.div``;
 
 //------------------- конец (Аватрака дата время рейтинг) -------------------
 
+export const ElipsIconSC = styled.div`
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 8px;
+`;
+export const SpanDataTextSC = styled.span`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.33);
+`;

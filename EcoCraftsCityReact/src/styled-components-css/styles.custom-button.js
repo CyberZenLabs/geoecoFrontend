@@ -8,40 +8,46 @@ export const ButtonCustomSC = styled.button`
   ${(p) => (p.width !== undefined ? `width:${p.width};` : null)}
   ${(p) => (p.height !== undefined ? `height:${p.height};` : 'height: 56px;')}
   ${(p) => (p.borderRadius !== undefined ? `border-radius:${p.borderRadius};` : 'border-radius: 20px;')}
-  ${(p) =>
-    p.statusOpasity === undefined
-      ? `:hover{
-          background: var(--green-color-hover);
-        }
-        :active{
-          background: var(--green-color-active);
-        }`
-      : p.statusOpasity
-      ? null
-      : `:hover{
-          background: var(--green-color-hover);
-        }
-        :active{
-          background: var(--green-color-active);
-        }`}
-  ${(p) =>
-    p.primary
-      ? `background: var(--green-color);
+   ${(p) =>
+          (p.primary
+                          ? `background: var(--green-color);
          color: var(--white-color);`
-      : `background: var(--white-color);
+                          : `background: var(--white-color);
          color: var(--green-color);
          border: 2px solid var(--green-color) !important;
          :hover {
-          color: var(--green-color-active);
-         }
-         `}
-  background: var(--green-color);
-  background: #85cb33ff;
+          color: var(--green-color);
+         }`
+          )
+  }
+  ${(p) =>
+          p.statusOpasity === undefined
+                  ? `:hover{
+                    color: var(--white-color);
+          background: var(--green-color-hover);
+        }
+        :active{
+          color: var(--white-color);
+          background: var(--green-color-active);
+        }`
+                  : p.statusOpasity
+                          ? null
+                          : `:hover{
+                            color: var(--white-color);
+          background: var(--green-color-hover);
+        }
+        :active{
+          color: var(--white-color);
+          background: var(--green-color-active);
+        }`}
+ 
+
   box-sizing: border-box;
   //border-radius: 20px;
   border: none;
-  color: var(--white-color);
-  /* text-transform: capitalize; */
+  //color: var(--white-color);
+  text-transform: capitalize;
+
   font-family: var(--root-font-family);
   font-style: normal;
   font-weight: 600;

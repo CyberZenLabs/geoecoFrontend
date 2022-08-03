@@ -1,26 +1,48 @@
-import React from 'react';
-import Select from 'react-select';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import {
+  Main,
+  DropDownContainer,
+  DropDownHeader,
+  DropDownList,
+  DropDownListContainer,
+  ListItem,
+} from '../styled-components-css/styles.selecs';
 
-const techCompanies = [
-  { label: "Apple", value: 1 },
-  { label: "Facebook", value: 2 },
-  { label: "Netflix", value: 3 },
-  { label: "Tesla", value: 4 },
-  { label: "Amazon", value: 5 },
-  { label: "Alphabet", value: 6 },
-];
 
-const App = () => (
-  <div className="container">
-    <div className="row">
-      <div className="col-md-4"></div>
-      <div className="col-md-4">
-        <Select options={ techCompanies } />
-      </div>
-      <div className="col-md-4"></div>
-    </div>
-  </div>
-);
 
-export default App
+const options = [ "Физлицо", "Самозанятый","ИП","ООО",];
+
+export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const toggling = () => setIsOpen(!isOpen);
+
+  const onOptionClicked = value => () => {
+    setSelectedOption(value);
+    setIsOpen(false);
+    console.log(selectedOption);
+  };
+
+  return (
+    <Main>
+     
+      <DropDownContainer>
+        <DropDownHeader onClick={toggling}>
+          {selectedOption || "Юридический статус"}
+        </DropDownHeader>
+        {isOpen && (
+          <DropDownListContainer>
+            <DropDownList>
+              {options.map(option => (
+                <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
+                  {option}
+                </ListItem>
+              ))}
+            </DropDownList>
+          </DropDownListContainer>
+        )}
+      </DropDownContainer>
+    </Main>
+  );
+}

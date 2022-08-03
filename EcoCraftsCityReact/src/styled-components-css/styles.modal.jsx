@@ -106,7 +106,7 @@ text-align: center;
 export const DivWrapModal = styled.div`
   display: grid;
   width: 770px;
-  height: 850px;
+  height: 900px;
   background: #ffffff;
   border-radius: 30px;
   z-index:1000;
@@ -147,6 +147,18 @@ justify-self: center;
   justify-content: center;
   max-width: 500px;
 margin-bottom:20px;
+align-content: space-between;
+align-items: center;
+justify-items: center;
+`;
+export const DivBoxRowModaSelectlSC = styled.div`
+justify-self: center;
+  margin-top: 15px;
+ // border: 1px solid red;
+  display: grid;
+  justify-content: center;
+  max-width: 500px;
+
 align-content: space-between;
 align-items: center;
 justify-items: center;
@@ -279,7 +291,7 @@ color: rgba(37, 37, 37, 0.7);
 }
 `;
 export const CenterItemsSC = styled.div`
-height: 520px;
+height: 550px;
 width: 90%;
 max-width: 600px;
 min-width: 320px;
@@ -288,7 +300,7 @@ display: grid;
 //border: 1px solid red;
   justify-content: center;
   @media (max-width:1000px) {
-margin-top: 40px;
+margin-top: 20px;
 transition: 0.5s;
   }
   @media (max-width:550px) {

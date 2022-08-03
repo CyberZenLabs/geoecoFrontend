@@ -6,6 +6,7 @@ export function AppProvider({ children }) {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const [pass, setPass] = useState(false);
   const [mail, setMail] = useState(false);
@@ -39,6 +40,8 @@ export function AppProvider({ children }) {
          setOpenEmail,
          Starttimer,
          setstarttimer,
+         openModal,
+         setOpenModal,
        
       }}
     >

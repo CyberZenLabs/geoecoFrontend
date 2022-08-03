@@ -1,14 +1,21 @@
 import * as yup from "yup";
 
 export const registerSchema = yup.object().shape({
-  firstName: yup.string().required("Имя обязательно"),
+  firstName: yup.string()
+      .matches(
+          /^[^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=][A-я\d][^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=]{0,100}$/,
+          "error"
+      )
+      .required("Имя обязательно"),
   lastName: yup.string().required("Фамилия обязательна"),
   email: yup.string().email("Не является почтой").required("Почта обязательна"),
   password: yup
     .string()
     .min(8, "Минимум 8 символов")
     .max(40, "Максимум 40 символов")
-    .required("Пароль обязателен"),
+
+    .required("Пароль обязателен")
+    ,
   passwordConfirm: yup
     .string()
     .required("Пароль обязателен")

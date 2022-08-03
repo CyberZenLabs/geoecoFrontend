@@ -133,8 +133,8 @@ const Registration = (props) => {
                           name="firstName"
                           fullSize={false}
                           placeholder={'Имя'}
-                          onChange={onChange}
-                          values={values}
+                          // onChange={onChange}
+                          // values={values}
                         />
                       </DivBoxSC>
                       <DivBoxSC>
@@ -145,8 +145,8 @@ const Registration = (props) => {
                           name="lastName"
                           fullsize={false}
                           placeholder={'Фамилия'}
-                          onChange={onChange}
-                          values={values}
+                          // onChange={onChange}
+                          // values={values}
                         />
                       </DivBoxSC>
                     </DivBoxColumnsSC>

@@ -17,7 +17,7 @@ import {
   StoreCreationSubTitleSC,
   CropperContainer,
 } from '../styled-components-css/styles.modal';
-const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, photoUrls, aspect, cropType }) => {
+const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, storeGalleryUrls, photoUrls, aspect, cropType }) => {
   const { open, setOpen, modalData } = useContext(AppContext);
   const cropperRef = useRef(null);
   let cropper;
@@ -41,6 +41,12 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, pho
         cropper.getCroppedCanvas().toBlob((blob) => {
           const urlToSave = URL.createObjectURL(blob);
           setPhotoUrls({ ...photoUrls, storePhotoUrl: urlToSave });
+        });
+        setOpen(false);
+      } else if (cropType === 'storeGalleryPhotos') {
+        cropper.getCroppedCanvas().toBlob((blob) => {
+          const urlToSave = URL.createObjectURL(blob);
+          setPhotoUrls({ ...photoUrls, storeGalleryUrls: [...storeGalleryUrls, urlToSave] });
         });
         setOpen(false);
       }

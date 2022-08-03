@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 import { MdOutlinePhotoCamera } from 'react-icons/md';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 export const OlifnoSC = styled.ol`
   margin-left: 10px;
@@ -418,6 +419,14 @@ export const IconImgImgSC = styled(MdOutlinePhotoCamera)`
   color: rgba(0, 0, 0, 0.33);
 `;
 
+export const DeleteIconSC = styled(TiDeleteOutline)`
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+`;
+
 export const H1SC = styled.h1`
   font-family: 'Montserrat';
   font-style: normal;
@@ -599,20 +608,31 @@ export const DivFoto4SC = styled.div`
   border-radius: 12px;
 `;
 
-export const DivBoxFoto2SC = styled.div`
+export const DivBoxShowPhotoSC = styled.div`
   width: 193px;
+  height: 193px;
   display: grid;
+  background: none;
+  background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  position: relative;
 `;
 
-export const DivBoxFoto3SC = styled.div`
-  width: 193px;
-  display: grid;
-`;
 
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;
 `;
+
+export const DivDeletePhotoSC = styled.div`
+  width: 193px;
+  display: grid;
+`;
+
 export const SaveButtonPanelVendSC = styled.button`
   /* Кнопка (первичная) */
   /* Auto layout */

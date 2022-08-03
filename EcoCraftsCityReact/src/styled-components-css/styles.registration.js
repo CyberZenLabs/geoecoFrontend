@@ -123,14 +123,14 @@ export const LabelSC = styled.label`
 export const DivBoxSC = styled.div`
   //position: absolute;
   width: 100%;
-  height: 92px;
+  min-height: 92px;
   left: 0px;
   top: 119px;
 `;
 
 export const DivBoxRowsSC = styled.div`
   display: grid;
-  grid-template-rows: 85px 85px 85px 85px 85px;
+  grid-template-rows: 85px 85px max-content 85px 85px;
   //border: 1px solid red;
   @media (max-width: 660px) {
     display: flex;
@@ -141,7 +141,7 @@ export const DivBoxColumnsSC = styled.div`
   display: grid;
   grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '234px 234px')};
   grid-column-gap: 44px;
-  // border: 1px solid red;
+  grid-template-rows: max-content;
   @media (max-width: 660px) {
     display: block !important;
     width: 100%;

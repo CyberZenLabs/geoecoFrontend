@@ -6,7 +6,7 @@ import {AiOutlineCheck} from 'react-icons/ai'
 
 function CustomInputCheckBox(props) {
 
-	const {isSelected, onClick} = props;
+	const {isSelected, onClick=null} = props;
 	const [isChecked, setIsChecked] = useState(false);
 
 	useEffect(() => {
@@ -14,7 +14,9 @@ function CustomInputCheckBox(props) {
 	}, [isSelected])
 
 	const _onClick = () => {
-		onClick(isChecked)
+		if (onClick){
+			onClick(isChecked)
+		}
 		setIsChecked(!isChecked);
 	};
 

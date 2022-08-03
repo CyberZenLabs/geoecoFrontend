@@ -17,25 +17,39 @@ import {
   StoreCreationSubTitleSC,
   CropperContainer,
 } from '../styled-components-css/styles.modal';
-const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, photoUrls }) => {
+const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, storeGalleryUrls, photoUrls, aspect, cropType }) => {
   const { open, setOpen, modalData } = useContext(AppContext);
   const cropperRef = useRef(null);
   let cropper;
   let imageElement;
+
   const onCrop = () => {
-    console.log('123');
     imageElement = cropperRef.current;
-    console.log(imageElement);
+
     cropper = imageElement.cropper;
     // console.log(URL.createObjectURL(cropper));
   };
   const submitModal = (isCrop) => {
     if (isCrop) {
-      cropper.getCroppedCanvas().toBlob((blob) => {
-        const urlToSave = URL.createObjectURL(blob);
-        setPhotoUrls({ ...photoUrls, storePhotoUrl: urlToSave });
-      });
-      setOpen(false);
+      if (cropType === 'storeBannerPhoto') {
+        cropper.getCroppedCanvas().toBlob((blob) => {
+          const urlToSave = URL.createObjectURL(blob);
+          setPhotoUrls({ ...photoUrls, storeBannerUrl: urlToSave });
+        });
+        setOpen(false);
+      } else if (cropType === 'storeProfilePhoto') {
+        cropper.getCroppedCanvas().toBlob((blob) => {
+          const urlToSave = URL.createObjectURL(blob);
+          setPhotoUrls({ ...photoUrls, storePhotoUrl: urlToSave });
+        });
+        setOpen(false);
+      } else if (cropType === 'storeGalleryPhotos') {
+        cropper.getCroppedCanvas().toBlob((blob) => {
+          const urlToSave = URL.createObjectURL(blob);
+          setPhotoUrls({ ...photoUrls, storeGalleryUrls: [...storeGalleryUrls, urlToSave] });
+        });
+        setOpen(false);
+      }
     }
   };
 
@@ -52,7 +66,7 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, pho
             <StoreCreationSubTitleSC>{subTitle}</StoreCreationSubTitleSC>
             <CropperContainer>
               {cropImageModal && (
-                <Cropper src={photoUrl} aspectRatio={1 / 1} crop={onCrop} ref={cropperRef} />
+                <Cropper src={photoUrl} aspectRatio={aspect} crop={onCrop} ref={cropperRef} />
                 // <ReactCrop crop={crop} onChange={(c) => setCrop(c)} aspectRation={1}>
                 //   <img onLoad={onImageLoad} ref={imgRef} src={photoUrl} />
                 // </ReactCrop>

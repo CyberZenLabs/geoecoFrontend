@@ -82,8 +82,10 @@ import {
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
-  OverlayImgSC,
-  OverlayTextSC,
+  OverlayProfileImgSC,
+  OverlayProfileImageTextSC,
+  OverlayBannerImageTextSC,
+  OverlayBannerImgSC,
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -102,12 +104,15 @@ const routes = [
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
   const [apiStoreData, setApiStoreData] = useState(null);
-  const [preview, setPreview] = useState([]);
+
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
     storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storeBannerUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
   });
-
+  const [activePhotoUrl, setActivePhotoUrl] = useState('');
+  const [cropType, setCropType] = useState('');
+  const [aspect, setAspect] = useState(1);
   const [modalOpen, seModalOpen] = useState(true);
 
   const onClickTab = (index) => (e) => {
@@ -116,6 +121,7 @@ const VendorProfile = () => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
+  const storeBannerRef = useRef(null);
   let testId = '62e38df24c1f460016904636';
   useEffect(() => {
     const getProfileData = async () => {
@@ -163,17 +169,31 @@ const VendorProfile = () => {
   // }
 
   const handleUploadFile = (type) => {
-    if (type === 'storePhoto') {
+    if (type === 'storePhotoRef') {
       storePhotoRef.current.click();
+    }
+    if (type === 'storeBannerRef') {
+      storeBannerRef.current.click();
     }
   };
 
-  const fileChangeHandler = () => {
-    setOpen(true);
-    console.log('store', storePhotoRef);
-    const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+  const fileChangeHandler = (type) => {
+    if (type == 'storePhotoRef') {
+      setAspect(1);
+      setCropType('storeProfilePhoto');
+      setOpen(true);
 
-    setPhotoUrls({ ...photoUrls, storePhotoUrl: objectUrl });
+      const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storePhotoRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeBannerRef') {
+      setAspect(1350 / 322);
+      setCropType('storeBannerPhoto');
+      setOpen(true);
+      const objectUrl = URL.createObjectURL(storeBannerRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    }
   };
 
   const startingValues = {
@@ -260,14 +280,26 @@ const VendorProfile = () => {
           >
             {(formik) => (
               <Form>
-                <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
-
+                <input
+                  ref={storePhotoRef}
+                  type="file"
+                  name="storePhoto"
+                  onChange={() => fileChangeHandler('storePhotoRef')}
+                />
+                <input
+                  ref={storeBannerRef}
+                  type="file"
+                  name="bannerPhoto"
+                  onChange={() => fileChangeHandler('storeBannerRef')}
+                />
                 <EcoModal
                   open={modalOpen}
                   title="Загрузка фотографии"
                   subTitle="Поместите фото профиля в выбранную область"
                   cropImageModal={true}
-                  photoUrl={photoUrls.storePhotoUrl}
+                  cropType={cropType}
+                  aspect={aspect}
+                  photoUrl={activePhotoUrl}
                   setPhotoUrls={setPhotoUrls}
                   photoUrls={photoUrls}
                 ></EcoModal>
@@ -275,15 +307,29 @@ const VendorProfile = () => {
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Баннер магазина</H1DefinSC>
-                      <ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
+                      <ButtonBannerSC
+                        photoUrl={photoUrls.storeBannerUrl}
+                        onClick={() => handleUploadFile('storeBannerRef')}
+                      >
+                        <OverlayBannerImgSC>
+                          <OverlayBannerImageTextSC>Изменить фото</OverlayBannerImageTextSC>
+                        </OverlayBannerImgSC>
+                        {console.log(apiStoreData, 'now')}
+                        {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        ) : null}
+                      </ButtonBannerSC>
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Фото</H1DefinSC>
-                      {console.log('photoUrls', photoUrls.storePhotoUrl)}
-                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhoto')}>
-                        <OverlayImgSC>
-                          <OverlayTextSC>Изменить фото</OverlayTextSC>
-                        </OverlayImgSC>
+                      {console.log('photoUrls', photoUrls)}
+                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhotoRef')}>
+                        <OverlayProfileImgSC>
+                          <OverlayProfileImageTextSC>Изменить фото</OverlayProfileImageTextSC>
+                        </OverlayProfileImgSC>
                         {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />

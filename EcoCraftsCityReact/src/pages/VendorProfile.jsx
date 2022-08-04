@@ -88,6 +88,7 @@ import {
   OverlayBannerImgSC,
   DivBoxShowPhotoSC,
   DeleteIconSC,
+  DivCarouselPhotosSC,
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -213,7 +214,7 @@ const VendorProfile = () => {
       setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
       setActivePhotoUrl(objectUrl);
     } else if (type == 'storeGalleryRef') {
-      if (photoUrls.storeGalleryUrls.length <= 10) {
+      if (photoUrls.storeGalleryUrls.length < 11) {
         setAspect(1);
         setCropType('storeGalleryPhotos');
         setOpen(true);
@@ -221,8 +222,8 @@ const VendorProfile = () => {
         const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
         setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
         setActivePhotoUrl(objectUrl);
-      } else if (photoUrls.storeGalleryUrls.length > 10) {
-        showToast('error', 'Нельзя загружать больше 10 фотографий');
+      } else if (photoUrls.storeGalleryUrls.length >= 11) {
+        showToast('error', 'Нельзя загружать больше 11 фотографий');
       }
     }
   };
@@ -231,8 +232,8 @@ const VendorProfile = () => {
     const newPhotos = [
       ...photoUrls.storeGalleryUrls.filter((element) => ![photoUrls.storeGalleryUrls[i]].includes(element)),
     ];
-    console.log('errroe', newPhotos);
-    setPhotoUrls({ ...photoUrls.storeGalleryUrls, storeGalleryUrls: newPhotos });
+    
+    setPhotoUrls({ ...photoUrls, storeGalleryUrls: newPhotos });
   };
 
   const arrayStorePhotosExtra = photoUrls.storeGalleryUrls;
@@ -429,6 +430,7 @@ const VendorProfile = () => {
                           </DivInnerPhotoInputSC>
                         </ButtonImgSC>
                       </DivBoxFoto1SC>
+
                       <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
                         <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
                       </DivBoxShowPhotoSC>
@@ -441,7 +443,7 @@ const VendorProfile = () => {
 
                       {photoUrls.storeGalleryUrls.length >= 3 ? (
                         <>
-                          {[...photoUrls.storeGalleryUrls].splice(3, 7).map((photo, i) => (
+                          {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
                             <DivBoxShowPhotoSC photoUrl={photo}>
                               <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
                             </DivBoxShowPhotoSC>

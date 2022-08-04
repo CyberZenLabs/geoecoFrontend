@@ -459,6 +459,7 @@ export const DivBGImageSC = styled.div`
 
   //margin-left: 20px;
   margin-right: 20px;
+  margin-left: 20px;
   margin-bottom: 25px;
 `;
 
@@ -561,13 +562,19 @@ export const DivBoxText3 = styled.div`
 `;
 
 export const DivBoxColumnsFotosSC = styled.div`
-  max-width: 868px;
+  //max-width: 868px;
   width: 100%;
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')};
+  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')}; */
+  grid-template-columns: repeat(auto-fill, 193px);
+  column-gap: 2%;
+  row-gap: 7%;
+
   margin-top: 28px;
   // border: 2px solid blue;
-  margin-left: 25px;
+  //margin-left: 25px;
+  //align-items: center;
+  justify-content: space-around;
 `;
 
 export const DivBoxFoto1SC = styled.div`
@@ -738,3 +745,9 @@ export const OverlayBannerImgSC = styled.div`
     visibility: visible !important;
   }
 `;
+
+
+export const DivCarouselPhotosSC = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  `;

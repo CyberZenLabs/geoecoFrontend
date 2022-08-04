@@ -53,6 +53,7 @@ import {
   H1PageOptionHidesSC,
   H1PageOptionSC,
 } from "../styled-components-css/styles.settingsSeller";
+import VendorNavMenu from "../components/VendorNavMenu";
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -238,46 +239,7 @@ const SellerSettings = ({ product }) => {
       </DivWrapLinkSC>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-          <DivStoreInfoSC>
-            <DivStoreInfoImageSC
-              src={"/default-images/plant.jpg"}
-            ></DivStoreInfoImageSC>
-            <DivStoreInfoDataSC>
-              <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
-              <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
-            </DivStoreInfoDataSC>
-          </DivStoreInfoSC>
-          <DivStoreOptionsSC>
-            <DivStoreOptionsLinkSC to="/vendorprofile">Профиль</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkStoreSC to="/sellersettings">
-              Настройки
-              </DivStoreOptionsLinkStoreSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/store/1">
-              Магазин 50
-            </DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">
-              Оплата и доставка
-            </DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/">Покупки</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Продажи</DivStoreOptionsLinkSC>
-            <br />
-            <DivStarsPanelSC>
-              <DivStoreOptionsLeftPanelSC>
-                <DivStoreOptionsLinkSC to="/">Отзывы 30</DivStoreOptionsLinkSC>
-                <br />
-              </DivStoreOptionsLeftPanelSC>
-              <DivStoreOptionsRightPanelSC>
-                <StarRating product={true} />
-              </DivStoreOptionsRightPanelSC>
-            </DivStarsPanelSC>
-          </DivStoreOptionsSC>
+        <VendorNavMenu page={1}/>
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>

@@ -19,8 +19,8 @@ import {
   DivColumnSlashBoxSC,
   DivColumnGGBoxSC,
   DivColumnCVVCVCBoxSC,
+  DivBoxButtonLinkSC,
 } from '../styled-components-css/styles.map-binding';
-import { DivBoxButtonCreateStoreSC } from '../styled-components-css/styles.navbar';
 import TextField from '../components/TextField';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
@@ -93,8 +93,7 @@ const MapBinding = () => {
                   <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
                     Отмена
                   </ButtonCustomWhiteSC>
-
-                  <DivBoxButtonCreateStoreSC
+                  <DivBoxButtonLinkSC
                     disabled={!formik.dirty || !formik.isValid}
                     statusOpasity={!formik.dirty || !formik.isValid}
                     width={'100%'}
@@ -102,7 +101,7 @@ const MapBinding = () => {
                     type="submit"
                   >
                     Привязать
-                  </DivBoxButtonCreateStoreSC>
+                  </DivBoxButtonLinkSC>
                 </DivButtonsSC>
               </DivBox2ButtonsSC>
             </Form>

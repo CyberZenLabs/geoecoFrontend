@@ -35,7 +35,7 @@ export const CatalogIconSc = styled(Link)`
   margin-left: 2rem;
   z-index: 10000;
   cursor: pointer;
-  margin-left: 214px;
+  margin-left: 286px;
   margin-bottom: 20px;
   margin-top: 20px;
   z-index: 10000;

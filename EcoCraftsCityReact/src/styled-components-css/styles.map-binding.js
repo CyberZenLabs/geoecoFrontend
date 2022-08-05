@@ -183,3 +183,25 @@ export const DivButtonsSC = styled.div`
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
   }
 `;
+
+export const DivBoxButtonLinkSC = styled.div`
+  :hover {
+    background-color: #85cb33;
+    color: white;
+    cursor: pointer;
+  }
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 10px 19px;
+  color: #85cb33;
+  font-size: 16px;
+  height: 56px;
+  font-weight: semibold;
+  height: 100%;
+  width: 100%;
+  /* Акцент 70% */
+
+  border: 2px solid rgba(133, 203, 51, 0.7);
+  border-radius: 20px;
+`;

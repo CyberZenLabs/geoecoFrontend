@@ -405,8 +405,8 @@ export const ButtonImgSC = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  width: 193px;
+  height: 193px;
   max-width: 193px;
   display: grid;
   justify-content: center;
@@ -564,12 +564,12 @@ export const DivBoxText3 = styled.div`
 export const DivBoxColumnsFotosSC = styled.div`
   //max-width: 868px;
   width: 100%;
+  height: 100%;
   display: grid;
   /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')}; */
   grid-template-columns: repeat(auto-fill, 193px);
-  column-gap: 2%;
-  row-gap: 7%;
-
+  grid-template-rows: repeat(auto-fill, 206px);
+  column-gap: 10px;
   margin-top: 28px;
   // border: 2px solid blue;
   //margin-left: 25px;
@@ -629,7 +629,6 @@ export const DivBoxShowPhotoSC = styled.div`
   position: relative;
 `;
 
-
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;
@@ -673,6 +672,7 @@ export const SaveButtonPanelVendSC = styled.button`
 export const DivButtonBottomSaveVendSC = styled.div`
   // border: 2px solid blue;
   display: grid;
+
   grid-template-columns: 100%;
   max-width: 1010px;
 `;
@@ -746,8 +746,7 @@ export const OverlayBannerImgSC = styled.div`
   }
 `;
 
-
 export const DivCarouselPhotosSC = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  `;
+`;

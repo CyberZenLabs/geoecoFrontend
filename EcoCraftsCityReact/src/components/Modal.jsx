@@ -17,7 +17,17 @@ import {
   StoreCreationSubTitleSC,
   CropperContainer,
 } from '../styled-components-css/styles.modal';
-const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, storeGalleryUrls, photoUrls, aspect, cropType }) => {
+const EcoModal = ({
+  title,
+  subTitle,
+  cropImageModal,
+  photoUrl,
+  setPhotoUrls,
+  storeGalleryUrls,
+  photoUrls,
+  aspect,
+  cropType,
+}) => {
   const { open, setOpen, modalData } = useContext(AppContext);
   const cropperRef = useRef(null);
   let cropper;
@@ -27,6 +37,7 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, sto
     imageElement = cropperRef.current;
 
     cropper = imageElement.cropper;
+
     // console.log(URL.createObjectURL(cropper));
   };
   const submitModal = (isCrop) => {
@@ -56,7 +67,7 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, sto
   return (
     <>
       <BlockModal isOpen={open} contentLabel="Modal">
-        <DivWrapModal>
+        <DivWrapModal isCropModal={cropImageModal}>
           <ButtonPrevModal onClick={() => setOpen(false)}>
             <IoIosArrowBackSC />
           </ButtonPrevModal>
@@ -66,18 +77,38 @@ const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, sto
             <StoreCreationSubTitleSC>{subTitle}</StoreCreationSubTitleSC>
             <CropperContainer>
               {cropImageModal && (
-                <Cropper src={photoUrl} aspectRatio={aspect} crop={onCrop} ref={cropperRef} />
+                <Cropper
+                  background={false}
+                  responsive={true}
+                  viewMode={1}
+                  minCropBoxHeight={1}
+                  minCropBoxWidth={1}
+                  style={{
+                    maxHeight: '600px',
+                    height: '70%',
+                    width: '100%',
+                    maxWidth: '1322px',
+                    margin: '0px 20px',
+                    background: 'white !important',
+                  }}
+                  src={photoUrl}
+                  aspectRatio={aspect}
+                  crop={onCrop}
+                  ref={cropperRef}
+                />
                 // <ReactCrop crop={crop} onChange={(c) => setCrop(c)} aspectRation={1}>
                 //   <img onLoad={onImageLoad} ref={imgRef} src={photoUrl} />
                 // </ReactCrop>
               )}
             </CropperContainer>
 
-            {modalData.inputs.map(({ input }) => (
-              <DivBoxRowModalSC>
-                <EmailFieldSC label="email" type="email" name={input} fullSize={true} placeholder={input} />
-              </DivBoxRowModalSC>
-            ))}
+            {modalData.inputs.lenght === 0 &&
+              modalData.inputs.map(({ input }) => (
+                <DivBoxRowModalSC>
+                  <EmailFieldSC label="email" type="email" name={input} fullSize={true} placeholder={input} />
+                </DivBoxRowModalSC>
+              ))}
+
             {modalData.button ? (
               <DivBoxRowModalContSC>
                 <ButtonContinueModal onClick={() => submitModal(cropImageModal)}>Продолжить</ButtonContinueModal>

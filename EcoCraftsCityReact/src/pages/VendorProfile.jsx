@@ -89,6 +89,7 @@ import {
   DivBoxShowPhotoSC,
   DeleteIconSC,
   DivCarouselPhotosSC,
+  DivInputsDisplayNoneSC,
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -161,7 +162,7 @@ const VendorProfile = () => {
   useEffect(() => {
     if (apiStoreData) {
       let photoUrl;
-       let timesrun = 0;
+      let timesrun = 0;
       Object.entries(apiStoreData.data.data.data).forEach((field) => {
         if (field[0] === 'storePhoto') {
           photoUrl = `http://localhost:5767/stores/${field[1]}`;
@@ -171,11 +172,9 @@ const VendorProfile = () => {
           setPhotoUrls({ ...photoUrls, storeBannerUrl: photoUrl });
         } else if (field[0] === 'storeAboutPhotos') {
           field[1].map((url) => {
-           
-
             timesrun += 1;
             let photoUrlArray = [];
-           
+
             photoUrl = `http://localhost:5767/stores/${url}`;
             photoUrlArray.push(url);
 
@@ -230,7 +229,7 @@ const VendorProfile = () => {
       setPhotoUrls({ ...photoUrls, storePhotoRef: objectUrl });
       setActivePhotoUrl(objectUrl);
     } else if (type == 'storeBannerRef') {
-      setAspect(1350 / 322);
+      setAspect(1332 / 352);
       setCropType('storeBannerPhoto');
       setOpen(true);
       const objectUrl = URL.createObjectURL(storeBannerRef.current.files[0]);
@@ -351,24 +350,27 @@ const VendorProfile = () => {
           >
             {(formik) => (
               <Form>
-                <input
-                  ref={storePhotoRef}
-                  type="file"
-                  name="storePhoto"
-                  onChange={() => fileChangeHandler('storePhotoRef')}
-                />
-                <input
-                  ref={storeBannerRef}
-                  type="file"
-                  name="bannerPhoto"
-                  onChange={() => fileChangeHandler('storeBannerRef')}
-                />
-                <input
-                  ref={storeGalleryRef}
-                  type="file"
-                  name="storeGallery"
-                  onChange={() => fileChangeHandler('storeGalleryRef')}
-                />
+                <DivInputsDisplayNoneSC>
+                  <input
+                    ref={storePhotoRef}
+                    type="file"
+                    name="storePhoto"
+                    onChange={() => fileChangeHandler('storePhotoRef')}
+                  />
+                  <input
+                    ref={storeBannerRef}
+                    type="file"
+                    name="bannerPhoto"
+                    onChange={() => fileChangeHandler('storeBannerRef')}
+                  />
+                  <input
+                    ref={storeGalleryRef}
+                    type="file"
+                    name="storeGallery"
+                    onChange={() => fileChangeHandler('storeGalleryRef')}
+                  />
+                </DivInputsDisplayNoneSC>
+
                 <EcoModal
                   open={modalOpen}
                   title="Загрузка фотографии"
@@ -382,7 +384,6 @@ const VendorProfile = () => {
                   storeGalleryUrls={photoUrls.storeGalleryUrls}
                 ></EcoModal>
                 <DivItemsOptionsSC>
-                  {console.log(apiStoreData)}
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Баннер магазина</H1DefinSC>
@@ -420,10 +421,6 @@ const VendorProfile = () => {
                     <DivTwoSidesSC>
                       <H1DefinSC>Имя / название</H1DefinSC>
                       <TextFieldStore label="123" type="text" name="storeName" />
-                    </DivTwoSidesSC>
-                    <DivTwoSidesSC>
-                      {/* <H1DefinSC>Дата рождения</H1DefinSC> <TextFieldStore label="123" type="text" name="dateOfBirth" /> */}
-                      {/* <BirthFieldSC label="email" type="date" placeholder="дд.мм.гг" /> */}
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Место проживания</H1DefinSC>

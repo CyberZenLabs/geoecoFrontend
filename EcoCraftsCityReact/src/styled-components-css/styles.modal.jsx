@@ -20,8 +20,10 @@ export const BlockModal = styled(Modal)`
 `;
 export const DivWrapModal = styled.div`
   display: grid;
-  width: 770px;
-  height: 850px;
+  min-width: 360px;
+  min-height: 600px;
+  ${(p) => p.isCropModal ? 'width: 1322px;' : 'width: 750px;'}
+  ${(p) => p.isCropModal ? 'height: 750px;' : null}
   background: #ffffff;
   border-radius: 30px;
   z-index: 1000;
@@ -100,7 +102,11 @@ export const StoreCreationSubTitleSC = styled.h4`
     font-size: 15px;
   }
 `;
-export const CropperContainer = styled.div``;
+export const CropperContainer = styled.div`
+  width: 100%;
+  //height: max-content;
+  //margin: 0% 10% 0% 10%;
+`;
 export const ButtonContinueModal = styled.button`
   width: 500px;
   max-width: 500px;
@@ -171,8 +177,8 @@ export const EmailFieldSC = styled.input`
   }
 `;
 export const CenterItemsSC = styled.div`
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
+  /* max-width: 600px; */
   min-width: 320px;
   justify-self: center;
   display: grid;

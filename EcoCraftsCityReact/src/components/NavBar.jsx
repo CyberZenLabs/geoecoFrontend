@@ -88,7 +88,9 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          {/*<DivTextBoxSC>
+
+         
+
 
            <DivTextBoxSC>
 

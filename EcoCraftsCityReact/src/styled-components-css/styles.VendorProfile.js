@@ -268,18 +268,23 @@ export const DivItemsOptionsSC = styled.div`
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 620px;
+  height: 100%;
   // border: 2px solid black;
   max-width: 1140px;
 `;
+
+export const DivInputsDisplayNoneSC = styled.div`
+  display: none;
+`;
+
 export const DivInnerContentSC = styled.div`
   display: grid;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
-  height: 580px;
+  height: 100%;
   //border: 2px solid black;
-  grid-template-rows: 140px 210px 50px 50px 50px;
+  grid-template-rows: 140px 210px 50px 50px;
   max-width: 1140px;
   gap: 20px;
 `;
@@ -383,7 +388,8 @@ export const ButtonBannerSC = styled.button`
   text-align: center;
   color: rgba(0, 0, 0, 0.33);
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  /* border: 1px solid rgba(0, 0, 0, 0.33); */
+  border: ${(p) => (p.photoUrl && p.photoUrl !== 'http://localhost:5767/stores/defaultStore.svg' ? 'none' : '1px solid rgba(0, 0, 0, 0.33)')};
   height: 126px;
   background: none;
   background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};

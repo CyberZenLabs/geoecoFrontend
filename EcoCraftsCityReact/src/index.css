@@ -500,3 +500,6 @@ font-size: 28px;
   
 }
 
+.cropper-modal {
+  background-color: #fff !important;
+}

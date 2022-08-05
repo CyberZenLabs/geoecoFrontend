@@ -9,6 +9,8 @@ import UilStore from '@iconscout/react-unicons/icons/uil-store';
 
 import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
 import { GoPackage, GoCreditCard } from 'react-icons/go';
+import { MdOutlineStorefront } from 'react-icons/md';
+import { IoExitOutline } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import {
   DivBoxLogoSC,
@@ -161,8 +163,37 @@ const ResponsiveAppBar = () => {
               </div>
 
               <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
               <ul class="profileMenu">
+                {/* <li>
+                <LinkProfileBoxSC to="#">
+                  <GoPackage />
+                  Заказы
+                </LinkProfileBoxSC>
+              </li> */}
+                <li>
+                  <LinkProfileBoxSC to="/map-binding">
+                    <GoCreditCard />
+                    Мой Карты
+                  </LinkProfileBoxSC>
+                </li>
+
+                {/* <li>
+                <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
+              </li> */}
+                <li>
+                  <LinkProfileBoxSC to="/vendorprofile">
+                    <MdOutlineStorefront />
+                    Мой магазин
+                  </LinkProfileBoxSC>
+                </li>
+                <li class="logout">
+                  <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                    <IoExitOutline />
+                    Выйти
+                  </LinkProfileBoxSC>
+                </li>
+              </ul>
+              {/* <ul class="profileMenu">
                 <li>
                   <a href="#">
                     <GoPackage />
@@ -175,6 +206,12 @@ const ResponsiveAppBar = () => {
                     Мои Карты
                   </a>
                 </li>
+                <li>
+                  <a href="#">
+                    <MdOutlineStorefront />
+                    Мой магазин
+                  </a>
+                </li>
 
                 <li>
                   <a href="#">Баланс и история операций</a>
@@ -183,39 +220,14 @@ const ResponsiveAppBar = () => {
                   <a href="#">Отзывы и вопросы</a>
                 </li>
                 <li class="logout">
+                  <IoExitOutline />
+
                   <a onClick={handleLogout}>Выйти</a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
-            <ul class="profileMenu">
-              <li>
-                <LinkProfileBoxSC to="#">
-                  <GoPackage />
-                  Заказы
-                </LinkProfileBoxSC>
-              </li>
-              <li>
-                <LinkProfileBoxSC to="#">
-                  <GoCreditCard />
-                  Мой Карты
-                </LinkProfileBoxSC>
-              </li>
-
-              <li>
-                <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
-              </li>
-              <li>
-                <LinkProfileBoxSC to="#">Отзывы и вопросы</LinkProfileBoxSC>
-              </li>
-              <li class="logout">
-                <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                  Выйти
-                </LinkProfileBoxSC>
-              </li>
-            </ul>
           </div>
         ) : null}
         <DivBoxIconHeaderSC>

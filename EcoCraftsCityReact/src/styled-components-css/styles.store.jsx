@@ -123,7 +123,7 @@ export const DivStoreOptionsRightPanelSC = styled.div`
 export const DivStoreOptionsLinkSC = styled(Link)`
   font-family: "Montserrat";
   font-style: normal;
-  font-weight: 500;
+  font-weight: ${(p) => (p.isActive ? '700;' : '500')};
   font-size: 15px;
   line-height: 25px;
   margin: 12px;
@@ -131,17 +131,7 @@ export const DivStoreOptionsLinkSC = styled(Link)`
   text-decoration: none;
   //border: 2px solid gold;
 `;
-export const DivStoreOptionsLinkStoreSC = styled(Link)`
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 25px;
-  margin: 12px;
-  color: black;
-  text-decoration: none;
-  //border: 2px solid gold;
-`;
+
 export const HrLinkSC = styled.hr`
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.171);

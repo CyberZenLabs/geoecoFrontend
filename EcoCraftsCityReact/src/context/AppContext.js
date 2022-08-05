@@ -6,11 +6,15 @@ export function AppProvider({ children }) {
   const [showCatalog, setShowCatalog] = useState(false);
 
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const [pass, setPass] = useState(false);
   const [mail, setMail] = useState(false);
 
+  const [disable, setDisable] = useState(false);
   const [openRedact, setOpenRedact] = useState(false);
+  const [openEmail, setOpenEmail] = useState(false);
+  const [Starttimer, setstarttimer] = useState(true);
 
   const [modalData, setModalData] = useState({
     inputs: [],
@@ -30,7 +34,15 @@ export function AppProvider({ children }) {
         modalData,
         setModalData,
         openRedact,
-        setOpenRedact,
+         setOpenRedact,
+         openEmail,
+         setOpenEmail,
+         Starttimer,
+         setstarttimer,
+         openModal,
+         setOpenModal,
+         disable,
+         setDisable,
       }}
     >
       {children}

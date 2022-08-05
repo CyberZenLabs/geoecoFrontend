@@ -7,8 +7,8 @@ export const DivReviewShowWrapSC = styled.div`
   grid-template-rows: max-content 120px 48px;
   grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
-  background-color: rgba(243, 243, 243, 0.2);
-  width: 460px;
+  background:#fff;
+  width: 490px;
   height: 150px;
   border-radius: 12px;
   padding: 15px 27px;
@@ -58,9 +58,11 @@ export const DivDateRatingInfoSC = styled.div`
   grid-template-rows: 1fr 1fr;
   row-gap: 6px;
   align-self:start;
+  width: 350px;
   @media (max-width: 1000px) {
     grid-gap: 4px;
   }
+
 `;
 
 export const DivDateReviewCreateSC = styled.div`
@@ -91,8 +93,8 @@ font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 20px;
-
 color: #252525;
+
 `;
 
 export const DivStarRaitingSC = styled.div`

@@ -85,9 +85,11 @@ import {
   OverlayImgSC,
   OverlayTextSC,
 } from '../styled-components-css/styles.VendorProfile';
+import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
+import AppContext from '../context/AppContext';
 
 
 
@@ -101,11 +103,15 @@ const routes = [
 ];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
-  const [apiStoreData, setApiStoreData] = useState({});
+  const [apiStoreData, setApiStoreData] = useState(null);
   const [preview, setPreview] = useState([]);
+  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
     storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
   });
+
+  const [modalOpen, seModalOpen] = useState(true);
+
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
@@ -114,15 +120,20 @@ const VendorProfile = () => {
   const storePhotoRef = useRef(null);
   let testId = '62e38df24c1f460016904636';
   useEffect(() => {
-    axiosFetch({
-      axiosInstance: axiosCustom,
-      method: 'GET',
-      url: `/api/v1/store/${testId}`,
+    const getProfileData = async () => {
+      await axiosFetch({
+        axiosInstance: axiosCustom,
+        method: 'GET',
+        url: `/api/v1/store/${testId}`,
+      });
+    };
+
+    getProfileData().then((res) => {
+      setApiStoreData(response);
     });
   }, []);
 
   useEffect(() => {
-    setApiStoreData(response);
     console.log(response);
 
     // if (response != []) {
@@ -138,28 +149,20 @@ const VendorProfile = () => {
     let photoUrl;
 
     const checkStringLogic = () => {
-      if (apiStoreData.data != undefined) {
+      console.log(apiStoreData, 'storeData');
+      if (apiStoreData != null && apiStoreData.length != 0) {
         return apiStoreData.data.data.storePhoto;
       } else {
         return 'defaultStore.svg';
       }
-
-      return;
     };
     photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
     setPhotoUrls({ ...photoUrls, photoUrl });
   }, [apiStoreData]);
 
-  useEffect(() => {
-    // create the preview
-
-    if (storePhotoRef !== null) {
-      // console.log('console photo', storePhotoRef.current.files[0]);
-    }
-
-    // free memory when ever this component is unmounted
-    // return () => URL.revokeObjectURL(objectUrl);
-  }, [storePhotoRef]);
+  // const setNewPhotoUrl = () => {
+  //   setPhotoUrls({...photoUrls, storePhotoUrl: "123" });
+  // }
 
   const handleUploadFile = (type) => {
     if (type === 'storePhoto') {
@@ -168,6 +171,7 @@ const VendorProfile = () => {
   };
 
   const fileChangeHandler = () => {
+    setOpen(true);
     console.log('store', storePhotoRef);
     const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
 
@@ -274,6 +278,16 @@ const VendorProfile = () => {
             {(formik) => (
               <Form>
                 <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
+
+                <EcoModal
+                  open={modalOpen}
+                  title="Загрузка фотографии"
+                  subTitle="Поместите фото профиля в выбранную область"
+                  cropImageModal={true}
+                  photoUrl={photoUrls.storePhotoUrl}
+                  setPhotoUrls={setPhotoUrls}
+                  photoUrls={photoUrls}
+                ></EcoModal>
                 <DivItemsOptionsSC>
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
@@ -287,7 +301,7 @@ const VendorProfile = () => {
                         <OverlayImgSC>
                           <OverlayTextSC>Изменить фото</OverlayTextSC>
                         </OverlayImgSC>
-                        {apiStoreData && !apiStoreData.data.data.storePhoto ? (
+                        {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
                             <H1SC>Загрузить фото</H1SC>
@@ -363,6 +377,14 @@ const VendorProfile = () => {
 
   return (
     <>
+      {/* function CropDemo({ src }) {
+  const [crop, setCrop] = useState<Crop>()
+  return (
+    <ReactCrop crop={crop} onChange={c => setCrop(c)}>
+      <img src={src} />
+    </ReactCrop>
+  )
+} */}
       <DivWrapLinkSC>
         <DivHistorySC>
           <DivBackBoxSC>

@@ -170,6 +170,13 @@ table {
   font-size: 1.7rem;
   color: #ff3d3d;
 }
+.formValidIcons {
+  position: absolute;
+  right: 30px;
+  top: 11px;
+  font-size: 1.7rem;
+  color: #ff3d3d;
+}
 .image_cadr{
   margin-top: 6px;
   margin-left: 10px;

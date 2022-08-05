@@ -3,6 +3,7 @@ import { FaOpencart } from "react-icons/fa";
 import AppContext from "../context/AppContext";
 import { getPadTime } from "../HelpTimer/getPadTime";
 import {openCarts} from "./Modal"
+
 import {
   BlockModal,
   ButtonContinueModal,
@@ -17,11 +18,12 @@ import {
   PasswordFieldSC,
   DivTextEmailSC,
   DivTimerSC,
+  DivTexttimesSC,
 } from "../styled-components-css/styles.modalEmail";
 
 const ModalSendEmail = () => {
-  const { openEmail, setOpenEmail, modalData,} = useContext(AppContext);
-  const [disable, setDisable] = React.useState(false);
+  const { openEmail, setOpenEmail, modalData,disable,setDisable} = useContext(AppContext);
+ 
   const [Timeleft, SetTimeleft] =useState(60);
 
    
@@ -30,7 +32,9 @@ const ModalSendEmail = () => {
   useEffect(()=>{
     const interval = setInterval(() => {
       disable&&SetTimeleft((Timeleft)=>Timeleft>=1?Timeleft-1:0)
-   
+    
+    
+     
    
     }, 1000);
     if(Timeleft===0){setDisable(false);};
@@ -71,7 +75,7 @@ const ModalSendEmail = () => {
                <img src="/default-images/SendEmail.svg"   to="#"  /> 
                
               </DivBoxRowModalSC>
-              <DivTimerSC><span>{minute}:{second}</span>
+              <DivTimerSC><DivTexttimesSC><span>{minute}:{second}</span></DivTexttimesSC>
            <DivBoxRowModalContSC>
             {disable?( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Пожалуйста подождите</ButtonContinueModal>):( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Отправить еще раз</ButtonContinueModal>)}
             

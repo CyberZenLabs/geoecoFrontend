@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {CgSelect} from "react-icons/cg";
 import {
   Main,
   DropDownContainer,
@@ -29,7 +30,7 @@ export default function App() {
      
       <DropDownContainer>
         <DropDownHeader onClick={toggling}>
-          {selectedOption || "Юридический статус"}
+          {selectedOption || "Юридический статус"}<CgSelect></CgSelect>
         </DropDownHeader>
         {isOpen && (
           <DropDownListContainer>

@@ -4,6 +4,7 @@ import './index.css';
 import './page-css/sidenav.css';
 import './sass-files/home-loader.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-image-crop/dist/ReactCrop.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
@@ -25,7 +26,7 @@ import SignIn from './pages/SignIn';
 import StoreFront from './pages/StoreFront';
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
-
+import ModalSendEmail from './components/ModalSendEmail';
 //components
 // import AdminForm from "./pages/AdminForm";
 
@@ -56,9 +57,11 @@ root.render(
           <BrowserRouter>
             {/* Same as */}
             <Modalstore></Modalstore>
+            <ModalSendEmail/>
             <EcoModal></EcoModal>
             <PassModal></PassModal>
             <MailModal></MailModal>
+            
             <div id="overlay-nav"></div>
             <NavBar />
             <Catalog />

@@ -1,6 +1,8 @@
-import React, { useContext, useState } from "react";
-import AppContext from "../context/AppContext";
-import '../page-css/select.css';
+import React, { useContext, useState, useRef, useEffect } from 'react';
+import AppContext from '../context/AppContext';
+import Cropper from 'react-cropper';
+import 'cropperjs/dist/cropper.css';
+
 import {
   BlockModal,
   ButtonContinueModal,
@@ -12,119 +14,64 @@ import {
   EmailFieldSC,
   IoIosArrowBackSC,
   StoreCreationTitleSC,
-  PasswordFieldSC,
-  DivBoxTextSC,
-  SpanQuSC,
-  LinkSC,
-  SelectInputSC,
-  OptionInputSC,
-  DivBoxRowModaSelectlSC,
-
-} from "../styled-components-css/styles.modal";
-
-import Modals from "./ModalSendEmail";
-import ModalSendEmail from "./ModalSendEmail";
-import App from "./SelectUl";
-const EcoModal = () => {
-  const { openModal, setOpenModal, modalData } = useContext(AppContext);
-  const {openEmail, setOpenEmail}=useContext(AppContext);
-   const openMod = () => {
-    setOpenEmail(true);
-    setOpenModal(false);
+  StoreCreationSubTitleSC,
+  CropperContainer,
+} from '../styled-components-css/styles.modal';
+const EcoModal = ({ title, subTitle, cropImageModal, photoUrl, setPhotoUrls, photoUrls }) => {
+  const { open, setOpen, modalData } = useContext(AppContext);
+  const cropperRef = useRef(null);
+  let cropper;
+  let imageElement;
+  const onCrop = () => {
+    console.log('123');
+    imageElement = cropperRef.current;
+    console.log(imageElement);
+    cropper = imageElement.cropper;
+    // console.log(URL.createObjectURL(cropper));
   };
+  const submitModal = (isCrop) => {
+    if (isCrop) {
+      cropper.getCroppedCanvas().toBlob((blob) => {
+        const urlToSave = URL.createObjectURL(blob);
+        setPhotoUrls({ ...photoUrls, storePhotoUrl: urlToSave });
+      });
+      setOpen(false);
+    }
+  };
+
   return (
     <>
-      <BlockModal isOpen={openModal} contentLabel="Modal" >
+      <BlockModal isOpen={open} contentLabel="Modal">
         <DivWrapModal>
-          <ButtonPrevModal onClick={() => setOpenModal(false)}>
+          <ButtonPrevModal onClick={() => setOpen(false)}>
             <IoIosArrowBackSC />
           </ButtonPrevModal>
+
           <CenterItemsSC>
-           
-           
-           <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
-            {modalData.inputs.map(({ email}) => (
+            <StoreCreationTitleSC>{title}</StoreCreationTitleSC>
+            <StoreCreationSubTitleSC>{subTitle}</StoreCreationSubTitleSC>
+            <CropperContainer>
+              {cropImageModal && (
+                <Cropper src={photoUrl} aspectRatio={1 / 1} crop={onCrop} ref={cropperRef} />
+                // <ReactCrop crop={crop} onChange={(c) => setCrop(c)} aspectRation={1}>
+                //   <img onLoad={onImageLoad} ref={imgRef} src={photoUrl} />
+                // </ReactCrop>
+              )}
+            </CropperContainer>
+
+            {modalData.inputs.map(({ input }) => (
               <DivBoxRowModalSC>
-               
-                <EmailFieldSC
-                  label="email"
-                  type="email"
-                  name={email}
-                  fullSize={true}
-                  placeholder={email}
-                />
-               
-             
+                <EmailFieldSC label="email" type="email" name={input} fullSize={true} placeholder={input} />
               </DivBoxRowModalSC>
-              
             ))}
-             {modalData.inputs.map(({ password}) => (
-              <DivBoxRowModalSC>
-               
-             
-                <PasswordFieldSC
-                  label="password"
-                  type="password"
-                  name={password}
-                  fullSize={true}
-                  placeholder={password}
-                />
-                
-              </DivBoxRowModalSC>
-              
-            ))}
-            {modalData.inputs.map(({ repeat_password}) => (
-              <DivBoxRowModalSC>
-               
-             
-                <PasswordFieldSC
-                  label="repeat_password"
-                  type="password"
-                  name={repeat_password}
-                  fullSize={true}
-                  placeholder={repeat_password}
-                />
-                
-              </DivBoxRowModalSC>
-              
-            ))}
-            {modalData.inputs.map(({ city}) => (
-              <DivBoxRowModalSC>
-               
-             
-                <PasswordFieldSC
-                  label="city"
-                  type="text"
-                  name={city}
-                  fullSize={true}
-                  placeholder={city}
-                />
-                
-              </DivBoxRowModalSC>
-              
-            ))}
-              <DivBoxRowModaSelectlSC>
-               
-              <App></App>
-            
-               
-             </DivBoxRowModaSelectlSC>
-             
             {modalData.button ? (
               <DivBoxRowModalContSC>
-               <ButtonContinueModal  onClick={openMod}>Продолжить</ButtonContinueModal>
-             </DivBoxRowModalContSC>
-          ) : null} 
-            <DivBoxTextSC>
-                        <SpanQuSC>У вас есть аккаунт? </SpanQuSC>
-                        <LinkSC to="/signin" onClick={() => setOpenModal(false)}>Войти</LinkSC>
-                      </DivBoxTextSC>
+                <ButtonContinueModal onClick={() => submitModal(cropImageModal)}>Продолжить</ButtonContinueModal>
+              </DivBoxRowModalContSC>
+            ) : null}
           </CenterItemsSC>
-        
         </DivWrapModal>
-        <ModalSendEmail/>
       </BlockModal>
-      <ModalSendEmail/>
     </>
   );
 };

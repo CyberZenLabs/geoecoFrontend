@@ -27,6 +27,13 @@ font-size: 16px;
 line-height: 20px;
 text-align: center;
 `;
+export const DivTexttimesSC = styled.div`
+
+font-size: 22px;
+margin-top:10px;
+margin-bottom:20px;
+text-align: center;
+`;
 export const DivTimerSC = styled.div`
 font-family: 'Montserrat';
 font-style: normal;

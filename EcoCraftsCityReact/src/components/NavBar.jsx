@@ -31,6 +31,7 @@ import {
   LinkLogoSC,
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
+  SpanTextCatalogSC,
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -51,7 +52,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData,setOpenModal, } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -74,10 +75,10 @@ const ResponsiveAppBar = () => {
   };
 
   const openCart = () => {
-    setOpen(true);
+    setOpenModal(true);
     setModalData({
       
-      inputs: [{ placeholder: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
+      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
       
       button: true,
     });
@@ -91,13 +92,13 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          <DivTextBoxSC>
+          {/* <DivTextBoxSC>
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC>
+          </DivTextBoxSC> */}
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -111,7 +112,7 @@ const ResponsiveAppBar = () => {
                   size="40"
                   // color="#61DAFB"
                 />
-                <span>Каталог</span>
+                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
 

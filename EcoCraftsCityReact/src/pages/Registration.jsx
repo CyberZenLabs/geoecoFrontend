@@ -187,7 +187,19 @@ const Registration = (props) => {
               )}
             </Formik>
 
-            {/* <Snackbar
+            {/* <DivBoxRowModalSC>
+                   <StoreCreationTitleSC>Регистрация</StoreCreationTitleSC>
+             
+                <PasswordFieldSC
+                  label="repeat_password"
+                  type="password"
+                  name={repeat_password}
+                  fullSize={true}
+                  placeholder={repeat_password}
+                />
+                
+              </DivBoxRowModalSC>
+               <Snackbar
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}

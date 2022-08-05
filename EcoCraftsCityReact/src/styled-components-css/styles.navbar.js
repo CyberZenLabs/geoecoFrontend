@@ -86,7 +86,6 @@ export const DivBoxIconHeaderSC = styled.div`
   display: grid;
   justify-items: end;
   align-items: center;
-}
 `;
 
 export const DivBoxIconSC = styled.div`

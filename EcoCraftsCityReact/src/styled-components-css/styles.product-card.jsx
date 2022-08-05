@@ -85,7 +85,7 @@ export const ProductCardName = styled.h4`
   font-weight: 600;
   font-size: 20px;
   /* identical to box height */
-  text-align: center;
+  text-align: left;
   justify-self: start;
   /* Вторичный 80% */
   color: rgba(37, 37, 37, 0.8);

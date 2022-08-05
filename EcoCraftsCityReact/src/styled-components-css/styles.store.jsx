@@ -455,7 +455,7 @@ export const DivItemsSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   display: grid;
   border-radius: 20px;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
   height: 200px;
   // border: 2px solid black;
   grid-template-columns: 200px auto;
@@ -467,7 +467,7 @@ export const DivItems2pageSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   display: grid;
   border-radius: 20px;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
   height: 200px;
   //border: 2px solid black;
   grid-template-columns: 200px auto;

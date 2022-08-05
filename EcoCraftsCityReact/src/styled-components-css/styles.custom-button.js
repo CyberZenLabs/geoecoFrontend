@@ -56,11 +56,7 @@ export const ButtonCustomSC = styled.button`
   /* identical to box height */
   text-align: center;
 
-  @media (max-width: 480px) {
-    width:90px;
-  }
-  @media (max-width: 420px) {
-    width:50px;
-  }
+
+
   ${(p) => (p.statusOpasity !== undefined ? `opacity: ${p.statusOpasity ? 0.5 : 1};` : null)}
 `;

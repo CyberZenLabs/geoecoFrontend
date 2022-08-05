@@ -2,6 +2,8 @@ import React from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import UilListUl from "@iconscout/react-unicons/icons/uil-list-ul";
 import UilSearch from "@iconscout/react-unicons/icons/uil-search";
+import UilUser from '@iconscout/react-unicons/icons/uil-user';
+
 import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
 import {
   BoxBottomMenuSC,
@@ -17,7 +19,7 @@ const BottomMenu = () => {
       <BottomMenuLinkSC to="/">
         <ContentBottomMenuSC>
           <DivImgSC>
-            <BiHomeAlt size="2rem" />
+            <BiHomeAlt className="Icon-Bottom-Menu" />
           </DivImgSC>
           <TitleElementSC>Главная</TitleElementSC>
         </ContentBottomMenuSC>
@@ -26,8 +28,8 @@ const BottomMenu = () => {
       <BottomMenuLinkSC to="/">
         <ContentBottomMenuSC>
           <DivImgSC>
-            <UilListUl size="2rem" />
-          </DivImgSC>
+            <UilListUl className="Icon-Bottom-Menu" />
+          </DivImgSC >
           <TitleElementSC>Каталог</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
@@ -35,18 +37,18 @@ const BottomMenu = () => {
       <BottomMenuLinkSC to="/">
         <ContentBottomMenuSC>
           <DivImgSC>
-            <UilShoppingCart size="2rem" />
-          </DivImgSC>
+            <UilShoppingCart className="Icon-Bottom-Menu" />
+          </DivImgSC >
           <TitleElementSC>Корзина</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
 
-      <BottomMenuLinkSC to="/">
+      <BottomMenuLinkSC to="/signin">
         <ContentBottomMenuSC>
           <DivImgSC>
-            <UilSearch size="2rem" />
+            <UilUser className="Icon-Bottom-Menu" />
           </DivImgSC>
-          <TitleElementSC>Поиск</TitleElementSC>
+          <TitleElementSC>Профиль</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
     </BoxBottomMenuSC>

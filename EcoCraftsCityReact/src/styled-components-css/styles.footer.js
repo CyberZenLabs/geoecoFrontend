@@ -8,13 +8,16 @@ export const DivBoxFooterSC = styled.div`
   background: rgba(133, 203, 51, 0.3);
   display: grid;
   grid-template-rows: auto 50px;
-
+  @media (max-width: 768px) {
+  display: none;
+}
 `;
 
 export const DivTopSC = styled.div`
   //outline: 1px solid #1130c1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr;
+ 
 `;
 
 export const DivBottomSC = styled.div`

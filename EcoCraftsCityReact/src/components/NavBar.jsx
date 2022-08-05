@@ -92,15 +92,14 @@ const ResponsiveAppBar = () => {
          
 
 
-           <DivTextBoxSC>
+        
 
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC>
-          </DivTextBoxSC> */}
+          
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC

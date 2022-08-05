@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../apis/admin-rest';
 import {
   DivMapBindingBoxSC,
   DivTextSC,
@@ -19,18 +20,37 @@ import {
   DivColumnGGBoxSC,
   DivColumnCVVCVCBoxSC,
 } from '../styled-components-css/styles.map-binding';
+import { DivBoxButtonCreateStoreSC } from '../styled-components-css/styles.navbar';
 import TextField from '../components/TextField';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
+import useAxiosFunction from '../hooks/useAxiosFunction';
 
 const MapBinding = () => {
-  const startingValues = { text: '' };
+  const [axiosFetch] = useAxiosFunction();
+  const startingValues = {
+    cardNumber: '',
+    month: '',
+    year: '',
+    text: '',
+  };
+
   return (
     <DivMapBindingBoxSC>
       <DivContentMapBindingSC>
         <DivTextSC>Привязка карты</DivTextSC>
-        <Formik initialValues={startingValues}>
+        <Formik
+          initialValues={startingValues}
+          //initialErrors={startingValues}
+          onSubmit={(values) => {
+            axiosFetch({
+              axiosInstance: axios,
+              method: 'POST',
+              //url: `/api/v1/users/login`,
+              requestConfig: { ...values },
+            });
+          }}
+        >
           {(formik) => (
             <Form>
               <DivImgBoxSC>
@@ -38,7 +58,7 @@ const MapBinding = () => {
                   <DivRowBoxSC>
                     <DivBoxNumCardSC>
                       <TextField
-                        label="cardNumber"
+                        label="123"
                         type="text"
                         name="cardNumber"
                         fullSize={false}
@@ -49,7 +69,7 @@ const MapBinding = () => {
                   <DivColumnsBoxSC>
                     <DivColumnMMBoxSC>
                       <DivBoxMMSC>
-                        <TextField label="month" type="text" name="month" fullSize={false} placeholder={'ММ'} />
+                        <TextField label="123" type="text" name="month" fullSize={false} placeholder={'ММ'} />
                       </DivBoxMMSC>
                     </DivColumnMMBoxSC>
                     <DivColumnSlashBoxSC>
@@ -57,12 +77,12 @@ const MapBinding = () => {
                     </DivColumnSlashBoxSC>
                     <DivColumnGGBoxSC>
                       <DivBoxGGSC>
-                        <TextField label="year" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
+                        <TextField label="123" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
                       </DivBoxGGSC>
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>
                       <DivBoxCVVCVCSC>
-                        <TextField label="text" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                        <TextField label="123" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
                       </DivBoxCVVCVCSC>
                     </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>
@@ -74,7 +94,7 @@ const MapBinding = () => {
                     Отмена
                   </ButtonCustomWhiteSC>
 
-                  <ButtonCustomSC
+                  <DivBoxButtonCreateStoreSC
                     disabled={!formik.dirty || !formik.isValid}
                     statusOpasity={!formik.dirty || !formik.isValid}
                     width={'100%'}
@@ -82,7 +102,7 @@ const MapBinding = () => {
                     type="submit"
                   >
                     Привязать
-                  </ButtonCustomSC>
+                  </DivBoxButtonCreateStoreSC>
                 </DivButtonsSC>
               </DivBox2ButtonsSC>
             </Form>

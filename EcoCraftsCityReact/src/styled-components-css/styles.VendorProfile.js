@@ -622,7 +622,6 @@ export const DivBoxShowPhotoSC = styled.div`
   position: relative;
 `;
 
-
 export const DivBoxFoto4SC = styled.div`
   width: 193px;
   display: grid;

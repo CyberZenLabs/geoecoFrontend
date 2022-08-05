@@ -48,7 +48,7 @@ const ShowItemCarousel = () => {
 
             <DivUserReviewSC>
           <TextBoxReviewSC>
-            Текст отыва
+            Текст отзыва
           </TextBoxReviewSC>
         </DivUserReviewSC>
           </DivDateRatingInfoSC>

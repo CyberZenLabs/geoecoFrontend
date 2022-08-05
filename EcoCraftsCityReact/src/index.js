@@ -24,8 +24,7 @@ import StoreFront from "./pages/StoreFront";
 import VendorProfile from './pages/VendorProfile';
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
-
-
+import ModalSendEmail from './components/ModalSendEmail';
 //components
 // import AdminForm from "./pages/AdminForm";
 import { ToastContainer } from "react-toastify";
@@ -44,6 +43,7 @@ import SellerSettings from './pages/SellerSettings';
 import Terms from './privacy/Terms';
 import Privacy from './privacy/Privacy';
 
+import Modalstore from './components/ModalRegStore';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
@@ -55,9 +55,12 @@ root.render(
         <AuthProvider>
           <BrowserRouter>
             {/* Same as */}
+            <Modalstore></Modalstore>
+            <ModalSendEmail/>
             <EcoModal></EcoModal>
             <PassModal></PassModal>
             <MailModal></MailModal>
+            
             <div id="overlay-nav"></div>
             <NavBar />
             

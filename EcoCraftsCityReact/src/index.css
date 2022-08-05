@@ -170,6 +170,13 @@ table {
   font-size: 1.7rem;
   color: #ff3d3d;
 }
+.formValidIcons {
+  position: absolute;
+  right: 30px;
+  top: 11px;
+  font-size: 1.7rem;
+  color: #ff3d3d;
+}
 .image_cadr{
   margin-top: 6px;
   margin-left: 10px;
@@ -334,7 +341,28 @@ table {
   text-decoration: none;
   color: var(--gray);
 }
+.Icon-Bottom-Menu{
+  width: 75%;
+  height: 75%;
+}
 
+.ButtonCustom{
+  width:175px;
+  padding: 8px 32px;
+  
+}
+@media (max-width: 768px){
+  .ButtonCustom{
+    width:90px;
+
+  }
+}
+@media (max-width: 480px){
+  .ButtonCustom{
+    width:50px;
+
+  }
+}
 .profileMenu li a ion-icon {
   font-size: 1.5rem;
 }

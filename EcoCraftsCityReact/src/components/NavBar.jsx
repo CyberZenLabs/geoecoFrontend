@@ -5,6 +5,8 @@ import styled from 'styled-components/macro';
 import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul';
 import UilSearch from '@iconscout/react-unicons/icons/uil-search';
 import UilUser from '@iconscout/react-unicons/icons/uil-user';
+import UilStore from '@iconscout/react-unicons/icons/uil-store';
+
 import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
 import { GoPackage, GoCreditCard } from 'react-icons/go';
 import { MdOutlineStorefront } from 'react-icons/md';
@@ -27,23 +29,27 @@ import {
   DivInputBoxCS,
   DivIconBoxInput,
   LinkIconSC,
+  LinkIconAdaptiveSC,
   DivBoxIconEndSC,
   SpanEndHeaderSC,
   LinkIconHideSC,
   LinkLogoSC,
+  LinkLogoAdaptiveSC,
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
-} from '../styled-components-css/styles.navbar';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
-import { OverlayDivSc } from '../styled-components-css/styles.catalog';
-import AppContext from '../context/AppContext';
-import { useAuth } from '../context/AuthContext';
-import { toast } from 'react-toastify';
-import useAxiosFunction from '../hooks/useAxiosFunction';
-import { useCookies } from 'react-cookie';
-import Modal from './Modal';
-import EcoModal from './Modal';
+} from "../styled-components-css/styles.navbar";
+import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
+import { OverlayDivSc } from "../styled-components-css/styles.catalog";
+import AppContext from "../context/AppContext";
+import { useAuth } from "../context/AuthContext";
+import { toast } from "react-toastify";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+import { useCookies } from "react-cookie";
+import Modal from "./Modal";
+import EcoModal from "./Modal";
+import Modalstore from './ModalRegStore';
+
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -52,7 +58,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData,setOpenModal, } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -75,9 +81,11 @@ const ResponsiveAppBar = () => {
   };
 
   const openCart = () => {
-    setOpen(true);
+    setOpenModal(true);
     setModalData({
-      inputs: [{ email: 'Электронная почта' }],
+      
+      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
+      
       button: true,
     });
   };
@@ -90,30 +98,34 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          {/*<DivTextBoxSC>
 
-           <DivTextBoxSC>
+
+         
+
+
+        
 
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC>
-          </DivTextBoxSC> */}
+          
 
           <DivBoxButtonAndInputSC>
-            <ButtonCustomSC
+            <ButtonCustomSC className="ButtonCustom"
               onClick={() => setShowCatalog(!showCatalog)}
-              width={'176px'}
-              padding={'8px 32px'}
               primary={true}
             >
-              <BoxContentButton>
+              <BoxContentButton
+
+              >
                 <UilListUl
                   size="40"
                   // color="#61DAFB"
                 />
+                
+
                 <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
@@ -132,6 +144,10 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
+
+        <LinkLogoAdaptiveSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkLogoAdaptiveSC>
         {loggedIn ? (
           <div class="container">
             <div class={profileActive ? 'navigation active' : 'navigation'}>
@@ -219,6 +235,20 @@ const ResponsiveAppBar = () => {
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+                <DivBoxIconEndSC>
+                  <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+                <DivBoxIconEndSC>
+                  <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
             {!loggedIn ? (
               <LinkIconSC to="/signin">
                 <DivBoxIconEndSC>

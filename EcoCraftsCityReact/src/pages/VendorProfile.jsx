@@ -96,6 +96,9 @@ import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
+import VendorNavMenu from '../components/VendorNavMenu';
+
+
 
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
@@ -271,23 +274,39 @@ const VendorProfile = () => {
   const listContent = [
     {
       page: (
-        <DivStoreRightPanelSC>
-          <DivAddProductBox>
-            <DivInfoVendorBoxSC>
-              <SpanTextTitleSC>
-                Имя профиля
-                <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC>
-              </SpanTextTitleSC>
-              <UlifnoSC>
-                <li>fffff</li>
-                <li>ffffff</li>
-                <li>fffffff</li>
-                <li>fffff</li>
-              </UlifnoSC>
-            </DivInfoVendorBoxSC>
-            <DivInfoVendorBoxSC>FFFFFF</DivInfoVendorBoxSC>
-          </DivAddProductBox>
-        </DivStoreRightPanelSC>
+        <DivBoxNewProductsBigST>
+      
+        <DivBoxNewProductsST>
+           
+      
+           
+            <DivAddProductBox>
+            
+            <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+           <VendorInfoMenu></VendorInfoMenu>
+             <DivInfoVendorBoxSC>
+             
+           <VenderCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           </VenderCarousel>
+             </DivInfoVendorBoxSC>
+            </DivAddProductBox>
+            
+
+    </DivBoxNewProductsST>
+
+    </DivBoxNewProductsBigST>
       ),
     },
     {
@@ -520,38 +539,7 @@ const VendorProfile = () => {
       </DivWrapLinkSC>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-          <DivStoreInfoSC>
-            <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
-            <DivStoreInfoDataSC>
-              <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
-              <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
-            </DivStoreInfoDataSC>
-          </DivStoreInfoSC>
-          <DivStoreOptionsSC>
-            <DivStoreOptionsLinkStoreSC to="/vendorprofile">Профиль</DivStoreOptionsLinkStoreSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/store/1">Магазин 50</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Оплата и доставка</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/">Покупки</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Продажи</DivStoreOptionsLinkSC>
-            <br />
-            <DivStarsPanelSC>
-              <DivStoreOptionsLeftPanelSC>
-                <DivStoreOptionsLinkSC to="/">Отзывы 30</DivStoreOptionsLinkSC>
-                <br />
-              </DivStoreOptionsLeftPanelSC>
-              <DivStoreOptionsRightPanelSC>
-                <StarRating product={true} />
-              </DivStoreOptionsRightPanelSC>
-            </DivStarsPanelSC>
-          </DivStoreOptionsSC>
+          <VendorNavMenu page={0}/>
         </DivStoreLeftPanelSC>
         {listContent[indexSelectedButton].page}
       </DivStoreWrapSC>

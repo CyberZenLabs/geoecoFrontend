@@ -38,6 +38,8 @@ const Footer = () => {
 
   const { setOpen, setModalData } = React.useContext(AppContext);
     return (
+        <div>
+
         <DivBoxFooterSC>
             <DivTopSC>
                 <DivBoxLogoAndSocialSC>
@@ -76,8 +78,10 @@ const Footer = () => {
             <DivBottomSC>
                 <span>Сделано digital-студией CyberZen</span>
             </DivBottomSC>
-            <BottomMenu/>
         </DivBoxFooterSC>
+        <BottomMenu/>
+        </div>
+
     );
 };
 

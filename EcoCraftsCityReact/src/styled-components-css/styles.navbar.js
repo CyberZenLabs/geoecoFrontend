@@ -8,9 +8,12 @@ export const DivBoxLogoSC = styled.div`
   background-position: center;
   height: 100%;
   width: 100%;
+  max-width: 152px;
   background-size: 152px;
   display: grid;
   align-items: start;
+  @media (max-width: 1000px) {
+  }
 `;
 
 export const DivBoxHeaderSC = styled.div`
@@ -30,8 +33,8 @@ export const DivHeaderSC = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 139px auto auto;
-  @media (max-width: 768px) {
-    grid-template-columns: auto;
+  @media (max-width: 1000px) {
+    grid-template-columns: max-content auto max-content;
   }
 
 `;
@@ -103,7 +106,6 @@ export const DivBoxIconHeaderSC = styled.div`
   justify-content: center;
   width:100%;
   @media (max-width: 768px) {
-    display:none;
     }
 `;
 
@@ -157,7 +159,7 @@ export const BoxContentButton = styled.div`
 `;
 export const SpanTextCatalogSC = styled.div`
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     display:none;
   }
 `;
@@ -186,6 +188,9 @@ export const DivInputBoxCS = styled.div`
   align-self:start;
   width: auto;
   position: relative;
+  @media (max-width: 1000px) {
+    display:none;
+  }
 `;
 
 export const DivIconBoxInput = styled.div`
@@ -211,8 +216,31 @@ export const LinkIconSC = styled(Link)`
     right: 10vw;
     top: 40px;
   }
+  @media (max-width: 1000px) {
+    display:none;
+  }
 `;
-
+export const LinkIconAdaptiveSC = styled(Link)`
+display:none;
+@media (max-width:1000px) {
+  //display: inline-block;
+  font-size: 12px;
+  font-family: var(--root-font-family);
+  border-radius: 50px;
+  //background: rgba(133, 203, 51, 0.25);
+  width: fit-content;
+  padding: 3px 3px;
+  text-decoration: none;
+  color: var(--color-black);
+  display: grid;
+  grid-template-rows: 56% 44%;
+  @media (max-width: 730px) {
+    right: 10vw;
+    top: 40px;
+  }
+}
+  
+`;
 export const LinkIconHideSC = styled(Link)`
   //display: inline-block;
   font-size: 12px;
@@ -225,14 +253,22 @@ export const LinkIconHideSC = styled(Link)`
   color: var(--color-black);
   display: grid;
   grid-template-rows: 56% 44%;
-
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 export const LinkLogoSC = styled(Link)`
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   display: none;
 }
 `;
-
+export const LinkLogoAdaptiveSC = styled(Link)`
+display: none;
+@media (max-width: 1000px) {
+  display: grid;
+  justify-items: center;
+}
+`;
 export const DivBoxIconEndSC = styled.div`
   display: grid;
   align-items: end;
@@ -258,9 +294,8 @@ align-items: center;
 padding: 10px 19px;
 color:#85CB33;
 font-size:16px;
-height: 56px;
+height: 50px;
 font-weight: semibold ;
-height:100%;
 width:100%;
 /* Акцент 70% */
 

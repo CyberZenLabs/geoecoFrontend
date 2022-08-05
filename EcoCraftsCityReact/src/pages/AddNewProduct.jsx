@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { Form, Formik } from 'formik';
 import {
   DivBoxItemsSC,
   MenuProductST,
@@ -22,7 +23,6 @@ import {
   DivFoto2SC,
   DivFoto3SC,
   DivFoto4SC,
-  InputAboutYourself,
   DivBoxColumnAboutYourselfSC,
   DivTextSC,
   DivBoxInputAboutYourself,
@@ -105,11 +105,29 @@ import {
   DivBoxTextRulesSC,
   DivTextRulesSC,
   DivBox2ButtonsSC,
+  InputVideoSC,
 } from '../styled-components-css/styles.AddNewProduct';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import {
+  ButtonImgSC,
+  DivInnerPhotoInputSC,
+  IconImgImgSC,
+  H1SC,
+  DivBoxShowPhotoSC,
+  DeleteIconSC,
+} from '../styled-components-css/styles.VendorProfile';
+import { DivBoxButtonCreateStoreSC } from '../styled-components-css/styles.navbar';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
+import AppContext from '../context/AppContext';
+import { toast } from 'react-toastify';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import EcoModal from '../components/Modal';
+import axios from 'axios';
 
 const AddNewProduct = () => {
+  const storeGalleryRef = useRef(null);
+  let testId = '62e38df24c1f460016904636';
+  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
@@ -119,196 +137,360 @@ const AddNewProduct = () => {
   const decrement = () => {
     setCounter(counter - 1);
   };
+  const [photoUrls, setPhotoUrls] = useState({
+    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storeBannerUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storeGalleryUrls: [],
+  });
+  const [aspect, setAspect] = useState(1);
+  const [modalOpen, seModalOpen] = useState(true);
+  const [cropType, setCropType] = useState('');
+  const [activePhotoUrl, setActivePhotoUrl] = useState('');
+
+  /* const fileChangeHandler = (type) => {
+    if (type == 'storePhotoRef') {
+      setAspect(1);
+      setCropType('storeProfilePhoto');
+      setOpen(true); */
+
+  const handleUploadFile = (type) => {
+    if (type === 'storeGalleryRef') {
+      storeGalleryRef.current.click();
+    }
+  };
+
+  const showToast = (type, text) => {
+    if (type === 'error') {
+      toast.error(text ? text : error, {
+        toastId: 'error',
+      });
+    } else if (type === 'success') {
+      toast.success(text ? text : response, {
+        toastId: 'success',
+      });
+    }
+  };
+  const fileChangeHandler = (type) => {
+    if (type == 'storeGalleryRef') {
+      if (photoUrls.storeGalleryUrls.length <= 10) {
+        setAspect(1);
+        setCropType('storeGalleryPhotos');
+        setOpen(true);
+
+        const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
+        setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
+        setActivePhotoUrl(objectUrl);
+      } else if (photoUrls.storeGalleryUrls.length > 10) {
+        showToast('error', 'Нельзя загружать больше 10 фотографий');
+      }
+    }
+  };
+
+  const handlePhotoDelete = (i) => {
+    const newPhotos = [
+      ...photoUrls.storeGalleryUrls.filter((element) => ![photoUrls.storeGalleryUrls[i]].includes(element)),
+    ];
+    console.log('errroe', newPhotos);
+    setPhotoUrls({ ...photoUrls.storeGalleryUrls, storeGalleryUrls: newPhotos });
+  };
+
+  const startingValues = {
+    video: '',
+    productname: '',
+    price: '',
+    discount: '',
+    description: '',
+    charactiristics: '',
+    keywords: '',
+  };
 
   return (
-    <DivBoxAddNewProductSC>
-      <DivBoxItemsSC>
-        <MenuProductST>
-          {' '}
-          <GreenST>Главная</GreenST> <img src="/default-images/arrowGreen.svg" /> Мой магазин{' '}
-          <img src="/default-images/arrow.svg" /> Новый товар{' '}
-        </MenuProductST>
-      </DivBoxItemsSC>
-      <DivBoxTextNewProductSC>
-        <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
-      </DivBoxTextNewProductSC>
-      <DivBoxColumnsRectangleSC>
-        <DivBoxBigGrayRectangleSC>
-          <DivBoxRowsNameProductSC>
-            <DivBoxTextNameProductSC>
-              <DivTextNameProduct>Фото, рубрика, название товара</DivTextNameProduct>
-            </DivBoxTextNameProductSC>
-            <DivBoxColumnsFotosSC>
-              <DivBoxFoto1SC>
-                <DivButtonFoto1SC>
-                  <DivContainerButtonSC>
-                    <DivImgFotoSC src={'/default-images/photo.svg'}></DivImgFotoSC>
-                    <DivTextDovnloadFotoSC>Загрузить фото</DivTextDovnloadFotoSC>
-                  </DivContainerButtonSC>
-                </DivButtonFoto1SC>
-              </DivBoxFoto1SC>
-              <DivBoxFoto2SC>
-                <DivFoto2SC></DivFoto2SC>
-              </DivBoxFoto2SC>
-              <DivBoxFoto3SC>
-                <DivFoto3SC></DivFoto3SC>
-              </DivBoxFoto3SC>
-              <DivBoxFoto4SC>
-                <DivFoto4SC></DivFoto4SC>
-              </DivBoxFoto4SC>
-            </DivBoxColumnsFotosSC>
+    <Formik
+      initialValues={startingValues}
+      initialErrors={startingValues}
+      onSubmit={(values) => {
+        var formData = new FormData();
 
-            <DivBoxColumnAboutYourselfSC>
-              <DivBoxText>
-                <DivTextSC>Видео</DivTextSC>
-              </DivBoxText>
-              <DivBoxInputAboutYourself>
-                <InputAboutYourself type="text" placeholder="Вставьте ссылку на YouTube или VK-видео" />
-              </DivBoxInputAboutYourself>
-            </DivBoxColumnAboutYourselfSC>
+        Object.keys(values).forEach((key) => {
+          console.log('key', key);
+          console.log('keyvalue', values[key]);
+          formData.append(key, values[key]);
+        });
 
-            <DivBoxColumnProductNameSC>
-              <DivBoxText1>
-                <DivText1SC>Название товара</DivText1SC>
-              </DivBoxText1>
-              <DivBoxInputProductName>
-                <InputProductName type="text" placeholder="Введите название товара" />
-              </DivBoxInputProductName>
-            </DivBoxColumnProductNameSC>
-          </DivBoxRowsNameProductSC>
-        </DivBoxBigGrayRectangleSC>
-        <DivBoxGrayRectangleRulesSC>
-          <DivBoxTextRulesSC>
-            <DivTextRulesSC>Правила</DivTextRulesSC>
-          </DivBoxTextRulesSC>
-        </DivBoxGrayRectangleRulesSC>
-      </DivBoxColumnsRectangleSC>
-      <DivBoxImgGrayRectanglePriceSC>
-        <DivImgGrayRectanglePriceSC>
-          <DivBoxRowsPriceSC>
-            <DivBoxTextPriceAndNumberSC>
-              <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
-            </DivBoxTextPriceAndNumberSC>
-            <DivBoxColumnsPriceSC>
-              <DivBoxTextPriceSC>
-                <DivTextPriceSC>Цена</DivTextPriceSC>
-              </DivBoxTextPriceSC>
-              <DivBoxInputPrice>
-                <InputPrice type="text" />
-              </DivBoxInputPrice>
-              <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
-            </DivBoxColumnsPriceSC>
-            <DivBoxColumnsNumberSC>
-              <DivBoxTextNumberSC>
-                <DivTextNumberSC>Колличество</DivTextNumberSC>
-              </DivBoxTextNumberSC>
-              <DivBoxColumnButtonsPMSC>
-                <DivBoxButtonMinusSC>
-                  <ButtonMinusSC onClick={decrement}>-</ButtonMinusSC>
-                </DivBoxButtonMinusSC>
-                <DivBoxNum1SC>{counter}</DivBoxNum1SC>
-                <DivBoxButtonPlusSC>
-                  <ButtonPlusSC onClick={increment}>+</ButtonPlusSC>
-                </DivBoxButtonPlusSC>
-              </DivBoxColumnButtonsPMSC>
-            </DivBoxColumnsNumberSC>
-            <DivBoxColumnsDiscountSC>
-              <DivBoxTextDiscountSC>
-                <DivTextDiscountSC>Скидка</DivTextDiscountSC>
-              </DivBoxTextDiscountSC>
-              <DivBoxInputDiscount>
-                <InputDiscount type="text" />
-              </DivBoxInputDiscount>
-              <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
-            </DivBoxColumnsDiscountSC>
-          </DivBoxRowsPriceSC>
-        </DivImgGrayRectanglePriceSC>
-      </DivBoxImgGrayRectanglePriceSC>
-      <DivBoxImgGrayRectangleDescriptionSC>
-        <DivImgGrayRectangleDescriptionSC>
-          <DivBoxRowsDesctriptionSC>
-            <DivContainerDescriptionSC>
-              <DivBoxTextDescriptionSC>
-                <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
-              </DivBoxTextDescriptionSC>
-              <DivBoxInputDescriptonSC>
-                <InputDescription
-                  type="text"
-                  placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
-                />
-              </DivBoxInputDescriptonSC>
-            </DivContainerDescriptionSC>
+        /*  if (storePhotoRef.current.files[0]) {
+          console.log('No 0', storePhotoRef.current.files);
+          formData.append('storePhoto', storePhotoRef.current.files[0]);
+        } */
 
-            <DivContainerCharacteristicsSC>
-              <DivBoxTextCharacteristicsSC>
-                <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
-              </DivBoxTextCharacteristicsSC>
-              <DivBoxInputCharacteristicsSC>
-                <InputCharacteristics type="text" />
-              </DivBoxInputCharacteristicsSC>
-            </DivContainerCharacteristicsSC>
+        for (let [key, value] of formData) {
+          console.log(`"ascascac" ${key}: ${value}`);
+        }
 
-            <DivContainerKeywordsSC>
-              <DivBoxTextKeywordsSC>
-                <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
-              </DivBoxTextKeywordsSC>
-              <DivBoxInputKeywordsSC>
-                <InputKeywords type="text" placeholder="Укажите от 2 до 20 ключевых слов" />
-              </DivBoxInputKeywordsSC>
-            </DivContainerKeywordsSC>
-          </DivBoxRowsDesctriptionSC>
-        </DivImgGrayRectangleDescriptionSC>
-      </DivBoxImgGrayRectangleDescriptionSC>
-      <DivBoxImgGrayRectangleDeliverySC>
-        <DivImgGrayRectangleDeliverySC>
-          <DivContainerDeliverySC>
-            <DivBoxTextDeliverySC>
-              <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
-            </DivBoxTextDeliverySC>
-            <DivBoxItemDeliverySC>
-              <DivItemDeliverySC>
-                <DivContainerColumnsPostSC>
-                  <DivBoxImgDotSC>
-                    <DivImgDotSC></DivImgDotSC>
-                  </DivBoxImgDotSC>
-                  <DivBoxTextRussianPostSC>
-                    <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
-                  </DivBoxTextRussianPostSC>
-                  <DivBoxTextFromThePriceSC>
-                    <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
-                  </DivBoxTextFromThePriceSC>
-                </DivContainerColumnsPostSC>
+        console.log('Hello!!!!!');
+        axios
+          .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
+            // You need to use `getHeaders()` in Node.js because Axios doesn't
+            // automatically set the multipart form boundary in Node.
+            headers: {
+              'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+            },
+          })
+          .then((res) => {
+            console.log(res.data.data.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
 
-                <DivContainerColumnsSDEKSC>
-                  <DivBoxImgDot1SC>
-                    <DivImgDot1SC></DivImgDot1SC>
-                  </DivBoxImgDot1SC>
-                  <DivBoxTextSDEKSC>
-                    <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
-                  </DivBoxTextSDEKSC>
-                  <DivBoxTextFromThePrice1SC>
-                    <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
-                  </DivBoxTextFromThePrice1SC>
-                </DivContainerColumnsSDEKSC>
-              </DivItemDeliverySC>
-            </DivBoxItemDeliverySC>
-          </DivContainerDeliverySC>
-        </DivImgGrayRectangleDeliverySC>
-      </DivBoxImgGrayRectangleDeliverySC>
-      <DivBoxButtonsSC>
-        <DivBox2ButtonsSC>
-          <DivButtonsSC>
-            <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-              В черновик
-            </ButtonCustomWhiteSC>
+        // axiosFetch({
+        //   axiosInstance: axiosCustom(formData),
+        //   method: 'PATCH',
+        //   url: `/api/v1/store/${testId}`,
+        //   requestFormDataConfig: formData,
+        //   formData: true,
+        // });
+      }}
+    >
+      {(formik) => (
+        <Form>
+          <input
+            ref={storeGalleryRef}
+            type="file"
+            name="storeGallery"
+            onChange={() => fileChangeHandler('storeGalleryRef')}
+          />
+          <EcoModal
+            open={modalOpen}
+            title="Загрузка фотографии"
+            subTitle="Поместите фото профиля в выбранную область"
+            cropImageModal={true}
+            cropType={cropType}
+            aspect={aspect}
+            photoUrl={activePhotoUrl}
+            setPhotoUrls={setPhotoUrls}
+            photoUrls={photoUrls}
+            storeGalleryUrls={photoUrls.storeGalleryUrls}
+          ></EcoModal>
+          <DivBoxAddNewProductSC>
+            <DivBoxItemsSC>
+              <MenuProductST>
+                {' '}
+                <GreenST>Главная</GreenST> <img src="/default-images/arrowGreen.svg" /> Мой магазин{' '}
+                <img src="/default-images/arrow.svg" /> Новый товар{' '}
+              </MenuProductST>
+            </DivBoxItemsSC>
+            <DivBoxTextNewProductSC>
+              <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
+            </DivBoxTextNewProductSC>
 
-            <ButtonCustomSC width={'100%'} padding={'18px 32px'} type="submit">
-              Разместить
-            </ButtonCustomSC>
-          </DivButtonsSC>
-        </DivBox2ButtonsSC>
-      </DivBoxButtonsSC>
-    </DivBoxAddNewProductSC>
+            <DivBoxColumnsRectangleSC>
+              <DivBoxBigGrayRectangleSC>
+                <DivBoxRowsNameProductSC>
+                  <DivBoxTextNameProductSC>
+                    <DivTextNameProduct>Фото, рубрика, название товара</DivTextNameProduct>
+                  </DivBoxTextNameProductSC>
+
+                  <DivBoxColumnsFotosSC>
+                    <DivBoxFoto1SC>
+                      <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
+                        <DivInnerPhotoInputSC>
+                          <IconImgImgSC />
+                          <H1SC>Загрузить фото</H1SC>
+                        </DivInnerPhotoInputSC>
+                      </ButtonImgSC>
+                    </DivBoxFoto1SC>
+                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
+                      <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
+                    </DivBoxShowPhotoSC>
+                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[1] && photoUrls.storeGalleryUrls[1]}>
+                      <DeleteIconSC onClick={() => handlePhotoDelete(1)}></DeleteIconSC>
+                    </DivBoxShowPhotoSC>
+                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[2] && photoUrls.storeGalleryUrls[2]}>
+                      <DeleteIconSC onClick={() => handlePhotoDelete(2)}></DeleteIconSC>
+                    </DivBoxShowPhotoSC>
+
+                    {photoUrls.storeGalleryUrls.length >= 3 ? (
+                      <>
+                        {[...photoUrls.storeGalleryUrls].splice(3, 7).map((photo, i) => (
+                          <DivBoxShowPhotoSC photoUrl={photo}>
+                            <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
+                          </DivBoxShowPhotoSC>
+                        ))}
+                      </>
+                    ) : null}
+                  </DivBoxColumnsFotosSC>
+
+                  <DivBoxColumnAboutYourselfSC>
+                    <DivBoxText>
+                      <DivTextSC>Видео</DivTextSC>
+                    </DivBoxText>
+                    <DivBoxInputAboutYourself>
+                      <InputVideoSC
+                        isTextArea={true}
+                        type="text"
+                        name="video"
+                        placeholder="Вставьте ссылку на YouTube или VK-видео"
+                      />
+                    </DivBoxInputAboutYourself>
+                  </DivBoxColumnAboutYourselfSC>
+
+                  <DivBoxColumnProductNameSC>
+                    <DivBoxText1>
+                      <DivText1SC>Название товара</DivText1SC>
+                    </DivBoxText1>
+                    <DivBoxInputProductName>
+                      <InputProductName
+                        name="productname"
+                        isTextArea={true}
+                        type="text"
+                        placeholder="Введите название товара"
+                      />
+                    </DivBoxInputProductName>
+                  </DivBoxColumnProductNameSC>
+                </DivBoxRowsNameProductSC>
+              </DivBoxBigGrayRectangleSC>
+              <DivBoxGrayRectangleRulesSC>
+                <DivBoxTextRulesSC>
+                  <DivTextRulesSC>Правила</DivTextRulesSC>
+                </DivBoxTextRulesSC>
+              </DivBoxGrayRectangleRulesSC>
+            </DivBoxColumnsRectangleSC>
+            <DivBoxImgGrayRectanglePriceSC>
+              <DivImgGrayRectanglePriceSC>
+                <DivBoxRowsPriceSC>
+                  <DivBoxTextPriceAndNumberSC>
+                    <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
+                  </DivBoxTextPriceAndNumberSC>
+                  <DivBoxColumnsPriceSC>
+                    <DivBoxTextPriceSC>
+                      <DivTextPriceSC>Цена</DivTextPriceSC>
+                    </DivBoxTextPriceSC>
+                    <DivBoxInputPrice>
+                      <InputPrice type="text" name="price" isTextArea={true} />
+                    </DivBoxInputPrice>
+                    <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
+                  </DivBoxColumnsPriceSC>
+                  <DivBoxColumnsNumberSC>
+                    <DivBoxTextNumberSC>
+                      <DivTextNumberSC>Колличество</DivTextNumberSC>
+                    </DivBoxTextNumberSC>
+                    <DivBoxColumnButtonsPMSC>
+                      <DivBoxButtonMinusSC>
+                        <ButtonMinusSC onClick={decrement}>-</ButtonMinusSC>
+                      </DivBoxButtonMinusSC>
+                      <DivBoxNum1SC>{counter}</DivBoxNum1SC>
+                      <DivBoxButtonPlusSC>
+                        <ButtonPlusSC onClick={increment}>+</ButtonPlusSC>
+                      </DivBoxButtonPlusSC>
+                    </DivBoxColumnButtonsPMSC>
+                  </DivBoxColumnsNumberSC>
+                  <DivBoxColumnsDiscountSC>
+                    <DivBoxTextDiscountSC>
+                      <DivTextDiscountSC>Скидка</DivTextDiscountSC>
+                    </DivBoxTextDiscountSC>
+                    <DivBoxInputDiscount>
+                      <InputDiscount type="text" name="discount" isTextArea={true} />
+                    </DivBoxInputDiscount>
+                    <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
+                  </DivBoxColumnsDiscountSC>
+                </DivBoxRowsPriceSC>
+              </DivImgGrayRectanglePriceSC>
+            </DivBoxImgGrayRectanglePriceSC>
+            <DivBoxImgGrayRectangleDescriptionSC>
+              <DivImgGrayRectangleDescriptionSC>
+                <DivBoxRowsDesctriptionSC>
+                  <DivContainerDescriptionSC>
+                    <DivBoxTextDescriptionSC>
+                      <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                    </DivBoxTextDescriptionSC>
+                    <DivBoxInputDescriptonSC>
+                      <InputDescription
+                        type="text"
+                        name="description"
+                        isTextArea={true}
+                        placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
+                      />
+                    </DivBoxInputDescriptonSC>
+                  </DivContainerDescriptionSC>
+
+                  <DivContainerCharacteristicsSC>
+                    <DivBoxTextCharacteristicsSC>
+                      <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
+                    </DivBoxTextCharacteristicsSC>
+                    <DivBoxInputCharacteristicsSC>
+                      <InputCharacteristics type="text" name="charactiristics" isTextArea={true} />
+                    </DivBoxInputCharacteristicsSC>
+                  </DivContainerCharacteristicsSC>
+
+                  <DivContainerKeywordsSC>
+                    <DivBoxTextKeywordsSC>
+                      <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
+                    </DivBoxTextKeywordsSC>
+                    <DivBoxInputKeywordsSC>
+                      <InputKeywords
+                        type="text"
+                        placeholder="Укажите от 2 до 20 ключевых слов"
+                        name="keywords"
+                        isTextArea={true}
+                      />
+                    </DivBoxInputKeywordsSC>
+                  </DivContainerKeywordsSC>
+                </DivBoxRowsDesctriptionSC>
+              </DivImgGrayRectangleDescriptionSC>
+            </DivBoxImgGrayRectangleDescriptionSC>
+            <DivBoxImgGrayRectangleDeliverySC>
+              <DivImgGrayRectangleDeliverySC>
+                <DivContainerDeliverySC>
+                  <DivBoxTextDeliverySC>
+                    <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
+                  </DivBoxTextDeliverySC>
+                  <DivBoxItemDeliverySC>
+                    <DivItemDeliverySC>
+                      <DivContainerColumnsPostSC>
+                        <DivBoxImgDotSC>
+                          <DivImgDotSC></DivImgDotSC>
+                        </DivBoxImgDotSC>
+                        <DivBoxTextRussianPostSC>
+                          <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
+                        </DivBoxTextRussianPostSC>
+                        <DivBoxTextFromThePriceSC>
+                          <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
+                        </DivBoxTextFromThePriceSC>
+                      </DivContainerColumnsPostSC>
+
+                      <DivContainerColumnsSDEKSC>
+                        <DivBoxImgDot1SC>
+                          <DivImgDot1SC></DivImgDot1SC>
+                        </DivBoxImgDot1SC>
+                        <DivBoxTextSDEKSC>
+                          <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
+                        </DivBoxTextSDEKSC>
+                        <DivBoxTextFromThePrice1SC>
+                          <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
+                        </DivBoxTextFromThePrice1SC>
+                      </DivContainerColumnsSDEKSC>
+                    </DivItemDeliverySC>
+                  </DivBoxItemDeliverySC>
+                </DivContainerDeliverySC>
+              </DivImgGrayRectangleDeliverySC>
+            </DivBoxImgGrayRectangleDeliverySC>
+            <DivBoxButtonsSC>
+              <DivBox2ButtonsSC>
+                <DivButtonsSC>
+                  <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+                    В черновик
+                  </ButtonCustomWhiteSC>
+
+                  <DivBoxButtonCreateStoreSC width={'100%'} padding={'18px 32px'} type="submit">
+                    Разместить
+                  </DivBoxButtonCreateStoreSC>
+                </DivButtonsSC>
+              </DivBox2ButtonsSC>
+            </DivBoxButtonsSC>
+          </DivBoxAddNewProductSC>
+        </Form>
+      )}
+    </Formik>
   );
 };
 

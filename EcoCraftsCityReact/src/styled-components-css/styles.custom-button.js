@@ -56,6 +56,5 @@ export const ButtonCustomSC = styled.button`
   /* identical to box height */
   text-align: center;
 
-  
   ${(p) => (p.statusOpasity !== undefined ? `opacity: ${p.statusOpasity ? 0.5 : 1};` : null)}
 `;

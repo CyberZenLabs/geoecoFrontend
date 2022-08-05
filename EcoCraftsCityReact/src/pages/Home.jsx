@@ -6,7 +6,8 @@ import StarRating from '../components/StarRating';
 import { ProductGrid, HomeContainer } from '../styled-components-css/styles.product-card';
 import { SliderData } from '../utils/sliderData';
 import axios from '../apis/admin-rest';
-import { FlowerLoaderSc } from '../styled-components-css/styles.loader';
+import { FlowerLoaderSc, 
+ } from '../styled-components-css/styles.loader';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -42,7 +43,7 @@ const Home = () => {
         <Carousel slides={SliderData} />
         {isLoading && (
           <section>
-            <div class="loader loader-3">
+            <div class="loader loader-3"  style={{marginLeft:"35vw"}}>
               <div class="dot dot1"></div>
               <div class="dot dot2"></div>
               <div class="dot dot3"></div>

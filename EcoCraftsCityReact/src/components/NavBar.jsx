@@ -5,6 +5,8 @@ import styled from 'styled-components/macro';
 import UilListUl from '@iconscout/react-unicons/icons/uil-list-ul';
 import UilSearch from '@iconscout/react-unicons/icons/uil-search';
 import UilUser from '@iconscout/react-unicons/icons/uil-user';
+import UilStore from '@iconscout/react-unicons/icons/uil-store';
+
 import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
 import { GoPackage, GoCreditCard } from 'react-icons/go';
 import { CgProfile } from 'react-icons/cg';
@@ -25,10 +27,12 @@ import {
   DivInputBoxCS,
   DivIconBoxInput,
   LinkIconSC,
+  LinkIconAdaptiveSC,
   DivBoxIconEndSC,
   SpanEndHeaderSC,
   LinkIconHideSC,
   LinkLogoSC,
+  LinkLogoAdaptiveSC,
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
@@ -93,6 +97,7 @@ const ResponsiveAppBar = () => {
 
         <DivCatalogAndSearchBoxSC>
 
+
          
 
 
@@ -106,17 +111,19 @@ const ResponsiveAppBar = () => {
           
 
           <DivBoxButtonAndInputSC>
-            <ButtonCustomSC
+            <ButtonCustomSC className="ButtonCustom"
               onClick={() => setShowCatalog(!showCatalog)}
-              width={'176px'}
-              padding={'8px 32px'}
               primary={true}
             >
-              <BoxContentButton>
+              <BoxContentButton
+
+              >
                 <UilListUl
                   size="40"
                   // color="#61DAFB"
                 />
+                
+
                 <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
@@ -135,6 +142,10 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
+
+        <LinkLogoAdaptiveSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkLogoAdaptiveSC>
         {loggedIn ? (
           <div class="container">
             <div class={profileActive ? 'navigation active' : 'navigation'}>
@@ -212,6 +223,20 @@ const ResponsiveAppBar = () => {
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+                <DivBoxIconEndSC>
+                  <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+                <DivBoxIconEndSC>
+                  <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
             {!loggedIn ? (
               <LinkIconSC to="/signin">
                 <DivBoxIconEndSC>

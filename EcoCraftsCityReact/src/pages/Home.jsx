@@ -39,11 +39,11 @@ const Home = () => {
 
   return (
     <>
-      <HomeContainer>
+      <HomeContainer isLoading={isLoading}>
         <Carousel slides={SliderData} />
         {isLoading && (
           <section>
-            <div class="loader loader-3"  style={{marginLeft:"35vw"}}>
+            <div class="loader loader-3"  >
               <div class="dot dot1"></div>
               <div class="dot dot2"></div>
               <div class="dot dot3"></div>

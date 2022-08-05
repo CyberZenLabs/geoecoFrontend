@@ -5,9 +5,8 @@ export const HomeContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 308px);
   grid-template-rows: fit-content auto;
- 
   grid-gap: 30px;
-  
+  justify-content: ${({ isLoading }) => (isLoading ? ' center' : 'left')};
   width: 85vw;
   max-width: 1322px;
   margin: auto;

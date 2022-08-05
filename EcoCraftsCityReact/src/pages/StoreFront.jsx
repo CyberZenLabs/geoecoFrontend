@@ -87,6 +87,7 @@ import {
 import { IoIosArrowDown } from 'react-icons/io';
 import { FaRubleSign } from 'react-icons/fa';
 import StarRating from '../components/StarRating';
+import VendorNavMenu from '../components/VendorNavMenu';
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -342,38 +343,7 @@ const StoreFront = ({ product }) => {
       </DivWrapLinkSC>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-          <DivStoreInfoSC>
-            <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
-            <DivStoreInfoDataSC>
-              <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
-              <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
-            </DivStoreInfoDataSC>
-          </DivStoreInfoSC>
-          <DivStoreOptionsSC>
-            <DivStoreOptionsLinkSC to="/vendorprofile">Профиль</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkStoreSC to="/store/1">Магазин 50</DivStoreOptionsLinkStoreSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Оплата и доставка</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/">Покупки</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Продажи</DivStoreOptionsLinkSC>
-            <br />
-            <DivStarsPanelSC>
-              <DivStoreOptionsLeftPanelSC>
-                <DivStoreOptionsLinkSC to="/">Отзывы 30</DivStoreOptionsLinkSC>
-                <br />
-              </DivStoreOptionsLeftPanelSC>
-              <DivStoreOptionsRightPanelSC>
-                <StarRating product={true} />
-              </DivStoreOptionsRightPanelSC>
-            </DivStarsPanelSC>
-          </DivStoreOptionsSC>
+        <VendorNavMenu page={2}/>
         </DivStoreLeftPanelSC>
 
         <DivStoreRightPanelSC>

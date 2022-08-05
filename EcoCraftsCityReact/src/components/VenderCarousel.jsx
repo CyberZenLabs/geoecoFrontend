@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Children } from "react";
 import { cloneElement } from "react";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
   DivButtonWrapSC,
   DivCarouselAllItemsSC,
@@ -17,7 +17,7 @@ const VenderCarousel = ({ children }) => {
         return cloneElement(child, {
           style: {
             height: "100%",
-            minWidth: "600px",
+            minWidth: "1322px",
             maxWidth: "1322px",
           },
         });
@@ -34,14 +34,14 @@ const VenderCarousel = ({ children }) => {
           </DivCarouselAllItemsSC>
           <DivButtonWrapSC>
             {carouselNumber != 0 ? (
-              <BsArrowLeftCircle
+              <FiChevronLeft
                 onClick={() => setCarouselNumber(carouselNumber - 1)}
               />
             ) : (
               <div></div>
             )}
              {carouselNumber != items.length-2 ? (
-               <BsArrowRightCircle
+               <FiChevronRight
                onClick={() => setCarouselNumber(carouselNumber + 1)}
              />
             ) : (

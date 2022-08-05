@@ -92,13 +92,18 @@ const ResponsiveAppBar = () => {
         </LinkLogoSC>
 
         <DivCatalogAndSearchBoxSC>
-          {/* <DivTextBoxSC>
+
+         
+
+
+        
+
             <SpanSecondSC to="#"></SpanSecondSC>
             <SpanFirstSC to="#" onClick={openCart}>
               Создать магазин
             </SpanFirstSC>
             <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC> */}
+          
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC
@@ -131,16 +136,45 @@ const ResponsiveAppBar = () => {
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
         {loggedIn ? (
-          <div class={profileActive ? 'navigation active' : 'navigation'}>
-            <div class={profileActive ? 'user-box active' : 'user-box'}>
-              <div class={profileActive ? 'image-box active' : 'image-box'}>
-                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
+          <div class="container">
+            <div class={profileActive ? 'navigation active' : 'navigation'}>
+              <div class={profileActive ? 'user-box active' : 'user-box'}>
+                <div class={profileActive ? 'image-box active' : 'image-box'}>
+                  <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
+                </div>
+
+                <p class="username">
+                  Jenifer Lopez
+                  <a href="#">Мой Профиль</a>
+                </p>
               </div>
 
-              <p class="username">
-                Jenifer Lopez
-                <a href="#">Мой Профиль</a>
-              </p>
+              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+              <ul class="profileMenu">
+                <li>
+                  <a href="#">
+                    <GoPackage />
+                    Заказы
+                  </a>
+                </li>
+                <li>
+                  <a href="/map-binding">
+                    <GoCreditCard />
+                    Мои Карты
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#">Баланс и история операций</a>
+                </li>
+                <li>
+                  <a href="#">Отзывы и вопросы</a>
+                </li>
+                <li class="logout">
+                  <a onClick={handleLogout}>Выйти</a>
+                </li>
+              </ul>
             </div>
 
             <div class="profileMenu-toggle" onClick={toggleProfile}></div>

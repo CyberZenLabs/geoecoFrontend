@@ -1,8 +1,10 @@
 import React from 'react';
+import axios from '../apis/admin-rest';
 import {
   DivMapBindingBoxSC,
   DivTextSC,
   DivButtonsSC,
+  DivBox2ButtonsSC,
   DivContentMapBindingSC,
   DivBoxNumCardSC,
   DivBoxMMSC,
@@ -17,19 +19,38 @@ import {
   DivColumnSlashBoxSC,
   DivColumnGGBoxSC,
   DivColumnCVVCVCBoxSC,
+  DivBoxButtonLinkSC,
 } from '../styled-components-css/styles.map-binding';
 import TextField from '../components/TextField';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
+import useAxiosFunction from '../hooks/useAxiosFunction';
 
 const MapBinding = () => {
-  const startingValues = { text: '' };
+  const [axiosFetch] = useAxiosFunction();
+  const startingValues = {
+    cardNumber: '',
+    month: '',
+    year: '',
+    text: '',
+  };
+
   return (
     <DivMapBindingBoxSC>
       <DivContentMapBindingSC>
         <DivTextSC>Привязка карты</DivTextSC>
-        <Formik initialValues={startingValues}>
+        <Formik
+          initialValues={startingValues}
+          //initialErrors={startingValues}
+          onSubmit={(values) => {
+            axiosFetch({
+              axiosInstance: axios,
+              method: 'POST',
+              //url: `/api/v1/users/login`,
+              requestConfig: { ...values },
+            });
+          }}
+        >
           {(formik) => (
             <Form>
               <DivImgBoxSC>
@@ -37,7 +58,7 @@ const MapBinding = () => {
                   <DivRowBoxSC>
                     <DivBoxNumCardSC>
                       <TextField
-                        label="cardNumber"
+                        label="123"
                         type="text"
                         name="cardNumber"
                         fullSize={false}
@@ -48,7 +69,7 @@ const MapBinding = () => {
                   <DivColumnsBoxSC>
                     <DivColumnMMBoxSC>
                       <DivBoxMMSC>
-                        <TextField label="month" type="text" name="month" fullSize={false} placeholder={'ММ'} />
+                        <TextField label="123" type="text" name="month" fullSize={false} placeholder={'ММ'} />
                       </DivBoxMMSC>
                     </DivColumnMMBoxSC>
                     <DivColumnSlashBoxSC>
@@ -56,33 +77,33 @@ const MapBinding = () => {
                     </DivColumnSlashBoxSC>
                     <DivColumnGGBoxSC>
                       <DivBoxGGSC>
-                        <TextField label="year" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
+                        <TextField label="123" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
                       </DivBoxGGSC>
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>
                       <DivBoxCVVCVCSC>
-                        <TextField label="text" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                        <TextField label="123" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
                       </DivBoxCVVCVCSC>
                     </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>
                 </DivContainerRowsMB>
               </DivImgBoxSC>
-
-              <DivButtonsSC>
-                <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-                  Отмена
-                </ButtonCustomWhiteSC>
-
-                <ButtonCustomSC
-                  disabled={!formik.dirty || !formik.isValid}
-                  statusOpasity={!formik.dirty || !formik.isValid}
-                  width={'100%'}
-                  padding={'18px 32px'}
-                  type="submit"
-                >
-                  Привязать
-                </ButtonCustomSC>
-              </DivButtonsSC>
+              <DivBox2ButtonsSC>
+                <DivButtonsSC>
+                  <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+                    Отмена
+                  </ButtonCustomWhiteSC>
+                  <DivBoxButtonLinkSC
+                    disabled={!formik.dirty || !formik.isValid}
+                    statusOpasity={!formik.dirty || !formik.isValid}
+                    width={'100%'}
+                    padding={'18px 32px'}
+                    type="submit"
+                  >
+                    Привязать
+                  </DivBoxButtonLinkSC>
+                </DivButtonsSC>
+              </DivBox2ButtonsSC>
             </Form>
           )}
         </Formik>

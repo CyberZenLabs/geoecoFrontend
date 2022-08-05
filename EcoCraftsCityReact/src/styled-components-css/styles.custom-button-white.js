@@ -10,7 +10,7 @@ export const ButtonCustomWhiteSC = styled.button`
           background: rgba(0,0,0,0.1);
         }
         :active{
-          background: var(--green-color-active);
+          //background: var(--green-color-active);
         }`
       : p.statusOpasity
       ? null

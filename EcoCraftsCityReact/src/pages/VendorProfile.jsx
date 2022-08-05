@@ -1,4 +1,4 @@
-import { Margin, TextFields } from '@mui/icons-material';
+import { Delete, Margin, TextFields } from '@mui/icons-material';
 import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -9,7 +9,7 @@ import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import ShowItemCarousel from '../components/ShowItemCarousel';
-
+import { toast } from 'react-toastify';
 import VendorInfoMenu from '../components/VendorInfoMenu';
 import {
   DivOptionsPanelSC,
@@ -82,14 +82,20 @@ import {
   MenuProductST,
   GreenST,
   DivBoxNewProductsST,
-  OverlayImgSC,
-  OverlayTextSC,
+  OverlayProfileImgSC,
+  OverlayProfileImageTextSC,
+  OverlayBannerImageTextSC,
+  OverlayBannerImgSC,
+  DivBoxShowPhotoSC,
+  DeleteIconSC,
+  DivCarouselPhotosSC,
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
+import VendorNavMenu from '../components/VendorNavMenu';
 
 
 
@@ -104,13 +110,18 @@ const routes = [
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
   const [apiStoreData, setApiStoreData] = useState(null);
-  const [preview, setPreview] = useState([]);
+
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
-    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storePhotoUrl: 'http://localhost:5767/stores/defaultStore.svg',
+    storeBannerUrl: 'http://localhost:5767/stores/defaultStore.svg',
+    storeGalleryUrls: [],
   });
-
+  const [activePhotoUrl, setActivePhotoUrl] = useState('');
+  const [cropType, setCropType] = useState('');
+  const [aspect, setAspect] = useState(1);
   const [modalOpen, seModalOpen] = useState(true);
+  const [galleryFiles, setGalleryFiles] = useState([]);
 
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
@@ -118,46 +129,82 @@ const VendorProfile = () => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
+  const storeBannerRef = useRef(null);
+  const storeGalleryRef = useRef(null);
   let testId = '62e38df24c1f460016904636';
   useEffect(() => {
-    const getProfileData = async () => {
-      await axiosFetch({
-        axiosInstance: axiosCustom,
-        method: 'GET',
-        url: `/api/v1/store/${testId}`,
-      });
-    };
+    // axiosFetch({
+    //   axiosInstance: axiosCustom,
+    //   method: 'GET',
+    //   url: `/api/v1/store/${testId}`,
+    // });
 
-    getProfileData().then((res) => {
-      setApiStoreData(response);
-    });
+    axios
+      .get(`http://localhost:5767/api/v1/store/${testId}`)
+      .then((res) => {
+        setApiStoreData(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
+  const showToast = (type, text) => {
+    if (type === 'error') {
+      toast.error(text ? text : error, {
+        toastId: 'error',
+      });
+    } else if (type === 'success') {
+      toast.success(text ? text : response, {
+        toastId: 'success',
+      });
+    }
+  };
+
   useEffect(() => {
-    console.log(response);
+    if (apiStoreData) {
+      let photoUrl;
+       let timesrun = 0;
+      Object.entries(apiStoreData.data.data.data).forEach((field) => {
+        if (field[0] === 'storePhoto') {
+          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          setPhotoUrls({ ...photoUrls, storePhotoUrl: photoUrl });
+        } else if (field[0] === 'storeBanner') {
+          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          setPhotoUrls({ ...photoUrls, storeBannerUrl: photoUrl });
+        } else if (field[0] === 'storeAboutPhotos') {
+          field[1].map((url) => {
+           
 
-    // if (response != []) {
-    //   console.log('RESPONSE', response);
+            timesrun += 1;
+            let photoUrlArray = [];
+           
+            photoUrl = `http://localhost:5767/stores/${url}`;
+            photoUrlArray.push(url);
 
-    // } else {
-    //   photoUrl = `https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg`;
-    // }
-  }, [response]);
+            console.log(photoUrlArray);
+            console.log('result', {
+              ...photoUrls,
+              storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray],
+            });
+            setPhotoUrls({ ...photoUrls, storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray] });
+            console.log(timesrun);
+          });
+        }
 
-  useEffect(() => {
-    console.log('ME', apiStoreData);
-    let photoUrl;
+        console.log('object field', field);
+      });
+    }
 
-    const checkStringLogic = () => {
-      console.log(apiStoreData, 'storeData');
-      if (apiStoreData != null && apiStoreData.length != 0) {
-        return apiStoreData.data.data.storePhoto;
-      } else {
-        return 'defaultStore.svg';
-      }
-    };
-    photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
-    setPhotoUrls({ ...photoUrls, photoUrl });
+    // const checkStringLogic = () => {
+    //   if (apiStoreData != null && apiStoreData.length != 0) {
+    //     return apiStoreData.data.data.storePhoto;
+    //   } else {
+    //     return 'defaultStore.svg';
+    //   }
+    // };
+
+    // setPhotoUrls({ ...photoUrls, photoUrl });
   }, [apiStoreData]);
 
   // const setNewPhotoUrl = () => {
@@ -165,18 +212,58 @@ const VendorProfile = () => {
   // }
 
   const handleUploadFile = (type) => {
-    if (type === 'storePhoto') {
+    if (type === 'storePhotoRef') {
       storePhotoRef.current.click();
+    }
+    if (type === 'storeBannerRef') {
+      storeBannerRef.current.click();
+    }
+    if (type === 'storeGalleryRef') {
+      storeGalleryRef.current.click();
     }
   };
 
-  const fileChangeHandler = () => {
-    setOpen(true);
-    console.log('store', storePhotoRef);
-    const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+  const fileChangeHandler = (type) => {
+    if (type == 'storePhotoRef') {
+      setAspect(1);
+      setCropType('storeProfilePhoto');
+      setOpen(true);
 
-    setPhotoUrls({ ...photoUrls, storePhotoUrl: objectUrl });
+      const objectUrl = URL.createObjectURL(storePhotoRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storePhotoRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeBannerRef') {
+      setAspect(1350 / 322);
+      setCropType('storeBannerPhoto');
+      setOpen(true);
+      const objectUrl = URL.createObjectURL(storeBannerRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeGalleryRef') {
+      if (photoUrls.storeGalleryUrls.length < 11) {
+        setAspect(1);
+        setCropType('storeGalleryPhotos');
+        setOpen(true);
+        setGalleryFiles([...galleryFiles, storeGalleryRef.current.files[0]]);
+        const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
+        setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
+        setActivePhotoUrl(objectUrl);
+      } else if (photoUrls.storeGalleryUrls.length >= 11) {
+        showToast('error', 'Нельзя загружать больше 11 фотографий');
+      }
+    }
   };
+
+  const handlePhotoDelete = (i) => {
+    const newPhotos = [
+      ...photoUrls.storeGalleryUrls.filter((element) => ![photoUrls.storeGalleryUrls[i]].includes(element)),
+    ];
+    const newFiles = [...galleryFiles.filter((element) => ![galleryFiles[i]].includes(element))];
+    setGalleryFiles(newFiles);
+    setPhotoUrls({ ...photoUrls, storeGalleryUrls: newPhotos });
+  };
+
+  const arrayStorePhotosExtra = photoUrls.storeGalleryUrls;
 
   const startingValues = {
     storeName: '',
@@ -226,6 +313,7 @@ const VendorProfile = () => {
     {
       page: (
         <DivStoreRightPanelSC>
+          {console.log('photoUrls', photoUrls)}
           <DivStoreInfoStuffProfileSC>
             <H1BoldTextSC>Мой профиль</H1BoldTextSC>
           </DivStoreInfoStuffProfileSC>
@@ -242,17 +330,22 @@ const VendorProfile = () => {
               });
 
               if (storePhotoRef.current.files[0]) {
-                console.log('No 0', storePhotoRef.current.files);
                 formData.append('storePhoto', storePhotoRef.current.files[0]);
               }
 
-              for (let [key, value] of formData) {
-                console.log(`"ascascac" ${key}: ${value}`);
+              if (storeBannerRef.current.files[0]) {
+                formData.append('storeBanner', storeBannerRef.current.files[0]);
+              }
+              if (galleryFiles !== []) {
+                console.log(galleryFiles, 'ASBCbakjscbacsb');
+                galleryFiles.map((file) => formData.append('storeAboutPhotos', file));
+              }
+              for (const value of formData.getAll('storeAboutPhotos')) {
+                console.log('formData value', value);
               }
 
-              console.log('Hello!!!!!');
               axios
-                .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
+                .patch(`http://localhost:5767/api/v1/store/${testId}`, formData, {
                   // You need to use `getHeaders()` in Node.js because Axios doesn't
                   // automatically set the multipart form boundary in Node.
                   headers: {
@@ -277,30 +370,64 @@ const VendorProfile = () => {
           >
             {(formik) => (
               <Form>
-                <input ref={storePhotoRef} type="file" name="storePhoto" onChange={fileChangeHandler} />
-
+                <input
+                  ref={storePhotoRef}
+                  type="file"
+                  name="storePhoto"
+                  onChange={() => fileChangeHandler('storePhotoRef')}
+                />
+                <input
+                  ref={storeBannerRef}
+                  type="file"
+                  name="bannerPhoto"
+                  onChange={() => fileChangeHandler('storeBannerRef')}
+                />
+                <input
+                  ref={storeGalleryRef}
+                  type="file"
+                  name="storeGallery"
+                  onChange={() => fileChangeHandler('storeGalleryRef')}
+                />
                 <EcoModal
                   open={modalOpen}
                   title="Загрузка фотографии"
                   subTitle="Поместите фото профиля в выбранную область"
                   cropImageModal={true}
-                  photoUrl={photoUrls.storePhotoUrl}
+                  cropType={cropType}
+                  aspect={aspect}
+                  photoUrl={activePhotoUrl}
                   setPhotoUrls={setPhotoUrls}
                   photoUrls={photoUrls}
+                  storeGalleryUrls={photoUrls.storeGalleryUrls}
                 ></EcoModal>
                 <DivItemsOptionsSC>
+                  {console.log(apiStoreData)}
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Баннер магазина</H1DefinSC>
-                      <ButtonBannerSC>Загрузить баннер</ButtonBannerSC>
+                      <ButtonBannerSC
+                        photoUrl={photoUrls.storeBannerUrl}
+                        onClick={() => handleUploadFile('storeBannerRef')}
+                      >
+                        <OverlayBannerImgSC>
+                          <OverlayBannerImageTextSC>Изменить фото</OverlayBannerImageTextSC>
+                        </OverlayBannerImgSC>
+
+                        {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        ) : null}
+                      </ButtonBannerSC>
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Фото</H1DefinSC>
-                      {console.log('photoUrls', photoUrls.storePhotoUrl)}
-                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhoto')}>
-                        <OverlayImgSC>
-                          <OverlayTextSC>Изменить фото</OverlayTextSC>
-                        </OverlayImgSC>
+
+                      <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhotoRef')}>
+                        <OverlayProfileImgSC>
+                          <OverlayProfileImageTextSC>Изменить фото</OverlayProfileImageTextSC>
+                        </OverlayProfileImgSC>
                         {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
@@ -345,22 +472,33 @@ const VendorProfile = () => {
                     </DivBoxRowsAboutCreativity>
                     <DivBoxColumnsFotosSC>
                       <DivBoxFoto1SC>
-                        <ButtonImgSC>
+                        <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
                             <H1SC>Загрузить фото</H1SC>
                           </DivInnerPhotoInputSC>
                         </ButtonImgSC>
                       </DivBoxFoto1SC>
-                      <DivBoxFoto2SC>
-                        <DivFoto2SC></DivFoto2SC>
-                      </DivBoxFoto2SC>
-                      <DivBoxFoto3SC>
-                        <DivFoto3SC></DivFoto3SC>
-                      </DivBoxFoto3SC>
-                      <DivBoxFoto4SC>
-                        <DivFoto4SC></DivFoto4SC>
-                      </DivBoxFoto4SC>
+
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[1] && photoUrls.storeGalleryUrls[1]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(1)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[2] && photoUrls.storeGalleryUrls[2]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(2)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+
+                      {photoUrls.storeGalleryUrls.length >= 3 ? (
+                        <>
+                          {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
+                            <DivBoxShowPhotoSC photoUrl={photo}>
+                              <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
+                            </DivBoxShowPhotoSC>
+                          ))}
+                        </>
+                      ) : null}
                     </DivBoxColumnsFotosSC>
                   </DivBGImageSC>
                 </DivAboutYourselfSC>
@@ -404,38 +542,7 @@ const VendorProfile = () => {
       </DivWrapLinkSC>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-          <DivStoreInfoSC>
-            <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
-            <DivStoreInfoDataSC>
-              <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
-              <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
-            </DivStoreInfoDataSC>
-          </DivStoreInfoSC>
-          <DivStoreOptionsSC>
-            <DivStoreOptionsLinkStoreSC to="/vendorprofile">Профиль</DivStoreOptionsLinkStoreSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/sellersettings">Настройки</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/store/1">Магазин 50</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Оплата и доставка</DivStoreOptionsLinkSC>
-            <br />
-            <HrLinkSC />
-            <DivStoreOptionsLinkSC to="/">Покупки</DivStoreOptionsLinkSC>
-            <br />
-            <DivStoreOptionsLinkSC to="/">Продажи</DivStoreOptionsLinkSC>
-            <br />
-            <DivStarsPanelSC>
-              <DivStoreOptionsLeftPanelSC>
-                <DivStoreOptionsLinkSC to="/">Отзывы 30</DivStoreOptionsLinkSC>
-                <br />
-              </DivStoreOptionsLeftPanelSC>
-              <DivStoreOptionsRightPanelSC>
-                <StarRating product={true} />
-              </DivStoreOptionsRightPanelSC>
-            </DivStarsPanelSC>
-          </DivStoreOptionsSC>
+          <VendorNavMenu page={0}/>
         </DivStoreLeftPanelSC>
         {listContent[indexSelectedButton].page}
       </DivStoreWrapSC>

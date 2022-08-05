@@ -94,6 +94,7 @@ import {
   DivTextRulesSC,
   DivBox2ButtonsSC,
   InputVideoSC,
+  PlaceButtonSC,
 } from '../styled-components-css/styles.AddNewProduct';
 import {
   ButtonImgSC,
@@ -105,7 +106,6 @@ import {
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
 } from '../styled-components-css/styles.VendorProfile';
-import { DivBoxButtonCreateStoreSC } from '../styled-components-css/styles.navbar';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import AppContext from '../context/AppContext';
 import { toast } from 'react-toastify';
@@ -515,9 +515,9 @@ const AddNewProduct = () => {
                     В черновик
                   </ButtonCustomWhiteSC>
 
-                  <DivBoxButtonCreateStoreSC width={'100%'} padding={'18px 32px'} type="submit">
+                  <PlaceButtonSC width={'100%'} padding={'18px 32px'} type="submit">
                     Разместить
-                  </DivBoxButtonCreateStoreSC>
+                  </PlaceButtonSC>
                 </DivButtonsSC>
               </DivBox2ButtonsSC>
             </DivBoxButtonsSC>

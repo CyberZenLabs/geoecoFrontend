@@ -942,3 +942,32 @@ export const DivTextRulesSC = styled.div`
   line-height: 37px;
   color: #252525;
 `;
+
+export const PlaceButtonSC = styled.div`
+  /* Кнопка (первичная) */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  max-width: 200px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  /* Акцент */
+  text-decoration: none;
+  background: #85cb33;
+  border-radius: 20px;
+  max-width: 256px;
+  width: 100%;
+  height: 56px;
+  justify-self: end;
+  border-radius: 20px;
+  border: none;
+`;

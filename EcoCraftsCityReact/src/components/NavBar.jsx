@@ -32,16 +32,18 @@ import {
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
-} from '../styled-components-css/styles.navbar';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
-import { OverlayDivSc } from '../styled-components-css/styles.catalog';
-import AppContext from '../context/AppContext';
-import { useAuth } from '../context/AuthContext';
-import { toast } from 'react-toastify';
-import useAxiosFunction from '../hooks/useAxiosFunction';
-import { useCookies } from 'react-cookie';
-import Modal from './Modal';
-import EcoModal from './Modal';
+} from "../styled-components-css/styles.navbar";
+import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
+import { OverlayDivSc } from "../styled-components-css/styles.catalog";
+import AppContext from "../context/AppContext";
+import { useAuth } from "../context/AuthContext";
+import { toast } from "react-toastify";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+import { useCookies } from "react-cookie";
+import Modal from "./Modal";
+import EcoModal from "./Modal";
+import Modalstore from './ModalRegStore';
+
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -50,7 +52,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData,setOpenModal, } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -73,9 +75,11 @@ const ResponsiveAppBar = () => {
   };
 
   const openCart = () => {
-    setOpen(true);
+    setOpenModal(true);
     setModalData({
-      inputs: [{ email: 'Электронная почта' }],
+      
+      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
+      
       button: true,
     });
   };

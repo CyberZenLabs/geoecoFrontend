@@ -97,6 +97,8 @@ import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
 import VendorNavMenu from '../components/VendorNavMenu';
 
+
+
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -273,23 +275,39 @@ const VendorProfile = () => {
   const listContent = [
     {
       page: (
-        <DivStoreRightPanelSC>
-          <DivAddProductBox>
-            <DivInfoVendorBoxSC>
-              <SpanTextTitleSC>
-                Имя профиля
-                <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC>
-              </SpanTextTitleSC>
-              <UlifnoSC>
-                <li>fffff</li>
-                <li>ffffff</li>
-                <li>fffffff</li>
-                <li>fffff</li>
-              </UlifnoSC>
-            </DivInfoVendorBoxSC>
-            <DivInfoVendorBoxSC>FFFFFF</DivInfoVendorBoxSC>
-          </DivAddProductBox>
-        </DivStoreRightPanelSC>
+        <DivBoxNewProductsBigST>
+      
+        <DivBoxNewProductsST>
+           
+      
+           
+            <DivAddProductBox>
+            
+            <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+           <VendorInfoMenu></VendorInfoMenu>
+             <DivInfoVendorBoxSC>
+             
+           <VenderCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           </VenderCarousel>
+             </DivInfoVendorBoxSC>
+            </DivAddProductBox>
+            
+
+    </DivBoxNewProductsST>
+
+    </DivBoxNewProductsBigST>
       ),
     },
     {

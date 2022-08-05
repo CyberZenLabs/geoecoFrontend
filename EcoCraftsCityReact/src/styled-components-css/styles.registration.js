@@ -37,10 +37,10 @@ export const DivTextBoxSISC = styled.div`
   //border: 1px solid red;
   width: 100%;
   max-width: 512px;
+  margin-bottom: 20px;
   @media (max-width: 660px) {
     margin-top: 30px;
     width: 100%;
-    margin-bottom: 20px;
   }
 `;
 

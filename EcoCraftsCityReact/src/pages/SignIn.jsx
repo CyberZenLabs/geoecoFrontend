@@ -144,13 +144,12 @@ const SignIn = (props) => {
                     <DivTextBoxSISC>
                       <CheckboxItemInput
                         type="checkbox"
-                        name="todo"
-                        value="todo"
+                        name="rem"
+                        value="rem"
                         checked={checked}
-                        onChange={check}
-                        onClick={!checked}
+                        onClick={check}
                       />
-                      <SpanFirstSC to="/">Запомнить меня</SpanFirstSC>
+                       <SpanFirstSC to="#" onClick={check}>Запомнить меня</SpanFirstSC>
                       <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
                     </DivTextBoxSISC>
                     <DivBoxRowSC>

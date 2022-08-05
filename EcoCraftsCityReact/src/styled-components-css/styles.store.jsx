@@ -457,11 +457,23 @@ export const DivItemsSC = styled.div`
   border-radius: 20px;
   margin-bottom: 2px;
   height: 200px;
-  //border: 2px solid black;
+  // border: 2px solid black;
   grid-template-columns: 200px auto;
   grid-template-rows: 0px;
   width: auto;
   max-width: 1140px;
+`;
+export const DivItems2pageSC = styled.div`
+  background: rgba(243, 243, 243, 0.5);
+  display: grid;
+  border-radius: 20px;
+  margin-bottom: 2px;
+  height: 200px;
+  //border: 2px solid black;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 0px;
+  width: auto;
+  max-width: 722px;
 `;
 export const DivItemsImageSC = styled.img`
 z-index: 1;
@@ -612,6 +624,7 @@ z-index: 1;
   border-radius: 20px;
   max-width: 1040px;
   height: 80px;
+  margin-top: 20px;
    //border: 2px solid black;
   grid-template-columns: auto auto 17vw auto;
   padding-left: 15px;

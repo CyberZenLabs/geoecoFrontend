@@ -211,7 +211,7 @@ export const DivBoxColumnAboutYourselfSC = styled.div`
   padding-top: 74px;
 `;
 
-export const InputAboutYourself = styled.input`
+export const InputVideoSC = styled.textarea`
   max-width: 602px;
   width: 100%;
   height: 140px;
@@ -263,7 +263,7 @@ export const DivBoxInputProductName = styled.div`
   height: 41px;
 `;
 
-export const InputProductName = styled.input`
+export const InputProductName = styled.textarea`
   max-width: 602px;
   width: 100%;
   height: 41px;
@@ -387,7 +387,7 @@ export const DivBoxInputPrice = styled.div`
   height: 41px;
 `;
 
-export const InputPrice = styled.input`
+export const InputPrice = styled.textarea`
   max-width: 127px;
   width: 100%;
   height: 41px;
@@ -469,7 +469,7 @@ export const DivBoxInputDiscount = styled.div`
   height: 41px;
 `;
 
-export const InputDiscount = styled.input`
+export const InputDiscount = styled.textarea`
   max-width: 127px;
   width: 100%;
   height: 41px;
@@ -572,7 +572,7 @@ export const DivBoxInputDescriptonSC = styled.div`
   height: 137px;
 `;
 
-export const InputDescription = styled.input`
+export const InputDescription = styled.textarea`
   max-width: 1018px;
   width: 100%;
   height: 113px;
@@ -613,7 +613,7 @@ export const DivBoxInputCharacteristicsSC = styled.div`
   height: 137px;
 `;
 
-export const InputCharacteristics = styled.input`
+export const InputCharacteristics = styled.textarea`
   max-width: 1018px;
   width: 100%;
   height: 113px;
@@ -654,7 +654,7 @@ export const DivBoxInputKeywordsSC = styled.div`
   height: 86px;
 `;
 
-export const InputKeywords = styled.input`
+export const InputKeywords = styled.textarea`
   max-width: 1018px;
   width: 100%;
   height: 86px;

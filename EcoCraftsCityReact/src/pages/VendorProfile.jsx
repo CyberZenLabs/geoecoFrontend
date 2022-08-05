@@ -88,6 +88,7 @@ import {
   OverlayBannerImgSC,
   DivBoxShowPhotoSC,
   DeleteIconSC,
+  DivCarouselPhotosSC,
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -110,14 +111,15 @@ const VendorProfile = () => {
 
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
-    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
-    storeBannerUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storePhotoUrl: 'http://localhost:5767/stores/defaultStore.svg',
+    storeBannerUrl: 'http://localhost:5767/stores/defaultStore.svg',
     storeGalleryUrls: [],
   });
   const [activePhotoUrl, setActivePhotoUrl] = useState('');
   const [cropType, setCropType] = useState('');
   const [aspect, setAspect] = useState(1);
   const [modalOpen, seModalOpen] = useState(true);
+  const [galleryFiles, setGalleryFiles] = useState([]);
 
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
@@ -129,17 +131,20 @@ const VendorProfile = () => {
   const storeGalleryRef = useRef(null);
   let testId = '62e38df24c1f460016904636';
   useEffect(() => {
-    const getProfileData = async () => {
-      await axiosFetch({
-        axiosInstance: axiosCustom,
-        method: 'GET',
-        url: `/api/v1/store/${testId}`,
-      });
-    };
+    // axiosFetch({
+    //   axiosInstance: axiosCustom,
+    //   method: 'GET',
+    //   url: `/api/v1/store/${testId}`,
+    // });
 
-    getProfileData().then((res) => {
-      setApiStoreData(response);
-    });
+    axios
+      .get(`http://localhost:5767/api/v1/store/${testId}`)
+      .then((res) => {
+        setApiStoreData(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const showToast = (type, text) => {
@@ -155,30 +160,49 @@ const VendorProfile = () => {
   };
 
   useEffect(() => {
-    console.log(response);
+    if (apiStoreData) {
+      let photoUrl;
+       let timesrun = 0;
+      Object.entries(apiStoreData.data.data.data).forEach((field) => {
+        if (field[0] === 'storePhoto') {
+          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          setPhotoUrls({ ...photoUrls, storePhotoUrl: photoUrl });
+        } else if (field[0] === 'storeBanner') {
+          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          setPhotoUrls({ ...photoUrls, storeBannerUrl: photoUrl });
+        } else if (field[0] === 'storeAboutPhotos') {
+          field[1].map((url) => {
+           
 
-    // if (response != []) {
-    //   console.log('RESPONSE', response);
+            timesrun += 1;
+            let photoUrlArray = [];
+           
+            photoUrl = `http://localhost:5767/stores/${url}`;
+            photoUrlArray.push(url);
 
-    // } else {
-    //   photoUrl = `https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg`;
-    // }
-  }, [response]);
+            console.log(photoUrlArray);
+            console.log('result', {
+              ...photoUrls,
+              storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray],
+            });
+            setPhotoUrls({ ...photoUrls, storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray] });
+            console.log(timesrun);
+          });
+        }
 
-  useEffect(() => {
-    console.log('ME', apiStoreData);
-    let photoUrl;
+        console.log('object field', field);
+      });
+    }
 
-    const checkStringLogic = () => {
-      console.log(apiStoreData, 'storeData');
-      if (apiStoreData != null && apiStoreData.length != 0) {
-        return apiStoreData.data.data.storePhoto;
-      } else {
-        return 'defaultStore.svg';
-      }
-    };
-    photoUrl = `https://radiant-river-29802.herokuapp.com/stores/${checkStringLogic()}`;
-    setPhotoUrls({ ...photoUrls, photoUrl });
+    // const checkStringLogic = () => {
+    //   if (apiStoreData != null && apiStoreData.length != 0) {
+    //     return apiStoreData.data.data.storePhoto;
+    //   } else {
+    //     return 'defaultStore.svg';
+    //   }
+    // };
+
+    // setPhotoUrls({ ...photoUrls, photoUrl });
   }, [apiStoreData]);
 
   // const setNewPhotoUrl = () => {
@@ -214,16 +238,16 @@ const VendorProfile = () => {
       setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
       setActivePhotoUrl(objectUrl);
     } else if (type == 'storeGalleryRef') {
-      if (photoUrls.storeGalleryUrls.length <= 10) {
+      if (photoUrls.storeGalleryUrls.length < 11) {
         setAspect(1);
         setCropType('storeGalleryPhotos');
         setOpen(true);
-
+        setGalleryFiles([...galleryFiles, storeGalleryRef.current.files[0]]);
         const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
         setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
         setActivePhotoUrl(objectUrl);
-      } else if (photoUrls.storeGalleryUrls.length > 10) {
-        showToast('error', 'Нельзя загружать больше 10 фотографий');
+      } else if (photoUrls.storeGalleryUrls.length >= 11) {
+        showToast('error', 'Нельзя загружать больше 11 фотографий');
       }
     }
   };
@@ -232,8 +256,9 @@ const VendorProfile = () => {
     const newPhotos = [
       ...photoUrls.storeGalleryUrls.filter((element) => ![photoUrls.storeGalleryUrls[i]].includes(element)),
     ];
-    console.log('errroe', newPhotos);
-    setPhotoUrls({ ...photoUrls.storeGalleryUrls, storeGalleryUrls: newPhotos });
+    const newFiles = [...galleryFiles.filter((element) => ![galleryFiles[i]].includes(element))];
+    setGalleryFiles(newFiles);
+    setPhotoUrls({ ...photoUrls, storeGalleryUrls: newPhotos });
   };
 
   const arrayStorePhotosExtra = photoUrls.storeGalleryUrls;
@@ -249,7 +274,6 @@ const VendorProfile = () => {
     {
       page: (
         <DivStoreRightPanelSC>
-          {console.log('123', photoUrls)}
           <DivAddProductBox>
             <DivInfoVendorBoxSC>
               <SpanTextTitleSC>
@@ -271,6 +295,7 @@ const VendorProfile = () => {
     {
       page: (
         <DivStoreRightPanelSC>
+          {console.log('photoUrls', photoUrls)}
           <DivStoreInfoStuffProfileSC>
             <H1BoldTextSC>Мой профиль</H1BoldTextSC>
           </DivStoreInfoStuffProfileSC>
@@ -287,17 +312,22 @@ const VendorProfile = () => {
               });
 
               if (storePhotoRef.current.files[0]) {
-                console.log('No 0', storePhotoRef.current.files);
                 formData.append('storePhoto', storePhotoRef.current.files[0]);
               }
 
-              for (let [key, value] of formData) {
-                console.log(`"ascascac" ${key}: ${value}`);
+              if (storeBannerRef.current.files[0]) {
+                formData.append('storeBanner', storeBannerRef.current.files[0]);
+              }
+              if (galleryFiles !== []) {
+                console.log(galleryFiles, 'ASBCbakjscbacsb');
+                galleryFiles.map((file) => formData.append('storeAboutPhotos', file));
+              }
+              for (const value of formData.getAll('storeAboutPhotos')) {
+                console.log('formData value', value);
               }
 
-              console.log('Hello!!!!!');
               axios
-                .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
+                .patch(`http://localhost:5767/api/v1/store/${testId}`, formData, {
                   // You need to use `getHeaders()` in Node.js because Axios doesn't
                   // automatically set the multipart form boundary in Node.
                   headers: {
@@ -353,6 +383,7 @@ const VendorProfile = () => {
                   storeGalleryUrls={photoUrls.storeGalleryUrls}
                 ></EcoModal>
                 <DivItemsOptionsSC>
+                  {console.log(apiStoreData)}
                   <DivInnerContentSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Баннер магазина</H1DefinSC>
@@ -363,7 +394,7 @@ const VendorProfile = () => {
                         <OverlayBannerImgSC>
                           <OverlayBannerImageTextSC>Изменить фото</OverlayBannerImageTextSC>
                         </OverlayBannerImgSC>
-                        {console.log(apiStoreData, 'now')}
+
                         {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
@@ -374,7 +405,7 @@ const VendorProfile = () => {
                     </DivTwoSidesSC>
                     <DivTwoSidesSC>
                       <H1DefinSC>Фото</H1DefinSC>
-                      {console.log('photoUrls', photoUrls)}
+
                       <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhotoRef')}>
                         <OverlayProfileImgSC>
                           <OverlayProfileImageTextSC>Изменить фото</OverlayProfileImageTextSC>
@@ -430,6 +461,7 @@ const VendorProfile = () => {
                           </DivInnerPhotoInputSC>
                         </ButtonImgSC>
                       </DivBoxFoto1SC>
+
                       <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
                         <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
                       </DivBoxShowPhotoSC>
@@ -442,7 +474,7 @@ const VendorProfile = () => {
 
                       {photoUrls.storeGalleryUrls.length >= 3 ? (
                         <>
-                          {[...photoUrls.storeGalleryUrls].splice(3, 7).map((photo, i) => (
+                          {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
                             <DivBoxShowPhotoSC photoUrl={photo}>
                               <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
                             </DivBoxShowPhotoSC>

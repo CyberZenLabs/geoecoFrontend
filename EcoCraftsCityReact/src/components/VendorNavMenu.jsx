@@ -1,9 +1,21 @@
 import React, { useState }  from 'react'
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import axios from '../apis/admin-rest';
 import { useEffect } from 'react';
 import { DivStarsPanelSC, DivStoreInfoDataSC, DivStoreInfoImageSC, DivStoreInfoSC, DivStoreOptionsLeftPanelSC, DivStoreOptionsLinkSC, DivStoreOptionsLinkStoreSC, DivStoreOptionsRightPanelSC, DivStoreOptionsSC, HrLinkSC, StoreInfoHeaderSC, StoreInfoSubHeaderSC } from '../styled-components-css/styles.store'
 import StarRating from './StarRating'
 
 const VendorNavMenu = ({page}) => {
+  const [store, setStores] = useState([]);
+
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
+  useEffect(() => {
+    axios
+      .get('https://radiant-river-29802.herokuapp.com/api/v1/store/62ed18caba878200162f0141')
+      .then((res) => {
+        console.log(res);
+        setStores(res.data.data.data);
+      }) }, []);
     const [indexSelectedButton, getIndexButton] = useState(null);
     useEffect(()=>{
         getIndexButton(page);
@@ -14,7 +26,9 @@ const VendorNavMenu = ({page}) => {
       <DivStoreInfoSC>
             <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
             <DivStoreInfoDataSC>
-              <StoreInfoHeaderSC>Название магазина</StoreInfoHeaderSC>
+          
+      
+              <StoreInfoHeaderSC>{store.storeName}</StoreInfoHeaderSC>
               <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
             </DivStoreInfoDataSC>
           </DivStoreInfoSC>

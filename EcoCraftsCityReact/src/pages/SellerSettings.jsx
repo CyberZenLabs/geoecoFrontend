@@ -7,30 +7,15 @@ import {
   NavLinkSC,
 } from "../styled-components-css/styles.product-detail";
 import {
-  DivStarsPanelSC,
-  DivStoreInfoDataSC,
-  DivStoreInfoImageSC,
-  DivStoreInfoSC,
   DivStoreLeftPanelSC,
-  DivStoreOptionsLeftPanelSC,
-  DivStoreOptionsLinkSC,
-  DivStoreOptionsLinkStoreSC,
-  DivStoreOptionsRightPanelSC,
-  DivStoreOptionsSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-  HrLinkSC,
-  StoreInfoHeaderSC,
-  StoreInfoSubHeaderSC,
 } from "../styled-components-css/styles.store";
 import AppContext from "../context/AppContext";
-import StarRating from "../components/StarRating";
 import {
-  BettonContentEditSC,
   ButtonContentEditSC,
-  ButtonContinueModal,
   ButtonSave,
   DivContent1PageSC,
   DivContent2SC,

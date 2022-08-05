@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Form, Formik } from 'formik';
 import {
   DivBoxItemsSC,
@@ -14,15 +14,6 @@ import {
   DivBoxRowsNameProductSC,
   DivBoxTextNameProductSC,
   DivTextNameProduct,
-  DivBoxColumnsFotosSC,
-  DivBoxFoto1SC,
-  DivBoxFoto2SC,
-  DivBoxFoto3SC,
-  DivBoxFoto4SC,
-  DivButtonFoto1SC,
-  DivFoto2SC,
-  DivFoto3SC,
-  DivFoto4SC,
   DivBoxColumnAboutYourselfSC,
   DivTextSC,
   DivBoxInputAboutYourself,
@@ -34,9 +25,6 @@ import {
   InputProductName,
   DivImgGrayRectanglePriceSC,
   DivBoxImgGrayRectanglePriceSC,
-  DivContainerButtonSC,
-  DivImgFotoSC,
-  DivTextDovnloadFotoSC,
   DivBoxRowsPriceSC,
   DivBoxTextPriceAndNumberSC,
   DivTextPriceAndNumberSC,
@@ -114,6 +102,8 @@ import {
   H1SC,
   DivBoxShowPhotoSC,
   DeleteIconSC,
+  DivBoxColumnsFotosSC,
+  DivBoxFoto1SC,
 } from '../styled-components-css/styles.VendorProfile';
 import { DivBoxButtonCreateStoreSC } from '../styled-components-css/styles.navbar';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
@@ -125,6 +115,8 @@ import axios from 'axios';
 
 const AddNewProduct = () => {
   const storeGalleryRef = useRef(null);
+  const storeBannerRef = useRef(null);
+  const [apiStoreData, setApiStoreData] = useState(null);
   let testId = '62e38df24c1f460016904636';
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [response, error, loading, axiosFetch] = useAxiosFunction();
@@ -146,18 +138,51 @@ const AddNewProduct = () => {
   const [modalOpen, seModalOpen] = useState(true);
   const [cropType, setCropType] = useState('');
   const [activePhotoUrl, setActivePhotoUrl] = useState('');
-
-  /* const fileChangeHandler = (type) => {
-    if (type == 'storePhotoRef') {
-      setAspect(1);
-      setCropType('storeProfilePhoto');
-      setOpen(true); */
+  const [galleryFiles, setGalleryFiles] = useState([]);
 
   const handleUploadFile = (type) => {
     if (type === 'storeGalleryRef') {
       storeGalleryRef.current.click();
     }
   };
+
+  useEffect(() => {
+    if (apiStoreData) {
+      let photoUrl;
+      let timesrun = 0;
+      Object.entries(apiStoreData.data.data.data).forEach((field) => {
+        if (field[0] === 'storeAboutPhotos') {
+          field[1].map((url) => {
+            timesrun += 1;
+            let photoUrlArray = [];
+
+            photoUrl = `http://localhost:5767/stores/${url}`;
+            photoUrlArray.push(url);
+
+            console.log(photoUrlArray);
+            console.log('result', {
+              ...photoUrls,
+              storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray],
+            });
+            setPhotoUrls({ ...photoUrls, storeGalleryUrls: [...photoUrls.storeGalleryUrls, ...photoUrlArray] });
+            console.log(timesrun);
+          });
+        }
+
+        console.log('object field', field);
+      });
+    }
+
+    // const checkStringLogic = () => {
+    //   if (apiStoreData != null && apiStoreData.length != 0) {
+    //     return apiStoreData.data.data.storePhoto;
+    //   } else {
+    //     return 'defaultStore.svg';
+    //   }
+    // };
+
+    // setPhotoUrls({ ...photoUrls, photoUrl });
+  }, [apiStoreData]);
 
   const showToast = (type, text) => {
     if (type === 'error') {
@@ -171,17 +196,25 @@ const AddNewProduct = () => {
     }
   };
   const fileChangeHandler = (type) => {
-    if (type == 'storeGalleryRef') {
-      if (photoUrls.storeGalleryUrls.length <= 10) {
+    if (type == 'storePhotoRef') {
+      setAspect(1);
+      setCropType('storeProfilePhoto');
+      setOpen(true);
+
+      const objectUrl = URL.createObjectURL(storeBannerRef.current.files[0]);
+      setPhotoUrls({ ...photoUrls, storeBannerRef: objectUrl });
+      setActivePhotoUrl(objectUrl);
+    } else if (type == 'storeGalleryRef') {
+      if (photoUrls.storeGalleryUrls.length < 11) {
         setAspect(1);
         setCropType('storeGalleryPhotos');
         setOpen(true);
-
+        setGalleryFiles([...galleryFiles, storeGalleryRef.current.files[0]]);
         const objectUrl = URL.createObjectURL(storeGalleryRef.current.files[0]);
         setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
         setActivePhotoUrl(objectUrl);
-      } else if (photoUrls.storeGalleryUrls.length > 10) {
-        showToast('error', 'Нельзя загружать больше 10 фотографий');
+      } else if (photoUrls.storeGalleryUrls.length >= 11) {
+        showToast('error', 'Нельзя загружать больше 11 фотографий');
       }
     }
   };
@@ -299,6 +332,7 @@ const AddNewProduct = () => {
                         </DivInnerPhotoInputSC>
                       </ButtonImgSC>
                     </DivBoxFoto1SC>
+
                     <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
                       <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
                     </DivBoxShowPhotoSC>
@@ -311,7 +345,7 @@ const AddNewProduct = () => {
 
                     {photoUrls.storeGalleryUrls.length >= 3 ? (
                       <>
-                        {[...photoUrls.storeGalleryUrls].splice(3, 7).map((photo, i) => (
+                        {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
                           <DivBoxShowPhotoSC photoUrl={photo}>
                             <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
                           </DivBoxShowPhotoSC>

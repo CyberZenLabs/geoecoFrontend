@@ -3,8 +3,10 @@ import * as yup from "yup";
 export const registerSchema = yup.object().shape({
   firstName: yup.string()
       .matches(
+
           /^[^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=][A-я\d][^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=]{0,100}$/,
           "Допускаются только буквы"
+
       )
       .required("Имя обязательно"),
   lastName: yup.string().matches(

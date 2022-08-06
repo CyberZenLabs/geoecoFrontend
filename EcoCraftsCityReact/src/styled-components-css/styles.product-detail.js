@@ -335,23 +335,28 @@ export const DivBoxButtonContentSC = styled.div`
 
 // ShopBlock SC
 
-export const DivShopBlockContainer = styled.div`
+export const DivShopBlockWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: max-content;
-  column-gap: 15px;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content max-content;
+  row-gap: 49px;
   grid-column: 3 / span 1;
   grid-row: 2 / span 1;
 `
 
+export const DivShopBlockContainer = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
+  column-gap: 15px;
+ 
+`
 
 export const DivShopLogo = styled.div`
   width: 88px;
   height: 88px;
   border-radius: 10px;
-  background: url(${(p) => (p.Image)}) no-repeat;
-  background-size: 100%;
-  
+  background: #D9D9D9;
 `
 export const DivShopInfo = styled.div`
   display: grid;
@@ -370,4 +375,29 @@ export const DivShopInfo = styled.div`
       font-size: 10px;
       font-weight: 500;
     }
+`
+
+// description and stats block (txt)
+
+export const DivDescStatsContainerSC = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content max-content;
+  max-width: 700px;
+`
+
+export const DivDescBlockSC = styled.div`
+    h2{
+      font-family: Montserrat;
+      font-size: 28px;
+      font-weight: 600;
+      color: #252525;
+      margin-bottom: 20px;
+    }
+    p{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    color: #252525;
+    }   
 `

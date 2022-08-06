@@ -16,7 +16,7 @@ import {
   DivProductRatingSC,
   H1ProductBoxSC,
   DivCarouselReviewSC,
-  DivButtonBoxSC, DivShopLogo,
+  DivButtonBoxSC, DivShopLogo, DivDescStatsContainerSC, DivDescBlockSC,
 } from "../styled-components-css/styles.product-detail";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -67,27 +67,33 @@ const ProductDetail = () => {
           <ShopBlock
               Image={Image}
           />
-
         </DivContentProductSC>
+
+        <DivDescStatsContainerSC>
+          <DivDescBlockSC>
+            <h2>Описание</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</p>
+          </DivDescBlockSC>
+          <DivDescBlockSC>
+            <h2>Характеристики</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</p>
+          </DivDescBlockSC>
+        </DivDescStatsContainerSC>
+
         <BoxOther />
+
+        {/*<DivProductDiscSC>*/}
+        {/*  <DivProductDiscContentSC>*/}
+        {/*    <ReviewsBox*/}
+        {/*      indexSelectedButton={indexSelectedButton}*/}
+        {/*      onClickTab={onClickTab}*/}
+        {/*      listContent={listContent}*/}
+        {/*    />*/}
+        {/*  </DivProductDiscContentSC>*/}
+        {/*</DivProductDiscSC>*/}
+
+
         <DivProductDiscSC>
-      
-         
-          <DivProductDiscContentSC>
-            <ReviewsBox
-              indexSelectedButton={indexSelectedButton}
-              onClickTab={onClickTab}
-              listContent={listContent}
-            />
-            
-          </DivProductDiscContentSC>
-           
-          
-         
-        </DivProductDiscSC>
-        <DivProductDiscSC>
-          
-        
           <DivProductDiscTitleSC>
             <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
           </DivProductDiscTitleSC>
@@ -115,6 +121,7 @@ const ProductDetail = () => {
             </DivButtonBoxSC>
           </DivProductReviewsSC>
         </DivProductDiscSC>
+
       </DivContentProductDetailSC>
     </DivBoxProductDetailSC>
   );

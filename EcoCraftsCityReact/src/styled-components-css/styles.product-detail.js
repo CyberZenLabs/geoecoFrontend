@@ -349,7 +349,9 @@ export const DivShopLogo = styled.div`
   width: 88px;
   height: 88px;
   border-radius: 10px;
-  background: #D9D9D9;
+  background: url(${(p) => (p.Image)}) no-repeat;
+  background-size: 100%;
+  
 `
 export const DivShopInfo = styled.div`
   display: grid;

@@ -29,6 +29,7 @@ import StarRating from "../components/StarRating";
 import ReviewShow from "../components/components-product-detail/ReviewShow";
 import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
 import ShopBlock from "../components/components-product-detail/ShopBlock";
+import Image from '../img/logo.svg'
 
 const listContent = [
   {
@@ -63,7 +64,9 @@ const ProductDetail = () => {
         <DivContentProductSC>
           <ImageProduct />
           <BoxPrice />
-          <ShopBlock/>
+          <ShopBlock
+              Image={Image}
+          />
 
         </DivContentProductSC>
         <BoxOther />

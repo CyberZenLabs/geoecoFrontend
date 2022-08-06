@@ -3,10 +3,15 @@ import {DivShopBlockContainer, DivShopInfo, DivShopLogo} from "../../styled-comp
 import StarRating from "../StarRating";
 
 const ShopBlock = (props) => {
+    const {
+        Image
+    } = props
     return (
         <DivShopBlockContainer>
 
-            <DivShopLogo></DivShopLogo>
+            <DivShopLogo Image={Image}>
+                {/*<img src={Image} alt=""/>*/}
+            </DivShopLogo>
             <DivShopInfo>
                 <h3>Название магазина и о чем он</h3>
                 <p>Где находится</p>

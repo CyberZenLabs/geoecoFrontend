@@ -336,10 +336,13 @@ export const DivBoxButtonContentSC = styled.div`
 // ShopBlock SC
 
 export const DivShopBlockContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 2fr;
-grid-template-rows: max-content;
-column-gap: 15px`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content;
+  column-gap: 15px;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+`
 
 
 export const DivShopLogo = styled.div`

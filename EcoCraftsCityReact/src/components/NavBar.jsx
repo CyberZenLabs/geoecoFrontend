@@ -97,11 +97,7 @@ const ResponsiveAppBar = () => {
 
         <DivCatalogAndSearchBoxSC>
           <DivTextBoxSC>
-            <SpanSecondSC to="#"></SpanSecondSC>
-            <SpanFirstSC to="#" onClick={openCart}>
-              Создать магазин
-            </SpanFirstSC>
-            <SpanSecondSC to="#"></SpanSecondSC>
+            
           </DivTextBoxSC>
 
           <DivBoxButtonAndInputSC>
@@ -160,7 +156,7 @@ const ResponsiveAppBar = () => {
                 <li>
                   <LinkProfileBoxSC to="/map-binding">
                     <GoCreditCard />
-                    Мой Карты
+                    Мои Карты
                   </LinkProfileBoxSC>
                 </li>
 

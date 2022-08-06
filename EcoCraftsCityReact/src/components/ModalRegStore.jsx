@@ -79,7 +79,7 @@ const Modalstore = () => {
                   <DivBoxRowsSC>
                       
            <StoreCreationTitleSC>Регистрация</StoreCreationTitleSC>
-                  <DivBoxRowModalSC>
+             
                   
                       {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
                       <InpitReg
@@ -89,9 +89,9 @@ const Modalstore = () => {
                         fullsize={true}
                         placeholder={'Электронная почта'}
                       />
-                    </DivBoxRowModalSC>
+                 
                    
-                    <DivBoxRowModalSC>
+                  
                         {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
                         <InpitReg
                           label="password"
@@ -100,8 +100,8 @@ const Modalstore = () => {
                           fullsize={false}
                           placeholder={'Пароль'}
                         />
-                    </DivBoxRowModalSC>
-                    <DivBoxRowModalSC>
+                  
+                    
                         {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
                         <InpitReg
                           label="passwordConfirm"
@@ -110,8 +110,7 @@ const Modalstore = () => {
                           fullsize={false}
                           placeholder={'Подтвердить пароль'}
                         />
-                    </DivBoxRowModalSC>
-                    <DivBoxRowModalSC>
+                   
                         {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
                         <InpitReg
                           label="passwordConfirm"
@@ -120,8 +119,7 @@ const Modalstore = () => {
                           fullsize={false}
                           placeholder={'Город'}
                         />
-                    </DivBoxRowModalSC>
-                    <DivBoxRowModalSC>
+             
                     <DivBoxRowModaSelectlSC><App/>
                    
                     
@@ -149,7 +147,7 @@ const Modalstore = () => {
                       </DivBoxTextSC>
                     </DivBoxRowSC>
                       </DivBoxRowModaSelectlSC>
-                      </DivBoxRowModalSC>
+                    
                  
                   </DivBoxRowsSC>
                 </Form>

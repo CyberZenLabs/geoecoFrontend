@@ -61,6 +61,7 @@ display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+  transition-delay: 0.3s;
 flex-direction: row;
 align-items: center;
 justify-self: center;
@@ -221,6 +222,7 @@ export const ButtonContinueModal = styled.button`
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+  transition-delay: 0.3s;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -257,9 +259,7 @@ box-sizing: border-box;
 height:50px;
 /* Auto layout */
 display: flex;   
-  width: 500px;
-  max-width: 500px;
-  min-width: 430px;
+  width: 100%;
 flex-direction: row;
 align-items: center;
 justify-self: center;
@@ -280,9 +280,8 @@ line-height: 20px;
 color: rgba(37, 37, 37, 0.7);
 }
 
-@media (max-width:1000px) {
-    width: 90%;
-}
+
+
 `;
 export const EmailFieldSC = styled.input`
   box-sizing: border-box;
@@ -291,7 +290,8 @@ export const EmailFieldSC = styled.input`
   display: flex;
   width: 500px;
   max-width: 500px;
-  min-width: 4300px;
+  min-width: 430px;
+  transition-delay: 0.3s;
   flex-direction: row;
   align-items: center;
   justify-self: center;
@@ -315,6 +315,7 @@ export const EmailFieldSC = styled.input`
   @media (max-width: 1000px) {
     width: 90%;
   }
+ 
 `;
 export const CenterItemsSC = styled.div`
 height: 550px;
@@ -329,8 +330,6 @@ display: grid;
 margin-top: 20px;
 transition: 0.5s;
   }
-  @media (max-width: 550px) {
-    height: 250px;
-  }
+
 `;
 

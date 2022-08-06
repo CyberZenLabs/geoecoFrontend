@@ -6,7 +6,7 @@ export const DivBoxLogoSC = styled.div`
   background-image: url(${image});
   background-repeat: no-repeat;
   background-position: center;
-  height: 100%;
+  height: 72px;
   width: 100%;
   max-width: 152px;
   background-size: 152px;
@@ -27,11 +27,12 @@ export const DivBoxHeaderSC = styled.div`
 export const DivHeaderSC = styled.div`
   max-width: 1420px;
   width: inherit;
-  height: 100%;
+  height: 56px;
   padding: 0 10px;
+  align-items: center;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 139px auto auto;
+  grid-template-columns: 139px 3fr 1fr;
   @media (max-width: 1000px) {
     grid-template-columns: max-content auto max-content;
   }
@@ -101,20 +102,30 @@ export const DivBoxIconHeaderSC = styled.div`
   align-content: center;
   justify-content: center;
   width:100%;
-
+  height: 72px;
+  padding-left:20px;
   @media (max-width: 1000px) {
-
-    }
+    padding-left:0px;
+  }
 `;
 
 export const DivBoxIconSC = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  justify-content:center;
   align-items: center;
+  width: 278px;
+  height:100%;
+
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2,1fr);
-  
+    width: 150px;
+
+    }
+    @media (max-width: 480px) {
+      grid-column-gap: 5px;
+
     }
 `;
 
@@ -250,6 +261,10 @@ export const LinkIconHideSC = styled(Link)`
   }
 `;
 export const LinkLogoSC = styled(Link)`
+width: 130px;
+height: 72px;
+display: grid;
+align-items: center;
 @media (max-width: 1000px) {
   display: none;
 }
@@ -259,6 +274,7 @@ display: none;
 @media (max-width: 1000px) {
   display: grid;
   justify-items: center;
+  
 }
 `;
 export const DivBoxIconEndSC = styled.div`
@@ -274,27 +290,27 @@ export const SpanEndHeaderSC = styled.span`
   font-size: var(--font-size-icon-text);
   margin-top:3px;
 `;
-export const DivBoxButtonCreateStoreSC = styled.div`
-:hover{
-  background-color:#85CB33;
-  color:white;
-  cursor: pointer;
-}
-display:grid;
-justify-items: center;
-align-items: center;
-padding: 10px 19px;
-color:#85CB33;
-font-size:16px;
-height: 50px;
-font-weight: semibold ;
-width:100%;
-/* Акцент 70% */
-border: 2px solid rgba(133, 203, 51, 0.7);
-border-radius: 20px;
-@media (max-width: 1000px) {
-  display: none;
-}
+export const DivBoxButtonCreateStoreSC = styled.span`
+  :hover {
+    background-color: #85cb33;
+    color: white;
+    cursor: pointer;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  color: #85cb33;
+  font-size: 16px;
+  height: 56px;
+  font-weight: semibold;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+  /* Акцент 70% */
+  border: 2px solid rgba(133, 203, 51, 0.7);
+  border-radius: 20px;
 `;
 
 export const LinkProfileBoxSC = styled(Link)`

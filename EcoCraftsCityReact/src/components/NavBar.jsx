@@ -47,6 +47,8 @@ import { useCookies } from "react-cookie";
 import Modal from "./Modal";
 import EcoModal from "./Modal";
 import Modalstore from './ModalRegStore';
+import { MdOutlineStorefront } from 'react-icons/md';
+import { IoExitOutline } from 'react-icons/io5';
 
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -98,17 +100,6 @@ const ResponsiveAppBar = () => {
         <DivCatalogAndSearchBoxSC>
 
 
-         
-
-
-        
-
-            <SpanSecondSC to="#"></SpanSecondSC>
-            {/* <SpanFirstSC to="#" onClick={openCart}>
-              Создать магазин
-            </SpanFirstSC> */}
-            <SpanSecondSC to="#"></SpanSecondSC>
-          
 
           <DivBoxButtonAndInputSC>
             <ButtonCustomSC className="ButtonCustom"
@@ -142,13 +133,62 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
+        {loggedIn ? (
+          
+          <div class={profileActive ? 'navigation active' : 'navigation'}>
+            <div class={profileActive ? 'user-box active' : 'user-box'}>
+              <div class={profileActive ? 'image-box active' : 'image-box'}>
+                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
+              </div>
 
+              <p class="username">
+                Jenifer Lopez
+                <a href="#">Мой Профиль</a>
+              </p>
+            </div>
+
+            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+            <ul class="profileMenu">
+              {/* <li>
+              <LinkProfileBoxSC to="#">
+                <GoPackage />
+                Заказы
+              </LinkProfileBoxSC>
+            </li> */}
+              <li>
+                <LinkProfileBoxSC to="/map-binding">
+                  <GoCreditCard />
+                  Мой Карты
+                </LinkProfileBoxSC>
+              </li>
+
+              {/* <li>
+              <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
+            </li> */}
+              <li>
+                <LinkProfileBoxSC to="/vendorprofile">
+                  <MdOutlineStorefront />
+                  Мой магазин
+                </LinkProfileBoxSC>
+              </li>
+              <li class="logout">
+                <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                  <IoExitOutline />
+                  Выйти
+                </LinkProfileBoxSC>
+              </li>
+            </ul>
+          </div>
+        
+      ) : null}
         <LinkLogoAdaptiveSC to="/">
           <DivBoxLogoSC></DivBoxLogoSC>
         </LinkLogoAdaptiveSC>
         
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
+            
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
@@ -182,82 +222,13 @@ const ResponsiveAppBar = () => {
 
               <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
             </LinkIconHideSC>
+            
           </DivBoxIconSC>
           
         </DivBoxIconHeaderSC>
-        {loggedIn ? (
-          <div class="container">
-            <div class={profileActive ? 'navigation active' : 'navigation'}>
-              <div class={profileActive ? 'user-box active' : 'user-box'}>
-                <div class={profileActive ? 'image-box active' : 'image-box'}>
-                  <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
-                </div>
-
-                <p class="username">
-                  Jenifer Lopez
-                  <a href="#">Мой Профиль</a>
-                </p>
-              </div>
-
-              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
-              <ul class="profileMenu">
-                <li>
-                  <a href="#">
-                    <GoPackage />
-                    Заказы
-                  </a>
-                </li>
-                <li>
-                  <a href="/map-binding">
-                    <GoCreditCard />
-                    Мои Карты
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">Баланс и история операций</a>
-                </li>
-                <li>
-                  <a href="#">Отзывы и вопросы</a>
-                </li>
-                <li class="logout">
-                  <a onClick={handleLogout}>Выйти</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
-            <ul class="profileMenu">
-              <li>
-                <LinkProfileBoxSC to="#">
-                  <GoPackage />
-                  Заказы
-                </LinkProfileBoxSC>
-              </li>
-              <li>
-                <LinkProfileBoxSC to="#">
-                  <GoCreditCard />
-                  Мой Карты
-                </LinkProfileBoxSC>
-              </li>
-
-              <li>
-                <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
-              </li>
-              <li>
-                <LinkProfileBoxSC to="#">Отзывы и вопросы</LinkProfileBoxSC>
-              </li>
-              <li class="logout">
-                <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                  Выйти
-                </LinkProfileBoxSC>
-              </li>
-            </ul>
-          </div>
-        ) : null}
+       
       </DivHeaderSC>
+      
     </DivBoxHeaderSC>
   );
 };

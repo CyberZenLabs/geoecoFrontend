@@ -6,6 +6,9 @@ import {
     H5CustomSC
 } from "../../styled-components-css/styles.product-detail";
 import {ButtonCustomSC} from "../../styled-components-css/styles.custom-button";
+import { BsFillCartPlusFill } from 'react-icons/bs';
+import { BiRun } from 'react-icons/bi';
+import {DivBoxButtonContentSC} from "../../styled-components-css/styles.product-detail";
 
 const BoxPrice = (props) => {
     return (
@@ -34,20 +37,26 @@ const BoxPrice = (props) => {
                 <ButtonCustomSC
                     width={'250px'}
                     padding={'8px 32px'}
-                    primary
-                >
-                    Добавить в корзину
+                    primary>
+
+                    <DivBoxButtonContentSC>
+                        <span>Добавить в корзину</span>
+                        <BsFillCartPlusFill size={'20px'} />
+                    </DivBoxButtonContentSC>
                 </ButtonCustomSC>
             </div>
+
             <div>
                 <ButtonCustomSC
                     width={'250px'}
                     padding={'8px 32px'}
                 >
-                    Купить сейчас
+                    <DivBoxButtonContentSC>
+                        <span>Купить сейчас</span>
+                        <BiRun size={'20px'} />
+                    </DivBoxButtonContentSC>
                 </ButtonCustomSC>
             </div>
-
         </DivBoxButtonSC>
     );
 }

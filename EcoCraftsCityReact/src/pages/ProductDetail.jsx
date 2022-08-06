@@ -16,7 +16,7 @@ import {
   DivProductRatingSC,
   H1ProductBoxSC,
   DivCarouselReviewSC,
-  DivButtonBoxSC,
+  DivButtonBoxSC, DivShopLogo,
 } from "../styled-components-css/styles.product-detail";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -28,6 +28,7 @@ import ReviewsBox from "../components/components-product-detail/ReviewsBox";
 import StarRating from "../components/StarRating";
 import ReviewShow from "../components/components-product-detail/ReviewShow";
 import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
+import ShopBlock from "../components/components-product-detail/ShopBlock";
 
 const listContent = [
   {
@@ -62,6 +63,8 @@ const ProductDetail = () => {
         <DivContentProductSC>
           <ImageProduct />
           <BoxPrice />
+          <ShopBlock/>
+
         </DivContentProductSC>
         <BoxOther />
         <DivProductDiscSC>

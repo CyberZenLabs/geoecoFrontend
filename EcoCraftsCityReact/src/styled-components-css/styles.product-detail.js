@@ -325,3 +325,44 @@ export const DivButtonBoxSC = styled.div`
   grid-template-columns: max-content max-content;
   grid-gap: 50px;
 `;
+
+export const DivBoxButtonContentSC = styled.div`
+	display: grid;
+	grid-template-columns: max-content max-content;
+	align-items: center;
+	grid-gap: 5px;
+	`
+
+// ShopBlock SC
+
+export const DivShopBlockContainer = styled.div`
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-template-rows: max-content;
+column-gap: 15px`
+
+
+export const DivShopLogo = styled.div`
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  background: #D9D9D9;
+`
+export const DivShopInfo = styled.div`
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: 2fr 1fr 1fr;
+  row-gap: 4px;
+  max-height: 88px;
+    h3{
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 600;      
+    }
+  
+    p{
+      font-family: Montserrat;
+      font-size: 10px;
+      font-weight: 500;
+    }
+`

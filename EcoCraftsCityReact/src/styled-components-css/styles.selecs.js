@@ -10,8 +10,13 @@ export const Main = styled("div")`
     width: 430px;
   }
   @media (max-width:480px) {
+
     width: 340px;
   }
+
+  
+
+
 `;
 
 export const DropDownContainer = styled("div")`
@@ -66,9 +71,14 @@ border-radius: 20px;
     width: 430px;
   }
   @media (max-width:480px) {
+<<<<<<< HEAD
     width: 340px;
   }
 
+=======
+  width: 340px;
+}
+>>>>>>> ca8e8f38b185d068092fa508342e7095b88f1c01
 `;
 
 export const ListItem = styled("li")`

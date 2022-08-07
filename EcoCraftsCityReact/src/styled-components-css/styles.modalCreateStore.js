@@ -61,7 +61,9 @@ display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+
   transition-delay: 0.3s;
+
 flex-direction: row;
 align-items: center;
 justify-self: center;
@@ -222,7 +224,9 @@ export const ButtonContinueModal = styled.button`
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+
   transition-delay: 0.3s;
+
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -259,7 +263,10 @@ box-sizing: border-box;
 height:50px;
 /* Auto layout */
 display: flex;   
+
   width: 100%;
+
+ 
 flex-direction: row;
 align-items: center;
 justify-self: center;

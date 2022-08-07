@@ -13,8 +13,14 @@ export const HomeContainer = styled.div`
   position: relative;
   padding-top: 380px;
   margin-bottom: 80px;
+  
   @media (max-width: 1560px) {
     padding-top: 24.5%;
+  } ;
+  @media (max-width: 759px) {
+  justify-content: center;
+  margin-bottom: 200px;
+
   } ;
 `;
 export const StarAlign = styled.div`
@@ -77,6 +83,7 @@ export const ProductCardContainer = styled.div`
 export const ProductCardImage = styled.img`
   width: 255px;
   height: 255px;
+  justify-self: center;
 `;
 
 export const ProductCardName = styled.h4`

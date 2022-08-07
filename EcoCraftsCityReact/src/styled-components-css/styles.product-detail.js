@@ -34,10 +34,11 @@ export const DivBoxProductDetailSC = styled.div`
 export const DivContentProductDetailSC = styled.div`
 
     display: grid;
-  grid-template-rows: 120px max-content 286px  minmax(auto, auto)  minmax(auto, auto) ;
+  grid-template-rows: 120px max-content max-content  minmax(auto, auto)  minmax(auto, auto) ;
   max-width: 1322px;
   width: 85vw;
   grid-gap: 10px;
+  row-gap: 63px;
 `;
 
 export const NavLinkSC = styled(NavLink)`
@@ -364,10 +365,15 @@ export const DivShopInfo = styled.div`
   grid-template-rows: 2fr 1fr 1fr;
   row-gap: 4px;
   max-height: 88px;
-    h3{
+    a{
       font-family: Montserrat;
       font-size: 18px;
-      font-weight: 600;      
+      font-weight: 600;
+      text-decoration: none;
+      color: #252525;
+      :hover{
+        text-decoration: underline;
+      }
     }
   
     p{
@@ -383,6 +389,7 @@ export const DivDescStatsContainerSC = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: max-content max-content;
+  row-gap: 43px;
   max-width: 700px;
 `
 

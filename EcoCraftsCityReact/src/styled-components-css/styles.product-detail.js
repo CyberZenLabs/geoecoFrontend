@@ -371,9 +371,9 @@ export const DivShopInfo = styled.div`
       font-weight: 600;
       text-decoration: none;
       color: #252525;
-      :hover{
-        text-decoration: underline;
-      }
+      //:hover{
+      //  text-decoration: underline;
+      //}
     }
   
     p{

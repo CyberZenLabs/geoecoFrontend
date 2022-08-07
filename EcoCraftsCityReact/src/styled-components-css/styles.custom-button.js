@@ -32,7 +32,7 @@ export const ButtonCustomSC = styled.button`
          color: var(--green-color);
          border: 2px solid var(--green-color) !important;
          :hover {
-          color: var(--green-color);
+          color: var(--white-color);
          }
 
          `

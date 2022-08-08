@@ -23,6 +23,9 @@ export const DivBoxHeaderSC = styled.div`
   align-items: center;
   justify-items: center;
 `;
+export const LinkProfileSC = styled(Link)`
+  
+`;
 
 export const DivHeaderSC = styled.div`
   max-width: 1420px;

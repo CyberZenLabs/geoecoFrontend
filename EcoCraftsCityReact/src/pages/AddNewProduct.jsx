@@ -95,6 +95,7 @@ import {
   DivBox2ButtonsSC,
   InputVideoSC,
   PlaceButtonSC,
+  InputImageSC
 } from '../styled-components-css/styles.AddNewProduct';
 import {
   ButtonImgSC,
@@ -286,7 +287,7 @@ const AddNewProduct = () => {
     >
       {(formik) => (
         <Form>
-          <input
+          <InputImageSC
             ref={storeGalleryRef}
             type="file"
             name="storeGallery"

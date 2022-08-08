@@ -36,6 +36,7 @@ import {
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
+  LinkProfileSC
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -143,7 +144,7 @@ const ResponsiveAppBar = () => {
 
               <p class="username">
                 Jenifer Lopez
-                <a href="#">Мой Профиль</a>
+                <LinkProfileSC to="/personaldata">Мой Профиль</LinkProfileSC>
               </p>
             </div>
 

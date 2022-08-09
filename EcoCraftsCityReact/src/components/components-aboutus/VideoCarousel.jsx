@@ -2,14 +2,13 @@ import React, { useState, useEffect, Children } from 'react';
 import { cloneElement } from 'react';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import {
-  DivCarouselAllItemsSC,
-  DivCarouselMainSC,
-  DivCarouselWindowSC,
-  DivArrowBackgroundSC,
-  DivBoxArrowsSC,
-} from '../../styled-components-css/styles.AboutUs';
+  DivArrowBackSC,
+  DivVideoCarouselAllItemsSC,
+  DivVideoCarouselMainSC,
+  DivVideoCarouselWindowSC,
+} from '../../styled-components-css/styles.video-carousel';
 
-const CarouselAboutUs = ({ children }) => {
+const VideoCarousel = ({ children }) => {
   const [items, setItems] = useState([]);
   const [carouselNumber, setCarouselNumber] = useState(0);
   useEffect(() => {
@@ -35,26 +34,26 @@ const CarouselAboutUs = ({ children }) => {
   };
 
   return (
-    <DivCarouselMainSC>
-      <DivCarouselWindowSC>
-        <DivCarouselAllItemsSC carouselNumber={carouselNumber}>{items}</DivCarouselAllItemsSC>
+    <DivVideoCarouselMainSC>
+      <DivVideoCarouselWindowSC>
+        <DivVideoCarouselAllItemsSC carouselNumber={carouselNumber}>{items}</DivVideoCarouselAllItemsSC>
         {carouselNumber !== 0 ? (
-          <DivArrowBackgroundSC arrow={'left'} onClick={handleLefttArrow}>
+          <DivArrowBackSC arrow={'left'} onClick={handleLefttArrow}>
             <FiArrowLeft />
-          </DivArrowBackgroundSC>
+          </DivArrowBackSC>
         ) : (
           <div></div>
         )}
         {carouselNumber !== items.length - 3 ? (
-          <DivArrowBackgroundSC arrow={'right'} onClick={handleRighttArrow}>
+          <DivArrowBackSC arrow={'right'} onClick={handleRighttArrow}>
             <FiArrowRight />
-          </DivArrowBackgroundSC>
+          </DivArrowBackSC>
         ) : (
           <div></div>
         )}
-      </DivCarouselWindowSC>
-    </DivCarouselMainSC>
+      </DivVideoCarouselWindowSC>
+    </DivVideoCarouselMainSC>
   );
 };
 
-export default CarouselAboutUs;
+export default VideoCarousel;

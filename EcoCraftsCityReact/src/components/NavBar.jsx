@@ -76,7 +76,8 @@ const ResponsiveAppBar = () => {
   const handleLogout = () => {
     logout();
     showToast('success', 'Вы вышли из системы');
-    setCookie('token', response.token);
+    // setCookie('token', response.token);
+    removeCookie('token')
   };
 
   const openCart = () => {
@@ -134,7 +135,7 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
-        {loggedIn ? (
+        {cookies['token'] !== undefined ? (
           
             <div class={profileActive ? 'navigation active' : 'navigation'}>
               <div class={profileActive ? 'user-box active' : 'user-box'}>

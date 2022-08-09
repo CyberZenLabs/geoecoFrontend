@@ -4,14 +4,27 @@ import {
   DivTexReviewsMastersSC,
   DivBoxTextReviewsClientsSC,
   DivTexReviewsClientsSC,
+  DivContainerVideoCarouselSC,
 } from '../styled-components-css/styles.AboutUs';
-import CaroselAboutUs from '../components/components-aboutus/CarouselAboutUs';
-import AboutUsShow from '../components/components-aboutus/AboutUsShow';
+
+import VideoCarousel from '../components/components-aboutus/VideoCarousel';
+import VideoItem from '../components/components-aboutus/VideoItem';
 
 const AboutUs = () => {
   return (
     <>
-      <DivBoxTextReviewsMastersSC>
+      <DivContainerVideoCarouselSC>
+        <VideoCarousel>
+          <VideoItem />
+          <VideoItem />
+          <VideoItem />
+          <VideoItem />
+          <VideoItem />
+          <VideoItem />
+        </VideoCarousel>
+      </DivContainerVideoCarouselSC>
+
+      {/* <DivBoxTextReviewsMastersSC>
         <DivTexReviewsMastersSC>Отзывы мастеров платформы</DivTexReviewsMastersSC>
       </DivBoxTextReviewsMastersSC>
       <CaroselAboutUs>
@@ -24,7 +37,7 @@ const AboutUs = () => {
       </CaroselAboutUs>
       <DivBoxTextReviewsClientsSC>
         <DivTexReviewsClientsSC>Отзывы наших клиентов</DivTexReviewsClientsSC>
-      </DivBoxTextReviewsClientsSC>
+      </DivBoxTextReviewsClientsSC> */}
     </>
   );
 };

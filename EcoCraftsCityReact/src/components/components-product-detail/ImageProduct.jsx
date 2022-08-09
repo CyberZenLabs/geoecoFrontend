@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     BackButtonCustomSC,
     DivBoxCarouselSC,
@@ -17,7 +17,17 @@ import CarouselMultiBox from "./CarouselMultiBox";
 import CarouselMonoBox from "./CarouselMonoBox";
 
 const ImageProduct = (props) => {
+    const {
+        images,
+        urlCover
+    } = props;
     const [urlSrc, getUrlSrc] = useState('https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg')
+
+
+    useEffect(() => {
+        getUrlSrc(urlCover)
+    }, []);
+
 
 
     return (
@@ -38,6 +48,7 @@ const ImageProduct = (props) => {
             </DivTreeBoxSC>
             <DivBoxCarouselSC>
                 <CarouselMultiBox
+                    images={images}
                     getUrlSrc={getUrlSrc}
                 />
 

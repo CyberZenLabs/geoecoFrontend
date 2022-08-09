@@ -49,6 +49,8 @@ import { useCookies } from 'react-cookie';
 import Modal from './Modal';
 import EcoModal from './Modal';
 import Modalstore from './ModalRegStore';
+import {useEffect} from "react";
+import axios from "../apis/admin-rest";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -57,7 +59,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -88,6 +90,31 @@ const ResponsiveAppBar = () => {
       button: true,
     });
   };
+
+  useEffect(() => {
+    // axiosFetch({
+    //   axiosInstance: axios,
+    //   auth: '',
+    //   method: 'GET',
+    //   url: `/api/v1/products`,
+    //   requestConfig: {},
+    // });
+
+
+
+    axios
+        .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+        .then((res) => {
+          // console.log(res);
+
+          setProductsLIst(res.data.data.data)
+
+        })
+        .catch((err) => {
+        });
+  }, []);
+
+
 
   return (
     <DivBoxHeaderSC>
@@ -187,7 +214,7 @@ const ResponsiveAppBar = () => {
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
-            {loggedIn ? null : (
+            {cookies['token'] ? null : (
               <LinkIconSC to="/signin" isLog={loggedIn}>
                 <DivBoxIconEndSC>
                   <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />

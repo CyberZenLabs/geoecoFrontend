@@ -85,6 +85,7 @@ const StoreFront = ({ product }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+
     axios
       .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {

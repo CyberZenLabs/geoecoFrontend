@@ -79,11 +79,15 @@ const Registration = (props) => {
   };
 
   const onChange = (status, e) => {
+
+
+
     const regexp = /[A-zА-я]/g
     const regexp2 = /[\[\]\)\(\{\}\\']+/g
+
     let _values = values
 
-    let arrayCherecters = e.target.value.replace(regexp2,'' )?.match(regexp)
+    let arrayCherecters = e.target.value.replace(regexp2,'').match(regexp)
     values[status] = arrayCherecters.join('')
     setValues({..._values})
   }

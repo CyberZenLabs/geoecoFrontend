@@ -49,6 +49,8 @@ import { useCookies } from 'react-cookie';
 import Modal from './Modal';
 import EcoModal from './Modal';
 import Modalstore from './ModalRegStore';
+import {useEffect} from "react";
+import axios from "../apis/admin-rest";
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -57,7 +59,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -76,7 +78,8 @@ const ResponsiveAppBar = () => {
   const handleLogout = () => {
     logout();
     showToast('success', 'Вы вышли из системы');
-    setCookie('token', response.token);
+    // setCookie('token', response.token);
+    removeCookie('token');
   };
 
   const openCart = () => {
@@ -87,6 +90,31 @@ const ResponsiveAppBar = () => {
       button: true,
     });
   };
+
+  useEffect(() => {
+    // axiosFetch({
+    //   axiosInstance: axios,
+    //   auth: '',
+    //   method: 'GET',
+    //   url: `/api/v1/products`,
+    //   requestConfig: {},
+    // });
+
+
+
+    axios
+        .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+        .then((res) => {
+          // console.log(res);
+
+          setProductsLIst(res.data.data.data)
+
+        })
+        .catch((err) => {
+        });
+  }, []);
+
+
 
   return (
     <DivBoxHeaderSC>
@@ -134,68 +162,69 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
-        {loggedIn ? (
-          
-            <div class={profileActive ? 'navigation active' : 'navigation'}>
-              <div class={profileActive ? 'user-box active' : 'user-box'}>
-                <div class={profileActive ? 'image-box active' : 'image-box'}>
-                  <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
-                </div>
-
-                <p class="username">
-                  Jenifer Lopez
-                  <a href="#">Мой Профиль</a>
-                </p>
+        {cookies['token'] !== undefined ? (
+          <div class={profileActive ? 'navigation active' : 'navigation'}>
+            <div class={profileActive ? 'user-box active' : 'user-box'}>
+              <div class={profileActive ? 'image-box active' : 'image-box'}>
+                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
               </div>
 
-              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+              <p class="username">
+                Jenifer Lopez
+                <a href="#">Мой Профиль</a>
+              </p>
+            </div>
 
-              <ul class="profileMenu">
-                {/* <li>
+            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+            <ul class="profileMenu">
+              {/* <li>
                 <LinkProfileBoxSC to="#">
                   <GoPackage />
                   Заказы
                 </LinkProfileBoxSC>
               </li> */}
-                <li>
-                  <LinkProfileBoxSC to="/map-binding">
-                    <GoCreditCard />
-                    Мой Карты
-                  </LinkProfileBoxSC>
-                </li>
+              <li>
+                <LinkProfileBoxSC to="/map-binding">
+                  <GoCreditCard />
+                  Мой Карты
+                </LinkProfileBoxSC>
+              </li>
 
-                {/* <li>
+              {/* <li>
                 <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
               </li> */}
-                <li>
-                  <LinkProfileBoxSC to="/vendorprofile">
-                    <MdOutlineStorefront />
-                    Мой магазин
-                  </LinkProfileBoxSC>
-                </li>
-                <li class="logout">
-                  <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                    <IoExitOutline />
-                    Выйти
-                  </LinkProfileBoxSC>
-                </li>
-              </ul>
-            </div>
-          
+              <li>
+                <LinkProfileBoxSC to="/vendorprofile">
+                  <MdOutlineStorefront />
+                  Мой магазин
+                </LinkProfileBoxSC>
+              </li>
+              <li class="logout">
+                <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                  <IoExitOutline />
+                  Выйти
+                </LinkProfileBoxSC>
+              </li>
+            </ul>
+          </div>
         ) : null}
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
-            <LinkIconSC to="/signin" isLog={loggedIn}>
-              <DivBoxIconEndSC>
-                <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
-              </DivBoxIconEndSC>
+            {cookies['token'] ? null : (
+              <LinkIconSC to="/signin" isLog={loggedIn}>
+                <DivBoxIconEndSC>
+                  <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
-            </LinkIconSC>
-            <LinkIconHideSC to="/">
+                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+              </LinkIconSC>
+            )}
+
+            <LinkIconHideSC to="/cart">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

@@ -100,6 +100,16 @@ export const DivTexReviewsClientsSC = styled.div`
   text-align: center;
   color: #252525;
 `;
+
+export const DivContainerVideoCarouselSC = styled.div`
+  max-width: 1322px;
+  width: 90vw;
+  display: grid;
+  align-items: center;
+  //justify-content: center;
+  margin: 0 auto;
+`;
+
 export const DivDot1 = styled.div`
   width: 8px;
   height: 8px;

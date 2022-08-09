@@ -11,6 +11,7 @@ import { BiRun } from 'react-icons/bi';
 import {DivBoxButtonContentSC} from "../../styled-components-css/styles.product-detail";
 
 const BoxPrice = (props) => {
+    const {price} = props
     return (
         <DivBoxButtonSC>
             <div>
@@ -19,7 +20,7 @@ const BoxPrice = (props) => {
             <DivBoxPriceSC>
                 <DivContentPriceSC>
                     <div>
-                        <H5CustomSC>26 001 &#8381;</H5CustomSC>
+                        <H5CustomSC>{price} &#8381;</H5CustomSC>
                     </div>
 
                     {/*<DivNumberTitlePrice>*/}

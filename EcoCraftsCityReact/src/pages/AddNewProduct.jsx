@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
+
 import { Form, Formik } from 'formik';
 import {
   DivBoxItemsSC,
@@ -105,6 +106,7 @@ import {
   DeleteIconSC,
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
+  DivInputsDisplayNoneSC,
 } from '../styled-components-css/styles.VendorProfile';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import AppContext from '../context/AppContext';
@@ -286,12 +288,14 @@ const AddNewProduct = () => {
     >
       {(formik) => (
         <Form>
+          <DivInputsDisplayNoneSC>
           <input
             ref={storeGalleryRef}
             type="file"
             name="storeGallery"
             onChange={() => fileChangeHandler('storeGalleryRef')}
           />
+          </DivInputsDisplayNoneSC>
           <EcoModal
             open={modalOpen}
             title="Загрузка фотографии"

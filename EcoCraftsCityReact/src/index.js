@@ -9,18 +9,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
 
-import Home from './pages/Home';
-import PersonalData from './pages/PersonalData';
-import StoreNewProduct from './pages/StoreNewProduct';
-import StoreNoAuth from './pages/StoreNoAuth';
-import NavBar from './components/NavBar';
-import Cart from './pages/Cart';
-import Mooo from './pages/AdminLogin';
-import ProductDetail from './pages/ProductDetail';
-import AdminDashboard from './pages/AdminDashboard';
-import Registration from './pages/Registration';
-import SignIn from './pages/SignIn';
-import StoreFront from './pages/StoreFront';
+
+import MainPage from './pages/MainPage';
+import Home from "./pages/Home";
+import PersonalData from "./pages/PersonalData";
+import StoreNewProduct from "./pages/StoreNewProduct";
+import StoreNoAuth from "./pages/StoreNoAuth";
+import NavBar from "./components/NavBar";
+import  Cart  from "./pages/Cart";
+import Mooo from "./pages/AdminLogin";
+import ProductDetail from "./pages/ProductDetail";
+import AdminDashboard from "./pages/AdminDashboard";
+import Registration from "./pages/Registration";
+import SignIn from "./pages/SignIn";
+import StoreFront from "./pages/StoreFront";
+
 import VendorProfile from './pages/VendorProfile';
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
@@ -66,7 +69,8 @@ root.render(
 
             <Catalog />
             <Routes>
-              <Route index element={<Home />} />
+              <Route index element={<MainPage />} />
+              <Route path="home" element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
 

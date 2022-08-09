@@ -224,7 +224,7 @@ const ResponsiveAppBar = () => {
               </LinkIconSC>
             )}
 
-            <LinkIconHideSC to="/">
+            <LinkIconHideSC to="/cart">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

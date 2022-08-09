@@ -10,7 +10,7 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import ShowItemCarousel from '../components/ShowItemCarousel';
 import { toast } from 'react-toastify';
-import VendorInfoMenu from '../components/VendorInfoMenu';
+
 import {
   DivOptionsPanelSC,
   DivStarsPanelSC,
@@ -90,6 +90,17 @@ import {
   DeleteIconSC,
   DivCarouselPhotosSC,
   DivInputsDisplayNoneSC,
+
+  
+  DivTextTitleSC,
+  
+
+
+  OlifnoSC,
+  LiInfoSC,
+  DivButtonChangrInformBottomSC,
+ 
+ 
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -282,8 +293,20 @@ const VendorProfile = () => {
            
             <DivAddProductBox>
             
-            <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
-           <VendorInfoMenu></VendorInfoMenu>
+            
+           
+            <DivInfoVendorBoxSC>
+            <DivTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></DivTextTitleSC>
+                 <OlifnoSC>
+                <LiInfoSC>   Адрес</LiInfoSC>
+                <LiInfoSC>  Время существования магазина</LiInfoSC>
+                <LiInfoSC>  Магазин: е-mail</LiInfoSC>
+                <LiInfoSC>  Товары:<GreenST>Готовые(1),</GreenST><GreenST>На заказ(0),</GreenST><GreenST>Все(1)</GreenST></LiInfoSC>
+               
+                 </OlifnoSC>
+                 
+                        </DivInfoVendorBoxSC>
+                 
              <DivInfoVendorBoxSC>
              
            <VenderCarousel>

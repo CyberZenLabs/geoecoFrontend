@@ -42,10 +42,10 @@ const Modalstore = () => {
   
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const { openModal, setOpenModal, modalData } = useContext(AppContext);
-  const {openEmail, setOpenEmail,disabled,setDisable}=useContext(AppContext);
+  const {openEmail, setOpenEmail,disabled,setDisable,selectedOption,setselectedOption}=useContext(AppContext);
    const openMod = () => {
     setOpenEmail(true);
-    setOpenModal(false);
+  
    
     setDisable(true);
   };
@@ -56,6 +56,7 @@ const Modalstore = () => {
     password: '',
     passwordConfirm: '',
     city:'',
+    
   };
   return (
     <>
@@ -71,7 +72,9 @@ const Modalstore = () => {
               validationSchema={registerModalSchema}
               initialErrors={startingValues}
               onSubmit={(values) => {
+                console.log(selectedOption);
                console.log(values);
+             
               }}
             >
               {(formik) => (
@@ -120,10 +123,11 @@ const Modalstore = () => {
                           placeholder={'Город'}
                         />
              
-                    <DivBoxRowModaSelectlSC><App/>
+                    <DivBoxRowModaSelectlSC><App
+                    name="city"/>
                    
                     
-                      <ButtonCustomSC onClick={openMod}
+                      <ButtonCustomSC onClick={openMod} 
                         disabled={!formik.dirty || !formik.isValid}
                         statusOpasity={!formik.dirty || !formik.isValid}
                         width={'100%'}

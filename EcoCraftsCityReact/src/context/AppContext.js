@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
 
   const [pass, setPass] = useState(false);
   const [mail, setMail] = useState(false);
-
+  const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
   const [openRedact, setOpenRedact] = useState(false);
   const [openEmail, setOpenEmail] = useState(false);
@@ -43,6 +43,8 @@ export function AppProvider({ children }) {
          setOpenModal,
          disable,
          setDisable,
+         selectedOption,
+         setSelectedOption
       }}
     >
       {children}

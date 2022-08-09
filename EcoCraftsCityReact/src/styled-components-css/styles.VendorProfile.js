@@ -9,7 +9,7 @@ export const OlifnoSC = styled.ol`
   list-style: inside;
   padding: 0;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 600;
 `;
 export const DivDisplayFlexSC = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ export const MenuProductST = styled.div`
 `;
 export const GreenST = styled.div`
   color: #85cb33;
-  margin-right: 1px;
+  margin-left: 8px;
 `;
 export const DivBoxNewProductsST = styled.div`
   display: grid;
@@ -139,9 +139,8 @@ export const TextBold = styled.div`
 export const Margin5pxST = styled.div`
   margin-top: 10px;
 `;
-export const SpanTextTitleSC = styled.span`
-  background: rgba(243, 243, 243, 0.5);
-  border-radius: 20px 20px 0px 0px;
+export const DivTextTitleSC = styled.div`
+
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
@@ -150,8 +149,8 @@ export const SpanTextTitleSC = styled.span`
   color: #252525;
   display: flex;
   justify-content: space-between;
-  padding: 5px 5px 0px 5px;
-  margin-top: 10px;
+  padding: 16px 10px 10px 10px;
+  
 `;
 export const UlifnoSC = styled.ul`
   display: flex;
@@ -238,6 +237,7 @@ export const DivButtonChangrInformSC = styled.div`
 export const DivInfoVendorBoxSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
+  margin-bottom:15px;
 `;
 export const DivBorderBox = styled.div`
   @media (max-width: 480px) {

@@ -22,11 +22,16 @@ import {
 } from "../styled-components-css/styles.modalEmail";
 
 const ModalSendEmail = () => {
-  const { openEmail, setOpenEmail, modalData,disable,setDisable} = useContext(AppContext);
+  const { openEmail, setOpenEmail, modalData,disable,setDisable,setOpenModal} = useContext(AppContext);
  
   const [Timeleft, SetTimeleft] =useState(60);
 
+  const openMod = () => {
+    setOpenEmail(false);
+    setOpenModal(false);
    
+    setDisable(true);
+  };
   const minute =getPadTime( Math.floor(Timeleft/60));
   const second =getPadTime((Timeleft-minute*60));
   useEffect(()=>{
@@ -57,7 +62,7 @@ const ModalSendEmail = () => {
     <>
       <BlockModal isOpen={openEmail} contentLabel="Modal" >
         <DivWrapModal>
-          <ButtonPrevModal onClick={() => setOpenEmail(false)}>
+          <ButtonPrevModal onClick={ openMod}>
             <IoIosArrowBackSC />
           </ButtonPrevModal>
           <CenterItemsSC>

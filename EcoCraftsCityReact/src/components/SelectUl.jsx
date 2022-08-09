@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import AppContext from "../context/AppContext";
 import {CgSelect} from "react-icons/cg";
 import {
   Main,
@@ -15,15 +16,18 @@ const options = [ "Физлицо", "Самозанятый","ИП","ООО",];
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-
+ 
+  const {selectedOption,setSelectedOption}=useContext(AppContext);
   const toggling = () => setIsOpen(!isOpen);
 
   const onOptionClicked = value => () => {
+    
     setSelectedOption(value);
-    setIsOpen(false);
     console.log(selectedOption);
+    setIsOpen(false);
+    
   };
+  
 
   return (
     <Main>
@@ -36,7 +40,8 @@ export default function App() {
           <DropDownListContainer>
             <DropDownList>
               {options.map(option => (
-                <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
+                <ListItem onClick={onOptionClicked(option)} key={Math.random()} >
+                  
                   {option}
                 </ListItem>
               ))}

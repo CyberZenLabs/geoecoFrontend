@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
 import {
   DivBackBoxSC,
   DivHistorySC,
@@ -39,14 +38,8 @@ import {
   H1PageOptionSC,
 } from "../styled-components-css/styles.settingsSeller";
 import VendorNavMenu from "../components/VendorNavMenu";
-const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
-const routes = [
-  {
-    path: "/custom-props",
-    breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: "Hi" },
-  },
-];
+import { BreadCrumbs } from "../components/BreadCrumbs";
+
 const SellerSettings = ({ product }) => {
   const { setPass, setMail } = React.useContext(AppContext);
   const openPass = () => {
@@ -55,7 +48,7 @@ const SellerSettings = ({ product }) => {
   const openMail = () => {
     setMail(true);
   };
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
+
   const [indexSelectedButton, getIndexButton] = useState(0);
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
@@ -205,23 +198,7 @@ const SellerSettings = ({ product }) => {
   
   return (
     <>
-      <DivWrapLinkSC>
-        <DivHistorySC>
-          <DivBackBoxSC>
-            <FaArrowLeft color={"#85CB33"} size={15} />
-            <NavLinkSC iscolor={true} to={"/"}>
-              Назад
-            </NavLinkSC>
-          </DivBackBoxSC>
-          <div>
-            {breadcrumbs.map(({ match, breadcrumb }) => (
-              <span key={match.pathname}>
-                <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-              </span>
-            ))}
-          </div>
-        </DivHistorySC>
-      </DivWrapLinkSC>
+      <BreadCrumbs/>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
         <VendorNavMenu page={1}/>

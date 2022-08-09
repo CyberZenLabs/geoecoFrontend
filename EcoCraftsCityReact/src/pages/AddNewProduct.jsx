@@ -114,6 +114,7 @@ import { toast } from 'react-toastify';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import EcoModal from '../components/Modal';
 import axios from 'axios';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const AddNewProduct = () => {
   const storeGalleryRef = useRef(null);
@@ -309,13 +310,7 @@ const AddNewProduct = () => {
             storeGalleryUrls={photoUrls.storeGalleryUrls}
           ></EcoModal>
           <DivBoxAddNewProductSC>
-            <DivBoxItemsSC>
-              <MenuProductST>
-                {' '}
-                <GreenST>Главная</GreenST> <img src="/default-images/arrowGreen.svg" /> Мой магазин{' '}
-                <img src="/default-images/arrow.svg" /> Новый товар{' '}
-              </MenuProductST>
-            </DivBoxItemsSC>
+          <BreadCrumbs/>
             <DivBoxTextNewProductSC>
               <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
             </DivBoxTextNewProductSC>

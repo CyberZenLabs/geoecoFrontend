@@ -6,7 +6,6 @@ const minWidth = 660
 export const DivCartBoxSC = styled.div`
 	display: grid;
 	justify-items: center;
-    width: 100vw;
 `;
 
 export const DivContentCartSC = styled.div`

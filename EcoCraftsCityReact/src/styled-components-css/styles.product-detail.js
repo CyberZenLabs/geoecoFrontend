@@ -34,10 +34,11 @@ export const DivBoxProductDetailSC = styled.div`
 export const DivContentProductDetailSC = styled.div`
 
     display: grid;
-  grid-template-rows: 120px max-content 286px  minmax(auto, auto)  minmax(auto, auto) ;
+  grid-template-rows: 120px max-content max-content  minmax(auto, auto)  minmax(auto, auto) ;
   max-width: 1322px;
   width: 85vw;
   grid-gap: 10px;
+  row-gap: 63px;
 `;
 
 export const NavLinkSC = styled(NavLink)`
@@ -325,3 +326,85 @@ export const DivButtonBoxSC = styled.div`
   grid-template-columns: max-content max-content;
   grid-gap: 50px;
 `;
+
+export const DivBoxButtonContentSC = styled.div`
+	display: grid;
+	grid-template-columns: max-content max-content;
+	align-items: center;
+	grid-gap: 5px;
+	`
+
+// ShopBlock SC
+
+export const DivShopBlockWrapper = styled.div`
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content max-content;
+  row-gap: 49px;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+`
+
+export const DivShopBlockContainer = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content;
+  column-gap: 15px;
+ 
+`
+
+export const DivShopLogo = styled.div`
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  background: #D9D9D9;
+`
+export const DivShopInfo = styled.div`
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: 2fr 1fr 1fr;
+  row-gap: 4px;
+  max-height: 88px;
+    a{
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #252525;
+      //:hover{
+      //  text-decoration: underline;
+      //}
+    }
+  
+    p{
+      font-family: Montserrat;
+      font-size: 10px;
+      font-weight: 500;
+    }
+`
+
+// description and stats block (txt)
+
+export const DivDescStatsContainerSC = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content max-content;
+  row-gap: 43px;
+  max-width: 700px;
+`
+
+export const DivDescBlockSC = styled.div`
+    h2{
+      font-family: Montserrat;
+      font-size: 28px;
+      font-weight: 600;
+      color: #252525;
+      margin-bottom: 20px;
+    }
+    p{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    color: #252525;
+    }   
+`

@@ -14,19 +14,20 @@ import {
   DivProductRatingSC,
   H1ProductBoxSC,
   DivCarouselReviewSC,
-  DivButtonBoxSC,
-} from '../styled-components-css/styles.product-detail';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-import BreadcrumbsHistory from '../components/components-product-detail/BreadcrumbsHistory';
-import ImageProduct from '../components/components-product-detail/ImageProduct';
-import BoxPrice from '../components/components-product-detail/BoxPrice';
-import BoxOther from '../components/components-product-detail/BoxOther';
-import ReviewsBox from '../components/components-product-detail/ReviewsBox';
-import StarRating from '../components/StarRating';
-import ReviewShow from '../components/components-product-detail/ReviewShow';
-import ReviewCarousel from '../components/components-product-detail/ReviewCarousel';
-
+  DivButtonBoxSC, DivShopLogo, DivDescStatsContainerSC, DivDescBlockSC,
+} from "../styled-components-css/styles.product-detail";
+import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import BreadcrumbsHistory from "../components/components-product-detail/BreadcrumbsHistory";
+import ImageProduct from "../components/components-product-detail/ImageProduct";
+import BoxPrice from "../components/components-product-detail/BoxPrice";
+import BoxOther from "../components/components-product-detail/BoxOther";
+import ReviewsBox from "../components/components-product-detail/ReviewsBox";
+import StarRating from "../components/StarRating";
+import ReviewShow from "../components/components-product-detail/ReviewShow";
+import ReviewCarousel from "../components/components-product-detail/ReviewCarousel";
+import ShopBlock from "../components/components-product-detail/ShopBlock";
+import Image from '../img/logo.svg'
 
 const listContent = [
   {
@@ -61,8 +62,35 @@ const ProductDetail = () => {
         <DivContentProductSC>
           <ImageProduct />
           <BoxPrice />
+          <ShopBlock
+              Image={Image}
+          />
         </DivContentProductSC>
+
+        <DivDescStatsContainerSC>
+          <DivDescBlockSC>
+            <h2>Описание</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</p>
+          </DivDescBlockSC>
+          <DivDescBlockSC>
+            <h2>Характеристики</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</p>
+          </DivDescBlockSC>
+        </DivDescStatsContainerSC>
+
         <BoxOther />
+
+        {/*<DivProductDiscSC>*/}
+        {/*  <DivProductDiscContentSC>*/}
+        {/*    <ReviewsBox*/}
+        {/*      indexSelectedButton={indexSelectedButton}*/}
+        {/*      onClickTab={onClickTab}*/}
+        {/*      listContent={listContent}*/}
+        {/*    />*/}
+        {/*  </DivProductDiscContentSC>*/}
+        {/*</DivProductDiscSC>*/}
+
+
         <DivProductDiscSC>
     
           <DivProductDiscContentSC>
@@ -70,6 +98,7 @@ const ProductDetail = () => {
           </DivProductDiscContentSC>
         </DivProductDiscSC>
         <DivProductDiscSC>
+
           <DivProductDiscTitleSC>
             <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
           </DivProductDiscTitleSC>
@@ -97,6 +126,7 @@ const ProductDetail = () => {
             </DivButtonBoxSC>
           </DivProductReviewsSC>
         </DivProductDiscSC>
+
       </DivContentProductDetailSC>
     </DivBoxProductDetailSC>
   );

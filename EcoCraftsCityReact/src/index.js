@@ -8,7 +8,7 @@ import 'react-image-crop/dist/ReactCrop.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
-
+import MainPage from './pages/MainPage';
 import Home from "./pages/Home";
 import PersonalData from "./pages/PersonalData";
 import StoreNewProduct from "./pages/StoreNewProduct";
@@ -66,7 +66,8 @@ root.render(
             
             <Catalog />
             <Routes>
-              <Route index element={<Home />} />
+              <Route index element={<MainPage />} />
+              <Route path="home" element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
               <Route path="storenewproduct" element={<StoreNewProduct />} />
 

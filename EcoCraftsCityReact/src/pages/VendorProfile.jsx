@@ -3,7 +3,6 @@ import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { MdOutlinePhotoCamera } from 'react-icons/md';
-import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import StarRating from '../components/StarRating';
 import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
@@ -97,17 +96,8 @@ import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
 import VendorNavMenu from '../components/VendorNavMenu';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
-
-
-const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
-const routes = [
-  {
-    path: '/custom-props',
-    breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: 'Hi' },
-  },
-];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
   const [apiStoreData, setApiStoreData] = useState(null);
@@ -128,7 +118,6 @@ const VendorProfile = () => {
     getIndexButton(index);
   };
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
   const storeBannerRef = useRef(null);
   const storeGalleryRef = useRef(null);
@@ -520,23 +509,7 @@ const VendorProfile = () => {
     </ReactCrop>
   )
 } */}
-      <DivWrapLinkSC>
-        <DivHistorySC>
-          <DivBackBoxSC>
-            <FaArrowLeft color={'#85CB33'} size={15} />
-            <NavLinkSC iscolor={true} to={'/'}>
-              Назад
-            </NavLinkSC>
-          </DivBackBoxSC>
-          <div>
-            {breadcrumbs.map(({ match, breadcrumb }) => (
-              <span key={match.pathname}>
-                <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-              </span>
-            ))}
-          </div>
-        </DivHistorySC>
-      </DivWrapLinkSC>
+     <BreadCrumbs/>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
           <VendorNavMenu page={0}/>

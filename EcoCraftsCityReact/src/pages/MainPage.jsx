@@ -116,6 +116,19 @@ const MainPage = () => {
         ContainerClassName="ScrollUpButton__Container"
         TransitionClassName="ScrollUpButton__Toggled"
         ToggledStyle={{}}
+        style={{  backgroundColor: '#FAFAFA',
+        borderRadius: '50%',
+        border: 'none',
+        height: 70,
+        position: 'fixed',
+        bottom: 40,
+        width: 70,
+        WebkitTransition: 'all 0.5s ease-in-out',
+        transition: 'all 0.5s ease-in-out',
+        transitionProperty: 'opacity, right',
+        cursor: 'pointer',
+        opacity: 0,
+        right: -75}}
       />
     </>
   );

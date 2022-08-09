@@ -77,7 +77,7 @@ const ResponsiveAppBar = () => {
     logout();
     showToast('success', 'Вы вышли из системы');
     // setCookie('token', response.token);
-    removeCookie('token')
+    removeCookie('token');
   };
 
   const openCart = () => {
@@ -136,66 +136,67 @@ const ResponsiveAppBar = () => {
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
         {cookies['token'] !== undefined ? (
-          
-            <div class={profileActive ? 'navigation active' : 'navigation'}>
-              <div class={profileActive ? 'user-box active' : 'user-box'}>
-                <div class={profileActive ? 'image-box active' : 'image-box'}>
-                  <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
-                </div>
-
-                <p class="username">
-                  Jenifer Lopez
-                  <a href="#">Мой Профиль</a>
-                </p>
+          <div class={profileActive ? 'navigation active' : 'navigation'}>
+            <div class={profileActive ? 'user-box active' : 'user-box'}>
+              <div class={profileActive ? 'image-box active' : 'image-box'}>
+                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
               </div>
 
-              <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+              <p class="username">
+                Jenifer Lopez
+                <a href="#">Мой Профиль</a>
+              </p>
+            </div>
 
-              <ul class="profileMenu">
-                {/* <li>
+            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+            <ul class="profileMenu">
+              {/* <li>
                 <LinkProfileBoxSC to="#">
                   <GoPackage />
                   Заказы
                 </LinkProfileBoxSC>
               </li> */}
-                <li>
-                  <LinkProfileBoxSC to="/map-binding">
-                    <GoCreditCard />
-                    Мой Карты
-                  </LinkProfileBoxSC>
-                </li>
+              <li>
+                <LinkProfileBoxSC to="/map-binding">
+                  <GoCreditCard />
+                  Мой Карты
+                </LinkProfileBoxSC>
+              </li>
 
-                {/* <li>
+              {/* <li>
                 <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
               </li> */}
-                <li>
-                  <LinkProfileBoxSC to="/vendorprofile">
-                    <MdOutlineStorefront />
-                    Мой магазин
-                  </LinkProfileBoxSC>
-                </li>
-                <li class="logout">
-                  <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                    <IoExitOutline />
-                    Выйти
-                  </LinkProfileBoxSC>
-                </li>
-              </ul>
-            </div>
-          
+              <li>
+                <LinkProfileBoxSC to="/vendorprofile">
+                  <MdOutlineStorefront />
+                  Мой магазин
+                </LinkProfileBoxSC>
+              </li>
+              <li class="logout">
+                <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                  <IoExitOutline />
+                  Выйти
+                </LinkProfileBoxSC>
+              </li>
+            </ul>
+          </div>
         ) : null}
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
               Создать магазин
             </DivBoxButtonCreateStoreSC>
-            <LinkIconSC to="/signin" isLog={loggedIn}>
-              <DivBoxIconEndSC>
-                <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
-              </DivBoxIconEndSC>
+            {loggedIn ? null : (
+              <LinkIconSC to="/signin" isLog={loggedIn}>
+                <DivBoxIconEndSC>
+                  <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
-            </LinkIconSC>
+                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+              </LinkIconSC>
+            )}
+
             <LinkIconHideSC to="/">
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />

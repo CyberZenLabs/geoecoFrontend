@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+
 import {
     DivBoxProductDetailSC,
     DivContentProductDetailSC,
@@ -84,8 +85,12 @@ const ProductDetail = () => {
                         <ImageProduct
                             images={listImages}
                             urlCover={urlSrc}
+                            title={productItem.name}
+                            rating={productItem.ratingsAverage}
                         />
-                        <BoxPrice/>
+                        <BoxPrice
+                            price={productItem.price}
+                        />
                         <ShopBlock
                             Image={Image}
                         />
@@ -94,10 +99,7 @@ const ProductDetail = () => {
                     <DivDescStatsContainerSC>
                         <DivDescBlockSC>
                             <h2>Описание</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis
-                                in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean
-                                dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus
-                                vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</p>
+                            <p>{productItem.summary}</p>
                         </DivDescBlockSC>
                         <DivDescBlockSC>
                             <h2>Характеристики</h2>
@@ -135,8 +137,8 @@ const ProductDetail = () => {
                         </DivProductDiscTitleSC>
                         <DivProductReviewsSC>
                             <DivProductRatingSC>
-                                <H1ProductBoxSC>4.9</H1ProductBoxSC>
-                                <StarRating value={4} fixed={true}/>
+                                <H1ProductBoxSC>{productItem.ratingsAverage.toFixed(1)}</H1ProductBoxSC>
+                                <StarRating value={productItem.ratingsAverage} fixed={true}/>
                             </DivProductRatingSC>
 
                             <DivCarouselReviewSC>

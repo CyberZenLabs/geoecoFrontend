@@ -6,6 +6,7 @@ import {
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
+  SpanTextTitleAdaptiveeSC
 } from "../styled-components-css/styles.vendor-carousel";
 
 const VenderCarousel = ({ children }) => {
@@ -17,7 +18,7 @@ const VenderCarousel = ({ children }) => {
         return cloneElement(child, {
           style: {
             height: "100%",
-            minWidth: "1322px",
+            minWidth: "360px",
             maxWidth: "1322px",
           },
         });
@@ -39,7 +40,8 @@ const VenderCarousel = ({ children }) => {
               />
             ) : (
               <div></div>
-            )}
+            )}      <SpanTextTitleAdaptiveeSC>Отзывы</SpanTextTitleAdaptiveeSC>
+
              {carouselNumber != items.length-2 ? (
                <FiChevronRight
                onClick={() => setCarouselNumber(carouselNumber + 1)}

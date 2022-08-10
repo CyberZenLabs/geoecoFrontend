@@ -11,7 +11,7 @@ export const ImgBannerShopSC = styled.img`
 `;
 export const DivBoxContentSC = styled.div`
 margin-top:45px;
-padding 0 30px;
+padding: 0 30px;
   display: grid;
   justify-self: center;
   max-width: 1420px;

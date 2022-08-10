@@ -2,27 +2,33 @@ import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
 export const DivReviewShowWrapSC = styled.div`
-  //width: 100%;
   display: grid;
-  grid-template-rows: max-content 120px 48px;
   grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
   background:#fff;
-  width: 490px;
-  height: 150px;
+    height: 150px;
   border-radius: 12px;
-  padding: 15px 27px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  @media (max-width: 1000px) {
-    width: 288px;
-    padding: 16px 16px 12px;
-  }
-  /* @media (max-width: 1000px) {
-    height: 232px;
-  } */
+  padding: 27px 15px;
+  margin-left:10px;
+  width: 457px;
+  
+  -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.08);
+box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.08);
   align-content:start;
-
   align-items:center;
+  width:457px;
+  @media (max-width:1440px) {
+      width: 100%;
+  }
+  @media (max-width:1340px) {
+    transition: height .2s 0s;
+    height: 150px;
+  }
+  @media (max-width:1240px) {
+    margin-top:30px;
+    
+  }
 `;
 
 //------------------- Аватрака дата время рейтинг -------------------
@@ -40,9 +46,9 @@ export const ImgUserAvatarSC = styled.img`
   border-radius: 12px;
   width: 93px;
   height: 93px;
-  @media (max-width: 1000px) {
-    width: 40px;
-    height: 40px;
+  @media (max-width:1340px) {
+    
+
   }
 `;
 
@@ -58,10 +64,7 @@ export const DivDateRatingInfoSC = styled.div`
   grid-template-rows: 1fr 1fr;
   row-gap: 6px;
   align-self:start;
-  width: 350px;
-  @media (max-width: 1000px) {
-    grid-gap: 4px;
-  }
+
 
 `;
 
@@ -86,6 +89,9 @@ font-size: 16px;
 line-height: 20px;
 text-align: center;
 color: rgba(0, 0, 0, 0.33);
+@media (max-width:1340px) {
+  font-size: 12px;
+  }
 `;
 export const TextBoxReviewSC = styled.p`
 font-family: 'Montserrat';
@@ -94,7 +100,10 @@ font-weight: 600;
 font-size: 16px;
 line-height: 20px;
 color: #252525;
+@media (max-width:1340px) {
+  font-size: 12px;
 
+  }
 `;
 
 export const DivStarRaitingSC = styled.div`

@@ -9,18 +9,14 @@ export const OlifnoSC = styled.ol`
   list-style: inside;
   padding: 0;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 600;
+  padding:18px;
 `;
 export const DivDisplayFlexSC = styled.div`
   display: flex;
 `;
 
-export const LiInfoSC = styled.li`
-  color: #3d3d3d;
-  margin-bottom: 14px;
-  font-size: 20px;
-  display: flex;
-`;
+
 export const LiInfoGreenSC = styled.li`
   color: #3d3d3d;
   margin-bottom: 14px;
@@ -28,7 +24,19 @@ export const LiInfoGreenSC = styled.li`
   color: #85cb33;
   margin-right: 1px;
 `;
+export const DivTextTitleSC = styled.div`
 
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #252525;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  
+`;
 export const MenuProductST = styled.div`
   display: flex;
   font-family: 'Montserrat';
@@ -45,26 +53,18 @@ export const MenuProductST = styled.div`
 `;
 export const GreenST = styled.div`
   color: #85cb33;
-  margin-right: 1px;
+  margin-left: 8px;
 `;
 export const DivBoxNewProductsST = styled.div`
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  margin-top: 40px;
   justify-self: center;
   max-width: 1420px;
-  padding: 0 30px;
-  grid-column-gap: 40px;
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     width: 100%;
   }
 `;
-export const DivBoxNewProductsBigST = styled.div`
-  width: 100%;
-  display: grid;
-  margin-bottom: 30px;
-`;
+
 export const DivLogoST = styled.div`
   background: #d9d9d9;
   border-radius: 12px;
@@ -140,7 +140,6 @@ export const Margin5pxST = styled.div`
   margin-top: 10px;
 `;
 export const SpanTextTitleSC = styled.span`
-  background: rgba(243, 243, 243, 0.5);
   border-radius: 20px 20px 0px 0px;
   font-family: 'Montserrat';
   font-style: normal;
@@ -150,13 +149,42 @@ export const SpanTextTitleSC = styled.span`
   color: #252525;
   display: flex;
   justify-content: space-between;
-  padding: 5px 5px 0px 5px;
-  margin-top: 10px;
+  padding: 18px;
+  padding-bottom:0;
+
 `;
-export const UlifnoSC = styled.ul`
+export const SpanTextTitleAdaptiveSC = styled.div`
+
+
+  border-radius: 20px 20px 0px 0px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+
+  line-height: 37px;
+  color: #252525;
+  width: 100%;
+  padding-bottom:0;
+  @media (max-width: 1240px) {
+    display:none;
+  }
+
+`;
+export const SpanTextTitleCarouselSC = styled.span`
+  border-radius: 20px 20px 0px 0px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #252525;
   display: flex;
-  margin-left: 10px;
+  justify-content: space-between;
+  padding: 18px;
+  padding-bottom:0;
 `;
+
 export const SpanTextTitleShopSC = styled.span`
   font-family: 'Montserrat';
   font-style: normal;
@@ -196,11 +224,11 @@ export const SpanTextAddProdctSC = styled.span`
   color: #000000;
   position: relative;
 `;
-export const liInfoSC = styled.li`
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-size: 20px;
+export const LiInfoSC = styled.li`
+  color: #3d3d3d;
   margin-bottom: 14px;
+  font-size: 20px;
+  display: flex;
 `;
 export const ButtonAddProductSC = styled.button`
   font-family: 'Montserrat';
@@ -218,9 +246,7 @@ export const ButtonAddProductSC = styled.button`
   margin-top: 45px;
 `;
 export const DivAddProductBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
 `;
 export const DivButtonChangrInformSC = styled.div`
   display: flex;
@@ -230,14 +256,58 @@ export const DivButtonChangrInformSC = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2px 10px;
+  padding: 3px 12px;
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 `;
+export const DivButtonChangrInformBottomSC = styled.div`
+@media (min-width: 1000px) {
+  display:none;
+  
+    }
+    
+        height: 34px;
+display:flex;
+background: #85CB33;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 2px 10px;
+color: #FFFFFF;
+font-size:16px;
+
+`;
 export const DivInfoVendorBoxSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
+  margin-bottom: 24px;
+  width:100%;
+  transition: width .2s 0s;
+
+  @media (max-width: 1440px) {
+    width:90%;
+  }
+  @media (max-width: 1340px) {
+    width:80%;
+  }
+`;
+export const DivInfoVendorBoxAdaptiveSC = styled.div`
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  width:100%;
+
+  transition: width .2s 0s;
+  padding: 18px;
+  @media (max-width: 1440px) {
+    width:90%;
+  }
+  @media (max-width: 1340px) {
+    width:80%;
+  }
 `;
 export const DivBorderBox = styled.div`
   @media (max-width: 480px) {

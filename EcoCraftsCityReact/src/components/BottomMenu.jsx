@@ -1,0 +1,58 @@
+import React from "react";
+import { BiHomeAlt } from "react-icons/bi";
+import UilListUl from "@iconscout/react-unicons/icons/uil-list-ul";
+import UilSearch from "@iconscout/react-unicons/icons/uil-search";
+import UilUser from '@iconscout/react-unicons/icons/uil-user';
+
+import UilShoppingCart from "@iconscout/react-unicons/icons/uil-shopping-cart";
+import {
+  BoxBottomMenuSC,
+  ContentBottomMenuSC,
+  DivImgSC,
+  TitleElementSC,
+  BottomMenuLinkSC,
+} from "../styled-components-css/styles.bottom-menu";
+
+const BottomMenu = () => {
+  return (
+    <BoxBottomMenuSC>
+      <BottomMenuLinkSC to="/">
+        <ContentBottomMenuSC>
+          <DivImgSC>
+            <BiHomeAlt className="Icon-Bottom-Menu" />
+          </DivImgSC>
+          <TitleElementSC>Главная</TitleElementSC>
+        </ContentBottomMenuSC>
+      </BottomMenuLinkSC>
+
+      <BottomMenuLinkSC to="/">
+        <ContentBottomMenuSC>
+          <DivImgSC>
+            <UilListUl className="Icon-Bottom-Menu" />
+          </DivImgSC >
+          <TitleElementSC>Каталог</TitleElementSC>
+        </ContentBottomMenuSC>
+      </BottomMenuLinkSC>
+
+      <BottomMenuLinkSC to="/">
+        <ContentBottomMenuSC>
+          <DivImgSC>
+            <UilShoppingCart className="Icon-Bottom-Menu" />
+          </DivImgSC >
+          <TitleElementSC>Корзина</TitleElementSC>
+        </ContentBottomMenuSC>
+      </BottomMenuLinkSC>
+
+      <BottomMenuLinkSC to="/signin">
+        <ContentBottomMenuSC>
+          <DivImgSC>
+            <UilUser className="Icon-Bottom-Menu" />
+          </DivImgSC>
+          <TitleElementSC>Профиль</TitleElementSC>
+        </ContentBottomMenuSC>
+      </BottomMenuLinkSC>
+    </BoxBottomMenuSC>
+  );
+};
+
+export default BottomMenu;

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components/macro";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components/macro';
 
 export const OverlayDivSc = styled.div`
   z-index: 100;
@@ -10,19 +10,19 @@ export const OverlayDivSc = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  display: ${(props) => (props.show ? "static" : "none")};
+  display: ${(props) => (props.show ? 'static' : 'none')};
 `;
 
 export const CatalogNavSc = styled.div`
   background: white;
 
-  width: 250px;
+  width: 315px;
   height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
-  left: ${({ show }) => (show ? "0" : "-100%")};
+  left: ${({ show }) => (show ? '0' : '-100%')};
   transition: 350ms;
   z-index: 1000000;
 `;
@@ -35,7 +35,7 @@ export const CatalogIconSc = styled(Link)`
   margin-left: 2rem;
   z-index: 10000;
   cursor: pointer;
-  margin-left: 214px;
+  margin-left: 286px;
   margin-bottom: 20px;
   margin-top: 20px;
   z-index: 10000;

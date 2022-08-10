@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import image from "../img/logo.svg";
+import image from "../img/geoecologo.png";
 import {Link} from "react-router-dom";
 
 export const DivBoxFooterSC = styled.div`
@@ -8,12 +8,16 @@ export const DivBoxFooterSC = styled.div`
   background: rgba(133, 203, 51, 0.3);
   display: grid;
   grid-template-rows: auto 50px;
+  @media (max-width: 768px) {
+  display: none;
+}
 `;
 
 export const DivTopSC = styled.div`
   //outline: 1px solid #1130c1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr;
+ 
 `;
 
 export const DivBottomSC = styled.div`
@@ -63,7 +67,7 @@ export const DivBoxLogoSC = styled.div`
   background-position: center 10px;
   height: 116px;
   width: 80px;
-  background-size: 80px;
+  background-size: 100px;
   display: grid;
   align-items: end;
 `;

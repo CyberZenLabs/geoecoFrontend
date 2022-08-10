@@ -1,5 +1,5 @@
-import React from "react";
-import StarRating from "./StarRating";
+import React from 'react';
+import StarRating from './StarRating';
 import {
   ProductCardButton,
   ProductCardContainer,
@@ -7,17 +7,29 @@ import {
   ProductCardName,
   ProductCardPrice,
   ProductCardStoreName,
-} from "../styled-components-css/styles.product-card";
+  StarAlign,
+  DivGridPriceCartIcon,
+  DivCart,
+} from '../styled-components-css/styles.product-card';
 
-const ProductCard = () => {
+const ProductCard = ({ product, index }) => {
   return (
     <ProductCardContainer>
       <ProductCardImage src="/default-images/plant.jpg" />
-      <ProductCardPrice>777$</ProductCardPrice>
-      <ProductCardName>Росток на посадку</ProductCardName>
-      <StarRating product={true} />
+
+      <DivGridPriceCartIcon>
+        <ProductCardPrice>{product.price}$</ProductCardPrice>
+        <DivCart>
+          <img src="/default-images/white_cart.svg" />
+        </DivCart>
+      </DivGridPriceCartIcon>
+
+      <ProductCardName>{product.name}</ProductCardName>
+      <StarAlign>
+        <StarRating product={true} fixed={4} />
+      </StarAlign>
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
-      <ProductCardButton>Посмортеть</ProductCardButton>
+      <ProductCardButton to={`/product/${index}`}>Подробнее</ProductCardButton>
     </ProductCardContainer>
   );
 };

@@ -1,6 +1,3 @@
-
-
-//👇 This default export determines where your story goes in the story list
 import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
 import '../index.css'
 
@@ -14,7 +11,8 @@ export default {
     argTypes: {
         statusOpasity: false,
         width: '514px',
-        padding: '18px 32px'
+        padding: '18px 32px',
+        primary: true
     }
 };
 
@@ -26,7 +24,8 @@ export const Button = Template.bind({});
 Button.args = {
     statusOpasity: false,
     width: '514px',
-    padding: '18px 32px'
+    padding: '18px 32px',
+    primary: true
 };
 
 

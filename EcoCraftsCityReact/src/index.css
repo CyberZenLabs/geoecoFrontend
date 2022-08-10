@@ -3,12 +3,35 @@
   font-family: "Montserrat";
 }
 
+html {
+  min-width: 350px;
+  overflow-y: scroll;
+  scrollbar-color: rgb(182, 182, 182) #fff;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 182, 182);
+  border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(135, 135, 135);
+}
+
+
 :root {
   --main-color: rgba(133, 203, 51, 0.7);
   --green-color: #85cb33;
   --green-color-hover: #7cbd2f;
   --green-color-active: #76b42e;
   --error: #ff3d3d;
+  
   --white-color: #fff;
   --root-font-family: "Montserrat";
   --color-black: #000000;
@@ -165,6 +188,17 @@ table {
   font-size: 1.7rem;
   color: #ff3d3d;
 }
+.formValidIcons {
+  position: absolute;
+  right: 30px;
+  top: 11px;
+  font-size: 1.7rem;
+  color: #ff3d3d;
+}
+.image_cadr{
+  margin-top: 6px;
+  margin-left: 10px;
+}
 
 .image4signin {
   width: 90%;
@@ -174,6 +208,9 @@ table {
   margin: auto;
 }
 
+.razdel{
+  width: 85%; margin: 10px 7% 0 7%;
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
 :root {
@@ -197,22 +234,31 @@ table {
   justify-content: center;
   align-items: center;
 }
+.navigation .user-box .username>a{
+  text-decoration: none;
+  color: #555555;
+  margin-top: 7px;
+ }
 
 .navigation {
   position: fixed;
-  top: 33px;
+  border: 2px solid var(--main-color);
+  top: 29px;
   right: 20px;
   width: 120px;
   height: 60px;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 20px;
   background: var(--white);
   box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: height 0.5s, width 0.5s;
+  transition: height 0.5s,width 0.5s ;
   transition-delay: 0s, 0.75s;
-  z-index: 1000;
+  z-index: 100;
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open{
+  z-index: 1000
 }
 
 .navigation .user-box {
@@ -223,16 +269,23 @@ table {
   align-items: center;
   overflow: hidden;
   transition: 0.5s;
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 
 .navigation .user-box .username {
   font-size: 1.2rem;
   white-space: nowrap;
   color: var(--gray);
+  display: flex;
+      flex-direction: column;
+}
+.image_plus{margin-left: auto;
+  cursor: pointer;
 }
 
-.navigation .user-box .image-box {
+.marginRight{margin-right: 10px;}
+
+.image-box {
   position: relative;
   min-width: 60px;
   height: 60px;
@@ -241,8 +294,9 @@ table {
   overflow: hidden;
   border: 10px solid var(--white);
 }
+.marginRight{margin-right: 10px;}
 
-.navigation .user-box .image-box img {
+ .image-box img {
   position: absolute;
   top: 0;
   left: 0;
@@ -272,6 +326,7 @@ table {
   transition: 0.5s;
 }
 
+
 .navigation .profileMenu-toggle::after {
   content: "";
   position: absolute;
@@ -286,9 +341,10 @@ table {
   position: absolute;
   width: 100%;
   height: calc(100% - 60px);
-  margin-top: 60px;
+  margin-top: 50px;
   padding: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  
+  
 }
 
 .profileMenu li {
@@ -304,7 +360,28 @@ table {
   text-decoration: none;
   color: var(--gray);
 }
+.Icon-Bottom-Menu{
+  width: 75%;
+  height: 75%;
+}
 
+.ButtonCustom{
+  width:175px;
+  padding: 8px 32px;
+  
+}
+@media (max-width: 768px){
+  .ButtonCustom{
+    width:90px;
+
+  }
+}
+@media (max-width: 480px){
+  .ButtonCustom{
+    width:50px;
+
+  }
+}
 .profileMenu li a ion-icon {
   font-size: 1.5rem;
 }
@@ -324,12 +401,125 @@ table {
 
 .navigation.active {
   width: 300px;
-  height: 350px;
-  transition: width 0.5s, height 0.5s;
-  transition-delay: 0s, 0.75s;
+  height: 300px;
+  transition:width 0.5s, height 0.5s ;
+      transition-delay: 0s, 0.75s;
+  
 }
 
+@media (max-width: 1080px) {
+   .user-box.active {
+    transition:0.8s;
+    transition-delay: 0.8s;
+    width: 140px;
+    height: 140px;
+    
+    
+   
+   
+  }
+  .image-box.active{
+    transition:0.8s;
+    transition-delay: 0.8s;
+   
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    overflow: hidden;
+  
+    align-items: center;
+    justify-content: center;
+    border: 10px solid var(--white);
+    margin-right: 20px;
+    
+    
+ 
+   
+}
+    .navigation.active{
+      height: 100%;
+      width: 100%;
+      transition:width 0.5s, height 0.5s ;
+      transition-delay: 0s, 0.75s;
+     
+    }
+    .navigation{
+      top:0px;
+      right: 0px;
+     }
+     .username{
+      display: flex;
+      flex-direction: column;
+      font-size: 36px;
+      margin-right: 10px;
+      transition:1s;
+      transition-delay: 0.8s;
+     }
+     
+     .navigation .user-box {
+     
+      display: flex;
+      
+      align-items: center;
+     
+   
+     }
+     .navigation .user-box .username{
+      font-size: 30px;
+     }
+     .navigation .user-box .username>a{
+      text-decoration: none;
+      color: #555555;
+      margin-top: 7px;
+     }
+   .profileMenu{
+    margin-top: 100px;
+   }
+   
+   
+     .profileMenu>li{
+      border: 4px solid #85CB33;
+border-radius: 28px;
+margin-top: 32px;
+display: flex;
+justify-content: center;
+font-size: 20px;
+
+     }
+     .profileMenu>li:last-child{
+      display: none;
+     }
+     .profileMenu>li>a{
+      
+text-align: center;
+font-size: 36px;
+     }
+   
+  
+    }
+    @media (max-width: 580px){
+      .profileMenu>li>a{
+       
+  font-size: 30px;
+       }
+      
+    }
+
+   
 .navigation.active .user-box {
   width: calc(100% - 60px);
-  transition-delay: 0s;
+  transition-delay: 0.8s;
 }
+@media (max-width: 486px){
+  .profileMenu>li>a{
+   
+font-size: 28px;
+   }
+  
+}
+
+.cropper-modal {
+  background-color: #fff !important;
+}
+

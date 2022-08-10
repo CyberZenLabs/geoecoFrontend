@@ -103,5 +103,7 @@ export const FlowerLoaderSc = styled.div`
     -ms-transform-origin: 50% 50%;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+
+    
   }
 `;

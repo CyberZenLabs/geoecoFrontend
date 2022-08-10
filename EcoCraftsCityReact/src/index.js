@@ -42,6 +42,7 @@ import MailModal from './components/ModalAddressChange';
 import SellerSettings from './pages/SellerSettings';
 import Terms from './privacy/Terms';
 import Privacy from './privacy/Privacy';
+import PaymentAndDelivery from './pages/PaymentAndDelivery';
 
 import Modalstore from './components/ModalRegStore';
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -84,6 +85,7 @@ root.render(
               <Route path="reviews" element={<Reviews />} />
               <Route path="cart" element={<Cart />} />
               <Route path="sellersettings" element={<SellerSettings />} />
+              <Route path="paymentanddelivery" element={<PaymentAndDelivery />} />
               {/*<Route*/}
               {/*  path="admin-dashboard/admin-form"*/}
               {/*  element={<AdminForm />}*/}

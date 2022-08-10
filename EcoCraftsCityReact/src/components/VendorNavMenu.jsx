@@ -40,7 +40,7 @@ const VendorNavMenu = ({page}) => {
             <HrLinkSC />
             <DivStoreOptionsLinkSC   isActive={indexSelectedButton === 2}  to="/store/1">Магазин 50</DivStoreOptionsLinkSC>
             <br />
-            <DivStoreOptionsLinkSC to="#"  isActive={indexSelectedButton === 3} >Оплата и доставка</DivStoreOptionsLinkSC>
+            <DivStoreOptionsLinkSC  isActive={indexSelectedButton === 3} to="/paymentanddelivery"  >Оплата и доставка</DivStoreOptionsLinkSC>
             <br />
             <HrLinkSC />
             <DivStoreOptionsLinkSC to="#"  isActive={indexSelectedButton === 4}>Покупки</DivStoreOptionsLinkSC>

@@ -3,14 +3,99 @@ import styled from 'styled-components/macro';
 const middleWidth = 920
 const minWidth = 660
 
+export const DivCartWrapSC = styled.div`
+display: grid;
+	margin: 0 auto;
+  max-width: 1322px;
+  width: 90vw;
+`;
+
+export const DivTitleBoxSC = styled.div`
+	display: grid;
+  justify-content: left;
+  align-items: center;
+  row-gap: 4px;
+  ${({padding}) => (padding ? 'padding: 10px 0px 40px 60px;' : null)}
+   
+`;
+export const H2TitleProductList = styled.h1`
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	//line-height: 37px;
+  width: max-content;
+  color: #252525;
+	/* identical to box height */
+	//text-align: right;
+`;
+
+export const CustomTextBoxSC = styled.h1`
+	font-style: normal;
+	${(p) => (p.color !== undefined ? `color:${p.color};` : "color: black;")}
+  ${(p) =>
+    p.weight !== undefined ? `font-weight:${p.weight};` : "font-weight: 400;"}
+  font-size: 20px;
+  line-height: 24px;
+  /* @media (max-width: 1000px) {
+    font-size: 14px;
+  } */
+`;
+
 export const DivCartBoxSC = styled.div`
 	display: grid;
 	justify-items: center;
+  height: max-content;
+  width: 100%;
+
 `;
+
+export const DivContainerProductSC = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  height: 1000px;
+  width: 100%;
+  background: rgba(243, 243, 243, 0.5);
+	border-radius: 20px;
+  padding: 40px 20px 60px 60px;
+  /* @media (max-width: 1480px) {
+    grid-template-columns: max-content;
+    grid-template-rows: max-content max-content;
+  } */
+`;
+
+export const DivProductItemsSC = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content;
+  height: 100%;
+  width: 100%;
+  /* @media (max-width: 1480px) {
+    grid-template-columns: max-content;
+    grid-template-rows: max-content max-content;
+  } */
+`;
+
+export const DivDeliveryInfoSC = styled.div`
+  display: grid;
+  grid-template-rows: max-content max-content;
+  height: 100%;
+  
+  max-width: 457px;
+  width: 457px;
+  height: 730px;
+  border-left: 1px solid rgba(0, 0, 0, 0.33);
+  /* @media (max-width: 1480px) {
+    grid-template-columns: max-content;
+    grid-template-rows: max-content max-content;
+  } */
+`;
+
+
+//----------------------------------старые стили-------------------------------------------
 
 export const DivContentCartSC = styled.div`
 	display: grid;
-	grid-template-rows: max-content max-content;
+	//grid-template-rows: max-content max-content;
 	max-width: 1322px;
 	width: 85vw;
 	grid-gap: 56px;
@@ -40,22 +125,12 @@ export const DivBoxFirstRowSC = styled.div`
 
 `;
 
-export const DivBoxRowProductSC = styled.div`
-	grid-column: 1 / span 2;
-	grid-row: 1 / span 10;
-	height: fit-content;
-	/* width: 100%; */
-  @media (max-width: ${middleWidth}px) {
-    //width: 100vw;
-    padding: 85px 20px 226px 22px;
-  }
-  
-	background: rgba(243, 243, 243, 0.5);
-	border-radius: 20px;
 
+
+export const DivBoxRowProductSC = styled.div`
 	display: grid;
 	grid-template-rows: 32px 32px 1px max-content;
-	padding: 85px 20px 226px 50px;
+	
 	gap: 38px;
   @media (max-width: ${minWidth}px) {
     background: #ffffff;
@@ -64,14 +139,9 @@ export const DivBoxRowProductSC = styled.div`
   }
 `;
 
-export const H2TitleProductList = styled.h2`
-	font-style: normal;
-	font-weight: 700;
-	font-size: 30px;
-	line-height: 37px;
-	/* identical to box height */
-	//text-align: center;
-`;
+
+
+
 
 export const DivBoxCheckSC = styled.div`
 	padding-left: 2px;
@@ -82,15 +152,17 @@ export const DivBoxCheckSC = styled.div`
 `;
 
 export const DivBoxTotalPriceSC = styled.div`
-	//grid-column: 3 / span 1;
-	//grid-row: 1 / span 8;
-	height: 809px;
+	
+	//height: 809px;
 	//width: 100%;
 	max-width: 457px;
 	width: 457px;
 	//padding-left: 24px;
-	border-radius: 20px;
-	background: #f3f3f380;
+	//border-radius: 20px;
+	//background: #f3f3f380;
+  @media (max-width: 1480px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 export const DivBoxListSC = styled.div`

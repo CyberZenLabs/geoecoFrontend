@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import axios from '../apis/admin-rest';
 
 import {
   SpanPersonalDataSC,
@@ -23,12 +25,26 @@ import Modals from '../components/ModalRedact';
 import ModalrRedact from '../components/ModalRedact';
 import AppContext from '../context/AppContext';
 
+
 const PersonalData = () => {
+  const [response, error, loading, axiosFetch] = useAxiosFunction();
+  const [user, setUser] = useState([]);
+    useEffect(() => {
+      axios
+      .get('https://radiant-river-29802.herokuapp.com/api/v1/users')
+        .then((res) => {
+          setUser(res.data.data.data);
+          console.log("user",res.data.data.data);
+        })}
+        ,[]);
+
+
+
   const openCarts = () => {
     setOpenRedact(true);
   };
-
   const { openRedact, setOpenRedact } = React.useContext(AppContext);
+
 
   return (
     <DivBoxPersonalDataSC>
@@ -41,7 +57,9 @@ const PersonalData = () => {
             <ul>
               <li>
                 <SpanInitialsSC>
-                  Фамилия Имя Отчество{' '}
+                  
+                {user.storeName}
+                  Фамилия Имя Отчество
                   <img src="/default-images/pencil.svg" className="image_plus" to="#" onClick={openCarts} />{' '}
                 </SpanInitialsSC>
               </li>
@@ -97,5 +115,6 @@ const PersonalData = () => {
       <ModalrRedact />
     </DivBoxPersonalDataSC>
   );
+
 };
 export default PersonalData;

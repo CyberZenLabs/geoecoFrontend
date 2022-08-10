@@ -61,6 +61,9 @@ display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+  @media (max-width:480px) {
+  min-width: 340px;
+}
 flex-direction: row;
 align-items: center;
 justify-self: center;
@@ -221,6 +224,9 @@ export const ButtonContinueModal = styled.button`
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+  @media (max-width:480px) {
+  min-width: 340px;
+}
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -260,6 +266,9 @@ display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 430px;
+  @media (max-width:480px) {
+  min-width: 340px;
+}
 flex-direction: row;
 align-items: center;
 justify-self: center;

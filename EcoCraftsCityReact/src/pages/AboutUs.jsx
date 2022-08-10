@@ -6,7 +6,7 @@ import {
   DivTexReviewsClientsSC,
   DivContainerVideoCarouselSC,
 } from '../styled-components-css/styles.AboutUs';
-
+/* import CarouselCompound from './'; */
 import VideoCarousel from '../components/components-aboutus/VideoCarousel';
 import VideoItem from '../components/components-aboutus/VideoItem';
 import {
@@ -25,6 +25,7 @@ import {
 } from '../styled-components-css/styles.AboutUs';
 import CardCarouselShow from '../components/components-aboutus/CardCarouselShow';
 import CarouselClients from '../components/components-aboutus/CarouselClients';
+/* import CarouselCompound from '../../components/components-aboutus/'; */
 
 const AboutUs = () => {
   return (
@@ -61,7 +62,7 @@ const AboutUs = () => {
       <DivBoxTextReviewsClientsSC>
         <DivTexReviewsClientsSC>Отзывы наших клиентов</DivTexReviewsClientsSC>
       </DivBoxTextReviewsClientsSC>
-      <CarouselClients>
+      {/*   <CarouselClients>
         <CardCarouselShow />
         <CardCarouselShow />
         <CardCarouselShow />
@@ -72,6 +73,46 @@ const AboutUs = () => {
         <CardCarouselShow />
         <CardCarouselShow />
       </CarouselClients>
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
+      <CarouselCompound.CardCarouselShow>
+        <CardCarouselShow />
+      </CarouselCompound.CardCarouselShow>
+
       <DiBoxBoxDot>
         <DivBoxContainerDot>
           <DivDot1></DivDot1>
@@ -85,7 +126,7 @@ const AboutUs = () => {
           <DivDot9></DivDot9>
           <DivDit10></DivDit10>
         </DivBoxContainerDot>
-      </DiBoxBoxDot>
+      </DiBoxBoxDot> */}
     </>
   );
 };

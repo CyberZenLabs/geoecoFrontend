@@ -290,12 +290,12 @@ const AddNewProduct = () => {
       {(formik) => (
         <Form>
           <DivInputsDisplayNoneSC>
-          <input
-            ref={storeGalleryRef}
-            type="file"
-            name="storeGallery"
-            onChange={() => fileChangeHandler('storeGalleryRef')}
-          />
+            <input
+              ref={storeGalleryRef}
+              type="file"
+              name="storeGallery"
+              onChange={() => fileChangeHandler('storeGalleryRef')}
+            />
           </DivInputsDisplayNoneSC>
           <EcoModal
             open={modalOpen}
@@ -310,7 +310,7 @@ const AddNewProduct = () => {
             storeGalleryUrls={photoUrls.storeGalleryUrls}
           ></EcoModal>
           <DivBoxAddNewProductSC>
-          <BreadCrumbs/>
+            <BreadCrumbs />
             <DivBoxTextNewProductSC>
               <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
             </DivBoxTextNewProductSC>

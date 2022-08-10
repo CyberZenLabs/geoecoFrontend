@@ -1,9 +1,9 @@
-import styled from 'styled-components/macro';
+/* import styled from 'styled-components/macro';
 import RectangleCarousel from '../img/RectangleCarousel.svg';
 
 export const CardCarousel = styled.div`
   width: 746px;
-  height: 399px;
+  height: 100%;
   background-image: url(${RectangleCarousel});
   display: grid;
   grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '30.3% 49.9% 13.8%')};
@@ -66,3 +66,4 @@ export const DivTextSmallSC = styled.div`
   text-align: center;
   color: #252525;
 `;
+ */

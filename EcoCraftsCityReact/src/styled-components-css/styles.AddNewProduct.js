@@ -78,14 +78,16 @@ export const DivBoxColumnsRectangleSC = styled.div`
 
 export const DivBoxBigGrayRectangleSC = styled.div`
   max-width: 1059px;
-  background-image: url(${BigGrayRectangle});
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
   width: 100%;
   height: 706px;
 `;
 
 export const DivBoxGrayRectangleRulesSC = styled.div`
   max-width: 337px;
-  background-image: url(${RectangleGrayRules});
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
   width: 100%;
   height: 587px;
 `;
@@ -294,7 +296,8 @@ export const DivImgGrayRectanglePriceSC = styled.div`
   max-width: 1059px;
   width: 100%;
   height: 261px;
-  background-image: url(${RectangleGrayPrice});
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
   padding-left: 18px;
 `;
 export const DivBoxImgGrayRectanglePriceSC = styled.div`
@@ -509,18 +512,22 @@ export const DivImgGrayRectangleDescriptionSC = styled.div`
   max-width: 1059px;
   width: 100%;
   height: 491px;
-  background-image: url(${RectangleGrayDescription});
+
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
   padding-left: 18px;
   padding-top: 17px;
 `;
 
 export const DivBoxImgGrayRectangleDeliverySC = styled.div`
+  max-width: 1420px;
   width: 100%;
+
   display: grid;
   justify-items: start;
   height: 240px;
   align-items: end;
-  max-width: 1420px;
+
   padding-right: 30px;
   margin-bottom: 24px;
 `;
@@ -529,7 +536,9 @@ export const DivImgGrayRectangleDeliverySC = styled.div`
   max-width: 1059px;
   width: 100%;
   height: 240px;
-  background-image: url(${RectangleGrayDelivery});
+
+  background: rgba(243, 243, 243, 0.5);
+  border-radius: 20px;
   padding-left: 18px;
   padding-top: 17px;
 `;
@@ -691,6 +700,7 @@ export const DivTextDeliverySC = styled.div`
 `;
 
 export const DivBoxItemDeliverySC = styled.div`
+  max-width: 1041px;
   width: 100%;
   height: 102px;
 `;

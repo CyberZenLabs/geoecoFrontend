@@ -20,10 +20,11 @@ export const DivBoxAddNewProductSC = styled.div`
 `; */
 
 export const DivBoxTextNewProductSC = styled.div`
+border: 2px solid red;
   display: grid;
   width: 100%;
   justify-items: start;
-  height: 87px;
+  height: auto;
   align-items: end;
   max-width: 1420px;
 `;
@@ -68,6 +69,7 @@ export const GreenST = styled.div`
 `;
 
 export const DivBoxColumnsRectangleSC = styled.div`
+border: 2px solid green;
   max-width: 1420px;
   width: 100%;
   display: grid;
@@ -77,25 +79,31 @@ export const DivBoxColumnsRectangleSC = styled.div`
 `;
 
 export const DivBoxBigGrayRectangleSC = styled.div`
+border: 2px solid red;
   max-width: 1059px;
   background-image: url(${BigGrayRectangle});
   width: 100%;
-  height: 706px;
+  height: fit-content;
+  margin-bottom: 25px;
 `;
 
 export const DivBoxGrayRectangleRulesSC = styled.div`
+border: 2px solid red;
   max-width: 337px;
   background-image: url(${RectangleGrayRules});
   width: 100%;
   height: 587px;
+  @media (max-width: 1000px) {
+  display: none;
+  }
 `;
 
 export const DivBoxRowsNameProductSC = styled.div`
   max-width: 1000px;
   width: 100%;
-  height: 619px;
+  height: fit-content;
   display: grid;
-  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '6.8% 43.3% 34.5% 15.4%')};
+  /* grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '6.8% 43.3% 34.5% 15.4%')}; */
   padding-left: 18px;
 `;
 
@@ -298,16 +306,17 @@ export const DivImgGrayRectanglePriceSC = styled.div`
   padding-left: 18px;
 `;
 export const DivBoxImgGrayRectanglePriceSC = styled.div`
+border: 2px solid red;
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')};
+  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')}; */
   width: 100%;
   justify-items: start;
   height: 261px;
   align-items: end;
   max-width: 1420px;
-  padding-right: 30px;
-  padding-top: 24px;
-  margin-bottom: 48px;
+  //padding-right: 30px;
+  //padding-top: 24px;
+  margin-bottom: 25px;
 `;
 
 export const DivTextDovnloadFotoSC = styled.div`
@@ -494,15 +503,15 @@ export const DivImgRub2SC = styled.img`
 `;
 
 export const DivBoxImgGrayRectangleDescriptionSC = styled.div`
+border: 2px solid red;
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')};
+  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')}; */
   width: 100%;
   justify-items: start;
   height: 491px;
   align-items: end;
   max-width: 1420px;
-  padding-right: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 `;
 
 export const DivImgGrayRectangleDescriptionSC = styled.div`
@@ -515,17 +524,18 @@ export const DivImgGrayRectangleDescriptionSC = styled.div`
 `;
 
 export const DivBoxImgGrayRectangleDeliverySC = styled.div`
+border: 2px solid red;
   width: 100%;
   display: grid;
   justify-items: start;
   height: 240px;
   align-items: end;
   max-width: 1420px;
-  padding-right: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 `;
 
 export const DivImgGrayRectangleDeliverySC = styled.div`
+border: 1px solid blue;
   max-width: 1059px;
   width: 100%;
   height: 240px;
@@ -665,6 +675,7 @@ export const InputKeywords = styled.textarea`
 `;
 
 export const DivContainerDeliverySC = styled.div`
+border: 1px solid blue;
   max-width: 1018px;
   width: 100%;
   height: 152px;
@@ -888,12 +899,14 @@ export const ButtonPlusSC = styled.button`
   border-radius: 100%;
 `;
 export const DivBoxButtonsSC = styled.div`
+border: 2px solid red;
   max-width: 1420px;
   width: 100%;
   height: 56px;
   display: grid;
-  justify-items: start;
-  padding-bottom: 467px;
+  justify-items: center;
+  align-items: center;
+  
 `;
 
 export const DivBox2ButtonsSC = styled.div`
@@ -909,8 +922,8 @@ export const DivButtonsSC = styled.div`
   max-width: 504px;
   width: 100%;
   grid-column-gap: 30px;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')};
-  @media (max-width: 686px) {
+grid-template-columns: 50% 50%;
+  /* @media (max-width: 686px) {
     width: 100%;
     display: grid;
     grid-column-gap: 20px;
@@ -922,14 +935,15 @@ export const DivButtonsSC = styled.div`
     grid-column-gap: 20px;
     padding-top: 20px;
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
-  }
+  } */
 `;
 
 export const DivBoxTextRulesSC = styled.div`
+border: 2px solid red;
   max-width: 337px;
   width: 100%;
   height: 37px;
-  padding-top: 18px;
+  margin-top: 18px;
   padding-left: 18px;
 `;
 export const DivTextRulesSC = styled.div`
@@ -970,4 +984,22 @@ export const PlaceButtonSC = styled.div`
   justify-self: end;
   border-radius: 20px;
   border: none;
+`;
+export const DivNewProductWrapSC = styled.div`
+display: grid;
+grid-template-columns: 70% 30%;
+gap: 30px;
+width: 90vw;
+  max-width: 1420px;
+ // margin: auto;
+  color: black;
+  padding-top: 30px;
+ margin-bottom: 200px;
+   border: 2px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media (max-width: 1000px) {
+    grid-template-columns: 100%;
+  }
+
 `;

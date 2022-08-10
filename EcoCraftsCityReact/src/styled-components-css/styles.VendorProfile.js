@@ -568,9 +568,10 @@ export const DivBoxText3 = styled.div`
 `;
 
 export const DivBoxColumnsFotosSC = styled.div`
+border: 2px solid red;
   //max-width: 868px;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: grid;
   /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')}; */
   grid-template-columns: repeat(auto-fill, 193px);

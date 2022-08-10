@@ -288,7 +288,7 @@ export const DivMastersBlockSC = styled.div`
   height: 780px;
   background: #fafafa;
   border-radius: 32px;
-  width: 100vw;
+  /* width: 99vw; */
   align-content: end;
 
   @media (max-width: 1000px) {

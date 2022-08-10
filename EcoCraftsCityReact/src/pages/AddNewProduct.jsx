@@ -96,6 +96,7 @@ import {
   DivBox2ButtonsSC,
   InputVideoSC,
   PlaceButtonSC,
+  DivNewProductWrapSC,
 } from '../styled-components-css/styles.AddNewProduct';
 import {
   ButtonImgSC,
@@ -115,6 +116,7 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import EcoModal from '../components/Modal';
 import axios from 'axios';
 import { BreadCrumbs } from '../components/BreadCrumbs';
+import { DivStoreWrapSC } from '../styled-components-css/styles.store';
 
 const AddNewProduct = () => {
   const storeGalleryRef = useRef(null);
@@ -290,12 +292,12 @@ const AddNewProduct = () => {
       {(formik) => (
         <Form>
           <DivInputsDisplayNoneSC>
-          <input
-            ref={storeGalleryRef}
-            type="file"
-            name="storeGallery"
-            onChange={() => fileChangeHandler('storeGalleryRef')}
-          />
+            <input
+              ref={storeGalleryRef}
+              type="file"
+              name="storeGallery"
+              onChange={() => fileChangeHandler('storeGalleryRef')}
+            />
           </DivInputsDisplayNoneSC>
           <EcoModal
             open={modalOpen}
@@ -310,216 +312,221 @@ const AddNewProduct = () => {
             storeGalleryUrls={photoUrls.storeGalleryUrls}
           ></EcoModal>
           <DivBoxAddNewProductSC>
-          <BreadCrumbs/>
-            <DivBoxTextNewProductSC>
-              <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
-            </DivBoxTextNewProductSC>
+            <BreadCrumbs />
+            <DivNewProductWrapSC>
+              <div>
+              <DivBoxTextNewProductSC>
+                <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
+              </DivBoxTextNewProductSC>
 
-            <DivBoxColumnsRectangleSC>
-              <DivBoxBigGrayRectangleSC>
-                <DivBoxRowsNameProductSC>
-                  <DivBoxTextNameProductSC>
-                    <DivTextNameProduct>Фото, рубрика, название товара</DivTextNameProduct>
-                  </DivBoxTextNameProductSC>
+              {/* <DivBoxColumnsRectangleSC> */}
+                <DivBoxBigGrayRectangleSC>
+                  <DivBoxRowsNameProductSC>
+                    <DivBoxTextNameProductSC>
+                      <DivTextNameProduct>Фото, рубрика, название товара</DivTextNameProduct>
+                    </DivBoxTextNameProductSC>
 
-                  <DivBoxColumnsFotosSC>
-                    <DivBoxFoto1SC>
-                      <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
-                        <DivInnerPhotoInputSC>
-                          <IconImgImgSC />
-                          <H1SC>Загрузить фото</H1SC>
-                        </DivInnerPhotoInputSC>
-                      </ButtonImgSC>
-                    </DivBoxFoto1SC>
+                    <DivBoxColumnsFotosSC>
+                      <DivBoxFoto1SC>
+                        <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
+                          <DivInnerPhotoInputSC>
+                            <IconImgImgSC />
+                            <H1SC>Загрузить фото</H1SC>
+                          </DivInnerPhotoInputSC>
+                        </ButtonImgSC>
+                      </DivBoxFoto1SC>
 
-                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
-                      <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
-                    </DivBoxShowPhotoSC>
-                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[1] && photoUrls.storeGalleryUrls[1]}>
-                      <DeleteIconSC onClick={() => handlePhotoDelete(1)}></DeleteIconSC>
-                    </DivBoxShowPhotoSC>
-                    <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[2] && photoUrls.storeGalleryUrls[2]}>
-                      <DeleteIconSC onClick={() => handlePhotoDelete(2)}></DeleteIconSC>
-                    </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[0] && photoUrls.storeGalleryUrls[0]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(0)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[1] && photoUrls.storeGalleryUrls[1]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(1)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
+                      <DivBoxShowPhotoSC photoUrl={photoUrls.storeGalleryUrls[2] && photoUrls.storeGalleryUrls[2]}>
+                        <DeleteIconSC onClick={() => handlePhotoDelete(2)}></DeleteIconSC>
+                      </DivBoxShowPhotoSC>
 
-                    {photoUrls.storeGalleryUrls.length >= 3 ? (
-                      <>
-                        {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
-                          <DivBoxShowPhotoSC photoUrl={photo}>
-                            <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
-                          </DivBoxShowPhotoSC>
-                        ))}
-                      </>
-                    ) : null}
-                  </DivBoxColumnsFotosSC>
+                      {photoUrls.storeGalleryUrls.length >= 3 ? (
+                        <>
+                          {[...photoUrls.storeGalleryUrls].splice(3, 8).map((photo, i) => (
+                            <DivBoxShowPhotoSC photoUrl={photo}>
+                              <DeleteIconSC onClick={() => handlePhotoDelete(i + 3)}></DeleteIconSC>
+                            </DivBoxShowPhotoSC>
+                          ))}
+                        </>
+                      ) : null}
+                    </DivBoxColumnsFotosSC>
 
-                  <DivBoxColumnAboutYourselfSC>
-                    <DivBoxText>
-                      <DivTextSC>Видео</DivTextSC>
-                    </DivBoxText>
-                    <DivBoxInputAboutYourself>
-                      <InputVideoSC
-                        isTextArea={true}
-                        type="text"
-                        name="video"
-                        placeholder="Вставьте ссылку на YouTube или VK-видео"
-                      />
-                    </DivBoxInputAboutYourself>
-                  </DivBoxColumnAboutYourselfSC>
+                    <DivBoxColumnAboutYourselfSC>
+                      <DivBoxText>
+                        <DivTextSC>Видео</DivTextSC>
+                      </DivBoxText>
+                      <DivBoxInputAboutYourself>
+                        <InputVideoSC
+                          isTextArea={true}
+                          type="text"
+                          name="video"
+                          placeholder="Вставьте ссылку на YouTube или VK-видео"
+                        />
+                      </DivBoxInputAboutYourself>
+                    </DivBoxColumnAboutYourselfSC>
 
-                  <DivBoxColumnProductNameSC>
-                    <DivBoxText1>
-                      <DivText1SC>Название товара</DivText1SC>
-                    </DivBoxText1>
-                    <DivBoxInputProductName>
-                      <InputProductName
-                        name="productname"
-                        isTextArea={true}
-                        type="text"
-                        placeholder="Введите название товара"
-                      />
-                    </DivBoxInputProductName>
-                  </DivBoxColumnProductNameSC>
-                </DivBoxRowsNameProductSC>
-              </DivBoxBigGrayRectangleSC>
-              <DivBoxGrayRectangleRulesSC>
-                <DivBoxTextRulesSC>
-                  <DivTextRulesSC>Правила</DivTextRulesSC>
-                </DivBoxTextRulesSC>
-              </DivBoxGrayRectangleRulesSC>
-            </DivBoxColumnsRectangleSC>
-            <DivBoxImgGrayRectanglePriceSC>
-              <DivImgGrayRectanglePriceSC>
-                <DivBoxRowsPriceSC>
-                  <DivBoxTextPriceAndNumberSC>
-                    <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
-                  </DivBoxTextPriceAndNumberSC>
-                  <DivBoxColumnsPriceSC>
-                    <DivBoxTextPriceSC>
-                      <DivTextPriceSC>Цена</DivTextPriceSC>
-                    </DivBoxTextPriceSC>
-                    <DivBoxInputPrice>
-                      <InputPrice type="text" name="price" isTextArea={true} />
-                    </DivBoxInputPrice>
-                    <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
-                  </DivBoxColumnsPriceSC>
-                  <DivBoxColumnsNumberSC>
-                    <DivBoxTextNumberSC>
-                      <DivTextNumberSC>Колличество</DivTextNumberSC>
-                    </DivBoxTextNumberSC>
-                    <DivBoxColumnButtonsPMSC>
-                      <DivBoxButtonMinusSC>
-                        <ButtonMinusSC onClick={decrement}>-</ButtonMinusSC>
-                      </DivBoxButtonMinusSC>
-                      <DivBoxNum1SC>{counter}</DivBoxNum1SC>
-                      <DivBoxButtonPlusSC>
-                        <ButtonPlusSC onClick={increment}>+</ButtonPlusSC>
-                      </DivBoxButtonPlusSC>
-                    </DivBoxColumnButtonsPMSC>
-                  </DivBoxColumnsNumberSC>
-                  <DivBoxColumnsDiscountSC>
-                    <DivBoxTextDiscountSC>
-                      <DivTextDiscountSC>Скидка</DivTextDiscountSC>
-                    </DivBoxTextDiscountSC>
-                    <DivBoxInputDiscount>
-                      <InputDiscount type="text" name="discount" isTextArea={true} />
-                    </DivBoxInputDiscount>
-                    <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
-                  </DivBoxColumnsDiscountSC>
-                </DivBoxRowsPriceSC>
-              </DivImgGrayRectanglePriceSC>
-            </DivBoxImgGrayRectanglePriceSC>
-            <DivBoxImgGrayRectangleDescriptionSC>
-              <DivImgGrayRectangleDescriptionSC>
-                <DivBoxRowsDesctriptionSC>
-                  <DivContainerDescriptionSC>
-                    <DivBoxTextDescriptionSC>
-                      <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
-                    </DivBoxTextDescriptionSC>
-                    <DivBoxInputDescriptonSC>
-                      <InputDescription
-                        type="text"
-                        name="description"
-                        isTextArea={true}
-                        placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
-                      />
-                    </DivBoxInputDescriptonSC>
-                  </DivContainerDescriptionSC>
+                    <DivBoxColumnProductNameSC>
+                      <DivBoxText1>
+                        <DivText1SC>Название товара</DivText1SC>
+                      </DivBoxText1>
+                      <DivBoxInputProductName>
+                        <InputProductName
+                          name="productname"
+                          isTextArea={true}
+                          type="text"
+                          placeholder="Введите название товара"
+                        />
+                      </DivBoxInputProductName>
+                    </DivBoxColumnProductNameSC>
+                  </DivBoxRowsNameProductSC>
+                </DivBoxBigGrayRectangleSC>
+                
+              
+              {/* </DivBoxColumnsRectangleSC> */}
+              <DivBoxImgGrayRectanglePriceSC>
+                <DivImgGrayRectanglePriceSC>
+                  <DivBoxRowsPriceSC>
+                    <DivBoxTextPriceAndNumberSC>
+                      <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
+                    </DivBoxTextPriceAndNumberSC>
+                    <DivBoxColumnsPriceSC>
+                      <DivBoxTextPriceSC>
+                        <DivTextPriceSC>Цена</DivTextPriceSC>
+                      </DivBoxTextPriceSC>
+                      <DivBoxInputPrice>
+                        <InputPrice type="text" name="price" isTextArea={true} />
+                      </DivBoxInputPrice>
+                      <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
+                    </DivBoxColumnsPriceSC>
+                    <DivBoxColumnsNumberSC>
+                      <DivBoxTextNumberSC>
+                        <DivTextNumberSC>Колличество</DivTextNumberSC>
+                      </DivBoxTextNumberSC>
+                      <DivBoxColumnButtonsPMSC>
+                        <DivBoxButtonMinusSC>
+                          <ButtonMinusSC onClick={decrement}>-</ButtonMinusSC>
+                        </DivBoxButtonMinusSC>
+                        <DivBoxNum1SC>{counter}</DivBoxNum1SC>
+                        <DivBoxButtonPlusSC>
+                          <ButtonPlusSC onClick={increment}>+</ButtonPlusSC>
+                        </DivBoxButtonPlusSC>
+                      </DivBoxColumnButtonsPMSC>
+                    </DivBoxColumnsNumberSC>
+                    <DivBoxColumnsDiscountSC>
+                      <DivBoxTextDiscountSC>
+                        <DivTextDiscountSC>Скидка</DivTextDiscountSC>
+                      </DivBoxTextDiscountSC>
+                      <DivBoxInputDiscount>
+                        <InputDiscount type="text" name="discount" isTextArea={true} />
+                      </DivBoxInputDiscount>
+                      <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
+                    </DivBoxColumnsDiscountSC>
+                  </DivBoxRowsPriceSC>
+                </DivImgGrayRectanglePriceSC>
+              </DivBoxImgGrayRectanglePriceSC>
+              <DivBoxImgGrayRectangleDescriptionSC>
+                <DivImgGrayRectangleDescriptionSC>
+                  <DivBoxRowsDesctriptionSC>
+                    <DivContainerDescriptionSC>
+                      <DivBoxTextDescriptionSC>
+                        <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                      </DivBoxTextDescriptionSC>
+                      <DivBoxInputDescriptonSC>
+                        <InputDescription
+                          type="text"
+                          name="description"
+                          isTextArea={true}
+                          placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
+                        />
+                      </DivBoxInputDescriptonSC>
+                    </DivContainerDescriptionSC>
 
-                  <DivContainerCharacteristicsSC>
-                    <DivBoxTextCharacteristicsSC>
-                      <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
-                    </DivBoxTextCharacteristicsSC>
-                    <DivBoxInputCharacteristicsSC>
-                      <InputCharacteristics type="text" name="charactiristics" isTextArea={true} />
-                    </DivBoxInputCharacteristicsSC>
-                  </DivContainerCharacteristicsSC>
+                    <DivContainerCharacteristicsSC>
+                      <DivBoxTextCharacteristicsSC>
+                        <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
+                      </DivBoxTextCharacteristicsSC>
+                      <DivBoxInputCharacteristicsSC>
+                        <InputCharacteristics type="text" name="charactiristics" isTextArea={true} />
+                      </DivBoxInputCharacteristicsSC>
+                    </DivContainerCharacteristicsSC>
 
-                  <DivContainerKeywordsSC>
-                    <DivBoxTextKeywordsSC>
-                      <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
-                    </DivBoxTextKeywordsSC>
-                    <DivBoxInputKeywordsSC>
-                      <InputKeywords
-                        type="text"
-                        placeholder="Укажите от 2 до 20 ключевых слов"
-                        name="keywords"
-                        isTextArea={true}
-                      />
-                    </DivBoxInputKeywordsSC>
-                  </DivContainerKeywordsSC>
-                </DivBoxRowsDesctriptionSC>
-              </DivImgGrayRectangleDescriptionSC>
-            </DivBoxImgGrayRectangleDescriptionSC>
-            <DivBoxImgGrayRectangleDeliverySC>
-              <DivImgGrayRectangleDeliverySC>
-                <DivContainerDeliverySC>
-                  <DivBoxTextDeliverySC>
-                    <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
-                  </DivBoxTextDeliverySC>
-                  <DivBoxItemDeliverySC>
-                    <DivItemDeliverySC>
-                      <DivContainerColumnsPostSC>
-                        <DivBoxImgDotSC>
-                          <DivImgDotSC></DivImgDotSC>
-                        </DivBoxImgDotSC>
-                        <DivBoxTextRussianPostSC>
-                          <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
-                        </DivBoxTextRussianPostSC>
-                        <DivBoxTextFromThePriceSC>
-                          <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
-                        </DivBoxTextFromThePriceSC>
-                      </DivContainerColumnsPostSC>
+                    <DivContainerKeywordsSC>
+                      <DivBoxTextKeywordsSC>
+                        <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
+                      </DivBoxTextKeywordsSC>
+                      <DivBoxInputKeywordsSC>
+                        <InputKeywords
+                          type="text"
+                          placeholder="Укажите от 2 до 20 ключевых слов"
+                          name="keywords"
+                          isTextArea={true}
+                        />
+                      </DivBoxInputKeywordsSC>
+                    </DivContainerKeywordsSC>
+                  </DivBoxRowsDesctriptionSC>
+                </DivImgGrayRectangleDescriptionSC>
+              </DivBoxImgGrayRectangleDescriptionSC>
 
-                      <DivContainerColumnsSDEKSC>
-                        <DivBoxImgDot1SC>
-                          <DivImgDot1SC></DivImgDot1SC>
-                        </DivBoxImgDot1SC>
-                        <DivBoxTextSDEKSC>
-                          <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
-                        </DivBoxTextSDEKSC>
-                        <DivBoxTextFromThePrice1SC>
-                          <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
-                        </DivBoxTextFromThePrice1SC>
-                      </DivContainerColumnsSDEKSC>
-                    </DivItemDeliverySC>
-                  </DivBoxItemDeliverySC>
-                </DivContainerDeliverySC>
-              </DivImgGrayRectangleDeliverySC>
-            </DivBoxImgGrayRectangleDeliverySC>
-            <DivBoxButtonsSC>
-              <DivBox2ButtonsSC>
-                <DivButtonsSC>
-                  <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-                    В черновик
-                  </ButtonCustomWhiteSC>
+              <DivBoxImgGrayRectangleDeliverySC>
+                <DivImgGrayRectangleDeliverySC>
+                  <DivContainerDeliverySC>
+                    <DivBoxTextDeliverySC>
+                      <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
+                    </DivBoxTextDeliverySC>
+                    <DivBoxItemDeliverySC>
+                      <DivItemDeliverySC>
+                        <DivContainerColumnsPostSC>
+                          <DivBoxImgDotSC>
+                            <DivImgDotSC></DivImgDotSC>
+                          </DivBoxImgDotSC>
+                          <DivBoxTextRussianPostSC>
+                            <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
+                          </DivBoxTextRussianPostSC>
+                          <DivBoxTextFromThePriceSC>
+                            <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
+                          </DivBoxTextFromThePriceSC>
+                        </DivContainerColumnsPostSC>
 
-                  <PlaceButtonSC width={'100%'} padding={'18px 32px'} type="submit">
-                    Разместить
-                  </PlaceButtonSC>
-                </DivButtonsSC>
-              </DivBox2ButtonsSC>
-            </DivBoxButtonsSC>
+                        <DivContainerColumnsSDEKSC>
+                          <DivBoxImgDot1SC>
+                            <DivImgDot1SC></DivImgDot1SC>
+                          </DivBoxImgDot1SC>
+                          <DivBoxTextSDEKSC>
+                            <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
+                          </DivBoxTextSDEKSC>
+                          <DivBoxTextFromThePrice1SC>
+                            <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
+                          </DivBoxTextFromThePrice1SC>
+                        </DivContainerColumnsSDEKSC>
+                      </DivItemDeliverySC>
+                    </DivBoxItemDeliverySC>
+                  </DivContainerDeliverySC>
+                </DivImgGrayRectangleDeliverySC>
+              </DivBoxImgGrayRectangleDeliverySC>
+              <DivBoxButtonsSC>
+                  <DivButtonsSC>
+                    <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
+                      В черновик
+                    </ButtonCustomWhiteSC>
+
+                    <PlaceButtonSC width={'100%'} padding={'18px 32px'} type="submit">
+                      Разместить
+                    </PlaceButtonSC>
+                  </DivButtonsSC>
+              </DivBoxButtonsSC>
+              </div>
+                <DivBoxGrayRectangleRulesSC>
+                  <DivBoxTextRulesSC>
+                    <DivTextRulesSC>Правила</DivTextRulesSC>
+                  </DivBoxTextRulesSC>
+                </DivBoxGrayRectangleRulesSC>
+            </DivNewProductWrapSC>
           </DivBoxAddNewProductSC>
         </Form>
       )}

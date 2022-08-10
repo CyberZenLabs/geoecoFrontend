@@ -22,6 +22,9 @@ import {
   CustomLinkSC,
   SpanTitleSC,
   SpanFooterSC,
+  ButtonHiOutlineArrowUpSC,
+  DivButtonAdaptiveSC,
+  DivButtonAdaptivePhonesSC,
 } from '../styled-components-css/styles.footer';
 import Modal from './Modal';
 import EcoModal from './Modal';
@@ -78,6 +81,7 @@ const Footer = () => {
         </DivBottomSC>
       </DivBoxFooterSC>
       <BottomMenu />
+      <DivButtonAdaptiveSC>
       <ScrollUpButton
         StopPosition={0}
         ShowAtPosition={150}
@@ -111,10 +115,48 @@ const Footer = () => {
           justifyContent: 'center',
           alignItems: 'center',
           fontSize: '35px',
-        }}
-      >
-        <HiOutlineArrowUp color="#85CB33" />
+        }}>
+        <HiOutlineArrowUp color="#85CB33"/>
       </ScrollUpButton>
+      </DivButtonAdaptiveSC>
+      <DivButtonAdaptivePhonesSC>
+      <ScrollUpButton
+        StopPosition={0}
+        ShowAtPosition={150}
+        EasingType="easeOutCubic"
+        AnimationDuration={500}
+        ContainerClassName="ScrollUpButton__Container"
+        TransitionClassName="ScrollUpButton__Toggled"
+        ToggledStyle={{
+          right: 40,
+          opacity: 1,
+          WebkitTransition: 'all 0.5s ease-in-out',
+          transition: 'all 0.5s ease-in-out',
+          transitionProperty: 'opacity, right, boxShadow',
+        }}
+        style={{
+          backgroundColor: '#fff',
+          borderRadius: '50%',
+          border: 'none',
+          height: 50,
+          position: 'fixed',
+          bottom: "25vw",
+          width: 50,
+          WebkitTransition: 'all 0.5s ease-in-out',
+          transition: 'all 0.5s ease-in-out',
+          transitionProperty: 'opacity, right, boxShadow',
+          cursor: 'pointer',
+          opacity: 0,
+          right: -75,
+          boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+          display: 'grid',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '35px',
+        }}>
+        <HiOutlineArrowUp color="#85CB33"/>
+      </ScrollUpButton>
+      </DivButtonAdaptivePhonesSC>
     </div>
   );
 };

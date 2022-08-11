@@ -1,38 +1,96 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import {
+    ButtonCarouselSC,
+    DivBoxCarouselSC,
+    DivContentCarouselSC
+} from "../../styled-components-css/styled.carousel";
+import CardCarouselShow from "./CardCarouselShow";
+import Slider from "react-slick";
 import '../../page-css/style.carousel.css'
-import {DivBoxCarouselSC} from "../../styled-components-css/styled.carousel";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CarouselKirdro = (props) => {
+
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode:true,
+        // fade: true,
+        customPaging: i => <ButtonCarouselSC>{i + 1}</ButtonCarouselSC>,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+
+
+
     return (
         <DivBoxCarouselSC>
-            <div>
-                kirdro
-            </div>
-            <Swiper
-                cssMode={true}
-                navigation={true}
-                pagination={true}
-                mousewheel={true}
-                keyboard={true}
-                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                className="mySwiper"
-            >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper>
+            {/*<div>*/}
+            {/*    kirdro*/}
+            {/*</div>*/}
+            <DivContentCarouselSC>
+                <Slider {...settings}>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                    <CardCarouselShow/>
+                </Slider>
+
+            </DivContentCarouselSC>
+
         </DivBoxCarouselSC>
     );
 }

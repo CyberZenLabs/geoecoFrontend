@@ -1,27 +1,25 @@
-/* import React from 'react';
+import React from 'react';
 import {
-  
+
   DivBoxAvaSC,
   DivAvaSC,
   DivBoxBigTextSC,
   DivTextBigSC,
   DivBoxSmallTextSC,
-  DivTextSmallSC,
+  DivTextSmallSC, DivBoxContentSC,
 } from '../../styled-components-css/styles.ElasticCourusel';
-import { useContext } from 'react';
-import { CarouselClientsContext } from './CarouselClientsContext';
 
 const CardCarouselShow = ({ children }) => {
-  const { width } = useContext(CarouselClientsContext);
+  // const { width } = useContext(CarouselClientsContext);
   return (
     <>
-      <div
-        style={{
-          minWidth: `${width}px`,
-          maxWidth: `${width}px`,
-        }}
+      <DivBoxContentSC
+        // style={{
+        //   minWidth: `${width}px`,
+        //   maxWidth: `${width}px`,
+        // }}
       >
-        {children}
+        {/*{children}*/}
         <DivBoxAvaSC>
           <DivAvaSC></DivAvaSC>
         </DivBoxAvaSC>
@@ -35,10 +33,10 @@ const CardCarouselShow = ({ children }) => {
         <DivBoxSmallTextSC>
           <DivTextSmallSC>Евгения Калмакова</DivTextSmallSC>
         </DivBoxSmallTextSC>
-      </div>
+      </DivBoxContentSC>
     </>
   );
 };
 
 export default CardCarouselShow;
- */
+

@@ -161,7 +161,7 @@ const ProductDetail = () => {
                     </DivProductDiscSC>
 
                 </DivContentProductDetailSC>
-            :
+                :
                 null
             }
 

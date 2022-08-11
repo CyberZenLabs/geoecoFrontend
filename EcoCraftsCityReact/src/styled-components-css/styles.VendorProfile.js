@@ -389,7 +389,10 @@ export const ButtonBannerSC = styled.button`
   color: rgba(0, 0, 0, 0.33);
   cursor: pointer;
   /* border: 1px solid rgba(0, 0, 0, 0.33); */
-  border: ${(p) => (p.photoUrl && p.photoUrl !== 'http://localhost:5767/stores/defaultStore.svg' ? 'none' : '1px solid rgba(0, 0, 0, 0.33)')};
+  border: ${(p) =>
+    p.photoUrl && p.photoUrl !== 'http://localhost:5767/stores/defaultStore.svg'
+      ? 'none'
+      : '1px solid rgba(0, 0, 0, 0.33)'};
   height: 126px;
   background: none;
   background-image: ${({ photoUrl }) => (photoUrl ? `url(${photoUrl})` : 'none')};
@@ -570,7 +573,7 @@ export const DivBoxText3 = styled.div`
 export const DivBoxColumnsFotosSC = styled.div`
   //max-width: 868px;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: grid;
   /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25% 25% 25% 25%')}; */
   grid-template-columns: repeat(auto-fill, 193px);

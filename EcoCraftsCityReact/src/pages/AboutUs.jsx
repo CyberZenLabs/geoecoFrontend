@@ -25,6 +25,7 @@ import {
 } from '../styled-components-css/styles.AboutUs';
 import CardCarouselShow from '../components/components-aboutus/CardCarouselShow';
 import CarouselClients from '../components/components-aboutus/CarouselClients';
+import CarouselKirdro from "../components/components-aboutus/CarouselKirdro";
 /* import CarouselCompound from '../../components/components-aboutus/'; */
 
 const AboutUs = () => {
@@ -62,6 +63,7 @@ const AboutUs = () => {
       <DivBoxTextReviewsClientsSC>
         <DivTexReviewsClientsSC>Отзывы наших клиентов</DivTexReviewsClientsSC>
       </DivBoxTextReviewsClientsSC>
+      <CarouselKirdro/>
       {/*   <CarouselClients>
         <CardCarouselShow />
         <CardCarouselShow />

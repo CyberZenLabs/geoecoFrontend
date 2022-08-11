@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import image from "../img/geoecologo.png";
 import {Link} from "react-router-dom";
+import { HiOutlineArrowUp } from 'react-icons/hi';
 
 export const DivBoxFooterSC = styled.div`
   //margin-top: 10px;
@@ -82,7 +83,7 @@ export const DivBoxSocSC = styled.div`
 export const CustomLinkSC = styled(Link)`
     font-size: 14px;
     text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-black);
 `;
 
 export const SpanTitleSC = styled.span`
@@ -93,4 +94,18 @@ export const SpanTitleSC = styled.span`
 
 export const SpanFooterSC = styled.span`
     font-size: 14px;
+`;
+export const DivButtonAdaptiveSC=styled.div`
+@media (max-width:1000px){
+display: none;
+}
+`;
+export const DivButtonAdaptivePhonesSC=styled.div`
+display: grid;
+justify-content: center;
+align-items: center;
+justify-items: center;
+@media (min-width:1001px){
+display: none;
+}
 `;

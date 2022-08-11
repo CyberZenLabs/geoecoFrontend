@@ -23,7 +23,7 @@ export const DivBoxTextNewProductSC = styled.div`
   display: grid;
   width: 100%;
   justify-items: start;
-  height: 87px;
+  height: auto;
   align-items: end;
   max-width: 1420px;
 `;
@@ -68,6 +68,7 @@ export const GreenST = styled.div`
 `;
 
 export const DivBoxColumnsRectangleSC = styled.div`
+  border: 2px solid green;
   max-width: 1420px;
   width: 100%;
   display: grid;
@@ -81,23 +82,29 @@ export const DivBoxBigGrayRectangleSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   width: 100%;
-  height: 706px;
+  height: fit-content;
+  margin-bottom: 25px;
+  padding-right: 15px;
 `;
 
 export const DivBoxGrayRectangleRulesSC = styled.div`
+  margin-top: 40px;
   max-width: 337px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   width: 100%;
   height: 587px;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const DivBoxRowsNameProductSC = styled.div`
   max-width: 1000px;
   width: 100%;
-  height: 619px;
+  height: fit-content;
   display: grid;
-  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '6.8% 43.3% 34.5% 15.4%')};
+  /* grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '6.8% 43.3% 34.5% 15.4%')}; */
   padding-left: 18px;
 `;
 
@@ -110,15 +117,18 @@ export const DivBoxTextNameProductSC = styled.div`
 `;
 
 export const DivTextNameProduct = styled.div`
-  max-width: 345px;
   width: 100%;
   height: 24px;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
+  text-align: start;
   color: #3d3d3d;
+  @media (max-width: 480px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 
 export const DivBoxColumnsFotosSC = styled.div`
@@ -209,8 +219,8 @@ export const DivBoxFoto4SC = styled.div`
 
 export const DivBoxColumnAboutYourselfSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '93px auto')};
-  padding-top: 74px;
+  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '20% auto')};
+  padding-top: 25px;
 `;
 
 export const InputVideoSC = styled.textarea`
@@ -219,8 +229,15 @@ export const InputVideoSC = styled.textarea`
   height: 140px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
-  padding-bottom: 106px;
   padding-left: 10px;
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivTextSC = styled.div`
@@ -246,7 +263,6 @@ export const DivBoxInputAboutYourself = styled.div`
 
 export const DivBoxText = styled.div`
   width: 100%;
-  height: 50px;
   display: grid;
   justify-items: start;
   align-items: start;
@@ -256,8 +272,9 @@ export const DivBoxColumnProductNameSC = styled.div`
   display: grid;
   max-width: 813px;
   width: 100%;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '25.9% 74.1%')};
-  padding-top: 63px;
+  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '25.9% 74.1%')};
+  padding-top: 33px;
+  grid-gap: 9px;
 `;
 
 export const DivBoxInputProductName = styled.div`
@@ -272,6 +289,14 @@ export const InputProductName = styled.textarea`
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
   padding-left: 10px;
+  padding-top: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivBoxText1 = styled.div`
@@ -302,15 +327,15 @@ export const DivImgGrayRectanglePriceSC = styled.div`
 `;
 export const DivBoxImgGrayRectanglePriceSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')};
+  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')}; */
   width: 100%;
   justify-items: start;
   height: 261px;
   align-items: end;
   max-width: 1420px;
-  padding-right: 30px;
-  padding-top: 24px;
-  margin-bottom: 48px;
+  //padding-right: 30px;
+  //padding-top: 24px;
+  margin-bottom: 25px;
 `;
 
 export const DivTextDovnloadFotoSC = styled.div`
@@ -398,6 +423,7 @@ export const InputPrice = styled.textarea`
   border-radius: 12px;
   box-sizing: border-box;
   padding-left: 10px;
+  padding-top: 8px;
 `;
 
 export const DivImgRubSC = styled.img`
@@ -480,6 +506,7 @@ export const InputDiscount = styled.textarea`
   border-radius: 12px;
   box-sizing: border-box;
   padding-left: 10px;
+  padding-top: 8px;
 `;
 
 export const DivImgRub2SC = styled.img`
@@ -498,14 +525,13 @@ export const DivImgRub2SC = styled.img`
 
 export const DivBoxImgGrayRectangleDescriptionSC = styled.div`
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')};
+  /* grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '76.3% 13.7%')}; */
   width: 100%;
   justify-items: start;
   height: 491px;
   align-items: end;
   max-width: 1420px;
-  padding-right: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 `;
 
 export const DivImgGrayRectangleDescriptionSC = styled.div`
@@ -517,19 +543,18 @@ export const DivImgGrayRectangleDescriptionSC = styled.div`
   border-radius: 20px;
   padding-left: 18px;
   padding-top: 17px;
+  padding-right: 15px;
 `;
 
 export const DivBoxImgGrayRectangleDeliverySC = styled.div`
-  max-width: 1420px;
   width: 100%;
 
   display: grid;
   justify-items: start;
   height: 240px;
   align-items: end;
-
-  padding-right: 30px;
-  margin-bottom: 24px;
+  max-width: 1420px;
+  margin-bottom: 25px;
 `;
 
 export const DivImgGrayRectangleDeliverySC = styled.div`
@@ -541,6 +566,7 @@ export const DivImgGrayRectangleDeliverySC = styled.div`
   border-radius: 20px;
   padding-left: 18px;
   padding-top: 17px;
+  padding-right: 18px;
 `;
 export const DivBoxRowsDesctriptionSC = styled.div`
   max-width: 1018px;
@@ -589,6 +615,14 @@ export const InputDescription = styled.textarea`
   border-radius: 12px;
   padding-left: 10px;
   padding-bottom: 70px;
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivContainerCharacteristicsSC = styled.div`
@@ -630,6 +664,7 @@ export const InputCharacteristics = styled.textarea`
   border-radius: 12px;
   padding-left: 10px;
   padding-bottom: 70px;
+  padding-top: 10px;
 `;
 
 export const DivContainerKeywordsSC = styled.div`
@@ -671,6 +706,14 @@ export const InputKeywords = styled.textarea`
   border-radius: 12px;
   padding-left: 10px;
   padding-bottom: 45px;
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivContainerDeliverySC = styled.div`
@@ -712,22 +755,24 @@ export const DivItemDeliverySC = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
   padding-top: 21px;
-  padding-left: 30px;
-  padding-right: 30px;
+  //padding-left: 30px;
+  //padding-right: 30px;
 `;
 export const DivContainerColumnsPostSC = styled.div`
   width: 100%;
   height: 24px;
   display: grid;
   /*  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')}; */
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '3.4% 79.8% 16.8%')};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '7% 56% 37%')};
 `;
 
 export const DivBoxImgDotSC = styled.div`
+  max-width: 52px;
   width: 100%;
   height: 22px;
   display: grid;
   align-items: center;
+  justify-items: center;
 `;
 
 export const DivImgDotSC = styled.div`
@@ -745,14 +790,18 @@ export const DivBoxTextRussianPostSC = styled.div`
 
 export const DivTextRussianPostSC = styled.div`
   max-width: 148px;
+  width: 100%;
   height: 24px;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
+  //text-align: center;
 
   color: #3d3d3d;
+  @media (max-width: 420px) {
+    font-size: 115%;
+  }
 `;
 
 export const DivBoxTextFromThePriceSC = styled.div`
@@ -763,16 +812,20 @@ export const DivBoxTextFromThePriceSC = styled.div`
 `;
 
 export const DivTextFromThePriceSC = styled.div`
-  width: 107px;
+  width: 100%;
+  max-width: 107px;
   height: 24px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 110%;
   line-height: 24px;
   text-align: center;
 
   color: #3d3d3d;
+  @media (max-width: 420px) {
+    font-size: 100%;
+  }
 `;
 
 export const DivContainerColumnsSDEKSC = styled.div`
@@ -780,15 +833,16 @@ export const DivContainerColumnsSDEKSC = styled.div`
   height: 24px;
   display: grid;
   /*  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')}; */
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '3.4% 79.8% 16.8%')};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '7% 65% 28%')};
 `;
 
 export const DivBoxImgDot1SC = styled.div`
   width: 100%;
   height: 30px;
+  max-width: 52px;
   display: grid;
-  align-items: center;
   align-items: end;
+  justify-items: center;
 `;
 
 export const DivImgDot1SC = styled.div`
@@ -817,24 +871,29 @@ export const DivTextSDEKSC = styled.div`
   text-align: center;
 
   color: #3d3d3d;
+  @media (max-width: 420px) {
+    font-size: 115%;
+  }
 `;
 export const DivTextFromThePrice1SC = styled.div`
-  width: 83px;
-  height: 24px;
-
+  max-width: 83px;
+  width: 100%;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 110%;
   line-height: 24px;
   text-align: center;
 
   color: #3d3d3d;
+  @media (max-width: 420px) {
+    font-size: 100%;
+  }
 `;
 
 export const DivBoxTextFromThePrice1SC = styled.div`
   width: 100%;
-
+  height: 38px;
   display: grid;
   justify-items: end;
   align-items: end;
@@ -902,8 +961,8 @@ export const DivBoxButtonsSC = styled.div`
   width: 100%;
   height: 56px;
   display: grid;
-  justify-items: start;
-  padding-bottom: 467px;
+  justify-items: center;
+  align-items: center;
 `;
 
 export const DivBox2ButtonsSC = styled.div`
@@ -919,18 +978,19 @@ export const DivButtonsSC = styled.div`
   max-width: 504px;
   width: 100%;
   grid-column-gap: 30px;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '50% 50%')};
+  grid-template-columns: 50% 50%;
   @media (max-width: 686px) {
     width: 100%;
     display: grid;
     grid-column-gap: 20px;
-    padding-top: 20px;
+
+    padding-left: 50px;
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
   }
   @media (max-width: 500px) {
     display: grid;
     grid-column-gap: 20px;
-    padding-top: 20px;
+    padding-left: 15px;
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
   }
 `;
@@ -939,7 +999,7 @@ export const DivBoxTextRulesSC = styled.div`
   max-width: 337px;
   width: 100%;
   height: 37px;
-  padding-top: 18px;
+  margin-top: 18px;
   padding-left: 18px;
 `;
 export const DivTextRulesSC = styled.div`
@@ -980,4 +1040,20 @@ export const PlaceButtonSC = styled.div`
   justify-self: end;
   border-radius: 20px;
   border: none;
+`;
+export const DivNewProductWrapSC = styled.div`
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 30px;
+  width: 90vw;
+  max-width: 1420px;
+  // margin: auto;
+  color: black;
+  padding-top: 30px;
+  margin-bottom: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media (max-width: 1000px) {
+    grid-template-columns: 100%;
+  }
 `;

@@ -117,124 +117,124 @@ const ResponsiveAppBar = () => {
 
 
   return (
-    <DivBoxHeaderSC>
-      <DivHeaderSC>
-        <LinkLogoSC to="/">
-          <DivBoxLogoSC></DivBoxLogoSC>
-        </LinkLogoSC>
+      <DivBoxHeaderSC>
+        <DivHeaderSC>
+          <LinkLogoSC to="/">
+            <DivBoxLogoSC></DivBoxLogoSC>
+          </LinkLogoSC>
 
-        <DivCatalogAndSearchBoxSC>
-          <DivTextBoxSC>
-            <SpanSecondSC to="#"></SpanSecondSC>
-            <SpanFirstSC to="#" onClick={openCart}>
-              Создать магазин
-            </SpanFirstSC>
-            <SpanSecondSC to="#"></SpanSecondSC>
-          </DivTextBoxSC>
+          <DivCatalogAndSearchBoxSC>
+            <DivTextBoxSC>
+              <SpanSecondSC to="#"></SpanSecondSC>
+              <SpanFirstSC to="#" onClick={openCart}>
+                Создать магазин
+              </SpanFirstSC>
+              <SpanSecondSC to="#"></SpanSecondSC>
+            </DivTextBoxSC>
 
-          <DivBoxButtonAndInputSC>
-            <ButtonCustomSC
-              onClick={() => setShowCatalog(!showCatalog)}
-              width={'176px'}
-              padding={'8px 32px'}
-              primary={true}
-            >
-              <BoxContentButton>
-                <UilListUl
-                  size="40"
-                  // color="#61DAFB"
+            <DivBoxButtonAndInputSC>
+              <ButtonCustomSC
+                  onClick={() => setShowCatalog(!showCatalog)}
+                  width={'176px'}
+                  padding={'8px 32px'}
+                  primary={true}
+              >
+                <BoxContentButton>
+                  <UilListUl
+                      size="40"
+                      // color="#61DAFB"
+                  />
+                  <span>Каталог</span>
+                </BoxContentButton>
+              </ButtonCustomSC>
+
+              <DivInputBoxCS>
+                <InputSC
+                    // value={lastName}
+                    // onChange={onChange(getLastName)}
+                    type="text"
+                    id={'search'}
+                    placeholder={'Я ищу...'}
                 />
-                <span>Каталог</span>
-              </BoxContentButton>
-            </ButtonCustomSC>
+                <DivIconBoxInput>
+                  <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
+                </DivIconBoxInput>
+              </DivInputBoxCS>
+            </DivBoxButtonAndInputSC>
+          </DivCatalogAndSearchBoxSC>
+          {cookies['token'] !== undefined ? (
+              <div class={profileActive ? 'navigation active' : 'navigation'}>
+                <div class={profileActive ? 'user-box active' : 'user-box'}>
+                  <div class={profileActive ? 'image-box active' : 'image-box'}>
+                    <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
+                  </div>
 
-            <DivInputBoxCS>
-              <InputSC
-                // value={lastName}
-                // onChange={onChange(getLastName)}
-                type="text"
-                id={'search'}
-                placeholder={'Я ищу...'}
-              />
-              <DivIconBoxInput>
-                <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
-              </DivIconBoxInput>
-            </DivInputBoxCS>
-          </DivBoxButtonAndInputSC>
-        </DivCatalogAndSearchBoxSC>
-        {cookies['token'] !== undefined ? (
-          <div class={profileActive ? 'navigation active' : 'navigation'}>
-            <div class={profileActive ? 'user-box active' : 'user-box'}>
-              <div class={profileActive ? 'image-box active' : 'image-box'}>
-                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
-              </div>
+                  <p class="username">
+                    Jenifer Lopez
+                    <a href="#">Мой Профиль</a>
+                  </p>
+                </div>
 
-              <p class="username">
-                Jenifer Lopez
-                <a href="#">Мой Профиль</a>
-              </p>
-            </div>
+                <div class="profileMenu-toggle" onClick={toggleProfile}></div>
 
-            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
-            <ul class="profileMenu">
-              {/* <li>
+                <ul class="profileMenu">
+                  {/* <li>
                 <LinkProfileBoxSC to="#">
                   <GoPackage />
                   Заказы
                 </LinkProfileBoxSC>
               </li> */}
-              <li>
-                <LinkProfileBoxSC to="/map-binding">
-                  <GoCreditCard />
-                  Мой Карты
-                </LinkProfileBoxSC>
-              </li>
+                  <li>
+                    <LinkProfileBoxSC to="/map-binding">
+                      <GoCreditCard />
+                      Мой Карты
+                    </LinkProfileBoxSC>
+                  </li>
 
-              {/* <li>
+                  {/* <li>
                 <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
               </li> */}
-              <li>
-                <LinkProfileBoxSC to="/vendorprofile">
-                  <MdOutlineStorefront />
-                  Мой магазин
-                </LinkProfileBoxSC>
-              </li>
-              <li class="logout">
-                <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                  <IoExitOutline />
-                  Выйти
-                </LinkProfileBoxSC>
-              </li>
-            </ul>
-          </div>
-        ) : null}
-        <DivBoxIconHeaderSC>
-          <DivBoxIconSC>
-            <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
-              Создать магазин
-            </DivBoxButtonCreateStoreSC>
-            {cookies['token'] ? null : (
-              <LinkIconSC to="/signin" isLog={loggedIn}>
+                  <li>
+                    <LinkProfileBoxSC to="/vendorprofile">
+                      <MdOutlineStorefront />
+                      Мой магазин
+                    </LinkProfileBoxSC>
+                  </li>
+                  <li class="logout">
+                    <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                      <IoExitOutline />
+                      Выйти
+                    </LinkProfileBoxSC>
+                  </li>
+                </ul>
+              </div>
+          ) : null}
+          <DivBoxIconHeaderSC>
+            <DivBoxIconSC>
+              <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
+                Создать магазин
+              </DivBoxButtonCreateStoreSC>
+              {cookies['token'] ? null : (
+                  <LinkIconSC to="/signin" isLog={loggedIn}>
+                    <DivBoxIconEndSC>
+                      <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                    </DivBoxIconEndSC>
+
+                    <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+                  </LinkIconSC>
+              )}
+
+              <LinkIconHideSC to="/cart">
                 <DivBoxIconEndSC>
-                  <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                  <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
                 </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
-              </LinkIconSC>
-            )}
-
-            <LinkIconHideSC to="/cart">
-              <DivBoxIconEndSC>
-                <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
-              </DivBoxIconEndSC>
-
-              <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-            </LinkIconHideSC>
-          </DivBoxIconSC>
-        </DivBoxIconHeaderSC>
-      </DivHeaderSC>
-    </DivBoxHeaderSC>
+                <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
+              </LinkIconHideSC>
+            </DivBoxIconSC>
+          </DivBoxIconHeaderSC>
+        </DivHeaderSC>
+      </DivBoxHeaderSC>
   );
 };
 

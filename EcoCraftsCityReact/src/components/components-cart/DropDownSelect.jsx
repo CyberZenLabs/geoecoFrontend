@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import '../../page-css/cart.css'
 
 const DropDownSelect = () => {
   const options = [

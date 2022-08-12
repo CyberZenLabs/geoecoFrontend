@@ -72,6 +72,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { FaRubleSign } from 'react-icons/fa';
 import VendorNavMenu from '../components/VendorNavMenu';
 import { ButtonAddProductSC, DivAddProduct, SpanTextAddProdctSC } from '../styled-components-css/styles.StoreNewProduct';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -85,6 +86,7 @@ const StoreFront = ({ product }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+
     axios
       .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {
@@ -324,23 +326,7 @@ const StoreFront = ({ product }) => {
 
   return (
     <>
-      <DivWrapLinkSC>
-        <DivHistorySC>
-          <DivBackBoxSC>
-            <FaArrowLeft color={'#85CB33'} size={15} />
-            <NavLinkSC iscolor={true} to={'/'}>
-              Назад
-            </NavLinkSC>
-          </DivBackBoxSC>
-          <div>
-            {breadcrumbs.map(({ match, breadcrumb }) => (
-              <span key={match.pathname}>
-                <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-              </span>
-            ))}
-          </div>
-        </DivHistorySC>
-      </DivWrapLinkSC>
+     <BreadCrumbs/>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
         <VendorNavMenu page={2}/>

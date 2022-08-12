@@ -3,7 +3,6 @@ import { cloneElement } from 'react';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import {
   DivArrowBackgroundSC,
-  DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,

@@ -8,6 +8,7 @@ export const DivMainTotalboxSC = styled.div`
 	display: grid;
 	grid-template-rows: repeat(11, auto);
 	font-family: 'Montserrat';
+	grid-gap: 30px;
 `;
 
 export const DivTotalTitleSC = styled.div`

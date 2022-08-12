@@ -48,9 +48,10 @@ import { useCookies } from "react-cookie";
 import Modal from "./Modal";
 import EcoModal from "./Modal";
 import Modalstore from './ModalRegStore';
+import {useEffect} from "react";
+import axios from "../apis/admin-rest";
 import { MdOutlineStorefront } from 'react-icons/md';
 import { IoExitOutline } from 'react-icons/io5';
-
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -59,7 +60,8 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData,setOpenModal, } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
+
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -78,7 +80,8 @@ const ResponsiveAppBar = () => {
   const handleLogout = () => {
     logout();
     showToast('success', 'Вы вышли из системы');
-    setCookie('token', response.token);
+    // setCookie('token', response.token);
+    removeCookie('token');
   };
 
   const openCart = () => {
@@ -91,12 +94,38 @@ const ResponsiveAppBar = () => {
     });
   };
 
+  useEffect(() => {
+    // axiosFetch({
+    //   axiosInstance: axios,
+    //   auth: '',
+    //   method: 'GET',
+    //   url: `/api/v1/products`,
+    //   requestConfig: {},
+    // });
+
+
+
+    axios
+        .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+        .then((res) => {
+          // console.log(res);
+
+          setProductsLIst(res.data.data.data)
+
+        })
+        .catch((err) => {
+        });
+  }, []);
+
+
+
   return (
-    <DivBoxHeaderSC>
-      <DivHeaderSC>
-        <LinkLogoSC to="/">
-          <DivBoxLogoSC></DivBoxLogoSC>
-        </LinkLogoSC>
+      <DivBoxHeaderSC>
+        <DivHeaderSC>
+          <LinkLogoSC to="/">
+            <DivBoxLogoSC></DivBoxLogoSC>
+          </LinkLogoSC>
+
 
         <DivCatalogAndSearchBoxSC>
 
@@ -231,6 +260,7 @@ const ResponsiveAppBar = () => {
       </DivHeaderSC>
       
     </DivBoxHeaderSC>
+
   );
 };
 

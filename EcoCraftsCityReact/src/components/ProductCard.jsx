@@ -12,7 +12,7 @@ import {
   DivCart,
 } from '../styled-components-css/styles.product-card';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, index }) => {
   return (
     <ProductCardContainer>
       <ProductCardImage src="/default-images/plant.jpg" />
@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
         <StarRating product={true} fixed={4} />
       </StarAlign>
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
-      <ProductCardButton to="/product/1">В корзину</ProductCardButton>
+      <ProductCardButton to={`/product/${index}`}>Подробнее</ProductCardButton>
     </ProductCardContainer>
   );
 };

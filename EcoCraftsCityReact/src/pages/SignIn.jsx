@@ -4,6 +4,7 @@ import axios from '../apis/admin-rest';
 
 import { useCookies } from 'react-cookie';
 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -62,6 +63,7 @@ const SignIn = (props) => {
   useEffect(() => {
     if (response.length === 0) {
       console.log('REPEAT ERROR', error);
+      console.log('response', response);
 
       if (error !== '') {
         if (error && error.message.includes('401')) {
@@ -74,7 +76,8 @@ const SignIn = (props) => {
       console.log('>>>>>>>>>', response.token);
       showToast('success', 'Вы успешно зашли');
       setCookie('token', response.token);
-    
+      console.log('LOGGED IN', loggedIn);
+
       login();
       navigate('/');
     }

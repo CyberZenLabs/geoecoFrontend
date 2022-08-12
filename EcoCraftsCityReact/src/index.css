@@ -4,8 +4,26 @@
 }
 
 html {
-  min-width: 350px
+  min-width: 350px;
+  overflow-y: scroll;
+  scrollbar-color: rgb(182, 182, 182) #fff;
+  scrollbar-width: thin;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 182, 182);
+  border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(135, 135, 135);
+}
+
 
 :root {
   --main-color: rgba(133, 203, 51, 0.7);
@@ -223,13 +241,14 @@ table {
 
 .navigation {
   position: fixed;
-  top: 33px;
+  border: 2px solid var(--main-color);
+  top: 29px;
   right: 20px;
   width: 120px;
   height: 60px;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 20px;
   background: var(--white);
   box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -500,3 +519,4 @@ font-size: 28px;
 .cropper-modal {
   background-color: #fff !important;
 }
+

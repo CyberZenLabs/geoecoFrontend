@@ -15,6 +15,7 @@ export function AppProvider({ children }) {
   const [openRedact, setOpenRedact] = useState(false);
   const [openEmail, setOpenEmail] = useState(false);
   const [Starttimer, setstarttimer] = useState(true);
+  const [productList, setProductsLIst] = useState([]);
 
   const [modalData, setModalData] = useState({
     inputs: [],
@@ -43,6 +44,8 @@ export function AppProvider({ children }) {
          setOpenModal,
          disable,
          setDisable,
+          productList,
+          setProductsLIst
       }}
     >
       {children}

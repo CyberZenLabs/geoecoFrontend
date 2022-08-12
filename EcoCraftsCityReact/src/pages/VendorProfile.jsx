@@ -3,57 +3,34 @@ import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { MdOutlinePhotoCamera } from 'react-icons/md';
-import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import StarRating from '../components/StarRating';
 import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import ShowItemCarousel from '../components/ShowItemCarousel';
 import { toast } from 'react-toastify';
-import VendorInfoMenu from '../components/VendorInfoMenu';
 import {
-  DivOptionsPanelSC,
-  DivStarsPanelSC,
-  DivStoreInfoDataSC,
-  DivStoreInfoImageSC,
-  DivStoreInfoSC,
-  DivStoreInfoStuffSC,
   DivStoreLeftPanelSC,
-  DivStoreOptionsLeftPanelSC,
-  DivStoreOptionsLinkSC,
-  DivStoreOptionsLinkStoreSC,
   DivStoreOptionsRightPanelSC,
   DivStoreOptionsSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-  HrLinkSC,
-  ProductsNumSC,
-  SaveButtonPanelSC,
-  StoreInfoHeaderSC,
-  StoreInfoSubHeaderSC,
-  StoreSalesAndAccountLinkSC,
-  StoreSalesAndAccountLinkSearchSC,
 } from '../styled-components-css/styles.store';
 import {
   SpanTextTitleSC,
   DivAddProductBox,
   DivInfoVendorBoxSC,
-  DivButtonChangrInformSC,
-  UlifnoSC,
   DivStoreInfoStuffProfileSC,
   DivItemsOptionsSC,
   DivInnerContentSC,
   DivTwoSidesSC,
   H1DefinSC,
-  NameNCityFieldSC,
-  BirthFieldSC,
   ButtonBannerSC,
   ButtonImgSC,
   DivBGImageSC,
   DivAboutYourselfSC,
-  InputAboutYourself,
   DivBoxColumnAboutYourselfSC,
   DivTextSC,
   DivBoxInputAboutYourself,
@@ -65,31 +42,25 @@ import {
   DivBoxText3,
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
-  DivBoxFoto2SC,
-  DivBoxFoto3SC,
-  DivBoxFoto4SC,
-  DivFoto1SC,
-  DivFoto2SC,
-  DivFoto3SC,
-  DivFoto4SC,
   DivInnerPhotoInputSC,
   H1SC,
   IconImgImgSC,
   DivButtonBottomSaveVendSC,
   SaveButtonPanelVendSC,
-  DivBoxNewProductsBigST,
-  DivBoxItemsSC,
-  MenuProductST,
   GreenST,
-  DivBoxNewProductsST,
   OverlayProfileImgSC,
   OverlayProfileImageTextSC,
   OverlayBannerImageTextSC,
   OverlayBannerImgSC,
   DivBoxShowPhotoSC,
   DeleteIconSC,
-  DivCarouselPhotosSC,
   DivInputsDisplayNoneSC,
+  OlifnoSC,
+  LiInfoSC,
+  DivButtonChangrInformSC,
+  DivButtonChangrInformBottomSC,
+  SpanTextTitleAdaptiveSC,
+  DivInfoVendorBoxAdaptiveSC
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -97,17 +68,8 @@ import axios from 'axios';
 import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
 import VendorNavMenu from '../components/VendorNavMenu';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
-
-
-const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
-const routes = [
-  {
-    path: '/custom-props',
-    breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: 'Hi' },
-  },
-];
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
   const [apiStoreData, setApiStoreData] = useState(null);
@@ -128,7 +90,6 @@ const VendorProfile = () => {
     getIndexButton(index);
   };
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const storePhotoRef = useRef(null);
   const storeBannerRef = useRef(null);
   const storeGalleryRef = useRef(null);
@@ -274,39 +235,38 @@ const VendorProfile = () => {
   const listContent = [
     {
       page: (
-        <DivBoxNewProductsBigST>
       
-        <DivBoxNewProductsST>
+   
            
       
            
             <DivAddProductBox>
-            
+            <DivInfoVendorBoxSC>
+
             <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
-           <VendorInfoMenu></VendorInfoMenu>
-             <DivInfoVendorBoxSC>
-             
+                 <OlifnoSC>
+                <LiInfoSC>Адрес</LiInfoSC>
+                <LiInfoSC>Время существования магазина</LiInfoSC>
+                <LiInfoSC>Магазин: е-mail</LiInfoSC>
+                <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+               
+                 </OlifnoSC>
+                 <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+
+            </DivInfoVendorBoxSC>
+
+             <DivInfoVendorBoxAdaptiveSC>
+            <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
+
+
            <VenderCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
+
            </VenderCarousel>
-             </DivInfoVendorBoxSC>
+             </DivInfoVendorBoxAdaptiveSC>
             </DivAddProductBox>
             
 
-    </DivBoxNewProductsST>
 
-    </DivBoxNewProductsBigST>
       ),
     },
     {
@@ -520,23 +480,7 @@ const VendorProfile = () => {
     </ReactCrop>
   )
 } */}
-      <DivWrapLinkSC>
-        <DivHistorySC>
-          <DivBackBoxSC>
-            <FaArrowLeft color={'#85CB33'} size={15} />
-            <NavLinkSC iscolor={true} to={'/'}>
-              Назад
-            </NavLinkSC>
-          </DivBackBoxSC>
-          <div>
-            {breadcrumbs.map(({ match, breadcrumb }) => (
-              <span key={match.pathname}>
-                <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-              </span>
-            ))}
-          </div>
-        </DivHistorySC>
-      </DivWrapLinkSC>
+     <BreadCrumbs/>
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
           <VendorNavMenu page={0}/>
@@ -547,3 +491,4 @@ const VendorProfile = () => {
   );
 };
 export default VendorProfile;
+

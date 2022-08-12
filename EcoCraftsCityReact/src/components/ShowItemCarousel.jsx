@@ -11,7 +11,8 @@ import {
   LinkOnUserSC,
   TextBoxReviewSC,
   ElipsIconSC,
-  SpanDataTextSC
+  SpanDataTextSC,
+  DivStarRaitingAdaptiveSC
 } from "../styled-components-css/styles.ShowItemCarousel";
 import StarRating from "./StarRating";
 
@@ -35,9 +36,9 @@ const ShowItemCarousel = () => {
                   Название магазина
                 </TextBoxReviewSC>
               </LinkOnUserSC>
-              <ElipsIconSC>
-
-              </ElipsIconSC>
+              <SpanDataTextSC>
+                ●
+              </SpanDataTextSC>
               <SpanDataTextSC>
                 дд.мм.гг
               </SpanDataTextSC>
@@ -45,7 +46,9 @@ const ShowItemCarousel = () => {
             <DivStarRaitingSC>
               <StarRating value={5} fixed={true} size={20} />
             </DivStarRaitingSC>
-
+            <DivStarRaitingAdaptiveSC>
+              <StarRating value={5} fixed={true} size={12} />
+            </DivStarRaitingAdaptiveSC>
             <DivUserReviewSC>
           <TextBoxReviewSC>
             Текст отзыва

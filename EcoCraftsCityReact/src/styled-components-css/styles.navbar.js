@@ -119,6 +119,11 @@ export const DivBoxIconSC = styled.div`
   justify-content:center;
   align-items: center;
   width: 278px;
+
+
+  
+  grid-gap: 10px;
+
   height:100%;
 
   @media (max-width: 1000px) {

@@ -1,30 +1,35 @@
-import styled from 'styled-components';
+/* import styled from 'styled-components';
+
+export const DivContainerClientsCarouselSC = styled.div`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+`;
 
 export const DivCarouselMainSC = styled.div`
   width: 100%;
   height: 393px;
   padding: 0px 0px 0px 0px;
-  display: grid;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  @media (min-width: 1448px) {
+  @media (min-width: 780px) {
     position: relative;
   }
 `;
 
 export const DivCarouselWindowSC = styled.div`
-  position: relative;
-  max-width: 810px;
   width: 100%;
   height: 100%;
-  display: grid;
+  display: flex;
+  justify-content: left;
   align-items: center;
-  justify-items: start;
+  flex-direction: row;
   overflow: hidden;
 `;
 export const DivCarouselAllItemsSC = styled.div`
   transform: translateX(${(props) => props.carouselNumber * -768}px);
-  height: 399px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +41,7 @@ export const DivCarouselAllItemsSC = styled.div`
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
   @media (max-width: 1000px) {
-    transform: translateX(${(props) => props.carouselNumber * -614}px);
+    transform: translateX(${(props) => props.carouselNumber * -768}px);
   }
 `;
 
@@ -45,7 +50,6 @@ export const DivArrowBackgroundSC = styled.div`
   display: grid;
   justify-items: center;
   align-items: center;
-  justify-content: center;
   width: 45px;
   height: 45px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.11);
@@ -58,8 +62,8 @@ export const DivArrowBackgroundSC = styled.div`
   :hover {
     color: rgb(133, 203, 51);
   }
-  @media (min-width: 1448px) {
-    ${(p) => (p.arrow === 'right' ? 'margin-right: -15px;' : null)}
+  @media (min-width: 780px) {
+    ${(p) => (p.arrow === 'right' ? 'margin-right: -22px;' : null)}
   }
 `;
 
@@ -100,3 +104,4 @@ export const DivTexReviewsClientsSC = styled.div`
   text-align: center;
   color: #252525;
 `;
+ */

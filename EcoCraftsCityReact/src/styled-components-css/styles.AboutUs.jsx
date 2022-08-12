@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DivCarouselMainSC = styled.div`
+/*export const DivCarouselMainSC = styled.div`
   width: 100%;
   height: 393px;
   padding: 0px 0px 0px 0px;
@@ -61,7 +61,7 @@ export const DivArrowBackgroundSC = styled.div`
   @media (min-width: 1448px) {
     ${(p) => (p.arrow === 'right' ? 'margin-right: -15px;' : null)}
   }
-`;
+`;*/
 
 export const DivBoxTextReviewsMastersSC = styled.div`
   width: 100%;
@@ -109,7 +109,8 @@ export const DivContainerVideoCarouselSC = styled.div`
   //justify-content: center;
   margin: 0 auto;
 `;
-export const DivDot1 = styled.div`
+
+/* export const DivDot1 = styled.div`
   width: 8px;
   height: 8px;
   background: #e3e3e3;
@@ -218,5 +219,5 @@ export const DiBoxBoxDot = styled.div`
   height: 33px;
   display: grid;
   justify-items: center;
-
 `;
+ */

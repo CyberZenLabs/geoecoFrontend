@@ -9,25 +9,25 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import pages
 
-
 import MainPage from './pages/MainPage';
-import Home from "./pages/Home";
-import PersonalData from "./pages/PersonalData";
-import StoreNewProduct from "./pages/StoreNewProduct";
-import StoreNoAuth from "./pages/StoreNoAuth";
-import NavBar from "./components/NavBar";
-import  Cart  from "./pages/Cart";
-import Mooo from "./pages/AdminLogin";
-import ProductDetail from "./pages/ProductDetail";
-import AdminDashboard from "./pages/AdminDashboard";
-import Registration from "./pages/Registration";
-import SignIn from "./pages/SignIn";
-import StoreFront from "./pages/StoreFront";
+import Home from './pages/Home';
+import PersonalData from './pages/PersonalData';
+import StoreNewProduct from './pages/StoreNewProduct';
+import StoreNoAuth from './pages/StoreNoAuth';
+import NavBar from './components/NavBar';
+import Cart from './pages/Cart';
+import Mooo from './pages/AdminLogin';
+import ProductDetail from './pages/ProductDetail';
+import AdminDashboard from './pages/AdminDashboard';
+import Registration from './pages/Registration';
+import SignIn from './pages/SignIn';
+import StoreFront from './pages/StoreFront';
 
 import VendorProfile from './pages/VendorProfile';
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
 import ModalSendEmail from './components/ModalSendEmail';
+import PurchasesActive from './pages/PurchasesActive';
 //components
 // import AdminForm from "./pages/AdminForm";
 import { ToastContainer } from 'react-toastify';
@@ -51,61 +51,62 @@ import Modalstore from './components/ModalRegStore';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <>
-        <ToastContainer position="top-left" autoClose={2000} />
-        <React.StrictMode>
-            <AppProvider>
-                <AuthProvider>
-                    <BrowserRouter>
-                        {/* Same as */}
-                        <Modalstore></Modalstore>
-                        <ModalSendEmail />
-                        <EcoModal></EcoModal>
-                        <PassModal></PassModal>
-                        <MailModal></MailModal>
+  <>
+    <ToastContainer position="top-left" autoClose={2000} />
+    <React.StrictMode>
+      <AppProvider>
+        <AuthProvider>
+          <BrowserRouter>
+            {/* Same as */}
+            <Modalstore></Modalstore>
+            <ModalSendEmail />
+            <EcoModal></EcoModal>
+            <PassModal></PassModal>
+            <MailModal></MailModal>
 
-                        <div id="overlay-nav"></div>
-                        <NavBar />
+            <div id="overlay-nav"></div>
+            <NavBar />
 
-                        <Catalog />
-                        <Routes>
-                            <Route index element={<MainPage />} />
-                            <Route path="home" element={<Home />} />
-                            <Route path="personaldata" element={<PersonalData />} />
-                            <Route path="storenewproduct" element={<StoreNewProduct />} />
+            <Catalog />
+            <Routes>
+              <Route index element={<MainPage />} />
+              <Route path="home" element={<Home />} />
+              <Route path="personaldata" element={<PersonalData />} />
+              <Route path="storenewproduct" element={<StoreNewProduct />} />
 
-                            <Route path="storenoauth" element={<StoreNoAuth />} />
-                            <Route path="addnewproduct" element={<AddNewProduct />} />
-                            <Route path="about-us" element={<AboutUs />} />
+              <Route path="storenoauth" element={<StoreNoAuth />} />
+              <Route path="addnewproduct" element={<AddNewProduct />} />
+              <Route path="purchasesactive" element={<PurchasesActive />} />
+              <Route path="about-us" element={<AboutUs />} />
 
-                            <Route path="vendorprofile" element={<VendorProfile />} />
+              <Route path="vendorprofile" element={<VendorProfile />} />
 
-                            <Route path="storenoauth" element={<StoreNoAuth />} />
-                            <Route path="terms" element={<Terms />} />
-                            <Route path="privacy" element={<Privacy />} />
+              <Route path="storenoauth" element={<StoreNoAuth />} />
+              <Route path="terms" element={<Terms />} />
+              <Route path="privacy" element={<Privacy />} />
 
-                            <Route path="admin-dashboard" element={<AdminDashboard />} />
-                            <Route path="store/:id" element={<StoreFront />} />
-                            <Route path="reviews" element={<Reviews />} />
-                            <Route path="cart" element={<Cart />} />
-                            <Route path="sellersettings" element={<SellerSettings />} />
-                            {/*<Route*/}
-                            {/*  path="admin-dashboard/admin-form"*/}
-                            {/*  element={<AdminForm />}*/}
-                            {/*/>*/}
-                            <Route path="registration" element={<Registration />} />
-                            <Route path="map-binding" element={<MapBiding />} />
-                            <Route path="signin" element={<SignIn />} />
-                            <Route path="admin-portal" element={<Mooo />} />
-                            <Route path="product/:id" element={<ProductDetail />} />
-                            <Route path="*" element={<Page_404 />} />
-                            {/* <Route path="reviewform" element={<ReviewForm />} /> */}
-                        </Routes>
+              <Route path="admin-dashboard" element={<AdminDashboard />} />
+              <Route path="store/:id" element={<StoreFront />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="sellersettings" element={<SellerSettings />} />
+              {/*<Route*/}
+              {/*  path="admin-dashboard/admin-form"*/}
+              {/*  element={<AdminForm />}*/}
+              {/*/>*/}
+              <Route path="registration" element={<Registration />} />
+              <Route path="map-binding" element={<MapBiding />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="admin-portal" element={<Mooo />} />
+              <Route path="product/:id" element={<ProductDetail />} />
+              <Route path="*" element={<Page_404 />} />
+              {/* <Route path="reviewform" element={<ReviewForm />} /> */}
+            </Routes>
 
-                        <Footer />
-                    </BrowserRouter>
-                </AuthProvider>
-            </AppProvider>
-        </React.StrictMode>
-    </>,
+            <Footer />
+          </BrowserRouter>
+        </AuthProvider>
+      </AppProvider>
+    </React.StrictMode>
+  </>,
 );

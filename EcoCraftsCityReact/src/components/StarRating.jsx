@@ -24,7 +24,7 @@ const StarRating = ({ fixed, product, value, size }) => {
 
         return (
           <label key={index}>
-            <StarRadio
+            <StarRadio 
               type="radio"
               name="rating"
               value={ratingValue}

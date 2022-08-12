@@ -145,13 +145,17 @@ export const SpanTextTitleSC = styled.span`
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
-  line-height: 37px;
   color: #252525;
   display: flex;
   justify-content: space-between;
   padding: 18px;
   padding-bottom:0;
-
+  @media (max-width: 720px) {
+    font-size: 25px;
+  }
+  @media (max-width: 480px) {
+    font-size: 20px;
+    }
 `;
 export const SpanTextTitleAdaptiveSC = styled.div`
 
@@ -161,15 +165,20 @@ export const SpanTextTitleAdaptiveSC = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
-
   line-height: 37px;
   color: #252525;
   width: 100%;
   padding-bottom:0;
   @media (max-width: 1240px) {
-    display:none;
+    text-align:center;
   }
 
+  @media (max-width: 720px) {
+    font-size: 25px;
+  }
+  @media (max-width: 480px) {
+    font-size: 20px;
+    }
 `;
 export const SpanTextTitleCarouselSC = styled.span`
   border-radius: 20px 20px 0px 0px;
@@ -229,6 +238,12 @@ export const LiInfoSC = styled.li`
   margin-bottom: 14px;
   font-size: 20px;
   display: flex;
+  @media (max-width: 720px) {
+    font-size: 16px;
+    }
+    @media (max-width: 480px) {
+    font-size: 12px;
+    }
 `;
 export const ButtonAddProductSC = styled.button`
   font-family: 'Montserrat';
@@ -256,58 +271,52 @@ export const DivButtonChangrInformSC = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 3px 12px;
+  padding: 15px 20px;
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
-`;
-export const DivButtonChangrInformBottomSC = styled.div`
-@media (min-width: 1000px) {
+  @media (max-width: 990px) {
   display:none;
   
     }
+`;
+export const DivButtonChangrInformBottomSC = styled.div`
+@media (min-width: 991px) {
+  display:none;
+    }
     
-        height: 34px;
 display:flex;
 background: #85CB33;
-border-radius: 20px;
+border-radius: 10px;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 2px 10px;
+padding: 10px 10px;
 color: #FFFFFF;
 font-size:16px;
+@media (max-width: 480px) {
+  font-size:12px;
 
+    }
 `;
 export const DivInfoVendorBoxSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-bottom: 24px;
-  width:100%;
   transition: width .2s 0s;
+  max-width: 1045px;
+  display: grid;
 
-  @media (max-width: 1440px) {
-    width:90%;
-  }
-  @media (max-width: 1340px) {
-    width:80%;
-  }
 `;
 export const DivInfoVendorBoxAdaptiveSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-bottom: 24px;
-  width:100%;
-
+  max-width: 1045px;
   transition: width .2s 0s;
   padding: 18px;
-  @media (max-width: 1440px) {
-    width:90%;
-  }
-  @media (max-width: 1340px) {
-    width:80%;
-  }
+  display: grid;
 `;
 export const DivBorderBox = styled.div`
   @media (max-width: 480px) {

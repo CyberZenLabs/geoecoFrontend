@@ -261,8 +261,8 @@ const VendorProfile = () => {
                 <LiInfoSC>Магазин: е-mail</LiInfoSC>
                 <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
                
-                 </OlifnoSC>
                  <DivButtonChangrInformBottomSC>Изменить информацию</DivButtonChangrInformBottomSC>
+                 </OlifnoSC>
 
             </DivInfoVendorBoxSC>
 
@@ -271,18 +271,6 @@ const VendorProfile = () => {
 
 
            <VenderCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-
            </VenderCarousel>
              </DivInfoVendorBoxAdaptiveSC>
             </DivAddProductBox>
@@ -529,3 +517,4 @@ const VendorProfile = () => {
   );
 };
 export default VendorProfile;
+

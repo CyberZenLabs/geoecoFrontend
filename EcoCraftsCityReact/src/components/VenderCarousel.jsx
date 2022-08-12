@@ -1,57 +1,51 @@
 import React, { useState, useEffect, Children } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { cloneElement } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import ShowItemCarousel from '../components/ShowItemCarousel';
+
 import {
   DivButtonWrapSC,
   DivCarouselAllItemsSC,
   DivCarouselMainSC,
   DivCarouselWindowSC,
-  SpanTextTitleAdaptiveeSC
+  SpanTextTitleAdaptiveeSC,
+  
+
 } from "../styled-components-css/styles.vendor-carousel";
 
-const VenderCarousel = ({ children }) => {
-  const [items, setItems] = useState([]);
-  const [carouselNumber, setCarouselNumber] = useState(0);
-  useEffect(() => {
-    setItems(
-      Children.map(children, (child) => {
-        return cloneElement(child, {
-          style: {
-            height: "100%",
-            minWidth: "360px",
-            maxWidth: "1322px",
-          },
-        });
-      })
-    );
-  }, []);
+const VenderCarousel = ({props}) => {
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1920 },
+      items: 2
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 720 },
+      items: 2
+    },
+    tablet: {
+      breakpoint: { max: 720, min: 360 },
+      items: 1
+    },
+  };
+  var settings = {
+    
+  }
   return (
     <>
-      <DivCarouselMainSC>
-        <DivCarouselWindowSC>
-          <DivCarouselAllItemsSC carouselNumber={carouselNumber}>
-            {items}
-          </DivCarouselAllItemsSC>
-          <DivButtonWrapSC>
-            {carouselNumber != 0 ? (
-              <FiChevronLeft
-                onClick={() => setCarouselNumber(carouselNumber - 1)}
-              />
-            ) : (
-              <div></div>
-            )}      <SpanTextTitleAdaptiveeSC>Отзывы</SpanTextTitleAdaptiveeSC>
+    
+      <Carousel 
+      responsive={responsive}>
 
-             {carouselNumber != items.length-2 ? (
-               <FiChevronRight
-               onClick={() => setCarouselNumber(carouselNumber + 1)}
-             />
-            ) : (
-              <div></div>
-            )}
-          </DivButtonWrapSC>
-        </DivCarouselWindowSC>
-      </DivCarouselMainSC>
+  <ShowItemCarousel></ShowItemCarousel>
+  <ShowItemCarousel></ShowItemCarousel>
+  <ShowItemCarousel></ShowItemCarousel>
+  <ShowItemCarousel></ShowItemCarousel>
+</Carousel>
     </>
   );
 };

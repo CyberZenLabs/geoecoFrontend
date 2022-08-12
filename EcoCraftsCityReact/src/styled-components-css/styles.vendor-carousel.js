@@ -9,34 +9,53 @@ export const DivCarouselMainSC = styled.div`
     margin-bottom: 20px;
 
   }
-
+`;
+export const CustomRightArrow = styled.div`
+  background:#000;
+  width:10px;
+  height: 10px;
+  border-radius: 10px;
 `;
 export const SpanTextTitleAdaptiveeSC = styled.div`
 display:none;
 @media (max-width:1240px) {
+  align-self: center;
   display: block;
-  border-radius: 20px 20px 0px 0px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
-  line-height: 37px;
   color: #252525;
   width: 100%;
   padding-bottom:0;
-  transition: text-align .4s 0s;
+  transition: text-align .2s 0s;
   text-align: center;
+  @media (max-width:1140px) {
+  display: block;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 37px;
+  color: #252525;
+  width: 100%;
+  transition: text-align .2s 0s;
+  text-align: center;
+}
 }
 
 `;
 export const DivCarouselWindowSC = styled.div`
-  max-width: 955px;
+  max-width: 950px;
   display: grid;
   justify-content: left;
   align-items: center;
+  align-content: center;
   flex-direction: row;
   overflow: hidden;
   margin: 0px 20px;
+  @media (max-width:1340px) {
+  }
   @media (max-width:1240px) {
     transition: margin .2s 0s;
 
@@ -59,14 +78,25 @@ export const DivCarouselAllItemsSC = styled.div`
 
   transition-timing-function: ease-in-out;
   @media (max-width:1440px) {
-    transform: translateX(${(props) => props.carouselNumber * -424}px);
+    transform: translateX(${(props) => props.carouselNumber * -426}px);
   }
   @media (max-width:1340px) {
     column-gap: 20px;
-    transform: translateX(${(props) => props.carouselNumber * -374}px);
+    transform: translateX(${(props) => props.carouselNumber * -366}px);
+    margin-bottom: 10px;
+    margin-top: 10px;
 
   }
-  
+  @media (max-width:1240px) {
+    column-gap: 10px;
+    transform: translateX(${(props) => props.carouselNumber * -338}px);
+
+  }
+  @media (max-width:1140px) {
+    column-gap: 5px;
+    transform: translateX(${(props) => props.carouselNumber * -273}px);
+
+  }
 `;
 export const DivButtonWrapSC = styled.div`
   position: absolute;
@@ -75,20 +105,26 @@ export const DivButtonWrapSC = styled.div`
   justify-content: space-between;
   font-size: 44px;
   min-width: 1025px;
-  margin-left: -35px;
+  margin-left: -39px;
   transition: min-width .1s 0s;
 
 @media (max-width:1440px) {
-    min-width: 930px;
+    min-width: 925px;
   }
   @media (max-width:1340px) {
-    min-width: 820px;
+    min-width: 790px;
   }
   @media (max-width:1240px) {
     min-width:200px;
     margin-left: 250px;
+    align-self: self-start;
+
 
     justify-items: center;
-    align-self: self-start;
+  }
+  @media (max-width:1140px) {
+    min-width:100px;
+    margin-left: 200px;
+
   }
 `;

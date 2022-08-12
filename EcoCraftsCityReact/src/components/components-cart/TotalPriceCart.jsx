@@ -44,9 +44,6 @@ const TotalPriceCart = (props) => {
       <DivBoxTotalPriceSC>
         <DivTitleBoxSC padding={false}>
           <H2TitleProductList size={26}>Оформление покупки</H2TitleProductList>
-          {/* <CustomTextBoxForCartSC weight={400} color={'#252525'}>
-            Адрес магазина
-          </CustomTextBoxForCartSC> */}
         </DivTitleBoxSC>
         <DivDeliveryInfoSC>
           <DivColumnsDeliverySC>
@@ -54,9 +51,6 @@ const TotalPriceCart = (props) => {
               Способ доставки:
             </CustomTextBoxForCartSC>
             <DropDownSelect />
-            {/* <CustomTextBoxForCartSC weight={500} size={16} color={'#252525'}>
-              
-            </CustomTextBoxForCartSC> */}
           </DivColumnsDeliverySC>
           <DivColumnsDeliverySC>
             <CustomTextBoxForCartSC weight={600} size={18} color={'#252525'}>

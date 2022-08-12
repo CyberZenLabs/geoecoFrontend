@@ -30,7 +30,7 @@ export const ButtonCarouselSC = styled.button`
 `;
 
 export const DivPageButtonSC = styled.div`
-position: absolute;
+//position: absolute;
   display: grid;
   align-items: center;
   justify-content: center;

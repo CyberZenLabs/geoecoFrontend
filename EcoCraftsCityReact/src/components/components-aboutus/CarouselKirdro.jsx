@@ -99,7 +99,6 @@ const CarouselKirdro = (props) => {
     slidesToScroll: 1,
     centerMode: true,
     // fade: true,
-    customPaging: (i) => <ButtonCarouselSC>{i + 1}</ButtonCarouselSC>,
     responsive: [
       {
         breakpoint: 1024,

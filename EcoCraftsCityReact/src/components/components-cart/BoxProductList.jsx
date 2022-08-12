@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  CustomTextBoxForCartSC,
   CustomTextBoxSC,
   DivBoxCheckSC,
   DivBoxListSC,
@@ -10,8 +11,10 @@ import {
   DividerSC,
   DivImageSC,
   DivItemListSC,
+  DivPaySC,
   DivPriceSC,
   DivProductItemsSC,
+  DivProductsBoxSC,
   DivTitleBoxSC,
   H2TitleProductList,
   SpanTitleSC,
@@ -33,10 +36,29 @@ const BoxProductList = (props) => {
         <DivProductItemsSC>
           <DivTitleBoxSC padding={false}>
             <H2TitleProductList>Название магазина</H2TitleProductList>
-            <CustomTextBoxSC weight={300} color={'#252525'}>Адрес магазина</CustomTextBoxSC>
+            <CustomTextBoxForCartSC weight={400} color={'#252525'}>
+              Адрес магазина
+            </CustomTextBoxForCartSC>
           </DivTitleBoxSC>
+          <DivProductsBoxSC>
+            {arrayProd.map((item, i) => {
+              return (
+                <ItemProductCart
+                  isSelected={item.isSelected}
+                  title={item.name}
+                  discr={'описание товара'}
+                  src={
+                    'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'
+                  }
+                  price={5000}
+                ></ItemProductCart>
+              );
+            })}
+          </DivProductsBoxSC>
         </DivProductItemsSC>
-        <DivDeliveryInfoSC></DivDeliveryInfoSC>
+        <DivPaySC>
+          <TotalPriceCart/>
+        </DivPaySC>
         {/* <DivBoxRowProductSC>
           {widthWindow > 660 ? (
             <>

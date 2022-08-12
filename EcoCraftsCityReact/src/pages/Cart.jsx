@@ -75,6 +75,8 @@ const Cart = () => {
         </DivTitleBoxSC>
         <DivCartBoxSC>
           <BoxProductList onClickAll={onClickAll} arrayProd={arrayProd} widthWindow={widthWindow}></BoxProductList>
+          <BoxProductList onClickAll={onClickAll} arrayProd={arrayProd} widthWindow={widthWindow}></BoxProductList>
+          <BoxProductList onClickAll={onClickAll} arrayProd={arrayProd} widthWindow={widthWindow}></BoxProductList>
         </DivCartBoxSC>
       </DivCartWrapSC>
     </>

@@ -5,6 +5,7 @@ import RectangleGrayPrice from '../img/RectangleGrayPrice.svg';
 import RectangleGrayDescription from '../img/RectangleGrayDescription.svg';
 import RectangleGrayDelivery from '../img/RectangleGrayDelivery.svg';
 import Dot from '../img/Dot.svg';
+import { Link } from 'react-router-dom';
 
 export const DivBoxAddNewProductSC = styled.div`
   display: grid;
@@ -949,8 +950,7 @@ export const DivBoxButtonPlusSC = styled.div`
 `;
 
 export const ButtonPlusSC = styled.button`
-  max-width: 31px;
-  width: 100%;
+  width: 31px;
   height: 31px;
   background: rgba(217, 217, 217, 0.28);
   border: 1px solid rgba(0, 0, 0, 0.33);
@@ -1013,7 +1013,7 @@ export const DivTextRulesSC = styled.div`
   color: #252525;
 `;
 
-export const PlaceButtonSC = styled.div`
+export const PlaceButtonSC = styled(Link)`
   /* Кнопка (первичная) */
   /* Auto layout */
   display: flex;

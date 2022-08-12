@@ -132,7 +132,11 @@ const AddNewProduct = () => {
   };
 
   const decrement = () => {
-    setCounter(counter - 1);
+    if (counter <= 0) {
+      return;
+    } else {
+      setCounter(counter - 1);
+    }
   };
   const [photoUrls, setPhotoUrls] = useState({
     storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
@@ -514,7 +518,7 @@ const AddNewProduct = () => {
                       В черновик
                     </ButtonCustomWhiteSC>
 
-                    <PlaceButtonSC width={'100%'} padding={'18px 32px'} type="submit">
+                    <PlaceButtonSC to={'/store/:id'} width={'100%'} padding={'18px 32px'} type="submit">
                       Разместить
                     </PlaceButtonSC>
                   </DivButtonsSC>

@@ -97,6 +97,8 @@ import {
   InputVideoSC,
   PlaceButtonSC,
   DivNewProductWrapSC,
+
+  InputImageSC
 } from '../styled-components-css/styles.AddNewProduct';
 import {
   ButtonImgSC,
@@ -303,6 +305,13 @@ const AddNewProduct = () => {
               onChange={() => fileChangeHandler('storeGalleryRef')}
             />
           </DivInputsDisplayNoneSC>
+
+          <InputImageSC
+            ref={storeGalleryRef}
+            type="file"
+            name="storeGallery"
+            onChange={() => fileChangeHandler('storeGalleryRef')}
+          />
           <EcoModal
             open={modalOpen}
             title="Загрузка фотографии"

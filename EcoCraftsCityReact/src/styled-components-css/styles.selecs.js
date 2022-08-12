@@ -9,6 +9,9 @@ export const Main = styled("div")`
   @media (max-width: 1000px) {
     width: 430px;
   }
+  @media (max-width:480px) {
+  width: 340px;
+}
 `;
 
 export const DropDownContainer = styled("div")`
@@ -33,6 +36,9 @@ justify-content: space-between;
 border-radius: 20px;
 @media (max-width: 1000px) {
   width: 430px;
+}
+@media (max-width:480px) {
+  width: 340px;
 }
 `;
 
@@ -59,7 +65,9 @@ border-radius: 20px;
   @media (max-width: 1000px) {
     width: 430px;
   }
-
+  @media (max-width:480px) {
+  width: 340px;
+}
 `;
 
 export const ListItem = styled("li")`

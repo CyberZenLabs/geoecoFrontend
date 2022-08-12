@@ -97,6 +97,7 @@ import VenderCarousel from '../components/VenderCarousel';
 import AppContext from '../context/AppContext';
 import VendorNavMenu from '../components/VendorNavMenu';
 import { BreadCrumbs } from '../components/BreadCrumbs';
+import hostName from "../tools/HostName";
 
 const VendorProfile = () => {
   const [indexSelectedButton, getIndexButton] = useState(0);
@@ -104,8 +105,8 @@ const VendorProfile = () => {
 
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [photoUrls, setPhotoUrls] = useState({
-    storePhotoUrl: 'http://localhost:5767/stores/defaultStore.svg',
-    storeBannerUrl: 'http://localhost:5767/stores/defaultStore.svg',
+    storePhotoUrl: `${hostName.getHost()}/stores/defaultStore.svg`,
+    storeBannerUrl: `${hostName.getHost()}/stores/defaultStore.svg`,
     storeGalleryUrls: [],
   });
   const [activePhotoUrl, setActivePhotoUrl] = useState('');
@@ -130,7 +131,7 @@ const VendorProfile = () => {
     // });
 
     axios
-      .get(`http://localhost:5767/api/v1/store/${testId}`)
+      .get(`${hostName.getHost()}/api/v1/store/${testId}`)
       .then((res) => {
         setApiStoreData(res);
       })
@@ -154,20 +155,21 @@ const VendorProfile = () => {
   useEffect(() => {
     if (apiStoreData) {
       let photoUrl;
+
       let timesrun = 0;
       Object.entries(apiStoreData.data.data.data).forEach((field) => {
         if (field[0] === 'storePhoto') {
-          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          photoUrl = `${hostName.getHost()}/stores/${field[1]}`;
           setPhotoUrls({ ...photoUrls, storePhotoUrl: photoUrl });
         } else if (field[0] === 'storeBanner') {
-          photoUrl = `http://localhost:5767/stores/${field[1]}`;
+          photoUrl = `${hostName.getHost()}/stores/${field[1]}`;
           setPhotoUrls({ ...photoUrls, storeBannerUrl: photoUrl });
         } else if (field[0] === 'storeAboutPhotos') {
           field[1].map((url) => {
             timesrun += 1;
             let photoUrlArray = [];
 
-            photoUrl = `http://localhost:5767/stores/${url}`;
+            photoUrl = `${hostName.getHost()}/stores/${url}`;
             photoUrlArray.push(url);
 
             console.log(photoUrlArray);
@@ -333,7 +335,7 @@ const VendorProfile = () => {
               }
 
               axios
-                .patch(`http://localhost:5767/api/v1/store/${testId}`, formData, {
+                .patch(`${hostName.getHost()}/api/v1/store/${testId}`, formData, {
                   // You need to use `getHeaders()` in Node.js because Axios doesn't
                   // automatically set the multipart form boundary in Node.
                   headers: {

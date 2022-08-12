@@ -81,7 +81,7 @@ const Footer = () => {
         </DivBottomSC>
       </DivBoxFooterSC>
       <BottomMenu />
-      <DivButtonAdaptiveSC>
+      {/*   <DivButtonAdaptiveSC>
       <ScrollUpButton
         StopPosition={0}
         ShowAtPosition={150}
@@ -156,7 +156,7 @@ const Footer = () => {
         }}>
         <HiOutlineArrowUp color="#85CB33"/>
       </ScrollUpButton>
-      </DivButtonAdaptivePhonesSC>
+      </DivButtonAdaptivePhonesSC> */}
     </div>
   );
 };

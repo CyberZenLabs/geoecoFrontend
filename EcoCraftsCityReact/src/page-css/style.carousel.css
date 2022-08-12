@@ -1,0 +1,19 @@
+.image-item {
+    width: 750px !important;
+}
+.slick-prev {
+    color: #7cbd2f !important;
+
+}
+
+.slick-prev:before {
+    content: none !important;
+}
+
+.slick-next:before {
+    content: none !important;
+}
+
+.slick-arrow  {
+    z-index: 10000;
+}

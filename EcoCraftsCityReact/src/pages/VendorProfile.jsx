@@ -9,50 +9,28 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import ShowItemCarousel from '../components/ShowItemCarousel';
 import { toast } from 'react-toastify';
-import VendorInfoMenu from '../components/VendorInfoMenu';
 import {
-  DivOptionsPanelSC,
-  DivStarsPanelSC,
-  DivStoreInfoDataSC,
-  DivStoreInfoImageSC,
-  DivStoreInfoSC,
-  DivStoreInfoStuffSC,
   DivStoreLeftPanelSC,
-  DivStoreOptionsLeftPanelSC,
-  DivStoreOptionsLinkSC,
-  DivStoreOptionsLinkStoreSC,
   DivStoreOptionsRightPanelSC,
   DivStoreOptionsSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-  HrLinkSC,
-  ProductsNumSC,
-  SaveButtonPanelSC,
-  StoreInfoHeaderSC,
-  StoreInfoSubHeaderSC,
-  StoreSalesAndAccountLinkSC,
-  StoreSalesAndAccountLinkSearchSC,
 } from '../styled-components-css/styles.store';
 import {
   SpanTextTitleSC,
   DivAddProductBox,
   DivInfoVendorBoxSC,
-  DivButtonChangrInformSC,
-  UlifnoSC,
   DivStoreInfoStuffProfileSC,
   DivItemsOptionsSC,
   DivInnerContentSC,
   DivTwoSidesSC,
   H1DefinSC,
-  NameNCityFieldSC,
-  BirthFieldSC,
   ButtonBannerSC,
   ButtonImgSC,
   DivBGImageSC,
   DivAboutYourselfSC,
-  InputAboutYourself,
   DivBoxColumnAboutYourselfSC,
   DivTextSC,
   DivBoxInputAboutYourself,
@@ -64,31 +42,25 @@ import {
   DivBoxText3,
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
-  DivBoxFoto2SC,
-  DivBoxFoto3SC,
-  DivBoxFoto4SC,
-  DivFoto1SC,
-  DivFoto2SC,
-  DivFoto3SC,
-  DivFoto4SC,
   DivInnerPhotoInputSC,
   H1SC,
   IconImgImgSC,
   DivButtonBottomSaveVendSC,
   SaveButtonPanelVendSC,
-  DivBoxNewProductsBigST,
-  DivBoxItemsSC,
-  MenuProductST,
   GreenST,
-  DivBoxNewProductsST,
   OverlayProfileImgSC,
   OverlayProfileImageTextSC,
   OverlayBannerImageTextSC,
   OverlayBannerImgSC,
   DivBoxShowPhotoSC,
   DeleteIconSC,
-  DivCarouselPhotosSC,
   DivInputsDisplayNoneSC,
+  OlifnoSC,
+  LiInfoSC,
+  DivButtonChangrInformSC,
+  DivButtonChangrInformBottomSC,
+  SpanTextTitleAdaptiveSC,
+  DivInfoVendorBoxAdaptiveSC
 } from '../styled-components-css/styles.VendorProfile';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
@@ -263,39 +235,38 @@ const VendorProfile = () => {
   const listContent = [
     {
       page: (
-        <DivBoxNewProductsBigST>
       
-        <DivBoxNewProductsST>
+   
            
       
            
             <DivAddProductBox>
-            
+            <DivInfoVendorBoxSC>
+
             <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
-           <VendorInfoMenu></VendorInfoMenu>
-             <DivInfoVendorBoxSC>
-             
+                 <OlifnoSC>
+                <LiInfoSC>Адрес</LiInfoSC>
+                <LiInfoSC>Время существования магазина</LiInfoSC>
+                <LiInfoSC>Магазин: е-mail</LiInfoSC>
+                <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+               
+                 </OlifnoSC>
+                 <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+
+            </DivInfoVendorBoxSC>
+
+             <DivInfoVendorBoxAdaptiveSC>
+            <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
+
+
            <VenderCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
-           <ShowItemCarousel></ShowItemCarousel>
+
            </VenderCarousel>
-             </DivInfoVendorBoxSC>
+             </DivInfoVendorBoxAdaptiveSC>
             </DivAddProductBox>
             
 
-    </DivBoxNewProductsST>
 
-    </DivBoxNewProductsBigST>
       ),
     },
     {
@@ -520,3 +491,4 @@ const VendorProfile = () => {
   );
 };
 export default VendorProfile;
+

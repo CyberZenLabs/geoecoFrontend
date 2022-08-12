@@ -28,6 +28,9 @@ border: 2px solid red;
   align-items: end;
   max-width: 1420px;
 `;
+export const InputImageSC = styled.input`
+  display: none;
+`;
 
 export const DivTextNewProductSC = styled.div`
   max-width: 211px;

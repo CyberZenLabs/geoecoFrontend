@@ -18,25 +18,25 @@ export const DivWrapLinkSC = styled.div`
 `;
 export const DivStoreWrapSC = styled.div`
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 1fr 3fr;
   width: 90vw;
   max-width: 1420px;
   margin: auto;
   color: black;
-  padding-top: 30px;
-  grid-gap: 20px;
+  padding-top: 80px;
+  grid-gap: 24px;
   padding-bottom: 200px;
   // border: 2px solid black;
   padding-left: 20px;
   padding-right: 20px;
-  min-width: 600px;
+  min-width: 360px;
   @media (max-width: 990px) {
     grid-template-columns: 100%;
   }
 `;
 export const DivStoreLeftPanelSC = styled.div`
+width:100%;
   //  border: 2px solid green;
-  margin-top: 20px;
   //max-width: 350px;
   @media (max-width: 990px) {
     display: none;

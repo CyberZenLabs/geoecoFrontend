@@ -163,7 +163,7 @@ const ResponsiveAppBar = () => {
             </DivInputBoxCS>
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
-        {loggedIn ? (
+        {cookies['token'] !== undefined ? (
           
           <div class={profileActive ? 'navigation active' : 'navigation'}>
             <div class={profileActive ? 'user-box active' : 'user-box'}>
@@ -236,7 +236,7 @@ const ResponsiveAppBar = () => {
 
                 <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
               </LinkIconAdaptiveSC>
-            {!loggedIn ? (
+            {cookies['token'] === undefined ? (
               <LinkIconSC to="/signin">
                 <DivBoxIconEndSC>
                   <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />

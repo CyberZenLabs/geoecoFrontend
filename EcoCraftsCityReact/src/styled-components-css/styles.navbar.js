@@ -30,7 +30,7 @@ export const LinkProfileSC = styled(Link)`
 export const DivHeaderSC = styled.div`
   max-width: 1420px;
   width: inherit;
-  height: 56px;
+  //height: 56px;
   padding: 0 10px;
   align-items: center;
   box-sizing: border-box;

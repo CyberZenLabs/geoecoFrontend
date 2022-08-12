@@ -261,8 +261,8 @@ const VendorProfile = () => {
                 <LiInfoSC>Магазин: е-mail</LiInfoSC>
                 <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
                
-                 <DivButtonChangrInformBottomSC>Изменить информацию</DivButtonChangrInformBottomSC>
                  </OlifnoSC>
+                 <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
 
             </DivInfoVendorBoxSC>
 
@@ -271,6 +271,18 @@ const VendorProfile = () => {
 
 
            <VenderCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+           <ShowItemCarousel></ShowItemCarousel>
+
            </VenderCarousel>
              </DivInfoVendorBoxAdaptiveSC>
             </DivAddProductBox>

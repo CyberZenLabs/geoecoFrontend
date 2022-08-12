@@ -284,7 +284,7 @@ export const DivButtonChangrInformBottomSC = styled.div`
 @media (min-width: 991px) {
   display:none;
     }
-    
+cursor: pointer;
 display:flex;
 background: #85CB33;
 border-radius: 10px;

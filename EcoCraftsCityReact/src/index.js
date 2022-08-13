@@ -28,6 +28,7 @@ import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
 import ModalSendEmail from './components/ModalSendEmail';
 import PurchasesActive from './pages/PurchasesActive';
+import Sales from './pages/Sales';
 //components
 // import AdminForm from "./pages/AdminForm";
 import { ToastContainer } from 'react-toastify';
@@ -77,6 +78,7 @@ root.render(
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="addnewproduct" element={<AddNewProduct />} />
               <Route path="purchasesactive" element={<PurchasesActive />} />
+              <Route path="sales" element={<Sales />} />
               <Route path="about-us" element={<AboutUs />} />
 
               <Route path="vendorprofile" element={<VendorProfile />} />

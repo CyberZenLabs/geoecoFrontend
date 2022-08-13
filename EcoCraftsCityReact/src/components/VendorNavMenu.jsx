@@ -65,7 +65,7 @@ const VendorNavMenu = ({ page }) => {
           Покупки
         </DivStoreOptionsLinkSC>
         <br />
-        <DivStoreOptionsLinkSC to="#" isActive={indexSelectedButton === 5}>
+        <DivStoreOptionsLinkSC isActive={indexSelectedButton === 5} to="/sales">
           Продажи
         </DivStoreOptionsLinkSC>
         <br />

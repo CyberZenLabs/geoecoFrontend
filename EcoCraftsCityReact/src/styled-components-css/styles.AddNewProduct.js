@@ -233,14 +233,13 @@ export const InputVideoSC = styled.textarea`
   height: 140px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 10px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-
+  resize: none;
   color: rgba(0, 0, 0, 0.33);
 `;
 
@@ -293,13 +292,15 @@ export const InputProductName = styled.textarea`
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
   padding-left: 10px;
-  padding-top: 8px;
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-bottom: 6px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-
+  resize: none;
   color: rgba(0, 0, 0, 0.33);
 `;
 
@@ -419,15 +420,21 @@ export const DivBoxInputPrice = styled.div`
   height: 41px;
 `;
 
-export const InputPrice = styled.textarea`
+export const InputPrice = styled.input`
   max-width: 127px;
   width: 100%;
   height: 41px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
   box-sizing: border-box;
-  padding-left: 10px;
-  padding-top: 8px;
+  padding: 9.5px 10px 7px 10px;
+  resize: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivImgRubSC = styled.img`
@@ -502,15 +509,21 @@ export const DivBoxInputDiscount = styled.div`
   height: 41px;
 `;
 
-export const InputDiscount = styled.textarea`
+export const InputDiscount = styled.input`
   max-width: 127px;
   width: 100%;
   height: 41px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
   box-sizing: border-box;
-  padding-left: 10px;
-  padding-top: 8px;
+  padding: 9.5px 10px 7px 10px;
+  resize: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivImgRub2SC = styled.img`
@@ -617,9 +630,6 @@ export const InputDescription = styled.textarea`
   height: 113px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
-  padding-left: 10px;
-  padding-bottom: 70px;
-  padding-top: 10px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -627,6 +637,8 @@ export const InputDescription = styled.textarea`
   line-height: 24px;
 
   color: rgba(0, 0, 0, 0.33);
+  padding: 10px 10px 70px 10px;
+  resize: none;
 `;
 
 export const DivContainerCharacteristicsSC = styled.div`
@@ -666,9 +678,14 @@ export const InputCharacteristics = styled.textarea`
   height: 113px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
-  padding-left: 10px;
-  padding-bottom: 70px;
-  padding-top: 10px;
+  padding: 10px 10px 70px 10px;
+  resize: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: rgba(0, 0, 0, 0.33);
 `;
 
 export const DivContainerKeywordsSC = styled.div`
@@ -708,9 +725,8 @@ export const InputKeywords = styled.textarea`
   height: 86px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 12px;
-  padding-left: 10px;
-  padding-bottom: 45px;
-  padding-top: 10px;
+  padding: 10px 10px 45px 10px;
+  resize: none;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -1050,6 +1066,7 @@ export const DivNewProductWrapSC = styled.div`
   gap: 30px;
   width: 90vw;
   max-width: 1420px;
+  min-width: 370px;
   // margin: auto;
   color: black;
   padding-top: 30px;

@@ -9,6 +9,7 @@ export const PurchasesContainerSC = styled.div`
 
 export const DivContentPurchasesSC = styled.div`
   max-width: 1420px;
+  min-width: 370px;
   width: 100%;
   height: max-content;
   display: grid;
@@ -72,14 +73,15 @@ export const DivBGRecSmallSC = styled.div`
 export const DivBGRecBigSC = styled.div`
   width: 100%;
   max-width: 1059px;
-  height: 1187px;
+  height: fit-content;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-top: 24px;
-  padding: 20px 18px 0px 18px;
+  padding: 20px 18px 18px 18px;
   @media (max-width: 480px) {
     display: none;
   }
+  margin-bottom: 444px;
 `;
 
 export const DivBoxRowsPurchasesSC = styled.div`

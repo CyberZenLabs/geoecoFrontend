@@ -16,7 +16,7 @@
   height: 10px;
   margin-top: 30px;
   padding-bottom: 20px;
-  transition: 1s;
+  /* transition: 1s; */
     
     /* border: 2px solid green; */
 }
@@ -30,13 +30,13 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 17px;
   /* border: 2px solid green; */
   text-align: center;
   color: #85cb33;
  margin-top: 30px;
-  transition: 1s;
+  /* transition: 1s; */
     cursor: pointer;
     /* border: 2px solid green; */
 }
@@ -224,6 +224,7 @@
 }
 
 .dot {
+  
   background: #fff;
   border-radius: 50%;
   height: 10px;
@@ -235,6 +236,7 @@
 }
 .drop {
 /* pointer-events: none; */
+
   background: rgb(231, 231, 231);
   border-radius: 1.2px;
   height: 5px;
@@ -260,12 +262,15 @@ margin-top: 36px;
   transform: translateX(-50%);
   top: 40px;
   width: 225px;
+  
 }
 .listdropdown ul {
   margin: 0;
   padding: 0;
+ 
 }
 .listdropdown li {
+
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.425);
   display: flex;
@@ -282,6 +287,7 @@ margin-top: 36px;
   /* border: 2px solid green; */
 }
 .listdropdown li:hover {
+ 
   background: #f5f5f5;
 }
 .dots.active .containerdropdown .containerdropdown3{
@@ -295,6 +301,7 @@ margin-top: 36px;
   pointer-events: all;
 }
 .dots.active .listdropdown li {
+ 
   /* cursor: pointer; */
   pointer-events: all;
   opacity: 1;
@@ -337,6 +344,35 @@ margin-top: 36px;
 }
 .dots2 .active .listdropdown li:nth-child(5) {
   transition-delay: 220ms;
+}
+@media (max-width: 1250px) {
+  .dots2 {
+    font-size: 16px;
+line-height: 16px;
+margin-top: 30px;
+}
+  .dots {
+ 
+    grid-area: option;
+    text-decoration: none;
+  
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 2px;
+    color: #85cb33;
+    width: 100%;
+    cursor: pointer;
+    /* border: 2px solid green; */
+    text-align: center;
+    height: 10px;
+    margin-top: 11px;
+    padding-bottom: 20px;
+    /* transition: 1s; */
+      
+      /* border: 2px solid green; */
+  }
+  
 }
 @media (min-width: 990px) {
   .hide {
@@ -393,5 +429,12 @@ margin-top: 36px;
     width: 165px;
     /* border: 2px solid black; */
     margin-top: 18px;
+  }
+}
+@media (max-width: 470px) {
+  .dots2 {
+      font-size: 12px;
+  line-height: 12px;
+  margin-top: 32px;
   }
 }

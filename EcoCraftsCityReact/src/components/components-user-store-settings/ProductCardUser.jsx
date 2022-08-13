@@ -7,16 +7,17 @@ import {
   ProductCardName,
   ProductCardPrice,
   ProductCardStoreName,
-  StarAlign,
   DivGridPriceCartIcon,
   DivCart,
+  DivProductImage
 } from '../../styled-components-css/styles-user-store-settings/styles.product-card-user';
 
 const ProductCard = ({ product, index }) => {
   return (
     <ProductCardContainer>
-      <ProductCardImage src="/default-images/plant.jpg" />
-      
+      <DivProductImage>
+      </DivProductImage>
+
       <DivGridPriceCartIcon>
         <ProductCardPrice>{product.price}$</ProductCardPrice>
         <DivCart>
@@ -25,9 +26,9 @@ const ProductCard = ({ product, index }) => {
       </DivGridPriceCartIcon>
 
       <ProductCardName>{product.name}</ProductCardName>
-      <StarAlign>
+      
         <StarRating product={true} fixed={4} />
-      </StarAlign>
+      
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
       <ProductCardButton to={`/product/${index}`}>Подробнее</ProductCardButton>
     </ProductCardContainer>

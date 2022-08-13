@@ -75,7 +75,7 @@ import {
             </DivLinksInfoSC>
 
             <DivLinksAdaptiveSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="#">Профиль</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Профиль</LinkShopInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазин 50</LinkShopInfoSC>
               <ButtonDropDownSC>...</ButtonDropDownSC>
             </DivLinksAdaptiveSC>

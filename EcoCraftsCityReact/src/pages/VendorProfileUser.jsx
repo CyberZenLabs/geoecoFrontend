@@ -7,7 +7,7 @@ import StarRating from '../components/StarRating';
 import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-import ShowItemCarousel from '../components/ShowItemCarousel';
+import SettingsShopCatalog from '../components/components-user-store-settings/SettingsShopCatalog';
 import { toast } from 'react-toastify';
 import {
     DivStoreLeftPanelSC,
@@ -17,7 +17,7 @@ import {
     DivStoreWrapSC,
     DivWrapLinkSC,
     H1BoldTextSC,
-} from '../styled-components-css/styles.store';
+} from '../styled-components-css/styles-user-store-settings/styles.store-user';
 import {
     SpanTextTitleSC,
     DivAddProductBox,
@@ -485,7 +485,7 @@ const VendorProfile = () => {
             <BreadCrumbs/>
             <DivStoreWrapSC>
                 <DivStoreLeftPanelSC>
-                    <VendorNavMenu page={0}/>
+                    <SettingsShopCatalog page={0}/>
                 </DivStoreLeftPanelSC>
                 {listContent[indexSelectedButton].page}
             </DivStoreWrapSC>

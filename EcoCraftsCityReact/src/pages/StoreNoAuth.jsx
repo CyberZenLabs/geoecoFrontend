@@ -1,99 +1,20 @@
 import { Margin } from '@mui/icons-material';
+import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
 
 import React, { useEffect, useState } from "react";
 import useAxiosFunction from "../hooks/useAxiosFunction";
 import axios from "axios";
+import { FaArrowLeft } from "react-icons/fa";
 
 import {
-    DivLogoST,
-  DivInfoStoreST,
-  MarginST,
-  DivInfoST,
-  SecondMenuST,
-  DivStoreSetingST,
-  TextBold,
-  SpanLogoText,
-  SpanTextTitleShopSC,
-  DivBorderBox,
+
 } from "../styled-components-css/styles-user-store-settings/styles.SettingsShop";
 
 import{
-    DivBoxNewProductsST,
-    MenuProductST,
-  GreenST,
-  DivBoxNewProductsBigST,
-  SpanTextTitleSC,
-  DivAddProduct,
-  SpanTextAddProdctSC,
-  ButtonAddProductSC,
-  DivAddProductBox,
-  DivBoxItemsSC
-    
+  DivBoxNewProductsBigST
   } from "../styled-components-css/styles.StoreNewProduct";
-  import {
-    DivItemsSC,
-    DivStoreLeftPanelSC,
-    DivStoreRightPanelSC,
-    DivStoreWrapSC,
-    DivWrapLinkSC,
-    H1BoldTextSC,
-    StoreItemsNumSC,
-    DivStoreInfoStuffSC,
-    StoreViewLinkSC,
-    DivOptionsPanelSC,
-    DivOptionsPanel2SC,
-    ProductsNumSC,
-    StoreSalesAndAccountLinkSC,
-    HrLineSC,
-    DropDownOptionsSC,
-    DivItemsImageSC,
-    DivItemsInfoSC,
-    ItemTitleSC,
-    ItemTimeSC,
-    ItemInStockSC,
-    ItemPriceSC,
-    ToEditSC,
-    StoreSalesAndAccountLinkSearchSC,
-    DivItemsOptionsSC,
-    DivStoreInfoStuffButtonSC,
-    ProductCardButtonAfterSC,
-    ProductCardButtonSC,
-    BottomPanelSC,
-    BottomPanelChoiceSC,
-    BottomPanelTextSC,
-    BottomPanelTextDraftSC,
-    InputSC,
-    IoMarginCS,
-    FaMarginCS,
-    DivTwoButtonsSC,
-    LeftButtonCS,
-    RightButtonCS,
-    UilSearchSC,
-    DivIconBoxInput,
-    InputCheckbox,
-    Labelfor,
-    InputCheckboxItem,
-    DivSalePinSC,
-    SaveButtonSC,
-    StoreViewLinkDotsSC,
-    StoreItemsNumBotSC,
-    UilSearchHeadSC,
-    SaveButtonPanelSC,
-    DivButtonBottomSaveSC,
-    BottomPanel2PageSC,
-    BottomPanelSelectSC,
-    DivBottomAddItemNumSC,
-    PlusMinusButtonsCS,
-    BottomPanelChoice2SC,
-    DivItemsInfo2PageSC,
-    DivBottomAddItemNumItemSC,
-    PlusMinusButtonsItemCS,
-    BottomPanelSelectItemSC,
-    DivCountSC,
-    DivCount1SC,
-    DivItems2pageSC,
-  } from '../styled-components-css/styles-user-store-settings/styles.store-user';
-
+  import { DivWrapLinkSC } from "../styled-components-css/styles.store";
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../styled-components-css/styles.product-detail";
   import{
     ImgBannerShopSC,
     DivBoxContentSC,
@@ -106,14 +27,22 @@ import{
     DivCountPage,
     DivNextPage,
     DivButtonNext,
-    SpanTitleCatalogAdaptive
+    SpanTitleCatalogAdaptive,
+    WrapShopContainerSC
   } from "../styled-components-css/styles.StoreNoAuth";
 
   import ProductCard from "../components/components-user-store-settings/ProductCardUser";
   import SettingsShopCatalog from "../components/components-user-store-settings/SettingsShopCatalog";
-
+  const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
+  const routes = [
+    {
+      path: "/custom-props",
+      breadcrumb: CustomPropsBreadcrumb,
+      props: { someProp: "Hi" },
+    },
+  ];
 const StoreNoAuth = () =>{
-
+  const breadcrumbs = useReactRouterBreadcrumbs(routes);
   const [products, setProducts] = useState([]);
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   useEffect(() => {
@@ -141,12 +70,26 @@ const StoreNoAuth = () =>{
 
       
         <DivBoxNewProductsBigST>
-            <DivBoxItemsSC>
-            <MenuProductST> <GreenST>Назад</GreenST> <img src="/default-images/arrowGreen.svg"  /> Название магазина</MenuProductST>
-            </DivBoxItemsSC>
+            <DivWrapLinkSC>
+          <DivHistorySC>
+            <DivBackBoxSC>
+              <FaArrowLeft color={"#85CB33"} size={15} />
+              <NavLinkSC iscolor={true} to={"/"}>
+                Назад
+              </NavLinkSC>
+            </DivBackBoxSC>
+            <div>
+              {breadcrumbs.map(({ match, breadcrumb }) => (
+                <span key={match.pathname}>
+                  <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
+                </span>
+              ))}
+            </div>
+          </DivHistorySC>
+        </DivWrapLinkSC>
             
             <DivBoxContentSC>
-            <ImgBannerShopSC src="/banner-images/ShopBanner.jpg"></ImgBannerShopSC>
+            <WrapShopContainerSC/>
             
             <DivBoxCatalogShopSC>
 

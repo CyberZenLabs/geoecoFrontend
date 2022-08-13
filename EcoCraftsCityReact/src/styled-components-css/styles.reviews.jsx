@@ -21,14 +21,14 @@ export const WrapShopContainerSC = styled.div`
   @media (max-width: 440px) {
     height: 262px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-template-columns: auto;
   }
 `;
 
 export const DivRowContentSC = styled.div`
   display: grid;
-  grid-template-columns: 337px auto;
+  grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(5, max-content);
   column-gap: 24px;
   row-gap: 24px;
@@ -41,8 +41,10 @@ export const DivRowContentSC = styled.div`
   margin: auto;
   //margin-top: 50px;
   margin-bottom: 30px;
-  @media (max-width: 800px) {
-    grid-template-columns: auto;
+ 
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
   }
 `;
 
@@ -55,7 +57,7 @@ export const DivShopContainerSC = styled.div`
   border-radius: 20px;
   padding: 20px;
   grid-row-gap: 30px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-column: 1 / 3;
     padding: 20px 15px 0px 15px;
     grid-row-gap: 70px;
@@ -76,7 +78,7 @@ export const ImgShopInfoSC = styled.img`
   width: 75px;
   height: 75px;
   border-radius: 12px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     width: 120px;
     height: 120px;
     border-radius: 10px;
@@ -99,7 +101,7 @@ export const DivTitleShopInfoSC = styled.div`
 export const TitleShopInfoSC = styled.h1`
   font-size: 15px;
   font-weight: 600;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     font-size: 20px;
   }
   @media (max-width: 440px) {
@@ -130,7 +132,7 @@ export const DivLinksInfoSC = styled.div`
   //border: 2px solid green;
   height: max-content;
   //margin-top: 30px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -160,7 +162,7 @@ export const LinkShopInfoSC = styled(Link)`
   text-decoration: none;
   color: var(--color-black);
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     border-right: 2px solid rgba(37, 37, 37, 0.1);
     display: flex;
     align-items: center;
@@ -226,7 +228,7 @@ export const DivTextButtonBoxSC = styled.div`
   @media (max-width: 650px) {
     grid-column: 1 / 3;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-row-gap: 15px;
     font-size: 32px;
   }
@@ -283,7 +285,7 @@ export const DivModesBoxSC = styled.div`
   width: 100%;
   background-color: rgba(243, 243, 243, 0.5);
 
-  @media (min-width: 801px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `;

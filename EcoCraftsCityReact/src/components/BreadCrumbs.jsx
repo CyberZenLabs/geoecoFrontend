@@ -12,11 +12,11 @@ const routes = [
     props: { someProp: 'Hi' },
   },
 ];
-export const BreadCrumbs = () => {
+export const BreadCrumbs = ({margin}) => {
     const breadcrumbs = useReactRouterBreadcrumbs(routes);
     let navigate=useNavigate();
   return (
-    <DivWrapLinkSC>
+    <DivWrapLinkSC margin={margin}>
     <DivHistorySC>
       <DivBackBoxSC>
         <FaArrowLeft color={'#85CB33'} size={15} />

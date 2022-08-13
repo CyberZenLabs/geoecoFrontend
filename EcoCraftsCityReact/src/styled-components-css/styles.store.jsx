@@ -9,6 +9,7 @@ export const DivWrapLinkSC = styled.div`
   // border: 2px solid black;
   padding-left: 20px;
   padding-right: 20px;
+  ${({ margin }) => margin ? `  margin-bottom: 50px;`:null};
   width: 90vw;
   min-width: 360px;
   @media (max-width: 990px) {

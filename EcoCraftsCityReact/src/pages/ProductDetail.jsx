@@ -79,9 +79,10 @@ const ProductDetail = () => {
 
     return (
         <DivBoxProductDetailSC>
+    <BreadCrumbs margin={true}/>
             {productItem ?
                 <DivContentProductDetailSC>
-                   <BreadCrumbs />
+                   
                     <DivContentProductSC>
                         <ImageProduct
                             images={listImages}

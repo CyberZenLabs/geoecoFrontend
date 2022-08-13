@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import {
   BottomPanelSelectItemSC,
@@ -20,7 +20,7 @@ import {
   ToEditSC,
 } from '../styled-components-css/styles.store';
 
-const VendorProduct = ({ product, index, indexpage }) => {
+const VendorProduct = ({ product, index, indexpage,allchecked }) => {
   const [checked, setChecked] = useState(false);
   const check = () => {
     setChecked(!checked);
@@ -29,13 +29,20 @@ const VendorProduct = ({ product, index, indexpage }) => {
   const HandleSelectOpen = () => {
     setActive(!active);
   };
+  const [all, setAll] = useState(false);
+  useEffect(() => {
+   setAll(allchecked);
+  
+  }, [allchecked]);
 
+  
   const listContent = [
     {
       page: (
         <DivItemsSC>
           <div>
-            <InputCheckboxItem type="checkbox" name="todo" value="todo" checked={checked} onClick={check} />
+           
+            <InputCheckboxItem type="checkbox" name="todo" value="todo" checked={all===true ? all:null}  />
 
             <DivItemsImageSC src={'/default-images/plant.jpg'} />
             <DivSalePinSC>37%</DivSalePinSC>
@@ -47,9 +54,9 @@ const VendorProduct = ({ product, index, indexpage }) => {
             <ItemPriceSC>{product.price} ₽</ItemPriceSC>
 
             <ToEditSC to="#">Редактировать</ToEditSC>
-
-            <div className={active ? 'dots active' : 'dots'} onClick={HandleSelectOpen}>
-              ...
+<div className="TheVeryDotsDiv" onClick={HandleSelectOpen}> ...
+            <div className={active ? 'dots active' : 'dots'} >
+             
               {/* active ?( */}
               <div className="containerdropdown cut">
                 <div className="drop cut2" />
@@ -64,7 +71,7 @@ const VendorProduct = ({ product, index, indexpage }) => {
                 </div>
               </div>
               {/* ):null} */}
-            </div>
+            </div></div>
           </DivItemsInfoSC>
         </DivItemsSC>
       ),
@@ -73,7 +80,7 @@ const VendorProduct = ({ product, index, indexpage }) => {
       page: (
         <DivItems2pageSC>
           <div>
-            <InputCheckboxItem type="checkbox" name="todo" value="todo" checked={checked} onClick={check} />
+            <InputCheckboxItem type="checkbox" name="todo" value="todo" checked={all===true ? all : null} />
             <DivItemsImageSC src={'/default-images/plant.jpg'} />
           </div>
           <DivItemsInfo2PageSC>

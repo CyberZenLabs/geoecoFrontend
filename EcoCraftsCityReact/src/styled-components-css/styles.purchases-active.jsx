@@ -17,7 +17,7 @@ export const DivContentPurchasesSC = styled.div`
   width: 90vw;
   margin: auto;
   color: black;
-  padding-top: 30px;
+  padding-top: 60px;
   grid-gap: 20px;
   //padding-bottom: 200px;
   // border: 2px solid black;

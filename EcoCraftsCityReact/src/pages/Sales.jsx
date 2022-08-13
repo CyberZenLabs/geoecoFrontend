@@ -357,6 +357,7 @@ const Sales = () => {
   };
   return (
     <>
+
       <BreadCrumbs />
       <PurchasesContainerSC>
         <DivContentPurchasesSC>

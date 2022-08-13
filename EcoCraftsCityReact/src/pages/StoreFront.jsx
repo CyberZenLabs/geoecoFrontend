@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import useAxiosFunction from '../hooks/useAxiosFunction';
+
 import axios from '../apis/admin-rest';
-import { FaArrowLeft } from 'react-icons/fa';
-import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
+
 import '../page-css/dropdown.css';
-import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
+
 import {
-  DivItemsSC,
   DivStoreLeftPanelSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
-  DivWrapLinkSC,
   H1BoldTextSC,
   StoreItemsNumSC,
   DivStoreInfoStuffSC,
@@ -21,13 +18,6 @@ import {
   StoreSalesAndAccountLinkSC,
   HrLineSC,
   DropDownOptionsSC,
-  DivItemsImageSC,
-  DivItemsInfoSC,
-  ItemTitleSC,
-  ItemTimeSC,
-  ItemInStockSC,
-  ItemPriceSC,
-  ToEditSC,
   StoreSalesAndAccountLinkSearchSC,
   DivItemsOptionsSC,
   DivStoreInfoStuffButtonSC,
@@ -47,8 +37,6 @@ import {
   DivIconBoxInput,
   InputCheckbox,
   Labelfor,
-  InputCheckboxItem,
-  DivSalePinSC,
   SaveButtonSC,
   StoreViewLinkDotsSC,
   StoreItemsNumBotSC,
@@ -60,13 +48,7 @@ import {
   DivBottomAddItemNumSC,
   PlusMinusButtonsCS,
   BottomPanelChoice2SC,
-  DivItemsInfo2PageSC,
-  DivBottomAddItemNumItemSC,
-  PlusMinusButtonsItemCS,
-  BottomPanelSelectItemSC,
   DivCountSC,
-  DivCount1SC,
-  DivItems2pageSC,
   UilSearchSC2,
 } from '../styled-components-css/styles.store';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -79,35 +61,25 @@ import {
 } from '../styled-components-css/styles.StoreNewProduct';
 import { BreadCrumbs } from '../components/BreadCrumbs';
 import VendorProduct from '../components/VendorProduct';
-const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
-const routes = [
-  {
-    path: '/custom-props',
-    breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: 'Hi' },
-  },
-];
-const StoreFront = ({ product }) => {
-  const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const [products, setProducts] = useState([]);
 
+const StoreFront = ({ product }) => {
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     axios.get('https://radiant-river-29802.herokuapp.com/api/v1/products').then((res) => {
       console.log(res);
       setProducts(res.data.data.data);
     });
   }, []);
-  const [checked, setChecked] = useState(false);
-  const check = () => {
-    setChecked(!checked);
 
-  };
   const [active2, setActive2] = useState(false);
-
-
-  const HandleSelectOpen2 = () => {
+   const HandleSelectOpen2 = () => {
     setActive2(!active2);
   };
+  const [all, setAll] = useState(false);
+  const ChooseAll = () => {
+    setAll(!all);
+  };
+ 
   const listContent = [
     {
       options: (
@@ -146,15 +118,15 @@ const StoreFront = ({ product }) => {
       ),
 
       item: products.map((product, i) => {
-        return <VendorProduct product={product} index={i} indexpage={0} />;
+        return <VendorProduct product={product} index={i} indexpage={0} allchecked={all} />;
       }),
       bottom: (
         <>
           <BottomPanelSC>
             <BottomPanelChoiceSC>
-              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={checked} onClick={check} />
+              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={all} onChange={ChooseAll} />
 
-              <Labelfor onClick={check}>Выбрать все</Labelfor>
+              <Labelfor onClick={ChooseAll}>Выбрать все</Labelfor>
             </BottomPanelChoiceSC>
 
             <BottomPanelTextSC to="#">
@@ -207,15 +179,14 @@ const StoreFront = ({ product }) => {
       ),
 
       item: products.map((product, i) => {
-        return <VendorProduct product={product} index={i} indexpage={1} />;
-
+        return <VendorProduct product={product} index={i} indexpage={1} allchecked={all} />;
       }),
       bottom: (
         <>
           <BottomPanel2PageSC>
             <BottomPanelChoice2SC>
-              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={checked} onClick={check} />
-              <Labelfor onClick={check}>Выбрать все</Labelfor>
+              <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={all} onChange={ChooseAll} />
+              <Labelfor onClick={ChooseAll}>Выбрать все</Labelfor>
             </BottomPanelChoice2SC>
 
             <DivBottomAddItemNumSC>
@@ -238,7 +209,6 @@ const StoreFront = ({ product }) => {
       ),
     },
   ];
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
 
   const [indexSelectedButton, getIndexButton] = useState(0);
   const onClickTab = (index) => (e) => {
@@ -260,8 +230,8 @@ const StoreFront = ({ product }) => {
                 <H1BoldTextSC>Магазин</H1BoldTextSC>
                 <UilSearchHeadSC size="20" color="#85cb33" />
                 <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
-                <StoreViewLinkSC to="#">Как посетители видят мой магазин</StoreViewLinkSC>
-                <StoreViewLinkDotsSC to="#">...</StoreViewLinkDotsSC>
+                <StoreViewLinkSC to="/storenoauth">Как посетители видят мой магазин</StoreViewLinkSC>
+                <StoreViewLinkDotsSC to="/storenoauth">...</StoreViewLinkDotsSC>
 
                 <ProductCardButtonSC to="/addnewproduct">Добавить товар</ProductCardButtonSC>
               </DivStoreInfoStuffSC>
@@ -296,6 +266,7 @@ const StoreFront = ({ product }) => {
                     <InputSC type="text" id={'search'} />
                     <DivIconBoxInput>
                       <UilSearchSC size="25" color="#85cb33" />
+                      <UilSearchSC2 size="15" color="#85cb33" />
                     </DivIconBoxInput>
                   </StoreSalesAndAccountLinkSearchSC>
                 </DivOptionsPanelSC>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import useAxiosFunction from '../hooks/useAxiosFunction';
 import axios from '../apis/admin-rest';
 import { useEffect } from 'react';
 import {
@@ -9,7 +8,6 @@ import {
   DivStoreInfoSC,
   DivStoreOptionsLeftPanelSC,
   DivStoreOptionsLinkSC,
-  DivStoreOptionsLinkStoreSC,
   DivStoreOptionsRightPanelSC,
   DivStoreOptionsSC,
   HrLinkSC,
@@ -20,10 +18,8 @@ import StarRating from './StarRating';
 
 const VendorNavMenu = ({ page }) => {
   const [store, setStores] = useState([]);
-
-  const [response, error, loading, axiosFetch] = useAxiosFunction();
   useEffect(() => {
-    axios.get('https://radiant-river-29802.herokuapp.com/api/v1/store/62ed18caba878200162f0141').then((res) => {
+    axios.get('https://radiant-river-29802.herokuapp.com/api/v1/store/62f77571f9976f43002d144a').then((res) => {
       console.log(res);
       setStores(res.data.data.data);
     });

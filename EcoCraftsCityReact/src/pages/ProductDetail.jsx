@@ -31,6 +31,7 @@ import ShopBlock from "../components/components-product-detail/ShopBlock";
 import Image from '../img/logo.svg'
 import AppContext from "../context/AppContext";
 import { useParams} from 'react-router-dom';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 const listContent = [
     {
         text:
@@ -80,7 +81,7 @@ const ProductDetail = () => {
         <DivBoxProductDetailSC>
             {productItem ?
                 <DivContentProductDetailSC>
-                    <BreadcrumbsHistory/>
+                   <BreadCrumbs />
                     <DivContentProductSC>
                         <ImageProduct
                             images={listImages}

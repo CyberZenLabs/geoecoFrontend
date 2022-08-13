@@ -24,7 +24,7 @@ export const DivStoreWrapSC = styled.div`
   color: black;
   padding-top: 80px;
   grid-gap: 24px;
-  padding-bottom: 200px;
+  padding-bottom: 250px;
   // border: 2px solid black;
   padding-left: 20px;
   padding-right: 20px;
@@ -581,18 +581,18 @@ export const DivItemsInfo2PageSC = styled.div`
 
   height: 200px;
   max-width: 780px;
-   border: 2px solid black;
+  // border: 2px solid black;
   margin-left: 20px;
   @media (max-width: 1250px) {
     /* grid-template-columns: 80px auto auto 70px; */
-    grid-template-rows: 25px 10px 10px 35px;
+    grid-template-rows: 48px 0px auto;
     height: 130px;
   }
 `;
 export const ItemTitleSC = styled.h1`
   grid-area: title;
 
-   border: 2px solid pink;
+   //border: 2px solid pink;
 
   font-family: 'Montserrat';
   font-style: normal;
@@ -620,7 +620,7 @@ margin-top: 15px;
 export const ItemTimeSC = styled.p`
   grid-area: time;
 
- border: 2px solid black;
+// border: 2px solid black;
 
 
   font-family: 'Montserrat';
@@ -668,8 +668,8 @@ line-height: 10px;
 export const ItemPriceSC = styled.p`
   grid-area: price;
 
-   border: 2px solid red;
-
+  // border: 2px solid red;
+padding-right: 10px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
@@ -677,6 +677,7 @@ export const ItemPriceSC = styled.p`
   line-height: auto;
   width: 100%;
   max-width: auto;
+  max-width: 290px;
   /* identical to box height */
 
   /* Вторичный */
@@ -686,6 +687,7 @@ export const ItemPriceSC = styled.p`
   }
   @media (max-width: 470px) {
     font-size: 12px;
+   
   }
 `;
 export const ToEditSC = styled(Link)`
@@ -704,7 +706,7 @@ export const ToEditSC = styled(Link)`
   text-align: end;
   padding-top: 30px;
   @media (max-width: 1250px) {
-    padding-top: 15px;
+    padding-top: 16px;
     font-size: 10px;
 line-height: 12px;
   }
@@ -904,10 +906,19 @@ export const DivBottomAddItemNumItemSC = styled.div`
   height: 20px;
   width: 160px;
   color: #000000;
-  //border: 2px solid green;
+ // border: 2px solid green;
   @media (max-width: 1470px) {
     font-size: 35px;
+    grid-template-columns: auto auto auto;
   }
+  @media (max-width: 1250px) {
+  
+    grid-template-columns: 61px 5px 55px;
+  }
+  @media (max-width: 470px) {
+  
+  grid-template-columns: 49px 2px 55px;
+}
 `;
 export const PlusMinusButtonsItemCS = styled.button`
   font-family: 'Montserrat';
@@ -976,6 +987,15 @@ export const DivCount1SC = styled.div`
   //border: 2px solid red;
 
   margin-top: 20px;
+  
+  @media (max-width: 1250px) {
+    font-size: 25px;
+  }
+  @media (max-width: 470px) {
+    margin-top: 15px;
+    font-size: 20px;
+
+  }
 `;
 export const BottomPanelSelectSC = styled.button`
   display: flex;
@@ -1013,7 +1033,8 @@ export const BottomPanelSelectItemSC = styled.button`
   text-align: center;
   text-decoration: none;
   border-radius: 20px;
-  width: 290px;
+  width: 100%;
+  max-width: 290px;
   height: 40px;
   border: none;
   background: #ffffff;
@@ -1023,7 +1044,20 @@ export const BottomPanelSelectItemSC = styled.button`
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
+  
   color: rgba(37, 37, 37, 0.8);
+ 
+  @media (max-width: 1250px) {
+    font-size: 16px;
+  //  width: 275px;
+  height: 38px;
+  
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+    //width: 100%;
+  height: 33px;
+  }
 `;
 export const BottomPanelTextDraftSC = styled(Link)`
   font-family: 'Montserrat';

@@ -11,7 +11,7 @@ export const DivWrapLinkSC = styled.div`
   padding-right: 20px;
   width: 90vw;
   min-width: 600px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -29,7 +29,7 @@ export const DivStoreWrapSC = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   min-width: 360px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     grid-template-columns: 100%;
   }
 `;
@@ -37,9 +37,7 @@ export const DivStoreLeftPanelSC = styled.div`
 width:100%;
   //  border: 2px solid green;
   //max-width: 350px;
-  @media (max-width: 990px) {
-    display: none;
-  }
+  
 `;
 export const DivStoreRightPanelSC = styled.div`
   //border: 2px solid red;
@@ -152,7 +150,7 @@ export const DivStoreInfoStuffSC = styled.div`
     grid-template-columns: 150px 130px auto;
     padding-bottom: 0px;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     grid-template-columns: 150px 20px auto;
   }
 `;
@@ -185,7 +183,7 @@ export const StoreItemsNumSC = styled.h1`
   padding-top: 28px;
   justify-self: start;
   margin-left: 5px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -326,7 +324,7 @@ export const DivItemsOptionsSC = styled.div`
   // border: 2px solid black;
   grid-template-rows: 0px 0px;
   max-width: 1140px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -422,7 +420,7 @@ export const DivOptionsPanel2SC = styled.div`
   margin-right: 30px;
   justify-content: flex-start;
   column-gap: 1vw;
-  /* @media (max-width:990px) {
+  /* @media (max-width:768px) {
    justify-content: space-between;
    margin-left: 10px; 
   margin-right: 10px; 
@@ -584,7 +582,7 @@ export const ToEditSC = styled(Link)`
   // border: 2px solid YELLOW;
   text-align: end;
   padding-top: 30px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -607,7 +605,7 @@ export const ItemOptionsDropDownSC = styled.button`
   margin-top: 30px;
   padding-bottom: 20px;
   transition: 1s;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     padding-bottom: 15px;
   }
 `;
@@ -623,7 +621,7 @@ export const BottomPanelSC = styled.div`
   grid-template-columns: auto auto 17vw auto;
   padding-left: 15px;
   padding-right: 15px;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     grid-template-columns: 50% 50%;
   }
 `;
@@ -642,7 +640,7 @@ export const BottomPanel2PageSC = styled.div`
   @media (max-width: 1100px) {
     grid-template-columns: 163px 113px auto;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -712,7 +710,7 @@ export const BottomPanelTextSC = styled(Link)`
     font-size: 18px;
     grid-template-columns: 25px auto;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -733,7 +731,7 @@ export const DivBottomAddItemNumSC = styled.div`
   @media (max-width: 1470px) {
     font-size: 25px;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -797,7 +795,7 @@ export const PlusMinusButtonsCS = styled.button`
   box-sizing: border-box;
   background: rgba(217, 217, 217, 0.28);
   border: 1px solid rgba(0, 0, 0, 0.33);
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
   transition: 0.3s;
@@ -837,7 +835,7 @@ export const BottomPanelSelectSC = styled.button`
   line-height: 20px;
   color: rgba(37, 37, 37, 0.8);
 
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -883,7 +881,7 @@ export const BottomPanelTextDraftSC = styled(Link)`
   @media (max-width: 1470px) {
     font-size: 18px;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -960,7 +958,7 @@ export const LiDropdownHideCS = styled.li`
   border: 2px solid black;
   justify-self: flex-start;
   margin-left: 10px;
-  @media (min-width: 990px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -981,7 +979,7 @@ export const LiDropdownLinkCS = styled(Link)`
 `;
 
 export const DivTwoButtonsSC = styled.div`
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: grid;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -996,7 +994,7 @@ export const DivTwoButtonsSC = styled.div`
   }
 `;
 export const LeftButtonCS = styled.h1`
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1028,7 +1026,7 @@ export const LeftButtonCS = styled.h1`
   }
 `;
 export const RightButtonCS = styled.h1`
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     display: flex;
     cursor: pointer;
     flex-direction: row;

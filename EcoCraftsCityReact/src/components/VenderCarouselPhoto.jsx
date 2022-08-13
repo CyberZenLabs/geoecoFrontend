@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { cloneElement } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import ShowItemCarousel from '../components/ShowItemCarousel';
+import ShowItemCarouselPhoto from './ShowItemCarouselPhoto';
 
 import {
   DivButtonWrapSC,
@@ -13,23 +13,23 @@ import {
   SpanTextTitleAdaptiveeSC,
   
 
-} from "../styled-components-css/styles.vendor-carousel";
+} from "../styled-components-css/styles.vendor-carousel-photo";
 
-const VenderCarousel = ({props}) => {
+const VenderCarouselPhoto = ({props}) => {
 
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1920 },
-      items: 2
+      breakpoint: { max: 4000, min: 1000 },
+      items: 5
     },
     desktop: {
-      breakpoint: { max: 3000, min: 720 },
-      items: 2
+      breakpoint: { max: 1000, min: 768 },
+      items: 3
     },
     tablet: {
-      breakpoint: { max: 720, min: 360 },
-      items: 1
+      breakpoint: { max: 768, min: 360 },
+      items: 2
     },
   };
   var settings = {
@@ -41,13 +41,15 @@ const VenderCarousel = ({props}) => {
       <Carousel 
       responsive={responsive}>
 
-  <ShowItemCarousel></ShowItemCarousel>
-  <ShowItemCarousel></ShowItemCarousel>
-  <ShowItemCarousel></ShowItemCarousel>
-  <ShowItemCarousel></ShowItemCarousel>
+  <ShowItemCarouselPhoto></ShowItemCarouselPhoto>
+  <ShowItemCarouselPhoto></ShowItemCarouselPhoto>
+  <ShowItemCarouselPhoto></ShowItemCarouselPhoto>
+  <ShowItemCarouselPhoto></ShowItemCarouselPhoto>
+  <ShowItemCarouselPhoto></ShowItemCarouselPhoto>
+
 </Carousel>
     </>
   );
 };
 
-export default VenderCarousel;
+export default VenderCarouselPhoto;

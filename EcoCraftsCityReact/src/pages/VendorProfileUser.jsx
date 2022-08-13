@@ -1,4 +1,4 @@
-import { Delete, Margin, TextFields } from '@mui/icons-material';
+import { Delete, Description, Margin, TextFields } from '@mui/icons-material';
 import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -9,6 +9,10 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import SettingsShopCatalog from '../components/components-user-store-settings/SettingsShopCatalog';
 import { toast } from 'react-toastify';
+import{
+    
+    WrapShopContainerSC
+  } from "../styled-components-css/styles.StoreNoAuth";
 import {
     DivStoreLeftPanelSC,
     DivStoreOptionsRightPanelSC,
@@ -60,14 +64,18 @@ import {
     DivButtonChangrInformSC,
     DivButtonChangrInformBottomSC,
     SpanTextTitleAdaptiveSC,
-    DivInfoVendorBoxAdaptiveSC
+    DivInfoVendorBoxAdaptiveSC,
+    DescriptionSC,
+    DescriptionTitleTextSC,
+    DescriptionTextSC
 } from '../styled-components-css/styles-user-store-settings/styles.VendorProfileUser';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
-import VenderCarousel from '../components/VenderCarousel';
+import VenderCarouselReview from '../components/VenderCarouselReview';
+import VenderCarouselPhoto from '../components/VenderCarouselPhoto';
+
 import AppContext from '../context/AppContext';
-import VendorNavMenu from '../components/VendorNavMenu';
 import { BreadCrumbs } from '../components/BreadCrumbs';
 import hostName from "../tools/HostName";
 
@@ -243,27 +251,35 @@ const VendorProfile = () => {
 
 
                 <DivAddProductBox>
+
                     <DivInfoVendorBoxSC>
 
-                        <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+                        <SpanTextTitleSC>Имя профиля  </SpanTextTitleSC>
                         <OlifnoSC>
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
                             <LiInfoSC>Магазин: е-mail</LiInfoSC>
                             <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
-                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+                            <DescriptionSC><DescriptionTextSC><DescriptionTitleTextSC>Рассказ о себе:</DescriptionTitleTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</DescriptionTextSC></DescriptionSC>   
                         </OlifnoSC>
 
 
                     </DivInfoVendorBoxSC>
+                    <DivInfoVendorBoxAdaptiveSC>
+                        <SpanTextTitleSC>О творчестве</SpanTextTitleSC>
 
+
+                        <VenderCarouselPhoto>
+
+                        </VenderCarouselPhoto>
+                    </DivInfoVendorBoxAdaptiveSC>
                     <DivInfoVendorBoxAdaptiveSC>
                         <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
 
 
-                        <VenderCarousel>
+                        <VenderCarouselReview>
 
-                        </VenderCarousel>
+                        </VenderCarouselReview>
                     </DivInfoVendorBoxAdaptiveSC>
                 </DivAddProductBox>
 
@@ -483,7 +499,9 @@ const VendorProfile = () => {
   )
 } */}
             <BreadCrumbs/>
+            
             <DivStoreWrapSC>
+                
                 <DivStoreLeftPanelSC>
                     <SettingsShopCatalog page={0}/>
                 </DivStoreLeftPanelSC>

@@ -13,10 +13,10 @@ import {
   ElipsIconSC,
   SpanDataTextSC,
   DivStarRaitingAdaptiveSC
-} from "../styled-components-css/styles.ShowItemCarousel";
+} from "../styled-components-css/styles.ShowItemCarouselReview";
 import StarRating from "./StarRating";
 
-const ShowItemCarousel = () => {
+const ShowItemCarouselReview = () => {
   const [widthWindow, setWidthWindow] = useState(
     document.documentElement.clientWidth
   );
@@ -64,4 +64,4 @@ const ShowItemCarousel = () => {
   );
 };
 
-export default ShowItemCarousel;
+export default ShowItemCarouselReview;

@@ -7,7 +7,7 @@ import StarRating from '../components/StarRating';
 import TextFieldStore from '../components/TextFieldStore';
 import useAxiosFunction from '../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-import ShowItemCarousel from '../components/ShowItemCarousel';
+import ShowItemCarouselReview from '../components/ShowItemCarouselReview';
 import { toast } from 'react-toastify';
 import {
     DivStoreLeftPanelSC,
@@ -65,7 +65,8 @@ import {
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';
-import VenderCarousel from '../components/VenderCarousel';
+import VenderCarouselReview from '../components/VenderCarouselReview';
+
 import AppContext from '../context/AppContext';
 import VendorNavMenu from '../components/VendorNavMenu';
 import { BreadCrumbs } from '../components/BreadCrumbs';
@@ -261,9 +262,9 @@ const VendorProfile = () => {
                         <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
 
 
-                        <VenderCarousel>
+                        <VenderCarouselReview>
 
-                        </VenderCarousel>
+                        </VenderCarouselReview>
                     </DivInfoVendorBoxAdaptiveSC>
                 </DivAddProductBox>
 

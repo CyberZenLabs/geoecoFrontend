@@ -10,7 +10,6 @@ export const OlifnoSC = styled.ol`
   padding: 0;
   margin-left: 10px;
   font-weight: 600;
-  padding:18px;
 `;
 export const DivDisplayFlexSC = styled.div`
   display: flex;
@@ -23,6 +22,32 @@ export const LiInfoGreenSC = styled.li`
   font-size: 20px;
   color: #85cb33;
   margin-right: 1px;
+`;
+export const DescriptionSC = styled.span`
+font-family: 'Montserrat';
+font-style: normal;
+font-size: 20px;
+line-height: 24px;
+
+/* Вторичный */
+@media (max-width:1000px) {
+  font-size: 17px;
+  }
+@media (max-width:768px) {
+  font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+    }
+`;
+export const DescriptionTextSC = styled.span`
+font-weight: 400;
+
+color: #252525;
+`;
+export const DescriptionTitleTextSC = styled.span`
+color: rgba(37, 37, 37, 0.8);
+font-weight: 600;
 `;
 export const DivTextTitleSC = styled.div`
 
@@ -148,9 +173,8 @@ export const SpanTextTitleSC = styled.span`
   color: #252525;
   display: flex;
   justify-content: space-between;
-  padding: 18px;
-  padding-bottom:0;
-  @media (max-width: 720px) {
+  margin-bottom:20px;
+  @media (max-width: 768px) {
     font-size: 25px;
   }
   @media (max-width: 480px) {
@@ -169,11 +193,12 @@ export const SpanTextTitleAdaptiveSC = styled.div`
   color: #252525;
   width: 100%;
   padding-bottom:0;
+  margin-bottom:20px;
   @media (max-width: 1240px) {
     text-align:center;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     font-size: 25px;
   }
   @media (max-width: 480px) {
@@ -238,7 +263,10 @@ export const LiInfoSC = styled.li`
   margin-bottom: 14px;
   font-size: 20px;
   display: flex;
-  @media (max-width: 720px) {
+  @media (max-width: 1000px) {
+    font-size: 17px;
+    }
+  @media (max-width: 768px) {
     font-size: 16px;
     }
     @media (max-width: 480px) {
@@ -275,7 +303,7 @@ export const DivButtonChangrInformSC = styled.div`
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
   display:none;
   
     }
@@ -307,7 +335,7 @@ export const DivInfoVendorBoxSC = styled.div`
   transition: width .2s 0s;
   max-width: 1045px;
   display: grid;
-
+  padding: 18px;
 `;
 export const DivInfoVendorBoxAdaptiveSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
@@ -337,7 +365,7 @@ export const DivStoreInfoStuffProfileSC = styled.div`
   @media (max-width: 1470px) {
     grid-template-columns: 230px 130px auto;
   }
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
     grid-template-columns: 230px 20px auto;
   }
 `;

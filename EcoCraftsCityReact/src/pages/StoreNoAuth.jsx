@@ -15,7 +15,7 @@ import {
   SpanLogoText,
   SpanTextTitleShopSC,
   DivBorderBox,
-} from "../styled-components-css/styles.SettingsShop";
+} from "../styled-components-css/styles-user-store-settings/styles.SettingsShop";
 
 import{
     DivBoxNewProductsST,
@@ -30,7 +30,70 @@ import{
   DivBoxItemsSC
     
   } from "../styled-components-css/styles.StoreNewProduct";
-  
+  import {
+    DivItemsSC,
+    DivStoreLeftPanelSC,
+    DivStoreRightPanelSC,
+    DivStoreWrapSC,
+    DivWrapLinkSC,
+    H1BoldTextSC,
+    StoreItemsNumSC,
+    DivStoreInfoStuffSC,
+    StoreViewLinkSC,
+    DivOptionsPanelSC,
+    DivOptionsPanel2SC,
+    ProductsNumSC,
+    StoreSalesAndAccountLinkSC,
+    HrLineSC,
+    DropDownOptionsSC,
+    DivItemsImageSC,
+    DivItemsInfoSC,
+    ItemTitleSC,
+    ItemTimeSC,
+    ItemInStockSC,
+    ItemPriceSC,
+    ToEditSC,
+    StoreSalesAndAccountLinkSearchSC,
+    DivItemsOptionsSC,
+    DivStoreInfoStuffButtonSC,
+    ProductCardButtonAfterSC,
+    ProductCardButtonSC,
+    BottomPanelSC,
+    BottomPanelChoiceSC,
+    BottomPanelTextSC,
+    BottomPanelTextDraftSC,
+    InputSC,
+    IoMarginCS,
+    FaMarginCS,
+    DivTwoButtonsSC,
+    LeftButtonCS,
+    RightButtonCS,
+    UilSearchSC,
+    DivIconBoxInput,
+    InputCheckbox,
+    Labelfor,
+    InputCheckboxItem,
+    DivSalePinSC,
+    SaveButtonSC,
+    StoreViewLinkDotsSC,
+    StoreItemsNumBotSC,
+    UilSearchHeadSC,
+    SaveButtonPanelSC,
+    DivButtonBottomSaveSC,
+    BottomPanel2PageSC,
+    BottomPanelSelectSC,
+    DivBottomAddItemNumSC,
+    PlusMinusButtonsCS,
+    BottomPanelChoice2SC,
+    DivItemsInfo2PageSC,
+    DivBottomAddItemNumItemSC,
+    PlusMinusButtonsItemCS,
+    BottomPanelSelectItemSC,
+    DivCountSC,
+    DivCount1SC,
+    DivItems2pageSC,
+  } from '../styled-components-css/styles-user-store-settings/styles.store-user';
+
   import{
     ImgBannerShopSC,
     DivBoxContentSC,
@@ -46,9 +109,8 @@ import{
     SpanTitleCatalogAdaptive
   } from "../styled-components-css/styles.StoreNoAuth";
 
-  import ProductCard from "../components/ProductCard";
-  import SettingsShopCatalog from "../components/SettingsShopCatalog";
-  import SettingsShopAdaptive from "../components/SettingsShopAdaptive";
+  import ProductCard from "../components/components-user-store-settings/ProductCardUser";
+  import SettingsShopCatalog from "../components/components-user-store-settings/SettingsShopCatalog";
 
 const StoreNoAuth = () =>{
 
@@ -86,11 +148,9 @@ const StoreNoAuth = () =>{
             <DivBoxContentSC>
             <ImgBannerShopSC src="/banner-images/ShopBanner.jpg"></ImgBannerShopSC>
             
-            <SpanTitleCatalogAdaptive>Название магазина, что производят</SpanTitleCatalogAdaptive>
-            <SettingsShopAdaptive/>
             <DivBoxCatalogShopSC>
 
-            <SettingsShopCatalog/>
+            <SettingsShopCatalog page={1}/>
 
             <DivBoxCatalog>
                 <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>

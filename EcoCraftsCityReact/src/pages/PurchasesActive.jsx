@@ -52,6 +52,305 @@ import {
 import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const PurchasesActive = () => {
+  const listContent = [
+    {
+      itemSmall: (
+        <>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>В процессе</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>В процессе</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+        </>
+      ),
+      item: (
+        <>
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>В процессе</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>В процессе</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+        </>
+      ),
+    },
+    {
+      itemSmall: (
+        <>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>Завершена</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>Завершена</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+        </>
+      ),
+      item: (
+        <>
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>Завершена</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>Завершена</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+        </>
+      ),
+    },
+    {
+      itemSmall: (
+        <>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>Отклонена</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+          <DivBoxItemProduct2SC>
+            <DivContainerRowsPurchaseSC>
+              <DivBoxColumnsAvaAndInitialSC>
+                <DivAvatarSmallSC></DivAvatarSmallSC>
+                <DivTextsInitial1SC>
+                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
+                  <DivName1SC>Имя</DivName1SC>
+                </DivTextsInitial1SC>
+              </DivBoxColumnsAvaAndInitialSC>
+              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivBoxColumnMoney1SC>
+                <DivMoney1SC>5000</DivMoney1SC>
+                <DivIconValute1SC>₽</DivIconValute1SC>
+              </DivBoxColumnMoney1SC>
+              <DivTextColumnsInProgress1SC>
+                <DivGreenDot1SC></DivGreenDot1SC>
+                <DivTextInProgress1SC>Отклонена</DivTextInProgress1SC>
+              </DivTextColumnsInProgress1SC>
+            </DivContainerRowsPurchaseSC>
+          </DivBoxItemProduct2SC>
+        </>
+      ),
+      item: (
+        <>
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>Отклонена</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+
+          <DivBoxItemProduct1SC>
+            <DivBoxColumnsProductSC>
+              <DivBoxRowsAvaAndInitialSC>
+                <DivAvatarSC></DivAvatarSC>
+                <DivTextsInitialSC>
+                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
+                  <DivNameSC>Имя</DivNameSC>
+                </DivTextsInitialSC>
+              </DivBoxRowsAvaAndInitialSC>
+              <DivBoxRowsPurchaseAndCompositionSC>
+                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextColumnsInProgressSC>
+                  <DivGreenDotSC></DivGreenDotSC>
+                  <DivTextInProgressSC>Отклонена</DivTextInProgressSC>
+                </DivTextColumnsInProgressSC>
+              </DivBoxRowsPurchaseAndCompositionSC>
+              <DivContainerMoneySC>
+                <DivBoxColumnMoneySC>
+                  <DivMoneySC>5000</DivMoneySC>
+                  <DivIconValuteSC>₽</DivIconValuteSC>
+                </DivBoxColumnMoneySC>
+              </DivContainerMoneySC>
+            </DivBoxColumnsProductSC>
+          </DivBoxItemProduct1SC>
+        </>
+      ),
+    },
+  ];
   const [indexSelectedButton, getIndexButton] = useState(0);
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
@@ -81,28 +380,6 @@ const PurchasesActive = () => {
                 </TextEnd1>
               </DivOptionsPanelPurchasesSC>
             </DivBGRecSmallSC>
-            {[indexSelectedButton].options}
-            <DivBoxItemProduct2SC>
-              <DivContainerRowsPurchaseSC>
-                <DivBoxColumnsAvaAndInitialSC>
-                  <DivAvatarSmallSC></DivAvatarSmallSC>
-                  <DivTextsInitial1SC>
-                    <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                    <DivName1SC>Имя</DivName1SC>
-                  </DivTextsInitial1SC>
-                </DivBoxColumnsAvaAndInitialSC>
-                <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
-                <DivBoxColumnMoney1SC>
-                  <DivMoney1SC>5000</DivMoney1SC>
-                  <DivIconValute1SC>₽</DivIconValute1SC>
-                </DivBoxColumnMoney1SC>
-                <DivTextColumnsInProgress1SC>
-                  <DivGreenDot1SC></DivGreenDot1SC>
-                  <DivTextInProgress1SC>В процессе</DivTextInProgress1SC>
-                </DivTextColumnsInProgress1SC>
-              </DivContainerRowsPurchaseSC>
-            </DivBoxItemProduct2SC>
-            <DivBoxItemProduct2SC></DivBoxItemProduct2SC>
             <DivBGRecBigSC>
               <DivBoxRowsPurchasesSC>
                 <DivBoxItemParamsSC>
@@ -110,57 +387,10 @@ const PurchasesActive = () => {
                   <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
                   <DivTextCostSC>Стоимость</DivTextCostSC>
                 </DivBoxItemParamsSC>
-                <DivBoxItemProduct1SC>
-                  <DivBoxColumnsProductSC>
-                    <DivBoxRowsAvaAndInitialSC>
-                      <DivAvatarSC></DivAvatarSC>
-                      <DivTextsInitialSC>
-                        <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                        <DivNameSC>Имя</DivNameSC>
-                      </DivTextsInitialSC>
-                    </DivBoxRowsAvaAndInitialSC>
-                    <DivBoxRowsPurchaseAndCompositionSC>
-                      <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
-                      <DivTextColumnsInProgressSC>
-                        <DivGreenDotSC></DivGreenDotSC>
-                        <DivTextInProgressSC>В процессе</DivTextInProgressSC>
-                      </DivTextColumnsInProgressSC>
-                    </DivBoxRowsPurchaseAndCompositionSC>
-                    <DivContainerMoneySC>
-                      <DivBoxColumnMoneySC>
-                        <DivMoneySC>5000</DivMoneySC>
-                        <DivIconValuteSC>₽</DivIconValuteSC>
-                      </DivBoxColumnMoneySC>
-                    </DivContainerMoneySC>
-                  </DivBoxColumnsProductSC>
-                </DivBoxItemProduct1SC>
-
-                <DivBoxItemProduct1SC>
-                  <DivBoxColumnsProductSC>
-                    <DivBoxRowsAvaAndInitialSC>
-                      <DivAvatarSC></DivAvatarSC>
-                      <DivTextsInitialSC>
-                        <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                        <DivNameSC>Имя</DivNameSC>
-                      </DivTextsInitialSC>
-                    </DivBoxRowsAvaAndInitialSC>
-                    <DivBoxRowsPurchaseAndCompositionSC>
-                      <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
-                      <DivTextColumnsInProgressSC>
-                        <DivGreenDotSC></DivGreenDotSC>
-                        <DivTextInProgressSC>В процессе</DivTextInProgressSC>
-                      </DivTextColumnsInProgressSC>
-                    </DivBoxRowsPurchaseAndCompositionSC>
-                    <DivContainerMoneySC>
-                      <DivBoxColumnMoneySC>
-                        <DivMoneySC>5000</DivMoneySC>
-                        <DivIconValuteSC>₽</DivIconValuteSC>
-                      </DivBoxColumnMoneySC>
-                    </DivContainerMoneySC>
-                  </DivBoxColumnsProductSC>
-                </DivBoxItemProduct1SC>
+                {listContent[indexSelectedButton].item}
               </DivBoxRowsPurchasesSC>
             </DivBGRecBigSC>
+            {listContent[indexSelectedButton].itemSmall}
           </DivBoxRightPurchasesSC>
         </DivContentPurchasesSC>
       </PurchasesContainerSC>

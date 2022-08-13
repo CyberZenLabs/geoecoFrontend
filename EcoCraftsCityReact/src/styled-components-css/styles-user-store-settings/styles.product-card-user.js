@@ -23,11 +23,8 @@ export const HomeContainer = styled.div`
 
   } ;
 `;
-export const StarAlign = styled.div`
-  width: 50%;
-`;
+
 export const DivGridPriceCartIcon = styled.div`
-  margin-top: 11%;
   display: grid;
   grid-template-columns: 2fr 1fr;
 
@@ -59,22 +56,40 @@ export const ProductCardPrice = styled.h3`
   justify-self: start;
   /* Вторичный */
   color: #252525;
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+
 `;
 export const ProductCardContainer = styled.div`
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: repeat(5, max-content) auto ;
   grid-row-gap: 10px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-top: 20px;
-  padding: 27px;
-
+  padding: 8%;
+  @media (max-width: 480px) {
+  }
 `;
-
+export const DivProductImage = styled.div`
+ 
+  display: grid;
+  background: none;
+  background-image: url(https://mobimg.b-cdn.net/v3/fetch/c4/c464d02f38c71b08e0df12d9eb36c2ce.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+  position: relative;
+  aspect-ratio: 1/1;
+`;
 export const ProductCardImage = styled.img`
-  width: 255px;
-  height: 255px;
-  justify-self: center;
+position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 `;
 
 export const ProductCardName = styled.h4`
@@ -87,6 +102,9 @@ export const ProductCardName = styled.h4`
   justify-self: start;
   /* Вторичный 80% */
   color: rgba(37, 37, 37, 0.8);
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const ProductCardStoreName = styled.h5`
@@ -119,13 +137,14 @@ export const ProductCardButton = styled(Link)`
   background: #85cb33;
   border-radius: 20px;
   width: 100%;
+  height: 40px;
   justify-self: center;
   border-radius: 15px;
   border: none;
   padding: 5%;
   margin-top: 12%;
   text-decoration: none;
-
+  align-self: flex-end;
   @media (max-width: 480px) {
     display: none;
   }

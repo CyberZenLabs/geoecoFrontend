@@ -11,13 +11,29 @@ export const ImgBannerShopSC = styled.img`
 `;
 export const DivBoxContentSC = styled.div`
 margin-top:45px;
-padding: 0 30px;
+padding: 0 20px;
   display: grid;
   justify-self: center;
   max-width: 1420px;
 
 `;
-
+export const WrapShopContainerSC = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  //border: 2px solid grey;
+  height: 356px;
+  width: 100%;
+  margin: auto;
+  //margin-top: 50px;
+  background: #dbf0c2;
+  border-radius: 20px;
+  @media (max-width: 440px) {
+    height: 262px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: auto;
+  }
+`;
 export const DivBoxCatalogShopSC = styled.div`
 margin-top:45px;
   display: grid;
@@ -44,7 +60,7 @@ grid-column-gap:25px;
 
   }
   @media (max-width: 768px) {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
   
     }
     @media (max-width: 600px) {

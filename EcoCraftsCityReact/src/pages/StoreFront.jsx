@@ -319,7 +319,7 @@ const StoreFront = ({ product }) => {
                 <H1BoldTextSC>Магазин</H1BoldTextSC>
                 <UilSearchHeadSC size="20" color="#85cb33" />
                 <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
-                <StoreViewLinkSC to="#">Как посетители видят мой магазин</StoreViewLinkSC>
+                <StoreViewLinkSC to="/VendorProfileUser">Как посетители видят мой магазин</StoreViewLinkSC>
                 <StoreViewLinkDotsSC to="#">...</StoreViewLinkDotsSC>
 
                 <ProductCardButtonSC to="/addnewproduct">Добавить товар</ProductCardButtonSC>

@@ -18,10 +18,10 @@ export const WrapShopContainerSC = styled.div`
   //margin-top: 50px;
   background: #dbf0c2;
   border-radius: 20px;
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     height: 262px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-template-columns: auto;
   }
 `;
@@ -41,7 +41,7 @@ export const DivRowContentSC = styled.div`
   margin: auto;
   //margin-top: 50px;
   margin-bottom: 30px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-template-columns: auto;
   }
 `;
@@ -57,16 +57,15 @@ export const DivShopContainerSC = styled.div`
   padding: 24px;
   grid-row-gap: 15px;
   @media (max-width: 1000px) {
-    padding: 13px 15px 0px 15px;
+    padding: 13px 15px 9px 15px;
+    
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-column: 1 / 3;
     padding: 20px 15px 0px 15px;
-    grid-row-gap: 70px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     padding: 10px 10px 0px 10px;
-    grid-row-gap: 50px;
   }
 `;
 
@@ -74,18 +73,24 @@ export const DivShopInfoSC = styled.div`
   display: grid;
   grid-template-columns: max-content auto;
   grid-column-gap: 20px;
+  @media (max-width: 1000px) {
+    grid-column-gap: 10px;
+    transition: grid-column-gap .1s 0s;
+
+
+  }
 `;
 
 export const ImgShopInfoSC = styled.img`
   width: 75px;
   height: 75px;
   border-radius: 12px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     width: 120px;
     height: 120px;
     border-radius: 10px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     width: 88px;
     height: 88px;
   }
@@ -98,15 +103,16 @@ export const DivTitleShopInfoSC = styled.div`
   font-size: 15px;
   font-weight: 600;
   grid-gap: 7px;
+  
 `;
 
 export const TitleShopInfoSC = styled.h1`
   font-size: 15px;
   font-weight: 600;
-  @media (max-width: 800px) {
-    font-size: 20px;
+  @media (max-width: 768px) {
+    font-size:24px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     font-size: 18px;
   }
 `;
@@ -114,13 +120,17 @@ export const TitleShopInfoSC = styled.h1`
 export const LocationShopInfoSC = styled.h1`
   font-weight: 500;
   font-size: 12px;
-  @media (max-width: 440px) {
-    font-size: 10px;
+  @media (max-width: 768px) {
+    font-size:21px;
+  }
+  @media (max-width: 480px) {
+    font-size: 15px;
   }
 `;
 
 export const DivStarHideSC = styled.div`
-  @media (min-width: 801px) {
+
+  @media (min-width: 769px) {
     display: none;
   }
 `;
@@ -134,7 +144,7 @@ export const DivLinksInfoSC = styled.div`
   //border: 2px solid green;
   height: max-content;
   //margin-top: 30px;
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -147,10 +157,10 @@ export const DivLinksAdaptiveSC = styled.div`
   height: 40px;
   border-top: 2px solid rgba(37, 37, 37, 0.1);
   margin: 0px -15px 0px -15px;
-  @media (min-width: 801px) {
+  @media (min-width: 769px) {
     display: none;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     margin: 0px -10px 0px -10px;
   }
 `;
@@ -164,13 +174,15 @@ export const LinkShopInfoSC = styled(Link)`
   text-decoration: none;
   color: var(--color-black);
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     border-right: 2px solid rgba(37, 37, 37, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 17px;
+
   }
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     font-size: 12px;
   }
 `;
@@ -190,7 +202,7 @@ export const ButtonDropDownSC = styled.button`
   border: none;
   background-color: initial;
   cursor: pointer;
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     font-size: 40px;
     line-height: 15px;
     letter-spacing: 4px;
@@ -203,6 +215,7 @@ export const DivLinkReviewRaitingSC = styled.div`
   grid-gap: 10px;
   align-items: center;
   align-content: center;
+  
 `;
 
 export const DivCardReviewsBoxSC = styled.div`
@@ -230,7 +243,7 @@ export const DivTextButtonBoxSC = styled.div`
   @media (max-width: 650px) {
     grid-column: 1 / 3;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     grid-row-gap: 15px;
     font-size: 32px;
   }
@@ -240,7 +253,7 @@ export const DivButtonBoxSC = styled.div`
   display: grid;
   grid-template-columns: max-content max-content;
   grid-gap: 20px;
-  @media (max-width: 440px) {
+  @media (max-width: 480px) {
     grid-gap: 10px;
   }
 `;

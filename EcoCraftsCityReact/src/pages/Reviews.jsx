@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
 import { FaArrowLeft } from "react-icons/fa";
 import StarRating from "../components/StarRating";
+import SettingsShopCatalog from "../components/components-user-store-settings/SettingsShopCatalog";
+
 import {
   ButtonDropDownSC,
   ButtonPageBoxSC,
@@ -81,34 +83,8 @@ const Reviews = ({ shop, index }) => {
         </DivWrapLinkSC>
         <WrapShopContainerSC></WrapShopContainerSC>
         <DivRowContentSC>
-          <DivShopContainerSC>
-            <DivShopInfoSC>
-              <ImgShopInfoSC src={"/default-images/plant.jpg"}></ImgShopInfoSC>
-              <DivTitleShopInfoSC>
-                <TitleShopInfoSC>Название магазина и о чем он</TitleShopInfoSC>
-                <LocationShopInfoSC>Где находится</LocationShopInfoSC>
-                <DivStarHideSC>
-                  <StarRating fixed={true} value={shopRaiting} />
-                </DivStarHideSC>
-              </DivTitleShopInfoSC>
-            </DivShopInfoSC>
+        <SettingsShopCatalog page={2}/>
 
-            <DivLinksInfoSC>
-              <LinkShopInfoSC to="/">Профиль</LinkShopInfoSC>
-              <LinkShopInfoSC to="/">Магазины 50</LinkShopInfoSC>
-              <DivLinkReviewRaitingSC>
-                <LinkShopInfoSC to="/">Отзывы </LinkShopInfoSC>
-                <StarRating fixed={true} value={shopRaiting} />
-              </DivLinkReviewRaitingSC>
-              <LinkShopInfoSC to="/">Оплата и Доставка</LinkShopInfoSC>
-            </DivLinksInfoSC>
-
-            <DivLinksAdaptiveSC>
-              <LinkShopInfoSC to="/">Профиль</LinkShopInfoSC>
-              <LinkShopInfoSC to="/">Магазин 50</LinkShopInfoSC>
-              <ButtonDropDownSC>...</ButtonDropDownSC>
-            </DivLinksAdaptiveSC>
-          </DivShopContainerSC>
           <DivModesBoxSC>
             <DivModeSC>Рубрики</DivModeSC>
             <DivModeSC>Фильтры</DivModeSC>

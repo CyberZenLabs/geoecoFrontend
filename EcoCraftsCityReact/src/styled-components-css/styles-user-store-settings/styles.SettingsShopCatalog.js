@@ -50,11 +50,15 @@ export const DivShopContainerSC = styled.div`
   display: grid;
   //border: 2px solid black;
   width: 100%;
+  min-width:225px;
   //height: 261px;
   background-color: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
-  padding: 20px;
-  grid-row-gap: 30px;
+  padding: 24px;
+  grid-row-gap: 15px;
+  @media (max-width: 1000px) {
+    padding: 13px 15px 0px 15px;
+  }
   @media (max-width: 800px) {
     grid-column: 1 / 3;
     padding: 20px 15px 0px 15px;
@@ -336,4 +340,25 @@ color: rgb(115, 115, 115);
     border: 2.5px rgb(114, 170, 46);
     //padding: 1px 10px 1px 10px;
   } */
+`;
+
+export const DivBoxButtonLinkSC = styled(Link)`
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 11px 30px;
+background: #85CB33;
+border-radius: 14px;
+color:#fff;
+border: none;
+justify-self: start;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+/* identical to box height */
+text-decoration: none;
+
+text-align: center;
 `;

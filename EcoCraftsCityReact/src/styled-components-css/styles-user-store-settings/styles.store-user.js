@@ -10,7 +10,7 @@ export const DivWrapLinkSC = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   width: 90vw;
-  min-width: 360px;
+  min-width: 600px;
   @media (max-width: 990px) {
     display: none;
   }
@@ -31,7 +31,6 @@ export const DivStoreWrapSC = styled.div`
   min-width: 360px;
   @media (max-width: 990px) {
     grid-template-columns: 100%;
-    padding-top: 10px;
   }
 `;
 export const DivStoreLeftPanelSC = styled.div`
@@ -140,10 +139,6 @@ export const HrLineSC = styled.hr`
   margin: 10px;
   border: 1px solid rgba(0, 0, 0, 0.171);
   margin-top: 100px;
-
-  @media (max-width: 1250px) {
-    margin-top: 50px;
-  }
 `;
 export const DivStoreInfoStuffSC = styled.div`
   //border: 2px solid blue;
@@ -331,10 +326,6 @@ export const DivItemsOptionsSC = styled.div`
   // border: 2px solid black;
   grid-template-rows: 0px 0px;
   max-width: 1140px;
-
-  @media (max-width: 1250px) {
-    height: 100px;
-  }
   @media (max-width: 990px) {
     display: none;
   }
@@ -343,15 +334,8 @@ export const DivOptionsPanelSC = styled.div`
   display: grid;
   // gap: 1vw;
   grid-template-columns: 175px 205px auto;
-
-  //border: 2px solid red;
+  // border: 2px solid red;
   height: 100px;
-
-  @media (max-width: 1250px) {
-    grid-template-columns: 145px 205px auto;
-    height: 50px;
-  }
-
 `;
 export const ProductsNumSC = styled.button`
   font-family: 'Montserrat';
@@ -369,14 +353,6 @@ export const ProductsNumSC = styled.button`
   margin-left: 25px;
   border: none;
   background: none;
-
-  @media (max-width: 1250px) {
-    height: 20px;
-    margin-top: 15px;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
   @media (max-width: 750px) {
     margin-left: 15px;
   }
@@ -393,19 +369,10 @@ export const StoreSalesAndAccountLinkSC = styled.button`
   // border: 2px solid green;
   height: 40px;
   width: auto;
-
   justify-self: left;
   cursor: pointer;
   border: none;
   background: none;
-
-  @media (max-width: 1250px) {
-    height: 20px;
-    margin-top: 15px;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
 `;
 export const InputSC = styled.input`
   padding: 18px 0px 18px 10px;
@@ -420,10 +387,6 @@ export const InputSC = styled.input`
   color: #85cb33;
   background: initial;
   max-width: 30vw;
-  @media (max-width: 1250px) {
-    height: 28px;
-    width: 38px;
-  }
   @media (max-width: 1215px) {
     max-width: 20vw;
   }
@@ -448,14 +411,6 @@ export const StoreSalesAndAccountLinkSearchSC = styled.div`
   justify-self: right;
   transform: translate(0%, 0%);
   height: 60px;
-
-  @media (max-width: 1250px) {
-    height: 30px;
-    margin-top: 7px;
-    font-size: 12px;
-    line-height: 15px;
-  }
-
 `;
 export const DivOptionsPanel2SC = styled.div`
   display: grid;
@@ -472,11 +427,6 @@ export const DivOptionsPanel2SC = styled.div`
    margin-left: 10px; 
   margin-right: 10px; 
   } */
-  @media (max-width: 1250px) {
-    margin-left: 26px;
-    margin-top: 50px;
-    height: 50px;
-  }
 `;
 export const DropDownOptionsSC = styled.h1`
   font-family: 'Montserrat';
@@ -490,13 +440,9 @@ export const DropDownOptionsSC = styled.h1`
   height: 30px;
   display: grid;
   cursor: pointer;
-
   grid-template-columns: auto auto;
-  @media (max-width: 1250px) {
-    height: 15px;
-    margin-top: 15px;
-    line-height: 12px;
-    font-size: 12px;
+  @media (max-width: 1470px) {
+    font-size: 15px;
   }
 `;
 export const DivItemsSC = styled.div`
@@ -505,15 +451,11 @@ export const DivItemsSC = styled.div`
   border-radius: 20px;
   margin-bottom: 7px;
   height: 200px;
-   //border: 2px solid black;
+  // border: 2px solid black;
   grid-template-columns: 200px auto;
   grid-template-rows: 0px;
   width: auto;
   max-width: 1140px;
-  @media (max-width: 1250px) {
-    grid-template-columns: 130px auto;
-    height: 130px;
-  }
 `;
 export const DivItems2pageSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
@@ -526,27 +468,15 @@ export const DivItems2pageSC = styled.div`
   grid-template-rows: 0px;
   width: auto;
   max-width: 722px;
-  @media (max-width: 1250px) {
-    grid-template-columns: 130px auto;
-    height: 130px;
-  }
-  @media (max-width: 990px) {
-    max-width: 100%;
-  }
 `;
 export const DivItemsImageSC = styled.img`
   z-index: 1;
   display: grid;
   width: 200px;
   height: 196px;
-  margin-top: -45px;
+  margin-top: -43px;
   border-radius: 20px;
   //border: 2px solid blue;
-  @media (max-width: 1250px) {
-   
-    width: 130px;
-  height: 126px;
-  }
 `;
 export const DivItemsInfoSC = styled.div`
   display: grid;
@@ -559,17 +489,9 @@ export const DivItemsInfoSC = styled.div`
     'edit edit edit option';
   height: 200px;
   max-width: 793px;
+  /* border: 2px solid black; */
   margin-left: 20px;
-  @media (max-width: 1250px) {
-    grid-template-columns: 80px auto auto 70px;
-    grid-template-rows: 45px 30px 10px 35px;
-    height: 130px;
-  }
-  @media (max-width: 470px) {
-    grid-template-columns: 60px auto auto 70px;
-    grid-template-rows: 40px 25px 15px 35px;
-    height: 130px;
-  }`;
+`;
 export const DivItemsInfo2PageSC = styled.div`
   display: grid;
   grid-template-rows: auto auto auto;
@@ -581,19 +503,12 @@ export const DivItemsInfo2PageSC = styled.div`
 
   height: 200px;
   max-width: 780px;
-   border: 2px solid black;
+  // border: 2px solid black;
   margin-left: 20px;
-  @media (max-width: 1250px) {
-    /* grid-template-columns: 80px auto auto 70px; */
-    grid-template-rows: 25px 10px 10px 35px;
-    height: 130px;
-  }
 `;
 export const ItemTitleSC = styled.h1`
   grid-area: title;
-
-   border: 2px solid pink;
-
+  // border: 2px solid pink;
   font-family: 'Montserrat';
   font-style: normal;
 
@@ -605,24 +520,13 @@ export const ItemTitleSC = styled.h1`
   margin-top: 10px;
   color: #252525;
   max-width: auto;
-
-  @media (max-width: 1250px) {
-    font-size: 17px;
-line-height: 18px;
-  }
-  @media (max-width: 470px) {
-    font-size: 13px;
-line-height: 12px;
-margin-top: 15px;
-
+  @media (max-width: 1100px) {
+    font-size: 18px;
   }
 `;
 export const ItemTimeSC = styled.p`
   grid-area: time;
-
- border: 2px solid black;
-
-
+  //border: 2px solid black;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -632,14 +536,6 @@ export const ItemTimeSC = styled.p`
   /* identical to box height */
   /* Вторичный 80% */
   color: rgba(37, 37, 37, 0.8);
-  @media (max-width: 1250px) {
-    font-size: 10px;
-line-height: 12px;
-  }
-  @media (max-width: 470px) {
-    font-size: 8px;
-line-height: 10px;
-  }
 `;
 export const ItemInStockSC = styled.p`
   grid-area: instock;
@@ -656,20 +552,10 @@ export const ItemInStockSC = styled.p`
   /* Вторичный 80% */
 
   color: rgba(37, 37, 37, 0.8);
-  @media (max-width: 1250px) {
-    font-size: 10px;
-line-height: 12px;
-  }
-  @media (max-width: 470px) {
-    font-size: 8px;
-line-height: 10px;
-  }
 `;
 export const ItemPriceSC = styled.p`
   grid-area: price;
-
-   border: 2px solid red;
-
+  // border: 2px solid red;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
@@ -680,13 +566,8 @@ export const ItemPriceSC = styled.p`
   /* identical to box height */
 
   /* Вторичный */
+
   color: #252525;
-  @media (max-width: 1250px) {
-    font-size: 16px;
-  }
-  @media (max-width: 470px) {
-    font-size: 12px;
-  }
 `;
 export const ToEditSC = styled(Link)`
   grid-area: edit;
@@ -703,11 +584,6 @@ export const ToEditSC = styled(Link)`
   // border: 2px solid YELLOW;
   text-align: end;
   padding-top: 30px;
-  @media (max-width: 1250px) {
-    padding-top: 15px;
-    font-size: 10px;
-line-height: 12px;
-  }
   @media (max-width: 990px) {
     display: none;
   }
@@ -763,12 +639,8 @@ export const BottomPanel2PageSC = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 20px;
-
   @media (max-width: 1100px) {
     grid-template-columns: 163px 113px auto;
-   
-
-
   }
   @media (max-width: 990px) {
     display: none;
@@ -782,7 +654,7 @@ export const BottomPanelChoiceSC = styled.h1`
   line-height: 17px;
   /* identical to box height */
   text-decoration: none;
-  padding-top: 5px;
+  padding-top: 7px;
   /* Акцент */
   color: #85cb33;
   //border: 2px solid red;
@@ -792,18 +664,9 @@ export const BottomPanelChoiceSC = styled.h1`
   align-self: center;
   display: grid;
   grid-template-columns: auto auto;
-
-  @media (max-width: 1250px) {
-
-font-size: 16px;
-line-height: 16px;
-}
-@media (max-width: 470px) {
-font-size: 12px;
-line-height: 12px;
-
-}
-
+  @media (max-width: 1470px) {
+    font-size: 18px;
+  }
 `;
 export const BottomPanelChoice2SC = styled.h1`
   font-family: 'Montserrat';
@@ -823,17 +686,9 @@ export const BottomPanelChoice2SC = styled.h1`
   align-self: center;
   display: grid;
   grid-template-columns: auto auto;
-  
-  @media (max-width: 1250px) {
-
-font-size: 16px;
-line-height: 16px;
-}
-@media (max-width: 470px) {
-font-size: 12px;
-line-height: 12px;
-
-}
+  @media (max-width: 1470px) {
+    font-size: 18px;
+  }
 `;
 export const BottomPanelTextSC = styled(Link)`
   font-family: 'Montserrat';
@@ -853,19 +708,10 @@ export const BottomPanelTextSC = styled(Link)`
   display: grid;
   padding-top: 15px;
   grid-template-columns: 30px auto;
-  /* @media (max-width: 1250px) {
-    font-size: 14px;
-line-height: 17px;
-  } */
-  /* @media (max-width: 1470px) {
+  @media (max-width: 1470px) {
     font-size: 18px;
     grid-template-columns: 25px auto;
-  } */
-  @media (max-width: 1250px) {
-
-font-size: 16px;
-line-height: 16px;
-}
+  }
   @media (max-width: 990px) {
     display: none;
   }
@@ -931,14 +777,6 @@ export const PlusMinusButtonsItemCS = styled.button`
   transition: 0.3s;
   :hover {
     background: rgba(117, 116, 116, 0.26);
-  }
-  @media (max-width: 1250px) {
-    width: 45px;
-  height: 45px;
-  }
-  @media (max-width: 470px) {
-    width: 35px;
-  height: 35px;
   }
 `;
 export const PlusMinusButtonsCS = styled.button`
@@ -1042,11 +880,9 @@ export const BottomPanelTextDraftSC = styled(Link)`
   justify-self: start;
   min-width: 160px;
 
-  @media (max-width: 1250px) {
-
-font-size: 16px;
-line-height: 16px;
-}
+  @media (max-width: 1470px) {
+    font-size: 18px;
+  }
   @media (max-width: 990px) {
     display: none;
   }
@@ -1079,9 +915,6 @@ export const BottomPanelMoreSC = styled.button`
 export const IoMarginCS = styled.div`
   margin-top: 4px;
   //border: 2px solid green;
-  @media (max-width: 1250px) {
-    margin-top: 1px;
-  }
 `;
 
 export const FaMarginCS = styled.div`
@@ -1229,17 +1062,6 @@ export const UilSearchSC = styled(UilSearch)`
   /* user-select: none; */
   display: block;
   pointer-events: none;
-  @media (max-width: 1250px) {
-    display: none;
-  }
-`;
-export const UilSearchSC2 = styled(UilSearch)`
-  /* user-select: none; */
-  display: none;
-  @media (max-width: 1250px) {
-    display: block;
-    pointer-events: none;
-  }
 `;
 export const UilSearchHeadSC = styled(UilSearch)`
   /* user-select: none; */
@@ -1255,10 +1077,6 @@ export const DivIconBoxInput = styled.div`
   top: 16px;
   cursor: pointer;
   pointer-events: none;
-  @media (max-width: 1250px) {
-    right: 11px;
-    top: 13px;
-  }
 `;
 export const InputCheckbox = styled.input`
   position: relative;
@@ -1342,9 +1160,6 @@ export const Labelfor = styled.label`
   padding: 0 0.25em 0;
   margin-top: 7px;
   //border: 2px solid blue;
-  @media (max-width: 470px) {
-    margin-top: 10px;
-}
 `;
 export const DivSalePinSC = styled.div`
   display: grid;
@@ -1366,14 +1181,6 @@ export const DivSalePinSC = styled.div`
   /* identical to box height */
   text-align: center;
   color: #ffffff;
-
-  @media (max-width: 1250px) {
-    margin-top: -25px;
-    width: 30px;
-  height: 15px;
-  padding-top: 0px;
-  font-size: 10px;
-  }
 `;
 export const SaveButtonSC = styled.button`
   /* Кнопка (первичная) */

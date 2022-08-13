@@ -121,7 +121,7 @@ const MainPage = () => {
           <H1MasterTitleSC>Работы лучших мастеров в одном месте</H1MasterTitleSC>
           <ImgMastersBlockSC Photo={DivMasters} />
         </DivMastersBlockSC>
-        {/* <AboutUs/> */}
+         {/*<AboutUs/>*/}
         <DivSocialsBlockSC>
           <H1SocialsTitleSC>Следите за нами в соцсетях</H1SocialsTitleSC>
           <DivSocialsIconsBlock>

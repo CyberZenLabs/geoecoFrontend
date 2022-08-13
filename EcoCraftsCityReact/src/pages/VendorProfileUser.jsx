@@ -61,7 +61,7 @@ import {
     DivButtonChangrInformBottomSC,
     SpanTextTitleAdaptiveSC,
     DivInfoVendorBoxAdaptiveSC
-} from '../styled-components-css/styles.VendorProfile';
+} from '../styled-components-css/styles-user-store-settings/styles.VendorProfileUser';
 import EcoModal from '../components/Modal';
 import axiosCustom from '../apis/admin-rest';
 import axios from 'axios';

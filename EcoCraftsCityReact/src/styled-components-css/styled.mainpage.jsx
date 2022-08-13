@@ -4,26 +4,26 @@ import DivMasters from '../img/MainPagePeople.svg';
 import { Link } from 'react-router-dom';
 export const DivMainPageWrapSC = styled.div`
   display: grid;
-  grid-template-rows: 800px 2400px auto auto;
+  grid-template-rows: 800px 2400px auto auto auto;
   row-gap: 100px;
   //border: 2px solid red;
   height: fit-content;
   width: 100%;
 
   @media (max-width: 1000px) {
-    grid-template-rows: 670px 1260px auto auto;
+    grid-template-rows: 670px 1260px auto auto auto;
     row-gap: 50px;
   }
   @media (max-width: 768px) {
-    grid-template-rows: 512px 960px auto auto;
+    grid-template-rows: 512px 960px auto auto auto;
     row-gap: 30px;
   }
   @media (max-width: 480px) {
-    grid-template-rows: 320px 2400px auto auto;
+    grid-template-rows: 320px 2400px auto auto auto;
     row-gap: 20px;
   }
   @media (max-width: 360px) {
-    grid-template-rows: 240px 1800px auto auto;
+    grid-template-rows: 240px 1800px auto auto auto;
     row-gap: 10px;
   }
 `;

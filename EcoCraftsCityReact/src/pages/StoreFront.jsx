@@ -100,8 +100,10 @@ const StoreFront = ({ product }) => {
   const [checked, setChecked] = useState(false);
   const check = () => {
     setChecked(!checked);
+
   };
   const [active2, setActive2] = useState(false);
+
 
   const HandleSelectOpen2 = () => {
     setActive2(!active2);
@@ -142,6 +144,7 @@ const StoreFront = ({ product }) => {
           </DropDownOptionsSC>
         </DivOptionsPanel2SC>
       ),
+
       item: products.map((product, i) => {
         return <VendorProduct product={product} index={i} indexpage={0} />;
       }),
@@ -202,8 +205,10 @@ const StoreFront = ({ product }) => {
           </DropDownOptionsSC>
         </DivOptionsPanel2SC>
       ),
+
       item: products.map((product, i) => {
         return <VendorProduct product={product} index={i} indexpage={1} />;
+
       }),
       bottom: (
         <>
@@ -291,7 +296,6 @@ const StoreFront = ({ product }) => {
                     <InputSC type="text" id={'search'} />
                     <DivIconBoxInput>
                       <UilSearchSC size="25" color="#85cb33" />
-                      <UilSearchSC2 size="15" color="#85cb33" />
                     </DivIconBoxInput>
                   </StoreSalesAndAccountLinkSearchSC>
                 </DivOptionsPanelSC>

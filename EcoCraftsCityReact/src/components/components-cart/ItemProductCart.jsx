@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+	CustomTextBoxForCartSC,
 	DivBoxTitleSC,
 	DivImageSC,
 	DivItemListSC,
@@ -24,8 +25,8 @@ const ItemProductCart = props => {
 			</DivBoxInputCartSC>
 			<DivImageSC src={src}></DivImageSC>
 			<DivBoxTitleSC>
-				<SpanTitleSC>{title}</SpanTitleSC>
-				<span>{discr}</span>
+				<CustomTextBoxForCartSC weight={600} color={'#252525'}>{title}</CustomTextBoxForCartSC>
+				<CustomTextBoxForCartSC weight={400} color={'#252525'} size={18}>{discr}</CustomTextBoxForCartSC>
 			</DivBoxTitleSC>
 			<ButtonGroup></ButtonGroup>
 			<DivPriceSC>

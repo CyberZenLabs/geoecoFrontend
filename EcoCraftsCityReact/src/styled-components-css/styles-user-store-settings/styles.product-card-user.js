@@ -69,15 +69,6 @@ export const ProductCardContainer = styled.div`
   margin-top: 20px;
   padding: 27px;
 
-  @media (max-width: 1000px) {
-    padding: 18px;
-  }
-  @media (max-width: 480px) {
-    padding: 15px;
-  }
-  @media (max-width: 360px) {
-    padding: 10px;
-  }
 `;
 
 export const ProductCardImage = styled.img`

@@ -1,18 +1,25 @@
 import React from 'react';
 import {
-  CardCarousel,
+
   DivBoxAvaSC,
   DivAvaSC,
   DivBoxBigTextSC,
   DivTextBigSC,
   DivBoxSmallTextSC,
-  DivTextSmallSC,
+  DivTextSmallSC, DivBoxContentSC,
 } from '../../styled-components-css/styles.ElasticCourusel';
 
-const CardCarouselShow = () => {
+const CardCarouselShow = ({ children }) => {
+  // const { width } = useContext(CarouselClientsContext);
   return (
     <>
-      <CardCarousel>
+      <DivBoxContentSC
+        // style={{
+        //   minWidth: `${width}px`,
+        //   maxWidth: `${width}px`,
+        // }}
+      >
+        {/*{children}*/}
         <DivBoxAvaSC>
           <DivAvaSC></DivAvaSC>
         </DivBoxAvaSC>
@@ -26,9 +33,10 @@ const CardCarouselShow = () => {
         <DivBoxSmallTextSC>
           <DivTextSmallSC>Евгения Калмакова</DivTextSmallSC>
         </DivBoxSmallTextSC>
-      </CardCarousel>
+      </DivBoxContentSC>
     </>
   );
 };
 
 export default CardCarouselShow;
+

@@ -9,8 +9,6 @@ import UilStore from '@iconscout/react-unicons/icons/uil-store';
 
 import UilShoppingCart from '@iconscout/react-unicons/icons/uil-shopping-cart';
 import { GoPackage, GoCreditCard } from 'react-icons/go';
-import { MdOutlineStorefront } from 'react-icons/md';
-import { IoExitOutline } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import {
   DivBoxLogoSC,
@@ -38,19 +36,22 @@ import {
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
-} from '../styled-components-css/styles.navbar';
-import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
-import { OverlayDivSc } from '../styled-components-css/styles.catalog';
-import AppContext from '../context/AppContext';
-import { useAuth } from '../context/AuthContext';
-import { toast } from 'react-toastify';
-import useAxiosFunction from '../hooks/useAxiosFunction';
-import { useCookies } from 'react-cookie';
-import Modal from './Modal';
-import EcoModal from './Modal';
+  LinkProfileSC
+} from "../styled-components-css/styles.navbar";
+import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
+import { OverlayDivSc } from "../styled-components-css/styles.catalog";
+import AppContext from "../context/AppContext";
+import { useAuth } from "../context/AuthContext";
+import { toast } from "react-toastify";
+import useAxiosFunction from "../hooks/useAxiosFunction";
+import { useCookies } from "react-cookie";
+import Modal from "./Modal";
+import EcoModal from "./Modal";
 import Modalstore from './ModalRegStore';
 import {useEffect} from "react";
 import axios from "../apis/admin-rest";
+import { MdOutlineStorefront } from 'react-icons/md';
+import { IoExitOutline } from 'react-icons/io5';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -60,6 +61,7 @@ const ResponsiveAppBar = () => {
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
   const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
+
   const toggleProfile = () => {
     setProfileActive(!profileActive);
   };
@@ -85,8 +87,9 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpenModal(true);
     setModalData({
-      inputs: [{ email: 'Электронаая почта', password: 'Пароль', repeat_password: 'Повтор пароля', city: 'Город' }],
-
+      
+      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
+      
       button: true,
     });
   };
@@ -123,118 +126,141 @@ const ResponsiveAppBar = () => {
             <DivBoxLogoSC></DivBoxLogoSC>
           </LinkLogoSC>
 
-          <DivCatalogAndSearchBoxSC>
-            <DivTextBoxSC>
-              <SpanSecondSC to="#"></SpanSecondSC>
-              <SpanFirstSC to="#" onClick={openCart}>
-                Создать магазин
-              </SpanFirstSC>
-              <SpanSecondSC to="#"></SpanSecondSC>
-            </DivTextBoxSC>
 
-            <DivBoxButtonAndInputSC>
-              <ButtonCustomSC
-                  onClick={() => setShowCatalog(!showCatalog)}
-                  width={'176px'}
-                  padding={'8px 32px'}
-                  primary={true}
+        <DivCatalogAndSearchBoxSC>
+
+
+
+          <DivBoxButtonAndInputSC>
+            <ButtonCustomSC className="ButtonCustom"
+              onClick={() => setShowCatalog(!showCatalog)}
+              primary={true}
+            >
+              <BoxContentButton
+
               >
-                <BoxContentButton>
-                  <UilListUl
-                      size="40"
-                      // color="#61DAFB"
-                  />
-                  <span>Каталог</span>
-                </BoxContentButton>
-              </ButtonCustomSC>
-
-              <DivInputBoxCS>
-                <InputSC
-                    // value={lastName}
-                    // onChange={onChange(getLastName)}
-                    type="text"
-                    id={'search'}
-                    placeholder={'Я ищу...'}
+                <UilListUl
+                  size="40"
+                  // color="#61DAFB"
                 />
-                <DivIconBoxInput>
-                  <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
-                </DivIconBoxInput>
-              </DivInputBoxCS>
-            </DivBoxButtonAndInputSC>
-          </DivCatalogAndSearchBoxSC>
-          {cookies['token'] !== undefined ? (
-              <div class={profileActive ? 'navigation active' : 'navigation'}>
-                <div class={profileActive ? 'user-box active' : 'user-box'}>
-                  <div class={profileActive ? 'image-box active' : 'image-box'}>
-                    <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
-                  </div>
+                
 
-                  <p class="username">
-                    Jenifer Lopez
-                    <a href="#">Мой Профиль</a>
-                  </p>
-                </div>
+                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
+              </BoxContentButton>
+            </ButtonCustomSC>
 
-                <div class="profileMenu-toggle" onClick={toggleProfile}></div>
-
-                <ul class="profileMenu">
-                  {/* <li>
-                <LinkProfileBoxSC to="#">
-                  <GoPackage />
-                  Заказы
-                </LinkProfileBoxSC>
-              </li> */}
-                  <li>
-                    <LinkProfileBoxSC to="/map-binding">
-                      <GoCreditCard />
-                      Мой Карты
-                    </LinkProfileBoxSC>
-                  </li>
-
-                  {/* <li>
-                <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
-              </li> */}
-                  <li>
-                    <LinkProfileBoxSC to="/vendorprofile">
-                      <MdOutlineStorefront />
-                      Мой магазин
-                    </LinkProfileBoxSC>
-                  </li>
-                  <li class="logout">
-                    <LinkProfileBoxSC to="/" onClick={handleLogout}>
-                      <IoExitOutline />
-                      Выйти
-                    </LinkProfileBoxSC>
-                  </li>
-                </ul>
+            <DivInputBoxCS>
+              <InputSC
+                // value={lastName}
+                // onChange={onChange(getLastName)}
+                type="text"
+                id={'search'}
+                placeholder={'Я ищу...'}
+              />
+              <DivIconBoxInput>
+                <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
+              </DivIconBoxInput>
+            </DivInputBoxCS>
+          </DivBoxButtonAndInputSC>
+        </DivCatalogAndSearchBoxSC>
+        {cookies['token'] !== undefined ? (
+          
+          <div class={profileActive ? 'navigation active' : 'navigation'}>
+            <div class={profileActive ? 'user-box active' : 'user-box'}>
+              <div class={profileActive ? 'image-box active' : 'image-box'}>
+                <img src="https://i.pravatar.cc/150?img=49" alt="avatar" />
               </div>
-          ) : null}
-          <DivBoxIconHeaderSC>
-            <DivBoxIconSC>
-              <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
-                Создать магазин
-              </DivBoxButtonCreateStoreSC>
-              {cookies['token'] ? null : (
-                  <LinkIconSC to="/signin" isLog={loggedIn}>
-                    <DivBoxIconEndSC>
-                      <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
-                    </DivBoxIconEndSC>
 
-                    <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
-                  </LinkIconSC>
-              )}
+              <p class="username">
+                Jenifer Lopez
+                <LinkProfileSC to="/personaldata">Мой Профиль</LinkProfileSC>
+              </p>
+            </div>
 
-              <LinkIconHideSC to="/cart">
+            <div class="profileMenu-toggle" onClick={toggleProfile}></div>
+
+            <ul class="profileMenu">
+              {/* <li>
+              <LinkProfileBoxSC to="#">
+                <GoPackage />
+                Заказы
+              </LinkProfileBoxSC>
+            </li> */}
+              <li>
+                <LinkProfileBoxSC to="/map-binding">
+                  <GoCreditCard />
+                  Мой Карты
+                </LinkProfileBoxSC>
+              </li>
+
+              {/* <li>
+              <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
+            </li> */}
+              <li>
+                <LinkProfileBoxSC to="/vendorprofile">
+                  <MdOutlineStorefront />
+                  Мой магазин
+                </LinkProfileBoxSC>
+              </li>
+              <li class="logout">
+                <LinkProfileBoxSC to="/" onClick={handleLogout}>
+                  <IoExitOutline />
+                  Выйти
+                </LinkProfileBoxSC>
+              </li>
+            </ul>
+          </div>
+        
+      ) : null}
+        <LinkLogoAdaptiveSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkLogoAdaptiveSC>
+        
+        <DivBoxIconHeaderSC>
+          <DivBoxIconSC>
+            
+            <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
+              Создать магазин
+            </DivBoxButtonCreateStoreSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
                 <DivBoxIconEndSC>
-                  <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
+                  <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
                 </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
-              </LinkIconHideSC>
-            </DivBoxIconSC>
-          </DivBoxIconHeaderSC>
-        </DivHeaderSC>
-      </DivBoxHeaderSC>
+                <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
+            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+                <DivBoxIconEndSC>
+                  <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
+              </LinkIconAdaptiveSC>
+            {cookies['token'] === undefined ? (
+              <LinkIconSC to="/signin">
+                <DivBoxIconEndSC>
+                  <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
+                </DivBoxIconEndSC>
+
+                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+              </LinkIconSC>
+            ) : null}
+            <LinkIconHideSC to="/cart">
+              <DivBoxIconEndSC>
+                <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
+              </DivBoxIconEndSC>
+
+              <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
+            </LinkIconHideSC>
+            
+          </DivBoxIconSC>
+          
+        </DivBoxIconHeaderSC>
+       
+      </DivHeaderSC>
+      
+    </DivBoxHeaderSC>
+
   );
 };
 

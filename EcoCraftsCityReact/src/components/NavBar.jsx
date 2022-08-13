@@ -36,7 +36,7 @@ import {
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
-  LinkProfileSC
+  LinkProfileSC, DivBoxCounterSC
 } from "../styled-components-css/styles.navbar";
 import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
 import { OverlayDivSc } from "../styled-components-css/styles.catalog";
@@ -60,7 +60,7 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst, cartProductList } = React.useContext(AppContext);
 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
@@ -116,7 +116,6 @@ const ResponsiveAppBar = () => {
         .catch((err) => {
         });
   }, []);
-
 
 
   return (
@@ -246,6 +245,10 @@ const ResponsiveAppBar = () => {
               </LinkIconSC>
             ) : null}
             <LinkIconHideSC to="/cart">
+              {
+                cartProductList.length > 0 ? <DivBoxCounterSC>{cartProductList.length}</DivBoxCounterSC> : null
+              }
+
               <DivBoxIconEndSC>
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

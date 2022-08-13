@@ -9,9 +9,18 @@ import {ButtonCustomSC} from "../../styled-components-css/styles.custom-button";
 import { BsFillCartPlusFill } from 'react-icons/bs';
 import { BiRun } from 'react-icons/bi';
 import {DivBoxButtonContentSC} from "../../styled-components-css/styles.product-detail";
+import AppContext from "../../context/AppContext";
 
 const BoxPrice = (props) => {
-    const {price} = props
+    const {
+        price,
+        onClickCart,
+        isUneqSelected
+    } = props
+
+
+
+
     return (
         <DivBoxButtonSC>
             <div>
@@ -35,10 +44,14 @@ const BoxPrice = (props) => {
             </DivBoxPriceSC>
 
             <div>
+
                 <ButtonCustomSC
                     width={'250px'}
                     padding={'8px 32px'}
-                    primary>
+                    primary
+                    onClick={isUneqSelected ? onClickCart : null}
+                    statusOpasity={!isUneqSelected}
+                >
 
                     <DivBoxButtonContentSC>
                         <span>Добавить в корзину</span>

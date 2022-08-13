@@ -264,6 +264,7 @@ export const LinkIconHideSC = styled(Link)`
   color: var(--color-black);
   display: grid;
   grid-template-rows: 56% 44%;
+  position: relative;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -324,4 +325,19 @@ export const DivBoxButtonCreateStoreSC = styled.span`
 export const LinkProfileBoxSC = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+`;
+
+export const DivBoxCounterSC = styled.div`
+  display: grid;
+  position: absolute;
+  background: red;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  top: -2px;
+  right: 17px;
+  color: #fff;
+  justify-items: center;
+  align-items: center;
 `;

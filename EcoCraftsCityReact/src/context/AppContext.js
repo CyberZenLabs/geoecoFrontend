@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import axios from "../apis/admin-rest";
 
 const AppContext = createContext();
 
@@ -16,6 +17,34 @@ export function AppProvider({ children }) {
   const [openEmail, setOpenEmail] = useState(false);
   const [Starttimer, setstarttimer] = useState(true);
   const [productList, setProductsLIst] = useState([]);
+  const [cartProductList, setCartProductList] = useState([]);
+    const [shopsList, setShopsList] = useState([]);
+
+  useEffect(() => {
+      let temp = JSON.parse(localStorage.getItem('cartData'))
+      if (temp) {
+          setCartProductList(temp)
+      }
+
+  }, [localStorage.getItem('cartData')])
+
+    useEffect(() => {
+        axios
+            .get('https://radiant-river-29802.herokuapp.com/api/v1/store')
+            .then((res) => {
+                // console.log(res);
+
+                console.log('>>>>>>>', res.data.data.data)
+                setShopsList(res.data.data.data)
+
+            })
+            .catch((err) => {
+                // setiSLoading(false);
+                console.error(err)
+            });
+    }, [])
+
+
 
   const [modalData, setModalData] = useState({
     inputs: [],
@@ -45,7 +74,9 @@ export function AppProvider({ children }) {
          disable,
          setDisable,
           productList,
-          setProductsLIst
+          setProductsLIst,
+          setCartProductList,
+          cartProductList
       }}
     >
       {children}

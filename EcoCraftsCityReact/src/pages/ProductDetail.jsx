@@ -31,6 +31,7 @@ import ShopBlock from "../components/components-product-detail/ShopBlock";
 import Image from '../img/logo.svg'
 import AppContext from "../context/AppContext";
 import { useParams} from 'react-router-dom';
+import Tools from "../tools/tools";
 const listContent = [
     {
         text:
@@ -51,11 +52,16 @@ const ProductDetail = () => {
     const [urlSrc, getUrlSrc] = useState(
         'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg',
     );
-    const {productList} = React.useContext(AppContext);
+    const {
+        productList,
+        setCartProductList,
+        cartProductList
+    } = React.useContext(AppContext);
     const [productItem, setProductItem] = useState(null);
     const [listImages, setListImages] = useState([]);
     const params = useParams();
     const [indexSelectedButton, getIndexButton] = useState(0);
+    const [isUneqSelected, getIsUneqSelected] = useState(true);
 
     const onClickTab = (index) => (e) => {
         getIndexButton(index);
@@ -73,8 +79,32 @@ const ProductDetail = () => {
 
     }, [productList]);
 
+    useEffect(() => {
+        getIsUneqSelected(true)
+        if (productItem) {
+            cartProductList.forEach((item, i) => {
+                if(Tools.compare(item.id, productItem.id)) {
+                    getIsUneqSelected(false)
+                }
+            })
+        }
 
-    console.log(productItem)
+
+    }, [cartProductList, productItem]);
+
+
+    const onClickCart = () => {
+
+        let _cartProductList = cartProductList;
+
+        _cartProductList.push(productItem)
+        setCartProductList([..._cartProductList])
+
+        localStorage.setItem('cartData', JSON.stringify(_cartProductList))
+        // localStorage.clear();
+
+    }
+
 
     return (
         <DivBoxProductDetailSC>
@@ -90,6 +120,8 @@ const ProductDetail = () => {
                         />
                         <BoxPrice
                             price={productItem.price}
+                            onClickCart={onClickCart}
+                            isUneqSelected={isUneqSelected}
                         />
                         <ShopBlock
                             Image={Image}

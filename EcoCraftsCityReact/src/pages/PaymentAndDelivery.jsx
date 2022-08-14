@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
+import FinanceTable from "../components/FinanceTable";
 import {
   DivBackBoxSC,
   DivHistorySC,
@@ -48,6 +49,11 @@ import {
   LightTextSC,
   ContentInfoSC,
   GridPayment,
+  DivInfoPageSC,
+  DivPaymentContentSC,
+  PaymentsSC,
+  DivImgMirSC,
+  PaddingSC,
 } from "../styled-components-css/styles.PaymentAndDelivery";
 import VendorNavMenu from "../components/VendorNavMenu";
 import CustomInputCheckBox from "../components/CustomInputCheckBox/CustomInputCheckBox";
@@ -83,7 +89,7 @@ const PaymentAndDelivery = ({ product }) => {
           
             <DivContent1PageSC>
               <DivContentRowsSC>
-                <DivBankCardSC><DivInfoCard><div><img src="/default-images/MIR.svg"  /></div><NumberCardSC>220220******5839</NumberCardSC><div><img src="/default-images/pencil.svg"  /></div></DivInfoCard></DivBankCardSC>
+                <DivBankCardSC><DivInfoCard><DivImgMirSC src="/default-images/MIR.svg" ></DivImgMirSC><NumberCardSC>220220******5839</NumberCardSC><div><img src="/default-images/pencil.svg"  /></div></DivInfoCard></DivBankCardSC>
               <DivTextOpisanitSC>    На эту карту будут зачислены средства
 от сделок, которые оплачены онлайн</DivTextOpisanitSC> 
               </DivContentRowsSC>
@@ -104,20 +110,21 @@ const PaymentAndDelivery = ({ product }) => {
             </DivContentInfoButtonSC>
             <DivContentSC>
               <DivContentDivisionSC>
+                <PaddingSC>
                 <DivContentRows2PageSC>
                
                   <H1ContentNameSC > <CustomInputCheckBox  / ><MarginLeftSC/> Почта России</H1ContentNameSC>
                   <H1ContentNameSC><CustomInputCheckBox/><MarginLeftSC/> СДЭК</H1ContentNameSC>
                  
                 </DivContentRows2PageSC>
-                
+                </PaddingSC>
                 <DivContentRows2PageSC>
                 <H1ContentDefinSC>
                  
                  <EmailFieldSC
                    label="phone"
                    type="phone"
-                   placeholder="г. Красноярск, Красноярский край, Россия"
+                  
                  />
                  <SmalPlaceholder>От 180 рублей в зависимости от региогна доставки</SmalPlaceholder>
                </H1ContentDefinSC>
@@ -126,7 +133,7 @@ const PaymentAndDelivery = ({ product }) => {
                  <EmailFieldSC
                    label="password"
                   
-                   placeholder="200"
+                   
                  />
                  <img src="/default-images/Rub.svg"  />
                  </FlexSC>
@@ -176,19 +183,13 @@ const PaymentAndDelivery = ({ product }) => {
             
            </DivContentSC>
           </DivMainInfo3PageSC>
-          <DivMainInfo3PageSC>
+          <DivInfoPageSC>
           <DivContentInfoButtonSC>
              <FlexSC> <ContentInfoSC>Важно:</ContentInfoSC><LightTextSC>Зачисление происходит автоматически после вручения посылки</LightTextSC></FlexSC>
             
             </DivContentInfoButtonSC>
-            <DivContentSC>
-
-           <GridPayment>Платежи Дата Сумма Статус</GridPayment> 
-           
-            
-             
-            </DivContentSC>
-          </DivMainInfo3PageSC>
+            <FinanceTable/>
+          </DivInfoPageSC>
           </>),},
   ];
 

@@ -29,7 +29,7 @@ export const DivStoreWrapSC = styled.div`
   // border: 2px solid black;
   padding-left: 20px;
   padding-right: 20px;
-  min-width: 600px;
+  min-width: 360px;
   @media (max-width: 990px) {
     grid-template-columns: 100%;
   }

@@ -21,7 +21,18 @@ line-height: 12px;
 
 color: rgba(0, 0, 0, 0.33)
 `;
-export const GridPayment  = styled.div`
+export const PaymentsSC   = styled.div`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+margin-left:20px;
+`;
+export const GridPayment  = styled.div`\
+padding:10px 0px;
+border: 1px solid rgba(0, 0, 0, 0.33);
+border-radius: 14px;
 display: grid;
     grid-template-columns: repeat(1,60% 40%);
     width: 100%;
@@ -37,6 +48,7 @@ color: rgba(0, 0, 0, 0.33)
 `;
 export const FlexSC  = styled.div`
 display:flex;
+
 `;
 export const MarginLeftSC  = styled.div`
 margin-left:7px;
@@ -86,7 +98,10 @@ padding-bottom: 30px;
   // border: 2px solid black;
   grid-template-rows: auto;
   max-width: 1140px;
- 
+  @media (max-width:570px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 export const DivMainInfo3PageSC = styled.div`
 
@@ -104,6 +119,22 @@ export const DivMainInfo3PageSC = styled.div`
   justify-content: center;
     justify-items: center;
 `;
+export const DivInfoPageSC = styled.div`
+
+gap:7px;
+align-items: center;
+  background: rgba(243, 243, 243, 0.5);
+  display: grid;
+  grid-template-rows: repeat(1,50px auto);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  height: auto;
+  // border: 2px solid black;
+
+  max-width: 1140px;
+  justify-content: center;
+    justify-items: center;
+`;
 export const DivBankCardSC = styled.div`
 
 background: #FFFFFF;
@@ -112,6 +143,12 @@ border: 1px solid rgba(0, 0, 0, 0.33);
 border-radius: 40px;
 width: 469px;
 height: 54px;
+@media (max-width:570px) {
+  width: 300px;
+}
+@media (max-width:420px) {
+  width: 270px;
+}
 
  
 `;
@@ -122,6 +159,21 @@ font-style: normal;
 font-weight: 500;
 font-size: 18px;
 line-height: 22px;
+@media (max-width:550px) {
+  font-size: 14px;
+  
+}
+ 
+`;
+export const DivImgMirSC = styled.img`
+
+
+@media (max-width:550px) {
+  
+  width: 55px;
+
+  
+}
  
 `;
 export const NumberCardSC = styled.div`
@@ -132,6 +184,14 @@ font-weight: 600;
 font-size: 22px;
 line-height: 27px;
 margin-left:-27%;
+@media (max-width:540px) {
+  font-size: 15px;
+  margin-left:-8%;
+}
+@media (max-width:3600px) {
+  
+  margin-left:-4%;
+}
  
 `;
 
@@ -294,6 +354,12 @@ display: grid;
 //min-width: 702px;
 width: auto;
 `;
+export const DivPaymentContentSC=styled.div`
+
+display: grid;
+
+width: 100%;
+`;
 export const DivContent1PageSC=styled.div`
 //border: 2px solid blue;
 display: grid;
@@ -309,9 +375,14 @@ grid-template-columns: 200px 70%;
 grid-template-rows: auto auto;
 width:60vw;
 max-width: 900px;
-min-width: 350px;
+min-width: 280px;
 padding-top:20px;
-
+@media (max-width:480px) {
+  grid-template-columns: 144px 70%;
+}
+@media (max-width:360px) {
+  grid-template-columns: 123px 70%;
+}
 
 `;
 export const DivFirstColumnSC=styled.div`
@@ -340,15 +411,30 @@ width: auto;
 
 max-width: 500px;
 `;
+export const PaddingSC=styled.div`
+padding-bottom:12px;
+padding-top:5px;
+@media (max-width:360px) {
+  padding-bottom:25px;
+
+}
+`;
 export const DivContentRows2PageSC=styled.div`
 //border: 2px solid blue;
-padding-bottom:5px;
+height:100%;
 display: grid;
 grid-template-rows: auto auto  ;
 gap: 10px;
 min-width: 179px;
 align-items: center;
-    align-content: stretch;
+    align-content: space-between;
+    @media (max-width:606px) {
+      align-items: start;
+    }
+    @media (max-width:360px) {
+      width:140px;
+    
+    }
 `;
 export const DivContentInfoButtonSC=styled.div`
 
@@ -365,6 +451,9 @@ align-self: center;
 
 justify-self: center;
 cursor: pointer;
+@media (max-width:606px) {
+  font-size:14px;
+}
 `;
 export const H1PageOptionHidesSC=styled.h1`
 font-family: 'Montserrat';

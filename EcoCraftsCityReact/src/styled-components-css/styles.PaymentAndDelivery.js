@@ -29,7 +29,7 @@ font-size: 16px;
 line-height: 20px;
 margin-left:20px;
 `;
-export const GridPayment  = styled.div`\
+export const GridPayment  = styled.div`
 padding:10px 0px;
 border: 1px solid rgba(0, 0, 0, 0.33);
 border-radius: 14px;
@@ -43,7 +43,14 @@ font-style: normal;
 font-weight: 500;
 font-size: 18px;
 line-height: 24px;
-
+@media (max-width:480px) {
+  font-size: 14px;
+  
+}
+@media (max-width:360px) {
+  font-size: 12px;
+  
+}
 color: rgba(0, 0, 0, 0.33)
 `;
 export const FlexSC  = styled.div`
@@ -206,7 +213,10 @@ text-align: start;
 justify-self: flex-start;
 align-self: flex-start;
 color: #3D3D3D;
-
+@media (max-width:480px) {
+  font-size: 18px;
+  
+}
 
 `;
 export const ContentInfoSC=styled.div`
@@ -220,7 +230,14 @@ text-align: start;
 justify-self: flex-start;
 align-self: flex-start;
 color: #3D3D3D;
-
+@media (max-width:480px) {
+  font-size: 14px;
+  
+}
+@media (max-width:360px) {
+  font-size: 12px;
+  
+}
 `;
 
 export const PContentInfoSC=styled.p`

@@ -8,6 +8,7 @@ import {
   TableH,
   TableD,
   Tablehead,
+  TableTR,
 } from "../styled-components-css/styles.FinanceTable";
 const FinanceTable = () => {
     
@@ -19,85 +20,39 @@ const FinanceTable = () => {
 			<Table>
               
 				<Tablehead>
-					<tr>
+					<TableTR>
 						
 						<TableH>Платежи</TableH>
 						<TableH>Дата</TableH>
                         <TableH>Сумма</TableH>
                         <TableH>Статус</TableH>
 						
-					</tr>
+					</TableTR>
 				</Tablehead>
                
 				<tbody>
-					<tr>
+					<TableTR>
 						
 						<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
                         <TableD>Bergnaum </TableD>
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
+					</TableTR>
+                    <TableTR>
 						
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
+						<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
                         <TableD>Bergnaum </TableD>
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
+					</TableTR>
+                    <TableTR>
+						
 						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-					</tr>
-					<tr>
-					<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
 						<TableD>Bergnaum </TableD>
                         <TableD>Bergnaum </TableD>
+					</TableTR>
 					
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-						
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-						
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-						
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-						
-					</tr>
-					<tr>
-                    <TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-						<TableD>Bergnaum </TableD>
-                        <TableD>Bergnaum </TableD>
-					
-					</tr>
 				</tbody>
                 </Table>
             </TableResponsive>

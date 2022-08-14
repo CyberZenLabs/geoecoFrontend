@@ -23,13 +23,27 @@ text-align: center;
 padding: 10px;
 
 color: #000;
+@media (max-width:480px) {
+    :nth-child(n+2){
+    display: none;
+   }
+  }
 `;
 export const TableD = styled.td`
 text-align: center;
     padding: 10px;
+    @media (max-width:480px) {
+        :nth-child(n+2){
+    display: none;
+   }
+  }
 `;
 export const Tablehead = styled.thead`
 border-radius: 10px;
 box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.22);
+
+`;
+export const TableTR = styled.tr`
+
 
 `;

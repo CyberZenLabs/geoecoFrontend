@@ -27,7 +27,7 @@ export const DivStoreWrapSC = styled.div`
   grid-gap: 20px;
   padding-bottom: 200px;
   // border: 2px solid black;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-right: 20px;
   min-width: 360px;
   @media (max-width: 990px) {

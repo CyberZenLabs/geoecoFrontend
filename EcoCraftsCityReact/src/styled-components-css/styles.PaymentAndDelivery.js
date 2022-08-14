@@ -68,6 +68,11 @@ export const DivStoreInfoStuffSC = styled.div`
   /* grid-gap: 1vw; */
   max-width: 1010px;
   padding-bottom: 10px;
+  @media (max-width: 540px) {
+    
+    padding-bottom:0px;
+  }
+  
 `;
 export const DivInfoCard = styled.div`
 display: flex;

@@ -174,6 +174,14 @@ export const H1BoldTextSC = styled.h1`
   color: #252525;
   // border: 2px solid green;
   padding-top: 12px;
+  @media (max-width: 540px) {
+    font-size: 20px;
+    padding-bottom:0px;
+  }
+  @media (max-width: 360px) {
+    font-size: 16px;
+    padding-bottom:0px;
+  }
 `;
 export const StoreItemsNumSC = styled.h1`
   font-family: "Montserrat";

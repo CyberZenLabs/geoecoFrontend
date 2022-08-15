@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import image from '../img/geoecologo.png';
+import image1 from '../img/geoecologomobile.png';
 import { Link } from 'react-router-dom';
 
 export const DivBoxLogoSC = styled.div`
@@ -13,6 +14,7 @@ export const DivBoxLogoSC = styled.div`
   display: grid;
   align-items: start;
   @media (max-width: 1000px) {
+    display: none;
   }
 `;
 
@@ -23,9 +25,7 @@ export const DivBoxHeaderSC = styled.div`
   align-items: center;
   justify-items: center;
 `;
-export const LinkProfileSC = styled(Link)`
-  
-`;
+export const LinkProfileSC = styled(Link)``;
 
 export const DivHeaderSC = styled.div`
   max-width: 1420px;
@@ -51,8 +51,8 @@ export const SpanFirstSC = styled(Link)`
   font-size: 12px;
   font-family: var(--root-font-family);
   border: 2px solid rgba(133, 203, 51, 0.7);
-border-radius: 20px;
-color:#85CB33;
+  border-radius: 20px;
+  color: #85cb33;
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
@@ -70,7 +70,6 @@ export const SpanSecondSC = styled(Link)`
   width: fit-content;
   padding: 3px 5px;
   text-decoration: none;
-  
 `;
 
 // export const DivTextBoxSC = styled.div`
@@ -90,12 +89,11 @@ export const DivBoxButtonAndInputSC = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: max-content 1fr;
     grid-column-gap: 10px;
-    }
-    @media (max-width: 420px) {
-      grid-template-columns: max-content 1fr;
-      grid-column-gap: 5px;
-  
-      }
+  }
+  @media (max-width: 420px) {
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 5px;
+  }
 `;
 
 export const DivBoxIconHeaderSC = styled.div`
@@ -104,11 +102,11 @@ export const DivBoxIconHeaderSC = styled.div`
   align-items: center;
   align-content: center;
   justify-content: center;
-  width:100%;
+  width: 100%;
   height: 72px;
-  padding-left:20px;
+  padding-left: 20px;
   @media (max-width: 1000px) {
-    padding-left:0px;
+    padding-left: 0px;
   }
 `;
 
@@ -116,25 +114,21 @@ export const DivBoxIconSC = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   width: 278px;
 
-
-  
   grid-gap: 10px;
 
-  height:100%;
+  height: 100%;
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 150px;
-
-    }
-    @media (max-width: 480px) {
-      grid-column-gap: 5px;
-
-    }
+  }
+  @media (max-width: 480px) {
+    grid-column-gap: 5px;
+  }
 `;
 
 export const ButtonSC = styled.button`
@@ -169,11 +163,10 @@ export const BoxContentButton = styled.div`
   display: grid;
   grid-template-columns: 40px auto;
   align-items: center;
- 
 `;
 export const SpanTextCatalogSC = styled.div`
-@media (max-width: 768px) {
-    display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 export const InputSC = styled.input`
@@ -196,11 +189,11 @@ export const InputSC = styled.input`
 
 export const DivInputBoxCS = styled.div`
   display: grid;
-  align-self:start;
+  align-self: start;
   width: auto;
   position: relative;
   @media (max-width: 1000px) {
-    display:none;
+    display: none;
   }
 `;
 
@@ -228,29 +221,28 @@ export const LinkIconSC = styled(Link)`
     top: 40px;
   }
   @media (max-width: 1000px) {
-    display:none;
+    display: none;
   }
 `;
 export const LinkIconAdaptiveSC = styled(Link)`
-display:none;
-@media (max-width:1000px) {
-  //display: inline-block;
-  font-size: 12px;
-  font-family: var(--root-font-family);
-  border-radius: 50px;
-  //background: rgba(133, 203, 51, 0.25);
-  width: fit-content;
-  padding: 3px 3px;
-  text-decoration: none;
-  color: var(--color-black);
-  display: grid;
-  grid-template-rows: 56% 44%;
-  @media (max-width: 730px) {
-    right: 10vw;
-    top: 40px;
+  display: none;
+  @media (max-width: 1000px) {
+    //display: inline-block;
+    font-size: 12px;
+    font-family: var(--root-font-family);
+    border-radius: 50px;
+    //background: rgba(133, 203, 51, 0.25);
+    width: fit-content;
+    padding: 3px 3px;
+    text-decoration: none;
+    color: var(--color-black);
+    display: grid;
+    grid-template-rows: 56% 44%;
+    @media (max-width: 730px) {
+      right: 10vw;
+      top: 40px;
+    }
   }
-}
-  
 `;
 export const LinkIconHideSC = styled(Link)`
   //display: inline-block;
@@ -269,21 +261,20 @@ export const LinkIconHideSC = styled(Link)`
   }
 `;
 export const LinkLogoSC = styled(Link)`
-width: 130px;
-height: 72px;
-display: grid;
-align-items: center;
-@media (max-width: 1000px) {
-  display: none;
-}
+  width: 130px;
+  height: 72px;
+  display: grid;
+  align-items: center;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 export const LinkLogoAdaptiveSC = styled(Link)`
-display: none;
-@media (max-width: 1000px) {
-  display: grid;
-  justify-items: center;
-  
-}
+  display: none;
+  @media (max-width: 1000px) {
+    display: grid;
+    justify-items: center;
+  }
 `;
 export const DivBoxIconEndSC = styled.div`
   display: grid;
@@ -296,7 +287,7 @@ export const SpanEndHeaderSC = styled.span`
   align-items: start;
   color: rgba(37, 37, 37, 0.8);
   font-size: var(--font-size-icon-text);
-  margin-top:3px;
+  margin-top: 3px;
 `;
 export const DivBoxButtonCreateStoreSC = styled.span`
   :hover {
@@ -324,4 +315,30 @@ export const DivBoxButtonCreateStoreSC = styled.span`
 export const LinkProfileBoxSC = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+`;
+
+export const LinkLogoMobileSC = styled(Link)`
+  display: none;
+  @media (max-width: 1000px) {
+    display: grid;
+    width: 100%;
+    height: 72px;
+    align-items: center;
+  }
+`;
+
+export const DivBoxLogoMobileSC = styled.div`
+  display: none;
+  @media (max-width: 1000px) {
+    display: grid;
+    background-image: url(${image1});
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 72px;
+    width: 100%;
+    max-width: 152px;
+    background-size: 130px;
+
+    align-items: start;
+  }
 `;

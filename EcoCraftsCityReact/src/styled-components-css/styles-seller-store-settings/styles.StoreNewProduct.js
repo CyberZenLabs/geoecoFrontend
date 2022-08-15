@@ -28,7 +28,7 @@ export const DivBoxNewProductsST = styled.div`
   margin-top: 80px;
   justify-self: center;
   max-width: 1420px;
-  padding 0 30px;
+  padding: 0 30px;
   grid-column-gap: 40px;
 
   @media (max-width: 480px) {
@@ -233,7 +233,7 @@ display: grid;
 width:100%;
   justify-self: center;
   max-width: 1420px;
-padding 0 30px;
+padding: 0 30px;
 
 @media (max-width: 768px) {
   display:none;

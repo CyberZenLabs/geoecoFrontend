@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from 'react-icons/fa';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-import { DivWrapLinkSC } from '../styled-components-css/styles.store';
+import { DivWrapLinkSC } from '../styled-components-css/styles-seller-store-settings/styles.store';
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {

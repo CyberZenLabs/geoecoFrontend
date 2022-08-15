@@ -25,13 +25,19 @@ export const SpanPersonalDataSC = styled.span`
   margin: 30px 0px 30px 20px;
 `;
 export const DivBoxBlockSC = styled.div`
-  height: 221px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-bottom: 30px;
   padding: 35px;
-  padding-top: 10px;
-  padding-right: 0px;
+  transition: padding .2s 0s;
+  display:grid;
+  grid-column-gap: 20px;
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 export const DivBoxContentSC = styled.div`
   display: grid;
@@ -45,13 +51,18 @@ export const DivBoxContentSC = styled.div`
 export const DivBoxUserDataSC = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 80px;
+  transition: grid-template-columns .2s 0s;
 
-  @media (max-width: 730px) {
-    display: flex;
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
   }
-  @media (max-width: 405px) {
-    display: flex;
-    flex-direction: column;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480px) {
+    grid-column-gap: 20px;
+
   }
 `;
 
@@ -70,8 +81,11 @@ export const SpanInitialsSC = styled.span`
   color: #252525;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     font-size: 20px;
+  }
+  @media (max-width: 480px) {
+    font-size: 18px;
   }
   @media (max-width: 360px) {
     font-size: 16px;
@@ -88,13 +102,15 @@ export const SpanConfirmAccountSC = styled.span`
   color: #85cb33;
   @media (max-width: 480px) {
     margin-top: 6px;
+    font-size: 12px;
+
   }
 `;
 
 export const ButtonAddCardSC = styled(Link)`
   display: grid;
   justify-items: center;
-  margin-top: 18px;
+  margin-top: 20px;
   width: 210px;
   height: 106px;
   border: 2px solid #dbf0c2;
@@ -107,7 +123,7 @@ export const ButtonAddCardSC = styled(Link)`
   }
 `;
 export const ButtonAddCardSClitl = styled(Link)`
-  margin-top: 18px;
+  margin-top: 10px;
   width: 100;
   height: 36px;
   border: 2px solid #dbf0c2;
@@ -132,6 +148,9 @@ export const SpanTitleDataSC = styled.span`
   font-size: 16px;
   line-height: 20px;
   color: rgba(37, 37, 37, 0.7);
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 export const SpanTextDataSC = styled.span`
   color: #252525;

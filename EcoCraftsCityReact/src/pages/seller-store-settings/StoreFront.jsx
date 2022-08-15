@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import axios from '../apis/admin-rest';
+import axios from '../../apis/admin-rest';
 
-import '../page-css/dropdown.css';
+import '../../page-css/dropdown.css';
 
 import {
   DivStoreLeftPanelSC,
@@ -50,17 +50,17 @@ import {
   BottomPanelChoice2SC,
   DivCountSC,
   UilSearchSC2,
-} from '../styled-components-css/styles.store';
+} from '../../styled-components-css/styles-seller-store-settings/styles.store';
 import { IoIosArrowDown } from 'react-icons/io';
 import { FaRubleSign } from 'react-icons/fa';
-import VendorNavMenu from '../components/VendorNavMenu';
+import VendorNavMenu from '../../components/VendorNavMenu';
 import {
   ButtonAddProductSC,
   DivAddProduct,
   SpanTextAddProdctSC,
-} from '../styled-components-css/styles.StoreNewProduct';
-import { BreadCrumbs } from '../components/BreadCrumbs';
-import VendorProduct from '../components/VendorProduct';
+} from '../../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct';
+import { BreadCrumbs } from '../../components/BreadCrumbs';
+import VendorProduct from '../../components/VendorProduct';
 
 const StoreFront = ({ product }) => {
   const [products, setProducts] = useState([]);

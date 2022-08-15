@@ -2,19 +2,20 @@ import { Margin } from '@mui/icons-material';
 import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
 
 import React, { useEffect, useState } from "react";
-import useAxiosFunction from "../hooks/useAxiosFunction";
+import useAxiosFunction from "../../hooks/useAxiosFunction";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 
 import {
 
-} from "../styled-components-css/styles-user-store-settings/styles.SettingsShop";
+} from "../../styled-components-css/styles-user-store-settings/styles.SettingsShop";
+import { BreadCrumbs } from '../../components/BreadCrumbs';
 
 import{
   DivBoxNewProductsBigST
-  } from "../styled-components-css/styles.StoreNewProduct";
-  import { DivWrapLinkSC } from "../styled-components-css/styles.store";
-import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../styled-components-css/styles.product-detail";
+  } from "../../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct";
+  import { DivWrapLinkSC } from "../../styled-components-css/styles-seller-store-settings/styles.store";
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../../styled-components-css/styles.product-detail";
   import{
     ImgBannerShopSC,
     DivBoxContentSC,
@@ -29,10 +30,10 @@ import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../styled-components-css/
     DivButtonNext,
     SpanTitleCatalogAdaptive,
     WrapShopContainerSC
-  } from "../styled-components-css/styles.StoreNoAuth";
+  } from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
 
-  import ProductCard from "../components/components-user-store-settings/ProductCardUser";
-  import SettingsShopCatalog from "../components/components-user-store-settings/SettingsShopCatalog";
+  import ProductCard from "../../components/components-user-store-settings/ProductCardUser";
+  import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
   const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
   const routes = [
     {
@@ -70,23 +71,7 @@ const StoreNoAuth = () =>{
 
       
         <DivBoxNewProductsBigST>
-            <DivWrapLinkSC>
-          <DivHistorySC>
-            <DivBackBoxSC>
-              <FaArrowLeft color={"#85CB33"} size={15} />
-              <NavLinkSC iscolor={true} to={"/"}>
-                Назад
-              </NavLinkSC>
-            </DivBackBoxSC>
-            <div>
-              {breadcrumbs.map(({ match, breadcrumb }) => (
-                <span key={match.pathname}>
-                  <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-                </span>
-              ))}
-            </div>
-          </DivHistorySC>
-        </DivWrapLinkSC>
+            <BreadCrumbs/>
             
             <DivBoxContentSC>
             <WrapShopContainerSC/>

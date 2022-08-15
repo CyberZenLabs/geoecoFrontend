@@ -109,7 +109,7 @@ import {
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
   DivInputsDisplayNoneSC,
-} from '../styled-components-css/styles.VendorProfile';
+} from '../styled-components-css/styles-seller-store-settings/styles.VendorProfile';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import AppContext from '../context/AppContext';
 import { toast } from 'react-toastify';
@@ -117,7 +117,7 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import EcoModal from '../components/Modal';
 import axios from 'axios';
 import { BreadCrumbs } from '../components/BreadCrumbs';
-import { DivStoreWrapSC } from '../styled-components-css/styles.store';
+import { DivStoreWrapSC } from '../styled-components-css/styles-seller-store-settings/styles.store';
 
 const AddNewProduct = () => {
   const storeGalleryRef = useRef(null);

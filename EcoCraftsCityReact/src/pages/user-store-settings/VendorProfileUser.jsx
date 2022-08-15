@@ -1,14 +1,18 @@
-import { Delete, Margin, TextFields } from '@mui/icons-material';
+import { Delete, Description, Margin, TextFields } from '@mui/icons-material';
 import { Form, Formik } from 'formik';
 import React, { useState, useEffect, useRef } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { MdOutlinePhotoCamera } from 'react-icons/md';
-import StarRating from '../components/StarRating';
-import TextFieldStore from '../components/TextFieldStore';
-import useAxiosFunction from '../hooks/useAxiosFunction';
-import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
-import ShowItemCarouselReview from '../components/ShowItemCarouselReview';
+import StarRating from '../../components/StarRating';
+import TextFieldStore from '../../components/TextFieldStore';
+import useAxiosFunction from '../../hooks/useAxiosFunction';
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../../styled-components-css/styles.product-detail';
+import SettingsShopCatalog from '../../components/components-user-store-settings/SettingsShopCatalog';
 import { toast } from 'react-toastify';
+import{
+    
+    WrapShopContainerSC
+  } from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
 import {
     DivStoreLeftPanelSC,
     DivStoreOptionsRightPanelSC,
@@ -17,7 +21,7 @@ import {
     DivStoreWrapSC,
     DivWrapLinkSC,
     H1BoldTextSC,
-} from '../styled-components-css/styles.store';
+} from '../../styled-components-css/styles-user-store-settings/styles.store-user';
 import {
     SpanTextTitleSC,
     DivAddProductBox,
@@ -60,17 +64,20 @@ import {
     DivButtonChangrInformSC,
     DivButtonChangrInformBottomSC,
     SpanTextTitleAdaptiveSC,
-    DivInfoVendorBoxAdaptiveSC
-} from '../styled-components-css/styles.VendorProfile';
-import EcoModal from '../components/Modal';
-import axiosCustom from '../apis/admin-rest';
+    DivInfoVendorBoxAdaptiveSC,
+    DescriptionSC,
+    DescriptionTitleTextSC,
+    DescriptionTextSC
+} from '../../styled-components-css/styles-user-store-settings/styles.VendorProfileUser';
+import EcoModal from '../../components/Modal';
+import axiosCustom from '../../apis/admin-rest';
 import axios from 'axios';
-import VenderCarouselReview from '../components/VenderCarouselReview';
+import VenderCarouselReview from '../../components/VenderCarouselReview';
+import VenderCarouselPhoto from '../../components/VenderCarouselPhoto';
 
-import AppContext from '../context/AppContext';
-import VendorNavMenu from '../components/VendorNavMenu';
-import { BreadCrumbs } from '../components/BreadCrumbs';
-import hostName from "../tools/HostName";
+import AppContext from '../../context/AppContext';
+import { BreadCrumbs } from '../../components/BreadCrumbs';
+import hostName from "../../tools/HostName";
 
 const VendorProfile = () => {
     const [indexSelectedButton, getIndexButton] = useState(0);
@@ -244,20 +251,28 @@ const VendorProfile = () => {
 
 
                 <DivAddProductBox>
+
                     <DivInfoVendorBoxSC>
 
-                        <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+                        <SpanTextTitleSC>Имя профиля  </SpanTextTitleSC>
                         <OlifnoSC>
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
                             <LiInfoSC>Магазин: е-mail</LiInfoSC>
                             <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
-                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+                            <DescriptionSC><DescriptionTextSC><DescriptionTitleTextSC>Рассказ о себе:</DescriptionTitleTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</DescriptionTextSC></DescriptionSC>   
                         </OlifnoSC>
 
 
                     </DivInfoVendorBoxSC>
+                    <DivInfoVendorBoxAdaptiveSC>
+                        <SpanTextTitleSC>О творчестве</SpanTextTitleSC>
 
+
+                        <VenderCarouselPhoto>
+
+                        </VenderCarouselPhoto>
+                    </DivInfoVendorBoxAdaptiveSC>
                     <DivInfoVendorBoxAdaptiveSC>
                         <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
 
@@ -484,9 +499,11 @@ const VendorProfile = () => {
   )
 } */}
             <BreadCrumbs/>
+            
             <DivStoreWrapSC>
+                
                 <DivStoreLeftPanelSC>
-                    <VendorNavMenu page={0}/>
+                    <SettingsShopCatalog page={0}/>
                 </DivStoreLeftPanelSC>
                 {listContent[indexSelectedButton].page}
             </DivStoreWrapSC>

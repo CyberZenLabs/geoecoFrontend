@@ -84,6 +84,8 @@ const SignIn = (props) => {
   }, [response, error]);
   {
     console.log('LOGGED IN', loggedIn);
+    console.log('respone', response);
+
   }
 
   const showToast = (type, text) => {

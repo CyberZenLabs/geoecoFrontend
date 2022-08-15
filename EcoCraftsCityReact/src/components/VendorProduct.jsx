@@ -18,7 +18,7 @@ import {
   ItemTitleSC,
   PlusMinusButtonsItemCS,
   ToEditSC,
-} from '../styled-components-css/styles.store';
+} from '../styled-components-css/styles-seller-store-settings/styles.store';
 
 const VendorProduct = ({ product, index, indexpage,allchecked }) => {
   const [checked, setChecked] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import VendorNavMenu from '../components/VendorNavMenu';
+import VendorNavMenu from '../../components/VendorNavMenu';
 import {
   PurchasesContainerSC,
   DivContentPurchasesSC,
@@ -48,8 +48,8 @@ import {
   DivFirstName1SC,
   DivName1SC,
   DivBoxColumnsAvaAndInitialSC,
-} from '../styled-components-css/styles.purchases-active';
-import { BreadCrumbs } from '../components/BreadCrumbs';
+} from '../../styled-components-css/styles-seller-store-settings/styles.purchases-active';
+import { BreadCrumbs } from '../../components/BreadCrumbs';
 
 const Sales = () => {
   const listContent = [

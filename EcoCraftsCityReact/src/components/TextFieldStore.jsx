@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import React from 'react';
-import { InputAboutYourself, NameNCityFieldSC } from '../styled-components-css/styles.VendorProfile';
+import { InputAboutYourself, NameNCityFieldSC } from '../styled-components-css/styles-seller-store-settings/styles.VendorProfile';
 const TextFieldStore = ({ label, size, ...props }) => {
   const [field, meta] = useField(props);
   return (

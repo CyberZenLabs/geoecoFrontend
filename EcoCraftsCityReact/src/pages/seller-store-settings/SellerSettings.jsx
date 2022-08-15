@@ -4,15 +4,15 @@ import {
   DivBackBoxSC,
   DivHistorySC,
   NavLinkSC,
-} from "../styled-components-css/styles.product-detail";
+} from "../../styled-components-css/styles.product-detail";
 import {
   DivStoreLeftPanelSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-} from "../styled-components-css/styles.store";
-import AppContext from "../context/AppContext";
+} from "../../styled-components-css/styles-seller-store-settings/styles.store";
+import AppContext from "../../context/AppContext";
 import {
   ButtonContentEditSC,
   ButtonSave,
@@ -36,9 +36,9 @@ import {
   H1ContentNameSC,
   H1PageOptionHidesSC,
   H1PageOptionSC,
-} from "../styled-components-css/styles.settingsSeller";
-import VendorNavMenu from "../components/VendorNavMenu";
-import { BreadCrumbs } from "../components/BreadCrumbs";
+} from "../../styled-components-css/styles-seller-store-settings/styles.settingsSeller";
+import VendorNavMenu from "../../components/VendorNavMenu";
+import { BreadCrumbs } from "../../components/BreadCrumbs";
 
 const SellerSettings = ({ product }) => {
   const { setPass, setMail } = React.useContext(AppContext);

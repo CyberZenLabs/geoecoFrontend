@@ -13,7 +13,7 @@ import {
   HrLinkSC,
   StoreInfoHeaderSC,
   StoreInfoSubHeaderSC,
-} from '../styled-components-css/styles.store';
+} from '../styled-components-css/styles-seller-store-settings/styles.store';
 import StarRating from './StarRating';
 
 const VendorNavMenu = ({ page }) => {

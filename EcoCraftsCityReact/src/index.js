@@ -31,6 +31,8 @@ import AddNewProduct from './pages/AddNewProduct';
 import ModalSendEmail from './components/ModalSendEmail';
 import PurchasesActive from './pages/seller-store-settings/PurchasesActive';
 import Sales from './pages/seller-store-settings/Sales';
+import PaymentDelivery from './pages/PaymentDelivery';
+
 //components
 // import AdminForm from "./pages/AdminForm";
 import { ToastContainer } from 'react-toastify';
@@ -75,7 +77,7 @@ root.render(
               <Route index element={<MainPage />} />
               <Route path="home" element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
-
+              <Route path="payment-and-delivery" element={<PaymentDelivery />} />
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="addnewproduct" element={<AddNewProduct />} />
               <Route path="purchasesactive" element={<PurchasesActive />} />

@@ -71,7 +71,7 @@ import {
                 <LinkShopInfoSC isActive={indexSelectedButton === 2} to="/Reviews">Отзывы </LinkShopInfoSC>
                 <StarRating fixed={true} value={shopRaiting} />
               </DivLinkReviewRaitingSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="#">Оплата и Доставка</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="/Payment-and-Delivery">Оплата и Доставка</LinkShopInfoSC>
             </DivLinksInfoSC>
 
             <DivLinksAdaptiveSC>

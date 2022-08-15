@@ -1,14 +1,11 @@
 import { Margin } from '@mui/icons-material';
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
+import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 
 import React, { useEffect, useState } from "react";
 import useAxiosFunction from "../../hooks/useAxiosFunction";
 import axios from "axios";
 import { FaArrowLeft } from "react-icons/fa";
 
-import {
-
-} from "../../styled-components-css/styles-user-store-settings/styles.SettingsShop";
 import { BreadCrumbs } from '../../components/BreadCrumbs';
 
 import{
@@ -35,15 +32,10 @@ import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../../styled-components-c
   import ProductCard from "../../components/components-user-store-settings/ProductCardUser";
   import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
   const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
-  const routes = [
-    {
-      path: "/custom-props",
-      breadcrumb: CustomPropsBreadcrumb,
-      props: { someProp: "Hi" },
-    },
-  ];
+
 const StoreNoAuth = () =>{
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
+
+
   const [products, setProducts] = useState([]);
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   useEffect(() => {
@@ -57,7 +49,7 @@ const StoreNoAuth = () =>{
     // setProducts([response]);
 
     axios
-      .get("https://radiant-river-29802.herokuapp.com/api/v1/products")
+      .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
       .then((res) => {
         setProducts(res.data.data.data);
       })
@@ -66,61 +58,49 @@ const StoreNoAuth = () =>{
       });
   }, []);
 
-    return (
+  return (
+    <DivBoxNewProductsBigST>
+      <BreadCrumbs />
+
+      <DivBoxContentSC>
+        <WrapShopContainerSC />
 
 
-      
-        <DivBoxNewProductsBigST>
-            <BreadCrumbs/>
-            
-            <DivBoxContentSC>
-            <WrapShopContainerSC/>
-            
-            <DivBoxCatalogShopSC>
+ 
+        <DivBoxCatalogShopSC>
+          <SettingsShopCatalog page={1} />
 
-            <SettingsShopCatalog page={1}/>
+          <DivBoxCatalog>
+            <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>
+            <DivGridItems>
+              {products.map((product) => {
+                return <ProductCard product={product} />;
+              })}
+              {products.map((product) => {
+                return <ProductCard product={product} />;
+              })}
+              {products.map((product) => {
+                return <ProductCard product={product} />;
+              })}
+              {products.map((product) => {
+                return <ProductCard product={product} />;
+              })}
+            </DivGridItems>
+            <DivNextItems>
+              <DivNextGrid>
+                <DivCountPage>
+                  <DivNextPage>1</DivNextPage>
 
-            <DivBoxCatalog>
-                <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>
-                <DivGridItems>
-                {products.map((product) => {
-          return <ProductCard product={product} />;
-        })}
-        {products.map((product) => {
-          return <ProductCard product={product} />;
-        })}
-        {products.map((product) => {
-          return <ProductCard product={product} />;
-        })}
-        {products.map((product) => {
-          return <ProductCard product={product} />;
-        })}
-                </DivGridItems>
-                  <DivNextItems>
-                    <DivNextGrid>
-                        <DivCountPage>
-                          <DivNextPage>
-                            1
-                          </DivNextPage>
+                  <DivNextPage>2</DivNextPage>
+                </DivCountPage>
 
-                          <DivNextPage>
-                            2
-                          </DivNextPage>
-                        </DivCountPage>
-                        
-                    <DivButtonNext>Дальше</DivButtonNext>
-                    </DivNextGrid>
-                  </DivNextItems>
-            </DivBoxCatalog>
-
-            </DivBoxCatalogShopSC>
-            </DivBoxContentSC>
-        </DivBoxNewProductsBigST>
-        
-
-        
-
-    )
-    
-}
+                <DivButtonNext>Дальше</DivButtonNext>
+              </DivNextGrid>
+            </DivNextItems>
+          </DivBoxCatalog>
+        </DivBoxCatalogShopSC>
+      </DivBoxContentSC>
+    </DivBoxNewProductsBigST>
+  );
+};
 export default StoreNoAuth;

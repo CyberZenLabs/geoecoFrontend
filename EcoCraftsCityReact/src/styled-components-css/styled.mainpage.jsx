@@ -106,6 +106,7 @@ export const DivVideoPosterSC = styled.div`
   align-items: center;
   position: relative;
   background: #00000080;
+  max-height: 800px;
 `;
 export const VideoPosterSC = styled.video`
 z-index: 0;

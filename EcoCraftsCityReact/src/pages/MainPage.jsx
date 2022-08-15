@@ -56,10 +56,10 @@ const MainPage = () => {
                 <DivTextBlockLogoShow>
                   <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
                   <PInfoTextLogoSC>
-                    Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
+                  The world's only exclusive store for the distribution of sustainably created goods internationally, all goods are verified to be hand made with love for people and the planet.
                   </PInfoTextLogoSC>
                   <DivTwoColumns>
-                    <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
+                    <ProductCardButtonSC to="home">View Products</ProductCardButtonSC>
                   </DivTwoColumns>
                 </DivTextBlockLogoShow>
               </DivWidthSetSC>

@@ -2,6 +2,8 @@ import styled from 'styled-components/macro';
 import DivPhoto from '../img/MainPagePhotos.svg';
 import DivMasters from '../img/MainPagePeople.svg';
 import { Link } from 'react-router-dom';
+
+
 export const DivMainPageWrapSC = styled.div`
   display: grid;
   grid-template-rows: max-content 2400px auto auto auto;
@@ -72,6 +74,7 @@ export const DivLogoTextBlockShowSC = styled.div`
   z-index: 1;
   width: 100%;
   height: 100%;
+  grid-template-rows: 100%;
 `;
 export const DivInfoBlockSC = styled.div`
   //border:1px solid red;
@@ -272,6 +275,7 @@ z-index: 1;
   width: 90vw;
   display: grid;
   justify-content: left;
+  grid-template-rows: 100%;
   @media (max-width: 1000px) {
     justify-content: center;
   }
@@ -281,14 +285,15 @@ export const DivTextBlockLogoShow = styled.div`
   
   //border: 1px solid yellow;
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: repeat(3, max-content);
   gap: 7%;
   width: auto;
-  height: fit-content;
+  //height: fit-content;
   //text-align: center;
   align-items: center;
   //justify-content: left;
   max-width: 600px;
+  align-content: center;
   @media (max-width: 1000px) {
     justify-items: center;
 
@@ -593,7 +598,7 @@ export const PInfoTextLogoSC = styled.p`
     width: 500px;
   }
   @media (max-width: 480px) {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 20px;
     width: 350px;
   }
@@ -603,12 +608,12 @@ export const PInfoTextLogoSC = styled.p`
     width: 300px;
   }
 `;
-export const DivTwoColumns = styled.p`
+export const DivTwoColumns = styled.div`
   width: 300px;
   display: grid;
   //border:1px solid red;
   gap: 25px;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   align-content: center;
   @media (max-width: 1000px) {
     grid-template-columns: auto;

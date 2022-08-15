@@ -309,6 +309,7 @@ export const DivBoxButtonCreateStoreSC = styled.span`
   font-size: 16px;
   height: 56px;
   font-weight: semibold;
+  text-align: center;
   @media (max-width: 1000px) {
     display: none;
   }

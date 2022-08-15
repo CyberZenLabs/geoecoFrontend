@@ -21,7 +21,7 @@ export const BreadCrumbs = ({margin}) => {
       <DivBackBoxSC>
         <FaArrowLeft color={'#85CB33'} size={15} />
         <NavLinkSC iscolor={true} to={'#'} onClick={()=>navigate(-1)}>
-          Назад
+          Back
         </NavLinkSC>
       </DivBackBoxSC>
       <div>

@@ -70,7 +70,7 @@ const SellerSettings = ({ product }) => {
             <DivContent1PageSC>
               <DivContentRowsSC>
                 <H1ContentNameSC>Телефон</H1ContentNameSC>
-                <H1ContentNameSC>Пароль</H1ContentNameSC>
+                <H1ContentNameSC>Password</H1ContentNameSC>
                 <H1ContentNameSC>Email</H1ContentNameSC>
               </DivContentRowsSC>
               <DivContentRowsSC>
@@ -127,10 +127,10 @@ const SellerSettings = ({ product }) => {
 
               <DivContentDivisionSC>
                 <DivContentRows2Page4SC>
-                  <H1ContentNameSC>Пароль</H1ContentNameSC>
+                  <H1ContentNameSC>Password</H1ContentNameSC>
                   <H1ContentNameEmailSC>Email</H1ContentNameEmailSC>
                   <H1ContentNameSC>Новый email </H1ContentNameSC>
-                  <H1ContentNameSC>Пароль</H1ContentNameSC>
+                  <H1ContentNameSC>Password</H1ContentNameSC>
                 </DivContentRows2Page4SC>
                 <DivContentRows2Page2SC>
                   <DivContentInfoButtonSC>

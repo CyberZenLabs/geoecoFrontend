@@ -111,7 +111,7 @@ const EcoModal = ({
 
             {modalData.button ? (
               <DivBoxRowModalContSC>
-                <ButtonContinueModal onClick={() => submitModal(cropImageModal)}>Продолжить</ButtonContinueModal>
+                <ButtonContinueModal onClick={() => submitModal(cropImageModal)}>Continue</ButtonContinueModal>
               </DivBoxRowModalContSC>
             ) : null}
           </CenterItemsSC>

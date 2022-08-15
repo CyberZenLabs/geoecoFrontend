@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import FinanceTable from "../../components/FinanceTable";
@@ -6,6 +7,7 @@ import {
   DivHistorySC,
   NavLinkSC,
 } from "../../styled-components-css/styles.product-detail";
+
 import { BreadCrumbs } from '../../components/BreadCrumbs';
 
 import {
@@ -14,9 +16,9 @@ import {
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-} from "../../styled-components-css/styles-seller-store-settings/styles.store";
-import AppContext from "../../context/AppContext";
-import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
+} from '../../styled-components-css/styles-seller-store-settings/styles.store';
+import AppContext from '../../context/AppContext';
+import SettingsShopCatalog from '../../components/components-user-store-settings/SettingsShopCatalog';
 
 import {
   ButtonContentEditSC,
@@ -57,15 +59,16 @@ import {
   PaymentsSC,
   DivImgMirSC,
   PaddingSC,
-} from "../../styled-components-css/styles-seller-store-settings/styles.PaymentAndDelivery";
-import VendorNavMenu from "../../components/VendorNavMenu";
-import CustomInputCheckBox from "../../components/CustomInputCheckBox/CustomInputCheckBox";
+  FlexSDEKSC,
+} from '../../styled-components-css/styles-seller-store-settings/styles.PaymentAndDelivery';
+import VendorNavMenu from '../../components/VendorNavMenu';
+import CustomInputCheckBox from '../../components/CustomInputCheckBox/CustomInputCheckBox';
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
-    path: "/custom-props",
+    path: '/custom-props',
     breadcrumb: CustomPropsBreadcrumb,
-    props: { someProp: "Hi" },
+    props: { someProp: 'Hi' },
   },
 ];
 const PaymentAndDelivery = ({ product }) => {
@@ -86,21 +89,24 @@ const PaymentAndDelivery = ({ product }) => {
       blocks: (
         <>
           <DivMainInfoSC>
-          
-              <H1ContentInfoSC>Банковская карта</H1ContentInfoSC>
-              
-          
-            <DivContent1PageSC>
-              <DivContentRowsSC>
-                <DivBankCardSC><DivInfoCard><DivImgMirSC src="/default-images/MIR.svg" ></DivImgMirSC><NumberCardSC>220220******5839</NumberCardSC><div><img src="/default-images/pencil.svg"  /></div></DivInfoCard></DivBankCardSC>
-              <DivTextOpisanitSC>    На эту карту будут зачислены средства
-от сделок, которые оплачены онлайн</DivTextOpisanitSC> 
-              </DivContentRowsSC>
-              
-            </DivContent1PageSC>
-          </DivMainInfoSC>
+            <H1ContentInfoSC>Банковская карта</H1ContentInfoSC>
 
-          
+            <DivContentRowsSC>
+              <DivBankCardSC>
+                <DivInfoCard>
+                  <DivImgMirSC src="/default-images/MIR.svg"></DivImgMirSC>
+                  <NumberCardSC>220220******5839</NumberCardSC>
+                  <div>
+                    <img src="/default-images/pencil.svg" />
+                  </div>
+                </DivInfoCard>
+              </DivBankCardSC>
+              <DivTextOpisanitSC>
+                {' '}
+                На эту карту будут зачислены средства от сделок, которые оплачены онлайн
+              </DivTextOpisanitSC>
+            </DivContentRowsSC>
+          </DivMainInfoSC>
         </>
       ),
     },
@@ -114,118 +120,92 @@ const PaymentAndDelivery = ({ product }) => {
             <DivContentSC>
               <DivContentDivisionSC>
                 <PaddingSC>
-                <DivContentRows2PageSC>
-               
-                  <H1ContentNameSC > <CustomInputCheckBox  / ><MarginLeftSC/> Почта России</H1ContentNameSC>
-                  <H1ContentNameSC><CustomInputCheckBox/><MarginLeftSC/> СДЭК</H1ContentNameSC>
-                 
-                </DivContentRows2PageSC>
+                  <DivContentRows2PageSC>
+                    <H1ContentNameSC>
+                      <CustomInputCheckBox />
+                      <MarginLeftSC /> Почта России
+                    </H1ContentNameSC>
+                    <H1ContentNameSC>
+                      <CustomInputCheckBox />
+                      <MarginLeftSC /> СДЭК
+                    </H1ContentNameSC>
+                  </DivContentRows2PageSC>
                 </PaddingSC>
                 <DivContentRows2PageSC>
-                <H1ContentDefinSC>
-                 
-                 <EmailFieldSC
-                   label="phone"
-                   type="phone"
-                  
-                 />
-                 <SmalPlaceholder>От 180 рублей в зависимости от региогна доставки</SmalPlaceholder>
-               </H1ContentDefinSC>
-               <H1ContentDefinSC>
-               <FlexSC>
-                 <EmailFieldSC
-                   label="password"
-                  
-                   
-                 />
-                 <img src="/default-images/Rub.svg"  />
-                 </FlexSC>
-               <SmalPlaceholder>  Фиксированная стоимость доставки для всех направлений</SmalPlaceholder>
-               </H1ContentDefinSC>
-               </DivContentRows2PageSC>
+                  <H1ContentDefinSC>
+                    <FlexSDEKSC>
+                      <EmailFieldSC label="phone" type="phone" />
+                    </FlexSDEKSC>
+                    <SmalPlaceholder>От 180 рублей в зависимости от региогна доставки</SmalPlaceholder>
+                  </H1ContentDefinSC>
+                  <H1ContentDefinSC>
+                    <FlexSDEKSC>
+                      <EmailFieldSC label="password" />
+                      <img src="/default-images/Rub.svg" />
+                    </FlexSDEKSC>
+                    <SmalPlaceholder> Фиксированная стоимость доставки для всех направлений</SmalPlaceholder>
+                  </H1ContentDefinSC>
+                </DivContentRows2PageSC>
               </DivContentDivisionSC>
-            
-             
             </DivContentSC>
           </DivMainInfo2PageSC>
-
-        
         </>
       ),
     },
     {
-    blocks:(<>
-    <DivMainInfo3PageSC>
-          
+      blocks: (
+        <>
+          <DivMainInfo3PageSC>
             <DivContentSC>
-           
-            <DivContentInfoButtonSC>
-              <H1ContentInfoSC>0 руб </H1ContentInfoSC>
-            
-            </DivContentInfoButtonSC>
-            
-             
+              <DivContentInfoButtonSC>
+                <H1ContentInfoSC>0 руб </H1ContentInfoSC>
+              </DivContentInfoButtonSC>
             </DivContentSC>
             <DivContentSC>
-           
-           <DivContentInfoButtonSC>
-            
-             <H1ContentInfoSC>Ожидают зачисления </H1ContentInfoSC>
-            
-           </DivContentInfoButtonSC>
-           
-            
-           </DivContentSC>
-           <DivContentSC>
-           
-           <DivContentInfoButtonSC>
-            
-             <LightTextSC>Зачисление происходит автоматически</LightTextSC>
-           </DivContentInfoButtonSC>
-           
-            
-           </DivContentSC>
+              <DivContentInfoButtonSC>
+                <H1ContentInfoSC>Ожидают зачисления </H1ContentInfoSC>
+              </DivContentInfoButtonSC>
+            </DivContentSC>
+            <DivContentSC>
+              <DivContentInfoButtonSC>
+                <LightTextSC>Зачисление происходит автоматически</LightTextSC>
+              </DivContentInfoButtonSC>
+            </DivContentSC>
           </DivMainInfo3PageSC>
           <DivInfoPageSC>
-          <DivContentInfoButtonSC>
-             <FlexSC> <ContentInfoSC>Важно:</ContentInfoSC><LightTextSC>Зачисление происходит автоматически после вручения посылки</LightTextSC></FlexSC>
-            
+            <DivContentInfoButtonSC>
+              <FlexSC>
+                <ContentInfoSC> Важно: </ContentInfoSC>
+                <LightTextSC>Зачисление происходит автоматически после вручения посылки</LightTextSC>
+              </FlexSC>
             </DivContentInfoButtonSC>
-            <FinanceTable/>
+            <FinanceTable />
           </DivInfoPageSC>
-          </>),},
+        </>
+      ),
+    },
   ];
 
-  
   return (
     <>
-    <BreadCrumbs />
+      <BreadCrumbs />
 
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-        <VendorNavMenu page={3}/>
+          <VendorNavMenu page={3} />
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
             <H1BoldTextSC>Редактирование оплаты и доставки</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
-            <H1PageOptionSC
-              isActive={indexSelectedButton === 0}
-              onClick={onClickTab(0)}
-            >
+            <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
               Оплата
             </H1PageOptionSC>
-            <H1PageOptionSC
-              isActive={indexSelectedButton === 1}
-              onClick={onClickTab(1)}
-            >
+            <H1PageOptionSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
               Доставка
             </H1PageOptionSC>
-            <H1PageOptionSC
-              isActive={indexSelectedButton === 2}
-              onClick={onClickTab(2)}
-            >
+            <H1PageOptionSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
               Финансы
             </H1PageOptionSC>
           </DivPagesSC>

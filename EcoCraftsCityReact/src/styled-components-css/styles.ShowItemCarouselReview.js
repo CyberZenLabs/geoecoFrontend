@@ -60,7 +60,7 @@ box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.08);
   }
 `;
 
-//------------------- Аватрака дата время рейтинг -------------------
+//------------------- Аватрака Date время рейтинг -------------------
 
 export const DivAvatarDateRatingInfoSC = styled.div`
   display: grid;
@@ -304,7 +304,7 @@ display: none;
 `;
 export const DivUserReviewSC = styled.div``;
 
-//------------------- конец (Аватрака дата время рейтинг) -------------------
+//------------------- конец (Аватрака Date время рейтинг) -------------------
 
 // export const DivContentWrapSC = styled.div`
 //   margin-top: 10px;

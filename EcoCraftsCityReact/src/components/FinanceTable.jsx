@@ -23,7 +23,7 @@ const FinanceTable = () => {
 					<TableTR>
 						
 						<TableH>Платежи</TableH>
-						<TableH>Дата</TableH>
+						<TableH>Date</TableH>
                         <TableH>Сумма</TableH>
                         <TableH>Статус</TableH>
 						

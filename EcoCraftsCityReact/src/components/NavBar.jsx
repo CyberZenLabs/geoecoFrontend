@@ -90,7 +90,7 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpenModal(true);
     setModalData({
-      inputs: [{ email: 'Электронаая почта', password: 'Пароль', repeat_password: 'Повтор пароля', city: 'Город' }],
+      inputs: [{ email: 'Электронаая почта', password: 'Password', repeat_password: 'Повтор пароля', city: 'Город' }],
 
       button: true,
     });
@@ -130,7 +130,7 @@ const ResponsiveAppBar = () => {
                   // color="#61DAFB"
                 />
 
-                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
+                <SpanTextCatalogSC>Catalog</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
 
@@ -140,7 +140,7 @@ const ResponsiveAppBar = () => {
                 // onChange={onChange(getLastName)}
                 type="text"
                 id={'search'}
-                placeholder={'Я ищу...'}
+                placeholder={'I search...'}
               />
               <DivIconBoxInput>
                 <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
@@ -157,7 +157,7 @@ const ResponsiveAppBar = () => {
 
               <p class="username">
                 Jenifer Lopez
-                <LinkProfileSC to="/personaldata">Мой Профиль</LinkProfileSC>
+                <LinkProfileSC to="/personaldata">My profile</LinkProfileSC>
               </p>
             </div>
 
@@ -183,13 +183,13 @@ const ResponsiveAppBar = () => {
               <li>
                 <LinkProfileBoxSC to="/vendorprofile">
                   <MdOutlineStorefront />
-                  Мой магазин
+                  My store
                 </LinkProfileBoxSC>
               </li>
               <li class="logout">
                 <LinkProfileBoxSC to="/" onClick={handleLogout}>
                   <IoExitOutline />
-                  Выйти
+                  Log out
                 </LinkProfileBoxSC>
               </li>
             </ul>
@@ -203,21 +203,21 @@ const ResponsiveAppBar = () => {
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
-              Создать магазин
+              Create store
             </DivBoxButtonCreateStoreSC>
             <LinkIconAdaptiveSC to="#" onClick={openCart}>
               <DivBoxIconEndSC>
                 <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
+              <SpanEndHeaderSC>Search</SpanEndHeaderSC>
             </LinkIconAdaptiveSC>
             <LinkIconAdaptiveSC to="/store/:id">
               <DivBoxIconEndSC>
                 <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
+              <SpanEndHeaderSC>Store</SpanEndHeaderSC>
             </LinkIconAdaptiveSC>
             {cookies['token'] === undefined ? (
               <LinkIconSC to="/signin">
@@ -225,7 +225,7 @@ const ResponsiveAppBar = () => {
                   <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
                 </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+                <SpanEndHeaderSC>Sign in</SpanEndHeaderSC>
               </LinkIconSC>
             ) : null}
             <LinkIconHideSC to="/cart">
@@ -233,7 +233,7 @@ const ResponsiveAppBar = () => {
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
+              <SpanEndHeaderSC>Cart</SpanEndHeaderSC>
             </LinkIconHideSC>
           </DivBoxIconSC>
         </DivBoxIconHeaderSC>

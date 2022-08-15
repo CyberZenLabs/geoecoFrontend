@@ -21,7 +21,7 @@ export const DivReviewShowWrapSC = styled.div`
   } */
 `;
 
-//------------------- Аватрака дата время рейтинг -------------------
+//------------------- Аватрака Date время рейтинг -------------------
 
 export const DivAvatarDateRatingInfoSC = styled.div`
   display: grid;
@@ -83,7 +83,7 @@ export const DivStarRaitingSC = styled.div`
 
 export const DivUserReviewSC = styled.div``;
 
-//------------------- конец (Аватрака дата время рейтинг) -------------------
+//------------------- конец (Аватрака Date время рейтинг) -------------------
 
 export const ElipsIconSC = styled.div`
   width: 8px;

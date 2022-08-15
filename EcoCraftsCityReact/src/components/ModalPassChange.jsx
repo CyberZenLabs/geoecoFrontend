@@ -14,7 +14,7 @@ const PassModal = () => {
            <H1ContentInfoSC>Изменение пароля</H1ContentInfoSC>
            <PContentInfoSC>Мы отправили Вам письмо на <BoldSC>lisaraklova@gmail.com.</BoldSC> Перейдите по ссылке из него, чтобы начать процедуру</PContentInfoSC>
           
-               <ButtonContinueModal onClick={() => setPass(false)}>Продолжить</ButtonContinueModal>
+               <ButtonContinueModal onClick={() => setPass(false)}>Continue</ButtonContinueModal>
           
            </DivContentWrapModal>
            </DivWrapModal>

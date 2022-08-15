@@ -35,7 +35,7 @@ const Footer = () => {
   const openCart = () => {
     setOpen(true);
     setModalData({
-      inputs: [{ email: 'Электронная почта' }],
+      inputs: [{ email: 'Email' }],
       button: true,
     });
   };
@@ -61,7 +61,7 @@ const Footer = () => {
               <CustomLinkSC to="/">О нас</CustomLinkSC>
               <CustomLinkSC to="/">Отзывы</CustomLinkSC>
               <CustomLinkSC to="/" onClick={openCart}>
-                Создать магазин
+                Create store
               </CustomLinkSC>
               <CustomLinkSC to="/">Новости</CustomLinkSC>
             </DivBoxEcoCraftSC>
@@ -77,7 +77,7 @@ const Footer = () => {
           </DivBoxFeaturesSC>
         </DivTopSC>
         <DivBottomSC>
-          <span>Сделано digital-студией CyberZen</span>
+          <span>Made by digital-studio CyberZen</span>
         </DivBottomSC>
       </DivBoxFooterSC>
       <BottomMenu />

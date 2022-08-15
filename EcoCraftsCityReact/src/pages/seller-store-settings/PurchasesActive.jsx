@@ -61,8 +61,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -81,8 +81,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -105,8 +105,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
@@ -130,8 +130,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
@@ -160,8 +160,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -180,8 +180,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -204,8 +204,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
@@ -229,8 +229,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
@@ -259,8 +259,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -279,8 +279,8 @@ const PurchasesActive = () => {
               <DivBoxColumnsAvaAndInitialSC>
                 <DivAvatarSmallSC></DivAvatarSmallSC>
                 <DivTextsInitial1SC>
-                  <DivFirstName1SC>Фамилия</DivFirstName1SC>
-                  <DivName1SC>Имя</DivName1SC>
+                  <DivFirstName1SC>Surname</DivFirstName1SC>
+                  <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
@@ -303,8 +303,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
@@ -328,8 +328,8 @@ const PurchasesActive = () => {
               <DivBoxRowsAvaAndInitialSC>
                 <DivAvatarSC></DivAvatarSC>
                 <DivTextsInitialSC>
-                  <DivFirstNameSC>Фамилия</DivFirstNameSC>
-                  <DivNameSC>Имя</DivNameSC>
+                  <DivFirstNameSC>Surname</DivFirstNameSC>
+                  <DivNameSC>Name</DivNameSC>
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>

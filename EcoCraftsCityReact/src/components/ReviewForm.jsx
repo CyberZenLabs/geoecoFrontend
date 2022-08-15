@@ -27,7 +27,7 @@ const ReviewForm = () => {
               type="email"
               name="email"
               fullSize={true}
-              placeholder={"Электронная почта"}
+              placeholder={"Email"}
             />
             <TextField
               label="name"
@@ -44,7 +44,7 @@ const ReviewForm = () => {
               type="submit"
             >
               <span>
-                продолжить&nbsp;&nbsp;
+                Continue&nbsp;&nbsp;
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
               </span>
             </ButtonCustomSC>

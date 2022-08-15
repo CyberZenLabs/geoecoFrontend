@@ -26,13 +26,13 @@ const ModalRedact = () => {
           <StoreCreationTitleSC>Редактирование профиля</StoreCreationTitleSC>
           <DivBoxRowModalSC>
                 <EmailFieldSC 
-                placeholder="Имя"/>
+                placeholder="Name"/>
                
               </DivBoxRowModalSC>
               
               <DivBoxRowModalSC>
                 <EmailFieldSC 
-                placeholder="Фамилия"/>
+                placeholder="Surname"/>
                
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>

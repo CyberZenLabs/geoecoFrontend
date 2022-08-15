@@ -11,10 +11,10 @@ const MailModal = () => {
           <BlockModal isOpen={mail} contentLabel="Modal">
            <DivWrapModal>
             <DivContentWrapModal>
-           <H1ContentInfoSC>Замена адреса</H1ContentInfoSC>
+           <H1ContentInfoSC>Address change</H1ContentInfoSC>
            <PContentInfoSC>Мы отправили Вам письмо на <BoldSC>lisaraklova@gmail.com.</BoldSC> Перейдите по ссылке из него, чтобы начать процедуру</PContentInfoSC>
           
-               <ButtonContinueModal onClick={() => setMail(false)}>Продолжить</ButtonContinueModal>
+               <ButtonContinueModal onClick={() => setMail(false)}>Continue</ButtonContinueModal>
           
            </DivContentWrapModal>
            </DivWrapModal>

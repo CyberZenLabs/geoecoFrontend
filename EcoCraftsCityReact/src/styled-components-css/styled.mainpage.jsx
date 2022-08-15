@@ -35,7 +35,7 @@ export const DivLogoBlockSC = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns:  100%;
     transition: 0s;
-    border-radius: 32px;
+
   }
   @media (max-width: 768px) {
     grid-template-columns: 100%;
@@ -114,7 +114,7 @@ z-index: 0;
   //position: absolute;
   top: 0;
   left: 0;
-  opacity: .3;
+  opacity: .5;
 `;
 export const ImgInfoBlockSC = styled.div`
   //border: 1px solid green;
@@ -256,15 +256,34 @@ export const DivTextBlockLogo = styled.div`
     margin-left: 20px;
   }
 `;
+export const DivWidthSetSC = styled.div`
+z-index: 1;
+  max-width: 1322px;
+  width: 90vw;
+  display: grid;
+  justify-content: left;
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+`;
+
 export const DivTextBlockLogoShow = styled.div`
-  z-index: 1;
+  
   //border: 1px solid yellow;
   display: grid;
   grid-template-rows: auto auto auto;
-  gap: 30px;
+  gap: 7%;
   width: auto;
   height: fit-content;
-  text-align: center;
+  //text-align: center;
+  align-items: center;
+  //justify-content: left;
+  max-width: 600px;
+  @media (max-width: 1000px) {
+    justify-items: center;
+
+  }
+
 `;
 export const DivPlug = styled.div`
   @media (max-width: 1000px) {
@@ -485,7 +504,7 @@ export const H1InfoTitleShowSC = styled.h1`
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 90px;
   line-height: 78px;
   transition: 0s;
   pointer-events: none;
@@ -493,6 +512,12 @@ export const H1InfoTitleShowSC = styled.h1`
   /* identical to box height */
   /* Вторичный */
   color: #ffffff;
+  @media (max-width: 768px) {
+    font-size: 50px;
+    line-height: 49px;
+    /* identical to box height */
+    color: #ffffff;
+  }
   @media (max-width: 480px) {
     font-size: 40px;
     line-height: 49px;
@@ -545,10 +570,11 @@ export const PInfoTextLogoSC = styled.p`
 
   /* Вторичный */
   transition: 1s;
-  color: #252525;
+  color: #ffffff;
 
   @media (max-width: 1000px) {
     color: #ffffff;
+    text-align: center;
   }
   @media (max-width: 768px) {
     font-size: 22px;
@@ -611,12 +637,12 @@ export const ProductCardButtonSC = styled(Link)`
     background-color: #76b42e;
   }
   @media (max-width: 768px) {
-    width: 230px;
-    height: 56px;
+    width: 210px;
+    height: 50px;
   }
   @media (max-width: 480px) {
-    width: 209px;
-    height: 50px;
+    width: 200px;
+    height: 45px;
     font-size: 14px;
     line-height: 17px;
   }

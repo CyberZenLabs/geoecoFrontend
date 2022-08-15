@@ -14,6 +14,8 @@ import {
   DivTextBlockLogo,
   DivTextBlockLogoShow,
   DivTwoColumns,
+  DivVideoPosterSC,
+  DivWidthSetSC,
   DivWrapTextLogoSC,
   H1InfoTitleLogoSC,
   H1InfoTitleSC,
@@ -29,6 +31,7 @@ import {
   PInfoTextSC,
   PlayButton,
   ProductCardButtonSC,
+  VideoPosterSC,
 } from '../styled-components-css/styled.mainpage';
 
 import DivPhoto from '../img/MainPagePhotos.svg';
@@ -38,40 +41,30 @@ import Insta from '../img/InstaIcon.svg';
 import Face from '../img/TwitIcon.svg';
 import AboutUs from './AboutUs';
 import PlayButtonMainPage from '../img/PlayButton.svg';
+import BackVideo from '../video/opacity-video-mainpage.mp4';
+import PosterVideo from '../video/poster-for-video.jpg';
 
 const MainPage = () => {
   return (
     <>
       <DivMainPageWrapSC>
         <DivLogoBlockSC>
-          <DivLogoTextBlockSC>
-            <DivWrapTextLogoSC>
-              <DivPlug />
-              <DivTextBlockLogo>
-                <H1InfoTitleLogoSC>geoeco</H1InfoTitleLogoSC>
-                <PInfoTextLogoSC>
-                  Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
-                </PInfoTextLogoSC>
-                <DivTwoColumns>
-                  <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                  <PlayButton Photo={PlayButtonMainPage} />
-                </DivTwoColumns>
-              </DivTextBlockLogo>
-            </DivWrapTextLogoSC>
-          </DivLogoTextBlockSC>
-          <ImgInfoBlockLogoSC Photo={DivPhoto}>
+          <DivVideoPosterSC>
+            <VideoPosterSC src={BackVideo} poster={PosterVideo} autoPlay muted loop></VideoPosterSC>
             <DivLogoTextBlockShowSC>
-              <DivTextBlockLogoShow>
-                <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
-                <PInfoTextLogoSC>
-                  Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
-                </PInfoTextLogoSC>
-                <DivTwoColumns>
-                  <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                </DivTwoColumns>
-              </DivTextBlockLogoShow>
+              <DivWidthSetSC>
+                <DivTextBlockLogoShow>
+                  <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
+                  <PInfoTextLogoSC>
+                    Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
+                  </PInfoTextLogoSC>
+                  <DivTwoColumns>
+                    <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
+                  </DivTwoColumns>
+                </DivTextBlockLogoShow>
+              </DivWidthSetSC>
             </DivLogoTextBlockShowSC>
-          </ImgInfoBlockLogoSC>
+          </DivVideoPosterSC>
         </DivLogoBlockSC>
 
         <DivInfoWrapSC>
@@ -121,7 +114,7 @@ const MainPage = () => {
           <H1MasterTitleSC>Работы лучших мастеров в одном месте</H1MasterTitleSC>
           <ImgMastersBlockSC Photo={DivMasters} />
         </DivMastersBlockSC>
-         {/*<AboutUs/>*/}
+        {/*<AboutUs/>*/}
         <DivSocialsBlockSC>
           <H1SocialsTitleSC>Следите за нами в соцсетях</H1SocialsTitleSC>
           <DivSocialsIconsBlock>

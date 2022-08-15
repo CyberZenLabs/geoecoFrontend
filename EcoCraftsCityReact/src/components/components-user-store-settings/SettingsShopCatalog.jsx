@@ -65,7 +65,7 @@ import {
             </DivShopInfoSC>
             <DivBoxButtonLinkSC to = "#">Написать</DivBoxButtonLinkSC>
             <DivLinksInfoSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Профиль</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Profile</LinkShopInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазины 50</LinkShopInfoSC>
               <DivLinkReviewRaitingSC>
                 <LinkShopInfoSC isActive={indexSelectedButton === 2} to="/Reviews">Отзывы </LinkShopInfoSC>
@@ -75,7 +75,7 @@ import {
             </DivLinksInfoSC>
 
             <DivLinksAdaptiveSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Профиль</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Profile</LinkShopInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазин 50</LinkShopInfoSC>
               <ButtonDropDownSC>...</ButtonDropDownSC>
             </DivLinksAdaptiveSC>

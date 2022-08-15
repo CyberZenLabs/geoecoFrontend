@@ -62,7 +62,7 @@ const MapBinding = () => {
                         type="text"
                         name="cardNumber"
                         fullSize={false}
-                        placeholder={'Номер карты'}
+                        placeholder={'Сard number'}
                       />
                     </DivBoxNumCardSC>
                   </DivRowBoxSC>

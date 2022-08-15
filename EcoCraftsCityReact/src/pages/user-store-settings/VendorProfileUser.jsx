@@ -292,7 +292,7 @@ const VendorProfile = () => {
                 <DivStoreRightPanelSC>
                     {console.log('photoUrls', photoUrls)}
                     <DivStoreInfoStuffProfileSC>
-                        <H1BoldTextSC>Мой профиль</H1BoldTextSC>
+                        <H1BoldTextSC>My profile</H1BoldTextSC>
                     </DivStoreInfoStuffProfileSC>
                     <Formik
                         initialValues={startingValues}

@@ -58,12 +58,12 @@ const Footer = () => {
           <DivBoxEcoCraftlSC>
             <DivBoxEcoCraftSC>
               <SpanTitleSC>geoeco</SpanTitleSC>
-              <CustomLinkSC to="/">О нас</CustomLinkSC>
-              <CustomLinkSC to="/">Отзывы</CustomLinkSC>
+              <CustomLinkSC to="/">About us</CustomLinkSC>
+              <CustomLinkSC to="/">Reviews</CustomLinkSC>
               <CustomLinkSC to="/" onClick={openCart}>
                 Create store
               </CustomLinkSC>
-              <CustomLinkSC to="/">Новости</CustomLinkSC>
+              <CustomLinkSC to="/">News</CustomLinkSC>
             </DivBoxEcoCraftSC>
           </DivBoxEcoCraftlSC>
           <DivBoxFeaturesSC>

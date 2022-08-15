@@ -93,7 +93,7 @@ const PersonalData = () => {
         </DivBoxBlockSC>
 
         <DivBoxBlockSC>
-          <SpanInitialsSC>Банковские карты</SpanInitialsSC>
+          <SpanInitialsSC>Bank cards</SpanInitialsSC>
           <ButtonAddCardSClitl to="/map-binding">
             <img src="/default-images/card.svg" className="image_cadr" />
 

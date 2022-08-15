@@ -173,7 +173,7 @@ const ResponsiveAppBar = () => {
               <li>
                 <LinkProfileBoxSC to="/map-binding">
                   <GoCreditCard />
-                  Мой Карты
+                  My cards
                 </LinkProfileBoxSC>
               </li>
 

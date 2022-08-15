@@ -9,7 +9,7 @@ export const DivPagesSC = styled.div`
   // border: 2px solid black;
   grid-template-columns: 50% 50%;
   max-width: 1140px;
-  @media (max-width: 990px) {
+  @media (max-width: 480px) {
     grid-template-columns: 100%;
   }
 `;
@@ -34,6 +34,7 @@ export const DivMainInfoSC = styled.div`
   border-radius: 20px;
   margin-bottom: 20px;
   height: fit-content;
+  min-height: 246px;
   // border: 2px solid black;
   grid-template-rows: 30% 70%;
   max-width: 1140px;
@@ -52,6 +53,10 @@ export const DivMainInfo2PageSC = styled.div`
   // border: 2px solid black;
   grid-template-rows: 15% 90%;
   max-width: 1140px;
+  @media (max-width: 480px) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 `;
 
 export const H1ContentInfoSC = styled.h1`
@@ -65,6 +70,15 @@ export const H1ContentInfoSC = styled.h1`
   justify-self: flex-start;
   align-self: flex-start;
   color: #3d3d3d;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 export const PContentInfoSC = styled.p`
   //border: 2px solid blue;
@@ -106,6 +120,18 @@ export const H1ContentNameSC = styled.h1`
   justify-self: flex-start;
   color: #3d3d3d;
   max-width: 750px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 501px) {
+    font-size: 14px;
+  }
+  @media (max-width: 452px) {
+    font-size: 12px;
+  }
 `;
 export const H1ContentNameMailSC = styled.h1`
   //border: 2px solid blue;
@@ -118,6 +144,9 @@ export const H1ContentNameMailSC = styled.h1`
   justify-self: flex-start;
   color: #3d3d3d;
   max-width: 300px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
 `;
 export const H1ContentDefinSC = styled.h1`
   //border: 2px solid blue;
@@ -127,6 +156,18 @@ export const H1ContentDefinSC = styled.h1`
   font-size: 20px;
   line-height: 24px;
   color: #3d3d3d;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 451px) {
+    font-size: 12px;
+  }
 `;
 export const ButtonContentEditSC = styled.button`
   cursor: pointer;
@@ -135,13 +176,22 @@ export const ButtonContentEditSC = styled.button`
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  text-align: end;
-  justify-self: flex-end;
+  text-align: start;
+  justify-self: flex-start;
   align-self: flex-start;
   background: none;
   //border: 2px solid blue;
   border: none;
   color: #85cb33;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 export const EmailFieldSC = styled.input`
   box-sizing: border-box;
@@ -176,6 +226,12 @@ export const EmailFieldSC = styled.input`
       font-size: 13px;
     }
   }
+  @media (max-width: 570px) {
+    ::placeholder {
+      font-size: 10px;
+    }
+    padding: 18px 0px 18px 7px;
+  }
 `;
 export const DivContentSC = styled.div`
   //border: 2px solid blue;
@@ -188,7 +244,7 @@ export const DivContentSC = styled.div`
 export const DivContent1PageSC = styled.div`
   //border: 2px solid blue;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 40% 60%;
   //grid-template-rows: 50% 50%;
   //min-width: 702px;
   width: auto;
@@ -196,16 +252,21 @@ export const DivContent1PageSC = styled.div`
 export const DivContentDivisionSC = styled.div`
   //border: 2px solid red;
   display: grid;
-  grid-template-columns: 200px 70%;
+  grid-template-columns: 40% 60%;
   grid-template-rows: auto auto;
-  width: 60vw;
+  width: 100%;
   max-width: 900px;
-  min-width: 350px;
+  //min-width: 350px;
 `;
 export const DivFirstColumnSC = styled.div`
   //border: 2px solid blue;
   display: grid;
-  grid-template-columns: 30% 30% 10%;
+  grid-template-columns: 45% 30% 15%;
+  @media (max-width: 1000px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    margin-bottom: 24px;
+  }
 `;
 export const DivContent2SC = styled.div`
   //border: 2px solid blue;
@@ -221,23 +282,29 @@ export const DivContentRows2Page2SC = styled.div`
   //border: 2px solid blue;
   display: grid;
   gap: 10px;
-  grid-template-rows: auto auto auto auto;
-  min-width: 165px;
+  grid-template-rows: auto auto auto auto auto;
+  //min-width: 165px;
   width: auto;
 
   max-width: 500px;
+  margin-top: 15px;
 `;
 export const DivContentRows2PageSC = styled.div`
   //border: 2px solid blue;
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 10px;
-  min-width: 179px;
+  //min-width: 179px;
 `;
 export const DivContentInfoButtonSC = styled.div`
   //border: 2px solid blue;
   display: grid;
   grid-template-columns: auto auto;
+  @media (max-width: 480px) {
+    grid-template-columns: none;
+    grid-template-rows: 35% 65%;
+  }
+  padding-bottom: 10px;
 `;
 export const H1PageOptionSC = styled.h1`
   font-family: 'Montserrat';
@@ -251,6 +318,9 @@ export const H1PageOptionSC = styled.h1`
 
   justify-self: center;
   cursor: pointer;
+  @media (max-width: 760px) {
+    font-size: 18px;
+  }
 `;
 export const H1PageOptionHidesSC = styled.h1`
   font-family: 'Montserrat';
@@ -263,7 +333,10 @@ export const H1PageOptionHidesSC = styled.h1`
   align-self: center;
   justify-self: center;
   cursor: pointer;
-  @media (max-width: 990px) {
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media (max-width: 480px) {
     display: none;
   }
 `;
@@ -302,9 +375,9 @@ export const DivContentWrapModal = styled.div`
   }
 `;
 export const ButtonContinueModal = styled.button`
-  width: 250px;
+  width: 100%;
   max-width: 250px;
-  min-width: 250px;
+  //min-width: 250px;
   height: 41px;
   display: flex;
   flex-direction: row;
@@ -340,22 +413,21 @@ margin-top: 15px; */
   }
 `;
 export const ButtonSave = styled.button`
-  width: 243px;
-  max-width: 243px;
-  min-width: 243px;
+  width: 100%;
+  max-width: 266px;
+  min-width: 175px;
   height: 38px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-self: center;
+  justify-self: start;
   gap: 10px;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  margin-left: 445px;
   margin-top: 15px;
   /* identical to box height */
   text-align: center;
@@ -375,5 +447,91 @@ export const ButtonSave = styled.button`
 
   @media (max-width: 1000px) {
     width: 90%;
+  }
+`;
+
+export const DivMainInfoAdressSC = styled.div`
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  background: rgba(243, 243, 243, 0.5);
+  display: grid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  height: fit-content;
+  min-height: 268px;
+  // border: 2px solid black;
+  grid-template-rows: 30% 70%;
+  max-width: 1140px;
+`;
+
+export const DivContentRows3PageSC = styled.div`
+  display: grid;
+  grid-template-rows: 18% 18% 18% 18%;
+  gap: 10px;
+  //min-width: 179px;
+`;
+
+export const DivContentRows2Page4SC = styled.div`
+  display: grid;
+  grid-template-rows: 18% 18% 18% 18% 18%;
+  //min-width: 165px;
+  width: auto;
+
+  max-width: 500px;
+  margin-top: 15px;
+  @media (max-width: 480px) {
+    grid-template-rows: repeat(5, 21%);
+  }
+`;
+
+export const H1ContentDefinEmailSC = styled.h1`
+  //border: 2px solid blue;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3d3d3d;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 451px) {
+    font-size: 12px;
+  }
+`;
+
+export const H1ContentNameEmailSC = styled.h1`
+  //border: 2px solid blue;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: start;
+  justify-self: flex-start;
+  color: #3d3d3d;
+  max-width: 750px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media (max-width: 501px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    padding-top: 13px;
+  }
+  @media (max-width: 452px) {
+    font-size: 12px;
   }
 `;

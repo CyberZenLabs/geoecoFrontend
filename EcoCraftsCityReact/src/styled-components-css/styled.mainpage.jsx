@@ -82,6 +82,8 @@ export const DivInfoBlockSC = styled.div`
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   display: grid;
   grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: center;
   /* min-width: 480px; */
   @media (max-width: 480px) {
     grid-template-columns: 100%;
@@ -118,6 +120,8 @@ z-index: 0;
   opacity: .5;
 `;
 export const ImgInfoBlockSC = styled.div`
+display: grid;
+/* justify-content: center; */
   //border: 1px solid green;
   @media (max-width: 480px) {
     display: none;
@@ -126,11 +130,13 @@ export const ImgInfoBlockSC = styled.div`
   background-image: ${({ Photo }) => Photo && `url(${Photo})`};
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 70%;
   ${({ RightTop }) => RightTop && `border-top-right-radius: 32px;`};
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   width: 100%;
   height: 100%;
+  max-width: 600px;
+  max-height: 600px;
 `;
 export const ImgInfoBlockShowSC = styled.div`
   @media (min-width: 481px) {
@@ -140,13 +146,16 @@ export const ImgInfoBlockShowSC = styled.div`
   background-image: ${({ Photo }) => Photo && `url(${Photo})`};
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
   ${({ RightTop }) => RightTop && `border-top-right-radius: 32px;`};
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   ${({ LeftTop }) => LeftTop && `border-top-left-radius: 32px;`};
   ${({ LeftBottom }) => LeftBottom && `border-bottom-left-radius: 32px;`};
   width: 100%;
   height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  ${({ background }) => background && `background: #fafafa;`};
 `;
 export const PlayButton = styled.button`
   border-radius: 32px;

@@ -212,7 +212,7 @@ const ResponsiveAppBar = () => {
 
               <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
             </LinkIconAdaptiveSC>
-            <LinkIconAdaptiveSC to="#" onClick={openCart}>
+            <LinkIconAdaptiveSC to="/store/:id">
               <DivBoxIconEndSC>
                 <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>

@@ -82,7 +82,7 @@ const MapBinding = () => {
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>
                       <DivBoxCVVCVCSC>
-                        <TextField label="123" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                        <TextField label="123" type="number" name="text" fullSize={false} placeholder={'CVV/CVC'} />
                       </DivBoxCVVCVCSC>
                     </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>

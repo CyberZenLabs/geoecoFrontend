@@ -65,9 +65,11 @@ export const DivBoxTextPurchsesSC = styled.div`
 export const DivBGRecSmallSC = styled.div`
   width: 100%;
   max-width: 1059px;
-  height: 100px;
+  height: 79px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
+  display: grid;
+  align-items: center;
 `;
 
 export const DivBGRecBigSC = styled.div`

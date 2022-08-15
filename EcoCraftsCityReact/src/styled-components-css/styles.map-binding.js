@@ -174,6 +174,7 @@ export const DivButtonsSC = styled.div`
     display: grid;
     grid-column-gap: 20px;
     padding-top: 20px;
+    margin-left: 30px;
     grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '43% 43%')};
   }
   @media (max-width: 500px) {

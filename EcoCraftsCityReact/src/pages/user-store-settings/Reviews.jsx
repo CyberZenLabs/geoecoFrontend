@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
+
 import { FaArrowLeft } from "react-icons/fa";
 import StarRating from "../../components/StarRating";
 import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
@@ -52,7 +52,7 @@ const routes = [
 
 const Reviews = ({ shop, index }) => {
   const [shopRaiting, setShopRaiting] = useState();
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
+
 
   useEffect(() => {
     axios

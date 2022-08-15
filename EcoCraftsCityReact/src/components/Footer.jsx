@@ -84,7 +84,7 @@ const Footer = () => {
       <DivButtonAdaptiveSC>
       <ScrollUpButton
         StopPosition={0}
-        ShowAtPosition={150}
+        ShowAtPosition={650}
         EasingType="easeOutCubic"
         AnimationDuration={500}
         ContainerClassName="ScrollUpButton__Container"
@@ -122,7 +122,7 @@ const Footer = () => {
       <DivButtonAdaptivePhonesSC>
       <ScrollUpButton
         StopPosition={0}
-        ShowAtPosition={150}
+        ShowAtPosition={450}
         EasingType="easeOutCubic"
         AnimationDuration={500}
         ContainerClassName="ScrollUpButton__Container"

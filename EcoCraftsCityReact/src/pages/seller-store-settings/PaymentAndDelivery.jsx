@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
 import FinanceTable from "../../components/FinanceTable";
 import {
   DivBackBoxSC,
@@ -77,7 +76,7 @@ const PaymentAndDelivery = ({ product }) => {
   const openMail = () => {
     setMail(true);
   };
-  const breadcrumbs = useReactRouterBreadcrumbs(routes);
+
   const [indexSelectedButton, getIndexButton] = useState(0);
   const onClickTab = (index) => (e) => {
     getIndexButton(index);

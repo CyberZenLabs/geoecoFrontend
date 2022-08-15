@@ -391,6 +391,7 @@ export const DivDescStatsContainerSC = styled.div`
   grid-template-rows: max-content max-content;
   row-gap: 43px;
   max-width: 700px;
+  margin-top: 400px;
 `
 
 export const DivDescBlockSC = styled.div`

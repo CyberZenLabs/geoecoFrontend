@@ -32,13 +32,15 @@ import {
   WrapShopContainerSC,
 } from "../../styled-components-css/styles-user-store-settings/styles.reviews";
 import axios from "axios";
-import { BreadCrumbs } from '../../components/BreadCrumbs';
+
+import { DivWrapLinkSC } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
+
 
 import { ButtonCustomSC } from "../../styled-components-css/styles.custom-button";
 import RatioCard from "../../components/RatioCard";
 import ReviewBox from "../../components/ReviewBox";
-import { DivWrapLinkSC } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../../styled-components-css/styles.product-detail";
+import { BreadCrumbs } from "../../components/BreadCrumbs";
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -67,6 +69,7 @@ const Reviews = ({ shop, index }) => {
     <>
       <ReviewContainerSC>
       <BreadCrumbs/>
+
 
         <WrapShopContainerSC></WrapShopContainerSC>
         <DivRowContentSC>

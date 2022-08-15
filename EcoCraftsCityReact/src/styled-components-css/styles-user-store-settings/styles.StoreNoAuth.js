@@ -15,7 +15,7 @@ padding: 0 20px;
   display: grid;
   justify-self: center;
   max-width: 1420px;
-
+  //border: 1px solid red;
 `;
 export const WrapShopContainerSC = styled.div`
   display: grid;
@@ -35,6 +35,7 @@ export const WrapShopContainerSC = styled.div`
   }
 `;
 export const DivBoxCatalogShopSC = styled.div`
+//border: 1px solid red;
 margin-top:45px;
   display: grid;
   max-width: 1420px;
@@ -48,6 +49,7 @@ margin-top:45px;
 `;
 
 export const DivBoxCatalog = styled.div`
+//border:1px solid pink;
 `;
 export const DivGridItems = styled.div`
 
@@ -78,9 +80,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 35px;
 line-height: 46px;
-@media (max-width: 1000px) {
-  font-size: 27px;
-  }
+
 
   @media (max-width: 768px) {
     display:none;

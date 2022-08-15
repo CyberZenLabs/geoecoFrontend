@@ -42,18 +42,18 @@ export const DivLogoBlockSC = styled.div`
   }
 `;
 export const DivLogoTextBlockSC = styled.div`
-//border: 1px solid blue;
+  //border: 1px solid blue;
   z-index: 1;
   width: 100%;
   background: #fafafa;
   box-shadow: 30px 0px 1500px 500px #fafafa;
-  -moz-box-shadow:30px 0px 1500px 500px #fafafa;
--webkit-box-shadow:30px 0px 1500px 500px #fafafa;
+  -moz-box-shadow: 30px 0px 1500px 500px #fafafa;
+  -webkit-box-shadow: 30px 0px 1500px 500px #fafafa;
   transition: 1s;
   @media (max-width: 1000px) {
     box-shadow: none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
     transition: 1s;
   }
   @media (max-width: 768px) {
@@ -98,6 +98,20 @@ export const ImgInfoBlockLogoSC = styled.div`
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   width: 100%;
   height: 100%;
+`;
+
+export const DivVideoPosterSC = styled.div`
+  display: grid;
+  align-items: center;
+  position: relative;
+`;
+export const VideoPosterSC = styled.video`
+z-index: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 export const ImgInfoBlockSC = styled.div`
   //border: 1px solid green;
@@ -212,12 +226,12 @@ export const DivInfoTextBlockSC = styled.div`
   align-self: center;
   width: 470px;
   height: fit-content;
-  
+
   @media (max-width: 1000px) {
     width: auto;
     margin-left: ${({ MarginL }) => MarginL && `${MarginL}`};
     margin-right: ${({ MarginR }) => MarginR && `${MarginR}`};
-    text-align: ${({ Right }) => Right ? `right`:`left`};
+    text-align: ${({ Right }) => (Right ? `right` : `left`)};
   }
   @media (max-width: 480px) {
     width: auto;
@@ -256,7 +270,7 @@ export const DivPlug = styled.div`
 `;
 export const DivWrapTextLogoSC = styled.div`
   z-index: 1;
- // border: 1px solid yellow;
+  // border: 1px solid yellow;
   display: grid;
   grid-template-columns: 15vw 580px;
   margin-top: 250px;

@@ -31,7 +31,7 @@ import{
 </DivInfoStoreST>
 <SecondMenuST>
 <DivStoreSetingST>
-Профиль
+Profile
 </DivStoreSetingST>
 <DivStoreSetingST>
 Настойки

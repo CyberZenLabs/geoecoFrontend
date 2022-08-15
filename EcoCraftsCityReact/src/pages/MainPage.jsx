@@ -70,10 +70,9 @@ const MainPage = () => {
         <DivInfoWrapSC>
           <DivInfoBlockSC Color="#DCFAB9;" LeftTop={true} RightTop={true}>
             <DivInfoTextBlockSC MarginL="20px" MarginR="30px">
-              <H1InfoTitleSC>Только экологичные товары</H1InfoTitleSC>
+              <H1InfoTitleSC>Only eco-friendly goods</H1InfoTitleSC>
               <PInfoTextSC>
-                Все образцы товаров обязательно проходят проверку на экологичность, а также на соответствие нашим
-                требованиям и стандартам качества
+              All goods are verified to be tested for environmental friendliness, as well as for compliance with our requirements and quality standards
               </PInfoTextSC>
             </DivInfoTextBlockSC>
             <ImgInfoBlockSC RightTop={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682274637750312/image1.png'} />
@@ -84,12 +83,12 @@ const MainPage = () => {
           <DivInfoBlockSC Color="#FAF3B9;">
             <ImgInfoBlockSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682620214849596/image2.png'} />
             <DivInfoTextBlockSC MarginL="30px" MarginR="20px" Right={true}>
-              <H1InfoTitleSC>Развиваем социальное предпринимательство</H1InfoTitleSC>
+              <H1InfoTitleSC>We develop social entrepreneurship</H1InfoTitleSC>
               <PInfoTextSC>
-                Мы помогаем людям приобрести товары сделанные руками лучших мастеров
+              We help people to purchase goods made by the hands of the best craftsmen
                 <br />
                 <br />
-                Мы помогаем мастерам в продвижении и реализации их товаров
+                We help craftsmen to promote and sell their goods
               </PInfoTextSC>
             </DivInfoTextBlockSC>
           </DivInfoBlockSC>
@@ -98,10 +97,9 @@ const MainPage = () => {
 
           <DivInfoBlockSC Color="#FFCEE0;" LeftBottom={true} RightBottom={true}>
             <DivInfoTextBlockSC MarginL="20px" MarginR="30px">
-              <H1InfoTitleSC>Занимаемся благотворительностью</H1InfoTitleSC>
+              <H1InfoTitleSC>We do charity</H1InfoTitleSC>
               <PInfoTextSC>
-                Часть заработанных средств мы отдаем на улучшение инфраструктуры и развитие волонтерского экологического
-                движения
+              We share a part of the earned funds to improve infrastructure and develop a volunteer environmental movement
               </PInfoTextSC>
             </DivInfoTextBlockSC>
             <ImgInfoBlockSC RightBottom={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008683181647605871/image3.png'} />
@@ -111,12 +109,12 @@ const MainPage = () => {
         </DivInfoWrapSC>
 
         <DivMastersBlockSC>
-          <H1MasterTitleSC>Работы лучших мастеров в одном месте</H1MasterTitleSC>
+          <H1MasterTitleSC>Works of the best craftsmen in one place</H1MasterTitleSC>
           <ImgMastersBlockSC Photo={DivMasters} />
         </DivMastersBlockSC>
         {/*<AboutUs/>*/}
         <DivSocialsBlockSC>
-          <H1SocialsTitleSC>Следите за нами в соцсетях</H1SocialsTitleSC>
+          <H1SocialsTitleSC>Follow us on social networks</H1SocialsTitleSC>
           <DivSocialsIconsBlock>
             <ImgSocialIcons to="#" Photo={Twit} />
             <ImgSocialIcons to="#" Photo={Insta} />

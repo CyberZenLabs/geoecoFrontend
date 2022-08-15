@@ -21,7 +21,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <BiHomeAlt className="Icon-Bottom-Menu" />
           </DivImgSC>
-          <TitleElementSC>Main page</TitleElementSC>
+          <TitleElementSC>Home</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
 
@@ -48,7 +48,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <UilUser className="Icon-Bottom-Menu" />
           </DivImgSC>
-          <TitleElementSC>Профиль</TitleElementSC>
+          <TitleElementSC>Profile</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
     </BoxBottomMenuSC>

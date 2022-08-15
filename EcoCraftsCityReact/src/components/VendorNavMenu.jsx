@@ -40,7 +40,7 @@ const VendorNavMenu = ({ page }) => {
       </DivStoreInfoSC>
       <DivStoreOptionsSC>
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 0} to="/vendorprofile">
-          Профиль
+          Profile
         </DivStoreOptionsLinkSC>
         <br />
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 1} to="/sellersettings">

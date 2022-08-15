@@ -55,7 +55,7 @@ const ProductDetail = () => {
     const {
         productList,
         setCartProductList,
-        cartProductList
+        cartProductList,
     } = React.useContext(AppContext);
     const [productItem, setProductItem] = useState(null);
     const [listImages, setListImages] = useState([]);

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import axios from "../apis/admin-rest";
+import hostName from "../tools/HostName";
 
 const AppContext = createContext();
 
@@ -29,12 +30,12 @@ export function AppProvider({ children }) {
   }, [localStorage.getItem('cartData')])
 
     useEffect(() => {
+
         axios
-            .get('https://radiant-river-29802.herokuapp.com/api/v1/store')
+            .get(`${hostName.getHost()}/api/v1/store`)
             .then((res) => {
                 // console.log(res);
 
-                console.log('>>>>>>>', res.data.data.data)
                 setShopsList(res.data.data.data)
 
             })
@@ -76,7 +77,9 @@ export function AppProvider({ children }) {
           productList,
           setProductsLIst,
           setCartProductList,
-          cartProductList
+          cartProductList,
+          shopsList,
+          setShopsList
       }}
     >
       {children}

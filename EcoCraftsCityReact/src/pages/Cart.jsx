@@ -42,8 +42,10 @@ const Cart = () => {
     const [arrayProd, setArrayProd] = useState([]);
     const [widthWindow, setWidthWindow] = useState(0);
     const [statusOrder, setStatusOrder] = useState(0);
+    const [listShopByListProduct, setListShopByListProduct] = useState([])
     const {
-        cartProductList
+        cartProductList,
+        shopsList
     } = React.useContext(AppContext);
 
     useEffect(() => {
@@ -56,8 +58,15 @@ const Cart = () => {
     }, []);
 
     useEffect(() => {
-        console.log('>>>>>', cartProductList)
-    }, [cartProductList])
+        if (shopsList && cartProductList) {
+            shopsList.forEach((item, i) => {
+                cartProductList.forEach((item2, i2) => {
+                    console.log('>>>>>', item, item2)
+                })
+            })
+        }
+
+    }, [cartProductList, shopsList])
 
     function onClickAll(status) {
         const tempArray = arrayProd.map((item, i) => {

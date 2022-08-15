@@ -1,18 +1,14 @@
-import React, { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import {
-  DivBackBoxSC,
-  DivHistorySC,
-  NavLinkSC,
-} from "../styled-components-css/styles.product-detail";
+import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../styled-components-css/styles.product-detail';
 import {
   DivStoreLeftPanelSC,
   DivStoreRightPanelSC,
   DivStoreWrapSC,
   DivWrapLinkSC,
   H1BoldTextSC,
-} from "../styled-components-css/styles.store";
-import AppContext from "../context/AppContext";
+} from '../styled-components-css/styles.store';
+import AppContext from '../context/AppContext';
 import {
   ButtonContentEditSC,
   ButtonSave,
@@ -36,9 +32,14 @@ import {
   H1ContentNameSC,
   H1PageOptionHidesSC,
   H1PageOptionSC,
-} from "../styled-components-css/styles.settingsSeller";
-import VendorNavMenu from "../components/VendorNavMenu";
-import { BreadCrumbs } from "../components/BreadCrumbs";
+  DivMainInfoAdressSC,
+  DivContentRows3PageSC,
+  DivContentRows2Page4SC,
+  H1ContentDefinEmailSC,
+  H1ContentNameEmailSC,
+} from '../styled-components-css/styles.settingsSeller';
+import VendorNavMenu from '../components/VendorNavMenu';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const SellerSettings = ({ product }) => {
   const { setPass, setMail } = React.useContext(AppContext);
@@ -60,9 +61,7 @@ const SellerSettings = ({ product }) => {
           <DivMainInfoSC>
             <DivContentInfoButtonSC>
               <H1ContentInfoSC>Телефон, email и пароль</H1ContentInfoSC>
-              <ButtonContentEditSC 
-            
-              onClick={onClickTab(1)}>Изменить</ButtonContentEditSC>
+              <ButtonContentEditSC onClick={onClickTab(1)}>Изменить</ButtonContentEditSC>
             </DivContentInfoButtonSC>
             <DivContent1PageSC>
               <DivContentRowsSC>
@@ -78,25 +77,21 @@ const SellerSettings = ({ product }) => {
             </DivContent1PageSC>
           </DivMainInfoSC>
 
-          <DivMainInfoSC>
+          <DivMainInfoAdressSC>
             <H1ContentInfoSC>Адрес</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
                 <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>
-                  Изменить
-                </ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
               </DivFirstColumnSC>
+              <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
-                Адрес можно поменять только один раз
-              </H1ContentNameSC>
-              <H1ContentNameSC>
-                Важно: адрес магазина является логином, который используется для
-                входа в аккаунт наряду с email. Логин также будет изменен.
+                Важно: адрес магазина является логином, который используется для входа в аккаунт наряду с email. Логин
+                также будет изменен.
               </H1ContentNameSC>
             </DivContent2SC>
-          </DivMainInfoSC>
+          </DivMainInfoAdressSC>
         </>
       ),
     },
@@ -109,116 +104,88 @@ const SellerSettings = ({ product }) => {
             </DivContentInfoButtonSC>
             <DivContentSC>
               <DivContentDivisionSC>
-                <DivContentRows2PageSC>
+                <DivContentRows3PageSC>
                   <H1ContentNameSC>Телефон</H1ContentNameSC>
                   <H1ContentNameSC>Новый телефон</H1ContentNameSC>
                   <H1ContentNameSC>Текущий пароль</H1ContentNameSC>
-                </DivContentRows2PageSC>
+                </DivContentRows3PageSC>
                 <DivContentRows2PageSC>
                   <H1ContentDefinSC>+70000000000</H1ContentDefinSC>
                   <H1ContentDefinSC>
-                 
-                    <EmailFieldSC
-                      label="phone"
-                      type="phone"
-                      placeholder="Введите свой номер телефона"
-                    />
+                    <EmailFieldSC label="phone" type="phone" placeholder="Введите свой номер телефона" />
                   </H1ContentDefinSC>
                   <H1ContentDefinSC>
-                  
-                    <EmailFieldSC
-                      label="password"
-                      type="password"
-                      placeholder="Введите пароль"
-                    />
+                    <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                </DivContentRows2PageSC> <ButtonSave 
-              onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                </DivContentRows2PageSC>{' '}
               </DivContentDivisionSC>
-             
+
               <DivContentDivisionSC>
-                <DivContentRows2Page2SC>
-                  
+                <DivContentRows2Page4SC>
                   <H1ContentNameSC>Пароль</H1ContentNameSC>
-                  <H1ContentNameSC>Email</H1ContentNameSC>
-                  <H1ContentNameSC>Новый email</H1ContentNameSC>
+                  <H1ContentNameEmailSC>Email</H1ContentNameEmailSC>
+                  <H1ContentNameSC>Новый email </H1ContentNameSC>
                   <H1ContentNameSC>Пароль</H1ContentNameSC>
-                </DivContentRows2Page2SC>
+                </DivContentRows2Page4SC>
                 <DivContentRows2Page2SC>
-                <DivContentInfoButtonSC>
-                  <H1ContentDefinSC>*********</H1ContentDefinSC><ButtonContentEditSC onClick={openPass}>Изменить</ButtonContentEditSC></DivContentInfoButtonSC>
-                  <H1ContentDefinSC>lisaraklova@gmail.com</H1ContentDefinSC>
+                  <DivContentInfoButtonSC>
+                    <H1ContentDefinSC>*********</H1ContentDefinSC>
+                    <ButtonContentEditSC onClick={openPass}>Изменить</ButtonContentEditSC>
+                  </DivContentInfoButtonSC>
+                  <H1ContentDefinEmailSC>lisaraklova@gmail.com</H1ContentDefinEmailSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC
-                      label="email"
-                      type="email"
-                      placeholder="Введите почту"
-                    />
+                    <EmailFieldSC label="email" type="email" placeholder="Введите почту" />
                   </H1ContentDefinSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC
-                      label="password"
-                      type="password"
-                      placeholder="Введите пароль"
-                    />
+                    <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                </DivContentRows2Page2SC> <ButtonSave 
-              onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                </DivContentRows2Page2SC>{' '}
               </DivContentDivisionSC>
-             
             </DivContentSC>
           </DivMainInfo2PageSC>
 
-          <DivMainInfoSC>
+          <DivMainInfoAdressSC>
             <H1ContentInfoSC>Адрес</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
                 <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>
-                  Изменить
-                </ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
               </DivFirstColumnSC>
+              <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
-                Адрес можно поменять только один раз
-              </H1ContentNameSC>
-              <H1ContentNameSC>
-                Важно: адрес магазина является логином, который используется для
-                входа в аккаунт наряду с email. Логин также будет изменен.
+                Важно: адрес магазина является логином, который используется для входа в аккаунт наряду с email. Логин
+                также будет изменен.
               </H1ContentNameSC>
             </DivContent2SC>
-          </DivMainInfoSC>
+          </DivMainInfoAdressSC>
         </>
       ),
     },
     {
-    blocks:(<></>),},
+      blocks: <></>,
+    },
   ];
 
-  
   return (
     <>
-      <BreadCrumbs/>
+      <BreadCrumbs />
       <DivStoreWrapSC>
         <DivStoreLeftPanelSC>
-        <VendorNavMenu page={1}/>
+          <VendorNavMenu page={1} />
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
             <H1BoldTextSC>Настройки</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
-            <H1PageOptionSC
-              isActive={indexSelectedButton === 0}
-              onClick={onClickTab(0)}
-            >
+            <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
               Основные
             </H1PageOptionSC>
-            <H1PageOptionHidesSC
-              isActive={indexSelectedButton === 2}
-              onClick={onClickTab(2)}
-            >
-              Оповещания
+            <H1PageOptionHidesSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
+              Оповещения
             </H1PageOptionHidesSC>
           </DivPagesSC>
           {listContent[indexSelectedButton].blocks}

@@ -127,7 +127,9 @@ export const DivBoxIconSC = styled.div`
     width: 150px;
   }
   @media (max-width: 480px) {
-    grid-column-gap: 5px;
+    width: 100%;
+    grid-column-gap: 30%;
+    margin-left: 10px;
   }
 `;
 
@@ -288,6 +290,9 @@ export const SpanEndHeaderSC = styled.span`
   color: rgba(37, 37, 37, 0.8);
   font-size: var(--font-size-icon-text);
   margin-top: 3px;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 export const DivBoxButtonCreateStoreSC = styled.span`
   :hover {

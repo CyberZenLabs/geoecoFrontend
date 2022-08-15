@@ -317,7 +317,7 @@ export const DivBoxBoxFormSC = styled.div`
   background-size: 620px;
   //min-width: 450px;
 
-  @media (max-width: 943px) {
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
@@ -358,6 +358,9 @@ export const DivRegSC = styled.div`
   padding-bottom: 20px;
   padding-top: 20px;
   min-height: 750px;
+  @media (max-width: 1000px) {
+    background: none;
+  }
   @media (max-width: 660px) {
     min-height: 0 !important;
   }

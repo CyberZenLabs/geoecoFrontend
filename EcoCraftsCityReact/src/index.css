@@ -167,7 +167,7 @@ table {
   align-self: center;
   max-width: 547px;
 }
-@media (max-width: 943px) {
+@media (max-width: 1000px) {
   .image4registration {
     display: none;
   }

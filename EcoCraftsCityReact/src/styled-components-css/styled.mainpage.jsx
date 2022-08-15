@@ -4,36 +4,36 @@ import DivMasters from '../img/MainPagePeople.svg';
 import { Link } from 'react-router-dom';
 export const DivMainPageWrapSC = styled.div`
   display: grid;
-  grid-template-rows: 800px 2400px auto auto auto;
+  grid-template-rows: max-content 2400px auto auto auto;
   row-gap: 100px;
   //border: 2px solid red;
   height: fit-content;
   width: 100%;
 
   @media (max-width: 1000px) {
-    grid-template-rows: 670px 1260px auto auto auto;
+    grid-template-rows: max-content 1260px auto auto auto;
     row-gap: 50px;
   }
   @media (max-width: 768px) {
-    grid-template-rows: 512px 960px auto auto auto;
+    grid-template-rows: max-content 960px auto auto auto;
     row-gap: 30px;
   }
   @media (max-width: 480px) {
-    grid-template-rows: 320px 2400px auto auto auto;
+    grid-template-rows: max-content 2400px auto auto auto;
     row-gap: 20px;
   }
   @media (max-width: 360px) {
-    grid-template-rows: 240px 1800px auto auto auto;
+    grid-template-rows: max-content 1800px auto auto auto;
     row-gap: 10px;
   }
 `;
 export const DivLogoBlockSC = styled.div`
   display: grid;
-  grid-template-columns: 0px 100%;
+  grid-template-columns:  100%;
   overflow: hidden;
   transition: 0.6s 0.7s;
   @media (max-width: 1000px) {
-    grid-template-columns: 0px 100%;
+    grid-template-columns:  100%;
     transition: 0s;
     border-radius: 32px;
   }
@@ -62,8 +62,9 @@ export const DivLogoTextBlockSC = styled.div`
 `;
 export const DivLogoTextBlockShowSC = styled.div`
   @media (min-width: 768px) {
-    display: none;
+    //display: none;
   }
+  position: absolute;
   //border: 1PX solid Red;
   display: grid;
   justify-content: center;
@@ -104,14 +105,16 @@ export const DivVideoPosterSC = styled.div`
   display: grid;
   align-items: center;
   position: relative;
+  background: #00000080;
 `;
 export const VideoPosterSC = styled.video`
 z-index: 0;
   width: 100%;
   height: auto;
-  position: absolute;
+  //position: absolute;
   top: 0;
   left: 0;
+  opacity: .3;
 `;
 export const ImgInfoBlockSC = styled.div`
   //border: 1px solid green;

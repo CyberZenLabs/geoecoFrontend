@@ -48,35 +48,36 @@ const MainPage = () => {
     <>
       <DivMainPageWrapSC>
       <DivLogoBlockSC>
-          <DivLogoTextBlockSC>
-            <DivWrapTextLogoSC>
-              <DivPlug />
-              <DivTextBlockLogo>
-                <H1InfoTitleLogoSC>geoeco</H1InfoTitleLogoSC>
+          {/*<DivLogoTextBlockSC>*/}
+          {/*  <DivWrapTextLogoSC>*/}
+          {/*    <DivPlug />*/}
+          {/*    <DivTextBlockLogo>*/}
+          {/*      <H1InfoTitleLogoSC>geoeco</H1InfoTitleLogoSC>*/}
+          {/*      <PInfoTextLogoSC>*/}
+          {/*        Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей*/}
+          {/*      </PInfoTextLogoSC>*/}
+          {/*      <DivTwoColumns>*/}
+          {/*        <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>*/}
+          {/*        <PlayButton Photo={PlayButtonMainPage} />*/}
+          {/*      </DivTwoColumns>*/}
+          {/*    </DivTextBlockLogo>*/}
+          {/*  </DivWrapTextLogoSC>*/}
+          {/*</DivLogoTextBlockSC>*/}
+          <DivVideoPosterSC>
+            <VideoPosterSC src={BackVideo} poster={PosterVideo} autoPlay muted loop>
+
+            </VideoPosterSC>
+            <DivLogoTextBlockShowSC>
+              <DivTextBlockLogoShow>
+                <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
                 <PInfoTextLogoSC>
                   Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
                 </PInfoTextLogoSC>
                 <DivTwoColumns>
                   <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                  <PlayButton Photo={PlayButtonMainPage} />
                 </DivTwoColumns>
-              </DivTextBlockLogo>
-            </DivWrapTextLogoSC>
-          </DivLogoTextBlockSC>
-          <DivVideoPosterSC>
-            <VideoPosterSC src={BackVideo} poster={PosterVideo} autoPlay muted loop>
-              <DivLogoTextBlockShowSC>
-                <DivTextBlockLogoShow>
-                  <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
-                  <PInfoTextLogoSC>
-                    Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
-                  </PInfoTextLogoSC>
-                  <DivTwoColumns>
-                    <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                  </DivTwoColumns>
-                </DivTextBlockLogoShow>
-              </DivLogoTextBlockShowSC>
-            </VideoPosterSC>
+              </DivTextBlockLogoShow>
+            </DivLogoTextBlockShowSC>
           </DivVideoPosterSC>
         {/* <DivLogoBlockSC>
           <DivLogoTextBlockSC>

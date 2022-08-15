@@ -42,13 +42,18 @@ export const DivLogoBlockSC = styled.div`
   }
 `;
 export const DivLogoTextBlockSC = styled.div`
+//border: 1px solid blue;
   z-index: 1;
   width: 100%;
   background: #fafafa;
   box-shadow: 30px 0px 1500px 500px #fafafa;
+  -moz-box-shadow:30px 0px 1500px 500px #fafafa;
+-webkit-box-shadow:30px 0px 1500px 500px #fafafa;
   transition: 1s;
   @media (max-width: 1000px) {
     box-shadow: none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
     transition: 1s;
   }
   @media (max-width: 768px) {
@@ -251,7 +256,7 @@ export const DivPlug = styled.div`
 `;
 export const DivWrapTextLogoSC = styled.div`
   z-index: 1;
-  //border: 1px solid yellow;
+ // border: 1px solid yellow;
   display: grid;
   grid-template-columns: 15vw 580px;
   margin-top: 250px;

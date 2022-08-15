@@ -18,7 +18,7 @@ const ProductCard = ({ product, index }) => {
       <ProductCardImage src="/default-images/plant.jpg" />
 
       <DivGridPriceCartIcon>
-        <ProductCardPrice>{product.price}$</ProductCardPrice>
+        <ProductCardPrice>{product.price}₽</ProductCardPrice>
         <DivCart>
           <img src="/default-images/white_cart.svg" />
         </DivCart>

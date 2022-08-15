@@ -34,7 +34,7 @@ const PersonalData = () => {
       .get('https://radiant-river-29802.herokuapp.com/api/v1/users/me')
         .then((res) => {
           setUser(res.data.data.data);
-          console.log("user",res.data.data.data);
+          console.log("user",res);
         })}
         ,[]);
 
@@ -57,8 +57,7 @@ const PersonalData = () => {
             <ul>
               <li>
                 <SpanInitialsSC>
-                  
-                {user.storeName}
+                {user.firstName}
                   Фамилия Имя Отчество
                   <img src="/default-images/pencil.svg" className="image_plus" to="#" onClick={openCarts} />{' '}
                 </SpanInitialsSC>
@@ -94,7 +93,7 @@ const PersonalData = () => {
         </DivBoxBlockSC>
 
         <DivBoxBlockSC>
-          <SpanInitialsSC>Банковские карты</SpanInitialsSC>
+          <SpanInitialsSC>Bank cards</SpanInitialsSC>
           <ButtonAddCardSClitl to="/map-binding">
             <img src="/default-images/card.svg" className="image_cadr" />
 

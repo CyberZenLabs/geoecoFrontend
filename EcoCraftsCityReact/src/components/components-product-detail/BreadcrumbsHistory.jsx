@@ -33,7 +33,7 @@ const BreadcrumbsHistory = (props) => {
                 <NavLinkSC
                     iscolor={true}
                     to={'/'}
-                >Назад</NavLinkSC>
+                >Back</NavLinkSC>
             </DivBackBoxSC>
             <div>
                 {breadcrumbs.map(({

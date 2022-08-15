@@ -12,8 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import Home from './pages/Home';
 import PersonalData from './pages/PersonalData';
-import StoreNewProduct from './pages/StoreNewProduct';
-import StoreNoAuth from './pages/StoreNoAuth';
+import StoreNoAuth from './pages/user-store-settings/StoreNoAuth';
 import NavBar from './components/NavBar';
 import Cart from './pages/Cart';
 import Mooo from './pages/AdminLogin';
@@ -21,19 +20,25 @@ import ProductDetail from './pages/ProductDetail';
 import AdminDashboard from './pages/AdminDashboard';
 import Registration from './pages/Registration';
 import SignIn from './pages/SignIn';
-import StoreFront from './pages/StoreFront';
+import StoreFront from './pages/seller-store-settings/StoreFront';
+import PaymentAndDelivery from './pages/seller-store-settings/PaymentAndDelivery';
 
-import VendorProfile from './pages/VendorProfile';
+import VendorProfile from './pages/seller-store-settings/VendorProfile';
+import VendorProfileUser from './pages/user-store-settings/VendorProfileUser';
+
 import MapBiding from './pages/MapBinding';
 import AddNewProduct from './pages/AddNewProduct';
 import ModalSendEmail from './components/ModalSendEmail';
-import PurchasesActive from './pages/PurchasesActive';
+import PurchasesActive from './pages/seller-store-settings/PurchasesActive';
+import Sales from './pages/seller-store-settings/Sales';
+import PaymentDelivery from './pages/PaymentDelivery';
+
 //components
 // import AdminForm from "./pages/AdminForm";
 import { ToastContainer } from 'react-toastify';
 import AppContext, { AppProvider } from './context/AppContext';
 import { AuthProvider } from './context/AuthContext';
-import Reviews from './pages/Reviews';
+import Reviews from './pages/user-store-settings/Reviews';
 import Page_404 from './pages/404';
 import Footer from './components/Footer';
 import Catalog from './components/Catalog';
@@ -42,7 +47,7 @@ import Modal from './components/Modal';
 import EcoModal from './components/Modal';
 import PassModal from './components/ModalPassChange';
 import MailModal from './components/ModalAddressChange';
-import SellerSettings from './pages/SellerSettings';
+import SellerSettings from './pages/seller-store-settings/SellerSettings';
 import AboutUs from './pages/AboutUs';
 import Terms from './privacy/Terms';
 import Privacy from './privacy/Privacy';
@@ -72,14 +77,16 @@ root.render(
               <Route index element={<MainPage />} />
               <Route path="home" element={<Home />} />
               <Route path="personaldata" element={<PersonalData />} />
-              <Route path="storenewproduct" element={<StoreNewProduct />} />
-
+              <Route path="payment-and-delivery" element={<PaymentDelivery />} />
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="addnewproduct" element={<AddNewProduct />} />
               <Route path="purchasesactive" element={<PurchasesActive />} />
+              <Route path="sales" element={<Sales />} />
               <Route path="about-us" element={<AboutUs />} />
+              <Route path="paymentanddelivery" element={<PaymentAndDelivery />} />
 
               <Route path="vendorprofile" element={<VendorProfile />} />
+              <Route path="vendorprofileuser" element={<VendorProfileUser />} />
 
               <Route path="storenoauth" element={<StoreNoAuth />} />
               <Route path="terms" element={<Terms />} />

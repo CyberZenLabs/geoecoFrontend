@@ -4,51 +4,56 @@ import DivMasters from '../img/MainPagePeople.svg';
 import { Link } from 'react-router-dom';
 export const DivMainPageWrapSC = styled.div`
   display: grid;
-  grid-template-rows: 800px 2400px auto auto auto;
+  grid-template-rows: max-content 2400px auto auto auto;
   row-gap: 100px;
   //border: 2px solid red;
   height: fit-content;
   width: 100%;
 
   @media (max-width: 1000px) {
-    grid-template-rows: 670px 1260px auto auto auto;
+    grid-template-rows: max-content 1260px auto auto auto;
     row-gap: 50px;
   }
   @media (max-width: 768px) {
-    grid-template-rows: 512px 960px auto auto auto;
+    grid-template-rows: max-content 960px auto auto auto;
     row-gap: 30px;
   }
   @media (max-width: 480px) {
-    grid-template-rows: 320px 2400px auto auto auto;
+    grid-template-rows: max-content 2400px auto auto auto;
     row-gap: 20px;
   }
   @media (max-width: 360px) {
-    grid-template-rows: 240px 1800px auto auto auto;
+    grid-template-rows: max-content 1800px auto auto auto;
     row-gap: 10px;
   }
 `;
 export const DivLogoBlockSC = styled.div`
   display: grid;
-  grid-template-columns: 0px 100%;
+  grid-template-columns:  100%;
   overflow: hidden;
   transition: 0.6s 0.7s;
   @media (max-width: 1000px) {
-    grid-template-columns: 0px 100%;
+    grid-template-columns:  100%;
     transition: 0s;
-    border-radius: 32px;
+
   }
   @media (max-width: 768px) {
     grid-template-columns: 100%;
   }
 `;
 export const DivLogoTextBlockSC = styled.div`
+  //border: 1px solid blue;
   z-index: 1;
   width: 100%;
   background: #fafafa;
   box-shadow: 30px 0px 1500px 500px #fafafa;
+  -moz-box-shadow: 30px 0px 1500px 500px #fafafa;
+  -webkit-box-shadow: 30px 0px 1500px 500px #fafafa;
   transition: 1s;
   @media (max-width: 1000px) {
     box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
     transition: 1s;
   }
   @media (max-width: 768px) {
@@ -57,8 +62,9 @@ export const DivLogoTextBlockSC = styled.div`
 `;
 export const DivLogoTextBlockShowSC = styled.div`
   @media (min-width: 768px) {
-    display: none;
+    //display: none;
   }
+  position: absolute;
   //border: 1PX solid Red;
   display: grid;
   justify-content: center;
@@ -76,6 +82,8 @@ export const DivInfoBlockSC = styled.div`
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   display: grid;
   grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: center;
   /* min-width: 480px; */
   @media (max-width: 480px) {
     grid-template-columns: 100%;
@@ -94,7 +102,26 @@ export const ImgInfoBlockLogoSC = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const DivVideoPosterSC = styled.div`
+  display: grid;
+  align-items: center;
+  position: relative;
+  background: #00000080;
+  max-height: 800px;
+`;
+export const VideoPosterSC = styled.video`
+z-index: 0;
+  width: 100%;
+  height: auto;
+  //position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .5;
+`;
 export const ImgInfoBlockSC = styled.div`
+display: grid;
+/* justify-content: center; */
   //border: 1px solid green;
   @media (max-width: 480px) {
     display: none;
@@ -103,11 +130,13 @@ export const ImgInfoBlockSC = styled.div`
   background-image: ${({ Photo }) => Photo && `url(${Photo})`};
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 70%;
   ${({ RightTop }) => RightTop && `border-top-right-radius: 32px;`};
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   width: 100%;
   height: 100%;
+  max-width: 600px;
+  max-height: 600px;
 `;
 export const ImgInfoBlockShowSC = styled.div`
   @media (min-width: 481px) {
@@ -117,13 +146,16 @@ export const ImgInfoBlockShowSC = styled.div`
   background-image: ${({ Photo }) => Photo && `url(${Photo})`};
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
   ${({ RightTop }) => RightTop && `border-top-right-radius: 32px;`};
   ${({ RightBottom }) => RightBottom && `border-bottom-right-radius: 32px;`};
   ${({ LeftTop }) => LeftTop && `border-top-left-radius: 32px;`};
   ${({ LeftBottom }) => LeftBottom && `border-bottom-left-radius: 32px;`};
   width: 100%;
   height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  ${({ background }) => background && `background: #fafafa;`};
 `;
 export const PlayButton = styled.button`
   border-radius: 32px;
@@ -207,12 +239,12 @@ export const DivInfoTextBlockSC = styled.div`
   align-self: center;
   width: 470px;
   height: fit-content;
-  
+
   @media (max-width: 1000px) {
     width: auto;
     margin-left: ${({ MarginL }) => MarginL && `${MarginL}`};
     margin-right: ${({ MarginR }) => MarginR && `${MarginR}`};
-    text-align: ${({ Right }) => Right ? `right`:`left`};
+    text-align: ${({ Right }) => (Right ? `right` : `left`)};
   }
   @media (max-width: 480px) {
     width: auto;
@@ -234,15 +266,34 @@ export const DivTextBlockLogo = styled.div`
     margin-left: 20px;
   }
 `;
+export const DivWidthSetSC = styled.div`
+z-index: 1;
+  max-width: 1322px;
+  width: 90vw;
+  display: grid;
+  justify-content: left;
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+`;
+
 export const DivTextBlockLogoShow = styled.div`
-  z-index: 1;
+  
   //border: 1px solid yellow;
   display: grid;
   grid-template-rows: auto auto auto;
-  gap: 30px;
+  gap: 7%;
   width: auto;
   height: fit-content;
-  text-align: center;
+  //text-align: center;
+  align-items: center;
+  //justify-content: left;
+  max-width: 600px;
+  @media (max-width: 1000px) {
+    justify-items: center;
+
+  }
+
 `;
 export const DivPlug = styled.div`
   @media (max-width: 1000px) {
@@ -251,7 +302,7 @@ export const DivPlug = styled.div`
 `;
 export const DivWrapTextLogoSC = styled.div`
   z-index: 1;
-  //border: 1px solid yellow;
+  // border: 1px solid yellow;
   display: grid;
   grid-template-columns: 15vw 580px;
   margin-top: 250px;
@@ -463,7 +514,7 @@ export const H1InfoTitleShowSC = styled.h1`
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 90px;
   line-height: 78px;
   transition: 0s;
   pointer-events: none;
@@ -471,6 +522,12 @@ export const H1InfoTitleShowSC = styled.h1`
   /* identical to box height */
   /* Вторичный */
   color: #ffffff;
+  @media (max-width: 768px) {
+    font-size: 50px;
+    line-height: 49px;
+    /* identical to box height */
+    color: #ffffff;
+  }
   @media (max-width: 480px) {
     font-size: 40px;
     line-height: 49px;
@@ -523,10 +580,11 @@ export const PInfoTextLogoSC = styled.p`
 
   /* Вторичный */
   transition: 1s;
-  color: #252525;
+  color: #ffffff;
 
   @media (max-width: 1000px) {
     color: #ffffff;
+    text-align: center;
   }
   @media (max-width: 768px) {
     font-size: 22px;
@@ -589,12 +647,12 @@ export const ProductCardButtonSC = styled(Link)`
     background-color: #76b42e;
   }
   @media (max-width: 768px) {
-    width: 230px;
-    height: 56px;
+    width: 210px;
+    height: 50px;
   }
   @media (max-width: 480px) {
-    width: 209px;
-    height: 50px;
+    width: 200px;
+    height: 45px;
     font-size: 14px;
     line-height: 17px;
   }

@@ -60,16 +60,16 @@
 //                         </Typography>
 //                     </Grid>
 //                     <Grid item xs={5}>
-//                         <TextField onChange={onChange("name")} required id="standard-required" label="Имя" value={name} />
+//                         <TextField onChange={onChange("name")} required id="standard-required" label="Name" value={name} />
 //                     </Grid>
 //                     <Grid item xs={5}>
-//                         <TextField onChange={onChange("lastName")} required id="standard-required" label="Фамилия" value={lastName} />
+//                         <TextField onChange={onChange("lastName")} required id="standard-required" label="Surname" value={lastName} />
 //                     </Grid>
 //                     <Grid item xs={5}>
 //                         <TextField onChange={onChange("email")} required id="standard-required" label="Электроная почта" value={email} />
 //                     </Grid>
 //                     <Grid item xs={5}>
-//                         <TextField onChange={onChange("pass")} required id="standard-required" label="Пароль" value={password} />
+//                         <TextField onChange={onChange("pass")} required id="standard-required" label="Password" value={password} />
 //                     </Grid>
 //                     <Grid  item xs={5}>
 //                     <Button variant="contained" color="primary">

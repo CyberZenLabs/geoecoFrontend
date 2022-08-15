@@ -72,40 +72,40 @@ const Modalstore = () => {
               {(formik) => (
                 <Form>
                   <DivBoxRowsSC>
-                    <StoreCreationTitleSC>Регистрация</StoreCreationTitleSC>
+                    <StoreCreationTitleSC>Sign up</StoreCreationTitleSC>
                     <DivBoxRowModalSC>
-                      {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
+                      {/*<LabelSC htmlFor="email">Email</LabelSC>*/}
                       <InpitReg
                         label="email"
                         type="email"
                         name="email"
                         fullsize={true}
-                        placeholder={'Электронная почта'}
+                        placeholder={'Email'}
                       />
                     </DivBoxRowModalSC>
 
                     <DivBoxRowModalSC>
-                      {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                      {/*<LabelSC htmlFor="pass">Password</LabelSC>*/}
                       <InpitReg
                         label="password"
                         type="password"
                         name="password"
                         fullsize={false}
-                        placeholder={'Пароль'}
+                        placeholder={'Password'}
                       />
                     </DivBoxRowModalSC>
                     <DivBoxRowModalSC>
-                      {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
+                      {/*<LabelSC htmlFor="confirmedPass">Confirm password</LabelSC>*/}
                       <InpitReg
                         label="passwordConfirm"
                         type="password"
                         name="passwordConfirm"
                         fullsize={false}
-                        placeholder={'Подтвердить пароль'}
+                        placeholder={'Confirm password'}
                       />
                     </DivBoxRowModalSC>
                     <DivBoxRowModalSC>
-                      {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
+                      {/*<LabelSC htmlFor="confirmedPass">Confirm password</LabelSC>*/}
                       <InpitReg
                         label="passwordConfirm"
                         type="text"
@@ -128,7 +128,7 @@ const Modalstore = () => {
                         >
                           {!loading ? (
                             <span>
-                              Продолжить&nbsp;&nbsp;
+                              Continue&nbsp;&nbsp;
                               <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                             </span>
                           ) : (
@@ -137,9 +137,9 @@ const Modalstore = () => {
                         </ButtonCustomSC>
                         <DivBoxRowSC>
                           <DivBoxTextSC>
-                            <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
+                            <SpanQuSC>Already have an account? </SpanQuSC>
                             <LinkSC to="/signin" onClick={() => setOpenModal(false)}>
-                              Войти
+                              Sign in
                             </LinkSC>
                           </DivBoxTextSC>
                         </DivBoxRowSC>

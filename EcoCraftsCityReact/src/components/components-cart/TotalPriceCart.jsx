@@ -145,7 +145,7 @@ const TotalPriceCart = (props) => {
     // 			<p>Адрес</p>
     // 		</DivTotalDeliveryAddressSC>
     // 		<DivTotalDateTitleSC>
-    // 			<p>Дата:</p>
+    // 			<p>Date:</p>
     // 		</DivTotalDateTitleSC>
     // 		<DivTotalDateSC>
     // 			<p>дд/мм</p>

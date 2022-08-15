@@ -42,11 +42,11 @@ const AdminLogin = () => {
 
   return (
     <div id="form-container">
-      {/* <TextField id="outlined-basic" label="Фамилия" variant="outlined" />
-      <TextField id="outlined-basic" label="Имя" variant="outlined" />
+      {/* <TextField id="outlined-basic" label="Surname" variant="outlined" />
+      <TextField id="outlined-basic" label="Name" variant="outlined" />
       <TextField
         id="outlined-basic"
-        label="Электронная Почта"
+        label="Email"
         variant="outlined"
       />
       <Button onClick={handleSubmit}>Submit</Button> */}

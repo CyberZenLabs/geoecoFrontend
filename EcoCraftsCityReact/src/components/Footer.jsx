@@ -35,7 +35,7 @@ const Footer = () => {
   const openCart = () => {
     setOpen(true);
     setModalData({
-      inputs: [{ email: 'Электронная почта' }],
+      inputs: [{ email: 'Email' }],
       button: true,
     });
   };
@@ -58,12 +58,12 @@ const Footer = () => {
           <DivBoxEcoCraftlSC>
             <DivBoxEcoCraftSC>
               <SpanTitleSC>geoeco</SpanTitleSC>
-              <CustomLinkSC to="/">О нас</CustomLinkSC>
-              <CustomLinkSC to="/">Отзывы</CustomLinkSC>
+              <CustomLinkSC to="/">About us</CustomLinkSC>
+              <CustomLinkSC to="/">Reviews</CustomLinkSC>
               <CustomLinkSC to="/" onClick={openCart}>
-                Создать магазин
+                Create store
               </CustomLinkSC>
-              <CustomLinkSC to="/">Новости</CustomLinkSC>
+              <CustomLinkSC to="/">News</CustomLinkSC>
             </DivBoxEcoCraftSC>
           </DivBoxEcoCraftlSC>
           <DivBoxFeaturesSC>
@@ -77,14 +77,14 @@ const Footer = () => {
           </DivBoxFeaturesSC>
         </DivTopSC>
         <DivBottomSC>
-          <span>Сделано digital-студией CyberZen</span>
+          <span>Made by digital-studio CyberZen</span>
         </DivBottomSC>
       </DivBoxFooterSC>
       <BottomMenu />
       <DivButtonAdaptiveSC>
       <ScrollUpButton
         StopPosition={0}
-        ShowAtPosition={150}
+        ShowAtPosition={650}
         EasingType="easeOutCubic"
         AnimationDuration={500}
         ContainerClassName="ScrollUpButton__Container"
@@ -122,7 +122,7 @@ const Footer = () => {
       <DivButtonAdaptivePhonesSC>
       <ScrollUpButton
         StopPosition={0}
-        ShowAtPosition={150}
+        ShowAtPosition={450}
         EasingType="easeOutCubic"
         AnimationDuration={500}
         ContainerClassName="ScrollUpButton__Container"

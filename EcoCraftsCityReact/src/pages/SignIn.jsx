@@ -84,6 +84,8 @@ const SignIn = (props) => {
   }, [response, error]);
   {
     console.log('LOGGED IN', loggedIn);
+    console.log('respone', response);
+
   }
 
   const showToast = (type, text) => {
@@ -105,9 +107,9 @@ const SignIn = (props) => {
       <DivBackgroundFormSC>
         <DivBoxBoxFormSC>
           <DivBoxFormSignInSC>
-            <H4Title>Добро пожаловать в geoeco!</H4Title>
+            <H4Title>Welcome to geoeco!</H4Title>
 
-            <SpanSC>Введите свои данные для входа в аккаунт</SpanSC>
+            <SpanSC>Enter your information to sign in</SpanSC>
             <Formik
               initialValues={startingValues}
               validationSchema={signInSchema}
@@ -125,24 +127,24 @@ const SignIn = (props) => {
                 <Form>
                   <DivBoxRowsSC>
                     <DivBoxRowSC>
-                      {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
+                      {/*<LabelSC htmlFor="email">Email</LabelSC>*/}
                       <TextField
                         label="email"
                         type="email"
                         name="email"
                         fullSize={true}
-                        placeholder={'Электронная почта'}
+                        placeholder={'Email'}
                       />
                     </DivBoxRowSC>
 
                     <DivBoxRowSISC>
-                      {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                      {/*<LabelSC htmlFor="pass">Password</LabelSC>*/}
                       <TextField
                         label="password"
                         name="password"
                         type="password"
                         fullSize={true}
-                        placeholder={'Пароль'}
+                        placeholder={'Password'}
                       />
                     </DivBoxRowSISC>
                     <DivTextBoxSISC>
@@ -153,8 +155,8 @@ const SignIn = (props) => {
                         checked={checked}
                         onClick={check}
                       />
-                       <SpanFirstSC to="#" onClick={check}>Запомнить меня</SpanFirstSC>
-                      <SpanSecondSC to="/">Забыли пароль?</SpanSecondSC>
+                       <SpanFirstSC to="#" onClick={check}>Remember me</SpanFirstSC>
+                      <SpanSecondSC to="/">Forgot Password?</SpanSecondSC>
                     </DivTextBoxSISC>
                     <DivBoxRowSC>
                       <ButtonCustomSC
@@ -166,7 +168,7 @@ const SignIn = (props) => {
                       >
                         {!loading ? (
                           <span>
-                            Войти&nbsp;&nbsp;
+                            Sign in&nbsp;&nbsp;
                             <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                           </span>
                         ) : (
@@ -176,8 +178,8 @@ const SignIn = (props) => {
                     </DivBoxRowSC>
                     <DivBoxRowSC>
                       <DivBoxTextSC>
-                        <SpanQuSC>У вас нет аккаунта? </SpanQuSC>
-                        <LinkSC to="/registration">Зарегистрироваться</LinkSC>
+                        <SpanQuSC>Don't have an account yet? </SpanQuSC>
+                        <LinkSC to="/registration">Sign up</LinkSC>
                       </DivBoxTextSC>
                     </DivBoxRowSC>
                   </DivBoxRowsSC>

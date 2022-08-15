@@ -14,6 +14,8 @@ import {
   DivTextBlockLogo,
   DivTextBlockLogoShow,
   DivTwoColumns,
+  DivVideoPosterSC,
+  DivWidthSetSC,
   DivWrapTextLogoSC,
   H1InfoTitleLogoSC,
   H1InfoTitleSC,
@@ -29,6 +31,7 @@ import {
   PInfoTextSC,
   PlayButton,
   ProductCardButtonSC,
+  VideoPosterSC,
 } from '../styled-components-css/styled.mainpage';
 
 import DivPhoto from '../img/MainPagePhotos.svg';
@@ -38,92 +41,80 @@ import Insta from '../img/InstaIcon.svg';
 import Face from '../img/TwitIcon.svg';
 import AboutUs from './AboutUs';
 import PlayButtonMainPage from '../img/PlayButton.svg';
+import BackVideo from '../video/opacity-video-mainpage.mp4';
+import PosterVideo from '../video/poster-for-video.jpg';
 
 const MainPage = () => {
   return (
     <>
       <DivMainPageWrapSC>
         <DivLogoBlockSC>
-          <DivLogoTextBlockSC>
-            <DivWrapTextLogoSC>
-              <DivPlug />
-              <DivTextBlockLogo>
-                <H1InfoTitleLogoSC>geoeco</H1InfoTitleLogoSC>
-                <PInfoTextLogoSC>
-                  Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
-                </PInfoTextLogoSC>
-                <DivTwoColumns>
-                  <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                  <PlayButton Photo={PlayButtonMainPage} />
-                </DivTwoColumns>
-              </DivTextBlockLogo>
-            </DivWrapTextLogoSC>
-          </DivLogoTextBlockSC>
-          <ImgInfoBlockLogoSC Photo={DivPhoto}>
+          <DivVideoPosterSC>
+            <VideoPosterSC src={BackVideo} poster={PosterVideo} autoPlay muted loop></VideoPosterSC>
             <DivLogoTextBlockShowSC>
-              <DivTextBlockLogoShow>
-                <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
-                <PInfoTextLogoSC>
-                  Лучшая торговая площадка для приобретения и реализации товаров сделанных с любовью для людей
-                </PInfoTextLogoSC>
-                <DivTwoColumns>
-                  <ProductCardButtonSC to="home">Перейти в магазин</ProductCardButtonSC>
-                </DivTwoColumns>
-              </DivTextBlockLogoShow>
+              <DivWidthSetSC>
+                <DivTextBlockLogoShow>
+                  <H1InfoTitleShowSC>geoeco</H1InfoTitleShowSC>
+                  <PInfoTextLogoSC>
+                  The world's only exclusive store for the distribution of sustainably created goods internationally, all goods are verified to be hand made with love for people and the planet.
+                  </PInfoTextLogoSC>
+                  <DivTwoColumns>
+                    <ProductCardButtonSC to="home">View Products</ProductCardButtonSC>
+                  </DivTwoColumns>
+                </DivTextBlockLogoShow>
+              </DivWidthSetSC>
             </DivLogoTextBlockShowSC>
-          </ImgInfoBlockLogoSC>
+          </DivVideoPosterSC>
         </DivLogoBlockSC>
 
         <DivInfoWrapSC>
           <DivInfoBlockSC Color="#DCFAB9;" LeftTop={true} RightTop={true}>
             <DivInfoTextBlockSC MarginL="20px" MarginR="30px">
-              <H1InfoTitleSC>Только экологичные товары</H1InfoTitleSC>
+              <H1InfoTitleSC>Only eco-friendly goods</H1InfoTitleSC>
               <PInfoTextSC>
-                Все образцы товаров обязательно проходят проверку на экологичность, а также на соответствие нашим
-                требованиям и стандартам качества
+              All goods are verified to be tested for environmental friendliness, as well as for compliance with our requirements and quality standards
               </PInfoTextSC>
             </DivInfoTextBlockSC>
-            <ImgInfoBlockSC RightTop={true} Photo={DivPhoto} />
+            <ImgInfoBlockSC RightTop={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682274637750312/image1.png'} />
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC Photo={DivPhoto} />
+          <ImgInfoBlockShowSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682274637750312/image1.png'} />
 
           <DivInfoBlockSC Color="#FAF3B9;">
-            <ImgInfoBlockSC Photo={DivPhoto} />
+            <ImgInfoBlockSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682620214849596/image2.png'} />
             <DivInfoTextBlockSC MarginL="30px" MarginR="20px" Right={true}>
-              <H1InfoTitleSC>Развиваем социальное предпринимательство</H1InfoTitleSC>
+              <H1InfoTitleSC>We develop social entrepreneurship</H1InfoTitleSC>
               <PInfoTextSC>
-                Мы помогаем людям приобрести товары сделанные руками лучших мастеров
+              We help people to purchase goods made by the hands of the best craftsmen
                 <br />
                 <br />
-                Мы помогаем мастерам в продвижении и реализации их товаров
+                We help craftsmen to promote and sell their goods
               </PInfoTextSC>
             </DivInfoTextBlockSC>
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC Photo={DivPhoto} />
+          <ImgInfoBlockShowSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682620214849596/image2.png'} />
 
           <DivInfoBlockSC Color="#FFCEE0;" LeftBottom={true} RightBottom={true}>
             <DivInfoTextBlockSC MarginL="20px" MarginR="30px">
-              <H1InfoTitleSC>Занимаемся благотворительностью</H1InfoTitleSC>
+              <H1InfoTitleSC>We do charity</H1InfoTitleSC>
               <PInfoTextSC>
-                Часть заработанных средств мы отдаем на улучшение инфраструктуры и развитие волонтерского экологического
-                движения
+              We share a part of the earned funds to improve infrastructure and develop a volunteer environmental movement
               </PInfoTextSC>
             </DivInfoTextBlockSC>
-            <ImgInfoBlockSC RightBottom={true} Photo={DivPhoto} />
+            <ImgInfoBlockSC RightBottom={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008683181647605871/image3.png'} />
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC RightBottom={true} LeftBottom={true} Photo={DivPhoto} />
+          <ImgInfoBlockShowSC RightBottom={true} LeftBottom={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008683181647605871/image3.png'} />
         </DivInfoWrapSC>
 
         <DivMastersBlockSC>
-          <H1MasterTitleSC>Работы лучших мастеров в одном месте</H1MasterTitleSC>
+          <H1MasterTitleSC>Works of the best craftsmen in one place</H1MasterTitleSC>
           <ImgMastersBlockSC Photo={DivMasters} />
         </DivMastersBlockSC>
-         {/*<AboutUs/>*/}
+        {/*<AboutUs/>*/}
         <DivSocialsBlockSC>
-          <H1SocialsTitleSC>Следите за нами в соцсетях</H1SocialsTitleSC>
+          <H1SocialsTitleSC>Follow us on social networks</H1SocialsTitleSC>
           <DivSocialsIconsBlock>
             <ImgSocialIcons to="#" Photo={Twit} />
             <ImgSocialIcons to="#" Photo={Insta} />

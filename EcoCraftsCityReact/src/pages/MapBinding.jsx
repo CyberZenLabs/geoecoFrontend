@@ -25,6 +25,7 @@ import TextField from '../components/TextField';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
 import useAxiosFunction from '../hooks/useAxiosFunction';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const MapBinding = () => {
   const [axiosFetch] = useAxiosFunction();
@@ -37,6 +38,7 @@ const MapBinding = () => {
 
   return (
     <DivMapBindingBoxSC>
+      <BreadCrumbs />
       <DivContentMapBindingSC>
         <DivTextSC>Привязка карты</DivTextSC>
         <Formik
@@ -62,7 +64,7 @@ const MapBinding = () => {
                         type="text"
                         name="cardNumber"
                         fullSize={false}
-                        placeholder={'Номер карты'}
+                        placeholder={'Сard number'}
                       />
                     </DivBoxNumCardSC>
                   </DivRowBoxSC>
@@ -82,7 +84,7 @@ const MapBinding = () => {
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>
                       <DivBoxCVVCVCSC>
-                        <TextField label="123" type="text" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                        <TextField label="123" type="number" name="text" fullSize={false} placeholder={'CVV/CVC'} />
                       </DivBoxCVVCVCSC>
                     </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>

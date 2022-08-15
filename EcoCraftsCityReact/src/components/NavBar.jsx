@@ -36,20 +36,22 @@ import {
   DivBoxButtonCreateStoreSC,
   LinkProfileBoxSC,
   SpanTextCatalogSC,
-  LinkProfileSC
-} from "../styled-components-css/styles.navbar";
-import { ButtonCustomSC } from "../styled-components-css/styles.custom-button";
-import { OverlayDivSc } from "../styled-components-css/styles.catalog";
-import AppContext from "../context/AppContext";
-import { useAuth } from "../context/AuthContext";
-import { toast } from "react-toastify";
-import useAxiosFunction from "../hooks/useAxiosFunction";
-import { useCookies } from "react-cookie";
-import Modal from "./Modal";
-import EcoModal from "./Modal";
+  LinkProfileSC,
+  LinkLogoMobileSC,
+  DivBoxLogoMobileSC,
+} from '../styled-components-css/styles.navbar';
+import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
+import { OverlayDivSc } from '../styled-components-css/styles.catalog';
+import AppContext from '../context/AppContext';
+import { useAuth } from '../context/AuthContext';
+import { toast } from 'react-toastify';
+import useAxiosFunction from '../hooks/useAxiosFunction';
+import { useCookies } from 'react-cookie';
+import Modal from './Modal';
+import EcoModal from './Modal';
 import Modalstore from './ModalRegStore';
-import {useEffect} from "react";
-import axios from "../apis/admin-rest";
+import { useEffect } from 'react';
+import axios from '../apis/admin-rest';
 import { MdOutlineStorefront } from 'react-icons/md';
 import { IoExitOutline } from 'react-icons/io5';
 
@@ -60,7 +62,8 @@ const ResponsiveAppBar = () => {
   const { login, logout, loggedIn, setFormValues, authError } = useAuth();
   const [response, error, loading, axiosFetch] = useAxiosFunction();
   const [profileActive, setProfileActive] = React.useState(null);
-  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } = React.useContext(AppContext);
+  const { setShowCatalog, showCatalog, setOpen, setModalData, setOpenModal, setProductsLIst } =
+    React.useContext(AppContext);
 
   const toggleProfile = () => {
     setProfileActive(!profileActive);
@@ -87,9 +90,8 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpenModal(true);
     setModalData({
-      
-      inputs: [{ email: "Электронаая почта",password: "Пароль",repeat_password: "Повтор пароля",city: "Город"  }], 
-      
+      inputs: [{ email: 'Электронаая почта', password: 'Password', repeat_password: 'Повтор пароля', city: 'Город' }],
+
       button: true,
     });
   };
@@ -103,49 +105,32 @@ const ResponsiveAppBar = () => {
     //   requestConfig: {},
     // });
 
-
-
     axios
-        .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
-        .then((res) => {
-          // console.log(res);
+      .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+      .then((res) => {
+        // console.log(res);
 
-          setProductsLIst(res.data.data.data)
-
-        })
-        .catch((err) => {
-        });
+        setProductsLIst(res.data.data.data);
+      })
+      .catch((err) => {});
   }, []);
 
-
-
   return (
-      <DivBoxHeaderSC>
-        <DivHeaderSC>
-          <LinkLogoSC to="/">
-            <DivBoxLogoSC></DivBoxLogoSC>
-          </LinkLogoSC>
-
-
+    <DivBoxHeaderSC>
+      <DivHeaderSC>
+        <LinkLogoSC to="/">
+          <DivBoxLogoSC></DivBoxLogoSC>
+        </LinkLogoSC>
         <DivCatalogAndSearchBoxSC>
-
-
-
           <DivBoxButtonAndInputSC>
-            <ButtonCustomSC className="ButtonCustom"
-              onClick={() => setShowCatalog(!showCatalog)}
-              primary={true}
-            >
-              <BoxContentButton
-
-              >
+            <ButtonCustomSC className="ButtonCustom" onClick={() => setShowCatalog(!showCatalog)} primary={true}>
+              <BoxContentButton>
                 <UilListUl
                   size="40"
                   // color="#61DAFB"
                 />
-                
 
-                <SpanTextCatalogSC>Каталог</SpanTextCatalogSC>
+                <SpanTextCatalogSC>Catalog</SpanTextCatalogSC>
               </BoxContentButton>
             </ButtonCustomSC>
 
@@ -155,7 +140,7 @@ const ResponsiveAppBar = () => {
                 // onChange={onChange(getLastName)}
                 type="text"
                 id={'search'}
-                placeholder={'Я ищу...'}
+                placeholder={'I search...'}
               />
               <DivIconBoxInput>
                 <UilSearch size="25" color="rgba(37, 37, 37, 0.7)" />
@@ -164,7 +149,6 @@ const ResponsiveAppBar = () => {
           </DivBoxButtonAndInputSC>
         </DivCatalogAndSearchBoxSC>
         {cookies['token'] !== undefined ? (
-          
           <div class={profileActive ? 'navigation active' : 'navigation'}>
             <div class={profileActive ? 'user-box active' : 'user-box'}>
               <div class={profileActive ? 'image-box active' : 'image-box'}>
@@ -173,7 +157,7 @@ const ResponsiveAppBar = () => {
 
               <p class="username">
                 Jenifer Lopez
-                <LinkProfileSC to="/personaldata">Мой Профиль</LinkProfileSC>
+                <LinkProfileSC to="/personaldata">My profile</LinkProfileSC>
               </p>
             </div>
 
@@ -189,7 +173,7 @@ const ResponsiveAppBar = () => {
               <li>
                 <LinkProfileBoxSC to="/map-binding">
                   <GoCreditCard />
-                  Мой Карты
+                  My cards
                 </LinkProfileBoxSC>
               </li>
 
@@ -199,50 +183,49 @@ const ResponsiveAppBar = () => {
               <li>
                 <LinkProfileBoxSC to="/vendorprofile">
                   <MdOutlineStorefront />
-                  Мой магазин
+                  My store
                 </LinkProfileBoxSC>
               </li>
               <li class="logout">
                 <LinkProfileBoxSC to="/" onClick={handleLogout}>
                   <IoExitOutline />
-                  Выйти
+                  Log out
                 </LinkProfileBoxSC>
               </li>
             </ul>
           </div>
-        
-      ) : null}
+        ) : null}
         <LinkLogoAdaptiveSC to="/">
           <DivBoxLogoSC></DivBoxLogoSC>
+          <DivBoxLogoMobileSC></DivBoxLogoMobileSC>
         </LinkLogoAdaptiveSC>
-        
+
         <DivBoxIconHeaderSC>
           <DivBoxIconSC>
-            
             <DivBoxButtonCreateStoreSC to="#" onClick={openCart}>
-              Создать магазин
+              Create store
             </DivBoxButtonCreateStoreSC>
             <LinkIconAdaptiveSC to="#" onClick={openCart}>
-                <DivBoxIconEndSC>
-                  <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
-                </DivBoxIconEndSC>
+              <DivBoxIconEndSC>
+                <UilSearch size="35" color="rgba(37, 37, 37, 0.8)" />
+              </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Поиск</SpanEndHeaderSC>
-              </LinkIconAdaptiveSC>
-            <LinkIconAdaptiveSC to="#" onClick={openCart}>
-                <DivBoxIconEndSC>
-                  <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
-                </DivBoxIconEndSC>
+              <SpanEndHeaderSC>Search</SpanEndHeaderSC>
+            </LinkIconAdaptiveSC>
+            <LinkIconAdaptiveSC to="/store/:id">
+              <DivBoxIconEndSC>
+                <UilStore size="35" color="rgba(37, 37, 37, 0.8)" />
+              </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Магазин</SpanEndHeaderSC>
-              </LinkIconAdaptiveSC>
+              <SpanEndHeaderSC>Store</SpanEndHeaderSC>
+            </LinkIconAdaptiveSC>
             {cookies['token'] === undefined ? (
               <LinkIconSC to="/signin">
                 <DivBoxIconEndSC>
                   <UilUser size="35" color="rgba(37, 37, 37, 0.8)" />
                 </DivBoxIconEndSC>
 
-                <SpanEndHeaderSC>Войти</SpanEndHeaderSC>
+                <SpanEndHeaderSC>Sign in</SpanEndHeaderSC>
               </LinkIconSC>
             ) : null}
             <LinkIconHideSC to="/cart">
@@ -250,17 +233,12 @@ const ResponsiveAppBar = () => {
                 <UilShoppingCart size="35" color="rgba(37, 37, 37, 0.8)" />
               </DivBoxIconEndSC>
 
-              <SpanEndHeaderSC>Корзина</SpanEndHeaderSC>
+              <SpanEndHeaderSC>Cart</SpanEndHeaderSC>
             </LinkIconHideSC>
-            
           </DivBoxIconSC>
-          
         </DivBoxIconHeaderSC>
-       
       </DivHeaderSC>
-      
     </DivBoxHeaderSC>
-
   );
 };
 

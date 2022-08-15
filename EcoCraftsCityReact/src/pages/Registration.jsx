@@ -104,8 +104,8 @@ const Registration = (props) => {
             <DivBackgroundFormSC>
                 <DivBoxBoxFormSC>
                     <DivBoxFormSC>
-                        <H4Title>Добро пожаловать в geoeco!</H4Title>
-                        <SpanSC>Введите свои данные для регистрации</SpanSC>
+                        <H4Title>Welcome to geoeco!</H4Title>
+                        <SpanSC>Enter your information to sign up</SpanSC>
                         <Formik
                             initialValues={startingValues}
                             validationSchema={registerSchema}
@@ -126,59 +126,59 @@ const Registration = (props) => {
                                     <DivBoxRowsSC>
                                         <DivBoxColumnsSC>
                                             <DivBoxSC>
-                                                {/*<LabelSC htmlFor="name">Имя</LabelSC>*/}
+                                                {/*<LabelSC htmlFor="name">Name</LabelSC>*/}
                                                 <TextField
                                                     label="firstName"
                                                     type="text"
                                                     name="firstName"
                                                     fullSize={false}
-                                                    placeholder={'Имя'}
+                                                    placeholder={'Name'}
                                                     // onChange={onChange}
                                                     // values={values}
                                                 />
                                             </DivBoxSC>
                                             <DivBoxSC>
-                                                {/*<LabelSC htmlFor="lastName">Фамилия</LabelSC>*/}
+                                                {/*<LabelSC htmlFor="lastName">Surname</LabelSC>*/}
                                                 <TextField
                                                     label="lastName"
                                                     type="text"
                                                     name="lastName"
                                                     fullsize={false}
-                                                    placeholder={'Фамилия'}
+                                                    placeholder={'Surname'}
                                                     // onChange={onChange}
                                                     // values={values}
                                                 />
                                             </DivBoxSC>
                                         </DivBoxColumnsSC>
                                         <DivBoxRowSC marginBottom={true}>
-                                            {/*<LabelSC htmlFor="email">Электронная почта</LabelSC>*/}
+                                            {/*<LabelSC htmlFor="email">Email</LabelSC>*/}
                                             <TextField
                                                 label="email"
                                                 type="email"
                                                 name="email"
                                                 fullsize={true}
-                                                placeholder={'Электронная почта'}
+                                                placeholder={'Email'}
                                             />
                                         </DivBoxRowSC>
                                         <DivBoxColumnsSC>
                                             <DivBoxSC>
-                                                {/*<LabelSC htmlFor="pass">Пароль</LabelSC>*/}
+                                                {/*<LabelSC htmlFor="pass">Password</LabelSC>*/}
                                                 <TextField
                                                     label="password"
                                                     type="password"
                                                     name="password"
                                                     fullsize={false}
-                                                    placeholder={'Пароль'}
+                                                    placeholder={'Password'}
                                                 />
                                             </DivBoxSC>
                                             <DivBoxSC>
-                                                {/*<LabelSC htmlFor="confirmedPass">Подтвердить пароль</LabelSC>*/}
+                                                {/*<LabelSC htmlFor="confirmedPass">Confirm password</LabelSC>*/}
                                                 <TextField
                                                     label="passwordConfirm"
                                                     type="password"
                                                     name="passwordConfirm"
                                                     fullsize={false}
-                                                    placeholder={'Подтвердить пароль'}
+                                                    placeholder={'Confirm password'}
                                                 />
                                             </DivBoxSC>
                                         </DivBoxColumnsSC>
@@ -192,7 +192,7 @@ const Registration = (props) => {
                                             >
                                                 {!loading ? (
                                                     <span>
-                            Продолжить&nbsp;&nbsp;
+                            Continue&nbsp;&nbsp;
                                                         <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                           </span>
                                                 ) : (
@@ -202,8 +202,8 @@ const Registration = (props) => {
                                         </DivBoxRowSC>
                                         <DivBoxRowSC>
                                             <DivBoxTextSC>
-                                                <SpanQuSC>Уже имеете аккаунт? </SpanQuSC>
-                                                <LinkSC to="/signin">Войти</LinkSC>
+                                                <SpanQuSC>Already have an account? </SpanQuSC>
+                                                <LinkSC to="/signin">Sign in</LinkSC>
                                             </DivBoxTextSC>
                                         </DivBoxRowSC>
                                     </DivBoxRowsSC>
@@ -212,7 +212,7 @@ const Registration = (props) => {
                         </Formik>
 
                         {/* <DivBoxRowModalSC>
-                   <StoreCreationTitleSC>Регистрация</StoreCreationTitleSC>
+                   <StoreCreationTitleSC>Sign up</StoreCreationTitleSC>
              
                 <PasswordFieldSC
                   label="repeat_password"

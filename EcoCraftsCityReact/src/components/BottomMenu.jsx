@@ -21,7 +21,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <BiHomeAlt className="Icon-Bottom-Menu" />
           </DivImgSC>
-          <TitleElementSC>Главная</TitleElementSC>
+          <TitleElementSC>Home</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
 
@@ -30,7 +30,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <UilListUl className="Icon-Bottom-Menu" />
           </DivImgSC >
-          <TitleElementSC>Каталог</TitleElementSC>
+          <TitleElementSC>Catalog</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
 
@@ -39,7 +39,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <UilShoppingCart className="Icon-Bottom-Menu" />
           </DivImgSC >
-          <TitleElementSC>Корзина</TitleElementSC>
+          <TitleElementSC>Cart</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
 
@@ -48,7 +48,7 @@ const BottomMenu = () => {
           <DivImgSC>
             <UilUser className="Icon-Bottom-Menu" />
           </DivImgSC>
-          <TitleElementSC>Профиль</TitleElementSC>
+          <TitleElementSC>Profile</TitleElementSC>
         </ContentBottomMenuSC>
       </BottomMenuLinkSC>
     </BoxBottomMenuSC>

@@ -19,7 +19,6 @@ import {
 } from "../styled-components-css/styles.product-detail";
 import {ButtonCustomSC} from "../styled-components-css/styles.custom-button";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import BreadcrumbsHistory from "../components/components-product-detail/BreadcrumbsHistory";
 import ImageProduct from "../components/components-product-detail/ImageProduct";
 import BoxPrice from "../components/components-product-detail/BoxPrice";
 import BoxOther from "../components/components-product-detail/BoxOther";
@@ -31,6 +30,7 @@ import ShopBlock from "../components/components-product-detail/ShopBlock";
 import Image from '../img/logo.svg'
 import AppContext from "../context/AppContext";
 import { useParams} from 'react-router-dom';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 const listContent = [
     {
         text:
@@ -46,7 +46,7 @@ const listContent = [
 ];
 
 const ProductDetail = () => {
-    // const breadcrumbs = useBreadcrumbs(routes);
+
 
     const [urlSrc, getUrlSrc] = useState(
         'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg',
@@ -78,9 +78,10 @@ const ProductDetail = () => {
 
     return (
         <DivBoxProductDetailSC>
+    <BreadCrumbs margin={true}/>
             {productItem ?
                 <DivContentProductDetailSC>
-                    <BreadcrumbsHistory/>
+                   
                     <DivContentProductSC>
                         <ImageProduct
                             images={listImages}

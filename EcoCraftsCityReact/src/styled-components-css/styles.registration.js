@@ -33,7 +33,7 @@ export const DivTextBoxSC = styled.div`
 `;
 export const DivTextBoxSISC = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 40px auto auto;
   //border: 1px solid red;
   width: 100%;
   max-width: 512px;
@@ -84,22 +84,27 @@ export const CheckboxItemInput = styled.input`
 `;
 
 export const SpanFirstSC = styled(Link)`
-  margin-top: 7px;
-  margin-right: 210px;
+  margin-top: 9px;
   display: inline-block;
   font-size: 14px;
   text-decoration: none;
   color: black;
   justify-self: start;
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
 `;
 
 export const SpanSecondSC = styled(Link)`
-  margin-top: 7px;
+  margin-top: 9px;
   display: inline-block;
   font-size: 14px;
   text-decoration: none;
   color: black;
   justify-self: end;
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
 `;
 
 export const LabelSC = styled.label`
@@ -249,8 +254,14 @@ export const SpanQuSC = styled.span`
   font-family: var(--root-font-family);
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const LinkSC = styled(Link)`
@@ -258,6 +269,13 @@ export const LinkSC = styled(Link)`
   font-family: var(--root-font-family);
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const DivBoxFormSC = styled.div`
@@ -299,7 +317,7 @@ export const DivBoxBoxFormSC = styled.div`
   background-size: 620px;
   //min-width: 450px;
 
-  @media (max-width: 943px) {
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
@@ -322,6 +340,13 @@ export const DivBackgroundFormSC = styled.div`
 export const SpanSC = styled.span`
   margin-bottom: 20px;
   display: inline-block;
+  font-size: 20px;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 export const DivRegSC = styled.div`
   //height: calc(100% - 64px);
@@ -333,6 +358,9 @@ export const DivRegSC = styled.div`
   padding-bottom: 20px;
   padding-top: 20px;
   min-height: 750px;
+  @media (max-width: 1000px) {
+    background: none;
+  }
   @media (max-width: 660px) {
     min-height: 0 !important;
   }

@@ -97,8 +97,7 @@ import {
   InputVideoSC,
   PlaceButtonSC,
   DivNewProductWrapSC,
-
-  InputImageSC
+  InputImageSC,
 } from '../styled-components-css/styles.AddNewProduct';
 import {
   ButtonImgSC,
@@ -110,7 +109,7 @@ import {
   DivBoxColumnsFotosSC,
   DivBoxFoto1SC,
   DivInputsDisplayNoneSC,
-} from '../styled-components-css/styles.VendorProfile';
+} from '../styled-components-css/styles-seller-store-settings/styles.VendorProfile';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import AppContext from '../context/AppContext';
 import { toast } from 'react-toastify';
@@ -118,7 +117,7 @@ import useAxiosFunction from '../hooks/useAxiosFunction';
 import EcoModal from '../components/Modal';
 import axios from 'axios';
 import { BreadCrumbs } from '../components/BreadCrumbs';
-import { DivStoreWrapSC } from '../styled-components-css/styles.store';
+import { DivStoreWrapSC } from '../styled-components-css/styles-seller-store-settings/styles.store';
 
 const AddNewProduct = () => {
   const storeGalleryRef = useRef(null);
@@ -127,14 +126,14 @@ const AddNewProduct = () => {
   let testId = '62e38df24c1f460016904636';
   const { setShowCatalog, showCatalog, setOpen, setModalData } = React.useContext(AppContext);
   const [response, error, loading, axiosFetch] = useAxiosFunction();
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
 
   const increment = () => {
     setCounter(counter + 1);
   };
 
   const decrement = () => {
-    if (counter <= 0) {
+    if (counter <= 1) {
       return;
     } else {
       setCounter(counter - 1);
@@ -412,7 +411,7 @@ const AddNewProduct = () => {
                           <DivTextPriceSC>Цена</DivTextPriceSC>
                         </DivBoxTextPriceSC>
                         <DivBoxInputPrice>
-                          <InputPrice type="text" name="price" isTextArea={true} />
+                          <InputPrice type="number" min={0} name="price" />
                         </DivBoxInputPrice>
                         <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
                       </DivBoxColumnsPriceSC>
@@ -435,7 +434,7 @@ const AddNewProduct = () => {
                           <DivTextDiscountSC>Скидка</DivTextDiscountSC>
                         </DivBoxTextDiscountSC>
                         <DivBoxInputDiscount>
-                          <InputDiscount type="text" name="discount" isTextArea={true} />
+                          <InputDiscount type="number" min={0} name="discount" />
                         </DivBoxInputDiscount>
                         <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
                       </DivBoxColumnsDiscountSC>

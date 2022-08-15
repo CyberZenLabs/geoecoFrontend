@@ -37,6 +37,7 @@ import RatioCard from "../components/RatioCard";
 import ReviewBox from "../components/ReviewBox";
 import { DivWrapLinkSC } from "../styled-components-css/styles.store";
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../styled-components-css/styles.product-detail";
+import { BreadCrumbs } from "../components/BreadCrumbs";
 const CustomPropsBreadcrumb = ({ someProp }) => <span>{someProp}</span>;
 const routes = [
   {
@@ -64,23 +65,7 @@ const Reviews = ({ shop, index }) => {
   return (
     <>
       <ReviewContainerSC>
-        <DivWrapLinkSC>
-          <DivHistorySC>
-            <DivBackBoxSC>
-              <FaArrowLeft color={"#85CB33"} size={15} />
-              <NavLinkSC iscolor={true} to={"/"}>
-                Назад
-              </NavLinkSC>
-            </DivBackBoxSC>
-            <div>
-              {breadcrumbs.map(({ match, breadcrumb }) => (
-                <span key={match.pathname}>
-                  <NavLinkSC to={match.pathname}>{breadcrumb} / </NavLinkSC>
-                </span>
-              ))}
-            </div>
-          </DivHistorySC>
-        </DivWrapLinkSC>
+      <BreadCrumbs />
         <WrapShopContainerSC></WrapShopContainerSC>
         <DivRowContentSC>
         <SettingsShopCatalog page={2}/>

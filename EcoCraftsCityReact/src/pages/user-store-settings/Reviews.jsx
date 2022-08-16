@@ -4,6 +4,14 @@ import { FaArrowLeft } from "react-icons/fa";
 import StarRating from "../../components/StarRating";
 import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
 
+
+import { 
+  DivMainBlockSC,
+   DivBorderBlockSC,
+   DivBannerShopContainerSC,
+   DivGridCatalogShopSC
+  
+  } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 import {
   ButtonDropDownSC,
   ButtonPageBoxSC,
@@ -29,9 +37,24 @@ import {
   ReviewBoxNameSC,
   ReviewContainerSC,
   TitleShopInfoSC,
-  WrapShopContainerSC,
 } from "../../styled-components-css/styles-user-store-settings/styles.reviews";
 import axios from "axios";
+import{
+  ImgBannerShopSC,
+  DivBoxContentSC,
+  DivBoxCatalogShopSC,
+  DivBoxCatalog,
+  SpanTitleCatalog,
+  DivGridItems,
+  DivNextItems,
+  DivNextGrid,
+  DivCountPage,
+  DivNextPage,
+  DivButtonNext,
+  SpanTitleCatalogAdaptive,
+  WrapShopContainerSC,
+  DivBoxNewProductsBigST
+} from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
 
 import { DivWrapLinkSC } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 
@@ -67,14 +90,18 @@ const Reviews = ({ shop, index }) => {
 
   return (
     <>
-      <ReviewContainerSC>
+      <DivMainBlockSC>
+        
       <BreadCrumbs/>
 
 
-        <WrapShopContainerSC></WrapShopContainerSC>
-        <DivRowContentSC>
+        <DivBorderBlockSC>
+        <DivBannerShopContainerSC/>
+        <DivGridCatalogShopSC>
+
         <SettingsShopCatalog page={2}/>
 
+        
           <DivModesBoxSC>
             <DivModeSC>Рубрики</DivModeSC>
             <DivModeSC>Filters</DivModeSC>
@@ -112,8 +139,9 @@ const Reviews = ({ shop, index }) => {
               <ButtonPageBoxSC>Дальше</ButtonPageBoxSC>
             </DivPagenationBoxSC>
           </DivCardReviewsBoxSC>
-        </DivRowContentSC>
-      </ReviewContainerSC>
+        </DivGridCatalogShopSC>
+        </DivBorderBlockSC>
+      </DivMainBlockSC>
     </>
   );
 };

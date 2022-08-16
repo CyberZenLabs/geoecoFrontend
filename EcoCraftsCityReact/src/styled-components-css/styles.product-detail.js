@@ -42,6 +42,7 @@ export const DivHistorySC = styled.div`
   display: grid;
   grid-template-columns: 100px 300px auto;
   align-items: center;
+  width: 100%;
   @media (max-width: 420px) {
     grid-template-columns: 75px 300px auto;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BreadCrumbs } from '../components/BreadCrumbs';
-import SettingsShopCatalog from '../components/components-user-store-settings/SettingsShopCatalog';
+import { BreadCrumbs } from '../../components/BreadCrumbs';
+import SettingsShopCatalog from '../../components/components-user-store-settings/SettingsShopCatalog';
 import {
   DivBlocksContainer,
   DivBoxCatalogShopSC,
@@ -15,9 +15,9 @@ import {
   H1TextTitle,
   PTextBlock,
   PTextDotBlock,
-} from '../styled-components-css/styled.payment-delivery-customer';
-import { DivBoxNewProductsBigST } from '../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct';
-import { DivBoxCatalog, DivBoxContentSC, SpanTitleCatalog, WrapShopContainerSC } from '../styled-components-css/styles-user-store-settings/styles.StoreNoAuth';
+} from '../../styled-components-css/styled.payment-delivery-customer';
+import { DivBoxNewProductsBigST } from '../../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct';
+import { DivBoxCatalog, DivBoxContentSC, SpanTitleCatalog, WrapShopContainerSC } from '../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth';
 
 
 

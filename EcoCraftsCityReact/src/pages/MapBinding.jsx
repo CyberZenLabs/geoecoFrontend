@@ -61,7 +61,9 @@ const MapBinding = () => {
                     <DivBoxNumCardSC>
                       <TextField
                         label="123"
-                        type="number" 
+                        format="/(\d{1,4})(\d{1,6})?(\d{1,5})?/"
+                        startPattern="/^3[47]/"
+                        type="amex"
                         name="cardnumber"
                         fullSize={false}
                         placeholder={'Сard number'}

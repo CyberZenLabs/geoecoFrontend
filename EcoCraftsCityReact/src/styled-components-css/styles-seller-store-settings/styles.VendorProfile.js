@@ -340,7 +340,7 @@ export const DivItemsOptionsSC = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   //height: 100%;
- // border: 2px solid black;
+  // border: 2px solid black;
   max-width: 1140px;
 `;
 
@@ -363,7 +363,7 @@ export const DivInnerContentSC = styled.div`
 export const DivTwoSidesSC = styled.div`
   display: grid;
   grid-template-columns: 240px auto;
- // border: 2px solid blue;
+  // border: 2px solid blue;
 
   @media (max-width: 768px) {
     grid-template-columns: auto;
@@ -557,10 +557,10 @@ export const DivBoxColumnAboutYourselfSC = styled.div`
   //border: 2px solid blue;
   @media (max-width: 768px) {
     grid-template-columns: auto;
-    grid-template-rows:45px auto;
-gap:0px;
-height:fit-content;
-margin-bottom: 25px;
+    grid-template-rows: 45px auto;
+    gap: 0px;
+    height: fit-content;
+    margin-bottom: 25px;
   }
 `;
 
@@ -610,7 +610,7 @@ export const DivBoxText = styled.div`
 
 export const DivBoxRowsAboutCreativity = styled.div`
   display: grid;
- 
+
   grid-row-gap: 6px;
   //border: 1px solid red;
   height: fit-content;
@@ -633,7 +633,7 @@ export const DivBoxText2 = styled.div`
   display: grid;
   justify-items: start;
   align-items: start;
-  
+
   //border: 1px solid black;
 `;
 
@@ -656,8 +656,8 @@ export const DivBoxText3 = styled.div`
   justify-items: start;
   align-items: start;
 
- // border: 1px solid green;
- // height: fit-content;
+  // border: 1px solid green;
+  // height: fit-content;
 `;
 
 export const DivBoxColumnsFotosSC = styled.div`
@@ -673,7 +673,10 @@ export const DivBoxColumnsFotosSC = styled.div`
   //border: 2px solid blue;
   //margin-left: 25px;
   //align-items: center;
-  justify-content: space-around;
+  justify-content: start;
+  @media (max-width: 1370px) {
+    justify-content: space-around;
+  }
 `;
 
 export const DivBoxFoto1SC = styled.div`

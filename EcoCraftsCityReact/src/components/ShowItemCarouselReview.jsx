@@ -40,7 +40,7 @@ const ShowItemCarouselReview = () => {
                 ●
               </SpanDataTextSC>
               <SpanDataTextSC>
-                дд.мм.гг
+                MM.DD.YY
               </SpanDataTextSC>
             </DivDateReviewCreateSC>
             <DivStarRaitingSC>

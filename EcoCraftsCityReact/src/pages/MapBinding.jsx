@@ -40,7 +40,7 @@ const MapBinding = () => {
     <DivMapBindingBoxSC>
       <BreadCrumbs />
       <DivContentMapBindingSC>
-        <DivTextSC>Привязка карты</DivTextSC>
+        <DivTextSC>Card linking</DivTextSC>
         <Formik
           initialValues={startingValues}
           //initialErrors={startingValues}
@@ -73,7 +73,7 @@ const MapBinding = () => {
                   <DivColumnsBoxSC>
                     <DivColumnMMBoxSC>
                       <DivBoxMMSC>
-                        <TextField label="123" type="text" name="month" fullSize={false} placeholder={'ММ'} />
+                        <TextField label="123" type="text" name="month" fullSize={false} placeholder={'MM'} />
                       </DivBoxMMSC>
                     </DivColumnMMBoxSC>
                     <DivColumnSlashBoxSC>
@@ -81,7 +81,7 @@ const MapBinding = () => {
                     </DivColumnSlashBoxSC>
                     <DivColumnGGBoxSC>
                       <DivBoxGGSC>
-                        <TextField label="123" type="text" name="year" fullSize={false} placeholder={'ГГ'} />
+                        <TextField label="123" type="text" name="year" fullSize={false} placeholder={'YY'} />
                       </DivBoxGGSC>
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>

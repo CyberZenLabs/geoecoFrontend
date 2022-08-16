@@ -148,7 +148,7 @@ const TotalPriceCart = (props) => {
     // 			<p>Date:</p>
     // 		</DivTotalDateTitleSC>
     // 		<DivTotalDateSC>
-    // 			<p>дд/мм</p>
+    // 			<p>MM/DD</p>
     // 		</DivTotalDateSC>
     // 		<DivTotalPaymentTitleSC>
     // 			<p>Payment:</p>

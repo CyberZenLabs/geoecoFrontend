@@ -103,13 +103,13 @@ const StoreFront = ({ product }) => {
             </IoMarginCS>
           </DropDownOptionsSC>
           <DropDownOptionsSC>
-            Сортировка
+            Sorting
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
           </DropDownOptionsSC>
           <DropDownOptionsSC>
-            Все рубрики
+            All categories
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
@@ -136,7 +136,7 @@ const StoreFront = ({ product }) => {
               Change the price
             </BottomPanelTextSC>
 
-            <BottomPanelTextDraftSC to="#">Drafts</BottomPanelTextDraftSC>
+            <BottomPanelTextDraftSC to="#">To Drafts</BottomPanelTextDraftSC>
 
             <div className={active2 ? 'dots2 active' : 'dots2'} onClick={HandleSelectOpen2}>
               More
@@ -145,11 +145,11 @@ const StoreFront = ({ product }) => {
                 <div className="drop cut2" />
                 <div className="listdropdown">
                   <ul>
-                    <li>Сделать скидку</li>
+                    <li>Make a discount</li>
                     <li>Change status</li>
                     <li>Post</li>
                     <li>Remove</li>
-                    <li className="hide">Drafts</li>
+                    <li className="hide">To Drafts</li>
                     <li className="hide">Change the price</li>
                   </ul>
                 </div>
@@ -170,7 +170,7 @@ const StoreFront = ({ product }) => {
             </IoMarginCS>
           </DropDownOptionsSC>
           <DropDownOptionsSC>
-            Сортировка
+            Sorting
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
@@ -231,13 +231,13 @@ const StoreFront = ({ product }) => {
                 <UilSearchHeadSC size="20" color="#85cb33" />
                 <StoreItemsNumSC>Products: 1/3</StoreItemsNumSC>
 
-                <StoreViewLinkSC to="/VendorProfileUser">Как посетители видят мой магазин</StoreViewLinkSC>
+                <StoreViewLinkSC to="/VendorProfileUser">Switch to visitors perspective</StoreViewLinkSC>
                 <StoreViewLinkDotsSC to="/VendorProfileUser">...</StoreViewLinkDotsSC>
-                <ProductCardButtonSC to="/addnewproduct">Добавить товар</ProductCardButtonSC>
+                <ProductCardButtonSC to="/addnewproduct">Add a new product</ProductCardButtonSC>
               </DivStoreInfoStuffSC>
               <StoreItemsNumBotSC>Products: 1/3</StoreItemsNumBotSC>
               <DivStoreInfoStuffButtonSC to="#">
-                <ProductCardButtonAfterSC to="/addnewproduct">Добавить товар</ProductCardButtonAfterSC>
+                <ProductCardButtonAfterSC to="/addnewproduct">Add a new product</ProductCardButtonAfterSC>
               </DivStoreInfoStuffButtonSC>
               <DivTwoButtonsSC>
                 <LeftButtonCS>
@@ -259,7 +259,7 @@ const StoreFront = ({ product }) => {
                     Products(1)
                   </ProductsNumSC>
                   <StoreSalesAndAccountLinkSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
-                    Учет товаров
+                    Accounting
                   </StoreSalesAndAccountLinkSC>
 
                   <StoreSalesAndAccountLinkSearchSC>
@@ -280,7 +280,7 @@ const StoreFront = ({ product }) => {
           ) : (
             <DivAddProduct>
               <SpanTextAddProdctSC>Добавьте свой первый товар</SpanTextAddProdctSC>
-              <ButtonAddProductSC>Добавить товар</ButtonAddProductSC>
+              <ButtonAddProductSC>Add a new product</ButtonAddProductSC>
             </DivAddProduct>
           )}
         </DivStoreRightPanelSC>

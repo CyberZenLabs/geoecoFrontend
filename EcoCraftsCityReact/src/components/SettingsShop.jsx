@@ -48,10 +48,10 @@ Delivery and payment
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>
-Покупки
+Purchases
 </DivStoreSetingST>
 <DivStoreSetingST>
-Продажи
+Sales
 </DivStoreSetingST>
 <DivStoreSetingST>
 

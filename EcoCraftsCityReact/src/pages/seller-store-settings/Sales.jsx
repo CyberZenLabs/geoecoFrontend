@@ -366,7 +366,7 @@ const Sales = () => {
           </DivBoxLeftPurchasesSC>
           <DivBoxRightPurchasesSC>
             <DivBoxTextPurchsesSC>
-              <H1PurchasesTextSC>Продажи</H1PurchasesTextSC>
+              <H1PurchasesTextSC>Sales</H1PurchasesTextSC>
             </DivBoxTextPurchsesSC>
             <DivBGRecSmallSC>
               <DivOptionsPanelPurchasesSC>

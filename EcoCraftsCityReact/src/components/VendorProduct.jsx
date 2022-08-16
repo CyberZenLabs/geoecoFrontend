@@ -65,7 +65,7 @@ const VendorProduct = ({ product, index, indexpage,allchecked }) => {
                     <li>Remove</li>
                     <li>Drafts</li>
                     <li>Copy</li>
-                    <li>Посмотреть</li>
+                    <li>Show</li>
                     <li className="hide">Edit</li>
                   </ul>
                 </div>

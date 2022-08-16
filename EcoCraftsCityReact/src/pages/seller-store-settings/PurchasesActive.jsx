@@ -365,7 +365,7 @@ const PurchasesActive = () => {
           </DivBoxLeftPurchasesSC>
           <DivBoxRightPurchasesSC>
             <DivBoxTextPurchsesSC>
-              <H1PurchasesTextSC>Мои покупки</H1PurchasesTextSC>
+              <H1PurchasesTextSC>My purchases</H1PurchasesTextSC>
             </DivBoxTextPurchsesSC>
             <DivBGRecSmallSC>
               <DivOptionsPanelPurchasesSC>

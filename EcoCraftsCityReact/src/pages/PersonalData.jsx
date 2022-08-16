@@ -98,7 +98,7 @@ const PersonalData = () => {
             <img src="/default-images/card.svg" className="image_cadr" />
 
             <SpanConfirmAccountSC>
-              <SpanTextAddCardLittleSC>Добавить новую карту</SpanTextAddCardLittleSC>
+              <SpanTextAddCardLittleSC>Add a new card</SpanTextAddCardLittleSC>
             </SpanConfirmAccountSC>
           </ButtonAddCardSClitl>
           <ButtonAddCardSC to="/map-binding">
@@ -106,7 +106,7 @@ const PersonalData = () => {
               <img src="/default-images/plus.svg" className="image_plus" />
             </DivAddEllipseSC>
             <SpanConfirmAccountSC>
-              <SpanTextAddCardSC>Добавить карту</SpanTextAddCardSC>
+              <SpanTextAddCardSC>Add a card</SpanTextAddCardSC>
             </SpanConfirmAccountSC>
           </ButtonAddCardSC>
         </DivBoxBlockSC>

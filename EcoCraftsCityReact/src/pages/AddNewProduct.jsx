@@ -523,7 +523,7 @@ const AddNewProduct = () => {
                 <DivBoxButtonsSC>
                   <DivButtonsSC>
                     <ButtonCustomWhiteSC width={'100%'} type="submit">
-                      Drafts
+                      To Drafts
                     </ButtonCustomWhiteSC>
 
                     <PlaceButtonSC to={'/store/:id'} width={'100%'} padding={'18px 32px'} type="submit">

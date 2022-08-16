@@ -43,29 +43,29 @@ const TotalPriceCart = (props) => {
     <>
       <DivBoxTotalPriceSC>
         <DivTitleBoxSC padding={false}>
-          <H2TitleProductList size={26}>Оформление покупки</H2TitleProductList>
+          <H2TitleProductList size={26}>Checkout</H2TitleProductList>
         </DivTitleBoxSC>
         <DivDeliveryInfoSC>
           <DivColumnsDeliverySC>
             <CustomTextBoxForCartSC weight={600} size={18} color={'#252525'}>
-              Способ доставки:
+              Delivery method:
             </CustomTextBoxForCartSC>
             <DropDownSelect />
           </DivColumnsDeliverySC>
           <DivColumnsDeliverySC>
             <CustomTextBoxForCartSC weight={600} size={18} color={'#252525'}>
-              Доставка:
+              Delivery:
             </CustomTextBoxForCartSC>
-            <ButtonModalAdreeSC>Выбрать адрес доставки</ButtonModalAdreeSC>
+            <ButtonModalAdreeSC>Choose destination</ButtonModalAdreeSC>
           </DivColumnsDeliverySC>
           <DivColumnsDeliverySC>
             <CustomTextBoxForCartSC weight={600} size={18} color={'#252525'}>
-              Способ оплаты:
+              Payment method:
             </CustomTextBoxForCartSC>
 
             {/* <InputRadio isCheck={toggleCheck}/> */}
             <CustomTextBoxForCartSC weight={600} size={18} color={'#505050'}>
-              Картой на сайте
+              With a card on the site
             </CustomTextBoxForCartSC>
           </DivColumnsDeliverySC>
         </DivDeliveryInfoSC>
@@ -80,7 +80,7 @@ const TotalPriceCart = (props) => {
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
             <CustomTextBoxForCartSC align={'left'} weight={600} size={20} color={'#505050'}>
-              Доставка
+              Delivery
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
               2000 $
@@ -96,7 +96,7 @@ const TotalPriceCart = (props) => {
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
             <CustomTextBoxForCartSC align={'left'} weight={600} size={24}>
-              Итого
+              Total
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={24}>
               17699 $
@@ -112,7 +112,7 @@ const TotalPriceCart = (props) => {
           >
             <DivBoxButtonContentSC>
               <CustomTextBoxForCartSC align={'center'} weight={600} size={16} color={'#fff'}>
-                Оплатить заказ
+                Pay for the order
               </CustomTextBoxForCartSC>
               <FiArrowRight size={'20px'} />
             </DivBoxButtonContentSC>
@@ -123,7 +123,7 @@ const TotalPriceCart = (props) => {
     // <DivBoxTotalPriceSC>
     // 	<DivMainTotalboxSC>
     // 		<DivTotalTitleSC>
-    // 			<h2>Итого</h2>
+    // 			<h2>Total</h2>
     // 			<h2>15000</h2>
     // 		</DivTotalTitleSC>
     // 		<DivTotalGoodsSC>
@@ -135,11 +135,11 @@ const TotalPriceCart = (props) => {
     // 			<p>-44568 р.</p>
     // 		</DivTotalSaleSC>
     // 		<DivTotalDeliveryDescSC>
-    // 			<p>Доставка</p>
+    // 			<p>Delivery</p>
     // 			<p>Бесплатно</p>
     // 		</DivTotalDeliveryDescSC>
     // 		<DivTotalDeliveryTitleSC>
-    // 			<h3>Доставка:</h3>
+    // 			<h3>Delivery:</h3>
     // 		</DivTotalDeliveryTitleSC>
     // 		<DivTotalDeliveryAddressSC>
     // 			<p>Адрес</p>
@@ -171,7 +171,7 @@ const TotalPriceCart = (props) => {
     // 				primary={true}
     // 			>
     // 				<DivBoxButtonContentSC>
-    // 					<span>Оплатить заказ</span>
+    // 					<span>Pay</span>
     // 					<FiArrowRight size={'20px'} />
     // 				</DivBoxButtonContentSC>
     // 			</ButtonCustomSC>

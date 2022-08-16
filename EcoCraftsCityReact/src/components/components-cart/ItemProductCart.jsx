@@ -30,7 +30,7 @@ const ItemProductCart = props => {
 			</DivBoxTitleSC>
 			<ButtonGroup></ButtonGroup>
 			<DivPriceSC>
-				<SpanPriceSC>{price} &#8381;</SpanPriceSC>
+				<SpanPriceSC>{price} $</SpanPriceSC>
 			</DivPriceSC>
 		</DivItemListSC>
 	);

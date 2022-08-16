@@ -61,11 +61,11 @@ const RatioCard = () => {
               </DivProgressBoxSC>
 
               <DivNumberReviewsSC>
-                <TextBoxSC>7 отзывов</TextBoxSC>
+                <TextBoxSC>7 Reviews</TextBoxSC>
                 <TextBoxSC>3 отзыва</TextBoxSC>
-                <TextBoxSC>нет отзывов</TextBoxSC>
-                <TextBoxSC>нет отзывов</TextBoxSC>
-                <TextBoxSC>нет отзывов</TextBoxSC>
+                <TextBoxSC>нет No reviews</TextBoxSC>
+                <TextBoxSC>нет No reviews</TextBoxSC>
+                <TextBoxSC>нет No reviews</TextBoxSC>
               </DivNumberReviewsSC>
             </DivColumnBoxSC>
           </DivStatRatingSC>

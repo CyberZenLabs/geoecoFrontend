@@ -385,7 +385,7 @@ const Sales = () => {
               <DivBoxRowsPurchasesSC>
                 <DivBoxItemParamsSC>
                   <DivTextSillerSC>Покупатель</DivTextSillerSC>
-                  <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                  <DivTextDescriptionSC>Description</DivTextDescriptionSC>
                   <DivTextCostSC>Стоимость</DivTextCostSC>
                 </DivBoxItemParamsSC>
                 {listContent[indexSelectedButton].item}

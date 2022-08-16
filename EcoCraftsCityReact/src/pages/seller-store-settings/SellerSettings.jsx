@@ -182,7 +182,7 @@ const SellerSettings = ({ product }) => {
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
-            <H1BoldTextSC>Настройки</H1BoldTextSC>
+            <H1BoldTextSC>Settings</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>

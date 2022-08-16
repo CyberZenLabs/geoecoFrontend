@@ -80,7 +80,7 @@ const Reviews = ({ shop, index }) => {
             <DivModeSC>Фильтры</DivModeSC>
           </DivModesBoxSC>
           <DivTextButtonBoxSC>
-            <ReviewBoxNameSC>Отзывы</ReviewBoxNameSC>
+            <ReviewBoxNameSC>Reviews</ReviewBoxNameSC>
             <DivButtonBoxSC>
               {/* <ButtonReviewPageSC to='/reviews'>О магазине</ButtonReviewPageSC>
               <ButtonReviewPageSC to='/reviews'>О товарах</ButtonReviewPageSC> */}

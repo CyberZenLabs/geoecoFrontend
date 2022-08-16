@@ -99,7 +99,7 @@ const ProductDetail = () => {
 
                     <DivDescStatsContainerSC>
                         <DivDescBlockSC>
-                            <h2>Описание</h2>
+                            <h2>Description</h2>
                             <p>{productItem.summary}</p>
                         </DivDescBlockSC>
                         <DivDescBlockSC>

@@ -39,12 +39,12 @@ Profile
 <hr class="razdel" />
 <DivStoreSetingST>
 <TextBold>
-Магазин 50  
+Store 50  
 </TextBold>
 
 </DivStoreSetingST>
 <DivStoreSetingST>
-Оплата и доставка
+Shipping and payment
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>
@@ -55,7 +55,7 @@ Profile
 </DivStoreSetingST>
 <DivStoreSetingST>
 
-Отзывы 30  <img src="/default-images/raiting.svg"  />
+Reviews 30  <img src="/default-images/raiting.svg"  />
 
 
 </DivStoreSetingST>

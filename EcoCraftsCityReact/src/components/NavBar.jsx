@@ -82,7 +82,7 @@ const ResponsiveAppBar = () => {
 
   const handleLogout = () => {
     logout();
-    showToast('success', 'Вы вышли из системы');
+    showToast('success', 'You have logged out');
     // setCookie('token', response.token);
     removeCookie('token');
   };
@@ -90,7 +90,7 @@ const ResponsiveAppBar = () => {
   const openCart = () => {
     setOpenModal(true);
     setModalData({
-      inputs: [{ email: 'Электронаая почта', password: 'Password', repeat_password: 'Повтор пароля', city: 'Город' }],
+      inputs: [{ email: 'Email', password: 'Password', repeat_password: 'Confirm password', city: 'City' }],
 
       button: true,
     });

@@ -42,7 +42,7 @@ const ImageProduct = (props) => {
                     fixed={true}
                 />
                 <span>
-                                415 отзывов
+                                415 Reviews
                             </span>
                 <span>
                                 Купили более 1000 раз

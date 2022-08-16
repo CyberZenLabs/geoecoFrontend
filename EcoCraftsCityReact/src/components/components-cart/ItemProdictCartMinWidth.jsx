@@ -49,7 +49,7 @@ const ItemProductCartMin = props => {
                     </span>
                 </DivBoxStarMinWidthIconTempSC>
 
-                <SpanTitleCartSC>Магазин</SpanTitleCartSC>
+                <SpanTitleCartSC>Store</SpanTitleCartSC>
             </DivBoxMinWidthTitleProduct>
 
             <ButtonGroup></ButtonGroup>

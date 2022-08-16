@@ -68,15 +68,15 @@ import {
               <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Profile</LinkShopInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазины 50</LinkShopInfoSC>
               <DivLinkReviewRaitingSC>
-                <LinkShopInfoSC isActive={indexSelectedButton === 2} to="/Reviews">Отзывы </LinkShopInfoSC>
+                <LinkShopInfoSC isActive={indexSelectedButton === 2} to="/Reviews">Reviews </LinkShopInfoSC>
                 <StarRating fixed={true} value={shopRaiting} />
               </DivLinkReviewRaitingSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="/Payment-and-Delivery">Оплата и Доставка</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="/Payment-and-Delivery">Shipping and payment</LinkShopInfoSC>
             </DivLinksInfoSC>
 
             <DivLinksAdaptiveSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Profile</LinkShopInfoSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазин 50</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Store 50</LinkShopInfoSC>
               <ButtonDropDownSC>...</ButtonDropDownSC>
             </DivLinksAdaptiveSC>
           </DivShopContainerSC>

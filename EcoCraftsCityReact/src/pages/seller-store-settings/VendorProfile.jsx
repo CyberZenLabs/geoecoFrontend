@@ -250,7 +250,7 @@ const VendorProfile = () => {
                         <OlifnoSC>
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
-                            <LiInfoSC>Магазин: е-mail</LiInfoSC>
+                            <LiInfoSC>Store: е-mail</LiInfoSC>
                             <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
                             <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
                         </OlifnoSC>
@@ -259,7 +259,7 @@ const VendorProfile = () => {
                     </DivInfoVendorBoxSC>
 
                     <DivInfoVendorBoxAdaptiveSC>
-                        <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
+                        <SpanTextTitleAdaptiveSC>Reviews</SpanTextTitleAdaptiveSC>
 
 
                         <VenderCarouselReview>

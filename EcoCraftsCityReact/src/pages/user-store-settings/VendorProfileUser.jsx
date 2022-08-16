@@ -258,7 +258,7 @@ const VendorProfile = () => {
                         <OlifnoSC>
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
-                            <LiInfoSC>Магазин: е-mail</LiInfoSC>
+                            <LiInfoSC>Store: е-mail</LiInfoSC>
                             <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
                             <DescriptionSC><DescriptionTextSC><DescriptionTitleTextSC>Рассказ о себе:</DescriptionTitleTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</DescriptionTextSC></DescriptionSC>   
                         </OlifnoSC>
@@ -274,7 +274,7 @@ const VendorProfile = () => {
                         </VenderCarouselPhoto>
                     </DivInfoVendorBoxAdaptiveSC>
                     <DivInfoVendorBoxAdaptiveSC>
-                        <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
+                        <SpanTextTitleAdaptiveSC>Reviews</SpanTextTitleAdaptiveSC>
 
 
                         <VenderCarouselReview>

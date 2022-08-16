@@ -139,7 +139,7 @@ const StoreFront = ({ product }) => {
             <BottomPanelTextDraftSC to="#">В черновики</BottomPanelTextDraftSC>
 
             <div className={active2 ? 'dots2 active' : 'dots2'} onClick={HandleSelectOpen2}>
-              Еще
+              More
               {/* {active2 ? ( */}
               <div className="containerdropdown2 cut">
                 <div className="drop cut2" />
@@ -227,7 +227,7 @@ const StoreFront = ({ product }) => {
           {products ? (
             <>
               <DivStoreInfoStuffSC>
-                <H1BoldTextSC>Магазин</H1BoldTextSC>
+                <H1BoldTextSC>Store</H1BoldTextSC>
                 <UilSearchHeadSC size="20" color="#85cb33" />
                 <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
 

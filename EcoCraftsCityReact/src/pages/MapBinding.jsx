@@ -59,8 +59,8 @@ const MapBinding = () => {
                     <DivBoxNumCardSC>
                       <TextField
                         label="123"
-                        type="text"
-                        name="cardNumber"
+                        type="number" 
+                        name="cardnumber"
                         fullSize={false}
                         placeholder={'Сard number'}
                       />
@@ -82,7 +82,7 @@ const MapBinding = () => {
                     </DivColumnGGBoxSC>
                     <DivColumnCVVCVCBoxSC>
                       <DivBoxCVVCVCSC>
-                        <TextField label="123" type="number" name="text" fullSize={false} placeholder={'CVV/CVC'} />
+                        <TextField label="123" type="password" name="text" fullSize={false} placeholder={'CVV/CVC'} />
                       </DivBoxCVVCVCSC>
                     </DivColumnCVVCVCBoxSC>
                   </DivColumnsBoxSC>
@@ -91,7 +91,7 @@ const MapBinding = () => {
               <DivBox2ButtonsSC>
                 <DivButtonsSC>
                   <ButtonCustomWhiteSC width={'100%'} padding={'18px 32px'} type="submit">
-                    Отмена
+                    Cancel
                   </ButtonCustomWhiteSC>
                   <DivBoxButtonLinkSC
                     disabled={!formik.dirty || !formik.isValid}
@@ -100,7 +100,7 @@ const MapBinding = () => {
                     padding={'18px 32px'}
                     type="submit"
                   >
-                    Привязать
+                    Link
                   </DivBoxButtonLinkSC>
                 </DivButtonsSC>
               </DivBox2ButtonsSC>

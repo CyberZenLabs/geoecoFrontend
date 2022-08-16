@@ -446,7 +446,7 @@ const AddNewProduct = () => {
                     <DivBoxRowsDesctriptionSC>
                       <DivContainerDescriptionSC>
                         <DivBoxTextDescriptionSC>
-                          <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                          <DivTextDescriptionSC>Description</DivTextDescriptionSC>
                         </DivBoxTextDescriptionSC>
                         <DivBoxInputDescriptonSC>
                           <InputDescription

@@ -384,7 +384,7 @@ const PurchasesActive = () => {
               <DivBoxRowsPurchasesSC>
                 <DivBoxItemParamsSC>
                   <DivTextSillerSC>Продавец</DivTextSillerSC>
-                  <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                  <DivTextDescriptionSC>Description</DivTextDescriptionSC>
                   <DivTextCostSC>Стоимость</DivTextCostSC>
                 </DivBoxItemParamsSC>
                 {listContent[indexSelectedButton].item}

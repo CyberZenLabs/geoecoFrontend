@@ -49,9 +49,9 @@ const VendorProduct = ({ product, index, indexpage,allchecked }) => {
           </div>
           <DivItemsInfoSC>
             <ItemTitleSC>{product.name}</ItemTitleSC>
-            <ItemTimeSC>Вчера 20:50</ItemTimeSC>
-            <ItemInStockSC>Готовый товар:1шт</ItemInStockSC>
-            <ItemPriceSC>{product.price} ₽</ItemPriceSC>
+            <ItemTimeSC>Yesterday 8:50PM</ItemTimeSC>
+            <ItemInStockSC>In stock:1pcs.</ItemInStockSC>
+            <ItemPriceSC>{product.price} $</ItemPriceSC>
 
             <ToEditSC to="#">Редактировать</ToEditSC>
 <div className="TheVeryDotsDiv" onClick={HandleSelectOpen}> ...

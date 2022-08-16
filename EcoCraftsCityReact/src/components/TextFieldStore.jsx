@@ -12,7 +12,7 @@ const TextFieldStore = ({ label, size, ...props }) => {
           label="name"
           name="name"
           type="text"
-          placeholder="Фамилия  имя"
+          placeholder="Surname Name"
           {...field}
           {...props}
         ></NameNCityFieldSC>

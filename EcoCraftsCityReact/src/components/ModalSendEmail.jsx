@@ -63,7 +63,7 @@ const ModalSendEmail = () => {
           <CenterItemsSC>
            
            
-           <StoreCreationTitleSC>Создание магазина</StoreCreationTitleSC>
+           <StoreCreationTitleSC>Store creaction</StoreCreationTitleSC>
           
               <DivBoxRowModalSC>
                
@@ -77,7 +77,7 @@ const ModalSendEmail = () => {
               </DivBoxRowModalSC>
               <DivTimerSC><DivTexttimesSC><span>{minute}:{second}</span></DivTexttimesSC>
            <DivBoxRowModalContSC>
-            {disable?( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Пожалуйста подождите</ButtonContinueModal>):( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Отправить еще раз</ButtonContinueModal>)}
+            {disable?( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Please wait</ButtonContinueModal>):( <ButtonContinueModal  disabled={disable}    onClick={() =>start() } >Send again</ButtonContinueModal>)}
             
                
              </DivBoxRowModalContSC>

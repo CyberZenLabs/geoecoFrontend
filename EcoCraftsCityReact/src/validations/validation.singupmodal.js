@@ -6,11 +6,11 @@ export const registerModalSchema = yup.object().shape({
   email: yup.string().email("Is not an Email").required("Email is required"),
   password: yup
     .string()
-    .min(8, "Минимум 8 символов")
-    .max(40, "Максимум 40 символов")
+    .min(8, "Minimum 8 characters")
+    .max(40, "Maximum 40 characters")
     .required("Password is required"),
   passwordConfirm: yup
     .string()
     .required("Password is required")
-    .oneOf([yup.ref("password"), null], "Пароли должны быть одинаковами"),
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
 });

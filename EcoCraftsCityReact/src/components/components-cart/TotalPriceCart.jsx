@@ -75,7 +75,7 @@ const TotalPriceCart = (props) => {
               Товары
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
-              15000 ₽
+              15000 $
             </CustomTextBoxForCartSC>
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
@@ -83,7 +83,7 @@ const TotalPriceCart = (props) => {
               Доставка
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
-              2000 ₽
+              2000 $
             </CustomTextBoxForCartSC>
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
@@ -91,7 +91,7 @@ const TotalPriceCart = (props) => {
               Скидка
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
-              699 ₽
+              699 $
             </CustomTextBoxForCartSC>
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
@@ -99,7 +99,7 @@ const TotalPriceCart = (props) => {
               Итого
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={24}>
-              17699 ₽
+              17699 $
             </CustomTextBoxForCartSC>
           </DivColumnsTotalPriceSC>
         </DivTotalPriceSC>

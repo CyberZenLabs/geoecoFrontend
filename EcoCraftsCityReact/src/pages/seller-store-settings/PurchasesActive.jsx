@@ -68,7 +68,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -88,7 +88,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -119,7 +119,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -144,7 +144,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -167,7 +167,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -187,7 +187,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -218,7 +218,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -243,7 +243,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -266,7 +266,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -286,7 +286,7 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
@@ -317,7 +317,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -342,7 +342,7 @@ const PurchasesActive = () => {
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>

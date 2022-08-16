@@ -21,11 +21,11 @@ import{
 <DivBorderBox>
 <DivInfoStoreST>
 <DivLogoST>
-<SpanLogoText>Логотип Магазина</SpanLogoText>
+<SpanLogoText>Store logo</SpanLogoText>
 </DivLogoST>
 <DivInfoST>
-<SpanTextTitleShopSC>Название магазина и о чем он</SpanTextTitleShopSC>
-<MarginST>Где находится</MarginST>
+<SpanTextTitleShopSC>Store name and description</SpanTextTitleShopSC>
+<MarginST>Store location</MarginST>
 </DivInfoST>
 
 </DivInfoStoreST>
@@ -34,7 +34,7 @@ import{
 Profile
 </DivStoreSetingST>
 <DivStoreSetingST>
-Настойки
+Settings
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>

@@ -5,24 +5,24 @@ export const registerSchema = yup.object().shape({
       .matches(
 
           /^[^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=\[\]\<\>][A-я\d][^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=[\]<\>]{0,100}$/,
-          "Допускаются только буквы"
+          "Only letters are allowed"
 
       )
-      .required("Name обязательно"),
+      .required("Name is required"),
   lastName: yup.string().matches(
       /^[^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=[\]<\>][A-я\d][^0-9\#\@\!\&\*\\\(\)\{\}\|\~\`\'\"\;\:\.\,\$\^\ \%\-\_\+\=[\]<\>]{0,100}$/,
-      "Допускаются только буквы"
-  ).required("Surname обязательна"),
-  email: yup.string().email("Не является почтой").required("Email is required"),
+      "Only letters are allowed"
+  ).required("Surname is required"),
+  email: yup.string().email("Incorrect email").required("Email is required"),
   password: yup
     .string()
-    .min(8, "Минимум 8 символов")
-    .max(40, "Максимум 40 символов")
+    .min(8, "Minimum 8 characters")
+    .max(40, "Maximum 40 characters")
 
-    .required("Пароль обязателен")
+    .required("Password is required")
     ,
   passwordConfirm: yup
     .string()
-    .required("Пароль обязателен")
-    .oneOf([yup.ref("password"), null], "Пароли должны быть одинаковыми"),
+    .required("Password is required")
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
 });

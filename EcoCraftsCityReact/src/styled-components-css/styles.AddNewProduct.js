@@ -241,6 +241,15 @@ export const InputVideoSC = styled.textarea`
   line-height: 24px;
   resize: none;
   color: rgba(0, 0, 0, 0.33);
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 360px) {
+    font-size: 10px;
+  }
 `;
 
 export const DivTextSC = styled.div`
@@ -251,8 +260,6 @@ export const DivTextSC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
-
   color: #3d3d3d;
 `;
 
@@ -302,6 +309,15 @@ export const InputProductName = styled.textarea`
   line-height: 24px;
   resize: none;
   color: rgba(0, 0, 0, 0.33);
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 360px) {
+    font-size: 10px;
+  }
 `;
 
 export const DivBoxText1 = styled.div`
@@ -317,7 +333,6 @@ export const DivText1SC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
 
   color: #3d3d3d;
 `;
@@ -384,13 +399,12 @@ export const DivTextPriceAndNumberSC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
 
   color: #3d3d3d;
 `;
 
 export const DivBoxColumnsPriceSC = styled.div`
-  max-width: 228px;
+  max-width: 250px;
   width: 100%;
   height: 47px;
   display: grid;
@@ -416,6 +430,8 @@ export const DivTextPriceSC = styled.div`
 `;
 
 export const DivBoxInputPrice = styled.div`
+  display: grid;
+  justify-items: end;
   width: 100%;
   height: 41px;
 `;
@@ -437,7 +453,7 @@ export const InputPrice = styled.input`
   color: rgba(0, 0, 0, 0.33);
 `;
 
-export const DivImgRubSC = styled.img`
+export const DivImgRubSC = styled.div`
   width: 20px;
   height: 30px;
 
@@ -456,7 +472,7 @@ export const DivBoxColumnsNumberSC = styled.div`
   width: 100%;
   height: 68px;
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '62.4% 37.6%')}; ;;
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '39% 61%')}; ;;
 `;
 
 export const DivBoxTextNumberSC = styled.div`
@@ -466,7 +482,7 @@ export const DivBoxTextNumberSC = styled.div`
 `;
 
 export const DivTextNumberSC = styled.div`
-//border:1px solid red;
+  //border:1px solid red;
   max-width: 140px;
   width: 100%;
   height: 24px;
@@ -480,11 +496,11 @@ export const DivTextNumberSC = styled.div`
 `;
 
 export const DivBoxColumnsDiscountSC = styled.div`
-  max-width: 228px;
+  max-width: 250px;
   width: 100%;
   height: 47px;
   display: grid;
-  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '90px 133px 20px')};
+  grid-template-columns: ${({ fullSize }) => (fullSize ? '100%' : '31.6% 59.7% 8.7%')};
 `;
 
 export const DivBoxTextDiscountSC = styled.div`
@@ -506,6 +522,8 @@ export const DivTextDiscountSC = styled.div`
 `;
 
 export const DivBoxInputDiscount = styled.div`
+  display: grid;
+  justify-items: end;
   width: 100%;
   height: 41px;
 `;
@@ -527,7 +545,7 @@ export const InputDiscount = styled.input`
   color: rgba(0, 0, 0, 0.33);
 `;
 
-export const DivImgRub2SC = styled.img`
+export const DivImgRub2SC = styled.div`
   width: 20px;
   height: 30px;
 
@@ -640,6 +658,15 @@ export const InputDescription = styled.textarea`
   color: rgba(0, 0, 0, 0.33);
   padding: 10px 10px 70px 10px;
   resize: none;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 360px) {
+    font-size: 10px;
+  }
 `;
 
 export const DivContainerCharacteristicsSC = styled.div`
@@ -663,7 +690,6 @@ export const DivTextCharacteristicsSC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
 
   color: #3d3d3d;
 `;
@@ -710,7 +736,6 @@ export const DivTextKeywordsSC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
 
   color: #3d3d3d;
 `;
@@ -735,6 +760,15 @@ export const InputKeywords = styled.textarea`
   line-height: 24px;
 
   color: rgba(0, 0, 0, 0.33);
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+  @media (max-width: 360px) {
+    font-size: 10px;
+  }
 `;
 
 export const DivContainerDeliverySC = styled.div`
@@ -758,7 +792,6 @@ export const DivTextDeliverySC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
 
   color: #3d3d3d;
 `;

@@ -413,7 +413,7 @@ const AddNewProduct = () => {
                         <DivBoxInputPrice>
                           <InputPrice type="number" min={0} name="price" />
                         </DivBoxInputPrice>
-                        <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
+                        <DivImgRubSC>$</DivImgRubSC>
                       </DivBoxColumnsPriceSC>
                       <DivBoxColumnsNumberSC>
                         <DivBoxTextNumberSC>
@@ -436,7 +436,7 @@ const AddNewProduct = () => {
                         <DivBoxInputDiscount>
                           <InputDiscount type="number" min={0} name="discount" />
                         </DivBoxInputDiscount>
-                        <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
+                        <DivImgRub2SC>$</DivImgRub2SC>
                       </DivBoxColumnsDiscountSC>
                     </DivBoxRowsPriceSC>
                   </DivImgGrayRectanglePriceSC>
@@ -453,7 +453,7 @@ const AddNewProduct = () => {
                             type="text"
                             name="description"
                             isTextArea={true}
-                            placeholder="Describe your product in detail, specify everything that is important for the buyer to know"
+                            placeholder="Describe your product in detail, specify everything that is important for the customer to know"
                           />
                         </DivBoxInputDescriptonSC>
                       </DivContainerDescriptionSC>

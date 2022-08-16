@@ -20,7 +20,7 @@ const BoxPrice = (props) => {
             <DivBoxPriceSC>
                 <DivContentPriceSC>
                     <div>
-                        <H5CustomSC>{price} &#8381;</H5CustomSC>
+                        <H5CustomSC>{price} $</H5CustomSC>
                     </div>
 
                     {/*<DivNumberTitlePrice>*/}

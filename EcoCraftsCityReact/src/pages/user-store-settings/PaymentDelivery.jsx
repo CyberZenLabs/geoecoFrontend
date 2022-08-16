@@ -41,7 +41,7 @@ const PaymentDelivery = () => {
                   <H1TextTitle>Способы оплаты</H1TextTitle>
                   <PTextDotBlock>
                     <DivImgDotSC />
-                    Картой на сайте
+                    With a card on the site
                   </PTextDotBlock>
                 </DivInnerWrap>
               </DivPaymentMethods>

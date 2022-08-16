@@ -37,7 +37,7 @@ const BoxProductList = (props) => {
           <DivTitleBoxSC padding={false}>
             <H2TitleProductList>Store name</H2TitleProductList>
             <CustomTextBoxForCartSC weight={400} color={'#252525'}>
-              Адрес магазина
+              Store Address
             </CustomTextBoxForCartSC>
           </DivTitleBoxSC>
           <DivProductsBoxSC>
@@ -46,7 +46,7 @@ const BoxProductList = (props) => {
                 <ItemProductCart
                   isSelected={item.isSelected}
                   title={item.name}
-                  discr={'описание товара'}
+                  discr={'Product description'}
                   src={
                     'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'
                   }
@@ -77,7 +77,7 @@ const BoxProductList = (props) => {
                   <ItemProductCart
                     isSelected={item.isSelected}
                     title={item.name}
-                    discr={'описание товара'}
+                    discr={'Product description'}
                     src={
                       'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'
                     }
@@ -89,7 +89,7 @@ const BoxProductList = (props) => {
                 <ItemProductCartMin
                   isSelected={item.isSelected}
                   title={item.name}
-                  discr={'описание товара'}
+                  discr={'Product description'}
                   src={
                     'https://n1s1.hsmedia.ru/e2/9c/6b/e29c6b4349a2b5041217444a950379ec/728x546_1_1dc8eb41ed097b4e4d17ef9e4f055113@1200x900_0xac120003_6237097351644515659.jpeg'
                   }

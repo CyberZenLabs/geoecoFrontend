@@ -66,7 +66,7 @@ const VendorNavMenu = ({ page }) => {
         </DivStoreOptionsLinkSC>
         <br />
         <DivStarsPanelSC>
-          <DivStoreOptionsLeftPanelSC>
+          {/* <DivStoreOptionsLeftPanelSC>
             <DivStoreOptionsLinkSC to="#" isActive={indexSelectedButton === 6}>
               Reviews 30
             </DivStoreOptionsLinkSC>
@@ -74,7 +74,7 @@ const VendorNavMenu = ({ page }) => {
           </DivStoreOptionsLeftPanelSC>
           <DivStoreOptionsRightPanelSC>
             <StarRating product={true} />
-          </DivStoreOptionsRightPanelSC>
+          </DivStoreOptionsRightPanelSC> */}
         </DivStarsPanelSC>
       </DivStoreOptionsSC>
     </>

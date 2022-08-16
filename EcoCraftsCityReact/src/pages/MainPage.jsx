@@ -75,13 +75,13 @@ const MainPage = () => {
               All goods are verified to be tested for environmental friendliness, as well as for compliance with our requirements and quality standards
               </PInfoTextSC>
             </DivInfoTextBlockSC>
-            <ImgInfoBlockSC RightTop={true} Photo={DivPhoto} />
+            <ImgInfoBlockSC RightTop={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682274637750312/image1.png'} />
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC Photo={DivPhoto} />
+          <ImgInfoBlockShowSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682274637750312/image1.png'} />
 
           <DivInfoBlockSC Color="#FAF3B9;">
-            <ImgInfoBlockSC Photo={DivPhoto} />
+            <ImgInfoBlockSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682620214849596/image2.png'} />
             <DivInfoTextBlockSC MarginL="30px" MarginR="20px" Right={true}>
               <H1InfoTitleSC>We develop social entrepreneurship</H1InfoTitleSC>
               <PInfoTextSC>
@@ -93,7 +93,7 @@ const MainPage = () => {
             </DivInfoTextBlockSC>
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC Photo={DivPhoto} />
+          <ImgInfoBlockShowSC Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008682620214849596/image2.png'} />
 
           <DivInfoBlockSC Color="#FFCEE0;" LeftBottom={true} RightBottom={true}>
             <DivInfoTextBlockSC MarginL="20px" MarginR="30px">
@@ -102,10 +102,10 @@ const MainPage = () => {
               We share a part of the earned funds to improve infrastructure and develop a volunteer environmental movement
               </PInfoTextSC>
             </DivInfoTextBlockSC>
-            <ImgInfoBlockSC RightBottom={true} Photo={DivPhoto} />
+            <ImgInfoBlockSC RightBottom={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008683181647605871/image3.png'} />
           </DivInfoBlockSC>
 
-          <ImgInfoBlockShowSC RightBottom={true} LeftBottom={true} Photo={DivPhoto} />
+          <ImgInfoBlockShowSC RightBottom={true} LeftBottom={true} Photo={'https://cdn.discordapp.com/attachments/983598550380322827/1008683181647605871/image3.png'} />
         </DivInfoWrapSC>
 
         <DivMastersBlockSC>

@@ -25,6 +25,7 @@ import TextField from '../components/TextField';
 import { ButtonCustomWhiteSC } from '../styled-components-css/styles.custom-button-white';
 import { Formik, Form } from 'formik';
 import useAxiosFunction from '../hooks/useAxiosFunction';
+import { BreadCrumbs } from '../components/BreadCrumbs';
 
 const MapBinding = () => {
   const [axiosFetch] = useAxiosFunction();
@@ -37,6 +38,7 @@ const MapBinding = () => {
 
   return (
     <DivMapBindingBoxSC>
+      <BreadCrumbs />
       <DivContentMapBindingSC>
         <DivTextSC>Привязка карты</DivTextSC>
         <Formik

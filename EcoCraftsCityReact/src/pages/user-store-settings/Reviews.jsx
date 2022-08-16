@@ -92,9 +92,9 @@ const Reviews = ({ shop, index }) => {
     <>
       <DivMainBlockSC>
         
+
+
       <BreadCrumbs/>
-
-
         <DivBorderBlockSC>
         <DivBannerShopContainerSC/>
         <DivGridCatalogShopSC>

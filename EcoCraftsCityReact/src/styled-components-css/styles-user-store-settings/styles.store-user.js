@@ -1270,6 +1270,7 @@ padding: 0 20px;
   display: grid;
   justify-self: center;
   max-width: 1420px;
+  width: 100%;
   //border: 1px solid red;
 `;
 export const DivBannerShopContainerSC = styled.div`
@@ -1295,6 +1296,7 @@ export const DivGridCatalogShopSC = styled.div`
 margin-top:45px;
   display: grid;
   max-width: 1420px;
+  width:100%;
   grid-template-columns: 1fr 3fr;
   grid-column-gap: 20px;
   @media (max-width: 768px) {
@@ -1305,7 +1307,7 @@ margin-top:45px;
 `;
 
 export const DivPageContentSC = styled.div`
-
+  width: 100%;
 `;
 export const SpanTitlePageSC = styled.span`
 font-family: 'Montserrat';

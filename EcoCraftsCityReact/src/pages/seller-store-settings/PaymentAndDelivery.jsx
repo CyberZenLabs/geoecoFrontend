@@ -191,7 +191,7 @@ const PaymentAndDelivery = ({ product }) => {
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
-            <H1BoldTextSC>Редактирование оплаты и доставки</H1BoldTextSC>
+            <H1BoldTextSC>Edit payment and delivery</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
@@ -201,7 +201,7 @@ const PaymentAndDelivery = ({ product }) => {
               Delivery
             </H1PageOptionSC>
             <H1PageOptionSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
-              Финансы
+            Finances
             </H1PageOptionSC>
           </DivPagesSC>
           {listContent[indexSelectedButton].blocks}

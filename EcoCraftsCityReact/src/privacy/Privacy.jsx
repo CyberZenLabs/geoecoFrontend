@@ -49,7 +49,7 @@ const Privacy = () => {
                   <span data-custom-class="body_text">
                     <bdt className="block-component" />
                   </span>
-                </span>{" "}
+                </span> 
                 (<bdt className="block-component" />"
                 <bdt className="block-component" />
                 <strong>Company</strong>

@@ -575,7 +575,7 @@ export const InputAboutYourself = styled.textarea`
 `;
 
 export const DivTextSC = styled.div`
-  max-width: 73px;
+  max-width: 103px;
   width: 100%;
   height: 24px;
   font-style: normal;
@@ -616,7 +616,7 @@ export const DivBoxRowsAboutCreativity = styled.div`
   height: fit-content;
 `;
 export const DivText2SC = styled.div`
-  max-width: 144px;
+  max-width: max-content;
   width: 100%;
   height: 24px;
   font-style: normal;

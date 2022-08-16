@@ -44,7 +44,7 @@ export const DivBoxRightPurchasesSC = styled.div`
 
 export const H1PurchasesTextSC = styled.div`
   width: 100%;
-  max-width: 202px;
+  max-width:max-content;
   height: 34px;
   font-family: 'Montserrat';
   font-style: normal;

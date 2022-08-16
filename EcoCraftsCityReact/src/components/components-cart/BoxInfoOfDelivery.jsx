@@ -21,13 +21,13 @@ const BoxInfoDelivery = props => {
 
            <DivTextBoldSizeSC>
                Delivery method
-               <DivTextMinSizeSC>изменить</DivTextMinSizeSC>
+               <DivTextMinSizeSC>Edit</DivTextMinSizeSC>
            </DivTextBoldSizeSC>
           
         </DivFirstRowDeliverySC>
         <DivInfoOfDeliverySC>
-           <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Payment method <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
-           <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC> Ваши данные <DivTextMinSizeInfoDeliverySC>изменить</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
+           <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Payment method <DivTextMinSizeInfoDeliverySC>Edit</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
+           <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC> Ваши данные <DivTextMinSizeInfoDeliverySC>Edit</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
         </DivInfoOfDeliverySC>
         </DivRowDeliverySC>
        

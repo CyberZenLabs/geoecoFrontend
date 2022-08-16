@@ -1101,11 +1101,7 @@ export const IoMarginCS = styled.div`
 `;
 
 export const FaMarginCS = styled.div`
-  margin-top: -5px;
-  @media (max-width: 1470px) {
-    padding-top: 4px;
-  }
-  //border: 2px solid green;
+
 `;
 export const UlDropdown1CS = styled.ul`
   //border: 2px solid black;

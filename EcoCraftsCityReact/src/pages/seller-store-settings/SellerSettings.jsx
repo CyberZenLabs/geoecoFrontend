@@ -64,8 +64,8 @@ const SellerSettings = ({ product }) => {
         <>
           <DivMainInfoSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Phone, email и пароль</H1ContentInfoSC>
-              <ButtonContentEditSC onClick={onClickTab(1)}>Изменить</ButtonContentEditSC>
+              <H1ContentInfoSC>Phone, email and password</H1ContentInfoSC>
+              <ButtonContentEditSC onClick={onClickTab(1)}>Edit</ButtonContentEditSC>
             </DivContentInfoButtonSC>
             <DivContent1PageSC>
               <DivContentRowsSC>
@@ -87,7 +87,7 @@ const SellerSettings = ({ product }) => {
               <DivFirstColumnSC>
                 <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
               <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
@@ -135,7 +135,7 @@ const SellerSettings = ({ product }) => {
                 <DivContentRows2Page2SC>
                   <DivContentInfoButtonSC>
                     <H1ContentDefinSC>*********</H1ContentDefinSC>
-                    <ButtonContentEditSC onClick={openPass}>Изменить</ButtonContentEditSC>
+                    <ButtonContentEditSC onClick={openPass}>Edit</ButtonContentEditSC>
                   </DivContentInfoButtonSC>
                   <H1ContentDefinEmailSC>lisaraklova@gmail.com</H1ContentDefinEmailSC>
                   <H1ContentDefinSC>
@@ -156,7 +156,7 @@ const SellerSettings = ({ product }) => {
               <DivFirstColumnSC>
                 <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
               <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
@@ -186,10 +186,10 @@ const SellerSettings = ({ product }) => {
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-              Основные
+              General
             </H1PageOptionSC>
             <H1PageOptionHidesSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
-              Оповещения
+              Notifications
             </H1PageOptionHidesSC>
           </DivPagesSC>
           {listContent[indexSelectedButton].blocks}

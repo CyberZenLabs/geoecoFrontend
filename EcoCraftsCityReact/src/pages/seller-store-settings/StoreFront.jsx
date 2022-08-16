@@ -131,7 +131,7 @@ const StoreFront = ({ product }) => {
 
             <BottomPanelTextSC to="#">
               <FaMarginCS>
-                <FaRubleSign />
+               $
               </FaMarginCS>
               Change the price
             </BottomPanelTextSC>

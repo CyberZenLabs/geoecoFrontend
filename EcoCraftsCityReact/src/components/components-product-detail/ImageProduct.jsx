@@ -35,7 +35,7 @@ const ImageProduct = (props) => {
         <DivBoxImagesSC>
             <H5CustomSC>{title}</H5CustomSC>
             <DivTreeBoxSC>
-                <span>Артикул: 34553202</span>
+                <span>Аrticle: 34553202</span>
                 <StarRating
                 value={rating}
                     product={false}
@@ -45,7 +45,7 @@ const ImageProduct = (props) => {
                                 415 Reviews
                             </span>
                 <span>
-                                Купили более 1000 раз
+                                Bought over 1000 times
                             </span>
             </DivTreeBoxSC>
             <DivBoxCarouselSC>

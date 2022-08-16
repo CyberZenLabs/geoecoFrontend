@@ -63,7 +63,7 @@ import {
                 </DivStarHideSC>
               </DivTitleShopInfoSC>
             </DivShopInfoSC>
-            <DivBoxButtonLinkSC to = "#">Написать</DivBoxButtonLinkSC>
+            <DivBoxButtonLinkSC to = "#">Write</DivBoxButtonLinkSC>
             <DivLinksInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 0} to="/VendorProfileUser">Profile</LinkShopInfoSC>
               <LinkShopInfoSC isActive={indexSelectedButton === 1} to="/StoreNoAuth">Магазины 50</LinkShopInfoSC>

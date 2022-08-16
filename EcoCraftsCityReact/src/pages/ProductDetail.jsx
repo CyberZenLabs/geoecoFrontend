@@ -134,7 +134,7 @@ const ProductDetail = () => {
                     <DivProductDiscSC>
 
                         <DivProductDiscTitleSC>
-                            <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
+                            <SpanQuestionSC>Feedback and questions</SpanQuestionSC>
                         </DivProductDiscTitleSC>
                         <DivProductReviewsSC>
                             <DivProductRatingSC>
@@ -155,7 +155,7 @@ const ProductDetail = () => {
 
                             <DivButtonBoxSC>
                                 <ButtonCustomSC width={'338px'} padding={'8px 32px'} primary>
-                                    Написать отзыв
+                                    Write a Review
                                 </ButtonCustomSC>
                             </DivButtonBoxSC>
                         </DivProductReviewsSC>

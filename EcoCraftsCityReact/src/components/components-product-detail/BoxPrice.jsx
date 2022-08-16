@@ -53,7 +53,7 @@ const BoxPrice = (props) => {
                     padding={'8px 32px'}
                 >
                     <DivBoxButtonContentSC>
-                        <span>Купить сейчас</span>
+                        <span>Buy now</span>
                         <BiRun size={'20px'} />
                     </DivBoxButtonContentSC>
                 </ButtonCustomSC>

@@ -10,12 +10,11 @@ export const OlifnoSC = styled.ol`
   padding: 0;
   margin-left: 10px;
   font-weight: 600;
-  padding:18px;
+  padding: 18px;
 `;
 export const DivDisplayFlexSC = styled.div`
   display: flex;
 `;
-
 
 export const LiInfoGreenSC = styled.li`
   color: #3d3d3d;
@@ -25,7 +24,6 @@ export const LiInfoGreenSC = styled.li`
   margin-right: 1px;
 `;
 export const DivTextTitleSC = styled.div`
-
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
@@ -35,7 +33,6 @@ export const DivTextTitleSC = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 18px;
-  
 `;
 export const MenuProductST = styled.div`
   display: flex;
@@ -149,17 +146,15 @@ export const SpanTextTitleSC = styled.span`
   display: flex;
   justify-content: space-between;
   padding: 18px;
-  padding-bottom:0;
+  padding-bottom: 0;
   @media (max-width: 720px) {
     font-size: 25px;
   }
   @media (max-width: 480px) {
     font-size: 20px;
-    }
+  }
 `;
 export const SpanTextTitleAdaptiveSC = styled.div`
-
-
   border-radius: 20px 20px 0px 0px;
   font-family: 'Montserrat';
   font-style: normal;
@@ -168,9 +163,9 @@ export const SpanTextTitleAdaptiveSC = styled.div`
   line-height: 37px;
   color: #252525;
   width: 100%;
-  padding-bottom:0;
+  padding-bottom: 0;
   @media (max-width: 1240px) {
-    text-align:center;
+    text-align: center;
   }
 
   @media (max-width: 720px) {
@@ -178,7 +173,7 @@ export const SpanTextTitleAdaptiveSC = styled.div`
   }
   @media (max-width: 480px) {
     font-size: 20px;
-    }
+  }
 `;
 export const SpanTextTitleCarouselSC = styled.span`
   border-radius: 20px 20px 0px 0px;
@@ -191,7 +186,7 @@ export const SpanTextTitleCarouselSC = styled.span`
   display: flex;
   justify-content: space-between;
   padding: 18px;
-  padding-bottom:0;
+  padding-bottom: 0;
 `;
 
 export const SpanTextTitleShopSC = styled.span`
@@ -240,10 +235,10 @@ export const LiInfoSC = styled.li`
   display: flex;
   @media (max-width: 720px) {
     font-size: 16px;
-    }
-    @media (max-width: 480px) {
+  }
+  @media (max-width: 480px) {
     font-size: 12px;
-    }
+  }
 `;
 export const ButtonAddProductSC = styled.button`
   font-family: 'Montserrat';
@@ -276,45 +271,42 @@ export const DivButtonChangrInformSC = styled.div`
   font-size: 16px;
   cursor: pointer;
   @media (max-width: 990px) {
-  display:none;
-  
-    }
+    display: none;
+  }
 `;
 export const DivButtonChangrInformBottomSC = styled.div`
-@media (min-width: 991px) {
-  display:none;
-    }
-cursor: pointer;
-display:flex;
-background: #85CB33;
-border-radius: 10px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px 10px;
-color: #FFFFFF;
-font-size:16px;
-@media (max-width: 480px) {
-  font-size:12px;
-
-    }
+  @media (min-width: 991px) {
+    display: none;
+  }
+  cursor: pointer;
+  display: flex;
+  background: #85cb33;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  color: #ffffff;
+  font-size: 16px;
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 export const DivInfoVendorBoxSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-bottom: 24px;
-  transition: width .2s 0s;
+  transition: width 0.2s 0s;
   max-width: 1045px;
   display: grid;
-
 `;
 export const DivInfoVendorBoxAdaptiveSC = styled.div`
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   margin-bottom: 24px;
   max-width: 1045px;
-  transition: width .2s 0s;
+  transition: width 0.2s 0s;
   padding: 18px;
   display: grid;
 `;
@@ -347,8 +339,8 @@ export const DivItemsOptionsSC = styled.div`
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 100%;
-  // border: 2px solid black;
+  //height: 100%;
+  border: 2px solid black;
   max-width: 1140px;
 `;
 
@@ -363,7 +355,7 @@ export const DivInnerContentSC = styled.div`
   margin-top: 20px;
   height: 100%;
   //border: 2px solid black;
-  grid-template-rows: 140px 210px 50px 50px;
+  //grid-template-rows: 140px 210px 50px 50px;
   max-width: 1140px;
   gap: 20px;
 `;
@@ -371,6 +363,10 @@ export const DivTwoSidesSC = styled.div`
   display: grid;
   grid-template-columns: 240px auto;
   //border: 2px solid blue;
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
 `;
 export const DivInnerPhotoInputSC = styled.div`
   display: grid;
@@ -537,6 +533,7 @@ export const DivAboutYourselfSC = styled.div`
   border-radius: 20px;
   margin-top: 20px;
   max-width: 1140px;
+  border: 2px solid red;
 `;
 
 export const DivBGImageSC = styled.div`

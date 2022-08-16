@@ -82,10 +82,10 @@ const SellerSettings = ({ product }) => {
           </DivMainInfoSC>
 
           <DivMainInfoAdressSC>
-            <H1ContentInfoSC>Адрес</H1ContentInfoSC>
+            <H1ContentInfoSC>Address</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
-                <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
+                <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
                 <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
               </DivFirstColumnSC>
@@ -151,10 +151,10 @@ const SellerSettings = ({ product }) => {
           </DivMainInfo2PageSC>
 
           <DivMainInfoAdressSC>
-            <H1ContentInfoSC>Адрес</H1ContentInfoSC>
+            <H1ContentInfoSC>Address</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
-                <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
+                <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
                 <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
               </DivFirstColumnSC>

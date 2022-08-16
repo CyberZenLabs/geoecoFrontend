@@ -254,9 +254,9 @@ const VendorProfile = () => {
 
                     <DivInfoVendorBoxSC>
 
-                        <SpanTextTitleSC>Имя профиля  </SpanTextTitleSC>
+                        <SpanTextTitleSC>Profile name  </SpanTextTitleSC>
                         <OlifnoSC>
-                            <LiInfoSC>Адрес</LiInfoSC>
+                            <LiInfoSC>Address</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
                             <LiInfoSC>Store: е-mail</LiInfoSC>
                             <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>

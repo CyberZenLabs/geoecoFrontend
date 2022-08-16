@@ -95,7 +95,7 @@ export const StoreInfoHeaderSC = styled.h3`
   color: #000000;
 `;
 export const DivStoreOptionsSC = styled.div`
-  height: 249px;
+  height: 219px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   // border: 2px solid yellow;
@@ -152,7 +152,7 @@ export const DivStoreInfoStuffSC = styled.div`
   max-width: 1010px;
   padding-bottom: 10px;
   @media (max-width: 1470px) {
-    grid-template-columns: max-content 130px auto;
+    grid-template-columns: max-content max-content auto;
     padding-bottom: 0px;
   }
   @media (max-width: 990px) {
@@ -344,7 +344,7 @@ export const DivItemsOptionsSC = styled.div`
 export const DivOptionsPanelSC = styled.div`
   display: grid;
   // gap: 1vw;
-  grid-template-columns: 175px 205px auto;
+  grid-template-columns: 195px 205px auto;
 
   //border: 2px solid red;
   height: 100px;

@@ -343,7 +343,7 @@ export const DivMastersBlockSC = styled.div`
   gap: 5%;
   height: 780px;
  
-  //background: #fafafa;
+  background: #fafafa;
   border-radius: 32px;
   /* width: 99vw; */
   align-content: end;

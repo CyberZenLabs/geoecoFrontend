@@ -1,12 +1,7 @@
-
-import React, { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import FinanceTable from "../../components/FinanceTable";
-import {
-  DivBackBoxSC,
-  DivHistorySC,
-  NavLinkSC,
-} from "../../styled-components-css/styles.product-detail";
+import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import FinanceTable from '../../components/FinanceTable';
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../../styled-components-css/styles.product-detail';
 
 import { BreadCrumbs } from '../../components/BreadCrumbs';
 

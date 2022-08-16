@@ -17,6 +17,12 @@ padding: 0 20px;
   max-width: 1420px;
   //border: 1px solid red;
 `;
+export const DivBoxNewProductsBigST = styled.div`
+width: 100%;
+display: grid;
+margin-bottom:30px;
+
+`;
 export const WrapShopContainerSC = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -24,6 +30,7 @@ export const WrapShopContainerSC = styled.div`
   height: 356px;
   width: 100%;
   margin: auto;
+  max-width: 1420px;
   //margin-top: 50px;
   background: #dbf0c2;
   border-radius: 20px;

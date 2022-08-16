@@ -1,6 +1,15 @@
 import React from 'react';
-import { BreadCrumbs } from '../components/BreadCrumbs';
-import SettingsShopCatalog from '../components/components-user-store-settings/SettingsShopCatalog';
+import { BreadCrumbs } from '../../components/BreadCrumbs';
+import SettingsShopCatalog from '../../components/components-user-store-settings/SettingsShopCatalog';
+import { 
+  DivMainBlockSC,
+   DivBorderBlockSC,
+   DivBannerShopContainerSC,
+   DivGridCatalogShopSC,
+   DivPageContentSC,
+   SpanTitlePageSC
+  } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
+
 import {
   DivBlocksContainer,
   DivBoxCatalogShopSC,
@@ -15,25 +24,25 @@ import {
   H1TextTitle,
   PTextBlock,
   PTextDotBlock,
-} from '../styled-components-css/styled.payment-delivery-customer';
-import { DivBoxNewProductsBigST } from '../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct';
-import { DivBoxCatalog, DivBoxContentSC, SpanTitleCatalog, WrapShopContainerSC } from '../styled-components-css/styles-user-store-settings/styles.StoreNoAuth';
+} from '../../styled-components-css/styled.payment-delivery-customer';
+import { DivBoxNewProductsBigST } from '../../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct';
+import { DivBoxCatalog, DivBoxContentSC, SpanTitleCatalog, WrapShopContainerSC } from '../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth';
 
 
 
 const PaymentDelivery = () => {
   return (
-    <DivBoxNewProductsBigST>
+    <DivMainBlockSC>
       <BreadCrumbs />
 
-      <DivBoxContentSC>
-        <WrapShopContainerSC />
+      <DivBorderBlockSC>
+        <DivBannerShopContainerSC />
 
-        <DivBoxCatalogShopSC>
+        <DivGridCatalogShopSC>
           <SettingsShopCatalog page={3} />
 
-          <DivBoxCatalog>
-            <SpanTitleCatalog>Delivery and payment</SpanTitleCatalog>
+          <DivPageContentSC>
+            <SpanTitlePageSC>Delivery and payment</SpanTitlePageSC>
 
             <DivBlocksContainer>
               <DivPaymentMethods>
@@ -73,21 +82,11 @@ const PaymentDelivery = () => {
                 </DivInnerWrap>
               </DivReturnExchange>
             </DivBlocksContainer>
-            {/* <DivNextItems>
-              <DivNextGrid>
-                <DivCountPage>
-                  <DivNextPage>1</DivNextPage>
-
-                  <DivNextPage>2</DivNextPage>
-                </DivCountPage>
-
-                <DivButtonNext>Дальше</DivButtonNext>
-              </DivNextGrid>
-            </DivNextItems> */}
-          </DivBoxCatalog>
-        </DivBoxCatalogShopSC>
-      </DivBoxContentSC>
-    </DivBoxNewProductsBigST>
+            
+          </DivPageContentSC>
+        </DivGridCatalogShopSC>
+      </DivBorderBlockSC>
+    </DivMainBlockSC>
   );
 };
 

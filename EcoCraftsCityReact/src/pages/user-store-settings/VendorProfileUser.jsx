@@ -9,10 +9,14 @@ import useAxiosFunction from '../../hooks/useAxiosFunction';
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../../styled-components-css/styles.product-detail';
 import SettingsShopCatalog from '../../components/components-user-store-settings/SettingsShopCatalog';
 import { toast } from 'react-toastify';
-import{
+
+import { 
+    DivMainBlockSC,
+     DivBorderBlockSC,
+     DivBannerShopContainerSC,
+     DivGridCatalogShopSC
     
-    WrapShopContainerSC
-  } from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
+    } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 import {
     DivStoreLeftPanelSC,
     DivStoreOptionsRightPanelSC,

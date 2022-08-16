@@ -340,7 +340,7 @@ export const DivItemsOptionsSC = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   //height: 100%;
-  border: 2px solid black;
+ // border: 2px solid black;
   max-width: 1140px;
 `;
 
@@ -353,7 +353,8 @@ export const DivInnerContentSC = styled.div`
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
-  height: 100%;
+  margin-bottom: 20px;
+  height: fit-content;
   //border: 2px solid black;
   //grid-template-rows: 140px 210px 50px 50px;
   max-width: 1140px;
@@ -362,7 +363,8 @@ export const DivInnerContentSC = styled.div`
 export const DivTwoSidesSC = styled.div`
   display: grid;
   grid-template-columns: 240px auto;
-  //border: 2px solid blue;
+ // border: 2px solid blue;
+
   @media (max-width: 768px) {
     grid-template-columns: auto;
     gap: 20px;
@@ -533,7 +535,7 @@ export const DivAboutYourselfSC = styled.div`
   border-radius: 20px;
   margin-top: 20px;
   max-width: 1140px;
-  border: 2px solid red;
+  //border: 2px solid red;
 `;
 
 export const DivBGImageSC = styled.div`
@@ -553,6 +555,13 @@ export const DivBoxColumnAboutYourselfSC = styled.div`
   grid-template-columns: 130px auto;
   height: 202px;
   //border: 2px solid blue;
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows:45px auto;
+gap:0px;
+height:fit-content;
+margin-bottom: 25px;
+  }
 `;
 
 export const InputAboutYourself = styled.textarea`
@@ -593,7 +602,7 @@ export const DivBoxText = styled.div`
   width: 100%;
   height: 50px;
   display: grid;
-  padding-left: 26px;
+  padding-left: 0px;
   //border: 2px solid blue;
   min-width: 110px;
   margin-top: 28px;
@@ -601,8 +610,10 @@ export const DivBoxText = styled.div`
 
 export const DivBoxRowsAboutCreativity = styled.div`
   display: grid;
-  grid-template-rows: ${({ fullSize }) => (fullSize ? '100%' : '62.2% 37.8%')};
+ 
   grid-row-gap: 6px;
+  //border: 1px solid red;
+  height: fit-content;
 `;
 export const DivText2SC = styled.div`
   max-width: 144px;
@@ -622,13 +633,14 @@ export const DivBoxText2 = styled.div`
   display: grid;
   justify-items: start;
   align-items: start;
-  padding-left: 26px;
+  
+  //border: 1px solid black;
 `;
 
 export const DivText3 = styled.div`
   max-width: 607px;
   width: 100%;
-  height: 17px;
+  //height: 17px;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -643,7 +655,9 @@ export const DivBoxText3 = styled.div`
   display: grid;
   justify-items: start;
   align-items: start;
-  padding-left: 26px;
+
+ // border: 1px solid green;
+ // height: fit-content;
 `;
 
 export const DivBoxColumnsFotosSC = styled.div`
@@ -656,7 +670,7 @@ export const DivBoxColumnsFotosSC = styled.div`
   grid-template-rows: repeat(auto-fill, 206px);
   column-gap: 10px;
   margin-top: 28px;
-  // border: 2px solid blue;
+  //border: 2px solid blue;
   //margin-left: 25px;
   //align-items: center;
   justify-content: space-around;

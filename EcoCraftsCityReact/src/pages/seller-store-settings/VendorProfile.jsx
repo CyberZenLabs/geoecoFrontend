@@ -406,7 +406,7 @@ const VendorProfile = () => {
                                         </DivTwoSidesSC>
                                         <DivTwoSidesSC>
                                             <H1DefinSC>Место проживания</H1DefinSC>
-                                            <TextFieldStore label="123" type="text" name="storeLocation" />
+                                            <TextFieldStore label="123" type="text" name="storeLocation" placeholder="Красноярский край, Россия"/>
                                             {/* <NameNCityFieldSC label="email" type="email" placeholder="Красноярский край, Россия" /> */}
                                         </DivTwoSidesSC>
                                     </DivInnerContentSC>

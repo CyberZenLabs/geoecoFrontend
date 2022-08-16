@@ -149,17 +149,17 @@ export const HrLineSC = styled.hr`
 export const DivStoreInfoStuffSC = styled.div`
   //border: 2px solid blue;
   display: grid;
-  grid-template-columns: 160px auto auto auto;
+  grid-template-columns: max-content auto auto auto;
   width: auto;
   /* grid-gap: 1vw; */
   max-width: 1010px;
   padding-bottom: 10px;
   @media (max-width: 1470px) {
-    grid-template-columns: 150px 130px auto;
+    grid-template-columns: max-content 130px auto;
     padding-bottom: 0px;
   }
   @media (max-width: 990px) {
-    grid-template-columns: 150px 20px auto;
+    grid-template-columns: max-content 20px auto;
   }
 `;
 export const DivStoreInfoStuffButtonSC = styled.div`
@@ -177,22 +177,11 @@ export const H1BoldTextSC = styled.h1`
   font-weight: 700;
   line-height: 37px;
   color: #252525;
+width: fit-content;
   // border: 2px solid green;
   padding-top: 12px;
   @media (max-width: 1050px) {
     font-size: 24px;
-  }
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media (max-width: 480px) {
-    font-size: 20px;
-  }
-  @media (max-width: 400px) {
-    font-size: 18px;
   }
 `;
 export const StoreItemsNumSC = styled.h1`
@@ -205,7 +194,7 @@ export const StoreItemsNumSC = styled.h1`
   //border: 2px solid gold;
   padding-top: 28px;
   justify-self: start;
-  margin-left: 5px;
+  margin-left: 10px;
   @media (max-width: 990px) {
     display: none;
   }
@@ -1273,7 +1262,7 @@ export const UilSearchSC2 = styled(UilSearch)`
 `;
 export const UilSearchHeadSC = styled(UilSearch)`
   /* user-select: none; */
-
+margin-left: 5px;
   margin-top: 22px;
   @media (min-width: 991px) {
     display: none;

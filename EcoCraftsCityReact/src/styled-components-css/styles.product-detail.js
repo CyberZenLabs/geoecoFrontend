@@ -1,5 +1,5 @@
-import styled from "styled-components/macro";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components/macro';
+import { NavLink } from 'react-router-dom';
 import {
   CarouselProvider,
   Slider,
@@ -9,32 +9,22 @@ import {
   Image,
   DotGroup,
   ImageWithZoom,
-} from "pure-react-carousel";
+} from 'pure-react-carousel';
 
 export const DivBoxProductDetailSC = styled.div`
   display: grid;
   justify-items: center;
 `;
 
+export const DivProductInformSC = styled.div`
+  display: flex;
+`;
+export const DivfirsrowInformSC = styled.div``;
+export const DivsecondrowInformSC = styled.div``;
 
-    export const DivProductInformSC = styled.div`
-    display: flex;
-  
-    `;
-    export const DivfirsrowInformSC = styled.div`
-    
-  
-    `;
-    export const DivsecondrowInformSC = styled.div`
-    
-  
-    `;
-    
-   
 export const DivContentProductDetailSC = styled.div`
-
-    display: grid;
-  grid-template-rows: 120px max-content max-content  minmax(auto, auto)  minmax(auto, auto) ;
+  display: grid;
+  grid-template-rows: 120px max-content max-content minmax(auto, auto) minmax(auto, auto);
   max-width: 1322px;
   width: 85vw;
   grid-gap: 10px;
@@ -45,21 +35,25 @@ export const NavLinkSC = styled(NavLink)`
   font-size: 16px;
   text-decoration: none;
   font-family: var(--root-font-family);
-  ${(p) =>
-    p.iscolor
-      ? "color:var(--green-color)"
-      : "color:var(--color-black)"}//color: var(--color-black)
+  ${(p) => (p.iscolor ? 'color:var(--green-color)' : 'color:var(--color-black)')}//color: var(--color-black)
 `;
 
 export const DivHistorySC = styled.div`
   display: grid;
   grid-template-columns: 100px 300px auto;
   align-items: center;
+  @media (max-width: 420px) {
+    grid-template-columns: 75px 300px auto;
+  }
 `;
 
 export const DivBackBoxSC = styled.div`
   display: grid;
+  width: 100%;
   grid-template-columns: 20px auto;
+  @media (max-width: 420px) {
+    grid-template-columns: 20px 40px;
+  }
 `;
 
 export const DivContentProductSC = styled.div`
@@ -215,7 +209,7 @@ export const DivImgSC = styled.div`
 `;
 
 export const DivProductDiscSC = styled.div`
-    display: grid;
+  display: grid;
   grid-template-rows: auto max-content;
 
   span {
@@ -232,11 +226,9 @@ export const DivProductDiscSC = styled.div`
     text-decoration: none;
     color: var(--green-color);
   }
-  
 `;
 
 export const DivProductDiscTitleSC = styled.div`
-
   display: grid;
   align-items: start;
 `;
@@ -244,10 +236,7 @@ export const DivProductDiscTitleSC = styled.div`
 export const DivProductDiscContentSC = styled.div`
   display: grid;
   grid-template-rows: max-content auto;
- 
-
 `;
-
 
 export const SpanQuestionSC = styled.span`
   font-style: normal;
@@ -278,8 +267,7 @@ export const ButtonSelectedSC = styled.button`
   line-height: 17px;
   /* identical to box height */
   text-align: center;
-  border-bottom: 2px solid
-    ${(p) => (p.isActive ? "var(--green-color)" : "var(--white-color)")};
+  border-bottom: 2px solid ${(p) => (p.isActive ? 'var(--green-color)' : 'var(--white-color)')};
   cursor: pointer;
 `;
 
@@ -328,11 +316,11 @@ export const DivButtonBoxSC = styled.div`
 `;
 
 export const DivBoxButtonContentSC = styled.div`
-	display: grid;
-	grid-template-columns: max-content max-content;
-	align-items: center;
-	grid-gap: 5px;
-	`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  grid-gap: 5px;
+`;
 
 // ShopBlock SC
 
@@ -343,45 +331,44 @@ export const DivShopBlockWrapper = styled.div`
   row-gap: 49px;
   grid-column: 3 / span 1;
   grid-row: 2 / span 1;
-`
+`;
 
 export const DivShopBlockContainer = styled.div`
   display: grid;
   grid-template-columns: max-content max-content;
   grid-template-rows: max-content;
   column-gap: 15px;
- 
-`
+`;
 
 export const DivShopLogo = styled.div`
   width: 88px;
   height: 88px;
   border-radius: 10px;
-  background: #D9D9D9;
-`
+  background: #d9d9d9;
+`;
 export const DivShopInfo = styled.div`
   display: grid;
   grid-template-columns: max-content;
   grid-template-rows: 2fr 1fr 1fr;
   row-gap: 4px;
   max-height: 88px;
-    a{
-      font-family: Montserrat;
-      font-size: 18px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #252525;
-      //:hover{
-      //  text-decoration: underline;
-      //}
-    }
-  
-    p{
-      font-family: Montserrat;
-      font-size: 10px;
-      font-weight: 500;
-    }
-`
+  a {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #252525;
+    //:hover{
+    //  text-decoration: underline;
+    //}
+  }
+
+  p {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+  }
+`;
 
 // description and stats block (txt)
 
@@ -392,20 +379,20 @@ export const DivDescStatsContainerSC = styled.div`
   row-gap: 43px;
   max-width: 700px;
   margin-top: 400px;
-`
+`;
 
 export const DivDescBlockSC = styled.div`
-    h2{
-      font-family: Montserrat;
-      font-size: 28px;
-      font-weight: 600;
-      color: #252525;
-      margin-bottom: 20px;
-    }
-    p{
+  h2 {
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 600;
+    color: #252525;
+    margin-bottom: 20px;
+  }
+  p {
     font-family: Montserrat;
     font-size: 20px;
     font-weight: 400;
     color: #252525;
-    }   
-`
+  }
+`;

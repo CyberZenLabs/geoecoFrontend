@@ -10,11 +10,8 @@ export const DivWrapLinkSC = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   ${({ margin }) => (margin ? `  margin-bottom: 50px;` : null)};
-  width: 90vw;
+  width: 90%;
   min-width: 360px;
-  @media (max-width: 990px) {
-    display: none;
-  }
 `;
 export const DivStoreWrapSC = styled.div`
   display: grid;

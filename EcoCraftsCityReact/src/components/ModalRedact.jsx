@@ -42,7 +42,7 @@ const ModalRedact = () => {
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>
                 <EmailFieldSC 
-                placeholder="Телефон"/>
+                placeholder="Phone"/>
                
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>

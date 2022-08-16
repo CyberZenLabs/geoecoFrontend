@@ -259,7 +259,7 @@ const VendorProfile = () => {
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
                             <LiInfoSC>Store: е-mail</LiInfoSC>
-                            <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+                            <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
                             <DescriptionSC><DescriptionTextSC><DescriptionTitleTextSC>Рассказ о себе:</DescriptionTitleTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</DescriptionTextSC></DescriptionSC>   
                         </OlifnoSC>
 
@@ -395,7 +395,7 @@ const VendorProfile = () => {
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonBannerSC>
@@ -410,7 +410,7 @@ const VendorProfile = () => {
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonImgSC>
@@ -450,7 +450,7 @@ const VendorProfile = () => {
                                                 <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 </ButtonImgSC>
                                             </DivBoxFoto1SC>
@@ -478,7 +478,7 @@ const VendorProfile = () => {
                                     </DivBGImageSC>
                                 </DivAboutYourselfSC>
                                 <DivButtonBottomSaveVendSC>
-                                    <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
+                                    <SaveButtonPanelVendSC type="submit">Save</SaveButtonPanelVendSC>
                                 </DivButtonBottomSaveVendSC>
                             </Form>
                         )}

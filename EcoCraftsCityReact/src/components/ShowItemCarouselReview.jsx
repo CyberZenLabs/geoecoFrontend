@@ -33,7 +33,7 @@ const ShowItemCarouselReview = () => {
             <DivDateReviewCreateSC>
               <LinkOnUserSC to="/">
                 <TextBoxReviewSC>
-                  Название магазина
+                  Store name
                 </TextBoxReviewSC>
               </LinkOnUserSC>
               <SpanDataTextSC>

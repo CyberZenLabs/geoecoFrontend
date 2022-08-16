@@ -44,7 +44,7 @@ Store 50
 
 </DivStoreSetingST>
 <DivStoreSetingST>
-Shipping and payment
+Delivery and payment
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>

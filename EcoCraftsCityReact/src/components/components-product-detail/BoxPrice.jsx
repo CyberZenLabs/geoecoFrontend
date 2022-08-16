@@ -41,7 +41,7 @@ const BoxPrice = (props) => {
                     primary>
 
                     <DivBoxButtonContentSC>
-                        <span>Добавить в корзину</span>
+                        <span>Add to cart</span>
                         <BsFillCartPlusFill size={'20px'} />
                     </DivBoxButtonContentSC>
                 </ButtonCustomSC>

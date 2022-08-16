@@ -81,7 +81,7 @@ const PersonalData = () => {
 
             <ul>
               <li>
-                <SpanTitleDataSC>Телефон</SpanTitleDataSC>
+                <SpanTitleDataSC>Phone</SpanTitleDataSC>
               </li>
               <li>
                 <SpanTitleDataSC>

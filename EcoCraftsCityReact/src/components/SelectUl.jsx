@@ -30,7 +30,7 @@ export default function App() {
      
       <DropDownContainer>
         <DropDownHeader onClick={toggling}>
-          {selectedOption || "Юридический статус"}<CgSelect></CgSelect>
+          {selectedOption || "Legal status"}<CgSelect></CgSelect>
         </DropDownHeader>
         {isOpen && (
           <DropDownListContainer>

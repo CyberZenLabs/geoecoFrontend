@@ -35,7 +35,7 @@ const BoxProductList = (props) => {
       <DivContainerProductSC>
         <DivProductItemsSC>
           <DivTitleBoxSC padding={false}>
-            <H2TitleProductList>Название магазина</H2TitleProductList>
+            <H2TitleProductList>Store name</H2TitleProductList>
             <CustomTextBoxForCartSC weight={400} color={'#252525'}>
               Адрес магазина
             </CustomTextBoxForCartSC>
@@ -64,7 +64,7 @@ const BoxProductList = (props) => {
             <>
               <DivBoxCheckSC>
                 <CustomInputCheckBox onClick={onClickAll} />
-                <label htmlFor="all"> Выбрать все</label>
+                <label htmlFor="all"> Select all</label>
               </DivBoxCheckSC>
               <DividerSC></DividerSC>
             </>

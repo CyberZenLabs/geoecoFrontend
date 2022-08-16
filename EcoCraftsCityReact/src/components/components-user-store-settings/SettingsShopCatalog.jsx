@@ -56,7 +56,7 @@ import {
             <DivShopInfoSC>
               <ImgShopInfoSC src={"/default-images/plant.jpg"}></ImgShopInfoSC>
               <DivTitleShopInfoSC>
-                <TitleShopInfoSC>Название магазина</TitleShopInfoSC>
+                <TitleShopInfoSC>Store name</TitleShopInfoSC>
                 <LocationShopInfoSC>Где находится</LocationShopInfoSC>
                 <DivStarHideSC>
                   <StarRating fixed={true} value={shopRaiting} />
@@ -71,7 +71,7 @@ import {
                 <LinkShopInfoSC isActive={indexSelectedButton === 2} to="/Reviews">Reviews </LinkShopInfoSC>
                 <StarRating fixed={true} value={shopRaiting} />
               </DivLinkReviewRaitingSC>
-              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="/Payment-and-Delivery">Shipping and payment</LinkShopInfoSC>
+              <LinkShopInfoSC isActive={indexSelectedButton === 3} to="/Payment-and-Delivery">Delivery and payment</LinkShopInfoSC>
             </DivLinksInfoSC>
 
             <DivLinksAdaptiveSC>

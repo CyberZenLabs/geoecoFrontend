@@ -72,7 +72,7 @@ const TotalPriceCart = (props) => {
         <DivTotalPriceSC>
           <DivColumnsTotalPriceSC>
             <CustomTextBoxForCartSC align={'left'} weight={600} size={20} color={'#505050'}>
-              Товары
+              Products
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
               15000 $
@@ -88,7 +88,7 @@ const TotalPriceCart = (props) => {
           </DivColumnsTotalPriceSC>
           <DivColumnsTotalPriceSC>
             <CustomTextBoxForCartSC align={'left'} weight={600} size={20} color={'#505050'}>
-              Скидка
+              Discount
             </CustomTextBoxForCartSC>
             <CustomTextBoxForCartSC align={'right'} weight={600} size={20}>
               699 $
@@ -127,11 +127,11 @@ const TotalPriceCart = (props) => {
     // 			<h2>15000</h2>
     // 		</DivTotalTitleSC>
     // 		<DivTotalGoodsSC>
-    // 			<p>Товары, 5 шт.</p>
+    // 			<p>Products, 5 pcs.</p>
     // 			<p>123126 р.</p>
     // 		</DivTotalGoodsSC>
     // 		<DivTotalSaleSC>
-    // 			<p>Скидка</p>
+    // 			<p>Discount</p>
     // 			<p>-44568 р.</p>
     // 		</DivTotalSaleSC>
     // 		<DivTotalDeliveryDescSC>
@@ -151,7 +151,7 @@ const TotalPriceCart = (props) => {
     // 			<p>дд/мм</p>
     // 		</DivTotalDateSC>
     // 		<DivTotalPaymentTitleSC>
-    // 			<p>Оплата:</p>
+    // 			<p>Payment:</p>
     // 		</DivTotalPaymentTitleSC>
     // 		<DivTotalPaymentSC>
     // 			<p>Карта</p>

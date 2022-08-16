@@ -77,7 +77,7 @@ const Reviews = ({ shop, index }) => {
 
           <DivModesBoxSC>
             <DivModeSC>Рубрики</DivModeSC>
-            <DivModeSC>Фильтры</DivModeSC>
+            <DivModeSC>Filters</DivModeSC>
           </DivModesBoxSC>
           <DivTextButtonBoxSC>
             <ReviewBoxNameSC>Reviews</ReviewBoxNameSC>

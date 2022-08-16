@@ -64,12 +64,12 @@ const SellerSettings = ({ product }) => {
         <>
           <DivMainInfoSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Телефон, email и пароль</H1ContentInfoSC>
+              <H1ContentInfoSC>Phone, email и пароль</H1ContentInfoSC>
               <ButtonContentEditSC onClick={onClickTab(1)}>Изменить</ButtonContentEditSC>
             </DivContentInfoButtonSC>
             <DivContent1PageSC>
               <DivContentRowsSC>
-                <H1ContentNameSC>Телефон</H1ContentNameSC>
+                <H1ContentNameSC>Phone</H1ContentNameSC>
                 <H1ContentNameSC>Password</H1ContentNameSC>
                 <H1ContentNameSC>Email</H1ContentNameSC>
               </DivContentRowsSC>
@@ -104,14 +104,14 @@ const SellerSettings = ({ product }) => {
         <>
           <DivMainInfo2PageSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Телефон, email и пароль</H1ContentInfoSC>
+              <H1ContentInfoSC>Phone, email and password</H1ContentInfoSC>
             </DivContentInfoButtonSC>
             <DivContentSC>
               <DivContentDivisionSC>
                 <DivContentRows3PageSC>
-                  <H1ContentNameSC>Телефон</H1ContentNameSC>
-                  <H1ContentNameSC>Новый телефон</H1ContentNameSC>
-                  <H1ContentNameSC>Текущий пароль</H1ContentNameSC>
+                  <H1ContentNameSC>Phone</H1ContentNameSC>
+                  <H1ContentNameSC>New phone number</H1ContentNameSC>
+                  <H1ContentNameSC>Password</H1ContentNameSC>
                 </DivContentRows3PageSC>
                 <DivContentRows2PageSC>
                   <H1ContentDefinSC>+70000000000</H1ContentDefinSC>
@@ -121,7 +121,7 @@ const SellerSettings = ({ product }) => {
                   <H1ContentDefinSC>
                     <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
                 </DivContentRows2PageSC>{' '}
               </DivContentDivisionSC>
 
@@ -129,7 +129,7 @@ const SellerSettings = ({ product }) => {
                 <DivContentRows2Page4SC>
                   <H1ContentNameSC>Password</H1ContentNameSC>
                   <H1ContentNameEmailSC>Email</H1ContentNameEmailSC>
-                  <H1ContentNameSC>Новый email </H1ContentNameSC>
+                  <H1ContentNameSC>New email </H1ContentNameSC>
                   <H1ContentNameSC>Password</H1ContentNameSC>
                 </DivContentRows2Page4SC>
                 <DivContentRows2Page2SC>
@@ -144,7 +144,7 @@ const SellerSettings = ({ product }) => {
                   <H1ContentDefinSC>
                     <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
                 </DivContentRows2Page2SC>{' '}
               </DivContentDivisionSC>
             </DivContentSC>

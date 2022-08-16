@@ -246,13 +246,13 @@ const VendorProfile = () => {
                 <DivAddProductBox>
                     <DivInfoVendorBoxSC>
 
-                        <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+                        <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformSC></SpanTextTitleSC>
                         <OlifnoSC>
                             <LiInfoSC>Адрес</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
                             <LiInfoSC>Store: е-mail</LiInfoSC>
-                            <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
-                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+                            <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformBottomSC>
                         </OlifnoSC>
 
 
@@ -380,7 +380,7 @@ const VendorProfile = () => {
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonBannerSC>
@@ -395,7 +395,7 @@ const VendorProfile = () => {
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonImgSC>
@@ -435,7 +435,7 @@ const VendorProfile = () => {
                                                 <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 </ButtonImgSC>
                                             </DivBoxFoto1SC>
@@ -463,7 +463,7 @@ const VendorProfile = () => {
                                     </DivBGImageSC>
                                 </DivAboutYourselfSC>
                                 <DivButtonBottomSaveVendSC>
-                                    <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
+                                    <SaveButtonPanelVendSC type="submit">Save</SaveButtonPanelVendSC>
                                 </DivButtonBottomSaveVendSC>
                             </Form>
                         )}

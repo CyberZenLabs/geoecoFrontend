@@ -85,19 +85,19 @@ const StoreFront = ({ product }) => {
       options: (
         <DivOptionsPanel2SC>
           <DropDownOptionsSC>
-            Тип товара
+            Type
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
           </DropDownOptionsSC>
           <DropDownOptionsSC>
-            Статус
+            Status
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
           </DropDownOptionsSC>
           <DropDownOptionsSC>
-            Скидки
+            Discounts
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
@@ -126,17 +126,17 @@ const StoreFront = ({ product }) => {
             <BottomPanelChoiceSC>
               <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={all} onChange={ChooseAll} />
 
-              <Labelfor onClick={ChooseAll}>Выбрать все</Labelfor>
+              <Labelfor onClick={ChooseAll}>Select all</Labelfor>
             </BottomPanelChoiceSC>
 
             <BottomPanelTextSC to="#">
               <FaMarginCS>
                 <FaRubleSign />
               </FaMarginCS>
-              Изменить цену
+              Change the price
             </BottomPanelTextSC>
 
-            <BottomPanelTextDraftSC to="#">В черновики</BottomPanelTextDraftSC>
+            <BottomPanelTextDraftSC to="#">Drafts</BottomPanelTextDraftSC>
 
             <div className={active2 ? 'dots2 active' : 'dots2'} onClick={HandleSelectOpen2}>
               More
@@ -146,11 +146,11 @@ const StoreFront = ({ product }) => {
                 <div className="listdropdown">
                   <ul>
                     <li>Сделать скидку</li>
-                    <li>Изменить статус</li>
-                    <li>Разместить</li>
-                    <li>Удалить</li>
-                    <li className="hide">В черновики</li>
-                    <li className="hide">Изменить цену</li>
+                    <li>Change status</li>
+                    <li>Post</li>
+                    <li>Remove</li>
+                    <li className="hide">Drafts</li>
+                    <li className="hide">Change the price</li>
                   </ul>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const StoreFront = ({ product }) => {
       options: (
         <DivOptionsPanel2SC>
           <DropDownOptionsSC>
-            Все товары
+            All products
             <IoMarginCS>
               <IoIosArrowDown />
             </IoMarginCS>
@@ -186,7 +186,7 @@ const StoreFront = ({ product }) => {
           <BottomPanel2PageSC>
             <BottomPanelChoice2SC>
               <InputCheckbox type="checkbox" id="todo" name="todo" value="todo" checked={all} onChange={ChooseAll} />
-              <Labelfor onClick={ChooseAll}>Выбрать все</Labelfor>
+              <Labelfor onClick={ChooseAll}>Select all</Labelfor>
             </BottomPanelChoice2SC>
 
             <DivBottomAddItemNumSC>
@@ -200,10 +200,10 @@ const StoreFront = ({ product }) => {
                 <IoIosArrowDown />
               </IoMarginCS>
             </BottomPanelSelectSC>
-            <SaveButtonSC>Сохранить</SaveButtonSC>
+            <SaveButtonSC>Save</SaveButtonSC>
           </BottomPanel2PageSC>
           <DivButtonBottomSaveSC>
-            <SaveButtonPanelSC>Сохранить</SaveButtonPanelSC>
+            <SaveButtonPanelSC>Save</SaveButtonPanelSC>
           </DivButtonBottomSaveSC>
         </>
       ),
@@ -229,25 +229,25 @@ const StoreFront = ({ product }) => {
               <DivStoreInfoStuffSC>
                 <H1BoldTextSC>Store</H1BoldTextSC>
                 <UilSearchHeadSC size="20" color="#85cb33" />
-                <StoreItemsNumSC>Товары: 1/3</StoreItemsNumSC>
+                <StoreItemsNumSC>Products: 1/3</StoreItemsNumSC>
 
                 <StoreViewLinkSC to="/VendorProfileUser">Как посетители видят мой магазин</StoreViewLinkSC>
                 <StoreViewLinkDotsSC to="/VendorProfileUser">...</StoreViewLinkDotsSC>
                 <ProductCardButtonSC to="/addnewproduct">Добавить товар</ProductCardButtonSC>
               </DivStoreInfoStuffSC>
-              <StoreItemsNumBotSC>Товары: 1/3</StoreItemsNumBotSC>
+              <StoreItemsNumBotSC>Products: 1/3</StoreItemsNumBotSC>
               <DivStoreInfoStuffButtonSC to="#">
                 <ProductCardButtonAfterSC to="/addnewproduct">Добавить товар</ProductCardButtonAfterSC>
               </DivStoreInfoStuffButtonSC>
               <DivTwoButtonsSC>
                 <LeftButtonCS>
-                  Товары
+                  Products
                   <IoMarginCS>
                     <IoIosArrowDown />
                   </IoMarginCS>
                 </LeftButtonCS>
                 <RightButtonCS>
-                  Фильтры
+                  Filters
                   <IoMarginCS>
                     <IoIosArrowDown />
                   </IoMarginCS>
@@ -256,7 +256,7 @@ const StoreFront = ({ product }) => {
               <DivItemsOptionsSC>
                 <DivOptionsPanelSC>
                   <ProductsNumSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-                    Товары(1)
+                    Products(1)
                   </ProductsNumSC>
                   <StoreSalesAndAccountLinkSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
                     Учет товаров

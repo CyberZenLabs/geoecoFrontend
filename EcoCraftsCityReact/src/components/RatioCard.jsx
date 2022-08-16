@@ -62,7 +62,7 @@ const RatioCard = () => {
 
               <DivNumberReviewsSC>
                 <TextBoxSC>7 Reviews</TextBoxSC>
-                <TextBoxSC>3 отзыва</TextBoxSC>
+                <TextBoxSC>3 reviews</TextBoxSC>
                 <TextBoxSC>нет No reviews</TextBoxSC>
                 <TextBoxSC>нет No reviews</TextBoxSC>
                 <TextBoxSC>нет No reviews</TextBoxSC>

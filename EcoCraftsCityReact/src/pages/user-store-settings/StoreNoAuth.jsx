@@ -71,7 +71,7 @@ const StoreNoAuth = () =>{
           <SettingsShopCatalog page={1} />
 
           <DivBoxCatalog>
-            <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>
+            <SpanTitleCatalog>Store name, что производят</SpanTitleCatalog>
             <DivGridItems>
               {products.map((product) => {
                 return <ProductCard product={product} />;

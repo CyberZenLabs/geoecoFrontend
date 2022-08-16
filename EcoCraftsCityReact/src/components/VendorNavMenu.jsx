@@ -53,7 +53,7 @@ const VendorNavMenu = ({ page }) => {
         </DivStoreOptionsLinkSC>
         <br />
         <DivStoreOptionsLinkSC to="/PaymentAndDelivery" isActive={indexSelectedButton === 3}>
-          Shipping and payment
+          Delivery and payment
         </DivStoreOptionsLinkSC>
         <br />
         <HrLinkSC />

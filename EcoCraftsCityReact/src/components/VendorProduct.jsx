@@ -53,7 +53,7 @@ const VendorProduct = ({ product, index, indexpage,allchecked }) => {
             <ItemInStockSC>In stock:1pcs.</ItemInStockSC>
             <ItemPriceSC>{product.price} $</ItemPriceSC>
 
-            <ToEditSC to="#">Редактировать</ToEditSC>
+            <ToEditSC to="#">Edit</ToEditSC>
 <div className="TheVeryDotsDiv" onClick={HandleSelectOpen}> ...
             <div className={active ? 'dots active' : 'dots'} >
              
@@ -62,11 +62,11 @@ const VendorProduct = ({ product, index, indexpage,allchecked }) => {
                 <div className="drop cut2" />
                 <div className="listdropdown">
                   <ul>
-                    <li>Удалить</li>
-                    <li>В черновики</li>
-                    <li>Скопировать</li>
+                    <li>Remove</li>
+                    <li>Drafts</li>
+                    <li>Copy</li>
                     <li>Посмотреть</li>
-                    <li className="hide">Редактировать</li>
+                    <li className="hide">Edit</li>
                   </ul>
                 </div>
               </div>

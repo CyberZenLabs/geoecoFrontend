@@ -123,11 +123,11 @@ const PaymentAndDelivery = ({ product }) => {
                   <DivContentRows2PageSC>
                     <H1ContentNameSC>
                       <CustomInputCheckBox />
-                      <MarginLeftSC /> Почта России
+                      <MarginLeftSC /> Russian Post 
                     </H1ContentNameSC>
                     <H1ContentNameSC>
                       <CustomInputCheckBox />
-                      <MarginLeftSC /> СДЭК
+                      <MarginLeftSC /> CDEK
                     </H1ContentNameSC>
                   </DivContentRows2PageSC>
                 </PaddingSC>
@@ -200,10 +200,10 @@ const PaymentAndDelivery = ({ product }) => {
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-              Оплата
+              Payment
             </H1PageOptionSC>
             <H1PageOptionSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
-              Доставка
+              Delivery
             </H1PageOptionSC>
             <H1PageOptionSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
               Финансы

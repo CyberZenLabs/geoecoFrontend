@@ -33,7 +33,7 @@ const PaymentDelivery = () => {
           <SettingsShopCatalog page={3} />
 
           <DivBoxCatalog>
-            <SpanTitleCatalog>Shipping and payment</SpanTitleCatalog>
+            <SpanTitleCatalog>Delivery and payment</SpanTitleCatalog>
 
             <DivBlocksContainer>
               <DivPaymentMethods>
@@ -52,11 +52,11 @@ const PaymentDelivery = () => {
                     <DivLeftBlock>
                       <PTextDotBlock>
                         <DivImgDotSC />
-                        Почта России
+                        Russian Post 
                       </PTextDotBlock>
                       <PTextDotBlock>
                         <DivImgDotSC />
-                        СДЭК
+                        CDEK
                       </PTextDotBlock>
                     </DivLeftBlock>
                     <DivRightBlock>

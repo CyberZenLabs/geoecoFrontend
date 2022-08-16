@@ -466,6 +466,7 @@ export const DivBoxTextNumberSC = styled.div`
 `;
 
 export const DivTextNumberSC = styled.div`
+//border:1px solid red;
   max-width: 140px;
   width: 100%;
   height: 24px;
@@ -473,7 +474,7 @@ export const DivTextNumberSC = styled.div`
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  text-align: center;
+  //text-align: center;
 
   color: #3d3d3d;
 `;

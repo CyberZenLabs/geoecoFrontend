@@ -27,13 +27,11 @@ max-width: 550px;
    display:grid;
 grid-template-columns:auto auto ;
 //border: 1px solid green;
-width: 100%;
 `;
 export const DivReturnExchange=styled.div`
 background: rgba(243, 243, 243, 0.5);
 border-radius: 20px;
 //border: 1px solid blue;
-width: 100%;
 
 `;
 export const H1TextTitle=styled.h1`
@@ -81,7 +79,8 @@ export const DivBoxCatalogShopSC = styled.div`
 margin-top:45px;
   display: grid;
   max-width: 1420px;
-  grid-template-columns: 1fr 1fr;
+  width:90vw;
+  grid-template-columns: 1fr 3fr;
   grid-column-gap: 20px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr ;

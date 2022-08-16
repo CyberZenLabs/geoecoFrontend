@@ -1257,3 +1257,67 @@ export const DivButtonBottomSaveSC = styled.div`
     max-width: 1010px;
   }
 `;
+//start
+export const DivMainBlockSC = styled.div`
+width: 100%;
+display: grid;
+margin-bottom:30px;
+`;
+
+export const DivBorderBlockSC = styled.div`
+margin-top:45px;
+padding: 0 20px;
+  display: grid;
+  justify-self: center;
+  max-width: 1420px;
+  width: 100%;
+  //border: 1px solid red;
+`;
+export const DivBannerShopContainerSC = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  //border: 2px solid grey;
+  height: 356px;
+  width: 100%;
+  margin: auto;
+  max-width: 1420px;
+  //margin-top: 50px;
+  background: #dbf0c2;
+  border-radius: 20px;
+  @media (max-width: 440px) {
+    height: 262px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: auto;
+  }
+`;
+export const DivGridCatalogShopSC = styled.div`
+//border: 1px solid red;
+margin-top:45px;
+  display: grid;
+  max-width: 1420px;
+  width:100%;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 20px;
+  @media (max-width: 768px) {
+    
+    grid-template-columns: 1fr;
+  
+      }
+`;
+
+export const DivPageContentSC = styled.div`
+  width: 100%;
+`;
+export const SpanTitlePageSC = styled.span`
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+line-height: 46px;
+color: #252525;
+
+  @media (max-width: 768px) {
+    display:none;
+  }
+`;

@@ -59,7 +59,7 @@ const Registration = (props) => {
             }
         } else {
             console.log('>>>>>>>>>', response.token);
-            showToast('success', 'Вы успешно зарегистрировались');
+            showToast('success', 'you have successfully signed up');
             setCookie('token', response.token);
             setOpen(true);
             navigate('/');

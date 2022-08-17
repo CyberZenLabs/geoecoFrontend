@@ -74,7 +74,7 @@ const SignIn = (props) => {
       }
     } else {
       console.log('>>>>>>>>>', response.token);
-      showToast('success', 'Вы успешно зашли');
+      showToast('success', 'You have successfully logged in');
       setCookie('token', response.token);
       console.log('LOGGED IN', loggedIn);
 

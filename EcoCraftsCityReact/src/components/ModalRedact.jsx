@@ -23,7 +23,7 @@ const ModalRedact = () => {
           <ButtonPrevModal onClick={() => setOpenRedact(false)}>
             <IoIosArrowBackSC />
           </ButtonPrevModal>
-          <StoreCreationTitleSC>Редактирование профиля</StoreCreationTitleSC>
+          <StoreCreationTitleSC>Edit profile</StoreCreationTitleSC>
           <DivBoxRowModalSC>
                 <EmailFieldSC 
                 placeholder="Name"/>
@@ -37,12 +37,12 @@ const ModalRedact = () => {
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>
                 <EmailFieldSC 
-                placeholder="Отчество"/>
+                placeholder="Middle name"/>
                
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>
                 <EmailFieldSC 
-                placeholder="Телефон"/>
+                placeholder="Phone"/>
                
               </DivBoxRowModalSC>
               <DivBoxRowModalSC>
@@ -53,7 +53,7 @@ const ModalRedact = () => {
          
           
               <DivBoxRowModalContSC>
-               <ButtonContinueModal>Изменить</ButtonContinueModal>
+               <ButtonContinueModal>Save</ButtonContinueModal>
              </DivBoxRowModalContSC>
           <CenterItemsSC>
           

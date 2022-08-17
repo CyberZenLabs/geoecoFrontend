@@ -19,7 +19,7 @@ const ShowItemCarouselPhoto = () => {
 
          </DivPhotoSC>
 
-          <TextDecriptionPhotoSC>Описание фото</TextDecriptionPhotoSC>
+          <TextDecriptionPhotoSC>Photo description</TextDecriptionPhotoSC>
 
         
       </DivPhotoShowWrapSC>

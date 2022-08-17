@@ -328,14 +328,14 @@ const AddNewProduct = () => {
             <DivNewProductWrapSC>
               <div>
                 <DivBoxTextNewProductSC>
-                  <DivTextNewProductSC>Новый товар</DivTextNewProductSC>
+                  <DivTextNewProductSC>New product</DivTextNewProductSC>
                 </DivBoxTextNewProductSC>
 
                 {/* <DivBoxColumnsRectangleSC> */}
                 <DivBoxBigGrayRectangleSC>
                   <DivBoxRowsNameProductSC>
                     <DivBoxTextNameProductSC>
-                      <DivTextNameProduct>Фото, рубрика, название товара</DivTextNameProduct>
+                      <DivTextNameProduct>Photo, category, product name</DivTextNameProduct>
                     </DivBoxTextNameProductSC>
 
                     <DivBoxColumnsFotosSC>
@@ -343,7 +343,7 @@ const AddNewProduct = () => {
                         <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                           <DivInnerPhotoInputSC>
                             <IconImgImgSC />
-                            <H1SC>Загрузить фото</H1SC>
+                            <H1SC>Upload photo</H1SC>
                           </DivInnerPhotoInputSC>
                         </ButtonImgSC>
                       </DivBoxFoto1SC>
@@ -371,28 +371,28 @@ const AddNewProduct = () => {
 
                     <DivBoxColumnAboutYourselfSC>
                       <DivBoxText>
-                        <DivTextSC>Видео</DivTextSC>
+                        <DivTextSC>Video</DivTextSC>
                       </DivBoxText>
                       <DivBoxInputAboutYourself>
                         <InputVideoSC
                           isTextArea={true}
                           type="text"
                           name="video"
-                          placeholder="Вставьте ссылку на YouTube или VK-видео"
+                          placeholder="Add a link to YouTube or VK-video"
                         />
                       </DivBoxInputAboutYourself>
                     </DivBoxColumnAboutYourselfSC>
 
                     <DivBoxColumnProductNameSC>
                       <DivBoxText1>
-                        <DivText1SC>Название товара</DivText1SC>
+                        <DivText1SC>Product name</DivText1SC>
                       </DivBoxText1>
                       <DivBoxInputProductName>
                         <InputProductName
                           name="productname"
                           isTextArea={true}
                           type="text"
-                          placeholder="Введите название товара"
+                          placeholder="Enter a product name"
                         />
                       </DivBoxInputProductName>
                     </DivBoxColumnProductNameSC>
@@ -404,20 +404,20 @@ const AddNewProduct = () => {
                   <DivImgGrayRectanglePriceSC>
                     <DivBoxRowsPriceSC>
                       <DivBoxTextPriceAndNumberSC>
-                        <DivTextPriceAndNumberSC>Цена и колличество</DivTextPriceAndNumberSC>
+                        <DivTextPriceAndNumberSC>Price and quantity</DivTextPriceAndNumberSC>
                       </DivBoxTextPriceAndNumberSC>
                       <DivBoxColumnsPriceSC>
                         <DivBoxTextPriceSC>
-                          <DivTextPriceSC>Цена</DivTextPriceSC>
+                          <DivTextPriceSC>Price</DivTextPriceSC>
                         </DivBoxTextPriceSC>
                         <DivBoxInputPrice>
                           <InputPrice type="number" min={0} name="price" />
                         </DivBoxInputPrice>
-                        <DivImgRubSC src={'/default-images/Rub.svg'}></DivImgRubSC>
+                        <DivImgRubSC>$</DivImgRubSC>
                       </DivBoxColumnsPriceSC>
                       <DivBoxColumnsNumberSC>
                         <DivBoxTextNumberSC>
-                          <DivTextNumberSC>Колличество</DivTextNumberSC>
+                          <DivTextNumberSC>Quantity</DivTextNumberSC>
                         </DivBoxTextNumberSC>
                         <DivBoxColumnButtonsPMSC>
                           <DivBoxButtonMinusSC>
@@ -431,12 +431,12 @@ const AddNewProduct = () => {
                       </DivBoxColumnsNumberSC>
                       <DivBoxColumnsDiscountSC>
                         <DivBoxTextDiscountSC>
-                          <DivTextDiscountSC>Скидка</DivTextDiscountSC>
+                          <DivTextDiscountSC>Discount</DivTextDiscountSC>
                         </DivBoxTextDiscountSC>
                         <DivBoxInputDiscount>
                           <InputDiscount type="number" min={0} name="discount" />
                         </DivBoxInputDiscount>
-                        <DivImgRub2SC src={'/default-images/Rub.svg'}></DivImgRub2SC>
+                        <DivImgRub2SC>$</DivImgRub2SC>
                       </DivBoxColumnsDiscountSC>
                     </DivBoxRowsPriceSC>
                   </DivImgGrayRectanglePriceSC>
@@ -446,21 +446,21 @@ const AddNewProduct = () => {
                     <DivBoxRowsDesctriptionSC>
                       <DivContainerDescriptionSC>
                         <DivBoxTextDescriptionSC>
-                          <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
+                          <DivTextDescriptionSC>Description</DivTextDescriptionSC>
                         </DivBoxTextDescriptionSC>
                         <DivBoxInputDescriptonSC>
                           <InputDescription
                             type="text"
                             name="description"
                             isTextArea={true}
-                            placeholder="Подробно опишите свой товар, укажите всё, что важно знать покупателю"
+                            placeholder="Describe your product in detail, specify everything that is important for the customer to know"
                           />
                         </DivBoxInputDescriptonSC>
                       </DivContainerDescriptionSC>
 
                       <DivContainerCharacteristicsSC>
                         <DivBoxTextCharacteristicsSC>
-                          <DivTextCharacteristicsSC>Характеристики</DivTextCharacteristicsSC>
+                          <DivTextCharacteristicsSC>Characteristics</DivTextCharacteristicsSC>
                         </DivBoxTextCharacteristicsSC>
                         <DivBoxInputCharacteristicsSC>
                           <InputCharacteristics type="text" name="charactiristics" isTextArea={true} />
@@ -469,12 +469,12 @@ const AddNewProduct = () => {
 
                       <DivContainerKeywordsSC>
                         <DivBoxTextKeywordsSC>
-                          <DivTextKeywordsSC>Ключевые слова</DivTextKeywordsSC>
+                          <DivTextKeywordsSC>Keywords</DivTextKeywordsSC>
                         </DivBoxTextKeywordsSC>
                         <DivBoxInputKeywordsSC>
                           <InputKeywords
                             type="text"
-                            placeholder="Укажите от 2 до 20 ключевых слов"
+                            placeholder="Specify from 2 to 20 keywords"
                             name="keywords"
                             isTextArea={true}
                           />
@@ -488,7 +488,7 @@ const AddNewProduct = () => {
                   <DivImgGrayRectangleDeliverySC>
                     <DivContainerDeliverySC>
                       <DivBoxTextDeliverySC>
-                        <DivTextDeliverySC>Настройка доставки</DivTextDeliverySC>
+                        <DivTextDeliverySC> Delivery settings</DivTextDeliverySC>
                       </DivBoxTextDeliverySC>
                       <DivBoxItemDeliverySC>
                         <DivItemDeliverySC>
@@ -497,7 +497,7 @@ const AddNewProduct = () => {
                               <DivImgDotSC></DivImgDotSC>
                             </DivBoxImgDotSC>
                             <DivBoxTextRussianPostSC>
-                              <DivTextRussianPostSC>Почта России</DivTextRussianPostSC>
+                              <DivTextRussianPostSC>Russian Post </DivTextRussianPostSC>
                             </DivBoxTextRussianPostSC>
                             <DivBoxTextFromThePriceSC>
                               <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
@@ -509,7 +509,7 @@ const AddNewProduct = () => {
                               <DivImgDot1SC></DivImgDot1SC>
                             </DivBoxImgDot1SC>
                             <DivBoxTextSDEKSC>
-                              <DivTextSDEKSC>СДЭК</DivTextSDEKSC>
+                              <DivTextSDEKSC>CDEK</DivTextSDEKSC>
                             </DivBoxTextSDEKSC>
                             <DivBoxTextFromThePrice1SC>
                               <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
@@ -523,18 +523,18 @@ const AddNewProduct = () => {
                 <DivBoxButtonsSC>
                   <DivButtonsSC>
                     <ButtonCustomWhiteSC width={'100%'} type="submit">
-                      В черновик
+                      To Drafts
                     </ButtonCustomWhiteSC>
 
                     <PlaceButtonSC to={'/store/:id'} width={'100%'} padding={'18px 32px'} type="submit">
-                      Разместить
+                      Post
                     </PlaceButtonSC>
                   </DivButtonsSC>
                 </DivBoxButtonsSC>
               </div>
               <DivBoxGrayRectangleRulesSC>
                 <DivBoxTextRulesSC>
-                  <DivTextRulesSC>Правила</DivTextRulesSC>
+                  <DivTextRulesSC>How to use</DivTextRulesSC>
                 </DivBoxTextRulesSC>
               </DivBoxGrayRectangleRulesSC>
             </DivNewProductWrapSC>

@@ -8,10 +8,15 @@ import { FaArrowLeft } from "react-icons/fa";
 
 import { BreadCrumbs } from '../../components/BreadCrumbs';
 
-import{
-  DivBoxNewProductsBigST
-  } from "../../styled-components-css/styles-seller-store-settings/styles.StoreNewProduct";
-  import { DivWrapLinkSC } from "../../styled-components-css/styles-seller-store-settings/styles.store";
+  import { 
+    DivMainBlockSC,
+     DivBorderBlockSC,
+     DivBannerShopContainerSC,
+     DivGridCatalogShopSC,
+     DivPageContentSC,
+     SpanTitlePageSC
+    
+    } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../../styled-components-css/styles.product-detail";
   import{
     ImgBannerShopSC,
@@ -26,7 +31,8 @@ import { DivBackBoxSC, DivHistorySC, NavLinkSC } from "../../styled-components-c
     DivNextPage,
     DivButtonNext,
     SpanTitleCatalogAdaptive,
-    WrapShopContainerSC
+    WrapShopContainerSC,
+    DivBoxNewProductsBigST
   } from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
 
   import ProductCard from "../../components/components-user-store-settings/ProductCardUser";
@@ -59,19 +65,19 @@ const StoreNoAuth = () =>{
   }, []);
 
   return (
-    <DivBoxNewProductsBigST>
+    <DivMainBlockSC>
       <BreadCrumbs />
 
-      <DivBoxContentSC>
-        <WrapShopContainerSC />
+      <DivBorderBlockSC>
+        <DivBannerShopContainerSC />
 
 
  
-        <DivBoxCatalogShopSC>
+        <DivGridCatalogShopSC>
           <SettingsShopCatalog page={1} />
 
-          <DivBoxCatalog>
-            <SpanTitleCatalog>Название магазина, что производят</SpanTitleCatalog>
+          <DivPageContentSC>
+            <SpanTitlePageSC>Store name, что производят</SpanTitlePageSC>
             <DivGridItems>
               {products.map((product) => {
                 return <ProductCard product={product} />;
@@ -97,10 +103,10 @@ const StoreNoAuth = () =>{
                 <DivButtonNext>Дальше</DivButtonNext>
               </DivNextGrid>
             </DivNextItems>
-          </DivBoxCatalog>
-        </DivBoxCatalogShopSC>
-      </DivBoxContentSC>
-    </DivBoxNewProductsBigST>
+          </DivPageContentSC>
+        </DivGridCatalogShopSC>
+      </DivBorderBlockSC>
+    </DivMainBlockSC>
   );
 };
 export default StoreNoAuth;

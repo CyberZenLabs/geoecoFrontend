@@ -111,7 +111,7 @@ const Modalstore = () => {
                         type="text"
                         name="city"
                         fullsize={false}
-                        placeholder={'Город'}
+                        placeholder={'City'}
                       />
                     </DivBoxRowModalSC>
                     <DivBoxRowModalSC>

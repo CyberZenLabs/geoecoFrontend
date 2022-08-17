@@ -3,8 +3,8 @@ import Select from 'react-select';
 
 const DropDownSelect = () => {
   const options = [
-    { value: 'Почта России', label: 'Почта России' },
-    { value: 'СДЭК', label: 'СДЭК' },
+    { value: 'Russian Post ', label: 'Russian Post ' },
+    { value: 'CDEK', label: 'CDEK' },
   ];
 
   const colorStyles = {

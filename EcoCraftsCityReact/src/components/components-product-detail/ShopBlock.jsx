@@ -28,7 +28,7 @@ const ShopBlock = (props) => {
                     primary>
 
                     <DivBoxButtonContentSC>
-                        <span>Написать</span>
+                        <span>Write</span>
                         <BsPencilSquare size={'20px'} />
                     </DivBoxButtonContentSC>
                 </ButtonCustomSC>

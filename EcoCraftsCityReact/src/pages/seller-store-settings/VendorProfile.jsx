@@ -246,20 +246,20 @@ const VendorProfile = () => {
                 <DivAddProductBox>
                     <DivInfoVendorBoxSC>
 
-                        <SpanTextTitleSC>Имя профиля  <DivButtonChangrInformSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformSC></SpanTextTitleSC>
+                        <SpanTextTitleSC>Profile name  <DivButtonChangrInformSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformSC></SpanTextTitleSC>
                         <OlifnoSC>
-                            <LiInfoSC>Адрес</LiInfoSC>
+                            <LiInfoSC>Address</LiInfoSC>
                             <LiInfoSC>Время существования магазина</LiInfoSC>
-                            <LiInfoSC>Магазин: е-mail</LiInfoSC>
-                            <LiInfoSC>Товары:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
-                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Изменить информацию</DivButtonChangrInformBottomSC>
+                            <LiInfoSC>Store: е-mail</LiInfoSC>
+                            <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+                            <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformBottomSC>
                         </OlifnoSC>
 
 
                     </DivInfoVendorBoxSC>
 
                     <DivInfoVendorBoxAdaptiveSC>
-                        <SpanTextTitleAdaptiveSC>Отзывы</SpanTextTitleAdaptiveSC>
+                        <SpanTextTitleAdaptiveSC>Reviews</SpanTextTitleAdaptiveSC>
 
 
                         <VenderCarouselReview>
@@ -368,46 +368,46 @@ const VendorProfile = () => {
                                 <DivItemsOptionsSC>
                                     <DivInnerContentSC>
                                         <DivTwoSidesSC>
-                                            <H1DefinSC>Баннер магазина</H1DefinSC>
+                                            <H1DefinSC>Store banner</H1DefinSC>
                                             <ButtonBannerSC
                                                 photoUrl={photoUrls.storeBannerUrl}
                                                 onClick={() => handleUploadFile('storeBannerRef')}
                                             >
                                                 <OverlayBannerImgSC>
-                                                    <OverlayBannerImageTextSC>Изменить фото</OverlayBannerImageTextSC>
+                                                    <OverlayBannerImageTextSC>Change photo</OverlayBannerImageTextSC>
                                                 </OverlayBannerImgSC>
 
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.bannerPhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonBannerSC>
                                         </DivTwoSidesSC>
                                         <DivTwoSidesSC>
-                                            <H1DefinSC>Фото</H1DefinSC>
+                                            <H1DefinSC>Photo</H1DefinSC>
 
                                             <ButtonImgSC photoUrl={photoUrls.storePhotoUrl} onClick={() => handleUploadFile('storePhotoRef')}>
                                                 <OverlayProfileImgSC>
-                                                    <OverlayProfileImageTextSC>Изменить фото</OverlayProfileImageTextSC>
+                                                    <OverlayProfileImageTextSC>Change photo</OverlayProfileImageTextSC>
                                                 </OverlayProfileImgSC>
                                                 {apiStoreData != null && apiStoreData.length != 0 && !apiStoreData.data.data.storePhoto ? (
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 ) : null}
                                             </ButtonImgSC>
                                         </DivTwoSidesSC>
                                         <DivTwoSidesSC>
-                                            <H1DefinSC>Имя / название</H1DefinSC>
+                                            <H1DefinSC>Name</H1DefinSC>
                                             <TextFieldStore label="123" type="text" name="storeName" />
                                         </DivTwoSidesSC>
                                         <DivTwoSidesSC>
-                                            <H1DefinSC>Место проживания</H1DefinSC>
-                                            <TextFieldStore label="123" type="text" name="storeLocation" />
-                                            {/* <NameNCityFieldSC label="email" type="email" placeholder="Красноярский край, Россия" /> */}
+                                            <H1DefinSC> Place of Residence</H1DefinSC>
+                                            <TextFieldStore label="123" type="text" name="storeLocation" placeholder="Krasnoyarsk region, Russia"/>
+                                            {/* <NameNCityFieldSC label="email" type="email" placeholder="Krasnoyarsk region, Russia" /> */}
                                         </DivTwoSidesSC>
                                     </DivInnerContentSC>
                                 </DivItemsOptionsSC>
@@ -416,7 +416,7 @@ const VendorProfile = () => {
                                     <DivBGImageSC>
                                         <DivBoxColumnAboutYourselfSC>
                                             <DivBoxText>
-                                                <DivTextSC>О себе</DivTextSC>
+                                                <DivTextSC>About me</DivTextSC>
                                             </DivBoxText>
                                             <DivBoxInputAboutYourself>
                                                 <TextFieldStore type="text" name="storeDescription" isTextArea={true} />
@@ -424,10 +424,10 @@ const VendorProfile = () => {
                                         </DivBoxColumnAboutYourselfSC>
                                         <DivBoxRowsAboutCreativity>
                                             <DivBoxText2>
-                                                <DivText2SC>О творчестве</DivText2SC>
+                                                <DivText2SC>About the work</DivText2SC>
                                             </DivBoxText2>
                                             <DivBoxText3>
-                                                <DivText3> Покажите вдохновляющие рабочие моменты, загрузите дипломы и сертификаты </DivText3>
+                                                <DivText3>Show inspiring work moments, upload diplomas and certificates</DivText3>
                                             </DivBoxText3>
                                         </DivBoxRowsAboutCreativity>
                                         <DivBoxColumnsFotosSC>
@@ -435,7 +435,7 @@ const VendorProfile = () => {
                                                 <ButtonImgSC onClick={() => handleUploadFile('storeGalleryRef')}>
                                                     <DivInnerPhotoInputSC>
                                                         <IconImgImgSC />
-                                                        <H1SC>Загрузить фото</H1SC>
+                                                        <H1SC>Upload photo</H1SC>
                                                     </DivInnerPhotoInputSC>
                                                 </ButtonImgSC>
                                             </DivBoxFoto1SC>
@@ -463,7 +463,7 @@ const VendorProfile = () => {
                                     </DivBGImageSC>
                                 </DivAboutYourselfSC>
                                 <DivButtonBottomSaveVendSC>
-                                    <SaveButtonPanelVendSC type="submit">Сохранить</SaveButtonPanelVendSC>
+                                    <SaveButtonPanelVendSC type="submit">Save</SaveButtonPanelVendSC>
                                 </DivButtonBottomSaveVendSC>
                             </Form>
                         )}

@@ -20,7 +20,7 @@ const BoxPrice = (props) => {
             <DivBoxPriceSC>
                 <DivContentPriceSC>
                     <div>
-                        <H5CustomSC>{price} &#8381;</H5CustomSC>
+                        <H5CustomSC>{price} $</H5CustomSC>
                     </div>
 
                     {/*<DivNumberTitlePrice>*/}
@@ -41,7 +41,7 @@ const BoxPrice = (props) => {
                     primary>
 
                     <DivBoxButtonContentSC>
-                        <span>Добавить в корзину</span>
+                        <span>Add to cart</span>
                         <BsFillCartPlusFill size={'20px'} />
                     </DivBoxButtonContentSC>
                 </ButtonCustomSC>
@@ -53,7 +53,7 @@ const BoxPrice = (props) => {
                     padding={'8px 32px'}
                 >
                     <DivBoxButtonContentSC>
-                        <span>Купить сейчас</span>
+                        <span>Buy now</span>
                         <BiRun size={'20px'} />
                     </DivBoxButtonContentSC>
                 </ButtonCustomSC>

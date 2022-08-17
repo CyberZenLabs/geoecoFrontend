@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import DivPhoto from '../img/MainPagePhotos.svg';
 import DivMasters from '../img/MainPagePeople.svg';
 import { Link } from 'react-router-dom';
-
+import CraftsMenBack from '../img/CraftsmenBack.png';
 
 export const DivMainPageWrapSC = styled.div`
   display: grid;
@@ -342,6 +342,7 @@ export const DivMastersBlockSC = styled.div`
   grid-template-rows: auto auto;
   gap: 5%;
   height: 780px;
+ 
   background: #fafafa;
   border-radius: 32px;
   /* width: 99vw; */

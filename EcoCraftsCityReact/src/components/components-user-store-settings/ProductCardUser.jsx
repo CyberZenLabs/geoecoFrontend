@@ -30,7 +30,7 @@ const ProductCard = ({ product, index }) => {
         <StarRating product={true} fixed={4} />
       
       <ProductCardStoreName>Мой Огород</ProductCardStoreName>
-      <ProductCardButton to={`/product/${index}`}>Подробнее</ProductCardButton>
+      <ProductCardButton to={`/product/${index}`}>More</ProductCardButton>
     </ProductCardContainer>
   );
 };

@@ -1,12 +1,7 @@
-
-import React, { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import FinanceTable from "../../components/FinanceTable";
-import {
-  DivBackBoxSC,
-  DivHistorySC,
-  NavLinkSC,
-} from "../../styled-components-css/styles.product-detail";
+import React, { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import FinanceTable from '../../components/FinanceTable';
+import { DivBackBoxSC, DivHistorySC, NavLinkSC } from '../../styled-components-css/styles.product-detail';
 
 import { BreadCrumbs } from '../../components/BreadCrumbs';
 
@@ -123,11 +118,11 @@ const PaymentAndDelivery = ({ product }) => {
                   <DivContentRows2PageSC>
                     <H1ContentNameSC>
                       <CustomInputCheckBox />
-                      <MarginLeftSC /> Почта России
+                      <MarginLeftSC /> Russian Post 
                     </H1ContentNameSC>
                     <H1ContentNameSC>
                       <CustomInputCheckBox />
-                      <MarginLeftSC /> СДЭК
+                      <MarginLeftSC /> CDEK
                     </H1ContentNameSC>
                   </DivContentRows2PageSC>
                 </PaddingSC>
@@ -196,17 +191,17 @@ const PaymentAndDelivery = ({ product }) => {
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
-            <H1BoldTextSC>Редактирование оплаты и доставки</H1BoldTextSC>
+            <H1BoldTextSC>Edit payment and delivery</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-              Оплата
+              Payment
             </H1PageOptionSC>
             <H1PageOptionSC isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
-              Доставка
+              Delivery
             </H1PageOptionSC>
             <H1PageOptionSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
-              Финансы
+            Finances
             </H1PageOptionSC>
           </DivPagesSC>
           {listContent[indexSelectedButton].blocks}

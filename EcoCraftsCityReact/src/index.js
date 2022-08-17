@@ -31,7 +31,7 @@ import AddNewProduct from './pages/AddNewProduct';
 import ModalSendEmail from './components/ModalSendEmail';
 import PurchasesActive from './pages/seller-store-settings/PurchasesActive';
 import Sales from './pages/seller-store-settings/Sales';
-import PaymentDelivery from './pages/PaymentDelivery';
+import PaymentDelivery from './pages/user-store-settings/PaymentDelivery';
 
 //components
 // import AdminForm from "./pages/AdminForm";

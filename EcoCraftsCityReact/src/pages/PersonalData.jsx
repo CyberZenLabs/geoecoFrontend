@@ -49,7 +49,7 @@ const PersonalData = () => {
   return (
     <DivBoxPersonalDataSC>
       <DivPersonalDataSC>
-        <SpanPersonalDataSC>Личные данные</SpanPersonalDataSC>
+        <SpanPersonalDataSC>Personal details</SpanPersonalDataSC>
         <DivBoxBlockSC>
           <DivBoxContentSC>
             <DivEllipseSC />
@@ -58,12 +58,12 @@ const PersonalData = () => {
               <li>
                 <SpanInitialsSC>
                 {user.firstName}
-                  Фамилия Имя Отчество
+                Full Name
                   <img src="/default-images/pencil.svg" className="image_plus" to="#" onClick={openCarts} />{' '}
                 </SpanInitialsSC>
               </li>
               <li>
-                <SpanConfirmAccountSC>Подтвердить аккаунт</SpanConfirmAccountSC>
+                <SpanConfirmAccountSC>Verify account</SpanConfirmAccountSC>
               </li>
             </ul>
           </DivBoxContentSC>
@@ -81,7 +81,7 @@ const PersonalData = () => {
 
             <ul>
               <li>
-                <SpanTitleDataSC>Телефон</SpanTitleDataSC>
+                <SpanTitleDataSC>Phone</SpanTitleDataSC>
               </li>
               <li>
                 <SpanTitleDataSC>
@@ -98,7 +98,7 @@ const PersonalData = () => {
             <img src="/default-images/card.svg" className="image_cadr" />
 
             <SpanConfirmAccountSC>
-              <SpanTextAddCardLittleSC>Добавить новую карту</SpanTextAddCardLittleSC>
+              <SpanTextAddCardLittleSC>Add a new card</SpanTextAddCardLittleSC>
             </SpanConfirmAccountSC>
           </ButtonAddCardSClitl>
           <ButtonAddCardSC to="/map-binding">
@@ -106,7 +106,7 @@ const PersonalData = () => {
               <img src="/default-images/plus.svg" className="image_plus" />
             </DivAddEllipseSC>
             <SpanConfirmAccountSC>
-              <SpanTextAddCardSC>Добавить карту</SpanTextAddCardSC>
+              <SpanTextAddCardSC>Add a card</SpanTextAddCardSC>
             </SpanConfirmAccountSC>
           </ButtonAddCardSC>
         </DivBoxBlockSC>

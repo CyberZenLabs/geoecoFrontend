@@ -35,7 +35,7 @@ const VendorNavMenu = ({ page }) => {
         <DivStoreInfoImageSC src={'/default-images/plant.jpg'}></DivStoreInfoImageSC>
         <DivStoreInfoDataSC>
           <StoreInfoHeaderSC>{store.storeName}</StoreInfoHeaderSC>
-          <StoreInfoSubHeaderSC>Город</StoreInfoSubHeaderSC>
+          <StoreInfoSubHeaderSC>City</StoreInfoSubHeaderSC>
         </DivStoreInfoDataSC>
       </DivStoreInfoSC>
       <DivStoreOptionsSC>
@@ -44,31 +44,31 @@ const VendorNavMenu = ({ page }) => {
         </DivStoreOptionsLinkSC>
         <br />
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 1} to="/sellersettings">
-          Настройки
+          Settings
         </DivStoreOptionsLinkSC>
         <br />
         <HrLinkSC />
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 2} to="/store/1">
-          Магазин 50
+          Store 50
         </DivStoreOptionsLinkSC>
         <br />
         <DivStoreOptionsLinkSC to="/PaymentAndDelivery" isActive={indexSelectedButton === 3}>
-          Оплата и доставка
+          Delivery and payment
         </DivStoreOptionsLinkSC>
         <br />
         <HrLinkSC />
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 4} to="/purchasesactive">
-          Покупки
+          Purchases
         </DivStoreOptionsLinkSC>
         <br />
         <DivStoreOptionsLinkSC isActive={indexSelectedButton === 5} to="/sales">
-          Продажи
+          Sales
         </DivStoreOptionsLinkSC>
         <br />
         <DivStarsPanelSC>
           {/* <DivStoreOptionsLeftPanelSC>
             <DivStoreOptionsLinkSC to="#" isActive={indexSelectedButton === 6}>
-              Отзывы 30
+              Reviews 30
             </DivStoreOptionsLinkSC>
             <br />
           </DivStoreOptionsLeftPanelSC>

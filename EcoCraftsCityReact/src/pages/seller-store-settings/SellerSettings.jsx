@@ -64,12 +64,12 @@ const SellerSettings = ({ product }) => {
         <>
           <DivMainInfoSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Телефон, email и пароль</H1ContentInfoSC>
-              <ButtonContentEditSC onClick={onClickTab(1)}>Изменить</ButtonContentEditSC>
+              <H1ContentInfoSC>Phone, email and password</H1ContentInfoSC>
+              <ButtonContentEditSC onClick={onClickTab(1)}>Edit</ButtonContentEditSC>
             </DivContentInfoButtonSC>
             <DivContent1PageSC>
               <DivContentRowsSC>
-                <H1ContentNameSC>Телефон</H1ContentNameSC>
+                <H1ContentNameSC>Phone</H1ContentNameSC>
                 <H1ContentNameSC>Password</H1ContentNameSC>
                 <H1ContentNameSC>Email</H1ContentNameSC>
               </DivContentRowsSC>
@@ -82,12 +82,12 @@ const SellerSettings = ({ product }) => {
           </DivMainInfoSC>
 
           <DivMainInfoAdressSC>
-            <H1ContentInfoSC>Адрес</H1ContentInfoSC>
+            <H1ContentInfoSC>Address</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
-                <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
+                <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
               <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
@@ -104,14 +104,14 @@ const SellerSettings = ({ product }) => {
         <>
           <DivMainInfo2PageSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Телефон, email и пароль</H1ContentInfoSC>
+              <H1ContentInfoSC>Phone, email and password</H1ContentInfoSC>
             </DivContentInfoButtonSC>
             <DivContentSC>
               <DivContentDivisionSC>
                 <DivContentRows3PageSC>
-                  <H1ContentNameSC>Телефон</H1ContentNameSC>
-                  <H1ContentNameSC>Новый телефон</H1ContentNameSC>
-                  <H1ContentNameSC>Текущий пароль</H1ContentNameSC>
+                  <H1ContentNameSC>Phone</H1ContentNameSC>
+                  <H1ContentNameSC>New phone number</H1ContentNameSC>
+                  <H1ContentNameSC>Password</H1ContentNameSC>
                 </DivContentRows3PageSC>
                 <DivContentRows2PageSC>
                   <H1ContentDefinSC>+70000000000</H1ContentDefinSC>
@@ -121,7 +121,7 @@ const SellerSettings = ({ product }) => {
                   <H1ContentDefinSC>
                     <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
                 </DivContentRows2PageSC>{' '}
               </DivContentDivisionSC>
 
@@ -129,13 +129,13 @@ const SellerSettings = ({ product }) => {
                 <DivContentRows2Page4SC>
                   <H1ContentNameSC>Password</H1ContentNameSC>
                   <H1ContentNameEmailSC>Email</H1ContentNameEmailSC>
-                  <H1ContentNameSC>Новый email </H1ContentNameSC>
+                  <H1ContentNameSC>New email </H1ContentNameSC>
                   <H1ContentNameSC>Password</H1ContentNameSC>
                 </DivContentRows2Page4SC>
                 <DivContentRows2Page2SC>
                   <DivContentInfoButtonSC>
                     <H1ContentDefinSC>*********</H1ContentDefinSC>
-                    <ButtonContentEditSC onClick={openPass}>Изменить</ButtonContentEditSC>
+                    <ButtonContentEditSC onClick={openPass}>Edit</ButtonContentEditSC>
                   </DivContentInfoButtonSC>
                   <H1ContentDefinEmailSC>lisaraklova@gmail.com</H1ContentDefinEmailSC>
                   <H1ContentDefinSC>
@@ -144,19 +144,19 @@ const SellerSettings = ({ product }) => {
                   <H1ContentDefinSC>
                     <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
                   </H1ContentDefinSC>
-                  <ButtonSave onClick={onClickTab(0)}>Сохранить</ButtonSave>
+                  <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
                 </DivContentRows2Page2SC>{' '}
               </DivContentDivisionSC>
             </DivContentSC>
           </DivMainInfo2PageSC>
 
           <DivMainInfoAdressSC>
-            <H1ContentInfoSC>Адрес</H1ContentInfoSC>
+            <H1ContentInfoSC>Address</H1ContentInfoSC>
             <DivContent2SC>
               <DivFirstColumnSC>
-                <H1ContentNameSC>Текущий адрес</H1ContentNameSC>
+                <H1ContentNameSC>Current address</H1ContentNameSC>
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
-                <ButtonContentEditSC onClick={openMail}>Изменить</ButtonContentEditSC>
+                <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
               <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
               <H1ContentNameSC>
@@ -182,14 +182,14 @@ const SellerSettings = ({ product }) => {
         </DivStoreLeftPanelSC>
         <DivStoreRightPanelSC>
           <DivStoreInfoStuffSC>
-            <H1BoldTextSC>Настройки</H1BoldTextSC>
+            <H1BoldTextSC>Settings</H1BoldTextSC>
           </DivStoreInfoStuffSC>
           <DivPagesSC>
             <H1PageOptionSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-              Основные
+              General
             </H1PageOptionSC>
             <H1PageOptionHidesSC isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
-              Оповещения
+              Notifications
             </H1PageOptionHidesSC>
           </DivPagesSC>
           {listContent[indexSelectedButton].blocks}

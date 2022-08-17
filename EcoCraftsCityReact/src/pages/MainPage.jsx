@@ -41,8 +41,8 @@ import Insta from '../img/InstaIcon.svg';
 import Face from '../img/TwitIcon.svg';
 import AboutUs from './AboutUs';
 import PlayButtonMainPage from '../img/PlayButton.svg';
-import BackVideo from '../video/GeoEco.mp4';
-import PosterVideo from '../video/poster.jpg';
+import BackVideo from '../video/geoeco-video.mp4';
+import PosterVideo from '../video/poster-video.jpg';
 
 const MainPage = () => {
   return (

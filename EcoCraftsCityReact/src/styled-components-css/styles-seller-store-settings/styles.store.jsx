@@ -12,9 +12,6 @@ export const DivWrapLinkSC = styled.div`
   ${({ margin }) => (margin ? `  margin-bottom: 50px;` : null)};
   width: 90vw;
   min-width: 360px;
-  @media (max-width: 990px) {
-    display: none;
-  }
 `;
 export const DivStoreWrapSC = styled.div`
   display: grid;
@@ -98,7 +95,7 @@ export const StoreInfoHeaderSC = styled.h3`
   color: #000000;
 `;
 export const DivStoreOptionsSC = styled.div`
-  height: 249px;
+  height: 219px;
   background: rgba(243, 243, 243, 0.5);
   border-radius: 20px;
   // border: 2px solid yellow;
@@ -149,17 +146,17 @@ export const HrLineSC = styled.hr`
 export const DivStoreInfoStuffSC = styled.div`
   //border: 2px solid blue;
   display: grid;
-  grid-template-columns: 160px auto auto auto;
+  grid-template-columns: max-content auto auto auto;
   width: auto;
   /* grid-gap: 1vw; */
   max-width: 1010px;
   padding-bottom: 10px;
   @media (max-width: 1470px) {
-    grid-template-columns: 150px 130px auto;
+    grid-template-columns: max-content max-content auto;
     padding-bottom: 0px;
   }
   @media (max-width: 990px) {
-    grid-template-columns: 150px 20px auto;
+    grid-template-columns: max-content 20px auto;
   }
 `;
 export const DivStoreInfoStuffButtonSC = styled.div`
@@ -177,22 +174,11 @@ export const H1BoldTextSC = styled.h1`
   font-weight: 700;
   line-height: 37px;
   color: #252525;
+width: fit-content;
   // border: 2px solid green;
   padding-top: 12px;
   @media (max-width: 1050px) {
     font-size: 24px;
-  }
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media (max-width: 480px) {
-    font-size: 20px;
-  }
-  @media (max-width: 400px) {
-    font-size: 18px;
   }
 `;
 export const StoreItemsNumSC = styled.h1`
@@ -205,7 +191,7 @@ export const StoreItemsNumSC = styled.h1`
   //border: 2px solid gold;
   padding-top: 28px;
   justify-self: start;
-  margin-left: 5px;
+  margin-left: 10px;
   @media (max-width: 990px) {
     display: none;
   }
@@ -358,7 +344,7 @@ export const DivItemsOptionsSC = styled.div`
 export const DivOptionsPanelSC = styled.div`
   display: grid;
   // gap: 1vw;
-  grid-template-columns: 175px 205px auto;
+  grid-template-columns: 195px 205px auto;
 
   //border: 2px solid red;
   height: 100px;
@@ -1115,11 +1101,7 @@ export const IoMarginCS = styled.div`
 `;
 
 export const FaMarginCS = styled.div`
-  margin-top: -5px;
-  @media (max-width: 1470px) {
-    padding-top: 4px;
-  }
-  //border: 2px solid green;
+
 `;
 export const UlDropdown1CS = styled.ul`
   //border: 2px solid black;
@@ -1273,7 +1255,7 @@ export const UilSearchSC2 = styled(UilSearch)`
 `;
 export const UilSearchHeadSC = styled(UilSearch)`
   /* user-select: none; */
-
+margin-left: 5px;
   margin-top: 22px;
   @media (min-width: 991px) {
     display: none;

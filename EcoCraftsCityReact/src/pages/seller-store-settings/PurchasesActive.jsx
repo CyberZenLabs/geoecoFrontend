@@ -68,11 +68,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>В процессе</DivTextInProgress1SC>
+                <DivTextInProgress1SC>In process</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -88,11 +88,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>В процессе</DivTextInProgress1SC>
+                <DivTextInProgress1SC>In process</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -113,13 +113,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>В процессе</DivTextInProgressSC>
+                  <DivTextInProgressSC>In process</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -138,13 +138,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>В процессе</DivTextInProgressSC>
+                  <DivTextInProgressSC>In process</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -167,11 +167,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>Завершена</DivTextInProgress1SC>
+                <DivTextInProgress1SC>Completed</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -187,11 +187,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>Завершена</DivTextInProgress1SC>
+                <DivTextInProgress1SC>Completed</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -212,13 +212,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>Завершена</DivTextInProgressSC>
+                  <DivTextInProgressSC>Completed</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -237,13 +237,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>Завершена</DivTextInProgressSC>
+                  <DivTextInProgressSC>Completed</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -266,11 +266,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>Отклонена</DivTextInProgress1SC>
+                <DivTextInProgress1SC>Rejected</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -286,11 +286,11 @@ const PurchasesActive = () => {
               <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
-                <DivIconValute1SC>₽</DivIconValute1SC>
+                <DivIconValute1SC>$</DivIconValute1SC>
               </DivBoxColumnMoney1SC>
               <DivTextColumnsInProgress1SC>
                 <DivGreenDot1SC></DivGreenDot1SC>
-                <DivTextInProgress1SC>Отклонена</DivTextInProgress1SC>
+                <DivTextInProgress1SC>Rejected</DivTextInProgress1SC>
               </DivTextColumnsInProgress1SC>
             </DivContainerRowsPurchaseSC>
           </DivBoxItemProduct2SC>
@@ -311,13 +311,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>Отклонена</DivTextInProgressSC>
+                  <DivTextInProgressSC>Rejected</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -336,13 +336,13 @@ const PurchasesActive = () => {
                 <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
-                  <DivTextInProgressSC>Отклонена</DivTextInProgressSC>
+                  <DivTextInProgressSC>Rejected</DivTextInProgressSC>
                 </DivTextColumnsInProgressSC>
               </DivBoxRowsPurchaseAndCompositionSC>
               <DivContainerMoneySC>
                 <DivBoxColumnMoneySC>
                   <DivMoneySC>5000</DivMoneySC>
-                  <DivIconValuteSC>₽</DivIconValuteSC>
+                  <DivIconValuteSC>$</DivIconValuteSC>
                 </DivBoxColumnMoneySC>
               </DivContainerMoneySC>
             </DivBoxColumnsProductSC>
@@ -365,27 +365,27 @@ const PurchasesActive = () => {
           </DivBoxLeftPurchasesSC>
           <DivBoxRightPurchasesSC>
             <DivBoxTextPurchsesSC>
-              <H1PurchasesTextSC>Мои покупки</H1PurchasesTextSC>
+              <H1PurchasesTextSC>My purchases</H1PurchasesTextSC>
             </DivBoxTextPurchsesSC>
             <DivBGRecSmallSC>
               <DivOptionsPanelPurchasesSC>
                 <TextActiveSC isActive={indexSelectedButton === 0} onClick={onClickTab(0)}>
-                  Активные
+                  Active
                 </TextActiveSC>
                 <TextEnd isActive={indexSelectedButton === 1} onClick={onClickTab(1)}>
-                  Завершенные
+                  Completed
                 </TextEnd>
                 <TextEnd1 isActive={indexSelectedButton === 2} onClick={onClickTab(2)}>
-                  Отклоненные
+                  Rejected
                 </TextEnd1>
               </DivOptionsPanelPurchasesSC>
             </DivBGRecSmallSC>
             <DivBGRecBigSC>
               <DivBoxRowsPurchasesSC>
                 <DivBoxItemParamsSC>
-                  <DivTextSillerSC>Продавец</DivTextSillerSC>
-                  <DivTextDescriptionSC>Описание</DivTextDescriptionSC>
-                  <DivTextCostSC>Стоимость</DivTextCostSC>
+                  <DivTextSillerSC>Vendor</DivTextSillerSC>
+                  <DivTextDescriptionSC>Description</DivTextDescriptionSC>
+                  <DivTextCostSC>Price</DivTextCostSC>
                 </DivBoxItemParamsSC>
                 {listContent[indexSelectedButton].item}
               </DivBoxRowsPurchasesSC>

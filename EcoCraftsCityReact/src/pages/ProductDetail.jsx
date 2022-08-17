@@ -99,11 +99,11 @@ const ProductDetail = () => {
 
                     <DivDescStatsContainerSC>
                         <DivDescBlockSC>
-                            <h2>Описание</h2>
+                            <h2>Description</h2>
                             <p>{productItem.summary}</p>
                         </DivDescBlockSC>
                         <DivDescBlockSC>
-                            <h2>Характеристики</h2>
+                            <h2>Characteristics</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis
                                 in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean
                                 dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus
@@ -134,7 +134,7 @@ const ProductDetail = () => {
                     <DivProductDiscSC>
 
                         <DivProductDiscTitleSC>
-                            <SpanQuestionSC>Отзывы и вопросы</SpanQuestionSC>
+                            <SpanQuestionSC>Feedback and questions</SpanQuestionSC>
                         </DivProductDiscTitleSC>
                         <DivProductReviewsSC>
                             <DivProductRatingSC>
@@ -155,7 +155,7 @@ const ProductDetail = () => {
 
                             <DivButtonBoxSC>
                                 <ButtonCustomSC width={'338px'} padding={'8px 32px'} primary>
-                                    Написать отзыв
+                                    Write a Review
                                 </ButtonCustomSC>
                             </DivButtonBoxSC>
                         </DivProductReviewsSC>

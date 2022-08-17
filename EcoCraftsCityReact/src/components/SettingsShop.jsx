@@ -21,11 +21,11 @@ import{
 <DivBorderBox>
 <DivInfoStoreST>
 <DivLogoST>
-<SpanLogoText>Логотип Магазина</SpanLogoText>
+<SpanLogoText>Store logo</SpanLogoText>
 </DivLogoST>
 <DivInfoST>
-<SpanTextTitleShopSC>Название магазина и о чем он</SpanTextTitleShopSC>
-<MarginST>Где находится</MarginST>
+<SpanTextTitleShopSC>Store name and description</SpanTextTitleShopSC>
+<MarginST>Store location</MarginST>
 </DivInfoST>
 
 </DivInfoStoreST>
@@ -34,28 +34,28 @@ import{
 Profile
 </DivStoreSetingST>
 <DivStoreSetingST>
-Настойки
+Settings
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>
 <TextBold>
-Магазин 50  
+Store 50  
 </TextBold>
 
 </DivStoreSetingST>
 <DivStoreSetingST>
-Оплата и доставка
+Delivery and payment
 </DivStoreSetingST>
 <hr class="razdel" />
 <DivStoreSetingST>
-Покупки
+Purchases
 </DivStoreSetingST>
 <DivStoreSetingST>
-Продажи
+Sales
 </DivStoreSetingST>
 <DivStoreSetingST>
 
-Отзывы 30  <img src="/default-images/raiting.svg"  />
+Reviews 30  <img src="/default-images/raiting.svg"  />
 
 
 </DivStoreSetingST>

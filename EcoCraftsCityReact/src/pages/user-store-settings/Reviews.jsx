@@ -4,6 +4,14 @@ import { FaArrowLeft } from "react-icons/fa";
 import StarRating from "../../components/StarRating";
 import SettingsShopCatalog from "../../components/components-user-store-settings/SettingsShopCatalog";
 
+
+import { 
+  DivMainBlockSC,
+   DivBorderBlockSC,
+   DivBannerShopContainerSC,
+   DivGridCatalogShopSC
+  
+  } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 import {
   ButtonDropDownSC,
   ButtonPageBoxSC,
@@ -29,9 +37,24 @@ import {
   ReviewBoxNameSC,
   ReviewContainerSC,
   TitleShopInfoSC,
-  WrapShopContainerSC,
 } from "../../styled-components-css/styles-user-store-settings/styles.reviews";
 import axios from "axios";
+import{
+  ImgBannerShopSC,
+  DivBoxContentSC,
+  DivBoxCatalogShopSC,
+  DivBoxCatalog,
+  SpanTitleCatalog,
+  DivGridItems,
+  DivNextItems,
+  DivNextGrid,
+  DivCountPage,
+  DivNextPage,
+  DivButtonNext,
+  SpanTitleCatalogAdaptive,
+  WrapShopContainerSC,
+  DivBoxNewProductsBigST
+} from "../../styled-components-css/styles-user-store-settings/styles.StoreNoAuth";
 
 import { DivWrapLinkSC } from "../../styled-components-css/styles-user-store-settings/styles.store-user";
 
@@ -67,20 +90,24 @@ const Reviews = ({ shop, index }) => {
 
   return (
     <>
-      <ReviewContainerSC>
+      <DivMainBlockSC>
+        
+
+
       <BreadCrumbs/>
+        <DivBorderBlockSC>
+        <DivBannerShopContainerSC/>
+        <DivGridCatalogShopSC>
 
-
-        <WrapShopContainerSC></WrapShopContainerSC>
-        <DivRowContentSC>
         <SettingsShopCatalog page={2}/>
 
+        
           <DivModesBoxSC>
             <DivModeSC>Рубрики</DivModeSC>
-            <DivModeSC>Фильтры</DivModeSC>
+            <DivModeSC>Filters</DivModeSC>
           </DivModesBoxSC>
           <DivTextButtonBoxSC>
-            <ReviewBoxNameSC>Отзывы</ReviewBoxNameSC>
+            <ReviewBoxNameSC>Reviews</ReviewBoxNameSC>
             <DivButtonBoxSC>
               {/* <ButtonReviewPageSC to='/reviews'>О магазине</ButtonReviewPageSC>
               <ButtonReviewPageSC to='/reviews'>О товарах</ButtonReviewPageSC> */}
@@ -112,8 +139,9 @@ const Reviews = ({ shop, index }) => {
               <ButtonPageBoxSC>Дальше</ButtonPageBoxSC>
             </DivPagenationBoxSC>
           </DivCardReviewsBoxSC>
-        </DivRowContentSC>
-      </ReviewContainerSC>
+        </DivGridCatalogShopSC>
+        </DivBorderBlockSC>
+      </DivMainBlockSC>
     </>
   );
 };

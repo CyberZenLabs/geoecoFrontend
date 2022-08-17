@@ -71,7 +71,7 @@ const Cart = () => {
     <>
       <DivCartWrapSC>
         <DivTitleBoxSC padding={true}>
-          <H2TitleProductList>Корзина</H2TitleProductList>
+          <H2TitleProductList>Cart</H2TitleProductList>
         </DivTitleBoxSC>
         <DivCartBoxSC>
           <BoxProductList onClickAll={onClickAll} arrayProd={arrayProd} widthWindow={widthWindow}></BoxProductList>

@@ -4,7 +4,7 @@ import "../page-css/404.css";
 const Page_404 = () => {
   return (
     <>
-      <h1 class="notfoundh1">Страница не найдена!</h1>
+      <h1 class="notfoundh1">Page not found!</h1>
       <a
         target="_blank"
         href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi2gZf267v4AhXnwzgGHSgnBYQQFnoECBgQAQ&url=https%3A%2F%2Fwww.enationalelectronics.com%2F&usg=AOvVaw0CoGpfiGKRton9yE4Q8_Hv"

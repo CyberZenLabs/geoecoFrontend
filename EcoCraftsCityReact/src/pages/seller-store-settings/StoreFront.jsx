@@ -72,14 +72,14 @@ const StoreFront = ({ product }) => {
   }, []);
 
   const [active2, setActive2] = useState(false);
-   const HandleSelectOpen2 = () => {
+  const HandleSelectOpen2 = () => {
     setActive2(!active2);
   };
   const [all, setAll] = useState(false);
   const ChooseAll = () => {
     setAll(!all);
   };
- 
+
   const listContent = [
     {
       options: (
@@ -130,9 +130,7 @@ const StoreFront = ({ product }) => {
             </BottomPanelChoiceSC>
 
             <BottomPanelTextSC to="#">
-              <FaMarginCS>
-               $
-              </FaMarginCS>
+              <FaMarginCS>$</FaMarginCS>
               Change the price
             </BottomPanelTextSC>
 

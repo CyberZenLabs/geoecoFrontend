@@ -29,52 +29,47 @@ export const LinkSC = styled(Link)`
 export const DivBoxTextSC = styled.div`
   margin-top: 25px;
   display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 export const SelectInputSC = styled.select`
-box-sizing: border-box;
-height:50px;
-/* Auto layout */
-display: flex;   
+  box-sizing: border-box;
+  height: 50px;
+  /* Auto layout */
+  display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 320px;
-flex-direction: row;
-align-items: center;
-justify-self: center;
-padding-left: 18px ;
-gap: 294px;
-position: absolute;
-/* Акцент 70% */
-border: 3px solid rgba(133, 203, 51, 0.7);
-border-radius: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  padding-left: 18px;
+  gap: 294px;
+  position: absolute;
+  /* Акцент 70% */
+  border: 3px solid rgba(133, 203, 51, 0.7);
+  border-radius: 20px;
 
-::placeholder{
+  ::placeholder {
     font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
-color: rgba(37, 37, 37, 0.7);
-}
-:hover{
-    border: 3px solid  #76b42e;
-}
-@media (max-width:1000px) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: rgba(37, 37, 37, 0.7);
+  }
+  :hover {
+    border: 3px solid #76b42e;
+  }
+  @media (max-width: 1000px) {
     width: 90%;
-}
-
+  }
 `;
 export const OptionInputSC = styled.option`
-
-border: 3px solid rgba(133, 203, 51, 0.7);
-border-radius: 20px;
-
-
-
+  border: 3px solid rgba(133, 203, 51, 0.7);
+  border-radius: 20px;
 `;
 
 export const DivTextBoxSC = styled.div`
@@ -93,20 +88,20 @@ export const SpanQuSC = styled.span`
   line-height: 20px;
 `;
 export const DivTextEmailSC = styled.div`
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-text-align: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
 `;
 
 export const DivWrapModal = styled.div`
   display: grid;
   min-width: 360px;
   min-height: 600px;
-  ${(p) => p.isCropModal ? 'width: 1322px;' : 'width: 750px;'}
-  ${(p) => p.isCropModal ? 'height: 750px;' : null}
+  ${(p) => (p.isCropModal ? 'width: 1322px;' : 'width: 750px;')}
+  ${(p) => (p.isCropModal ? 'height: 750px;' : null)}
   background: #ffffff;
   border-radius: 30px;
   z-index: 1000;
@@ -226,38 +221,38 @@ export const ButtonContinueModal = styled.button`
   }
 `;
 export const PasswordFieldSC = styled.input`
-box-sizing: border-box;
-height:50px;
-/* Auto layout */
-display: flex;   
+  box-sizing: border-box;
+  height: 50px;
+  /* Auto layout */
+  display: flex;
   width: 500px;
   max-width: 500px;
   min-width: 320px;
-flex-direction: row;
-align-items: center;
-justify-self: center;
-padding: 18px 0px 18px 18px;
-gap: 294px;
-position: absolute;
-/* Акцент 70% */
-border: 3px solid rgba(133, 203, 51, 0.7);
-border-radius: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  padding: 18px 0px 18px 18px;
+  gap: 294px;
+  position: absolute;
+  /* Акцент 70% */
+  border: 3px solid rgba(133, 203, 51, 0.7);
+  border-radius: 20px;
 
-::placeholder{
+  ::placeholder {
     font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
-color: rgba(37, 37, 37, 0.7);
-}
-:hover{
-    border: 3px solid  #76b42e;
-}
-@media (max-width:1000px) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: rgba(37, 37, 37, 0.7);
+  }
+  :hover {
+    border: 3px solid #76b42e;
+  }
+  @media (max-width: 1000px) {
     width: 90%;
-}
+  }
 `;
 export const EmailFieldSC = styled.input`
   box-sizing: border-box;

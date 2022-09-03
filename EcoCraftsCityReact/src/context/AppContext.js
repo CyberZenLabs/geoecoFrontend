@@ -35,17 +35,17 @@ export function AppProvider({ children }) {
         modalData,
         setModalData,
         openRedact,
-         setOpenRedact,
-         openEmail,
-         setOpenEmail,
-         Starttimer,
-         setstarttimer,
-         openModal,
-         setOpenModal,
-         disable,
-         setDisable,
-          productList,
-          setProductsLIst
+        setOpenRedact,
+        openEmail,
+        setOpenEmail,
+        Starttimer,
+        setstarttimer,
+        openModal,
+        setOpenModal,
+        disable,
+        setDisable,
+        productList,
+        setProductsLIst,
       }}
     >
       {children}

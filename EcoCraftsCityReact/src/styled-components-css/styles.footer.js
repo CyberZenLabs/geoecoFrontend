@@ -9,6 +9,7 @@ export const DivBoxFooterSC = styled.div`
   background: rgba(133, 203, 51, 0.3);
   display: grid;
   grid-template-rows: auto 50px;
+ // border:1px solid black;
   @media (max-width: 768px) {
   display: none;
 }
@@ -18,7 +19,7 @@ export const DivTopSC = styled.div`
   //outline: 1px solid #1130c1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr;
- 
+ max-height: 300px;
 `;
 
 export const DivBottomSC = styled.div`
@@ -49,9 +50,17 @@ export const DivBoxEcoCraftlSC = styled.div`
 
 export const DivBoxEcoCraftSC = styled.div`
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3,max-content);
+    height:100%;
+    width: 200px;
+    border:1px solid red;
+`
+export const DivBoxEcoCraftLeftSC = styled.div`
+    display: grid;
+    grid-template-rows: 1fr 1fr  ;
     height: 150px;
     width: 200px;
+    border:1px solid blue;
 `
 
 export const DivBoxFeaturesSC = styled.div`
@@ -66,18 +75,20 @@ export const DivBoxLogoSC = styled.div`
   background-image: url(${image});
   background-repeat: no-repeat;
   background-position: center 10px;
-  height: 116px;
-  width: 80px;
-  background-size: 100px;
+  height: 150px;
+  width: 120px;
+  background-size: 150px;
   display: grid;
   align-items: end;
+  justify-content: center;
+  //border:1px solid red;
 `;
 
 export const DivBoxSocSC = styled.div`
   display: grid;
   height: 20px;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-items: stretch;
+  gap: 10px;
 `;
 
 export const CustomLinkSC = styled(Link)`

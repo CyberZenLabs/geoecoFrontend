@@ -20,6 +20,9 @@ import {
   DivButtonAdaptiveSC,
   DivButtonAdaptivePhonesSC,
   DivBoxEcoCraftLeftSC,
+  DivBoxEcoCraftThinScreenSC,
+  DivBoxEcoCraftThinRowSC,
+  DivBoxEcoCraftThinColumnsSC,
 } from '../styled-components-css/styles.footer';
 const Footer = () => {
   return (
@@ -37,22 +40,30 @@ const Footer = () => {
             </DivBoxLogoSC>
           </DivBoxLogoAndSocialSC>
 
-          <div></div>
+      
 
           <DivBoxEcoCraftlSC>
             <DivBoxEcoCraftSC>
               <CustomLinkSC to="/">About us</CustomLinkSC>
-              <CustomLinkSC to="/">Contacts</CustomLinkSC>
-              <CustomLinkSC to="/">FAQ</CustomLinkSC>
+              <CustomLinkSC to="/">Contact us</CustomLinkSC>
+              <CustomLinkSC to="/">Frequently Asked Questions</CustomLinkSC>
             </DivBoxEcoCraftSC>
           </DivBoxEcoCraftlSC>
 
           <DivBoxFeaturesSC>
             <DivBoxEcoCraftLeftSC>
               <CustomLinkSC to="/">Privacy Policy</CustomLinkSC>
-              <CustomLinkSC to="/">User Agreement</CustomLinkSC>
+              <CustomLinkSC to="/">User Agreement Terms</CustomLinkSC>
             </DivBoxEcoCraftLeftSC>
           </DivBoxFeaturesSC>
+
+          <DivBoxEcoCraftThinScreenSC>
+          <DivBoxEcoCraftThinRowSC>
+              <DivBoxEcoCraftThinColumnsSC><CustomLinkSC to="/">FAQ</CustomLinkSC>|<CustomLinkSC to="/">Get in touch with us</CustomLinkSC></DivBoxEcoCraftThinColumnsSC>
+              <DivBoxEcoCraftThinColumnsSC><CustomLinkSC to="/">About us</CustomLinkSC> | <CustomLinkSC to="/">Privacy Policy</CustomLinkSC></DivBoxEcoCraftThinColumnsSC>
+              <DivBoxEcoCraftThinColumnsSC><CustomLinkSC to="/">Terms of the user agreement</CustomLinkSC></DivBoxEcoCraftThinColumnsSC>
+            </DivBoxEcoCraftThinRowSC>
+          </DivBoxEcoCraftThinScreenSC>
 
         </DivTopSC>
         <DivBottomSC>

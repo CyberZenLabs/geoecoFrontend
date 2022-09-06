@@ -339,14 +339,15 @@ export const DivMastersBlockSC = styled.div`
   //border: 2px solid blue;
   z-index: -1;
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
   gap: 5%;
   height: 780px;
  
-  background: #fafafa;
+  background:radial-gradient(61.17% 61.17% at 50% 50%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%),url(${CraftsMenBack});
+  background-size: cover;
   border-radius: 32px;
   /* width: 99vw; */
-  align-content: end;
+  align-content:center;
 
   @media (max-width: 1000px) {
     height: 743px;
@@ -425,41 +426,39 @@ export const H1InfoTitleSC = styled.h1`
   }
 `;
 export const H1MasterTitleSC = styled.h1`
-  //border: 2px solid blue;
+ // border: 2px solid blue;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
-  line-height: 49px;
+  font-size: 96px;
+  line-height: 117px;
   /* identical to box height */
   text-align: center;
   justify-self: center;
   /* Вторичный */
-  color: #252525;
-
-  width: 580px;
+  color: #ffffff;
+  text-shadow: 0px 13px 7px rgba(0, 0, 0, 0.25);
+  width: 880px;
+ 
   @media (max-width: 1000px) {
-    font-size: 36px;
-    line-height: 44px;
-    width: 500px;
-  }
-  @media (max-width: 1000px) {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 66px;
+    line-height: 74px;
+    width: 680px;
   }
   @media (max-width: 768px) {
-    font-size: 34px;
-    line-height: 44px;
+    font-size: 44px;
+    line-height: 54px;
     width: 470px;
   }
   @media (max-width: 480px) {
     font-size: 24px;
     line-height: 29px;
-    width: 350px;
+    width: 250px;
   }
   @media (max-width: 360px) {
     font-size: 18px;
     line-height: 22px;
+    width: 200px;
   }
 `;
 export const H1SocialsTitleSC = styled.h1`

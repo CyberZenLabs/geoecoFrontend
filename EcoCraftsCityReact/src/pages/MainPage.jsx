@@ -110,7 +110,7 @@ const MainPage = () => {
 
         <DivMastersBlockSC>
           <H1MasterTitleSC>Works of the best craftsmen in one place</H1MasterTitleSC>
-          <ImgMastersBlockSC Photo={DivMasters} />
+          {/* <ImgMastersBlockSC Photo={DivMasters} /> */}
         </DivMastersBlockSC>
         {/*<AboutUs/>*/}
         <DivSocialsBlockSC>

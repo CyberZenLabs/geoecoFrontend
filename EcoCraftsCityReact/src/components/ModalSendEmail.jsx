@@ -70,7 +70,7 @@ const ModalSendEmail = () => {
                
                <DivTextEmailSC>
                 
-               На вашу почту было отправлено письмо, откройте его и перейдите по ссылке для подтверждения электронного адреса. Если письмо не пришло проверьте папку Спам или повторите отправку.
+               An email has been sent to your email address, open it and follow the link to confirm your email address. If you didn't receive the email, please check your Spam folder or resend.
                </DivTextEmailSC>
                <img src="/default-images/SendEmail.svg"   to="#"  /> 
                

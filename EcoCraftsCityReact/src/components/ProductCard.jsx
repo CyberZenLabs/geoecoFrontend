@@ -28,7 +28,7 @@ const ProductCard = ({ product, index }) => {
       <StarAlign>
         <StarRating product={true} fixed={4} />
       </StarAlign>
-      <ProductCardStoreName>Мой Огород</ProductCardStoreName>
+      <ProductCardStoreName>My shop</ProductCardStoreName>
       <ProductCardButton to={`/product/${index}`}>More</ProductCardButton>
     </ProductCardContainer>
   );

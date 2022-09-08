@@ -47,7 +47,7 @@ const PaymentDelivery = () => {
             <DivBlocksContainer>
               <DivPaymentMethods>
                 <DivInnerWrap>
-                  <H1TextTitle>Способы оплаты</H1TextTitle>
+                  <H1TextTitle>Payment methods</H1TextTitle>
                   <PTextDotBlock>
                     <DivImgDotSC />
                     With a card on the site
@@ -56,7 +56,7 @@ const PaymentDelivery = () => {
               </DivPaymentMethods>
               <DivDeliveryMethods>
                 <DivInnerWrap>
-                  <H1TextTitle>Способы доставки</H1TextTitle>
+                  <H1TextTitle> Delivery methods</H1TextTitle>
                   <DivDeliveryColumns>
                     <DivLeftBlock>
                       <PTextDotBlock>
@@ -69,16 +69,16 @@ const PaymentDelivery = () => {
                       </PTextDotBlock>
                     </DivLeftBlock>
                     <DivRightBlock>
-                      <PTextBlock>от 180руб</PTextBlock>
-                      <PTextBlock>от 300руб</PTextBlock>
+                      <PTextBlock>from $3</PTextBlock>
+                      <PTextBlock>from $5</PTextBlock>
                     </DivRightBlock>
                   </DivDeliveryColumns>
                 </DivInnerWrap>
               </DivDeliveryMethods>
               <DivReturnExchange>
                 <DivInnerWrap>
-                  <H1TextTitle>Условия возврата и обмена</H1TextTitle>
-                  <PTextBlock>Предусмотрен если брак по нашей вине</PTextBlock>
+                  <H1TextTitle>Return and exchange conditions</H1TextTitle>
+                  <PTextBlock>Provided if the defect is due to our fault</PTextBlock>
                 </DivInnerWrap>
               </DivReturnExchange>
             </DivBlocksContainer>

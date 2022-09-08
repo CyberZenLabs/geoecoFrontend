@@ -25,13 +25,11 @@ const CardCarouselShow = ({ children }) => {
         </DivBoxAvaSC>
         <DivBoxBigTextSC>
           <DivTextBigSC>
-            Волшебный свитер! Безупречная работа, изумительный дизайн, всё было готово точно в договорной срок. Спасибо
-            вам огромное за мастерство, тонкий вкус и позитивную энергию, которую свитер излучает. Очень-очень я вам
-            благодарна.
+          Awesome sweater! Impeccable work, amazing design, everything was ready exactly on time. Thank you very much for the craftsmanship, delicate taste and positive energy that the sweater radiates. I am very grateful to you.
           </DivTextBigSC>
         </DivBoxBigTextSC>
         <DivBoxSmallTextSC>
-          <DivTextSmallSC>Евгения Калмакова</DivTextSmallSC>
+          <DivTextSmallSC>Eugene Brown</DivTextSmallSC>
         </DivBoxSmallTextSC>
       </DivBoxContentSC>
     </>

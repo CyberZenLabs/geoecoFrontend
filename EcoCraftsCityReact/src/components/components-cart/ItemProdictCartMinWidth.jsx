@@ -67,7 +67,7 @@ const ItemProductCartMin = props => {
                     primary={true}
 
                 >
-                    <span>Купить</span>
+                    <span>Purchase</span>
                 </ButtonCustomSC>
             </DivBoxButtonProducttMinWidthSC>
 

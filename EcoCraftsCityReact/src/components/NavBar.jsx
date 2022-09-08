@@ -167,7 +167,7 @@ const ResponsiveAppBar = () => {
               {/* <li>
               <LinkProfileBoxSC to="#">
                 <GoPackage />
-                Заказы
+                Orders
               </LinkProfileBoxSC>
             </li> */}
               <li>
@@ -178,7 +178,7 @@ const ResponsiveAppBar = () => {
               </li>
 
               {/* <li>
-              <LinkProfileBoxSC to="#">Баланс и история операций</LinkProfileBoxSC>
+              <LinkProfileBoxSC to="#">Balance and transaction history</LinkProfileBoxSC>
             </li> */}
               <li>
                 <LinkProfileBoxSC to="/vendorprofile" onClick={toggleProfile}>

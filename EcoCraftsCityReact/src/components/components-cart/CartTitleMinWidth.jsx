@@ -12,7 +12,7 @@ const CartTitleMinWidth = (props) => {
         <DivContainerTitleSC>
             <DivCartTitleMinSC>
                 <H2CartTitleSC>Cart (4)</H2CartTitleSC>
-                <DivSumForPayTitleSC><p>К оплате:</p><span>80000 р.</span></DivSumForPayTitleSC>
+                <DivSumForPayTitleSC><p>To pay:</p><span>$1300</span></DivSumForPayTitleSC>
                 <DivCartTitleMinCheckBoxSC>
                     <CustomInputCheckBox/>
                 </DivCartTitleMinCheckBoxSC>

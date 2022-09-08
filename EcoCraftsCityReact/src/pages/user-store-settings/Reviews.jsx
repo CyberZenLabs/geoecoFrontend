@@ -103,7 +103,7 @@ const Reviews = ({ shop, index }) => {
 
         
           <DivModesBoxSC>
-            <DivModeSC>Рубрики</DivModeSC>
+            <DivModeSC>Categories</DivModeSC>
             <DivModeSC>Filters</DivModeSC>
           </DivModesBoxSC>
           <DivTextButtonBoxSC>
@@ -116,14 +116,14 @@ const Reviews = ({ shop, index }) => {
                 height={"40px"}
                 borderRadius={"14px"}
               >
-                О магазине
+                About store
               </ButtonCustomSC>
               <ButtonCustomSC
                 width={"149px"}
                 height={"40px"}
                 borderRadius={"14px"}
               >
-                О товарах
+               About products
               </ButtonCustomSC>
             </DivButtonBoxSC>
           </DivTextButtonBoxSC>
@@ -136,7 +136,7 @@ const Reviews = ({ shop, index }) => {
               <ButtonPageBoxSC>1</ButtonPageBoxSC>
               <ButtonPageBoxSC>2</ButtonPageBoxSC>
               <ButtonPageBoxSC>3</ButtonPageBoxSC>
-              <ButtonPageBoxSC>Дальше</ButtonPageBoxSC>
+              <ButtonPageBoxSC>Next</ButtonPageBoxSC>
             </DivPagenationBoxSC>
           </DivCardReviewsBoxSC>
         </DivGridCatalogShopSC>

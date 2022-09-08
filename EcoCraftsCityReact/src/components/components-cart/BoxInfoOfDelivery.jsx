@@ -27,7 +27,7 @@ const BoxInfoDelivery = props => {
         </DivFirstRowDeliverySC>
         <DivInfoOfDeliverySC>
            <DivFirstRowInfoSC> <DivTextBoldSizeInfoDeliverySC>Payment method <DivTextMinSizeInfoDeliverySC>Edit</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC> </DivFirstRowInfoSC>
-           <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC> Ваши данные <DivTextMinSizeInfoDeliverySC>Edit</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
+           <DivSecondRowInfoSC> <DivTextBoldSizeInfoDeliverySC> Your details <DivTextMinSizeInfoDeliverySC>Edit</DivTextMinSizeInfoDeliverySC> </DivTextBoldSizeInfoDeliverySC>   </DivSecondRowInfoSC>
         </DivInfoOfDeliverySC>
         </DivRowDeliverySC>
        

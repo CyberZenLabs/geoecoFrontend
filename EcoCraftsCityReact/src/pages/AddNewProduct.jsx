@@ -224,7 +224,7 @@ const AddNewProduct = () => {
         setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
         setActivePhotoUrl(objectUrl);
       } else if (photoUrls.storeGalleryUrls.length >= 11) {
-        showToast('error', 'Нельзя загружать больше 11 фотографий');
+        showToast('error', 'Cannot upload more than 11 photos');
       }
     }
   };
@@ -313,8 +313,8 @@ const AddNewProduct = () => {
           />
           <EcoModal
             open={modalOpen}
-            title="Загрузка фотографии"
-            subTitle="Поместите фото профиля в выбранную область"
+            title="Photo upload"
+            subTitle="Place your profile photo in the selected area"
             cropImageModal={true}
             cropType={cropType}
             aspect={aspect}
@@ -500,7 +500,7 @@ const AddNewProduct = () => {
                               <DivTextRussianPostSC>Russian Post </DivTextRussianPostSC>
                             </DivBoxTextRussianPostSC>
                             <DivBoxTextFromThePriceSC>
-                              <DivTextFromThePriceSC>от 180 руб</DivTextFromThePriceSC>
+                              <DivTextFromThePriceSC>from $3</DivTextFromThePriceSC>
                             </DivBoxTextFromThePriceSC>
                           </DivContainerColumnsPostSC>
 
@@ -512,7 +512,7 @@ const AddNewProduct = () => {
                               <DivTextSDEKSC>CDEK</DivTextSDEKSC>
                             </DivBoxTextSDEKSC>
                             <DivBoxTextFromThePrice1SC>
-                              <DivTextFromThePrice1SC>200 руб</DivTextFromThePrice1SC>
+                              <DivTextFromThePrice1SC>$4</DivTextFromThePrice1SC>
                             </DivBoxTextFromThePrice1SC>
                           </DivContainerColumnsSDEKSC>
                         </DivItemDeliverySC>

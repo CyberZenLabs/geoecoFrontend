@@ -51,7 +51,7 @@ const ShowItemCarouselReview = () => {
             </DivStarRaitingAdaptiveSC>
             <DivUserReviewSC>
           <TextBoxReviewSC>
-            Текст отзыва
+           Review text
           </TextBoxReviewSC>
         </DivUserReviewSC>
           </DivDateRatingInfoSC>

@@ -22,7 +22,7 @@ const RatioCard = () => {
     <>
       <DivContainerSC>
         <DivContentBoxSC>
-          <TextBoxSC>100% покупателей рекомендуют этот магазин</TextBoxSC>
+          <TextBoxSC>100% of customers recommend this store</TextBoxSC>
           <DivRatioCardSlimSC>
             <ValueRatingSC>5.0</ValueRatingSC>
             <StarRating fixed={true} />

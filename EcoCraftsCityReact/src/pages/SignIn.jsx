@@ -67,7 +67,7 @@ const SignIn = (props) => {
 
       if (error !== '') {
         if (error && error.message.includes('401')) {
-          showToast('error', 'Не верные данные');
+          showToast('error', 'Invalid data');
         } else {
           showToast('error', error);
         }

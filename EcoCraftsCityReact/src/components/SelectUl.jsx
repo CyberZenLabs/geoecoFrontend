@@ -11,7 +11,7 @@ import {
 
 
 
-const options = [ "Физлицо", "Самозанятый","ИП","ООО",];
+const options = [ "Individual", "Self-employed","IP","LLC",];
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);

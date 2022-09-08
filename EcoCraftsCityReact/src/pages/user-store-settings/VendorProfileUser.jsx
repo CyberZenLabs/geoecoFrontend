@@ -223,7 +223,7 @@ const VendorProfile = () => {
                 setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
                 setActivePhotoUrl(objectUrl);
             } else if (photoUrls.storeGalleryUrls.length >= 11) {
-                showToast('error', 'Нельзя загружать больше 11 фотографий');
+                showToast('error', 'Cannot upload more than 11 photos');
             }
         }
     };
@@ -261,9 +261,9 @@ const VendorProfile = () => {
                         <SpanTextTitleSC>Profile name  </SpanTextTitleSC>
                         <OlifnoSC>
                             <LiInfoSC>Address</LiInfoSC>
-                            <LiInfoSC>Время существования магазина</LiInfoSC>
-                            <LiInfoSC>Store: е-mail</LiInfoSC>
-                            <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+                            <LiInfoSC>Store existence time</LiInfoSC>
+                            <LiInfoSC>Store: e-mail</LiInfoSC>
+                            <LiInfoSC>Products:<GreenST>In stock(1), Ordered(0), All(1)</GreenST></LiInfoSC>
                             <DescriptionSC><DescriptionTextSC><DescriptionTitleTextSC>About me:</DescriptionTitleTextSC>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non elementum feugiat in venenatis in. Tempus netus et at laoreet. Est nulla eget nisl lobortis tellus. Tempor ut id aenean dignissim consectetur malesuada volutpat ipsum leo. Urna vitae aliquam ullamcorper faucibus vel et dolor vel. Pulvinar aenean odio arcu tempor molestie. Ipsum.</DescriptionTextSC></DescriptionSC>   
                         </OlifnoSC>
 
@@ -374,8 +374,8 @@ const VendorProfile = () => {
 
                                 <EcoModal
                                     open={modalOpen}
-                                    title="Загрузка фотографии"
-                                    subTitle="Поместите фото профиля в выбранную область"
+                                    title="Photo upload"
+                                    subTitle="Place your profile photo in the selected area"
                                     cropImageModal={true}
                                     cropType={cropType}
                                     aspect={aspect}

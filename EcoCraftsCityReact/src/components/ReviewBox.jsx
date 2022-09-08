@@ -19,8 +19,8 @@ const ReviewBox = () => {
         <ImgReviewerSC src={"/default-images/plant.jpg"} />
       </DivImgWrapSC>
       <DivContentWrapSC>
-        <H1СustomerNameSC>Имя покупателя</H1СustomerNameSC>
-        <ButtonFilterSC>Фильтр</ButtonFilterSC>
+        <H1СustomerNameSC>Customer name</H1СustomerNameSC>
+        <ButtonFilterSC>Filter</ButtonFilterSC>
         <StarRating value={4}/>
         <PReviewTextSC>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nesciunt
@@ -31,7 +31,7 @@ const ReviewBox = () => {
           error, in iste maiores nemo odio odit officia omnis placeat possimus
           quae quaerat quidem, recusandae tempora ut?
         </PReviewTextSC>
-        <ButtonFilterSC>Показать отзыв продавца</ButtonFilterSC>
+        <ButtonFilterSC>Show seller's response</ButtonFilterSC>
       </DivContentWrapSC>
       <DivDateWrapSC>
         <DateTextSC>21.05.2022</DateTextSC>

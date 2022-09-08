@@ -65,7 +65,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -85,7 +85,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -110,7 +110,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>In process</DivTextInProgressSC>
@@ -135,7 +135,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>In process</DivTextInProgressSC>
@@ -164,7 +164,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -184,7 +184,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -209,7 +209,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>Completed</DivTextInProgressSC>
@@ -234,7 +234,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>Completed</DivTextInProgressSC>
@@ -263,7 +263,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -283,7 +283,7 @@ const PurchasesActive = () => {
                   <DivName1SC>Name</DivName1SC>
                 </DivTextsInitial1SC>
               </DivBoxColumnsAvaAndInitialSC>
-              <DivTextPurchase1SC>Покупка: Крестовник Роули</DivTextPurchase1SC>
+              <DivTextPurchase1SC>Item: Rawley's ragwort</DivTextPurchase1SC>
               <DivBoxColumnMoney1SC>
                 <DivMoney1SC>5000</DivMoney1SC>
                 <DivIconValute1SC>$</DivIconValute1SC>
@@ -308,7 +308,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>Rejected</DivTextInProgressSC>
@@ -333,7 +333,7 @@ const PurchasesActive = () => {
                 </DivTextsInitialSC>
               </DivBoxRowsAvaAndInitialSC>
               <DivBoxRowsPurchaseAndCompositionSC>
-                <DivTextPurchaseSC>Покупка: Крестовник Роули</DivTextPurchaseSC>
+                <DivTextPurchaseSC>Item: Rawley's ragwort</DivTextPurchaseSC>
                 <DivTextColumnsInProgressSC>
                   <DivGreenDotSC></DivGreenDotSC>
                   <DivTextInProgressSC>Rejected</DivTextInProgressSC>

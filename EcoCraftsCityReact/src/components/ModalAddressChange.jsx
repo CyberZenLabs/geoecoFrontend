@@ -12,7 +12,7 @@ const MailModal = () => {
            <DivWrapModal>
             <DivContentWrapModal>
            <H1ContentInfoSC>Address change</H1ContentInfoSC>
-           <PContentInfoSC>Мы отправили Вам письмо на <BoldSC>lisaraklova@gmail.com.</BoldSC> Перейдите по ссылке из него, чтобы начать процедуру</PContentInfoSC>
+           <PContentInfoSC>We have sent you an email to <BoldSC>lisaraklova@gmail.com.</BoldSC> Follow the link in it to start the procedure.</PContentInfoSC>
           
                <ButtonContinueModal onClick={() => setMail(false)}>Continue</ButtonContinueModal>
           

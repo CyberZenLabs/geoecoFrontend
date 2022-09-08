@@ -89,10 +89,9 @@ const SellerSettings = ({ product }) => {
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
                 <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
-              <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
+              <H1ContentNameSC>The address can only be changed once</H1ContentNameSC>
               <H1ContentNameSC>
-                Важно: адрес магазина является логином, который используется для входа в аккаунт наряду с email. Логин
-                также будет изменен.
+              Important: the store address is the login that is used to log into the account along with the email. The login will also be changed.
               </H1ContentNameSC>
             </DivContent2SC>
           </DivMainInfoAdressSC>
@@ -116,13 +115,13 @@ const SellerSettings = ({ product }) => {
                 <DivContentRows2PageSC>
                   <H1ContentDefinSC>+70000000000</H1ContentDefinSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC label="phone" type="phone" placeholder="Введите свой номер телефона" />
+                    <EmailFieldSC label="phone" type="phone" placeholder="Enter your phone number" />
                   </H1ContentDefinSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
+                    <EmailFieldSC label="password" type="password" placeholder="Enter password" />
                   </H1ContentDefinSC>
                   <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
-                </DivContentRows2PageSC>{' '}
+                </DivContentRows2PageSC>
               </DivContentDivisionSC>
 
               <DivContentDivisionSC>
@@ -139,13 +138,13 @@ const SellerSettings = ({ product }) => {
                   </DivContentInfoButtonSC>
                   <H1ContentDefinEmailSC>lisaraklova@gmail.com</H1ContentDefinEmailSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC label="email" type="email" placeholder="Введите почту" />
+                    <EmailFieldSC label="email" type="email" placeholder="Enter email" />
                   </H1ContentDefinSC>
                   <H1ContentDefinSC>
-                    <EmailFieldSC label="password" type="password" placeholder="Введите пароль" />
+                    <EmailFieldSC label="password" type="password" placeholder="Enter password" />
                   </H1ContentDefinSC>
                   <ButtonSave onClick={onClickTab(0)}>Save</ButtonSave>
-                </DivContentRows2Page2SC>{' '}
+                </DivContentRows2Page2SC>
               </DivContentDivisionSC>
             </DivContentSC>
           </DivMainInfo2PageSC>
@@ -158,10 +157,9 @@ const SellerSettings = ({ product }) => {
                 <H1ContentNameMailSC>https://</H1ContentNameMailSC>
                 <ButtonContentEditSC onClick={openMail}>Edit</ButtonContentEditSC>
               </DivFirstColumnSC>
-              <H1ContentNameSC>Адрес можно поменять только один раз</H1ContentNameSC>
+              <H1ContentNameSC>The address can only be changed once</H1ContentNameSC>
               <H1ContentNameSC>
-                Важно: адрес магазина является логином, который используется для входа в аккаунт наряду с email. Логин
-                также будет изменен.
+              Important: the store address is the login that is used to log into the account along with the email. The login will also be changed.
               </H1ContentNameSC>
             </DivContent2SC>
           </DivMainInfoAdressSC>

@@ -52,7 +52,7 @@ const Registration = (props) => {
         if (response.length === 0) {
             if (error) {
                 if (error.message.includes('401')) {
-                    showToast('error', 'Не верные данные');
+                    showToast('error', 'Invalid data');
                 } else {
                     showToast('error', error);
                 }

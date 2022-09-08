@@ -212,7 +212,7 @@ const VendorProfile = () => {
                 setPhotoUrls({ ...photoUrls, storeGalleryRef: objectUrl });
                 setActivePhotoUrl(objectUrl);
             } else if (photoUrls.storeGalleryUrls.length >= 11) {
-                showToast('error', 'Нельзя загружать больше 11 фотографий');
+                showToast('error', 'Cannot upload more than 11 photos');
             }
         }
     };
@@ -249,9 +249,9 @@ const VendorProfile = () => {
                         <SpanTextTitleSC>Profile name  <DivButtonChangrInformSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformSC></SpanTextTitleSC>
                         <OlifnoSC>
                             <LiInfoSC>Address</LiInfoSC>
-                            <LiInfoSC>Время существования магазина</LiInfoSC>
+                            <LiInfoSC>Store existence time</LiInfoSC>
                             <LiInfoSC>Store: е-mail</LiInfoSC>
-                            <LiInfoSC>Products:<GreenST>Готовые(1), На заказ(0), Все(1)</GreenST></LiInfoSC>
+                            <LiInfoSC>Products:<GreenST>In stock(1), Ordered(0), All(1)</GreenST></LiInfoSC>
                             <DivButtonChangrInformBottomSC onClick={onClickTab(1)}>Change the information</DivButtonChangrInformBottomSC>
                         </OlifnoSC>
 
@@ -355,8 +355,8 @@ const VendorProfile = () => {
 
                                 <EcoModal
                                     open={modalOpen}
-                                    title="Загрузка фотографии"
-                                    subTitle="Поместите фото профиля в выбранную область"
+                                    title="Photo upload"
+                                    subTitle="Place your profile photo in the selected area"
                                     cropImageModal={true}
                                     cropType={cropType}
                                     aspect={aspect}

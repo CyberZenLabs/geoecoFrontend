@@ -15,8 +15,8 @@ const ShopBlock = (props) => {
             <DivShopBlockContainer>
                 <DivShopLogo></DivShopLogo>
                 <DivShopInfo>
-                    <a href='#'>Название магазина и о чем он</a>
-                    <p>Где находится</p>
+                    <a href='#'>Store name and what it's about</a>
+                    <p>Location</p>
                     <StarRating/>
                 </DivShopInfo>
             </DivShopBlockContainer>

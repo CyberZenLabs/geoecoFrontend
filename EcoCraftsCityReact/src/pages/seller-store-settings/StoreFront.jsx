@@ -195,7 +195,7 @@ const StoreFront = ({ product }) => {
               <PlusMinusButtonsCS>+</PlusMinusButtonsCS>
             </DivBottomAddItemNumSC>
             <BottomPanelSelectSC>
-              Не более 5 дней
+            No more than 5 days
               <IoMarginCS>
                 <IoIosArrowDown />
               </IoMarginCS>
@@ -279,7 +279,7 @@ const StoreFront = ({ product }) => {
             </>
           ) : (
             <DivAddProduct>
-              <SpanTextAddProdctSC>Добавьте свой первый товар</SpanTextAddProdctSC>
+              <SpanTextAddProdctSC>Add your first product</SpanTextAddProdctSC>
               <ButtonAddProductSC>Add a new product</ButtonAddProductSC>
             </DivAddProduct>
           )}

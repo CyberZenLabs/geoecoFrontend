@@ -29,11 +29,11 @@ const ReviewShow = () => {
             <DivDateReviewCreateSC>
               <LinkOnUserSC to="/">
                 <TextBoxReviewSC color={"black"} weight={"600"}>
-                  Иван
+                  Sam
                 </TextBoxReviewSC>
               </LinkOnUserSC>
               <TextBoxReviewSC color={"#8b8b8b"}>
-                22 июля 2022, 20:24
+              July 22, 2022, 20:24
               </TextBoxReviewSC>
             </DivDateReviewCreateSC>
             <DivStarRaitingSC>

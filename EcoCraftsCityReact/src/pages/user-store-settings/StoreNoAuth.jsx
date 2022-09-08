@@ -77,7 +77,7 @@ const StoreNoAuth = () =>{
           <SettingsShopCatalog page={1} />
 
           <DivPageContentSC>
-            <SpanTitlePageSC>Store name, что производят</SpanTitlePageSC>
+            <SpanTitlePageSC>Store name</SpanTitlePageSC>
             <DivGridItems>
               {products.map((product) => {
                 return <ProductCard product={product} />;
@@ -100,7 +100,7 @@ const StoreNoAuth = () =>{
                   <DivNextPage>2</DivNextPage>
                 </DivCountPage>
 
-                <DivButtonNext>Дальше</DivButtonNext>
+                <DivButtonNext>Next</DivButtonNext>
               </DivNextGrid>
             </DivNextItems>
           </DivPageContentSC>

@@ -10,10 +10,10 @@ const BoxOther = (props) => {
         <DivBoxOtherProductSC>
             <DivBoxOtherProductTextSC>
                         <span>
-                            Другие товары магазина
+                        Other items in the store
                         </span>
                 <a href="/">
-                    Смотреть все
+                    Show all
                 </a>
             </DivBoxOtherProductTextSC>
             <DivBoxOtherProductImgSC>

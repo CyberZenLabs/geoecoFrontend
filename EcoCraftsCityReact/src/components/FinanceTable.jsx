@@ -22,9 +22,9 @@ const FinanceTable = () => {
 				<Tablehead>
 					<TableTR>
 						
-						<TableH>Платежи</TableH>
+						<TableH>Payments</TableH>
 						<TableH>Date</TableH>
-                        <TableH>Сумма</TableH>
+                        <TableH>Total</TableH>
                         <TableH>Status</TableH>
 						
 					</TableTR>

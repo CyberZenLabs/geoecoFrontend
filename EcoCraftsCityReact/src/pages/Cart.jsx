@@ -30,11 +30,11 @@ import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import CartTitleMinWidth from '../components/components-cart/CartTitleMinWidth';
 import CustomInputCheckBox from '../components/CustomInputCheckBox/CustomInputCheckBox';
 const arrayProduct = [
-  { name: 'Крестовник роули', isSelected: false },
-  { name: 'Деревянная ложка', isSelected: false },
-  { name: 'Деревянная бочка', isSelected: false },
-  { name: 'Соломенная корзина', isSelected: false },
-  { name: 'Стекляная солонка', isSelected: false },
+  { name: 'Rawleys ragwort', isSelected: false },
+  { name: 'Wooden spoon', isSelected: false },
+  { name: 'Wooden barrel', isSelected: false },
+  { name: 'Straw Basket', isSelected: false },
+  { name: 'Glass saltcellar', isSelected: false },
 ];
 
 const Cart = () => {

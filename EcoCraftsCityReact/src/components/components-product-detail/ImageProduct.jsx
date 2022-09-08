@@ -35,7 +35,7 @@ const ImageProduct = (props) => {
         <DivBoxImagesSC>
             <H5CustomSC>{title}</H5CustomSC>
             <DivTreeBoxSC>
-                <span>Аrticle: 34553202</span>
+                <span>Article: 34553202</span>
                 <StarRating
                 value={rating}
                     product={false}

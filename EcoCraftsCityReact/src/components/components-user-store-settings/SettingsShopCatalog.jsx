@@ -57,7 +57,7 @@ import {
               <ImgShopInfoSC src={"/default-images/plant.jpg"}></ImgShopInfoSC>
               <DivTitleShopInfoSC>
                 <TitleShopInfoSC>Store name</TitleShopInfoSC>
-                <LocationShopInfoSC>Где находится</LocationShopInfoSC>
+                <LocationShopInfoSC>Location</LocationShopInfoSC>
                 <DivStarHideSC>
                   <StarRating fixed={true} value={shopRaiting} />
                 </DivStarHideSC>

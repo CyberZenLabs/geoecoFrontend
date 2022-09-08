@@ -84,7 +84,7 @@ const PaymentAndDelivery = ({ product }) => {
       blocks: (
         <>
           <DivMainInfoSC>
-            <H1ContentInfoSC>Банковская карта</H1ContentInfoSC>
+            <H1ContentInfoSC>Bank card</H1ContentInfoSC>
 
             <DivContentRowsSC>
               <DivBankCardSC>
@@ -97,8 +97,7 @@ const PaymentAndDelivery = ({ product }) => {
                 </DivInfoCard>
               </DivBankCardSC>
               <DivTextOpisanitSC>
-                {' '}
-                На эту карту будут зачислены средства от сделок, которые оплачены онлайн
+              This card will be credited with funds from transactions that are paid online
               </DivTextOpisanitSC>
             </DivContentRowsSC>
           </DivMainInfoSC>
@@ -110,7 +109,7 @@ const PaymentAndDelivery = ({ product }) => {
         <>
           <DivMainInfo2PageSC>
             <DivContentInfoButtonSC>
-              <H1ContentInfoSC>Гарантированная Доставка</H1ContentInfoSC>
+              <H1ContentInfoSC>Guaranteed Delivery</H1ContentInfoSC>
             </DivContentInfoButtonSC>
             <DivContentSC>
               <DivContentDivisionSC>
@@ -131,14 +130,14 @@ const PaymentAndDelivery = ({ product }) => {
                     <FlexSDEKSC>
                       <EmailFieldSC label="phone" type="phone" />
                     </FlexSDEKSC>
-                    <SmalPlaceholder>От 180 рублей в зависимости от региогна доставки</SmalPlaceholder>
+                    <SmalPlaceholder>From $3, depending on the delivery region</SmalPlaceholder>
                   </H1ContentDefinSC>
                   <H1ContentDefinSC>
                     <FlexSDEKSC>
                       <EmailFieldSC label="password" />
                       <img src="/default-images/Rub.svg" />
                     </FlexSDEKSC>
-                    <SmalPlaceholder> Фиксированная стоимость доставки для всех направлений</SmalPlaceholder>
+                    <SmalPlaceholder> Fixed shipping cost for all destinations</SmalPlaceholder>
                   </H1ContentDefinSC>
                 </DivContentRows2PageSC>
               </DivContentDivisionSC>
@@ -153,25 +152,25 @@ const PaymentAndDelivery = ({ product }) => {
           <DivMainInfo3PageSC>
             <DivContentSC>
               <DivContentInfoButtonSC>
-                <H1ContentInfoSC>0 руб </H1ContentInfoSC>
+                <H1ContentInfoSC> $0 </H1ContentInfoSC>
               </DivContentInfoButtonSC>
             </DivContentSC>
             <DivContentSC>
               <DivContentInfoButtonSC>
-                <H1ContentInfoSC>Ожидают зачисления </H1ContentInfoSC>
+                <H1ContentInfoSC>Awaiting deposit</H1ContentInfoSC>
               </DivContentInfoButtonSC>
             </DivContentSC>
             <DivContentSC>
               <DivContentInfoButtonSC>
-                <LightTextSC>Зачисление происходит автоматически</LightTextSC>
+                <LightTextSC>Money is credited automatically</LightTextSC>
               </DivContentInfoButtonSC>
             </DivContentSC>
           </DivMainInfo3PageSC>
           <DivInfoPageSC>
             <DivContentInfoButtonSC>
               <FlexSC>
-                <ContentInfoSC> Важно: </ContentInfoSC>
-                <LightTextSC>Зачисление происходит автоматически после вручения посылки</LightTextSC>
+                <ContentInfoSC> Important: </ContentInfoSC>
+                <LightTextSC>Money is credited automatically after delivery of the parcel.</LightTextSC>
               </FlexSC>
             </DivContentInfoButtonSC>
             <FinanceTable />

@@ -45,10 +45,10 @@ const AboutUs = () => {
 
 
       <DivBoxTextReviewsMastersSC>
-        <DivTexReviewsMastersSC>Отзывы мастеров платформы</DivTexReviewsMastersSC>
+        <DivTexReviewsMastersSC>Feedback from craftsmen</DivTexReviewsMastersSC>
       </DivBoxTextReviewsMastersSC>
       <DivBoxTextReviewsClientsSC>
-        <DivTexReviewsClientsSC>Отзывы наших клиентов</DivTexReviewsClientsSC>
+        <DivTexReviewsClientsSC>Feedback from our customers</DivTexReviewsClientsSC>
       </DivBoxTextReviewsClientsSC>
       <CarouselKirdro/>
           </>

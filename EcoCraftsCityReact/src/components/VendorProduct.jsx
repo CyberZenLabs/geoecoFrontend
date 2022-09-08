@@ -94,7 +94,7 @@ const VendorProduct = ({ product, index, indexpage,allchecked }) => {
             </ItemTimeSC>
             <ItemPriceSC>
               <BottomPanelSelectItemSC>
-                Не более 5 дней
+              No more than 5 days
                 <IoMarginCS>
                   <IoIosArrowDown />
                 </IoMarginCS>

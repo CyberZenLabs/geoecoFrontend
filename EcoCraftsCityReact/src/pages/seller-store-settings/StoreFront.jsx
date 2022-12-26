@@ -65,7 +65,7 @@ import VendorProduct from '../../components/VendorProduct';
 const StoreFront = ({ product }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get('https://radiant-river-29802.herokuapp.com/api/v1/products').then((res) => {
+    axios.get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/products').then((res) => {
       console.log(res);
       setProducts(res.data.data.data);
     });

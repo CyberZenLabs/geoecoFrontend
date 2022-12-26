@@ -19,7 +19,7 @@ import StarRating from './StarRating';
 const VendorNavMenu = ({ page }) => {
   const [store, setStores] = useState([]);
   useEffect(() => {
-    axios.get('https://radiant-river-29802.herokuapp.com/api/v1/store/62f77571f9976f43002d144a').then((res) => {
+    axios.get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/store/62f77571f9976f43002d144a').then((res) => {
       console.log(res);
       setStores(res.data.data.data);
     });

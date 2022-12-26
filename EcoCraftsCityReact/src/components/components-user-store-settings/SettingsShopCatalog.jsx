@@ -38,7 +38,7 @@ import {
 
     useEffect(() => {
       axios
-        .get('https://radiant-river-29802.herokuapp.com/api/v1/store/62ed18caba878200162f0141')
+        .get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/store/62ed18caba878200162f0141')
         .then((res) => {
           console.log(res);
           setStores(res.data.data.data);

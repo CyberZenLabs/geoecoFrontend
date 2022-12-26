@@ -31,7 +31,7 @@ const PersonalData = () => {
   const [user, setUser] = useState([]);
     useEffect(() => {
       axios
-      .get('https://radiant-river-29802.herokuapp.com/api/v1/users/me')
+      .get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/users/me')
         .then((res) => {
           setUser(res.data.data.data);
           console.log("user",res);

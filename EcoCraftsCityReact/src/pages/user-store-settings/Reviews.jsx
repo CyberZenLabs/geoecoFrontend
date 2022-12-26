@@ -79,7 +79,7 @@ const Reviews = ({ shop, index }) => {
 
   useEffect(() => {
     axios
-      .get("https://radiant-river-29802.herokuapp.com/api/v1/products")
+      .get("https://geoeco-t7js76po3a-uc.a.run.app/api/v1/products")
       .then((res) => {
         setShopRaiting(Math.round(res.data.data.data[0].ratingsAverage));
       })

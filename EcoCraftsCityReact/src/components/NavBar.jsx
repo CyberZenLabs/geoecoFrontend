@@ -39,6 +39,11 @@ import {
   LinkProfileSC,
   LinkLogoMobileSC,
   DivBoxLogoMobileSC,
+  DivMadeByBoxSC,
+  DivMadeByLogoSC,
+  GridTextMadeBySC,
+  PTextMadeBySC,
+  PTextCompanySC
 } from '../styled-components-css/styles.navbar';
 import { ButtonCustomSC } from '../styled-components-css/styles.custom-button';
 import { OverlayDivSc } from '../styled-components-css/styles.catalog';
@@ -106,13 +111,13 @@ const ResponsiveAppBar = () => {
     // });
 
     axios
-      .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+      .get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/products')
       .then((res) => {
         // console.log(res);
 
         setProductsLIst(res.data.data.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
 
   return (
@@ -127,7 +132,7 @@ const ResponsiveAppBar = () => {
               <BoxContentButton>
                 <UilListUl
                   size="40"
-                  // color="#61DAFB"
+                // color="#61DAFB"
                 />
 
                 <SpanTextCatalogSC>Catalog</SpanTextCatalogSC>
@@ -192,6 +197,15 @@ const ResponsiveAppBar = () => {
                   Log out
                 </LinkProfileBoxSC>
               </li>
+              <DivMadeByBoxSC>
+                <a href="https://www.cyberzenlabs.com/">
+                  <DivMadeByLogoSC />
+                </a>
+                <GridTextMadeBySC>
+                  <PTextMadeBySC>made by</PTextMadeBySC>
+                  <PTextCompanySC>Cyberzen Labs</PTextCompanySC>
+                </GridTextMadeBySC>
+              </DivMadeByBoxSC>
             </ul>
           </div>
         ) : null}

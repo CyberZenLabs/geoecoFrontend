@@ -55,7 +55,7 @@ const StoreNoAuth = () =>{
     // setProducts([response]);
 
     axios
-      .get('https://radiant-river-29802.herokuapp.com/api/v1/products')
+      .get('https://geoeco-t7js76po3a-uc.a.run.app/api/v1/products')
       .then((res) => {
         setProducts(res.data.data.data);
       })

@@ -405,8 +405,8 @@ table {
       transition-delay: 0s, 0.75s;
   
 }
-
-@media (max-width: 1080px) {
+/* @media (max-width: 1080px) { */
+@media (max-width: 768px) {
    .user-box.active {
     transition:0.8s;
     transition-delay: 0.8s;

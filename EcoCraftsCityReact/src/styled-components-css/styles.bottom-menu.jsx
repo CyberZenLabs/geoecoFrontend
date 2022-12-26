@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 export const BoxBottomMenuSC = styled.div`
 display:none;
-  @media (max-width: 1000px) {
+  @media (max-width: 768px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: auto;

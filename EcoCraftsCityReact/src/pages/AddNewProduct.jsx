@@ -140,8 +140,8 @@ const AddNewProduct = () => {
     }
   };
   const [photoUrls, setPhotoUrls] = useState({
-    storePhotoUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
-    storeBannerUrl: 'https://radiant-river-29802.herokuapp.com/stores/defaultStore.svg',
+    storePhotoUrl: 'https://geoeco-t7js76po3a-uc.a.run.app/stores/defaultStore.svg',
+    storeBannerUrl: 'https://geoeco-t7js76po3a-uc.a.run.app/stores/defaultStore.svg',
     storeGalleryUrls: [],
   });
   const [aspect, setAspect] = useState(1);
@@ -271,7 +271,7 @@ const AddNewProduct = () => {
 
         console.log('Hello!!!!!');
         axios
-          .patch(`https://radiant-river-29802.herokuapp.com/api/v1/store/${testId}`, formData, {
+          .patch(`https://geoeco-t7js76po3a-uc.a.run.app/api/v1/store/${testId}`, formData, {
             // You need to use `getHeaders()` in Node.js because Axios doesn't
             // automatically set the multipart form boundary in Node.
             headers: {

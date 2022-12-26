@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import image from '../img/geoecologo.png';
 import image1 from '../img/geoecologomobile.png';
 import { Link } from 'react-router-dom';
+import Logo from "../img/LogoCyberZen.svg";
 
 export const DivBoxLogoSC = styled.div`
   background-image: url(${image});
@@ -347,4 +348,74 @@ export const DivBoxLogoMobileSC = styled.div`
 
     align-items: start;
   }
+`;
+
+export const DivMadeByBoxSC = styled.div`
+display: none;
+@media (max-width: 768px) {
+  display: block;
+  margin-top: 32px;
+  height: max-content;
+width: calc(100% - 40px);
+	display: grid;
+	grid-template-columns: max-content max-content;
+	column-gap: 9px;
+	align-items: center;
+  }
+
+`;
+
+
+export const DivMadeByLogoSC = styled.div`
+background-image: url(${Logo});
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 50px;
+    background-size: 200%;
+    display: grid;
+    background-position: center;
+	cursor: pointer;
+    @media (max-width: 1000px) {
+      width: 38px;
+    height: 40px;
+  }
+`;
+export const GridTextMadeBySC = styled.div`
+display: grid;
+align-content: center;
+`;
+
+export const PTextMadeBySC = styled.p`
+margin: 0;
+font-family: 'Orbitron';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+justify-self: start;
+color: #111;
+
+@media (max-width: 768px) {
+  font-size: 10px;
+line-height: 12px;
+  }
+
+`;
+
+export const PTextCompanySC = styled.p`
+margin: 0;
+font-family: 'Orbitron';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+
+color: #111;
+
+@media (max-width: 768px) {
+  font-size: 12px;
+line-height: 14px;
+  }
+
+
 `;
